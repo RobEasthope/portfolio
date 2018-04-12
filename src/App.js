@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import HomePage from 'components/pages/HomePage';
 import PortfolioPage from 'components/pages/PortfolioPage';
 import AboutPage from 'components/pages/AboutPage';
@@ -26,11 +26,13 @@ const App = () => (
 
       <hr />
 
-      <Route exact path="/" component={HomePage} />
-      <Route path="/portfolio" component={PortfolioPage} />
-      <Route path="/about" component={AboutPage} />
-      <Route path="/contact" component={ContactPage} />
-      <Route component={Error404Page} />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/portfolio" component={PortfolioPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route component={Error404Page} />
+      </Switch>
     </div>
   </Router>
 );
