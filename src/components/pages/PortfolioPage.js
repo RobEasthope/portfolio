@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from './../typography/Title';
+import Title from 'components/typography/Title';
 
 const PortfolioPage = () => (
   <div>
