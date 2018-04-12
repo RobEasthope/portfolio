@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Title from './components/typography/Title';
 
 const App = () => (
@@ -20,8 +20,9 @@ const App = () => (
       <hr />
 
       <Route exact path="/" component={Home} />
+      <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
+      <Route path="/contact" component={Contact} />
     </div>
   </Router>
 );
