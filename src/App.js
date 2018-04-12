@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Home from './components/pages/Home';
-import Portfolio from './components/pages/Portfolio';
-import About from './components/pages/About';
-import Contact from './components/pages/Contact';
+import HomePage from './components/pages/HomePage';
+import PortfolioPage from './components/pages/PortfolioPage';
+import AboutPage from './components/pages/AboutPage';
+import ContactPage from './components/pages/ContactPage';
 
 const App = () => (
   <Router>
@@ -25,10 +25,10 @@ const App = () => (
 
       <hr />
 
-      <Route exact path="/" component={Home} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
+      <Route exact path="/" component={HomePage} />
+      <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={ContactPage} />
     </div>
   </Router>
 );
