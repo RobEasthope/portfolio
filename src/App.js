@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Title from './components/Title/Title';
+import Title from './components/typography/Title';
 
 const App = () => (
   <Router>
