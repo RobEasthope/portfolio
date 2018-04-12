@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Title from './components/typography/Title';
+import Home from './components/pages/Home';
+import Portfolio from './components/pages/Portfolio';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
 
 const App = () => (
   <Router>
