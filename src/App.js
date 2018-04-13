@@ -11,7 +11,7 @@ import AboutPage from 'components/pages/AboutPage';
 import ContactPage from 'components/pages/ContactPage';
 import Error404Page from 'components/pages/Error404Page';
 
-import { store, history } from '../store';
+import { store, history } from './store';
 
 const App = () => (
   <Provider store={store}>
