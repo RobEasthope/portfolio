@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import App from './containers/App';
 import HomePage from 'components/pages/HomePage';
@@ -27,7 +28,7 @@ const store = createStore(
     // ...reducers,
     router: routerReducer,
   }),
-  applyMiddleware(middleware),
+  composeWithDevTools(applyMiddleware(middleware)),
 );
 
 ReactDOM.render(
