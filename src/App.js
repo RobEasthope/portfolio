@@ -46,7 +46,7 @@ class App extends React.Component {
   }
 
   buildContext() {
-    const accessToken = PrismicConfig.accessToken;
+    const { accessToken } = PrismicConfig;
     return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
       api,
       endpoint: PrismicConfig.apiEndpoint,
