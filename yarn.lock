@@ -6800,6 +6800,12 @@ prismic-javascript@^1.4.1:
   dependencies:
     fetch-everywhere "^1.0.5"
 
+prismic-javascript@^1.5.0-beta.2:
+  version "1.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/prismic-javascript/-/prismic-javascript-1.5.0-beta.2.tgz#e91a70dc19c0495e56ae4f60353f3544af49ebd1"
+  dependencies:
+    fetch-everywhere "^1.0.5"
+
 prismic-reactjs@^0.2.3:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/prismic-reactjs/-/prismic-reactjs-0.2.4.tgz#ac234121cab69a3df8de2b9d237bc4f1cb67ea67"
