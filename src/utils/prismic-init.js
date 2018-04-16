@@ -16,6 +16,6 @@ export function buildContext() {
     endpoint: PrismicConfig.apiEndpoint,
     accessToken,
     linkResolver: PrismicConfig.linkResolver,
-    toolbar: refreshToolbar(),
+    // toolbar: refreshToolbar(),
   }));
 }
