@@ -6814,6 +6814,14 @@ prismic-reactjs@^0.2.3:
     prismic-richtext "^0.2.6"
     react "^15.6.1"
 
+prismic-reactjs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/prismic-reactjs/-/prismic-reactjs-0.3.0.tgz#7e90e9a1ee601c84d42929303cdef6402c21f42a"
+  dependencies:
+    prismic-helpers "^1.0.0"
+    prismic-richtext "^0.4.1"
+    react "^15.6.1"
+
 prismic-richtext@^0.2.6:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-0.2.7.tgz#ad203fc076bda9c4b6358ca7249f7e0072c5a323"
@@ -6821,7 +6829,7 @@ prismic-richtext@^0.2.6:
     prismic-helpers "^1.0.0"
     uuid "^3.1.0"
 
-prismic-richtext@^0.4.2:
+prismic-richtext@^0.4.1, prismic-richtext@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-0.4.2.tgz#bdc27d2c3d0e8e2226918b7ad2708fd3ac3d1e7f"
   dependencies:
