@@ -1,5 +1,6 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
+// import { connect } from 'react-redux';
 import Error404Page from '../../components/pages/Error404Page';
 
 import injectReducer from 'utils/injectReducer';
@@ -71,9 +72,9 @@ class Project extends React.Component {
   }
 }
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+// const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
 const withReducer = injectReducer({ key: 'home', reducer });
 const withSaga = injectSaga({ key: 'home', saga });
 
-export default compose(withReducer, withSaga, withConnect)(Project);
+export default compose(withReducer, withSaga)(Project);
