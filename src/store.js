@@ -3,7 +3,7 @@ import createHistory from 'history/createBrowserHistory';
 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import appReducer from './containers/App/reducer';
+import projectsReducer from './containers/Project/reducer';
 
 export const history = createHistory();
 
@@ -11,7 +11,7 @@ export const middleware = routerMiddleware(history);
 
 export const store = createStore(
   combineReducers({
-    app: appReducer,
+    projects: projectsReducer,
     router: routerReducer,
   }),
   composeWithDevTools(applyMiddleware(middleware)),

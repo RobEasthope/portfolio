@@ -8,7 +8,7 @@ import 'whatwg-fetch';
 import Nav from '../../components/navigation/Nav';
 import HomePage from '../../components/pages/HomePage';
 import PortfolioPage from '../../components/pages/PortfolioPage';
-import Project from '../../containers/Project';
+import Project from '../../containers/Project/Project';
 import AboutPage from '../../components/pages/AboutPage';
 import ContactPage from '../../components/pages/ContactPage';
 import Error404Page from '../../components/pages/Error404Page';

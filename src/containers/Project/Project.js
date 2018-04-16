@@ -1,6 +1,8 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
-import Error404Page from '../components/pages/Error404Page';
+import Error404Page from '../../components/pages/Error404Page';
+
+import { pagesLoaded } from './actions';
 
 // Declare your component
 export default class Project extends React.Component {
@@ -32,6 +34,7 @@ export default class Project extends React.Component {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
+          pagesLoaded({ doc });
         } else {
           // We changed the state to display error not found if no matched doc
           this.setState({ notFound: !doc });
