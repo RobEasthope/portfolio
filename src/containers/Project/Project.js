@@ -21,7 +21,6 @@ class Project extends React.Component {
 
   componentWillMount() {
     this.fetchPage(this.props);
-    prismicData();
   }
 
   componentWillReceiveProps(props) {
