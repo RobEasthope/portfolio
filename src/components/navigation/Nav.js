@@ -17,8 +17,6 @@ const ContactPage = () => (
         <Link to="/contact">Contact</Link>
       </li>
     </ul>
-
-    <hr />
   </nav>
 );
 

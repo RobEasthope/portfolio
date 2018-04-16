@@ -5,6 +5,8 @@
   "dependencies": {
     "colors.css": "^3.0.0",
     "history": "^4.7.2",
+    "prismic-javascript": "^1.5.0-beta.2",
+    "prismic-reactjs": "^0.3.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-helmet": "^5.2.0",
@@ -15,13 +17,14 @@
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
-    "styled-components": "^3.2.5"
+    "styled-components": "^3.2.5",
+    "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
-    "start": "NODE_PATH=src/ react-scripts start",
-    "build": "NODE_PATH=src/ react-scripts build",
-    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
-    "eject": "NODE_PATH=src/ react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

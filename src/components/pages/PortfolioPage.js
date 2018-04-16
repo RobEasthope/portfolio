@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import Title from 'components/typography/Title';
+import Title from '../typography/Title';
 
 const PortfolioPage = () => (
   <div>
