@@ -1,6 +1,6 @@
 import React from 'react';
-import Error404Page from 'components/pages/Error404Page';
 import PrismicReact from 'prismic-reactjs';
+import Error404Page from '../components/pages/Error404Page';
 
 // Declare your component
 export default class Project extends React.Component {
