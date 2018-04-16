@@ -26,6 +26,16 @@ class App extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.buildContext()
+      .then((prismicCtx) => {
+        this.setState({ prismicCtx });
+      })
+      .catch((e) => {
+        console.error(`Cannot contact the API, check your prismic configuration:\n${e}`);
+      });
+  }
+
   refreshToolbar() {
     const maybeCurrentExperiment = this.api.currentExperiment();
     if (maybeCurrentExperiment) {
@@ -43,16 +53,6 @@ class App extends React.Component {
       linkResolver: PrismicConfig.linkResolver,
       toolbar: this.refreshToolbar,
     }));
-  }
-
-  componentWillMount() {
-    this.buildContext()
-      .then((prismicCtx) => {
-        this.setState({ prismicCtx });
-      })
-      .catch((e) => {
-        console.error(`Cannot contact the API, check your prismic configuration:\n${e}`);
-      });
   }
 
   render() {
