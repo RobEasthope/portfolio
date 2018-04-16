@@ -2,8 +2,14 @@ import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 import Error404Page from '../../components/pages/Error404Page';
 
+import injectReducer from 'utils/injectReducer';
+import injectSaga from 'utils/injectSaga';
+
+import reducer from './reducer';
+import saga from './sagas';
+
 // Declare your component
-export default class Project extends React.Component {
+class Project extends React.Component {
   constructor() {
     super();
 
@@ -15,6 +21,7 @@ export default class Project extends React.Component {
 
   componentWillMount() {
     this.fetchPage(this.props);
+    prismicData();
   }
 
   componentWillReceiveProps(props) {
@@ -64,3 +71,10 @@ export default class Project extends React.Component {
     return <h1>Loading</h1>;
   }
 }
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+const withReducer = injectReducer({ key: 'home', reducer });
+const withSaga = injectSaga({ key: 'home', saga });
+
+export default compose(withReducer, withSaga, withConnect)(Project);
