@@ -1,10 +1,10 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 // import { connect } from 'react-redux';
+import { compose } from 'redux';
+import injectReducer from '../../utils/injectReducer';
+import injectSaga from '../../utils/injectSaga';
 import Error404Page from '../../components/pages/Error404Page';
-
-import injectReducer from 'utils/injectReducer';
-import injectSaga from 'utils/injectSaga';
 
 import reducer from './reducer';
 import saga from './sagas';
