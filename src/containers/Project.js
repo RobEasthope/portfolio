@@ -4,10 +4,14 @@ import PrismicReact from 'prismic-reactjs';
 
 // Declare your component
 export default class Project extends React.Component {
-  state = {
-    doc: null,
-    notFound: false,
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      doc: null,
+      notFound: false,
+    };
+  }
 
   componentWillMount() {
     this.fetchPage(this.props);
