@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "stable"
+cache: yarn
+before_deploy: "npm run build"
+deploy:
+  provider: firebase
+  token:
+    secure: ${FIREBASE_API_TOKEN}
+  project: "portfolio-bb877"
+  on:
+    branch: master
