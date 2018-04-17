@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 
 import Prismic from 'prismic-javascript';
-import 'whatwg-fetch';
+// import 'whatwg-fetch';
 
 import Nav from './components/navigation/Nav';
 
@@ -46,7 +46,7 @@ class App extends React.Component {
   }
 
   buildContext() {
-    const accessToken = PrismicConfig.accessToken;
+    const { accessToken } = PrismicConfig;
     return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
       api,
       endpoint: PrismicConfig.apiEndpoint,

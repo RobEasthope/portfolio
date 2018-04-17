@@ -1,5 +1,6 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
+import { Helmet } from 'react-helmet';
 import Error404Page from '../components/pages/Error404Page';
 
 // Declare your component
@@ -44,16 +45,22 @@ export default class Project extends React.Component {
   render() {
     if (this.state.doc) {
       return (
-        <div data-wio-id={this.state.doc.id}>
-          {/* This is how to get an image into your template */}
-          {/* <img alt="cover" src={this.state.doc.data.your_image_field_id.url} /> */}
-          {/* This is how to insert a Rich Text field as plain text */}
-          <h1>{PrismicReact.RichText.asText(this.state.doc.data.title)}</h1>
-          {/* This is how to insert a Rich Text field into your template as html */}
-          {PrismicReact.RichText.render(
-            this.state.doc.data.text,
-            this.props.prismicCtx.linkResolver,
-          )}
+        <div>
+          <Helmet>
+            <title>{PrismicReact.RichText.asText(this.state.doc.data.title)}</title>
+          </Helmet>
+
+          <div data-wio-id={this.state.doc.id}>
+            {/* This is how to get an image into your template */}
+            {/* <img alt="cover" src={this.state.doc.data.your_image_field_id.url} /> */}
+            {/* This is how to insert a Rich Text field as plain text */}
+            <h1>{PrismicReact.RichText.asText(this.state.doc.data.title)}</h1>
+            {/* This is how to insert a Rich Text field into your template as html */}
+            {PrismicReact.RichText.render(
+              this.state.doc.data.text,
+              this.props.prismicCtx.linkResolver,
+            )}
+          </div>
         </div>
       );
     } else if (this.state.notFound) {
