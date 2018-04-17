@@ -3,6 +3,7 @@ node_js:
 - stable
 cache: yarn
 before_deploy: npm run build
+install: true
 deploy:
   provider: firebase
   token:
