@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 
 import Prismic from 'prismic-javascript';
-// import 'whatwg-fetch';
+import 'whatwg-fetch';
 
 import Nav from './components/navigation/Nav';
 
