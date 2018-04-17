@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache: yarn
-before_deploy: "npm run build"
+before_deploy: npm run build
 deploy:
   provider: firebase
   token:
-    secure: ${FIREBASE_API_TOKEN}
-  project: "portfolio-bb877"
+    secure: GnbzyjeGXIncZvqHk3tELllf7DkQe1TwdXjIUt0q62Q4rmqSxJ5JGGi0jRKwNxoipoubmpx0RVfPX7w0DWIxXEPD+0O+29xbaSo+/FMwjmeiCVEBUnnuD0NeHD2hm850whNpd57Us/OV2mltcTxAGOLhmia2B/cFk1TBlUamEg/X/qySG97KnWz1yvPnCT2KwYg9OSHK8YuxJBstsx6Eq9qSIa77L9YLrn0Egevjz/PogNLx9FH5UUwHAWLfHq/AMvTlyqPtU4K36EAnyzRbIbC8exnRhfKgqlFH/Jm3XuFeN3pezcrcQk7GFtNReDupNn6YXHvOm1/Yxt2U3k+nUCNMf4DnzxzkyDslf/rz/LSJ7TeAhvEIxY9hc+Sz4Br7xnyEBoK6AQ3/9NQWKB9tEHi0A0aP078/CgoGs8htBFx2AsB7xHd79GZ9VRF5WPVSakQOuW2BPyKmdJ3jKBNTZAF0wFYDJOQMcD5yPX7QG2uhAORVRUf6ZXEGKLTXuntk+IvRnOymG/nBZ/AoCXJTV3qo3TZllIyCozMIEVsk/km7aoncP9e/S7tWNVxjbGNttMIrrf596pwWvrA5/Xrxr2lN9CfiQI4KX4nyCqDQJG/hA639LEuXkDqULxC/17tMC4P/sow8x0Sm93mCZtUHroa824NCxUWrIHriYC63ttk=
+  project: portfolio-bb877
   on:
     branch: master
