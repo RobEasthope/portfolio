@@ -3,7 +3,7 @@ import { hydrate, render } from 'react-dom';
 import ReactGA from 'react-ga';
 
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 const snap = navigator.userAgent !== 'ReactSnap';
 const production = process.env.NODE_ENV === 'production';
@@ -17,4 +17,4 @@ if (rootElement.hasChildNodes()) {
 } else {
   render(<App />, rootElement);
 }
-registerServiceWorker();
+// registerServiceWorker();
