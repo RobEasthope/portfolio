@@ -9,9 +9,6 @@ import { connect } from 'react-redux';
 import { getPrismicDoc } from './actions';
 import { selectPrismicDoc } from './selectors';
 
-const getMyIp = apiData => apiData && apiData.origin && apiData.origin.split(', ')[1];
-
-// Declare your component
 class Project extends React.Component {
   constructor() {
     super();
