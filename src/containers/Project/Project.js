@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // import { Helmet } from 'react-helmet';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -25,5 +26,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ getPrismicDoc }, dispatch),
 });
+
+Project.propTypes = {
+  actions: PropTypes.isRequired,
+  getPrismicDoc: PropTypes.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Project);
