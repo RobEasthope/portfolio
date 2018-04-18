@@ -15,7 +15,7 @@ const projectReducer = (state = initialState, action) => {
       return state.set('prismicDocLoading', true).set('prismicDocError', null);
     case GET_PRISMIC_DOC_LOADED:
       return state
-        .set('prismicDoc', action.data)
+        .set('prismicDoc', action.payload)
         .set('prismicDocLoading', false)
         .set('prismicDocLoaded', true)
         .set('prismicDocError', null);
