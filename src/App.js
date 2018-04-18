@@ -4,9 +4,6 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import ReactGA from 'react-ga';
 
-import Prismic from 'prismic-javascript';
-import 'whatwg-fetch';
-
 import Nav from './components/navigation/Nav';
 
 import HomePage from './components/pages/HomePage';
@@ -17,7 +14,6 @@ import ContactPage from './components/pages/ContactPage';
 import Error404Page from './components/pages/Error404Page';
 
 import { store, history } from './store';
-import PrismicConfig from './prismic-configuration';
 
 // Google Analytics
 const snap = navigator.userAgent !== 'ReactSnap';
