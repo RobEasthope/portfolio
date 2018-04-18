@@ -30,28 +30,24 @@ function fireTracking() {
   ReactGA.pageview(window.location.hash);
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        {/* ConnectedRouter will use the store from Provider automatically */}
-        <ConnectedRouter onUpdate={fireTracking} history={history}>
-          <div>
-            <Nav />
+const App = () => (
+  <Provider store={store}>
+    {/* ConnectedRouter will use the store from Provider automatically */}
+    <ConnectedRouter onUpdate={fireTracking} history={history}>
+      <div>
+        <Nav />
 
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/portfolio" component={PortfolioPage} />
-              <Route path="/project/:uid" component={Project} />
-              <Route path="/about" component={AboutPage} />
-              <Route path="/contact" component={ContactPage} />
-              <Route component={Error404Page} />
-            </Switch>
-          </div>
-        </ConnectedRouter>
-      </Provider>
-    );
-  }
-}
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/portfolio" component={PortfolioPage} />
+          <Route path="/project/:uid" component={Project} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route component={Error404Page} />
+        </Switch>
+      </div>
+    </ConnectedRouter>
+  </Provider>
+);
 
 export default App;
