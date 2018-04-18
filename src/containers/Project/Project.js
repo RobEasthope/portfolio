@@ -9,21 +9,8 @@ import { selectPrismicDoc } from './selectors';
 import Title from '../../components/typography/Title';
 
 class Project extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      doc: null,
-      notFound: false,
-    };
-  }
-
   componentWillMount() {
     this.props.actions.getPrismicDoc();
-  }
-
-  componentWillReceiveProps(props) {
-    this.fetchPage(props);
   }
 
   render() {
