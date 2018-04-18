@@ -1,7 +1,7 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 import { Helmet } from 'react-helmet';
-import Error404Page from '../components/pages/Error404Page';
+import Error404Page from '../../components/pages/Error404Page';
 
 // Declare your component
 export default class Project extends React.Component {
