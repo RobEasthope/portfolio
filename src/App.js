@@ -25,6 +25,11 @@ const production = process.env.NODE_ENV === 'production';
 if (production && snap) {
   ReactGA.initialize('XX-XXXXXXXX-X');
 }
+
+function fireTracking() {
+  ReactGA.pageview(window.location.hash);
+}
+
 class App extends React.Component {
   constructor() {
     super();
@@ -67,7 +72,7 @@ class App extends React.Component {
     return (
       <Provider store={store} prismicCtx={this.state.prismicCtx}>
         {/* ConnectedRouter will use the store from Provider automatically */}
-        <ConnectedRouter history={history}>
+        <ConnectedRouter onUpdate={fireTracking} history={history}>
           <div>
             <Nav />
 
