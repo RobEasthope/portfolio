@@ -1,34 +1,36 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 
+import Prismic from 'prismic-javascript';
 import { getPrismicDocLoaded, getPrismicDocError } from './actions';
 
 import { GET_PRISMIC_DOC } from './constants';
 
-/*
-  Data downloading using pure JS fetch
-  @type: JS object
-  { result: resultObj, error: errorObj }
-*/
-const fetchData = (url, options) => {
-  const fetchRequest = new Request(url, options);
+const fetchData = () => {
+  const prismicCall = Prismic.api('http://codex.prismic.io/api', (error, api) => {
+    const options = {};
+    api.query('', options, (err, response) => {
+      // An empty query will return all the documents
+      if (err) {
+        return err;
+      }
+      return response.documents;
+    });
+  });
 
-  return fetch(fetchRequest)
-    .then(response => response.json().then(result => ({ result })))
-    .catch(error => ({ error }));
+  return prismicCall;
 };
 
-function* getApiData() {
-  const { result, error } = yield call(fetchData, '/get', { method: 'get' });
-
-  if (error) {
-    yield put(getPrismicDocError(error));
+function* getPrismicDoc() {
+  try {
+    const response = yield call(fetchData);
+    yield put(getPrismicDocLoaded(response));
+  } catch (err) {
+    yield put(getPrismicDocError(err));
   }
-
-  yield put(getPrismicDocLoaded(result));
 }
 
-function* apiData() {
-  yield takeLatest(GET_PRISMIC_DOC, getApiData);
+function* prismicData() {
+  yield takeLatest(GET_PRISMIC_DOC, getPrismicDoc);
 }
 
-export default apiData;
+export default prismicData;
