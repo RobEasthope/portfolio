@@ -3,8 +3,16 @@ import PrismicReact from 'prismic-reactjs';
 import { Helmet } from 'react-helmet';
 import Error404Page from '../../components/pages/Error404Page';
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { getPrismicDoc } from './actions';
+import { selectPrismicDoc } from './selectors';
+
+const getMyIp = apiData => apiData && apiData.origin && apiData.origin.split(', ')[1];
+
 // Declare your component
-export default class Project extends React.Component {
+class Project extends React.Component {
   constructor() {
     super();
 
@@ -16,6 +24,7 @@ export default class Project extends React.Component {
 
   componentWillMount() {
     this.fetchPage(this.props);
+    this.props.actions.getPrismicDoc();
   }
 
   componentWillReceiveProps(props) {
@@ -69,3 +78,13 @@ export default class Project extends React.Component {
     return <h1>Loading</h1>;
   }
 }
+
+const mapStateToProps = state => ({
+  apiData: selectPrismicDoc(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators({ getPrismicDoc }, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Project);
