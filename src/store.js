@@ -1,17 +1,27 @@
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createHistory from 'history/createBrowserHistory';
 
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+import createSagaMiddleware from 'redux-saga';
+
+import createGlobalReducer from './global-reducer';
+import globalSagas from './global-sagas';
 
 export const history = createHistory();
+const sagaMiddleware = createSagaMiddleware();
 
-export const middleware = routerMiddleware(history);
+const middlewares = [
+  // Middleware for intercepting and dispatching navigation actions
+  routerMiddleware(history),
+  sagaMiddleware,
+];
 
 export const store = createStore(
-  combineReducers({
-    // ...reducers,
-    router: routerReducer,
-  }),
-  composeWithDevTools(applyMiddleware(middleware)),
+  createGlobalReducer(),
+  composeWithDevTools(applyMiddleware(...middlewares)),
 );
+
+sagaMiddleware.run(globalSagas);
+
+export default store;
