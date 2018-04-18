@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
+import ReactGA from 'react-ga';
 
 import Prismic from 'prismic-javascript';
 import 'whatwg-fetch';
@@ -18,6 +19,12 @@ import Error404Page from './components/pages/Error404Page';
 import { store, history } from './store';
 import PrismicConfig from './prismic-configuration';
 
+// Google Analytics
+const snap = navigator.userAgent !== 'ReactSnap';
+const production = process.env.NODE_ENV === 'production';
+if (production && snap) {
+  ReactGA.initialize('XX-XXXXXXXX-X');
+}
 class App extends React.Component {
   constructor() {
     super();
