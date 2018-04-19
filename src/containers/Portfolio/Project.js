@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { getPrismicDoc } from './actions';
-import { selectPrismicDoc } from './selectors';
 
 import Title from '../../components/typography/Title';
 
@@ -20,7 +19,7 @@ class Project extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  apiData: selectPrismicDoc(state),
+  // apiData: selectPrismicDoc(state),
 });
 
 const mapDispatchToProps = dispatch => ({
