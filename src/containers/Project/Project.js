@@ -27,8 +27,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Project.propTypes = {
-  actions: PropTypes.isRequired,
-  getPrismicDoc: PropTypes.isRequired,
+  // actions: PropTypes.shape.isRequired,
+  // getPrismicDoc: PropTypes.shape.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Project);
