@@ -1,6 +1,10 @@
 import { fromJS } from 'immutable';
 
-import { GET_PRISMIC_DOC, GET_PRISMIC_DOC_LOADED, GET_PRISMIC_DOC_ERROR } from './constants';
+import {
+  GET_PLACEHOLDER_DOC,
+  GET_PLACEHOLDER_DOC_LOADED,
+  GET_PLACEHOLDER_DOC_ERROR,
+} from './constants';
 
 const initialState = fromJS({
   prismicDoc: null,
@@ -11,15 +15,15 @@ const initialState = fromJS({
 
 const projectReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_PRISMIC_DOC:
+    case GET_PLACEHOLDER_DOC:
       return state.set('prismicDocLoading', true).set('prismicDocError', null);
-    case GET_PRISMIC_DOC_LOADED:
+    case GET_PLACEHOLDER_DOC_LOADED:
       return state
         .set('prismicDoc', action.payload)
         .set('prismicDocLoading', false)
         .set('prismicDocLoaded', true)
         .set('prismicDocError', null);
-    case GET_PRISMIC_DOC_ERROR:
+    case GET_PLACEHOLDER_DOC_ERROR:
       return state
         .set('prismicDocLoading', false)
         .set('prismicDocLoaded', false)

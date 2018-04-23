@@ -2,7 +2,7 @@ import { takeLatest, call, put } from 'redux-saga/effects';
 import fetchPrismicData from '../../utils/fetchPrismicData';
 
 import { getPrismicDocLoaded, getPrismicDocError } from './actions';
-import { GET_PRISMIC_DOC } from './constants';
+import { GET_PLACEHOLDER_DOC } from './constants';
 
 function* getPrismicDoc() {
   try {
@@ -14,7 +14,7 @@ function* getPrismicDoc() {
 }
 
 function* prismicData() {
-  yield takeLatest(GET_PRISMIC_DOC, getPrismicDoc);
+  yield takeLatest(GET_PLACEHOLDER_DOC, getPrismicDoc);
 }
 
 export default prismicData;
