@@ -1,3 +1,0 @@
-export const GET_PLACEHOLDER_DOC = 'containers/App/GET_PLACEHOLDER_DOC';
-export const GET_PLACEHOLDER_DOC_LOADED = 'containers/App/GET_PLACEHOLDER_DOC_LOADED';
-export const GET_PLACEHOLDER_DOC_ERROR = 'containers/App/GET_PLACEHOLDER_DOC_ERROR';
