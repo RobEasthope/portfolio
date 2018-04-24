@@ -1,15 +1,19 @@
-import { GET_PRISMIC_DOC, GET_PRISMIC_DOC_LOADED, GET_PRISMIC_DOC_ERROR } from './constants';
+import {
+  PRISMIC_API_CONNECTION_REQUEST,
+  PRISMIC_API_CONNECTION_CONNECTED,
+  PRISMIC_API_CONNECTION_ERROR,
+} from './constants';
 
-export const getPrismicDoc = () => ({
-  type: GET_PRISMIC_DOC,
+export const prismicApiConnectionRequest = () => ({
+  type: PRISMIC_API_CONNECTION_REQUEST,
 });
 
-export const getPrismicDocLoaded = payload => ({
-  type: GET_PRISMIC_DOC_LOADED,
+export const prismicApiConnectionLoaded = payload => ({
+  type: PRISMIC_API_CONNECTION_CONNECTED,
   payload,
 });
 
-export const getPrismicDocError = error => ({
-  type: GET_PRISMIC_DOC_ERROR,
+export const prismicApiConnectionError = error => ({
+  type: PRISMIC_API_CONNECTION_ERROR,
   error,
 });

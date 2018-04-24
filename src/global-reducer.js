@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import projectReducer from './containers/Project/reducer';
+import appReducer from './containers/App/reducer';
 
 const containersReducer = {
   containers: combineReducers({
-    projectReducer,
+    appReducer,
     // NOTE: put other app reducers here
   }),
 };

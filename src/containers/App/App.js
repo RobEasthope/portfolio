@@ -16,8 +16,8 @@ import AboutPage from './../../components/pages/AboutPage';
 import ContactPage from './../../components/pages/ContactPage';
 import Error404Page from './../../components/pages/Error404Page';
 
-import { store, history } from './../../store';
-import { getPrismicDoc } from './actions';
+import { store, history } from '../../store';
+import { prismicApiConnectionRequest } from './actions';
 
 // Google Analytics
 const snap = navigator.userAgent !== 'ReactSnap';
@@ -32,7 +32,7 @@ function fireTracking() {
 
 class App extends React.Component {
   componentWillMount() {
-    this.props.actions.getPrismicDoc();
+    this.props.actions.prismicApiConnectionRequest();
   }
 
   render() {
@@ -63,7 +63,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ getPrismicDoc }, dispatch),
+  actions: bindActionCreators({ prismicApiConnectionRequest }, dispatch),
 });
 
 Project.propTypes = {
