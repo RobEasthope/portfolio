@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import { Provider as StylesProvider } from 'rebass';
+import 'sanitize.css/sanitize.css';
 
 import buildContext from './utils/prismicContext';
 
