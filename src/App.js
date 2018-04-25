@@ -8,7 +8,8 @@ import Nav from './components/navigation/Nav';
 
 import HomePage from './components/pages/HomePage';
 import PortfolioPage from './components/pages/PortfolioPage';
-import Project from './containers/Project/Project';
+// import Project from './containers/Project/Project';
+import PrismicConnect from './containers/PrismicConnect/PrismicConnect';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import Error404Page from './components/pages/Error404Page';
@@ -30,18 +31,18 @@ const App = () => (
   <Provider store={store}>
     {/* ConnectedRouter will use the store from Provider automatically */}
     <ConnectedRouter onUpdate={fireTracking} history={history}>
-      <div>
+      <PrismicConnect>
         <Nav />
 
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/portfolio" component={PortfolioPage} />
-          <Route path="/project/:uid" component={Project} />
+          {/* <Route path="/project/:uid" component={Project} /> */}
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
           <Route component={Error404Page} />
         </Switch>
-      </div>
+      </PrismicConnect>
     </ConnectedRouter>
   </Provider>
 );
