@@ -1,12 +1,12 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
-import fetchPrismicData from '../../utils/fetchPrismicData';
+import fetchPrismicApiDetails from '../../utils/fetchPrismicApiDetails';
 
 import { prismicApiConnectionLoaded, prismicApiConnectionError } from './actions';
 import { PRISMIC_API_CONNECTION_REQUEST } from './constants';
 
 function* connectToPrismicAPI() {
   try {
-    const response = yield call(fetchPrismicData);
+    const response = yield call(fetchPrismicApiDetails);
     yield put(prismicApiConnectionLoaded(response));
   } catch (err) {
     yield put(prismicApiConnectionError(err));
