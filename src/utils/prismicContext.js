@@ -1,5 +1,6 @@
 import Prismic from 'prismic-javascript';
-import PrismicConfig from './prismic-configuration';
+
+import PrismicConfig from './prismic-config';
 
 const refreshToolbar = () => {
   const maybeCurrentExperiment = this.api.currentExperiment();
@@ -10,16 +11,14 @@ const refreshToolbar = () => {
 };
 
 const buildContext = () => {
-  const accessToken = PrismicConfig.accessToken;
-  const PrismicContext = Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
+  const { accessToken } = PrismicConfig;
+  return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
     api,
     endpoint: PrismicConfig.apiEndpoint,
     accessToken,
     linkResolver: PrismicConfig.linkResolver,
     toolbar: refreshToolbar,
   }));
-
-  return PrismicContext;
 };
 
 export default buildContext;

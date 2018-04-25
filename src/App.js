@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
-import Prismic from 'prismic-javascript';
 
-import PrismicConfig from './prismic-configuration';
+import buildContext from './utils/prismicContext';
 
 import Nav from './components/navigation/Nav';
 
@@ -35,32 +34,13 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.buildContext()
+    buildContext()
       .then((prismicCtx) => {
         this.setState({ prismicCtx });
       })
       .catch((e) => {
         console.error(`Cannot contact the API, check your prismic configuration:\n${e}`);
       });
-  }
-
-  refreshToolbar() {
-    const maybeCurrentExperiment = this.api.currentExperiment();
-    if (maybeCurrentExperiment) {
-      window.PrismicToolbar.startExperiment(maybeCurrentExperiment.googleId());
-    }
-    window.PrismicToolbar.setup(PrismicConfig.apiEndpoint);
-  }
-
-  buildContext() {
-    const { accessToken } = PrismicConfig;
-    return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
-      api,
-      endpoint: PrismicConfig.apiEndpoint,
-      accessToken,
-      linkResolver: PrismicConfig.linkResolver,
-      toolbar: this.refreshToolbar,
-    }));
   }
 
   render() {
