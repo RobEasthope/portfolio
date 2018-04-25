@@ -4,8 +4,6 @@ import PrismicReact from 'prismic-reactjs';
 import Error404Page from '../../components/pages/Error404Page';
 // import { Helmet } from 'react-helmet';
 
-import Title from '../../components/typography/Title';
-
 class Placeholder extends React.Component {
   constructor() {
     super();
@@ -61,10 +59,14 @@ class Placeholder extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return 'FOO';
+      return <Error404Page />;
     }
     return <h1>Loading</h1>;
   }
 }
+
+Placeholder.propTypes = {
+  prismicCtx: PropTypes.isRequired,
+};
 
 export default Placeholder;
