@@ -2,6 +2,10 @@ import { injectGlobal } from 'styled-components';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+  
   html,
   body {
     height: 100%;
@@ -15,4 +19,5 @@ injectGlobal`
   img {
     max-width: 100%;
   }
+
 `;
