@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
-import { Provider } from 'rebass';
+import { Provider as StylesProvider } from 'rebass';
 
 import buildContext from './utils/prismicContext';
 
@@ -46,7 +46,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider>
+      <StylesProvider>
         <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
           <div>
             <Nav />
@@ -64,7 +64,7 @@ class App extends React.Component {
             </Switch>
           </div>
         </Router>
-      </Provider>
+      </StylesProvider>
     );
   }
 }
