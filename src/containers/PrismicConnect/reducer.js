@@ -7,7 +7,7 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  prismicApi: null,
+  prismicApiDetails: null,
   prismicApiLoading: null,
   prismicApiLoaded: null,
   prismicApiError: null,

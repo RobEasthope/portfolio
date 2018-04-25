@@ -8,13 +8,13 @@ import { getPrismicDoc } from './actions';
 
 import Title from '../../components/typography/Title';
 
-class Project extends React.Component {
+class Placeholder extends React.Component {
   componentWillMount() {
     this.props.actions.getPrismicDoc();
   }
 
   render() {
-    return <Title>Project</Title>;
+    return <Title>Placeholder</Title>;
   }
 }
 
@@ -26,9 +26,9 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ getPrismicDoc }, dispatch),
 });
 
-Project.propTypes = {
+Placeholder.propTypes = {
   // actions: PropTypes.shape.isRequired,
   // getPrismicDoc: PropTypes.shape.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Project);
+export default connect(mapStateToProps, mapDispatchToProps)(Placeholder);

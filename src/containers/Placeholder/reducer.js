@@ -9,7 +9,7 @@ const initialState = fromJS({
   prismicDocError: null,
 });
 
-const projectReducer = (state = initialState, action) => {
+const placeholderReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_PRISMIC_DOC:
       return state.set('prismicDocLoading', true).set('prismicDocError', null);
@@ -29,4 +29,4 @@ const projectReducer = (state = initialState, action) => {
   }
 };
 
-export default projectReducer;
+export default placeholderReducer;
