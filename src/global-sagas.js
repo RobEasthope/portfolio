@@ -1,9 +1,9 @@
 import { fork, all } from 'redux-saga/effects';
 
-import appSagas from './containers/App/sagas';
+import apiSagas from './containers/PrismicConnect/sagas';
 
 const sagas = [
-  appSagas,
+  apiSagas,
   // NOTE: put other app sagas here
 ];
 

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import appReducer from './containers/App/reducer';
+import apiReducer from './containers/PrismicConnect/reducer';
 
 const containersReducer = {
   containers: combineReducers({
-    appReducer,
+    apiReducer,
     // NOTE: put other app reducers here
   }),
 };
