@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import { Provider as StylesProvider } from 'rebass';
 import 'sanitize.css/sanitize.css';
 import './styles/global-styles';
 
@@ -47,25 +48,25 @@ class App extends React.Component {
 
   render() {
     return (
-      // <StylesProvider>
-      <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
-        <div>
-          <Nav />
+      <StylesProvider>
+        <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
+          <div>
+            <Nav />
 
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/portfolio" component={PortfolioPage} />
-            <Route
-              path="/placeholder"
-              render={() => <Placeholder prismicCtx={this.state.prismicCtx} />}
-            />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} />
-            <Route component={Error404Page} />
-          </Switch>
-        </div>
-      </Router>
-      // </StylesProvider>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/portfolio" component={PortfolioPage} />
+              <Route
+                path="/placeholder"
+                render={() => <Placeholder prismicCtx={this.state.prismicCtx} />}
+              />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/contact" component={ContactPage} />
+              <Route component={Error404Page} />
+            </Switch>
+          </div>
+        </Router>
+      </StylesProvider>
     );
   }
 }
