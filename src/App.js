@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import { Provider } from 'rebass';
 
 import buildContext from './utils/prismicContext';
 
@@ -45,23 +46,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
-        <div>
-          <Nav />
+      <Provider>
+        <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
+          <div>
+            <Nav />
 
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/portfolio" component={PortfolioPage} />
-            <Route
-              path="/placeholder"
-              render={() => <Placeholder prismicCtx={this.state.prismicCtx} />}
-            />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} />
-            <Route component={Error404Page} />
-          </Switch>
-        </div>
-      </Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/portfolio" component={PortfolioPage} />
+              <Route
+                path="/placeholder"
+                render={() => <Placeholder prismicCtx={this.state.prismicCtx} />}
+              />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/contact" component={ContactPage} />
+              <Route component={Error404Page} />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
