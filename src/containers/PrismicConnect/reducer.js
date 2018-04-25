@@ -7,27 +7,27 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  prismicDoc: null,
-  prismicDocLoading: null,
-  prismicDocLoaded: null,
-  prismicDocError: null,
+  prismicApi: null,
+  prismicApiLoading: null,
+  prismicApiLoaded: null,
+  prismicApiError: null,
 });
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
     case PRISMIC_API_CONNECTION_REQUEST:
-      return state.set('prismicDocLoading', true).set('prismicDocError', null);
+      return state.set('prismicApiLoading', true).set('prismicApiError', null);
     case PRISMIC_API_CONNECTION_CONNECTED:
       return state
-        .set('prismicDoc', action.payload)
-        .set('prismicDocLoading', false)
-        .set('prismicDocLoaded', true)
-        .set('prismicDocError', null);
+        .set('prismicApi', action.payload)
+        .set('prismicApiLoading', false)
+        .set('prismicApiLoaded', true)
+        .set('prismicApiError', null);
     case PRISMIC_API_CONNECTION_ERROR:
       return state
-        .set('prismicDocLoading', false)
-        .set('prismicDocLoaded', false)
-        .set('prismicDocError', action.error);
+        .set('prismicApiLoading', false)
+        .set('prismicApiLoaded', false)
+        .set('prismicApiError', action.error);
     default:
       return state;
   }
