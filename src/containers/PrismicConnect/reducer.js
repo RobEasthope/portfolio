@@ -19,7 +19,7 @@ const appReducer = (state = initialState, action) => {
       return state.set('prismicApiLoading', true).set('prismicApiError', null);
     case PRISMIC_API_CONNECTION_CONNECTED:
       return state
-        .set('prismicApi', action.payload)
+        .set('prismicApiDetails', action.payload)
         .set('prismicApiLoading', false)
         .set('prismicApiLoaded', true)
         .set('prismicApiError', null);

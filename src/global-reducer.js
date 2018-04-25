@@ -3,16 +3,15 @@ import { routerReducer } from 'react-router-redux';
 
 import apiReducer from './containers/PrismicConnect/reducer';
 
-const containersReducer = {
-  containers: combineReducers({
-    apiReducer,
-    // NOTE: put other app reducers here
+const prismicReducer = {
+  prismic: combineReducers({
+    config: apiReducer,
   }),
 };
 
 const createGlobalReducer = () =>
   combineReducers({
-    ...containersReducer,
+    ...prismicReducer,
     route: routerReducer,
   });
 
