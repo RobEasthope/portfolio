@@ -15,6 +15,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-snap": "^1.12.2",
+    "rebass": "^1.0.7",
     "styled-components": "^3.2.5",
     "whatwg-fetch": "^2.0.4"
   },
