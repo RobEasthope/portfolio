@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 import Error404Page from '../../components/pages/Error404Page';
+
+import fetchPrismicDoc from '../../utils/fetchPrismicDoc';
 // import { Helmet } from 'react-helmet';
 
 import Title from '../../components/typography/Title';
@@ -17,31 +19,15 @@ class Placeholder extends React.Component {
   }
 
   componentWillMount() {
-    this.fetchPage(this.props);
+    fetchPrismicDoc(this.props, 'placeholder', 'placeholder');
   }
 
   componentWillReceiveProps(props) {
-    this.fetchPage(props);
+    // fetchPrismicDoc(props);
   }
 
   componentDidUpdate() {
     // this.props.prismicCtx.toolbar();
-  }
-
-  fetchPage(props) {
-    if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('placeholder', 'placeholder', {}, (err, doc) => {
-        if (doc) {
-          // We put the retrieved content in the state as a doc variable
-          this.setState({ doc });
-        } else {
-          // We changed the state to display error not found if no matched doc
-          this.setState({ notFound: !doc });
-        }
-      });
-    }
-    return null;
   }
 
   render() {
