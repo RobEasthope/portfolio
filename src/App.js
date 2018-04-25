@@ -8,7 +8,7 @@ import Nav from './components/navigation/Nav';
 
 import HomePage from './components/pages/HomePage';
 import PortfolioPage from './components/pages/PortfolioPage';
-// import Project from './containers/Project/Project';
+import Placeholder from './containers/Placeholder/Placeholder';
 import PrismicConnect from './containers/PrismicConnect/PrismicConnect';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
@@ -39,6 +39,7 @@ const App = () => (
             <Route exact path="/" component={HomePage} />
             <Route path="/portfolio" component={PortfolioPage} />
             {/* <Route path="/project/:uid" component={Project} /> */}
+            <Route path="/placeholder" component={Placeholder} />
             <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} />
             <Route component={Error404Page} />

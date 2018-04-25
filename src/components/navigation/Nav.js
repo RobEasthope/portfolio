@@ -19,6 +19,9 @@ const ContactPage = () => (
       <li>
         <Link to="/project/landing">Prismic test</Link>
       </li>
+      <li>
+        <Link to="/placeholder">Placeholder</Link>
+      </li>
     </ul>
   </nav>
 );
