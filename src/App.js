@@ -52,8 +52,6 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/portfolio" component={PortfolioPage} />
-            {/* <Route path="/project/:uid" component={Project} /> */}
-            {/* <Route path="/placeholder" component={Placeholder} /> */}
             <Route
               path="/placeholder"
               render={() => <Placeholder prismicCtx={this.state.prismicCtx} />}
