@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const MetaData = props => (
   <Helmet>
-    <title>Home</title>
+    <title>Placeholder</title>
 
     {/* Open Graph meta data */}
     <meta property="og:title" content="Home" />
