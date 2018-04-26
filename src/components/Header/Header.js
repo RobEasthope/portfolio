@@ -1,8 +1,8 @@
 import React from 'react';
-import Nav from './Nav';
-import Shield from './Shield';
-
 import styled from 'styled-components';
+
+// import Nav from './Nav';
+import Shield from './Shield';
 
 const HeaderWrapper = styled.header`
   text-align: center;
