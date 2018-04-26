@@ -74,6 +74,7 @@ class Placeholder extends React.Component {
 
 Placeholder.propTypes = {
   prismicCtx: PropTypes.isRequired,
+  match: PropTypes.isRequired,
 };
 
 export default Placeholder;
