@@ -7,9 +7,23 @@ const CenteredTagline = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: left;
   color: ${palette.waterPink};
   margin: 0;
+  padding: 10px;
+  background-color: white;
+
+  a {
+    color: ${palette.waterPink};
+    text-decoration: none;
+  }
+  p {
+    margin-top: 0;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export default CenteredTagline;
