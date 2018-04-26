@@ -58,7 +58,9 @@ class App extends React.Component {
             <Route path="/portfolio" component={PortfolioPage} />
             <Route
               path="/placeholder"
-              render={() => <Placeholder prismicCtx={this.state.prismicCtx} />}
+              render={routeProps => (
+                <Placeholder {...routeProps} prismicCtx={this.state.prismicCtx} />
+              )}
             />
             <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} />
