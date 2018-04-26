@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import PrismicReact from 'prismic-reactjs';
 
@@ -24,5 +25,19 @@ const MetaData = props => (
     <meta name="twitter:creator" content="@robeasthope" />
   </Helmet>
 );
+
+MetaData.defaultProps = {
+  meta_title: 'Rob Easthope',
+  meta_description: 'Portfolio',
+  currentUrl: '/',
+  meta_image: { url: '' },
+};
+
+MetaData.propTypes = {
+  meta_title: PropTypes.shape,
+  meta_description: PropTypes.shape,
+  currentUrl: PropTypes.string,
+  meta_image: PropTypes.string,
+};
 
 export default MetaData;
