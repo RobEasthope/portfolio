@@ -9,6 +9,7 @@ const PlaceholderText = styled.div`
   text-align: left;
   color: ${palette.waterPink};
   margin: 0;
+  max-width: 275px;
 
   h1,
   h3 {
