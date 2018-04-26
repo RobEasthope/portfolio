@@ -2,9 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
+// Styling
+import 'sanitize.css/sanitize.css';
+import './styles/global-styles';
+
 import buildContext from './utils/prismicContext';
 
-import Nav from './components/navigation/Nav';
+import Header from './components/Header/Header';
 
 import HomePage from './components/pages/HomePage';
 import PortfolioPage from './components/pages/PortfolioPage';
@@ -47,7 +51,7 @@ class App extends React.Component {
     return (
       <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
         <div>
-          <Nav />
+          <Header />
 
           <Switch>
             <Route exact path="/" component={HomePage} />
