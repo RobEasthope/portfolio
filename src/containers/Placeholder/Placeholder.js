@@ -77,9 +77,14 @@ class Placeholder extends React.Component {
   }
 }
 
+MetaData.defaultProps = {
+  prismicCtx: null,
+  match: null,
+};
+
 Placeholder.propTypes = {
-  prismicCtx: PropTypes.isRequired,
-  match: PropTypes.isRequired,
+  prismicCtx: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape),
 };
 
 export default Placeholder;
