@@ -77,11 +77,6 @@ class Placeholder extends React.Component {
   }
 }
 
-MetaData.defaultProps = {
-  prismicCtx: null,
-  match: null,
-};
-
 Placeholder.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
