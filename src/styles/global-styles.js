@@ -1,11 +1,12 @@
 import { injectGlobal } from 'styled-components';
+import palette from './colour-palette';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
   * {
     box-sizing: border-box;
   }
-  
+
   html,
   body {
     height: 100%;
@@ -14,6 +15,7 @@ injectGlobal`
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: ${palette.ink}
   }
 
   img {
