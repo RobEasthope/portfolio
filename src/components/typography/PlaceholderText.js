@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import colors from 'colors.css';
 import palette from '../../styles/colour-palette';
 
-const CenteredTagline = styled.h1`
+const PlaceholderText = styled.h1`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,4 +26,4 @@ const CenteredTagline = styled.h1`
   }
 `;
 
-export default CenteredTagline;
+export default PlaceholderText;

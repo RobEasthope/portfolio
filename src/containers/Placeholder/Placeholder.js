@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 import Error404Page from '../../components/pages/Error404Page';
-import CenteredTagline from '../../components/typography/CenteredTagline';
+import PlaceholderText from '../../components/typography/PlaceholderText';
 // import { Helmet } from 'react-helmet';
 
 import LandingBkg from './LandingBkg';
@@ -51,12 +51,12 @@ class Placeholder extends React.Component {
       return (
         <div data-wio-id={this.state.doc.id}>
           <LandingBkg bkg={doc.data.placeholder_image.url}>
-            <CenteredTagline>
+            <PlaceholderText>
               {PrismicReact.RichText.render(
                 doc.data.placeholder_text,
                 this.props.prismicCtx.linkResolver,
               )}
-            </CenteredTagline>
+            </PlaceholderText>
           </LandingBkg>
           {/* {PrismicReact.RichText.asText(doc.data.placeholder_tagline)} */}
           {/* This is how to insert a Rich Text field as plain text */}
