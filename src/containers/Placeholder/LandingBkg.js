@@ -6,7 +6,7 @@ const LandingBkg = styled.div`
   background-image: url('${props => props.bkg}');
   background-size: cover;
   background-position: center center;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
 `;
 
 export default LandingBkg;
