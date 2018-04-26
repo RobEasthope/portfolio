@@ -61,9 +61,9 @@ class App extends React.Component {
                 <Placeholder {...routeProps} prismicCtx={this.state.prismicCtx} />
               )}
             />
-            <Route path="/portfolio" component={PortfolioPage} />
+            {/* <Route path="/portfolio" component={PortfolioPage} />
             <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} />
+            <Route path="/contact" component={ContactPage} /> */}
             <Route component={Error404Page} />
           </Switch>
         </div>
