@@ -55,6 +55,7 @@ class App extends React.Component {
 
           <Switch>
             <Route
+              exact
               path="/"
               render={routeProps => (
                 <Placeholder {...routeProps} prismicCtx={this.state.prismicCtx} />
