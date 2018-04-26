@@ -66,7 +66,7 @@ class Placeholder extends React.Component {
     } else if (this.state.notFound) {
       return <Error404Page />;
     }
-    return <h1>Loading</h1>;
+    return '';
   }
 }
 
