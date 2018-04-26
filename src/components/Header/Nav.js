@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ContactPage = () => (
+const Nav = () => (
   <nav>
     <ul>
       <li>
@@ -26,4 +26,4 @@ const ContactPage = () => (
   </nav>
 );
 
-export default ContactPage;
+export default Nav;
