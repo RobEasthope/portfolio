@@ -51,7 +51,7 @@ class Placeholder extends React.Component {
       const { doc } = this.state;
       return (
         <div data-wio-id={this.state.doc.id}>
-          <MetaData doc={doc} />
+          <MetaData doc={doc} currentUrl={this.props.match.url} />
           <LandingBkg bkg={doc.data.placeholder_image.url}>
             <PlaceholderText>
               {PrismicReact.RichText.render(
