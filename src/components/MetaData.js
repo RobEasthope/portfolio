@@ -8,7 +8,7 @@ const MetaData = props => (
 
     {/* Open Graph meta data */}
     <meta property="og:title" content={PrismicReact.RichText.asText(props.doc.data.meta_title)} />
-    <meta property="og:url" content={`http://robeasthope.com/${props.doc.uid}`} />
+    <meta property="og:url" content={`http://robeasthope.com${props.currentUrl}`} />
     <meta property="og:site_name" content="Rob Easthope" />
     <meta property="og:type" content="website" />
     <meta
