@@ -24,17 +24,17 @@ const MetaData = props => (
 );
 
 MetaData.defaultProps = {
-  meta_title: 'Rob Easthope',
-  meta_description: 'Portfolio',
+  metaTitle: 'Rob Easthope',
+  metaDescription: 'Portfolio',
   currentUrl: '/',
-  meta_image: { url: '' },
+  metaImage: { url: '' },
 };
 
 MetaData.propTypes = {
-  meta_title: PropTypes.shape,
-  meta_description: PropTypes.shape,
+  metaTitle: PropTypes.arrayOf(PropTypes.shape),
+  metaDescription: PropTypes.PropTypes.arrayOf(PropTypes.shape),
   currentUrl: PropTypes.string,
-  meta_image: PropTypes.string,
+  metaImage: PropTypes.string,
 };
 
 export default MetaData;
