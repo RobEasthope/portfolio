@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
-import Error404Page from '../../components/pages/Error404Page';
-import PlaceholderText from '../../components/typography/PlaceholderText';
-// import { Helmet } from 'react-helmet';
 
+import MetaData from '../../components/MetaData';
+import Error404Page from '../../components/pages/Error404Page';
+
+import PlaceholderText from '../../components/typography/PlaceholderText';
 import LandingBkg from './LandingBkg';
 
 class Placeholder extends React.Component {
@@ -50,6 +51,12 @@ class Placeholder extends React.Component {
       const { doc } = this.state;
       return (
         <div data-wio-id={this.state.doc.id}>
+          <MetaData
+            metaTitle={doc.data.meta_title}
+            metaDescription={doc.data.meta_title}
+            metaImage={doc.data.meta_image.url}
+            currentUrl={this.props.match.url}
+          />
           <LandingBkg bkg={doc.data.placeholder_image.url}>
             <PlaceholderText>
               {PrismicReact.RichText.render(
@@ -66,12 +73,13 @@ class Placeholder extends React.Component {
     } else if (this.state.notFound) {
       return <Error404Page />;
     }
-    return <h1>Loading</h1>;
+    return '';
   }
 }
 
 Placeholder.propTypes = {
-  prismicCtx: PropTypes.isRequired,
+  prismicCtx: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape),
 };
 
 export default Placeholder;
