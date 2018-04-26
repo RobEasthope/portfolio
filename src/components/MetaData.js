@@ -1,17 +1,21 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import PrismicReact from 'prismic-reactjs';
 
 const MetaData = props => (
   <Helmet>
-    <title>Placeholder</title>
+    <title>{PrismicReact.RichText.asText(props.doc.data.meta_title)}</title>
 
     {/* Open Graph meta data */}
-    <meta property="og:title" content="Home" />
-    <meta property="og:url" content="http://robeasthope.com/UID GOES HERE" />
+    <meta property="og:title" content={PrismicReact.RichText.asText(props.doc.data.meta_title)} />
+    <meta property="og:url" content={`http://robeasthope.com/${props.doc.uid}`} />
     <meta property="og:site_name" content="Rob Easthope" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="DESCRIPTION GOES HERE" />
-    <meta property="og:image" content="DEFAULT OR PROJECT THUMBNAIL IMAGE" />
+    <meta
+      property="og:description"
+      content={PrismicReact.RichText.asText(props.doc.data.meta_description)}
+    />
+    <meta property="og:image" content={props.doc.data.meta_image.url} />
     <meta property="og:locale" content="en_GB" />
 
     {/* Twitter meta data */}
