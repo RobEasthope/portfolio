@@ -1,20 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
+import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
 
 import PlaceholderText from '../../components/typography/PlaceholderText';
 import LandingBkg from './LandingBkg';
-
-const imgixUrl = (url) => {
-  // if(url){
-  //
-  // }
-  const res = url.replace('https://codex.cdn.prismic.io/codex/', 'https://rob-easthope.imgix.net/');
-  return res;
-};
 
 class Placeholder extends React.Component {
   constructor() {
