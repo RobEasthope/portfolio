@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Security
-prismic-config.js
+src/prismic-config.js
