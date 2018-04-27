@@ -5214,7 +5214,7 @@ join-path@^1.1.1:
     url-join "0.0.1"
     valid-url "^1"
 
-js-base64@^2.1.9:
+js-base64@^2.1.9, js-base64@^2.3.2:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
 
@@ -5358,6 +5358,10 @@ jsprim@^1.2.2:
     extsprintf "1.3.0"
     json-schema "0.2.3"
     verror "1.10.0"
+
+jsuri@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/jsuri/-/jsuri-1.3.1.tgz#cd93fc6a87b255142cb7b0f479f00517ab9395ed"
 
 jsx-ast-utils@^1.4.0:
   version "1.4.1"
@@ -7224,6 +7228,13 @@ react-helmet@^5.2.0:
     object-assign "^4.1.1"
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
+
+react-imgix@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/react-imgix/-/react-imgix-7.1.1.tgz#1b8d9fbb2f3afd3d693f67dbf534576dae178440"
+  dependencies:
+    js-base64 "^2.3.2"
+    jsuri "^1.3.1"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
