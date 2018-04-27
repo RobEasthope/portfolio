@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript';
 
-import PrismicConfig from './prismic-config';
+import PrismicConfig from '../prismic-config';
 
 const refreshToolbar = () => {
   const maybeCurrentExperiment = this.api.currentExperiment();
