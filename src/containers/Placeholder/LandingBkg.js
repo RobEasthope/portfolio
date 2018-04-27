@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import Imgix from 'react-imgix';
 
-const LandingBkg = styled.div`
+const LandingBkg = styled(Imgix)`
   position: relative;
   text-align: center;
   background-image: url('${props => props.bkg}');

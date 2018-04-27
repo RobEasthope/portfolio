@@ -57,7 +57,11 @@ class Placeholder extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={this.props.match.url}
           />
-          <LandingBkg bkg={doc.data.placeholder_image.url}>
+          <LandingBkg
+            src="https://rob-easthope.imgix.net/2f0596045adc9f949f7e5ed68b826fa62ceed21c_apia---muted-vista.jpg"
+            type="bg"
+            fluid
+          >
             <PlaceholderText>
               {PrismicReact.RichText.render(
                 doc.data.placeholder_text,
@@ -65,6 +69,8 @@ class Placeholder extends React.Component {
               )}
             </PlaceholderText>
           </LandingBkg>
+
+          {/* <Imgix src={doc.data.placeholder_image.url} type="bg" fluid /> */}
           {/* {PrismicReact.RichText.asText(doc.data.placeholder_tagline)} */}
           {/* This is how to insert a Rich Text field as plain text */}
           {/* This is how to insert a Rich Text field into your template as html */}
