@@ -8,6 +8,14 @@ import Error404Page from '../../components/pages/Error404Page';
 import PlaceholderText from '../../components/typography/PlaceholderText';
 import LandingBkg from './LandingBkg';
 
+const imgixUrl = (url) => {
+  // if(url){
+  //
+  // }
+  const res = url.replace('https://codex.cdn.prismic.io/codex/', 'https://rob-easthope.imgix.net/');
+  return res;
+};
+
 class Placeholder extends React.Component {
   constructor() {
     super();
@@ -57,11 +65,7 @@ class Placeholder extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={this.props.match.url}
           />
-          <LandingBkg
-            src="https://rob-easthope.imgix.net/2f0596045adc9f949f7e5ed68b826fa62ceed21c_apia---muted-vista.jpg"
-            type="bg"
-            fluid
-          >
+          <LandingBkg src={imgixUrl(doc.data.placeholder_image.url)} type="bg" fluid>
             <PlaceholderText>
               {PrismicReact.RichText.render(
                 doc.data.placeholder_text,
