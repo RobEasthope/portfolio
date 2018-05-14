@@ -6,7 +6,7 @@ import imgixUrl from '../../utils/imgixUrl';
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
 
-import PlaceholderText from '../../components/typography/PlaceholderText';
+import LandingGreeting from '../../components/typography/LandingGreeting';
 import LandingBkg from '../../components/display/LandingBkg';
 
 class Home extends React.Component {
@@ -59,12 +59,7 @@ class Home extends React.Component {
             currentUrl={this.props.match.url}
           />
           <LandingBkg src={imgixUrl(doc.data.placeholder_image.url)} type="bg" fluid>
-            <PlaceholderText>
-              {PrismicReact.RichText.render(
-                doc.data.placeholder_text,
-                this.props.prismicCtx.linkResolver,
-              )}
-            </PlaceholderText>
+            <LandingGreeting>Hello.</LandingGreeting>
           </LandingBkg>
 
           {/* <Imgix src={doc.data.placeholder_image.url} type="bg" fluid /> */}
