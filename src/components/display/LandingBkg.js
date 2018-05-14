@@ -10,11 +10,11 @@ const LandingBkg = styled(Imgix)`
   min-height: calc(100vh - 100px);
 
   @media (min-width: 420px) {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 140px);
   }
 
   @media (min-width: 1020px) {
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 190px);
   }
 `;
 
