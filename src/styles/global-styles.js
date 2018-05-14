@@ -17,6 +17,14 @@ injectGlobal`
       font-style: normal;
   }
 
+  @font-face {
+      font-family: 'hk_grotesklight';
+      src: url('hkgrotesk-light-webfont.woff2') format('woff2'),
+           url('hkgrotesk-light-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
   * {
     box-sizing: border-box;
   }
