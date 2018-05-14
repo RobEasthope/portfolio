@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import NavLink from './NavLink';
 
 import Nav from './Nav';
 import Shield from './Shield';
@@ -11,8 +12,10 @@ const HeaderWrapper = styled.header`
 
 const Header = () => (
   <HeaderWrapper>
+    <NavLink to="/portfolio">Work</NavLink>
     <Shield />
-    <Nav />
+    {/* <Nav /> */}
+    <NavLink to="/about">Who?</NavLink>
   </HeaderWrapper>
 );
 
