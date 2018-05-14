@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import { ThemeProvider } from 'styled-components';
 
 // Styling
 import 'sanitize.css/sanitize.css';
 import './styles/global-styles';
+import theme from './styles/theme';
 
 import buildContext from './utils/prismicContext';
 
@@ -49,25 +51,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
-        <div>
-          <Header />
+      <ThemeProvider theme={theme}>
+        <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
+          <div>
+            <Header />
 
-          <Switch>
-            <Route
-              // exact
-              path="/"
-              render={routeProps => (
-                <Placeholder {...routeProps} prismicCtx={this.state.prismicCtx} />
-              )}
-            />
-            {/* <Route path="/portfolio" component={PortfolioPage} />
+            <Switch>
+              <Route
+                // exact
+                path="/"
+                render={routeProps => (
+                  <Placeholder {...routeProps} prismicCtx={this.state.prismicCtx} />
+                )}
+              />
+              {/* <Route path="/portfolio" component={PortfolioPage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} /> */}
-            {/* <Route component={Error404Page} /> */}
-          </Switch>
-        </div>
-      </Router>
+              {/* <Route component={Error404Page} /> */}
+            </Switch>
+          </div>
+        </Router>
+      </ThemeProvider>
     );
   }
 }
