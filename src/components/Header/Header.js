@@ -12,10 +12,10 @@ const HeaderWrapper = styled.header`
 
 const Header = () => (
   <HeaderWrapper>
-    <NavLink to="/portfolio">Work</NavLink>
+    <NavLink to="/portfolio">Portfolio</NavLink>
     <Shield />
     {/* <Nav /> */}
-    <NavLink to="/about">Who?</NavLink>
+    <NavLink to="/about">About</NavLink>
   </HeaderWrapper>
 );
 
