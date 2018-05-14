@@ -7,7 +7,7 @@ import Shield from './Shield';
 
 const HeaderWrapper = styled.header`
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
 `;
 
 const Header = () => (

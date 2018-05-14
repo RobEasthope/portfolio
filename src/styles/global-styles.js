@@ -48,8 +48,8 @@ injectGlobal`
     }
 
     @media (min-width: 1020px) {
-      padding-left: 80px;
-      padding-right: 80px;
+      padding-left: 100px;
+      padding-right: 100px;
     }
   }
 
