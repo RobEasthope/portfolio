@@ -7,7 +7,7 @@ const PlaceholderText = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;
-  color: ${palette.waterPink};
+  color: ${palette.ink};
   margin: 0;
   max-width: 275px;
 
@@ -18,7 +18,7 @@ const PlaceholderText = styled.div`
     line-height: 1;
     margin-top: 0;
 
-    padding: 3px 5px 6px;
+    padding: 8px 10px 11px;
     background-color: white;
 
     :first-child,
@@ -28,7 +28,7 @@ const PlaceholderText = styled.div`
   }
 
   a {
-    color: ${palette.waterPink};
+    color: ${palette.ink};
     text-decoration: none;
   }
 `;
