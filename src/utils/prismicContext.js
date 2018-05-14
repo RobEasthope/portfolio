@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript';
 
-import PrismicConfig from '../prismic-config';
+// import PrismicConfig from '../prismic-config';
 
 const refreshToolbar = () => {
   const maybeCurrentExperiment = this.api.currentExperiment();
@@ -11,7 +11,7 @@ const refreshToolbar = () => {
 };
 
 const buildContext = () => {
-  const { accessToken } = PrismicConfig || process.env.PRISMIC_KEY;
+  const { accessToken } = process.env.PRISMIC_KEY;
   return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
     api,
     endpoint: PrismicConfig.apiEndpoint,
