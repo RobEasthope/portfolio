@@ -7,7 +7,7 @@ import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
 
 import PlaceholderText from '../../components/typography/PlaceholderText';
-import LandingBkg from './LandingBkg';
+import LandingBkg from '../../components/display/LandingBkg';
 
 class Placeholder extends React.Component {
   constructor() {
