@@ -15,9 +15,20 @@ injectGlobal`
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: ${palette.ink}
-    padding-left: 80px;
-    padding-right: 80px;
+    color: ${palette.ink};
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 420px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (min-width: 1020px) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
   }
 
   img {
