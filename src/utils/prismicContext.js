@@ -1,22 +1,22 @@
 import Prismic from 'prismic-javascript';
 
-// import PrismicConfig from '../prismic-config';
+import prismicLinkResolver from '../prismic-link-resolver';
 
 const refreshToolbar = () => {
   const maybeCurrentExperiment = this.api.currentExperiment();
   if (maybeCurrentExperiment) {
     window.PrismicToolbar.startExperiment(maybeCurrentExperiment.googleId());
   }
-  window.PrismicToolbar.setup(PrismicConfig.apiEndpoint);
+  window.PrismicToolbar.setup(process.env.REACT_APP_PRISMIC_ENDPOINT);
 };
 
 const buildContext = () => {
-  const { accessToken } = process.env.PRISMIC_KEY;
-  return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
+  const accessToken = process.env.REACT_APP_PRISMIC_KEY;
+  return Prismic.api(process.env.REACT_APP_PRISMIC_ENDPOINT, { accessToken }).then(api => ({
     api,
-    endpoint: PrismicConfig.apiEndpoint,
+    endpoint: process.env.REACT_APP_PRISMIC_ENDPOINT,
     accessToken,
-    linkResolver: PrismicConfig.linkResolver,
+    linkResolver: prismicLinkResolver,
     toolbar: refreshToolbar,
   }));
 };
