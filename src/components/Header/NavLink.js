@@ -8,7 +8,7 @@ const NavLink = styled(Link)`
   font-family: 'hk_grotesklight', serif;
   color: ${palette.ink};
   text-decoration: none;
-  margin: 0 90px;
+  margin: 0 70px;
   padding: 10px;
 `;
 

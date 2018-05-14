@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const LandingGreeting = styled.h1`
   font-family: 'League Spartan', serif;
-  font-size: 72px;
+  font-size: 120px;
   line-height: 1;
   margin: 0;
 
