@@ -13,7 +13,6 @@ import buildContext from './utils/prismicContext';
 import Header from './components/Header/Header';
 
 import Home from './containers/Home/Home';
-import Placeholder from './containers/Placeholder/Placeholder';
 import PortfolioPage from './components/pages/PortfolioPage';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';

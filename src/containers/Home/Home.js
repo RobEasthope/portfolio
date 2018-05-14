@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PrismicReact from 'prismic-reactjs';
+// import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData';
