@@ -6994,7 +6994,7 @@ prompt@1.0.0:
     utile "0.3.x"
     winston "2.1.x"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -7170,7 +7170,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-create-component-from-tag-prop@^1.2.1:
+react-create-component-from-tag-prop@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/react-create-component-from-tag-prop/-/react-create-component-from-tag-prop-1.3.1.tgz#5389407d99f88ba2b36351780a6094470b44a7c7"
   dependencies:
@@ -8370,17 +8370,16 @@ style-loader@0.19.0:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
-styled-components-breakpoint@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-1.0.2.tgz#ffdd2d7488dd409c2112112c3a5ff4ae1e2fd9c6"
+styled-components-breakpoint@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-2.0.2.tgz#c55dbab794e9ff3a4f813349e2b35727a9364b09"
 
-styled-components-grid@^1.0.0-preview.15:
-  version "1.0.0-preview.15"
-  resolved "https://registry.yarnpkg.com/styled-components-grid/-/styled-components-grid-1.0.0-preview.15.tgz#90c6a4caa22292f7a2d80f055395f3fa18cd6720"
+styled-components-grid@^2.0.0-preview.1:
+  version "2.0.0-preview.1"
+  resolved "https://registry.yarnpkg.com/styled-components-grid/-/styled-components-grid-2.0.0-preview.1.tgz#3b46aa18f416a84cbf9d443994f7ce02dcbdded3"
   dependencies:
-    prop-types "^15.5.8"
-    react-create-component-from-tag-prop "^1.2.1"
-    styled-components-breakpoint "^1.0.1"
+    react-create-component-from-tag-prop "^1.3.1"
+    styled-components-breakpoint "^2.0.2"
 
 styled-components@^3.2.5:
   version "3.2.5"
