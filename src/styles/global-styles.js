@@ -3,6 +3,8 @@ import palette from './colour-palette';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy');
+
   * {
     box-sizing: border-box;
   }
