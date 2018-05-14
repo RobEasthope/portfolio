@@ -34,5 +34,4 @@ injectGlobal`
   img {
     max-width: 100%;
   }
-
 `;
