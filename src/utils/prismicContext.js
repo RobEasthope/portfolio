@@ -11,7 +11,7 @@ const refreshToolbar = () => {
 };
 
 const buildContext = () => {
-  const { accessToken } = PrismicConfig;
+  const { accessToken } = PrismicConfig || process.env.PRISMIC_KEY;
   return Prismic.api(PrismicConfig.apiEndpoint, { accessToken }).then(api => ({
     api,
     endpoint: PrismicConfig.apiEndpoint,
