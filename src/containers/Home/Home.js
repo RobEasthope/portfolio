@@ -34,7 +34,7 @@ class Home extends React.Component {
   fetchPage(props) {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('placeholder', 'placeholder', {}, (err, doc) => {
+      return props.prismicCtx.api.getByUID('landing', 'landing-page', {}, (err, doc) => {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
@@ -58,8 +58,8 @@ class Home extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={this.props.match.url}
           />
-          <LandingBkg src={imgixUrl(doc.data.placeholder_image.url)} type="bg" fluid>
-            <LandingGreeting>Hello.</LandingGreeting>
+          <LandingBkg src={imgixUrl(doc.data.landing_image.url)} type="bg" fluid>
+            <LandingGreeting>Hello</LandingGreeting>
           </LandingBkg>
 
           {/* <Imgix src={doc.data.placeholder_image.url} type="bg" fluid /> */}
