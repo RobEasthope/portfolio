@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import PrismicReact from 'prismic-reactjs';
+import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData';
@@ -59,7 +59,7 @@ class Home extends React.Component {
             currentUrl={this.props.match.url}
           />
           <LandingBkg src={imgixUrl(doc.data.landing_image.url)} type="bg" fluid>
-            <LandingGreeting>Hello</LandingGreeting>
+            <LandingGreeting>{PrismicReact.RichText.asText(doc.data.greeting)}</LandingGreeting>
           </LandingBkg>
 
           {/* <Imgix src={doc.data.placeholder_image.url} type="bg" fluid /> */}
