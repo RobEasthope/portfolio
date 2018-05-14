@@ -12,12 +12,12 @@ import buildContext from './utils/prismicContext';
 
 import Header from './components/Header/Header';
 
-// import HomePage from './components/pages/HomePage';
+import Home from './containers/Home/Home';
 import Placeholder from './containers/Placeholder/Placeholder';
-// import PortfolioPage from './components/pages/PortfolioPage';
-// import AboutPage from './components/pages/AboutPage';
-// import ContactPage from './components/pages/ContactPage';
-// import Error404Page from './components/pages/Error404Page';
+import PortfolioPage from './components/pages/PortfolioPage';
+import AboutPage from './components/pages/AboutPage';
+import ContactPage from './components/pages/ContactPage';
+import Error404Page from './components/pages/Error404Page';
 
 // Google Analytics
 const snap = navigator.userAgent !== 'ReactSnap';
@@ -58,16 +58,14 @@ class App extends React.Component {
 
             <Switch>
               <Route
-                // exact
+                exact
                 path="/"
-                render={routeProps => (
-                  <Placeholder {...routeProps} prismicCtx={this.state.prismicCtx} />
-                )}
+                render={routeProps => <Home {...routeProps} prismicCtx={this.state.prismicCtx} />}
               />
-              {/* <Route path="/portfolio" component={PortfolioPage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} /> */}
-              {/* <Route component={Error404Page} /> */}
+              <Route path="/portfolio" component={PortfolioPage} />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/contact" component={ContactPage} /> */}
+              <Route component={Error404Page} />
             </Switch>
           </div>
         </Router>
