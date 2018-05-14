@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import Nav from './Nav';
+import Nav from './Nav';
 import Shield from './Shield';
 
 const HeaderWrapper = styled.header`
@@ -12,7 +12,7 @@ const HeaderWrapper = styled.header`
 const Header = () => (
   <HeaderWrapper>
     <Shield />
-    {/* <Nav /> */}
+    <Nav />
   </HeaderWrapper>
 );
 
