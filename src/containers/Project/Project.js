@@ -30,7 +30,7 @@ class Project extends React.Component {
   fetchPage(props) {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('project', 'portfolio-page', {}, (err, doc) => {
+      return props.prismicCtx.api.getByUID('portfolio', 'portfolio-page', {}, (err, doc) => {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
