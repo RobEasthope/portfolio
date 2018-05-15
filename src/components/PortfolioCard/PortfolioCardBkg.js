@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+
 import Imgix from 'react-imgix';
+
+import { breakpoints as bk } from '../../styles/breakpoints';
 
 const PortfolioCardBkg = styled(Imgix)`
   position: relative;
@@ -10,7 +13,15 @@ const PortfolioCardBkg = styled(Imgix)`
 
   width: 100%;
   height: 0;
-  padding-bottom: 100%;
+  padding-bottom: 20%;
+
+  @media (min-width: ${bk.sm}px) {
+    padding-bottom: 40%;
+  }
+
+  @media (min-width: ${bk.md}px) {
+    padding-bottom: 100%;
+  }
 `;
 
 export default PortfolioCardBkg;
