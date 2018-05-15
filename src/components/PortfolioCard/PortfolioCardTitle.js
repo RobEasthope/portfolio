@@ -5,7 +5,7 @@ const PortfolioCardTitle = styled('h2')`
   font-weight: normal;
   font-size: 1rem;
   margin: 0;
-  padding: 10px;
+  padding: 8px 10px 10px;
   background-color: white;
 
   position: absolute;
