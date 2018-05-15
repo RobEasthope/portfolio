@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import imgixUrl from '../../utils/imgixUrl';
@@ -29,6 +30,12 @@ PortfolioCard.defaultProps = {
   bkg: '',
   title: '???',
   url: '#',
+};
+
+PortfolioCard.propTypes = {
+  bkg: PropTypes.string,
+  title: PropTypes.shape(PropTypes.shape),
+  url: PropTypes.shape(PropTypes.shape),
 };
 
 export default PortfolioCard;
