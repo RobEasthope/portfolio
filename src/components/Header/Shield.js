@@ -9,6 +9,7 @@ const ShieldLogo = styled.img`
 
 const ShieldLink = styled(Link)`
   display: inline-block;
+  padding: 0 10px;
 `;
 
 const Shield = () => (

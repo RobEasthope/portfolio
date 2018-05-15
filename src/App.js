@@ -13,9 +13,8 @@ import buildContext from './utils/prismicContext';
 import Header from './components/Header/Header';
 
 import Home from './containers/Home/Home';
-import PortfolioPage from './components/pages/PortfolioPage';
+import Portfolio from './containers/Portfolio/Portfolio';
 import AboutPage from './components/pages/AboutPage';
-import ContactPage from './components/pages/ContactPage';
 import Error404Page from './components/pages/Error404Page';
 
 // Google Analytics
@@ -61,9 +60,13 @@ class App extends React.Component {
                 path="/"
                 render={routeProps => <Home {...routeProps} prismicCtx={this.state.prismicCtx} />}
               />
-              <Route path="/portfolio" component={PortfolioPage} />
+              <Route
+                path="/portfolio"
+                render={routeProps => (
+                  <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
+                )}
+              />
               <Route path="/about" component={AboutPage} />
-              <Route path="/contact" component={ContactPage} /> */}
               <Route component={Error404Page} />
             </Switch>
           </div>

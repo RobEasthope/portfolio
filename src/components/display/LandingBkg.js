@@ -7,14 +7,14 @@ const LandingBkg = styled(Imgix)`
   background-image: url('${props => props.bkg}');
   background-size: cover;
   background-position: center center;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 80px);
 
   @media (min-width: 420px) {
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 105px);
   }
 
   @media (min-width: 1020px) {
-    min-height: calc(100vh - 190px);
+    min-height: calc(100vh - 165px);
   }
 `;
 
