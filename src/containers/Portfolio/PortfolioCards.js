@@ -1,6 +1,6 @@
 import React from 'react';
-import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import PrismicReact from 'prismic-reactjs';
+import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 
 const PortfolioCards = props =>
   props.cards.map((slice) => {
