@@ -33,20 +33,20 @@ injectGlobal`
     font-family: 'hk_grotesklight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
 
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 
     @media (min-width: 420px) {
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
     }
 
     @media (min-width: 1020px) {
-      padding-left: 100px;
-      padding-right: 100px;
-      padding-bottom: 100px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-bottom: 80px;
     }
   }
 
