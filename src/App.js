@@ -60,7 +60,12 @@ class App extends React.Component {
                 path="/"
                 render={routeProps => <Home {...routeProps} prismicCtx={this.state.prismicCtx} />}
               />
-              <Route path="/portfolio" component={Portfolio} />
+              <Route
+                path="/portfolio"
+                render={routeProps => (
+                  <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
+                )}
+              />
               <Route path="/about" component={AboutPage} />
               <Route component={Error404Page} />
             </Switch>
