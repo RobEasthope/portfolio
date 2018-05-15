@@ -6,9 +6,6 @@ import imgixUrl from '../../utils/imgixUrl';
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
 
-import LandingGreeting from '../../components/typography/LandingGreeting';
-import LandingBkg from '../../components/display/LandingBkg';
-
 class Portfolio extends React.Component {
   constructor() {
     super();
