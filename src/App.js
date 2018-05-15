@@ -15,7 +15,6 @@ import Header from './components/Header/Header';
 import Home from './containers/Home/Home';
 import Portfolio from './containers/Portfolio/Portfolio';
 import AboutPage from './components/pages/AboutPage';
-import ContactPage from './components/pages/ContactPage';
 import Error404Page from './components/pages/Error404Page';
 
 // Google Analytics
@@ -63,7 +62,6 @@ class App extends React.Component {
               />
               <Route path="/portfolio" component={Portfolio} />
               <Route path="/about" component={AboutPage} />
-              <Route path="/contact" component={ContactPage} />
               <Route component={Error404Page} />
             </Switch>
           </div>
