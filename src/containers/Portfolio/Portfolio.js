@@ -4,6 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 import Grid from 'styled-components-grid';
 
 import PortfolioWrapper from './PortfolioWrapper';
+import PortfolioCards from './PortfolioCards';
 import MetaData from '../../components/MetaData';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import Error404Page from '../../components/pages/Error404Page';
@@ -60,22 +61,7 @@ class Portfolio extends React.Component {
 
           <PortfolioWrapper>
             <Grid>
-              {doc.data.body.map((slice) => {
-                switch (slice.slice_type) {
-                  case 'portfolio_cards':
-                    return slice.items.map(card => (
-                      <PortfolioCard
-                        key={PrismicReact.RichText.asText(card.project_title)}
-                        title={PrismicReact.RichText.asText(card.project_title)}
-                        bkg={card.project_thumbnail.url}
-                        url={card.project_url.url}
-                      />
-                    ));
-
-                  default:
-                    return 'Error?';
-                }
-              })}
+              <PortfolioCards cards={doc.data.body} />
             </Grid>
           </PortfolioWrapper>
         </div>
