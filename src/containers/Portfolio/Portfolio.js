@@ -5,6 +5,7 @@ import Grid from 'styled-components-grid';
 
 import imgixUrl from '../../utils/imgixUrl';
 
+import PortfolioWrapper from './PortfolioWrapper';
 import MetaData from '../../components/MetaData';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import Error404Page from '../../components/pages/Error404Page';
@@ -59,7 +60,7 @@ class Portfolio extends React.Component {
             currentUrl={this.props.match.url}
           />
 
-          <main>
+          <PortfolioWrapper>
             <Grid>
               {doc.data.body.map((slice) => {
                 switch (slice.slice_type) {
@@ -68,7 +69,7 @@ class Portfolio extends React.Component {
                       <PortfolioCard
                         key={PrismicReact.RichText.asText(project_card.project_title)}
                         title={PrismicReact.RichText.asText(project_card.project_title)}
-                        bkg={imgixUrl(project_card.project_thumbnail.url)}
+                        bkg={project_card.project_thumbnail.url}
                       />
                     ));
 
@@ -77,7 +78,7 @@ class Portfolio extends React.Component {
                 }
               })}
             </Grid>
-          </main>
+          </PortfolioWrapper>
         </div>
       );
     } else if (this.state.notFound) {
