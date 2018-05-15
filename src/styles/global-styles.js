@@ -36,7 +36,7 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'hk_grotesklight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
 
     padding-left: 20px;
