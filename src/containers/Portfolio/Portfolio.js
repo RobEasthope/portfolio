@@ -4,6 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData';
+import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import Error404Page from '../../components/pages/Error404Page';
 
 class Portfolio extends React.Component {
@@ -61,9 +62,11 @@ class Portfolio extends React.Component {
               switch (slice.slice_type) {
                 case 'portfolio_cards':
                   return slice.items.map(project_thumbnail => (
-                    <div key={PrismicReact.RichText.asText(project_thumbnail.project_title)}>
-                      {PrismicReact.RichText.asText(project_thumbnail.project_title)}
-                    </div>
+                    <PortfolioCard
+                      key={PrismicReact.RichText.asText(project_thumbnail.project_title)}
+                      title={PrismicReact.RichText.asText(project_thumbnail.project_title)}
+                      bkg={PrismicReact.RichText.asText(project_thumbnail.project_title)}
+                    />
                   ));
 
                 default:
