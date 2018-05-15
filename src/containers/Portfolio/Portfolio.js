@@ -63,12 +63,12 @@ class Portfolio extends React.Component {
               {doc.data.body.map((slice) => {
                 switch (slice.slice_type) {
                   case 'portfolio_cards':
-                    return slice.items.map(project_card => (
+                    return slice.items.map(card => (
                       <PortfolioCard
-                        key={PrismicReact.RichText.asText(project_card.project_title)}
-                        title={PrismicReact.RichText.asText(project_card.project_title)}
-                        bkg={project_card.project_thumbnail.url}
-                        url={project_card.project_url.url}
+                        key={PrismicReact.RichText.asText(card.project_title)}
+                        title={PrismicReact.RichText.asText(card.project_title)}
+                        bkg={card.project_thumbnail.url}
+                        url={card.project_url.url}
                       />
                     ));
 
