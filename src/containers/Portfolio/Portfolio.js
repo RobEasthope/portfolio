@@ -34,7 +34,7 @@ class Portfolio extends React.Component {
   fetchPage(props) {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('portfolio', 'portfolio', {}, (err, doc) => {
+      return props.prismicCtx.api.getByUID('portfolio', 'portfolio-page', {}, (err, doc) => {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
@@ -58,14 +58,8 @@ class Portfolio extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={this.props.match.url}
           />
-          {/* <LandingBkg src={imgixUrl(doc.data.landing_image.url)} type="bg" fluid>
-            <LandingGreeting>{PrismicReact.RichText.asText(doc.data.greeting)}</LandingGreeting>
-          </LandingBkg> */}
 
-          {/* <Imgix src={doc.data.placeholder_image.url} type="bg" fluid /> */}
-          {/* {PrismicReact.RichText.asText(doc.data.placeholder_tagline)} */}
-          {/* This is how to insert a Rich Text field as plain text */}
-          {/* This is how to insert a Rich Text field into your template as html */}
+          <main />
         </div>
       );
     } else if (this.state.notFound) {
