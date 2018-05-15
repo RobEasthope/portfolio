@@ -63,7 +63,7 @@ class App extends React.Component {
               />
               <Route path="/portfolio" component={PortfolioPage} />
               <Route path="/about" component={AboutPage} />
-              <Route path="/contact" component={ContactPage} /> */}
+              <Route path="/contact" component={ContactPage} />
               <Route component={Error404Page} />
             </Switch>
           </div>
