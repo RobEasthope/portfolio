@@ -27,4 +27,10 @@ const PortfolioCard = props => (
   </PortfolioCardWrapper>
 );
 
+PortfolioCard.defaultProps = {
+  bkg: '',
+  title: '???',
+  url: '#',
+};
+
 export default PortfolioCard;
