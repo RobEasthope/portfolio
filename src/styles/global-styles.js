@@ -50,6 +50,10 @@ injectGlobal`
     }
   }
 
+  a {
+    color: ${palette.ink};
+  }
+
   img {
     max-width: 100%;
   }
