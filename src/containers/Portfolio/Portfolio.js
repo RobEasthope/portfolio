@@ -70,6 +70,7 @@ class Portfolio extends React.Component {
                         key={PrismicReact.RichText.asText(project_card.project_title)}
                         title={PrismicReact.RichText.asText(project_card.project_title)}
                         bkg={project_card.project_thumbnail.url}
+                        url={project_card.project_url.url}
                       />
                     ));
 

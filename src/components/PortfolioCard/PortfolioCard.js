@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Block } from '../Grid/Grid';
+import { Link } from 'react-router-dom';
 
 import imgixUrl from '../../utils/imgixUrl';
 
@@ -18,9 +19,11 @@ const PortfolioCard = props => (
       xl: 1 / 5,
     }}
   >
-    <PortfolioCardBkg src={imgixUrl(props.bkg)} type="bg" fluid>
-      <PortfolioCardTitle>{props.title}</PortfolioCardTitle>
-    </PortfolioCardBkg>
+    <Link to={props.url}>
+      <PortfolioCardBkg src={imgixUrl(props.bkg)} type="bg" fluid>
+        <PortfolioCardTitle>{props.title}</PortfolioCardTitle>
+      </PortfolioCardBkg>
+    </Link>
   </PortfolioCardWrapper>
 );
 
