@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 import Grid from 'styled-components-grid';
 
-import imgixUrl from '../../utils/imgixUrl';
-
 import PortfolioWrapper from './PortfolioWrapper';
 import MetaData from '../../components/MetaData';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
