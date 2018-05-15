@@ -35,8 +35,8 @@ PortfolioCard.defaultProps = {
 
 PortfolioCard.propTypes = {
   bkg: PropTypes.string,
-  title: PropTypes.shape(PropTypes.shape),
-  url: PropTypes.shape(PropTypes.shape),
+  title: PropTypes.arrayOf(PropTypes.shape),
+  url: PropTypes.string,
 };
 
 export default PortfolioCard;
