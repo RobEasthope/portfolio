@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PrismicReact from 'prismic-reactjs';
 import Grid from 'styled-components-grid';
 
 import PortfolioWrapper from './PortfolioWrapper';
 import PortfolioCards from './PortfolioCards';
 import MetaData from '../../components/MetaData';
-import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import Error404Page from '../../components/pages/Error404Page';
 
 class Portfolio extends React.Component {
