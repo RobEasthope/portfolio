@@ -8,6 +8,7 @@ const PortfolioCardBkg = styled(Imgix)`
   background-size: cover;
   background-position: center center;
 
+  width: 100%;
   height: 0;
   padding-bottom: 100%;
 `;
