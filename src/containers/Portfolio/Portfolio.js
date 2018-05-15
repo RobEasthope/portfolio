@@ -58,11 +58,8 @@ class Portfolio extends React.Component {
 
           <main>
             {doc.data.body.map((slice) => {
-              // Render the right markup for a given slice type
-
               switch (slice.slice_type) {
                 case 'portfolio_cards':
-                  // console.log(`Title: ${PrismicReact.RichText.asHtml(slice.project_title)}`);
                   return slice.items.map(project_thumbnail => (
                     <div key={PrismicReact.RichText.asText(project_thumbnail.project_title)}>
                       {PrismicReact.RichText.asText(project_thumbnail.project_title)}
