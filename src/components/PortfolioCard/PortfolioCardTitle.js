@@ -7,6 +7,11 @@ const PortfolioCardTitle = styled('h2')`
   margin: 0;
   padding: 10px;
   background-color: white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export default PortfolioCardTitle;
