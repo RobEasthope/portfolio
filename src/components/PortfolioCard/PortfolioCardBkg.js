@@ -10,6 +10,7 @@ const PortfolioCardBkg = styled(Imgix)`
 
   height: 0;
   padding-bottom: 100%;
+  margin-bottom: 20px;
 `;
 
 export default PortfolioCardBkg;
