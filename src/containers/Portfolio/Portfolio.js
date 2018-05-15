@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
+import Grid from 'styled-components-grid';
+
 import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData';
@@ -58,21 +60,23 @@ class Portfolio extends React.Component {
           />
 
           <main>
-            {doc.data.body.map((slice) => {
-              switch (slice.slice_type) {
-                case 'portfolio_cards':
-                  return slice.items.map(project_thumbnail => (
-                    <PortfolioCard
-                      key={PrismicReact.RichText.asText(project_thumbnail.project_title)}
-                      title={PrismicReact.RichText.asText(project_thumbnail.project_title)}
-                      bkg={PrismicReact.RichText.asText(project_thumbnail.project_title)}
-                    />
-                  ));
+            <Grid>
+              {doc.data.body.map((slice) => {
+                switch (slice.slice_type) {
+                  case 'portfolio_cards':
+                    return slice.items.map(project_thumbnail => (
+                      <PortfolioCard
+                        key={PrismicReact.RichText.asText(project_thumbnail.project_title)}
+                        title={PrismicReact.RichText.asText(project_thumbnail.project_title)}
+                        bkg={PrismicReact.RichText.asText(project_thumbnail.project_title)}
+                      />
+                    ));
 
-                default:
-                  return 'Error?';
-              }
-            })}
+                  default:
+                    return 'Error?';
+                }
+              })}
+            </Grid>
           </main>
         </div>
       );
