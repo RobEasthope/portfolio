@@ -16,7 +16,7 @@ const PortfolioCards = props =>
         ));
 
       default:
-        return 'Error?';
+        return 'No Projects found';
     }
   });
 
