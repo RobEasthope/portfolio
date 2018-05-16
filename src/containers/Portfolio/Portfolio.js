@@ -65,7 +65,7 @@ class Portfolio extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return <Error404Page />;
+      return 'No project found';
     }
     return '';
   }
