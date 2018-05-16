@@ -28,10 +28,16 @@ class Project extends React.Component {
     // this.props.prismicCtx.toolbar();
   }
 
+  uid() {
+    if (this.props.match) {
+      return this.props.match.params.uid;
+    }
+  }
+
   fetchPage(props) {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('project', 'ambr', {}, (err, doc) => {
+      return props.prismicCtx.api.getByUID('project', this.uid(), {}, (err, doc) => {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
@@ -45,6 +51,8 @@ class Project extends React.Component {
   }
 
   render() {
+    // const uid = () => this.props.match.params.uid;
+
     if (this.state.doc) {
       const { doc } = this.state;
       return (
