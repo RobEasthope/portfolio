@@ -31,6 +31,7 @@ class Project extends React.Component {
     if (this.props.match) {
       return this.props.match.params.uid;
     }
+    return '';
   }
 
   fetchPage(props) {
