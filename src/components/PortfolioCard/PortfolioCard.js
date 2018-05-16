@@ -19,7 +19,7 @@ const PortfolioCard = props => (
       xl: 1 / 5,
     }}
   >
-    <Link to={props.url}>
+    <Link to={`portfolio/${props.url}`}>
       <PortfolioCardBkg src={imgixUrl(props.bkg)} type="bg" fluid>
         <PortfolioCardTitle>{PrismicReact.RichText.asText(props.title)}</PortfolioCardTitle>
       </PortfolioCardBkg>
