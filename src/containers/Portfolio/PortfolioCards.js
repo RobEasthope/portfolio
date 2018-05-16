@@ -11,7 +11,7 @@ const PortfolioCards = props =>
             key={PrismicReact.RichText.asText(card.project_title)}
             title={card.project_title}
             bkg={card.project_thumbnail.url}
-            url={card.project_url.url}
+            url={card.project_url.uid}
           />
         ));
 
