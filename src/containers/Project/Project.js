@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PrismicReact from 'prismic-reactjs';
 import Grid from 'styled-components-grid';
 
 import MetaData from '../../components/MetaData';
@@ -30,7 +31,7 @@ class Project extends React.Component {
   fetchPage(props) {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('portfolio', 'portfolio-page', {}, (err, doc) => {
+      return props.prismicCtx.api.getByUID('project', 'ambr', {}, (err, doc) => {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
@@ -55,7 +56,7 @@ class Project extends React.Component {
             currentUrl={this.props.match.url}
           />
 
-          <Grid>Project</Grid>
+          {PrismicReact.RichText.asText(doc.data.project_title)}
         </div>
       );
     } else if (this.state.notFound) {
