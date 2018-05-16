@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Grid from 'styled-components-grid';
+import PrismicReact from 'prismic-reactjs';
 
-import PortfolioWrapper from './PortfolioWrapper';
-import PortfolioCards from './PortfolioCards';
 import MetaData from '../../components/MetaData';
+import Error404Page from '../../components/pages/Error404Page';
 
-class Portfolio extends React.Component {
+class Project extends React.Component {
   constructor() {
     super();
 
@@ -28,10 +27,17 @@ class Portfolio extends React.Component {
     // this.props.prismicCtx.toolbar();
   }
 
+  uid() {
+    if (this.props.match) {
+      return this.props.match.params.uid;
+    }
+    return '';
+  }
+
   fetchPage(props) {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
-      return props.prismicCtx.api.getByUID('portfolio', 'portfolio-page', {}, (err, doc) => {
+      return props.prismicCtx.api.getByUID('project', this.uid(), {}, (err, doc) => {
         if (doc) {
           // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
@@ -45,6 +51,8 @@ class Portfolio extends React.Component {
   }
 
   render() {
+    // const uid = () => this.props.match.params.uid;
+
     if (this.state.doc) {
       const { doc } = this.state;
       return (
@@ -56,23 +64,19 @@ class Portfolio extends React.Component {
             currentUrl={this.props.match.url}
           />
 
-          <PortfolioWrapper>
-            <Grid>
-              <PortfolioCards cards={doc.data.body} />
-            </Grid>
-          </PortfolioWrapper>
+          {PrismicReact.RichText.asText(doc.data.project_title)}
         </div>
       );
     } else if (this.state.notFound) {
-      return 'No project found';
+      return <Error404Page />;
     }
     return '';
   }
 }
 
-Portfolio.propTypes = {
+Project.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
 };
 
-export default Portfolio;
+export default Project;

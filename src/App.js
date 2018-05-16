@@ -14,6 +14,7 @@ import Header from './components/Header/Header';
 
 import Home from './containers/Home/Home';
 import Portfolio from './containers/Portfolio/Portfolio';
+import Project from './containers/Project/Project';
 import AboutPage from './components/pages/AboutPage';
 import Error404Page from './components/pages/Error404Page';
 
@@ -61,9 +62,16 @@ class App extends React.Component {
                 render={routeProps => <Home {...routeProps} prismicCtx={this.state.prismicCtx} />}
               />
               <Route
+                exact
                 path="/portfolio"
                 render={routeProps => (
                   <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
+                )}
+              />
+              <Route
+                path="/portfolio/:uid"
+                render={routeProps => (
+                  <Project {...routeProps} prismicCtx={this.state.prismicCtx} />
                 )}
               />
               <Route path="/about" component={AboutPage} />
