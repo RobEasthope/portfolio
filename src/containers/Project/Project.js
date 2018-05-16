@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
-import Grid from 'styled-components-grid';
 
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';

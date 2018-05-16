@@ -5,7 +5,6 @@ import Grid from 'styled-components-grid';
 import PortfolioWrapper from './PortfolioWrapper';
 import PortfolioCards from './PortfolioCards';
 import MetaData from '../../components/MetaData';
-import Error404Page from '../../components/pages/Error404Page';
 
 class Portfolio extends React.Component {
   constructor() {
