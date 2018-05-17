@@ -23,7 +23,7 @@ const ProjectBodyContent = props =>
         );
 
       default:
-        return 'No content';
+        return 'Slice code missing';
     }
   });
 
