@@ -5,6 +5,7 @@ import PrismicReact from 'prismic-reactjs';
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
 import OrgName from './OrgName';
+import ProjectBodyContent from './ProjectBodyContent';
 
 class Project extends React.Component {
   constructor() {
@@ -65,9 +66,18 @@ class Project extends React.Component {
             currentUrl={this.props.match.url}
           />
 
+          {/* Project header */}
           <div>{PrismicReact.RichText.asText(doc.data.project_title)}</div>
+
+          {/* Project details */}
           <OrgName title={doc.data.client} url={doc.data.client_url} />
           <OrgName title={doc.data.agency} url={doc.data.agency_url} />
+
+          {/* Project content */}
+          <div>
+            <br />
+            <ProjectBodyContent content={doc.data.body} />
+          </div>
         </div>
       );
     } else if (this.state.notFound) {
