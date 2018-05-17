@@ -16,7 +16,7 @@ const ProjectBodyContent = props =>
           <Row>
             {slice.items.map(content => (
               <Block size={1 / 3}>
-                <img src={content.image.url} />
+                <img src={content.image.url} alt={content.image.alt} />
               </Block>
             ))}
           </Row>
