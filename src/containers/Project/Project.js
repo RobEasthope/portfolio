@@ -6,6 +6,7 @@ import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
 import OrgName from './OrgName';
 import ProjectBodyContent from './ProjectBodyContent';
+import ProjectHeader from './ProjectHeader';
 
 class Project extends React.Component {
   constructor() {
@@ -67,7 +68,9 @@ class Project extends React.Component {
           />
 
           {/* Project header */}
-          <div>{PrismicReact.RichText.asText(doc.data.project_title)}</div>
+          <ProjectHeader type="bg" fluid>
+            <div>{PrismicReact.RichText.asText(doc.data.project_title)}</div>
+          </ProjectHeader>
 
           {/* Project details */}
           <OrgName title={doc.data.client} url={doc.data.client_url} />
