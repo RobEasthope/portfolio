@@ -4,7 +4,7 @@ import Imgix from 'react-imgix';
 
 import { breakpoints as bk } from '../../styles/breakpoints';
 
-const PortfolioCardBkg = styled(Imgix)`
+const ProjectHeader = styled(Imgix)`
   position: relative;
   text-align: center;
   background-image: url('${props => props.bkg}');
@@ -15,4 +15,4 @@ const PortfolioCardBkg = styled(Imgix)`
   height: 70vh;
 `;
 
-export default PortfolioCardBkg;
+export default ProjectHeader;
