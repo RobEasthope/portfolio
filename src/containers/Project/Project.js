@@ -75,6 +75,12 @@ class Project extends React.Component {
             {/* <div>{PrismicReact.RichText.asText(doc.data.project_title)}</div> */}
           </ProjectHeader>
 
+          {/* Project content */}
+          <div>
+            <br />
+            <ProjectBodyContent content={doc.data.body} />
+          </div>
+
           {/* Project details */}
           <TextWrapper>
             <Row>
@@ -96,12 +102,6 @@ class Project extends React.Component {
               </Block>
             </Row>
           </TextWrapper>
-
-          {/* Project content */}
-          <div>
-            <br />
-            <ProjectBodyContent content={doc.data.body} />
-          </div>
         </div>
       );
     } else if (this.state.notFound) {
