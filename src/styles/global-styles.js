@@ -31,7 +31,7 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Sorts Mill Goudy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'adobe-garamond-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
 
     padding-left: 10px;
