@@ -34,21 +34,7 @@ injectGlobal`
     font-family: 'adobe-garamond-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
 
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-
-    @media (min-width: 420px) {
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-bottom: 20px;
-    }
-
-    @media (min-width: 1020px) {
-      padding-left: 80px;
-      padding-right: 80px;
-      padding-bottom: 80px;
-    }
+    
   }
 
   a {
