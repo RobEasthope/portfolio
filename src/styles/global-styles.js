@@ -31,7 +31,7 @@ injectGlobal`
   }
 
   body {
-    font-family: 'adobe-garamond-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'adobe-caslon-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
     font-size: 18px;
 
