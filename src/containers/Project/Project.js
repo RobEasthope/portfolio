@@ -9,6 +9,7 @@ import OrgName from './OrgName';
 import ProjectBodyContent from './ProjectBodyContent';
 import ProjectHeader from './ProjectHeader';
 import TextWrapper from './TextWrapper';
+import ContentWrapper from './ContentWrapper';
 
 import { Row, Block } from '../../components/Grid/Grid';
 
@@ -73,38 +74,47 @@ class Project extends React.Component {
 
           {/* Project header */}
           <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid>
-            <LandingGreeting>
+            {/* <LandingGreeting>
               {PrismicReact.RichText.asText(doc.data.project_title)}
-            </LandingGreeting>
+            </LandingGreeting> */}
           </ProjectHeader>
+          <ContentWrapper>
+            <Row>
+              <Block size={1 / 3}>
+                {/* Project details */}
+                <Row>
+                  <Block size={1 / 1}>
+                    <div>Client</div>
+                    <div>
+                      <OrgName title={doc.data.client} url={doc.data.client_url} />
+                    </div>
+                    <br />
+                  </Block>
+                  <Block size={1 / 1}>
+                    <div>Agency</div>
+                    <div>
+                      <OrgName title={doc.data.agency} url={doc.data.agency_url} />
+                    </div>
+
+                    <br />
+                  </Block>
+                  <Block size={1 / 1}>
+                    <div>Year</div>
+                    <div>{doc.data.year}</div>
+                  </Block>
+                </Row>
+              </Block>
+
+              <Block size={2 / 3}>
+                <ProjectBodyContent content={doc.data.body} />
+              </Block>
+            </Row>
+          </ContentWrapper>
 
           {/* Project content */}
           <div>
             <br />
-            <ProjectBodyContent content={doc.data.body} />
           </div>
-
-          {/* Project details */}
-          <TextWrapper>
-            <Row>
-              <Block size={1 / 3}>
-                <div>Client</div>
-                <div>
-                  <OrgName title={doc.data.client} url={doc.data.client_url} />
-                </div>
-              </Block>
-              <Block size={1 / 3}>
-                <div>Agency</div>
-                <div>
-                  <OrgName title={doc.data.agency} url={doc.data.agency_url} />
-                </div>
-              </Block>
-              <Block size={1 / 3}>
-                <div>Year</div>
-                <div>{doc.data.year}</div>
-              </Block>
-            </Row>
-          </TextWrapper>
         </div>
       );
     } else if (this.state.notFound) {

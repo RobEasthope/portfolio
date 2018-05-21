@@ -33,8 +33,8 @@ injectGlobal`
   body {
     font-family: 'adobe-garamond-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
+    font-size: 18px;
 
-    
   }
 
   a {

@@ -8,9 +8,7 @@ const ProjectBodyContent = props =>
   props.content.map((slice) => {
     switch (slice.slice_type) {
       case 'general_content':
-        return slice.items.map(content => (
-          <TextWrapper>{PrismicReact.RichText.render(content.rich_text)}</TextWrapper>
-        ));
+        return slice.items.map(content => PrismicReact.RichText.render(content.rich_text));
 
       case 'image_gallery':
         return (

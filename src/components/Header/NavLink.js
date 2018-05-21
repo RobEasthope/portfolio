@@ -6,6 +6,7 @@ import palette from '../../styles/colour-palette';
 const NavLink = styled(Link)`
   display: inline-block;
   font-family: 'hk_grotesklight', serif;
+  font-size: 16px;
   color: ${palette.ink};
   text-decoration: none;
   padding: 10px;
