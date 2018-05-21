@@ -16,7 +16,7 @@ const ProjectBodyContent = props =>
         return (
           <Row>
             {slice.items.map(content => (
-              <Block size={1 / 3}>
+              <Block size={1 / 1}>
                 <img src={content.image.url} alt={content.image.alt} />
               </Block>
             ))}
