@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const TextWrapper = styled('div')`
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 3em auto;
+  font-size: 20px;
 `;
 
 export default TextWrapper;
