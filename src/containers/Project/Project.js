@@ -98,7 +98,7 @@ class Project extends React.Component {
               </Block>
               <Block size={1 / 3}>
                 <div>Year</div>
-                <div>2013</div>
+                <div>{doc.data.year}</div>
               </Block>
             </Row>
           </TextWrapper>
