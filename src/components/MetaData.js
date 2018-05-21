@@ -3,13 +3,6 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import PrismicReact from 'prismic-reactjs';
 
-function baseUrl() {
-  if (process.env.NODE_ENV === 'production') {
-    return 'https://robeasthope.com';
-  }
-  return 'http://localhost:3000/';
-}
-
 const MetaData = props => (
   <Helmet>
     <title>{PrismicReact.RichText.asText(props.metaTitle)}</title>
@@ -27,8 +20,6 @@ const MetaData = props => (
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@robeasthope" />
     <meta name="twitter:creator" content="@robeasthope" />
-
-    <base href={baseUrl()} />
   </Helmet>
 );
 
