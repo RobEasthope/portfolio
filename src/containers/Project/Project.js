@@ -4,6 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
+import LandingGreeting from '../../components/typography/LandingGreeting';
 import OrgName from './OrgName';
 import ProjectBodyContent from './ProjectBodyContent';
 import ProjectHeader from './ProjectHeader';
@@ -72,7 +73,9 @@ class Project extends React.Component {
 
           {/* Project header */}
           <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid>
-            {/* <div>{PrismicReact.RichText.asText(doc.data.project_title)}</div> */}
+            <LandingGreeting>
+              {PrismicReact.RichText.asText(doc.data.project_title)}
+            </LandingGreeting>
           </ProjectHeader>
 
           {/* Project content */}

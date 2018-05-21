@@ -12,7 +12,7 @@ const ProjectHeader = styled(Imgix)`
   background-position: center center;
 
   width: 100%;
-  height: 50vh;
+  height: 70vh;
 
   margin-bottom: 2em;
 `;
