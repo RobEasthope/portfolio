@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Row } from '../../components/Grid/Grid';
 
-const TextWrapper = styled(Row)`
+const TextWrapper = styled('div')`
   max-width: 500px;
   margin: 0 auto;
 `;
