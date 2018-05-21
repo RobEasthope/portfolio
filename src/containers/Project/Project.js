@@ -9,6 +9,8 @@ import ProjectBodyContent from './ProjectBodyContent';
 import ProjectHeader from './ProjectHeader';
 import TextWrapper from './TextWrapper';
 
+import { Row, Block } from '../../components/Grid/Grid';
+
 class Project extends React.Component {
   constructor() {
     super();
@@ -75,12 +77,24 @@ class Project extends React.Component {
 
           {/* Project details */}
           <TextWrapper>
-            <div>
-              Client: <OrgName title={doc.data.client} url={doc.data.client_url} />
-            </div>
-            <div>
-              Agency: <OrgName title={doc.data.agency} url={doc.data.agency_url} />
-            </div>
+            <Row>
+              <Block size={1 / 3}>
+                <div>Client</div>
+                <div>
+                  <OrgName title={doc.data.client} url={doc.data.client_url} />
+                </div>
+              </Block>
+              <Block size={1 / 3}>
+                <div>Agency</div>
+                <div>
+                  <OrgName title={doc.data.agency} url={doc.data.agency_url} />
+                </div>
+              </Block>
+              <Block size={1 / 3}>
+                <div>Year</div>
+                <div>2013</div>
+              </Block>
+            </Row>
           </TextWrapper>
 
           {/* Project content */}
