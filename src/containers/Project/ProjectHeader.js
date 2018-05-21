@@ -14,7 +14,7 @@ const ProjectHeader = styled(Imgix)`
   width: 100%;
   height: 50vh;
 
-  margin-bottom: 3em;
+  margin-bottom: 5em;
 `;
 
 export default ProjectHeader;
