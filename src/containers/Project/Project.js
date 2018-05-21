@@ -7,6 +7,7 @@ import Error404Page from '../../components/pages/Error404Page';
 import OrgName from './OrgName';
 import ProjectBodyContent from './ProjectBodyContent';
 import ProjectHeader from './ProjectHeader';
+import TextWrapper from './TextWrapper';
 
 class Project extends React.Component {
   constructor() {
@@ -73,8 +74,14 @@ class Project extends React.Component {
           </ProjectHeader>
 
           {/* Project details */}
-          <OrgName title={doc.data.client} url={doc.data.client_url} />
-          <OrgName title={doc.data.agency} url={doc.data.agency_url} />
+          <TextWrapper>
+            <div>
+              Client: <OrgName title={doc.data.client} url={doc.data.client_url} />
+            </div>
+            <div>
+              Agency: <OrgName title={doc.data.agency} url={doc.data.agency_url} />
+            </div>
+          </TextWrapper>
 
           {/* Project content */}
           <div>
