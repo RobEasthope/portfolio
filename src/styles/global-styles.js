@@ -54,6 +54,9 @@ injectGlobal`
     color: ${palette.ink};
     text-decoration: none;
   }
+  
+  p {
+    margin-top: 0;
   }
 
   img {
