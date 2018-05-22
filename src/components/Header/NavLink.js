@@ -5,7 +5,8 @@ import palette from '../../styles/colour-palette';
 
 const NavLink = styled(Link)`
   display: inline-block;
-  ${''} font-size: 16px;
+  font-family: 'Sorts Mill Goudy', serif;
+  ${''}
   color: ${palette.ink};
   text-decoration: none;
   padding: 10px;

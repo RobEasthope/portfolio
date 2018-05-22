@@ -7,7 +7,7 @@ import Shield from './Shield';
 
 const HeaderWrapper = styled.header`
   text-align: center;
-  padding: 20px 0 25px;
+  padding: 20px 80px 20px;
   max-width: 100%;
   margin: 0 auto;
 `;
@@ -15,15 +15,13 @@ const HeaderWrapper = styled.header`
 const Header = () => (
   <HeaderWrapper>
     <Grid>
-      <Grid.Unit size={1 / 3}>
-        <NavLink to="/portfolio">Portfolio</NavLink>
-      </Grid.Unit>
-
-      <Grid.Unit size={1 / 3}>
-        {/* <Shield /> */}
+      <Grid.Unit size={1 / 2} style={{ textAlign: 'left' }}>
+        <Shield />
         <NavLink to="/portfolio">Rob Easthope</NavLink>
       </Grid.Unit>
-      <Grid.Unit size={1 / 3}>
+
+      <Grid.Unit size={1 / 2} style={{ textAlign: 'right' }}>
+        <NavLink to="/portfolio">Portfolio</NavLink>
         <NavLink to="/about">About</NavLink>
       </Grid.Unit>
     </Grid>
