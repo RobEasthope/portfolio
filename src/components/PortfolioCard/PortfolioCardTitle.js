@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const PortfolioCardTitle = styled('h2')`
   display: inline-block;
-  font-family: 'hk_grotesklight';
+  font-family: 'freight-sans-pro', sans-serif;
   font-weight: normal;
   font-size: 16px;
   margin: 0;
