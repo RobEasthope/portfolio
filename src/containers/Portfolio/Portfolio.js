@@ -5,6 +5,7 @@ import Grid from 'styled-components-grid';
 import PortfolioWrapper from './PortfolioWrapper';
 import PortfolioCards from './PortfolioCards';
 import MetaData from '../../components/MetaData';
+import ProjectTitle from '../Project/ProjectTitle';
 
 class Portfolio extends React.Component {
   constructor() {
@@ -57,6 +58,7 @@ class Portfolio extends React.Component {
           />
 
           <PortfolioWrapper>
+            <ProjectTitle>Hello, I'm Rob, a front end developer based in London.</ProjectTitle>
             <Grid>
               <PortfolioCards cards={doc.data.body} />
             </Grid>

@@ -8,7 +8,7 @@ import Shield from './Shield';
 const HeaderWrapper = styled.header`
   text-align: center;
   padding: 20px 0 25px;
-  max-width: 380px;
+  max-width: 100%;
   margin: 0 auto;
 `;
 
@@ -20,7 +20,8 @@ const Header = () => (
       </Grid.Unit>
 
       <Grid.Unit size={1 / 3}>
-        <Shield />
+        {/* <Shield /> */}
+        <NavLink to="/portfolio">Rob Easthope</NavLink>
       </Grid.Unit>
       <Grid.Unit size={1 / 3}>
         <NavLink to="/about">About</NavLink>

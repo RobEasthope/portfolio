@@ -31,10 +31,10 @@ injectGlobal`
   }
 
   body {
-    font-family: 'adobe-caslon-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Sorts Mill Goudy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
     font-size: 18px;
-
+    ${''}
   }
 
   a {
