@@ -10,6 +10,7 @@ import ProjectBodyContent from './ProjectBodyContent';
 import ProjectHeader from './ProjectHeader';
 import TextWrapper from './TextWrapper';
 import ContentWrapper from './ContentWrapper';
+import ProjectTitle from './ProjectTitle';
 
 import { Row, Block } from '../../components/Grid/Grid';
 
@@ -73,10 +74,12 @@ class Project extends React.Component {
           />
 
           {/* Project header */}
-          <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid />
+          {/* <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid /> */}
           <ContentWrapper>
             <Row>
-              <Block size={1 / 1}>{PrismicReact.RichText.asText(doc.data.project_title)}</Block>
+              <Block size={1 / 1}>
+                <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
+              </Block>
               <Block size={1 / 3}>
                 {/* Project details */}
                 <Row>
