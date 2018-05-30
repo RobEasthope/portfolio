@@ -25,19 +25,12 @@ class Portfolio extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   fetchPage(props) {
     if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID('portfolio', 'portfolio-page', {}, (err, doc) => {
         if (doc) {
-          // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
         } else {
-          // We changed the state to display error not found if no matched doc
           this.setState({ notFound: !doc });
         }
       });

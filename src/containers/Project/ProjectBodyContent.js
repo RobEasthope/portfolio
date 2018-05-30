@@ -2,7 +2,6 @@ import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 
 import { Row, Block } from '../../components/Grid/Grid';
-import TextWrapper from './TextWrapper';
 
 const ProjectBodyContent = props =>
   props.content.map((slice) => {

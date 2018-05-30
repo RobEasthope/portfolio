@@ -4,11 +4,9 @@ import PrismicReact from 'prismic-reactjs';
 
 import MetaData from '../../components/MetaData';
 import Error404Page from '../../components/pages/Error404Page';
-import LandingGreeting from '../../components/typography/LandingGreeting';
 import OrgName from './OrgName';
 import ProjectBodyContent from './ProjectBodyContent';
 import ProjectHeader from './ProjectHeader';
-import TextWrapper from './TextWrapper';
 import ContentWrapper from './ContentWrapper';
 import ProjectTitle from './ProjectTitle';
 
@@ -32,10 +30,6 @@ class Project extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   uid() {
     if (this.props.match) {
       return this.props.match.params.uid;
@@ -45,13 +39,10 @@ class Project extends React.Component {
 
   fetchPage(props) {
     if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID('project', this.uid(), {}, (err, doc) => {
         if (doc) {
-          // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
         } else {
-          // We changed the state to display error not found if no matched doc
           this.setState({ notFound: !doc });
         }
       });
@@ -60,8 +51,6 @@ class Project extends React.Component {
   }
 
   render() {
-    // const uid = () => this.props.match.params.uid;
-
     if (this.state.doc) {
       const { doc } = this.state;
       return (
@@ -110,11 +99,6 @@ class Project extends React.Component {
               </Block>
             </Row>
           </ContentWrapper>
-
-          {/* Project content */}
-          <div>
-            <br />
-          </div>
         </div>
       );
     } else if (this.state.notFound) {
