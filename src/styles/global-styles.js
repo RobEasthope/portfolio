@@ -31,7 +31,7 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Sorts Mill Goudy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Sorts Mill Goudy', Georgia, serif;
     color: ${palette.ink};
     font-size: 18px;
     ${''}
