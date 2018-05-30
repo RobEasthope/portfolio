@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const ProjectTitle = styled('div')`
-  ${''} text-align: center;
-  font-size: 64px;
+  text-align: center;
+  font-size: 48px;
   margin: 3em auto;
   max-width: 1000px;
 
