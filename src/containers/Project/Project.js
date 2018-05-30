@@ -4,7 +4,8 @@ import PrismicReact from 'prismic-reactjs';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../../components/Error404/Error404';
-import OrgName from '../../components/OrgName/OrgName';
+
+import ProjectDetails from '../../components/ProjectDetails/ProjectDetails';
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
 import ProjectHeader from '../../components/ProjectHeader/ProjectHeader';
 import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
@@ -68,30 +69,8 @@ class Project extends React.Component {
           </ProjectHeader>
           <ContentWrapper>
             <Row>
-              <Block size={1 / 1} />
               <Block size={1 / 3}>
-                {/* Project details */}
-                <Row>
-                  <Block size={1 / 1}>
-                    <div>Client</div>
-                    <div>
-                      <OrgName title={doc.data.client} url={doc.data.client_url} />
-                    </div>
-                    <br />
-                  </Block>
-                  <Block size={1 / 1}>
-                    <div>Agency</div>
-                    <div>
-                      <OrgName title={doc.data.agency} url={doc.data.agency_url} />
-                    </div>
-
-                    <br />
-                  </Block>
-                  <Block size={1 / 1}>
-                    <div>Year</div>
-                    <div>{doc.data.year}</div>
-                  </Block>
-                </Row>
+                <ProjectDetails content={doc.data} />
               </Block>
 
               <Block size={2 / 3}>
