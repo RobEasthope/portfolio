@@ -21,8 +21,8 @@ const Header = () => (
       </Grid.Unit>
 
       <Grid.Unit size={1 / 2} style={{ textAlign: 'right' }}>
-        <NavLink to="/">Portfolio</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </Grid.Unit>
     </Grid>
   </HeaderWrapper>
