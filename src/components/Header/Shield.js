@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import shieldAsset from './sun-shield.png';
+import shieldAsset from './saladin-logo-dark-with-diamond.svg';
 
 const ShieldLogo = styled.img`
   height: 40px;
