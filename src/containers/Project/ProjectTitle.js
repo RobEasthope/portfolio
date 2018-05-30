@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const ProjectTitle = styled('div')`
   text-align: center;
-  font-size: 48px;
-  margin: 3em auto;
+  font-size: 72px;
   max-width: 1000px;
 
   position: absolute;
