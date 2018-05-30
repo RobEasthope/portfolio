@@ -17,11 +17,11 @@ const Header = () => (
     <Grid>
       <Grid.Unit size={1 / 2} style={{ textAlign: 'left' }}>
         <Shield />
-        <NavLink to="/portfolio">Rob Easthope</NavLink>
+        <NavLink to="/">Rob Easthope</NavLink>
       </Grid.Unit>
 
       <Grid.Unit size={1 / 2} style={{ textAlign: 'right' }}>
-        <NavLink to="/portfolio">Portfolio</NavLink>
+        <NavLink to="/">Portfolio</NavLink>
         <NavLink to="/about">About</NavLink>
       </Grid.Unit>
     </Grid>
