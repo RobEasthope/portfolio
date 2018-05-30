@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 
-import MetaData from '../../components/MetaData';
-import Error404Page from '../../components/pages/Error404Page';
+import MetaData from '../../components/MetaData/MetaData';
+import Error404 from '../../components/Error404/Error404';
 
-import PlaceholderText from '../../components/typography/PlaceholderText';
-import LandingBkg from '../../components/display/LandingBkg';
+import PlaceholderText from '../../components/PlaceholderText/PlaceholderText';
+import LandingBkg from '../../components/LandingBkg/LandingBkg';
 
 class Placeholder extends React.Component {
   constructor() {
@@ -74,7 +74,7 @@ class Placeholder extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return <Error404Page />;
+      return <Error404 />;
     }
     return '';
   }

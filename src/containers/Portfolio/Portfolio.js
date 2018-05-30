@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'styled-components-grid';
 
-import PortfolioWrapper from './PortfolioWrapper';
-import PortfolioCards from './PortfolioCards';
-import MetaData from '../../components/MetaData';
-import PortfolioTitle from './PortfolioTitle';
+import PortfolioWrapper from '../../components/PortfolioWrapper/PortfolioWrapper';
+import PortfolioCards from '../../components/PortfolioCards/PortfolioCards';
+import MetaData from '../../components/MetaData/MetaData';
+import PortfolioTitle from '../../components/PortfolioTitle/PortfolioTitle';
 
 class Portfolio extends React.Component {
   constructor() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Grid from 'styled-components-grid';
-import NavLink from './NavLink';
+import NavLink from '../NavLink/NavLink';
 
-import Shield from './Shield';
+import Logo from '../Logo/Logo';
 
 const HeaderWrapper = styled.header`
   text-align: center;
@@ -16,7 +16,7 @@ const Header = () => (
   <HeaderWrapper>
     <Grid>
       <Grid.Unit size={1 / 2} style={{ textAlign: 'left' }}>
-        <Shield />
+        <Logo />
         <NavLink to="/">Rob Easthope</NavLink>
       </Grid.Unit>
 

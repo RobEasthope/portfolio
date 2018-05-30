@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 
-import MetaData from '../../components/MetaData';
-import Error404Page from '../../components/pages/Error404Page';
+import MetaData from '../../components/MetaData/MetaData';
+import Error404 from '../../components/Error404/Error404';
 
-import LandingGreeting from '../../components/typography/LandingGreeting';
-import LandingBkg from '../../components/display/LandingBkg';
+import LandingGreeting from '../../components/LandingGreeting/LandingGreeting';
+import LandingBkg from '../../components/LandingBkg/LandingBkg';
 
-class Home extends React.Component {
+class Landing extends React.Component {
   constructor() {
     super();
 
@@ -69,15 +69,15 @@ class Home extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return <Error404Page />;
+      return <Error404 />;
     }
     return '';
   }
 }
 
-Home.propTypes = {
+Landing.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
 };
 
-export default Home;
+export default Landing;

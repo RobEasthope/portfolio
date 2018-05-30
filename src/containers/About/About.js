@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 
-import MetaData from '../../components/MetaData';
-import Error404Page from '../../components/pages/Error404Page';
+import MetaData from '../../components/MetaData/MetaData';
+import Error404 from '../../components/Error404/Error404';
 
 class About extends React.Component {
   constructor() {
@@ -59,7 +59,7 @@ class About extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return <Error404Page />;
+      return <Error404 />;
     }
     return '';
   }

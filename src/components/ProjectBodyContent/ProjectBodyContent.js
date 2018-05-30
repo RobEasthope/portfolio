@@ -1,7 +1,7 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 
-import { Row, Block } from '../../components/Grid/Grid';
+import { Row, Block } from '../Grid/Grid';
 
 const ProjectBodyContent = props =>
   props.content.map((slice) => {

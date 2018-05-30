@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import palette from '../../styles/colour-palette';
 
 const LandingGreeting = styled.h1`
   font-size: 100px;

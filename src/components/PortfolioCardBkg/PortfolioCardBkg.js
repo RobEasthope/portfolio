@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import Imgix from 'react-imgix';
 
 import { breakpoints as bk } from '../../styles/breakpoints';

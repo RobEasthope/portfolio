@@ -13,11 +13,10 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import Header from './components/Header/Header';
 
-import Home from './containers/Home/Home';
 import Portfolio from './containers/Portfolio/Portfolio';
 import Project from './containers/Project/Project';
 import About from './containers/About/About';
-import Error404Page from './components/pages/Error404Page';
+import Error404 from './components/Error404/Error404';
 
 // Google Analytics
 const snap = navigator.userAgent !== 'ReactSnap';
@@ -74,7 +73,7 @@ class App extends React.Component {
                 path="/about"
                 render={routeProps => <About {...routeProps} prismicCtx={this.state.prismicCtx} />}
               />
-              <Route component={Error404Page} />
+              <Route component={Error404} />
             </Switch>
           </ScrollToTop>
         </Router>

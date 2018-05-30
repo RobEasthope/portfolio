@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 
-import MetaData from '../../components/MetaData';
-import Error404Page from '../../components/pages/Error404Page';
-import OrgName from './OrgName';
-import ProjectBodyContent from './ProjectBodyContent';
-import ProjectHeader from './ProjectHeader';
-import ContentWrapper from './ContentWrapper';
-import ProjectTitle from './ProjectTitle';
+import MetaData from '../../components/MetaData/MetaData';
+import Error404 from '../../components/Error404/Error404';
+import OrgName from '../../components/OrgName/OrgName';
+import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
+import ProjectHeader from '../../components/ProjectHeader/ProjectHeader';
+import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
+import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
 
 import { Row, Block } from '../../components/Grid/Grid';
 
@@ -102,7 +102,7 @@ class Project extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return <Error404Page />;
+      return <Error404 />;
     }
     return '';
   }
