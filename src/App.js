@@ -9,6 +9,7 @@ import './styles/global-styles';
 import theme from './styles/theme';
 
 import buildContext from './utils/prismicContext';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import Header from './components/Header/Header';
 
@@ -52,7 +53,7 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
-          <div>
+          <ScrollToTop>
             <Header />
 
             <Switch>
@@ -75,7 +76,7 @@ class App extends React.Component {
               />
               <Route component={Error404Page} />
             </Switch>
-          </div>
+          </ScrollToTop>
         </Router>
       </ThemeProvider>
     );
