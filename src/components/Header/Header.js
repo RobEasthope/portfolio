@@ -1,29 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import Grid from 'styled-components-grid';
-import NavLink from './NavLink';
+import NavLink from '../NavLink/NavLink';
 
-import Shield from './Shield';
+import Logo from '../Logo/Logo';
 
 const HeaderWrapper = styled.header`
   text-align: center;
-  padding: 20px 0;
-  max-width: 380px;
+  padding: 20px 80px 20px;
+  max-width: 100%;
   margin: 0 auto;
 `;
 
 const Header = () => (
   <HeaderWrapper>
     <Grid>
-      <Grid.Unit size={1 / 3}>
-        <NavLink to="/portfolio">Portfolio</NavLink>
+      <Grid.Unit size={1 / 2} style={{ textAlign: 'left' }}>
+        <Logo />
+        <NavLink to="/">Rob Easthope</NavLink>
       </Grid.Unit>
 
-      <Grid.Unit size={1 / 3}>
-        <Shield />
-      </Grid.Unit>
-      <Grid.Unit size={1 / 3}>
+      <Grid.Unit size={1 / 2} style={{ textAlign: 'right' }}>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </Grid.Unit>
     </Grid>
   </HeaderWrapper>

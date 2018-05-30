@@ -2,9 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 
-import MetaData from '../../components/MetaData';
-import Error404Page from '../../components/pages/Error404Page';
-import OrgName from './OrgName';
+import MetaData from '../../components/MetaData/MetaData';
+import Error404 from '../../components/Error404/Error404';
+
+import ProjectDetails from '../../components/ProjectDetails/ProjectDetails';
+import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
+import ProjectHeader from '../../components/ProjectHeader/ProjectHeader';
+import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
+import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
+
+import { Row, Block } from '../../components/Grid/Grid';
 
 class Project extends React.Component {
   constructor() {
@@ -24,10 +31,6 @@ class Project extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   uid() {
     if (this.props.match) {
       return this.props.match.params.uid;
@@ -37,13 +40,10 @@ class Project extends React.Component {
 
   fetchPage(props) {
     if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID('project', this.uid(), {}, (err, doc) => {
         if (doc) {
-          // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
         } else {
-          // We changed the state to display error not found if no matched doc
           this.setState({ notFound: !doc });
         }
       });
@@ -52,8 +52,6 @@ class Project extends React.Component {
   }
 
   render() {
-    // const uid = () => this.props.match.params.uid;
-
     if (this.state.doc) {
       const { doc } = this.state;
       return (
@@ -65,13 +63,25 @@ class Project extends React.Component {
             currentUrl={this.props.match.url}
           />
 
-          <div>{PrismicReact.RichText.asText(doc.data.project_title)}</div>
-          <OrgName title={doc.data.client} url={doc.data.client_url} />
-          <OrgName title={doc.data.agency} url={doc.data.agency_url} />
+          {/* Project header */}
+          <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid>
+            <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
+          </ProjectHeader>
+          <ContentWrapper>
+            <Row>
+              <Block size={1 / 3}>
+                <ProjectDetails content={doc.data} />
+              </Block>
+
+              <Block size={2 / 3}>
+                <ProjectBodyContent content={doc.data.body} />
+              </Block>
+            </Row>
+          </ContentWrapper>
         </div>
       );
     } else if (this.state.notFound) {
-      return <Error404Page />;
+      return <Error404 />;
     }
     return '';
   }

@@ -4,6 +4,7 @@ import palette from './colour-palette';
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy');
+  @import url("https://use.typekit.net/wij4ayn.css");
 
   @font-face {
       font-family: 'League Spartan';
@@ -30,28 +31,19 @@ injectGlobal`
   }
 
   body {
-    font-family: 'hk_grotesklight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Sorts Mill Goudy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${palette.ink};
-
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-
-    @media (min-width: 420px) {
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-bottom: 20px;
-    }
-
-    @media (min-width: 1020px) {
-      padding-left: 80px;
-      padding-right: 80px;
-      padding-bottom: 80px;
-    }
+    font-size: 18px;
+    ${''}
   }
 
   a {
     color: ${palette.ink};
+    text-decoration: none;
+  }
+
+  p {
+    margin-top: 0;
   }
 
   img {

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const PortfolioCardTitle = styled('h2')`
   display: inline-block;
-  font-weight: normal;
-  font-size: 1rem;
+  ${''} font-weight: normal;
+  font-size: 16px;
   margin: 0;
-  padding: 8px 10px 10px;
+  padding: 8px 10px 8px;
   background-color: white;
 
   position: absolute;

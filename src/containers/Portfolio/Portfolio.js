@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'styled-components-grid';
 
-import PortfolioWrapper from './PortfolioWrapper';
-import PortfolioCards from './PortfolioCards';
-import MetaData from '../../components/MetaData';
+import PortfolioWrapper from '../../components/PortfolioWrapper/PortfolioWrapper';
+import PortfolioCards from '../../components/PortfolioCards/PortfolioCards';
+import MetaData from '../../components/MetaData/MetaData';
+import PortfolioTitle from '../../components/PortfolioTitle/PortfolioTitle';
 
 class Portfolio extends React.Component {
   constructor() {
@@ -24,19 +25,12 @@ class Portfolio extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   fetchPage(props) {
     if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID('portfolio', 'portfolio-page', {}, (err, doc) => {
         if (doc) {
-          // We put the retrieved content in the state as a doc variable
           this.setState({ doc });
         } else {
-          // We changed the state to display error not found if no matched doc
           this.setState({ notFound: !doc });
         }
       });
@@ -57,6 +51,7 @@ class Portfolio extends React.Component {
           />
 
           <PortfolioWrapper>
+            <PortfolioTitle>Hello, I'm Rob, a front end developer based in London.</PortfolioTitle>
             <Grid>
               <PortfolioCards cards={doc.data.body} />
             </Grid>
