@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import palette from '../../styles/colour-palette';
 
 const LandingGreeting = styled.h1`
-  ${''} font-size: 120px;
+  font-size: 100px;
   line-height: 1;
   margin: 0;
 
