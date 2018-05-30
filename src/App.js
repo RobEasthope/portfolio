@@ -59,11 +59,6 @@ class App extends React.Component {
               <Route
                 exact
                 path="/"
-                render={routeProps => <Home {...routeProps} prismicCtx={this.state.prismicCtx} />}
-              />
-              <Route
-                exact
-                path="/portfolio"
                 render={routeProps => (
                   <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
                 )}
