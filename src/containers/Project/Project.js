@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
-import ValidImage from '../../components/ValidImage/ValidImage';
+import Image from '../../components/Image/Image';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../../components/Error404/Error404';
@@ -70,7 +70,7 @@ class Project extends React.Component {
           <ContentWrapper>
             <Row>
               <Block size={1 / 1}>
-                <ValidImage src={doc.data.initial_image} />
+                <Image src={doc.data.initial_image} />
               </Block>
               <Block size={1 / 1}>
                 <ProjectBodyContent content={doc.data.body} />
