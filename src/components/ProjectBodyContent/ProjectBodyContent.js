@@ -3,12 +3,17 @@ import PrismicReact from 'prismic-reactjs';
 import Imgix from 'react-imgix';
 
 import { Row, Block } from '../Grid/Grid';
+import TextWrapper from '../TextWrapper/TextWrapper';
 
 const ProjectBodyContent = props =>
   props.content.map((slice) => {
     switch (slice.slice_type) {
       case 'general_content':
-        return slice.items.map(content => PrismicReact.RichText.render(content.rich_text));
+        return (
+          <TextWrapper>
+            {slice.items.map(content => PrismicReact.RichText.render(content.rich_text))}
+          </TextWrapper>
+        );
 
       case 'image_gallery':
         return (
