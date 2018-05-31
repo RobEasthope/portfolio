@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
+import ValidImage from '../../components/ValidImage/ValidImage';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../../components/Error404/Error404';
@@ -65,9 +66,12 @@ class Project extends React.Component {
 
           {/* Project header */}
           <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
-          {/* <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid /> */}
+
           <ContentWrapper>
             <Row>
+              <Block size={1 / 1}>
+                <ValidImage src={doc.data.initial_image} />
+              </Block>
               <Block size={1 / 1}>
                 <ProjectBodyContent content={doc.data.body} />
               </Block>
