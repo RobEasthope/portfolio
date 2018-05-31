@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-const PortfolioTitle = styled('div')`
-  text-align: left;
-  font-size: 5.25rem;
+const PortfolioTitle = styled('h1')`
   font-weight: 500;
-  line-height: 1.2em;
+  line-height: 1.2;
   width: 90%;
   padding: 2em 0 1em;
 `;

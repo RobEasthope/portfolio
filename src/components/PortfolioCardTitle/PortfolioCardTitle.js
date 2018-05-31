@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const PortfolioCardTitle = styled('h4')`
-  margin: 1em 5% 0;
-  font-size: 1.75rem;
+  margin: 0 5%;
   font-weight: 400;
   line-height: 1.5em;
 
