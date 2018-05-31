@@ -34,8 +34,16 @@ const ProjectBodyContent = props =>
           <SlimWrapper>{slice.items.map(content => <Image src={content.image} />)}</SlimWrapper>
         );
 
+      case 'project_type_year':
+        return (
+          <div>
+            {PrismicReact.RichText.asText(slice.primary.project_type)}
+            {slice.primary.project_year}
+          </div>
+        );
+
       default:
-        return 'Slice code missing';
+        return <div>Slice module hasn't been templated</div>;
     }
   });
 
