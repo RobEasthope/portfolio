@@ -4,6 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
 import WideWrapper from '../WideWrapper/WideWrapper';
+import ProjectMiscDetails from '../ProjectMiscDetails/ProjectMiscDetails';
 import Image from '../Image/Image';
 
 const ProjectBodyContent = props =>
@@ -36,10 +37,13 @@ const ProjectBodyContent = props =>
 
       case 'project_type_year':
         return (
-          <div>
-            {PrismicReact.RichText.asText(slice.primary.project_type)}
-            {slice.primary.project_year}
-          </div>
+          <SlimWrapper>
+            <ProjectMiscDetails>
+              {PrismicReact.RichText.asText(slice.primary.project_type)}
+              <span>⋅</span>
+              {slice.primary.project_year}
+            </ProjectMiscDetails>
+          </SlimWrapper>
         );
 
       default:
