@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components';
 import palette from './colour-palette';
+import rem from '../utils/rem';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
