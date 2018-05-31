@@ -1,5 +1,6 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
+import Imgix from 'react-imgix';
 
 import { Row, Block } from '../Grid/Grid';
 
@@ -14,7 +15,7 @@ const ProjectBodyContent = props =>
           <Row>
             {slice.items.map(content => (
               <Block size={1 / 1}>
-                <img src={content.image.url} alt={content.image.alt} />
+                <Imgix src={content.image.url} alt={content.image.alt} />
               </Block>
             ))}
           </Row>
