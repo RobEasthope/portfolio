@@ -6,24 +6,12 @@ import OrgName from '../OrgName/OrgName';
 const ProjectDetails = props => (
   <Row>
     <Block size={1 / 1}>
-      <div>Client</div>
-      <div>
-        <OrgName title={props.content.client} url={props.content.client_url} />
-      </div>
-      <br />
+      Client - <OrgName title={props.content.client} url={props.content.client_url} />
     </Block>
     <Block size={1 / 1}>
-      <div>Agency</div>
-      <div>
-        <OrgName title={props.content.agency} url={props.content.agency_url} />
-      </div>
-
-      <br />
+      Agency - <OrgName title={props.content.agency} url={props.content.agency_url} />
     </Block>
-    <Block size={1 / 1}>
-      <div>Year</div>
-      <div>{props.content.year}</div>
-    </Block>
+    <Block size={1 / 1}>Year - {props.content.year}</Block>
   </Row>
 );
 
