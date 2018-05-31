@@ -13,11 +13,6 @@ const NavLink = styled(RRNavLink)`
   color: ${palette.ink};
   text-decoration: none;
   margin-left: 1.25em;
-
-  :hover {
-    color: #e75b4c;
-    transition: 0.4s ease-in-out;
-  }
 `;
 
 export default NavLink;
