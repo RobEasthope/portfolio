@@ -3,7 +3,7 @@ import PrismicReact from 'prismic-reactjs';
 
 import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
-import WideContent from '../WideContent/WideContent';
+import WideWrapper from '../WideWrapper/WideWrapper';
 import Image from '../Image/Image';
 
 const ProjectBodyContent = props =>
@@ -18,7 +18,7 @@ const ProjectBodyContent = props =>
 
       case 'image_gallery':
         return (
-          <WideContent>
+          <WideWrapper>
             <Row>
               {slice.items.map(content => (
                 <Block size={1 / 1}>
@@ -26,7 +26,7 @@ const ProjectBodyContent = props =>
                 </Block>
               ))}
             </Row>
-          </WideContent>
+          </WideWrapper>
         );
 
       default:
