@@ -2,8 +2,8 @@ import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 
 import { Row, Block } from '../Grid/Grid';
+import SlimWrapper from '../SlimWrapper/SlimWrapper';
 import WideContent from '../WideContent/WideContent';
-import TextWrapper from '../TextWrapper/TextWrapper';
 import Image from '../Image/Image';
 
 const ProjectBodyContent = props =>
@@ -11,9 +11,9 @@ const ProjectBodyContent = props =>
     switch (slice.slice_type) {
       case 'general_content':
         return (
-          <TextWrapper>
+          <SlimWrapper>
             {slice.items.map(content => PrismicReact.RichText.render(content.rich_text))}
-          </TextWrapper>
+          </SlimWrapper>
         );
 
       case 'image_gallery':
