@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { NavLink as RRNavLink } from 'react-router-dom';
 

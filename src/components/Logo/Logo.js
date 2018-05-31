@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import LogoAsset from './saladin-logo-dark-with-diamond.svg';
 import palette from '../../styles/colour-palette';
-
-const LogoImage = styled.img`
-  height: 40px;
-`;
 
 const LogoLink = styled(Link)`
   display: inline-block;
@@ -17,11 +12,6 @@ const LogoLink = styled(Link)`
   color: ${palette.highlight};
 `;
 
-const Logo = () => (
-  <LogoLink to="/">
-    {/* <LogoImage src={LogoAsset} /> */}
-    Rob Easthope
-  </LogoLink>
-);
+const Logo = () => <LogoLink to="/">Rob Easthope</LogoLink>;
 
 export default Logo;
