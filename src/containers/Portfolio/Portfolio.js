@@ -50,8 +50,8 @@ class Portfolio extends React.Component {
             currentUrl={this.props.match.url}
           />
 
+          <PortfolioTitle>Hello, I'm Rob, a front end developer based in London.</PortfolioTitle>
           <PortfolioWrapper>
-            <PortfolioTitle>Hello, I'm Rob, a front end developer based in London.</PortfolioTitle>
             <Grid>
               <PortfolioCards cards={doc.data.body} />
             </Grid>

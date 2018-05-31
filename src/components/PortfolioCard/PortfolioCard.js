@@ -17,14 +17,13 @@ const PortfolioCard = props => (
       xs: 1 / 1,
       sm: 1 / 2,
       md: 1 / 3,
-      lg: 1 / 4,
-      xl: 1 / 5,
+      // lg: 1 / 4,
+      // xl: 1 / 5,
     }}
   >
     <Link to={prismicLinkResolver(props.url)}>
-      <PortfolioCardBkg src={imgixUrl(props.bkg)} type="bg" fluid>
-        <PortfolioCardTitle>{PrismicReact.RichText.asText(props.title)}</PortfolioCardTitle>
-      </PortfolioCardBkg>
+      <PortfolioCardBkg src={imgixUrl(props.bkg)} type="bg" fluid />
+      <PortfolioCardTitle>{PrismicReact.RichText.asText(props.title)}</PortfolioCardTitle>
     </Link>
   </PortfolioCardWrapper>
 );
