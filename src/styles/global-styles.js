@@ -8,6 +8,19 @@ injectGlobal`
 
   * {
     box-sizing: border-box;
+
+  }
+  
+  ::-moz-selection {
+    background: ${palette.ink};
+    color: #FFF;
+    text-shadow: none
+  }
+
+  ::selection, {
+    background: ${palette.ink};
+    color: #FFF;
+    text-shadow: none
   }
 
   html, body {
@@ -100,6 +113,8 @@ injectGlobal`
       line-height: 1.75em;
     }
   }
+
+
 
   img {
     max-width: 100%;
