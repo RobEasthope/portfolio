@@ -9,7 +9,6 @@ import Error404 from '../../components/Error404/Error404';
 import ProjectDetails from '../../components/ProjectDetails/ProjectDetails';
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
 import ProjectHeader from '../../components/ProjectHeader/ProjectHeader';
-import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
 import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
 
 import { Row, Block } from '../../components/Grid/Grid';
@@ -67,19 +66,17 @@ class Project extends React.Component {
           {/* Project header */}
           <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
 
-          <ContentWrapper>
-            <Row>
-              <Block size={1 / 1}>
-                <Image src={doc.data.initial_image} />
-              </Block>
-              <Block size={1 / 1}>
-                <ProjectBodyContent content={doc.data.body} />
-              </Block>
-              <Block size={1 / 1}>
-                <ProjectDetails content={doc.data} />
-              </Block>
-            </Row>
-          </ContentWrapper>
+          <Row>
+            <Block size={1 / 1}>
+              <Image src={doc.data.initial_image} />
+            </Block>
+            <Block size={1 / 1}>
+              <ProjectBodyContent content={doc.data.body} />
+            </Block>
+            <Block size={1 / 1}>
+              <ProjectDetails content={doc.data} />
+            </Block>
+          </Row>
         </div>
       );
     } else if (this.state.notFound) {
