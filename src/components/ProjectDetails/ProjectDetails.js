@@ -1,16 +1,16 @@
 import React from 'react';
 
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
-import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
+import ProjectDetail from '../ProjectDetail/ProjectDetail';
 
 const ProjectDetails = props => (
   <SlimWrapper>
-    <ProjectDetailText
+    <ProjectDetail
       detailTitle="Client"
       title={props.content.client}
       url={props.content.client_url}
     />
-    <ProjectDetailText
+    <ProjectDetail
       detailTitle="Agency"
       title={props.content.agency}
       url={props.content.agency_url}
