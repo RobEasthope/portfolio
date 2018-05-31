@@ -64,17 +64,15 @@ class Project extends React.Component {
           />
 
           {/* Project header */}
-          <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid>
-            <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
-          </ProjectHeader>
+          <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
+          {/* <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid /> */}
           <ContentWrapper>
             <Row>
-              <Block size={1 / 3}>
-                <ProjectDetails content={doc.data} />
-              </Block>
-
-              <Block size={2 / 3}>
+              <Block size={1 / 1}>
                 <ProjectBodyContent content={doc.data.body} />
+              </Block>
+              <Block size={1 / 1}>
+                <ProjectDetails content={doc.data} />
               </Block>
             </Row>
           </ContentWrapper>
