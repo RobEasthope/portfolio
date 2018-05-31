@@ -29,6 +29,11 @@ const ProjectBodyContent = props =>
           </WideWrapper>
         );
 
+      case 'single_image':
+        return (
+          <SlimWrapper>{slice.items.map(content => <Image src={content.image} />)}</SlimWrapper>
+        );
+
       default:
         return 'Slice code missing';
     }
