@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import palette from '../../styles/colour-palette';
+
 const PortfolioCardTitle = styled('h4')`
   margin: 0 5%;
   font-weight: 400;
