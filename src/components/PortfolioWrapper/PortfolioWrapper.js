@@ -1,21 +1,17 @@
 import styled from 'styled-components';
+import rem from '../../utils/rem';
 
 const PortfolioWrapper = styled('main')`
-  margin-top: -10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-left: -${rem(40)};
+  margin-right: -${rem(40)};
+  margin-bottom: 50px;
 
   @media (min-width: 420px) {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: -${rem(60)};
   }
 
   @media (min-width: 1020px) {
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-bottom: 80px;
+    margin-bottom: -${rem(80)};
   }
 `;
 

@@ -1,52 +1,124 @@
 import { injectGlobal } from 'styled-components';
 import palette from './colour-palette';
+import rem from '../utils/rem';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy');
-  @import url("https://use.typekit.net/wij4ayn.css");
-
-  @font-face {
-      font-family: 'League Spartan';
-      src: url('leaguespartan-bold.eot');
-      src: url('leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-           url('leaguespartan-bold.woff2') format('woff2'),
-           url('leaguespartan-bold.woff') format('woff'),
-           url('leaguespartan-bold.ttf') format('truetype'),
-           url('leaguespartan-bold.svg#league_spartanbold') format('svg');
-      font-weight: bold;
-      font-style: normal;
-  }
-
-  @font-face {
-      font-family: 'hk_grotesklight';
-      src: url('hkgrotesk-light-webfont.woff2') format('woff2'),
-           url('hkgrotesk-light-webfont.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-  }
+  @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500|Nunito+Sans:400,600');
 
   * {
     box-sizing: border-box;
+
+  }
+  
+  ::-moz-selection {
+    background: ${palette.ink};
+    color: #FFF;
+    text-shadow: none
+  }
+
+  ::selection, {
+    background: ${palette.ink};
+    color: #FFF;
+    text-shadow: none
+  }
+
+  html, body {
+    font-size: 100%;
   }
 
   body {
-    font-family: 'Sorts Mill Goudy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "EB Garamond", Georgia, serif;
     color: ${palette.ink};
-    font-size: 18px;
-    ${''}
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   a {
     color: ${palette.ink};
     text-decoration: none;
+
+    :hover {
+      color: ${palette.highlight};
+      transition: 0.4s ease-in-out;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5em;
+    margin-bottom: .5em
+  }
+
+  h1 {
+    font-size: ${rem(36)};
+    font-weight: 500;
+
+    @media only screen and (min-width: 30em) {
+      font-size: ${rem(48)};
+    }
+    @media only screen and (min-width: 37.5em) {
+      font-size: ${rem(56)};
+    }
+
+    @media only screen and (min-width: 48em) {
+      font-size: ${rem(64)};
+    }
+
+    @media only screen and (min-width: 64em) {
+      font-size: ${rem(84)};
+    }
+  }
+
+  h2 {
+    font-size: ${rem(28)};
+
+    @media only screen and (min-width: 30em) {
+      font-size: ${rem(36)};
+    }
+  }
+
+  h3 {
+    font-size: ${rem(24)};
+
+    @media only screen and (min-width: 30em) {
+      font-size: ${rem(32)};
+    }
+  }
+
+  h4 {
+    font-size: ${rem(22)};
+
+    @media only screen and (min-width: 30em) {
+      font-size: ${rem(28)};
+    }
+  }
+
+  h5 {
+    font-size: ${rem(24)};
+  }
+
+  h6 {
+    font-size: ${rem(16)};
   }
 
   p {
-    margin-top: 0;
+    font-size: ${rem(18)};
+    line-height: 1.65em
+    margin-bottom: 1.5em;
+
+    @media only screen and (min-width: 30em) {
+      font-size: ${rem(22)};
+      line-height: 1.75em;
+    }
   }
+
+
 
   img {
     max-width: 100%;
+    height: auto;
+    vertical-align: middle
   }
 `;

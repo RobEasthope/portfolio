@@ -13,6 +13,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import Header from './components/Header/Header';
 
+import Landing from './containers/Landing/Landing';
 import Portfolio from './containers/Portfolio/Portfolio';
 import Project from './containers/Project/Project';
 import About from './containers/About/About';
@@ -61,6 +62,13 @@ class App extends React.Component {
                 path="/"
                 render={routeProps => (
                   <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
+                )}
+              />
+              <Route
+                exact
+                path="/landing"
+                render={routeProps => (
+                  <Landing {...routeProps} prismicCtx={this.state.prismicCtx} />
                 )}
               />
               <Route
