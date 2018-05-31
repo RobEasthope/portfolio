@@ -66,17 +66,11 @@ class Project extends React.Component {
           {/* Project header */}
           <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
 
-          <Row>
-            <Block size={1 / 1}>
-              <Image src={doc.data.initial_image} />
-            </Block>
-            <Block size={1 / 1}>
-              <ProjectBodyContent content={doc.data.body} />
-            </Block>
-            <Block size={1 / 1}>
-              <ProjectDetails content={doc.data} />
-            </Block>
-          </Row>
+          <Image src={doc.data.initial_image} />
+
+          <ProjectBodyContent content={doc.data.body} />
+
+          <ProjectDetails content={doc.data} />
         </div>
       );
     } else if (this.state.notFound) {
