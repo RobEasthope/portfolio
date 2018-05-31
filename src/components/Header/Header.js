@@ -6,9 +6,7 @@ import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
 
 const HeaderWrapper = styled.header`
-  padding: 20px 0 20px;
-  max-width: 100%;
-  margin: 0 auto;
+  padding: 3em 0;
 `;
 
 const Header = () => (
