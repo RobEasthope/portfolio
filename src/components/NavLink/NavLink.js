@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink as RRNavLink } from 'react-router-dom';
 
 import palette from '../../styles/colour-palette';
 
-const NavLink = styled(Link)`
+const NavLink = styled(RRNavLink)`
   display: inline-block;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 600;
