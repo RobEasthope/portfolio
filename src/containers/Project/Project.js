@@ -8,10 +8,7 @@ import Error404 from '../../components/Error404/Error404';
 
 import ProjectDetails from '../../components/ProjectDetails/ProjectDetails';
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
-import ProjectHeader from '../../components/ProjectHeader/ProjectHeader';
 import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
-
-import { Row, Block } from '../../components/Grid/Grid';
 
 class Project extends React.Component {
   constructor() {
