@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Grid from 'styled-components-grid';
-import NavLink from '../NavLink/NavLink';
 
 import Logo from '../Logo/Logo';
+import Nav from '../Nav/Nav';
 
 const HeaderWrapper = styled.header`
-  text-align: center;
   padding: 20px 0 20px;
   max-width: 100%;
   margin: 0 auto;
@@ -15,14 +14,12 @@ const HeaderWrapper = styled.header`
 const Header = () => (
   <HeaderWrapper>
     <Grid>
-      <Grid.Unit size={1 / 2} style={{ textAlign: 'left' }}>
+      <Grid.Unit size={1 / 2}>
         <Logo />
       </Grid.Unit>
 
-      <Grid.Unit size={1 / 2} style={{ textAlign: 'right' }}>
-        <NavLink to="/">Portfolio</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+      <Grid.Unit size={1 / 2}>
+        <Nav />
       </Grid.Unit>
     </Grid>
   </HeaderWrapper>

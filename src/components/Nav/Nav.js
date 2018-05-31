@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import NavLink from '../NavLink/NavLink';
 
+const NavWrapper = styled('nav')`
+  text-align: right;
+`;
+
 const Nav = () => (
-  <nav>
+  <NavWrapper>
+    <NavLink to="/">Portfolio</NavLink>
     <NavLink to="/about">About</NavLink>
     <NavLink to="/contact">Contact</NavLink>
-  </nav>
+  </NavWrapper>
 );
 
 export default Nav;
