@@ -9,12 +9,16 @@ const LogoImage = styled.img`
 
 const LogoLink = styled(Link)`
   display: inline-block;
-  padding: 0 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.05em;
 `;
 
 const Logo = () => (
   <LogoLink to="/">
-    <LogoImage src={LogoAsset} />
+    {/* <LogoImage src={LogoAsset} /> */}
+    Rob Easthope
   </LogoLink>
 );
 

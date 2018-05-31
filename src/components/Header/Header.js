@@ -7,7 +7,7 @@ import Logo from '../Logo/Logo';
 
 const HeaderWrapper = styled.header`
   text-align: center;
-  padding: 20px 80px 20px;
+  padding: 20px 0 20px;
   max-width: 100%;
   margin: 0 auto;
 `;
@@ -17,7 +17,6 @@ const Header = () => (
     <Grid>
       <Grid.Unit size={1 / 2} style={{ textAlign: 'left' }}>
         <Logo />
-        <NavLink to="/">Rob Easthope</NavLink>
       </Grid.Unit>
 
       <Grid.Unit size={1 / 2} style={{ textAlign: 'right' }}>
