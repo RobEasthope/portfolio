@@ -32,6 +32,7 @@ injectGlobal`
     color: ${palette.ink};
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 12rem;
   }
 
   a {
