@@ -16,7 +16,7 @@ injectGlobal`
 
   body {
     font-family: "EB Garamond", Georgia, serif;
-    color: black;
+    color: ${palette.ink};
     margin-left: 10%;
     margin-right: 10%;
   }
@@ -26,7 +26,7 @@ injectGlobal`
     text-decoration: none;
 
     :hover {
-      color: #e75b4c;
+      color: ${palette.highlight};
       transition: 0.4s ease-in-out;
     }
   }
