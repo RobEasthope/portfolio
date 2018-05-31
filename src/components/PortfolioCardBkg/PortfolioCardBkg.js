@@ -10,8 +10,7 @@ const PortfolioCardBkg = styled(Imgix)`
   background-image: url('${props => props.bkg}');
   background-size: cover;
   background-position: center center;
-
-  ${''}
+  margin-bottom: 1rem;
 
   width: 100%;
   height: 0;
