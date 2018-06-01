@@ -4,6 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../../components/Error404/Error404';
+import SlimWrapper from '../../components/SlimWrapper/SlimWrapper';
 
 class About extends React.Component {
   constructor() {
@@ -55,7 +56,23 @@ class About extends React.Component {
             currentUrl={this.props.match.url}
           />
 
-          {PrismicReact.RichText.asText(doc.data.title)}
+          <SlimWrapper>
+            <p>Hello,</p>
+            <p>
+              I'm Rob Easthope, a front end developer based in London. I specialise in clean code
+              and smooth, drama free development.
+            </p>
+            <p>
+              If you want to say hello you contact at
+              <a href="mailto:hello@robeasthope.com"> hello@robeasthope.com</a> or on
+              <a href="https://www.linkedin.com/in/rob-easthope-9b0bb436/"> LinkedIn</a>
+            </p>
+            <p>Thanks</p>
+            <p>
+              Rob Easthope
+              <br /> London, England
+            </p>
+          </SlimWrapper>
         </div>
       );
     } else if (this.state.notFound) {
