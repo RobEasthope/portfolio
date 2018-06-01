@@ -11,6 +11,7 @@ import theme from './styles/theme';
 import buildContext from './utils/prismicContext';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
+import WideWrapper from './components/WideWrapper/WideWrapper';
 import Header from './components/Header/Header';
 
 import Landing from './containers/Landing/Landing';
@@ -54,35 +55,39 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
           <ScrollToTop>
-            <Header />
+            <WideWrapper>
+              <Header />
 
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={routeProps => (
-                  <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
-                )}
-              />
-              <Route
-                exact
-                path="/landing"
-                render={routeProps => (
-                  <Landing {...routeProps} prismicCtx={this.state.prismicCtx} />
-                )}
-              />
-              <Route
-                path="/portfolio/:uid"
-                render={routeProps => (
-                  <Project {...routeProps} prismicCtx={this.state.prismicCtx} />
-                )}
-              />
-              <Route
-                path="/about"
-                render={routeProps => <About {...routeProps} prismicCtx={this.state.prismicCtx} />}
-              />
-              <Route component={Error404} />
-            </Switch>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={routeProps => (
+                    <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/landing"
+                  render={routeProps => (
+                    <Landing {...routeProps} prismicCtx={this.state.prismicCtx} />
+                  )}
+                />
+                <Route
+                  path="/portfolio/:uid"
+                  render={routeProps => (
+                    <Project {...routeProps} prismicCtx={this.state.prismicCtx} />
+                  )}
+                />
+                <Route
+                  path="/about"
+                  render={routeProps => (
+                    <About {...routeProps} prismicCtx={this.state.prismicCtx} />
+                  )}
+                />
+                <Route component={Error404} />
+              </Switch>
+            </WideWrapper>
           </ScrollToTop>
         </Router>
       </ThemeProvider>

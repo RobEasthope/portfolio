@@ -1,17 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
+import Image from '../../components/Image/Image';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../../components/Error404/Error404';
 
 import ProjectDetails from '../../components/ProjectDetails/ProjectDetails';
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
-import ProjectHeader from '../../components/ProjectHeader/ProjectHeader';
-import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
 import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
-
-import { Row, Block } from '../../components/Grid/Grid';
 
 class Project extends React.Component {
   constructor() {
@@ -64,20 +61,9 @@ class Project extends React.Component {
           />
 
           {/* Project header */}
-          <ProjectHeader bkg={doc.data.header_image.url} type="bg" fluid>
-            <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
-          </ProjectHeader>
-          <ContentWrapper>
-            <Row>
-              <Block size={1 / 3}>
-                <ProjectDetails content={doc.data} />
-              </Block>
+          <ProjectTitle>{PrismicReact.RichText.asText(doc.data.project_title)}</ProjectTitle>
 
-              <Block size={2 / 3}>
-                <ProjectBodyContent content={doc.data.body} />
-              </Block>
-            </Row>
-          </ContentWrapper>
+          <ProjectBodyContent content={doc.data.body} />
         </div>
       );
     } else if (this.state.notFound) {

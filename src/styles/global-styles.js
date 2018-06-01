@@ -10,7 +10,7 @@ injectGlobal`
     box-sizing: border-box;
 
   }
-  
+
   ::-moz-selection {
     background: ${palette.ink};
     color: #FFF;
@@ -32,6 +32,7 @@ injectGlobal`
     color: ${palette.ink};
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 10rem;
   }
 
   a {
@@ -106,6 +107,7 @@ injectGlobal`
   p {
     font-size: ${rem(18)};
     line-height: 1.65em
+    margin-top: 0;
     margin-bottom: 1.5em;
 
     @media only screen and (min-width: 30em) {
@@ -117,6 +119,7 @@ injectGlobal`
 
 
   img {
+    width: 100%;
     max-width: 100%;
     height: auto;
     vertical-align: middle

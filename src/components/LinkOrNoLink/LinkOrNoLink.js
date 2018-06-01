@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 import prismicLinkResolver from '../../prismic-link-resolver';
 
-const OrgName = (props) => {
+const LinkOrNoLink = (props) => {
   if (props.title !== null && props.url.url == null) {
     return PrismicReact.RichText.asText(props.title);
   } else if (props.title !== null && props.url.url !== null) {
@@ -16,14 +16,14 @@ const OrgName = (props) => {
   return null;
 };
 
-OrgName.defaultProps = {
+LinkOrNoLink.defaultProps = {
   title: [],
   url: [],
 };
 
-OrgName.propTypes = {
+LinkOrNoLink.propTypes = {
   title: PropTypes.arrayOf(PropTypes.shape),
   url: PropTypes.arrayOf(PropTypes.shape),
 };
 
-export default OrgName;
+export default LinkOrNoLink;
