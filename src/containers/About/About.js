@@ -63,7 +63,7 @@ class About extends React.Component {
               and smooth, drama free development.
             </p>
             <p>
-              If you want to say hello you contact at
+              If you want to say hello you contact me via
               <a href="mailto:hello@robeasthope.com"> hello@robeasthope.com</a> or on
               <a href="https://www.linkedin.com/in/rob-easthope-9b0bb436/"> LinkedIn</a>
             </p>
