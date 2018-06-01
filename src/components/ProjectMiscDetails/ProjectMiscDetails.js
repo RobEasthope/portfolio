@@ -5,7 +5,7 @@ const ProjectMiscDetails = styled('div')`
   font-family: 'Nunito Sans', sans-serif;
   font-size: ${rem(18)};
   color: #9b9b9b;
-  margin-bottom: 5em;
+  margin-bottom: 4.88em;
 
   span {
     margin: 0 ${rem(6)};
