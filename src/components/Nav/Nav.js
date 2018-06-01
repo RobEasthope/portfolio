@@ -20,9 +20,9 @@ const Nav = () => (
     <NavLink to="/about" exact activeClassName="active-link">
       About
     </NavLink>
-    <NavLink to="/contact" exact activeClassName="active-link">
+    {/* <NavLink to="/contact" exact activeClassName="active-link">
       Contact
-    </NavLink>
+    </NavLink> */}
   </NavWrapper>
 );
 
