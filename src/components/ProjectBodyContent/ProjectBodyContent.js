@@ -71,7 +71,7 @@ const ProjectBodyContent = props =>
               <Link to={PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}>
                 {PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}
               </Link>
-              <span>×</span>
+              <span> × </span>
               <Link to={PrismicReact.Link.url(slice.primary.github_url, prismicLinkResolver)}>
                 {PrismicReact.Link.url(slice.primary.github_url, prismicLinkResolver)}
               </Link>

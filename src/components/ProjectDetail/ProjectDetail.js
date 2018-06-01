@@ -8,7 +8,8 @@ const ProjectDetail = (props) => {
   if (props.title) {
     return (
       <ProjectDetailText>
-        {PrismicReact.RichText.asText(props.detailType)} <span>×</span>
+        {PrismicReact.RichText.asText(props.detailType)}
+        <span> × </span>
         <LinkOrNoLink title={props.title} url={props.url} />
       </ProjectDetailText>
     );
