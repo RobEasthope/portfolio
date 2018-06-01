@@ -1,4 +1,5 @@
 import React from 'react';
+import PrismicReact from 'prismic-reactjs';
 
 import LinkOrNoLink from '../LinkOrNoLink/LinkOrNoLink';
 import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
@@ -7,7 +8,8 @@ const ProjectDetail = (props) => {
   if (props.title) {
     return (
       <ProjectDetailText>
-        {props.detailTitle} >> <LinkOrNoLink title={props.title} url={props.url} />
+        {PrismicReact.RichText.asText(props.detailType)} |
+        <LinkOrNoLink title={props.title} url={props.url} />
       </ProjectDetailText>
     );
   }
