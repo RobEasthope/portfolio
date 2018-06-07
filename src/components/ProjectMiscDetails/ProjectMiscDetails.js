@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import rem from '../../utils/rem';
 
 const ProjectMiscDetails = styled('div')`
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'p22-underground', sans-serif;
   font-size: ${rem(18)};
   color: #9b9b9b;
   margin-bottom: 4.88em;
