@@ -69,7 +69,7 @@ const ProjectBodyContent = props =>
           <SlimWrapper>
             <ProjectDevDetail>
               <Link to={PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}>
-                {PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}
+                {PrismicReact.RichText.asText(slice.primary.site_text)}
               </Link>
               {/* <span> × </span>
               <Link to={PrismicReact.Link.url(slice.primary.github_url, prismicLinkResolver)}>
