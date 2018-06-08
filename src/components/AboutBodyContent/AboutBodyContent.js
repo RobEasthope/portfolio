@@ -1,7 +1,9 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 
+import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
+import WideWrapper from '../WideWrapper/WideWrapper';
 import Image from '../Image/Image';
 
 const AboutBodyContent = props =>
@@ -14,9 +16,17 @@ const AboutBodyContent = props =>
           </SlimWrapper>
         );
 
-      case 'slim_image_gallery':
+      case 'wide_image_gallery':
         return (
-          <SlimWrapper>{slice.items.map(content => <Image src={content.image} />)}</SlimWrapper>
+          <WideWrapper>
+            <Row>
+              {slice.items.map(content => (
+                <Block size={1 / 1}>
+                  <Image src={content.image} />
+                </Block>
+              ))}
+            </Row>
+          </WideWrapper>
         );
 
       default:
