@@ -16,6 +16,11 @@ const AboutBodyContent = props =>
           </SlimWrapper>
         );
 
+      case 'slim_image_gallery':
+        return (
+          <SlimWrapper>{slice.items.map(content => <Image src={content.image} />)}</SlimWrapper>
+        );
+
       case 'wide_image_gallery':
         return (
           <WideWrapper>
