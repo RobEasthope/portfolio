@@ -6,7 +6,6 @@ import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
 import WideWrapper from '../WideWrapper/WideWrapper';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
-import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
 import ProjectDevDetail from '../ProjectDevDetail/ProjectDevDetail';
 import ProjectMiscDetails from '../ProjectMiscDetails/ProjectMiscDetails';
 import prismicLinkResolver from '../../prismic-link-resolver';
