@@ -1,6 +1,5 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
-import { Link } from 'react-router-dom';
 
 import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
