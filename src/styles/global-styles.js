@@ -4,7 +4,6 @@ import rem from '../utils/rem';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500|Nunito+Sans:400,600');
   @import url("https://use.typekit.net/wij4ayn.css");
 
   * {
