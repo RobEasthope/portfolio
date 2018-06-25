@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
-import Image from '../../components/Image/Image';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../../components/Error404/Error404';
 
-import ProjectDetails from '../../components/ProjectDetails/ProjectDetails';
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
 import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
 

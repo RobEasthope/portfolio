@@ -1,12 +1,10 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
-import { Link } from 'react-router-dom';
 
 import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
 import WideWrapper from '../WideWrapper/WideWrapper';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
-import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
 import ProjectDevDetail from '../ProjectDevDetail/ProjectDevDetail';
 import ProjectMiscDetails from '../ProjectMiscDetails/ProjectMiscDetails';
 import prismicLinkResolver from '../../prismic-link-resolver';
@@ -68,13 +66,13 @@ const ProjectBodyContent = props =>
         return (
           <SlimWrapper>
             <ProjectDevDetail>
-              <Link to={PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}>
-                {PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}
-              </Link>
-              <span> × </span>
-              <Link to={PrismicReact.Link.url(slice.primary.github_url, prismicLinkResolver)}>
+              <a href={PrismicReact.Link.url(slice.primary.site_url, prismicLinkResolver)}>
+                {PrismicReact.RichText.asText(slice.primary.site_text)}
+              </a>
+              {/* <span> × </span>
+              <a href={PrismicReact.Link.url(slice.primary.github_url, prismicLinkResolver)}>
                 {PrismicReact.Link.url(slice.primary.github_url, prismicLinkResolver)}
-              </Link>
+              </a> */}
             </ProjectDevDetail>
           </SlimWrapper>
         );

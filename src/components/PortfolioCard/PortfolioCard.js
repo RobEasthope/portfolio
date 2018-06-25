@@ -40,14 +40,14 @@ PortfolioCard.defaultProps = {
   bkg: '',
   title: '???',
   subtitle: '???',
-  url: '#',
+  // url: '#',
 };
 
 PortfolioCard.propTypes = {
   bkg: PropTypes.string,
   title: PropTypes.arrayOf(PropTypes.shape),
   subtitle: PropTypes.arrayOf(PropTypes.shape),
-  url: PropTypes.string,
+  // url: PropTypes.objectOf(PropTypes.array),
 };
 
 export default PortfolioCard;

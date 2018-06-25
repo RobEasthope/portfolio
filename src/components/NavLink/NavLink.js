@@ -5,7 +5,7 @@ import palette from '../../styles/colour-palette';
 
 const NavLink = styled(RRNavLink)`
   display: inline-block;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'p22-underground', sans-serif;
   font-weight: 600;
   font-size: 18px;
   letter-spacing: 0.05em;
