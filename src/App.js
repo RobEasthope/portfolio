@@ -24,7 +24,7 @@ import Error404 from './components/Error404/Error404';
 const snap = navigator.userAgent !== 'ReactSnap';
 const production = process.env.NODE_ENV === 'production';
 if (production && snap) {
-  ReactGA.initialize('XX-XXXXXXXX-X');
+  ReactGA.initialize('UA-41755337-1');
 }
 
 function fireTracking() {
