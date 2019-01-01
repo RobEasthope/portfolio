@@ -4,14 +4,14 @@ import PrismicReact from 'prismic-reactjs';
 import { Row, Block } from '../Grid/Grid';
 import SlimWrapper from '../SlimWrapper/SlimWrapper';
 import WideWrapper from '../WideWrapper/WideWrapper';
-import ProjectDetail from '../ProjectDetail/ProjectDetail';
-import ProjectDevDetail from '../ProjectDevDetail/ProjectDevDetail';
-import ProjectMiscDetails from '../ProjectMiscDetails/ProjectMiscDetails';
+import ProjectDetail from '../../pages/Project/ProjectDetail/ProjectDetail';
+import ProjectDevDetail from '../../pages/Project/ProjectDevDetail/ProjectDevDetail';
+import ProjectMiscDetails from '../../pages/Project/ProjectMiscDetails/ProjectMiscDetails';
 import prismicLinkResolver from '../../prismic-link-resolver';
 import Image from '../Image/Image';
 
 const ProjectBodyContent = props =>
-  props.content.map((slice) => {
+  props.content.map(slice => {
     switch (slice.slice_type) {
       case 'general_content':
         return (
@@ -35,7 +35,11 @@ const ProjectBodyContent = props =>
 
       case 'single_image':
         return (
-          <SlimWrapper>{slice.items.map(content => <Image src={content.image} />)}</SlimWrapper>
+          <SlimWrapper>
+            {slice.items.map(content => (
+              <Image src={content.image} />
+            ))}
+          </SlimWrapper>
         );
 
       case 'project_type_year':

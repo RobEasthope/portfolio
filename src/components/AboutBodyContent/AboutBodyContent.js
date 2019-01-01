@@ -7,7 +7,7 @@ import WideWrapper from '../WideWrapper/WideWrapper';
 import Image from '../Image/Image';
 
 const AboutBodyContent = props =>
-  props.content.map((slice) => {
+  props.content.map(slice => {
     switch (slice.slice_type) {
       case 'general_content':
         return (
@@ -18,7 +18,11 @@ const AboutBodyContent = props =>
 
       case 'slim_image_gallery':
         return (
-          <SlimWrapper>{slice.items.map(content => <Image src={content.image} />)}</SlimWrapper>
+          <SlimWrapper>
+            {slice.items.map(content => (
+              <Image src={content.image} />
+            ))}
+          </SlimWrapper>
         );
 
       case 'wide_image_gallery':

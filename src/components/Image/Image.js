@@ -8,7 +8,7 @@ const ImageWrapper = styled('div')`
   margin-bottom: ${rem(18 * 1.65)};
 `;
 
-const Image = (props) => {
+const Image = props => {
   if (props.src.url) {
     return (
       <ImageWrapper>
