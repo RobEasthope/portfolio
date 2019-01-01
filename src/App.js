@@ -14,10 +14,10 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import WideWrapper from './components/WideWrapper/WideWrapper';
 import Header from './components/Header/Header';
 
-import Landing from './containers/Landing/Landing';
-import Portfolio from './containers/Portfolio/Portfolio';
-import Project from './containers/Project/Project';
-import About from './containers/About/About';
+import Landing from './pages/Landing/Landing';
+import Portfolio from './pages/Portfolio/Portfolio';
+import Project from './pages/Project/Project';
+import About from './pages/About/About';
 import Error404 from './components/Error404/Error404';
 
 // Google Analytics
@@ -42,10 +42,10 @@ class App extends React.Component {
 
   componentWillMount() {
     buildContext()
-      .then((prismicCtx) => {
+      .then(prismicCtx => {
         this.setState({ prismicCtx });
       })
-      .catch((e) => {
+      .catch(e => {
         console.error(`Cannot contact the API, check your prismic configuration:\n${e}`);
       });
   }
