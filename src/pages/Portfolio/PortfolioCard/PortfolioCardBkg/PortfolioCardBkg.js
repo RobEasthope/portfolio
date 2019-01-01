@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import Imgix from 'react-imgix';
 
 import { breakpoints as bk } from '../../../../styles/breakpoints';
 
-const PortfolioCardBkg = styled(Imgix)`
+const PortfolioCardBkg = styled.div`
   position: relative;
   text-align: center;
   background-color: white;

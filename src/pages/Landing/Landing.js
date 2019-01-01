@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
-import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../Error404/Error404';
@@ -58,11 +57,10 @@ class Landing extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={this.props.match.url}
           />
-          <LandingBkg src={imgixUrl(doc.data.landing_image.url)} type="bg" fluid>
+          <LandingBkg src={doc.data.landing_image.url} type="bg" fluid>
             <LandingGreeting>{PrismicReact.RichText.asText(doc.data.greeting)}</LandingGreeting>
           </LandingBkg>
 
-          {/* <Imgix src={doc.data.placeholder_image.url} type="bg" fluid /> */}
           {/* {PrismicReact.RichText.asText(doc.data.placeholder_tagline)} */}
           {/* This is how to insert a Rich Text field as plain text */}
           {/* This is how to insert a Rich Text field into your template as html */}
