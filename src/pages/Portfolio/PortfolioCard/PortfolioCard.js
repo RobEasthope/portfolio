@@ -21,7 +21,7 @@ const PortfolioCard = props => {
         }}
       >
         <PortfolioCardLink to={prismicLinkResolver(props.url)}>
-          <PortfolioCardBkg src={props.bkg} type="bg" fluid />
+          <PortfolioCardBkg bkg={props.bkg} />
           <PortfolioCardTitle>
             {PrismicReact.RichText.asText(props.title)}
             <PortfolioCardSubTitle>
