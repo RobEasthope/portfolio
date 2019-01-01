@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 
-import imgixUrl from '../../../utils/imgixUrl';
 import prismicLinkResolver from '../../../prismic-link-resolver';
 
 import PortfolioCardWrapper from './PortfolioCardWrapper/PortfolioCardWrapper';
@@ -22,7 +21,7 @@ const PortfolioCard = props => {
         }}
       >
         <PortfolioCardLink to={prismicLinkResolver(props.url)}>
-          <PortfolioCardBkg src={imgixUrl(props.bkg)} type="bg" fluid />
+          <PortfolioCardBkg src={props.bkg} type="bg" fluid />
           <PortfolioCardTitle>
             {PrismicReact.RichText.asText(props.title)}
             <PortfolioCardSubTitle>
