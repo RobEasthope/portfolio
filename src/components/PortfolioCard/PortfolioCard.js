@@ -5,13 +5,13 @@ import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 import prismicLinkResolver from '../../prismic-link-resolver';
 
-import PortfolioCardWrapper from '../PortfolioCardWrapper/PortfolioCardWrapper';
-import PortfolioCardBkg from '../PortfolioCardBkg/PortfolioCardBkg';
-import PortfolioCardTitle from '../PortfolioCardTitle/PortfolioCardTitle';
-import PortfolioCardSubTitle from '../PortfolioCardSubTitle/PortfolioCardSubTitle';
-import PortfolioCardLink from '../PortfolioCardLink/PortfolioCardLink';
+import PortfolioCardWrapper from './PortfolioCardWrapper/PortfolioCardWrapper';
+import PortfolioCardBkg from './PortfolioCardBkg/PortfolioCardBkg';
+import PortfolioCardTitle from './PortfolioCardTitle/PortfolioCardTitle';
+import PortfolioCardSubTitle from './PortfolioCardSubTitle/PortfolioCardSubTitle';
+import PortfolioCardLink from './PortfolioCardLink/PortfolioCardLink';
 
-const PortfolioCard = (props) => {
+const PortfolioCard = props => {
   if (props.url.uid) {
     return (
       <PortfolioCardWrapper
