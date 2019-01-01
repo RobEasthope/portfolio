@@ -18,7 +18,7 @@ import Landing from './pages/Landing/Landing';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Project from './pages/Project/Project';
 import About from './pages/About/About';
-import Error404 from './components/Error404/Error404';
+import Error404 from './pages/Error404/Error404';
 
 // Google Analytics
 const snap = navigator.userAgent !== 'ReactSnap';

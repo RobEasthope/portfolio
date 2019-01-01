@@ -4,7 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 import imgixUrl from '../../utils/imgixUrl';
 
 import MetaData from '../../components/MetaData/MetaData';
-import Error404 from '../../components/Error404/Error404';
+import Error404 from '../Error404/Error404';
 
 import PlaceholderText from '../../components/PlaceholderText/PlaceholderText';
 import LandingBkg from '../../components/LandingBkg/LandingBkg';

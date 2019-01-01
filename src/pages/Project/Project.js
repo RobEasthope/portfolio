@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 
 import MetaData from '../../components/MetaData/MetaData';
-import Error404 from '../../components/Error404/Error404';
+import Error404 from '../Error404/Error404';
 
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
 import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';

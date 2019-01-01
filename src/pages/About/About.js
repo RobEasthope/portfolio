@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import MetaData from '../../components/MetaData/MetaData';
-import Error404 from '../../components/Error404/Error404';
+import Error404 from '../Error404/Error404';
 import AboutBodyContent from '../../components/AboutBodyContent/AboutBodyContent';
 
 class About extends React.Component {
