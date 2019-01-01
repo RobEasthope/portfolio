@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Imgix from 'react-imgix';
 import rem from '../../utils/rem';
 
 const ImageWrapper = styled('div')`
@@ -12,7 +11,7 @@ const Image = props => {
   if (props.src.url) {
     return (
       <ImageWrapper>
-        <Imgix src={props.src.url} alt={props.src.alt} />
+        <img src={props.src.url} alt={props.src.alt} />
       </ImageWrapper>
     );
   }

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Imgix from 'react-imgix';
 
-const ValidImage = (props) => {
+const ValidImage = props => {
   if (props.src.url) {
-    return <Imgix src={props.src.url} alt={props.src.alt} />;
+    return <img src={props.src.url} alt={props.src.alt} />;
   }
   return null;
 };
