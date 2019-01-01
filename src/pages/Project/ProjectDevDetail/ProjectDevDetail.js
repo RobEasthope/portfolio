@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import rem from '../../utils/rem';
+import rem from '../../../utils/rem';
 
 const ProjectDetailText = styled('div')`
   display: block;
@@ -8,6 +8,8 @@ const ProjectDetailText = styled('div')`
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.6em;
+
+  margin-bottom: 2em;
 
   span {
     margin: 0 ${rem(6)};

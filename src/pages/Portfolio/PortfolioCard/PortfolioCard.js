@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PrismicReact from 'prismic-reactjs';
 
-import imgixUrl from '../../utils/imgixUrl';
-import prismicLinkResolver from '../../prismic-link-resolver';
+import imgixUrl from '../../../utils/imgixUrl';
+import prismicLinkResolver from '../../../prismic-link-resolver';
 
 import PortfolioCardWrapper from './PortfolioCardWrapper/PortfolioCardWrapper';
 import PortfolioCardBkg from './PortfolioCardBkg/PortfolioCardBkg';

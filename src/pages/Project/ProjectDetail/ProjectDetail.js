@@ -1,10 +1,10 @@
 import React from 'react';
 import PrismicReact from 'prismic-reactjs';
 
-import LinkOrNoLink from '../LinkOrNoLink/LinkOrNoLink';
+import LinkOrNoLink from '../../../components/LinkOrNoLink/LinkOrNoLink';
 import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
 
-const ProjectDetail = (props) => {
+const ProjectDetail = props => {
   if (props.title) {
     return (
       <ProjectDetailText>

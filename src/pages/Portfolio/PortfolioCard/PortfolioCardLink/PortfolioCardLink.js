@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import palette from '../../../styles/colour-palette';
+import palette from '../../../../styles/colour-palette';
 
 const PortfolioCardLink = styled(Link)`
   &:hover {

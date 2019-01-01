@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import rem from '../../utils/rem';
+import rem from '../../../utils/rem';
 
 const ProjectMiscDetails = styled('div')`
   font-family: 'p22-underground', sans-serif;

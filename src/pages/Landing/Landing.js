@@ -6,8 +6,8 @@ import imgixUrl from '../../utils/imgixUrl';
 import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../Error404/Error404';
 
-import LandingGreeting from '../../components/LandingGreeting/LandingGreeting';
-import LandingBkg from '../../components/LandingBkg/LandingBkg';
+import LandingGreeting from './LandingGreeting/LandingGreeting';
+import LandingBkg from './LandingBkg/LandingBkg';
 
 class Landing extends React.Component {
   constructor() {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import rem from '../../utils/rem';
+import rem from '../../../utils/rem';
 
 const PortfolioWrapper = styled('main')`
   margin-left: -3em;

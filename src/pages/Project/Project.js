@@ -6,7 +6,7 @@ import MetaData from '../../components/MetaData/MetaData';
 import Error404 from '../Error404/Error404';
 
 import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent';
-import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
+import ProjectTitle from './ProjectTitle/ProjectTitle';
 
 class Project extends React.Component {
   constructor() {

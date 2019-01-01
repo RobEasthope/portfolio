@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Imgix from 'react-imgix';
 
-import { breakpoints as bk } from '../../../styles/breakpoints';
+import { breakpoints as bk } from '../../../../styles/breakpoints';
 
 const PortfolioCardBkg = styled(Imgix)`
   position: relative;
