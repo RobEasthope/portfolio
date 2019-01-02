@@ -5035,6 +5035,11 @@ gatsby-link@^2.0.7:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
+gatsby-plugin-eslint@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-eslint/-/gatsby-plugin-eslint-2.0.1.tgz#88641be50b95a867416878c43b64458a2d6b9c21"
+  integrity sha512-n6T0Rp52+egiAmLx8T43rMud3y0CoGM2eSAqWqM9/hhuZZ8StYqRr2BHLLThhNj/1I2YbJbtSBRXySWUPQ1HhA==
+
 gatsby-plugin-manifest@^2.0.9:
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.13.tgz#8ae0a394d65c85516e324bec1c69eaef03fdc5c3"
