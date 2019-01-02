@@ -18,7 +18,7 @@ const Nav = () => (
       Portfolio
     </NavLink>
     <NavLink to="/about" exact activeClassName="active-link">
-      About me
+      About
     </NavLink>
     {/* <NavLink to="/contact" exact activeClassName="active-link">
       Contact
