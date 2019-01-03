@@ -22,9 +22,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "postbuild": "react-snap",
     "build": "react-scripts build",
-    "deploy": "react-scripts build && npm run postbuild && firebase deploy",
+    "deploy": "react-scripts build && firebase deploy",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
