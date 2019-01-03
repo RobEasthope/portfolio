@@ -6,6 +6,7 @@ import PrismicReact from 'prismic-reactjs';
 const MetaData = props => (
   <Helmet>
     <title>{PrismicReact.RichText.asText(props.metaTitle)}</title>
+    <meta property="description" content="Rob Easthope. Front end developer" />
 
     {/* Open Graph meta data */}
     <meta property="og:title" content={PrismicReact.RichText.asText(props.metaTitle)} />
