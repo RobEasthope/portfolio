@@ -21,9 +21,8 @@ import About from './pages/About/About';
 import Error404 from './pages/Error404/Error404';
 
 // Google Analytics
-const snap = navigator.userAgent !== 'ReactSnap';
 const production = process.env.NODE_ENV === 'production';
-if (production && snap) {
+if (production) {
   ReactGA.initialize('UA-41755337-1');
 }
 
@@ -42,10 +41,10 @@ class App extends React.Component {
 
   componentWillMount() {
     buildContext()
-      .then(prismicCtx => {
+      .then((prismicCtx) => {
         this.setState({ prismicCtx });
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(`Cannot contact the API, check your prismic configuration:\n${e}`);
       });
   }
