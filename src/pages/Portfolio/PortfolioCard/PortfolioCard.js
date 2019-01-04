@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PrismicReact from 'prismic-reactjs';
+import React from 'react'
+import PropTypes from 'prop-types'
+import PrismicReact from 'prismic-reactjs'
 
-import prismicLinkResolver from '../../../prismic-link-resolver';
+import prismicLinkResolver from '../../../prismic-link-resolver'
 
-import PortfolioCardWrapper from './PortfolioCardWrapper/PortfolioCardWrapper';
-import PortfolioCardBkg from './PortfolioCardBkg/PortfolioCardBkg';
-import PortfolioCardTitle from './PortfolioCardTitle/PortfolioCardTitle';
-import PortfolioCardSubTitle from './PortfolioCardSubTitle/PortfolioCardSubTitle';
-import PortfolioCardLink from './PortfolioCardLink/PortfolioCardLink';
+import PortfolioCardWrapper from './PortfolioCardWrapper/PortfolioCardWrapper'
+import PortfolioCardBkg from './PortfolioCardBkg/PortfolioCardBkg'
+import PortfolioCardTitle from './PortfolioCardTitle/PortfolioCardTitle'
+import PortfolioCardSubTitle from './PortfolioCardSubTitle/PortfolioCardSubTitle'
+import PortfolioCardLink from './PortfolioCardLink/PortfolioCardLink'
 
 const PortfolioCard = props => {
   if (props.url.uid) {
@@ -30,23 +30,23 @@ const PortfolioCard = props => {
           </PortfolioCardTitle>
         </PortfolioCardLink>
       </PortfolioCardWrapper>
-    );
+    )
   }
-  return null;
-};
+  return null
+}
 
 PortfolioCard.defaultProps = {
   bkg: '',
   title: '???',
   subtitle: '???',
   // url: '#',
-};
+}
 
 PortfolioCard.propTypes = {
   bkg: PropTypes.string,
   title: PropTypes.arrayOf(PropTypes.shape),
   subtitle: PropTypes.arrayOf(PropTypes.shape),
   // url: PropTypes.objectOf(PropTypes.array),
-};
+}
 
-export default PortfolioCard;
+export default PortfolioCard

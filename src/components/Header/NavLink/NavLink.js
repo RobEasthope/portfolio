@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { NavLink as RRNavLink } from 'react-router-dom';
+import styled from 'styled-components'
+import { NavLink as RRNavLink } from 'react-router-dom'
 
-import palette from '../../../styles/colour-palette';
+import palette from '../../../styles/colour-palette'
 
 const NavLink = styled(RRNavLink)`
   display: inline-block;
@@ -12,6 +12,6 @@ const NavLink = styled(RRNavLink)`
   color: ${palette.ink};
   text-decoration: none;
   margin-left: 1.25em;
-`;
+`
 
-export default NavLink;
+export default NavLink

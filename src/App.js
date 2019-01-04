@@ -1,52 +1,54 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ReactGA from 'react-ga';
-import { ThemeProvider } from 'styled-components';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ReactGA from 'react-ga'
+import { ThemeProvider } from 'styled-components'
 
 // Styling
-import 'sanitize.css/sanitize.css';
-import './styles/global-styles';
-import theme from './styles/theme';
+import 'sanitize.css/sanitize.css'
+import './styles/global-styles'
+import theme from './styles/theme'
 
-import buildContext from './utils/prismicContext';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import buildContext from './utils/prismicContext'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
-import WideWrapper from './components/WideWrapper/WideWrapper';
-import Header from './components/Header/Header';
+import WideWrapper from './components/WideWrapper/WideWrapper'
+import Header from './components/Header/Header'
 
-import Landing from './pages/Landing/Landing';
-import Portfolio from './pages/Portfolio/Portfolio';
-import Project from './pages/Project/Project';
-import About from './pages/About/About';
-import Error404 from './pages/Error404/Error404';
+import Landing from './pages/Landing/Landing'
+import Portfolio from './pages/Portfolio/Portfolio'
+import Project from './pages/Project/Project'
+import About from './pages/About/About'
+import Error404 from './pages/Error404/Error404'
 
 // Google Analytics
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production'
 if (production) {
-  ReactGA.initialize('UA-41755337-1');
+  ReactGA.initialize('UA-41755337-1')
 }
 
 function fireTracking() {
-  ReactGA.pageview(window.location.hash);
+  ReactGA.pageview(window.location.hash)
 }
 
 class App extends React.Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       prismicCtx: null,
-    };
+    }
   }
 
   componentWillMount() {
     buildContext()
-      .then((prismicCtx) => {
-        this.setState({ prismicCtx });
+      .then(prismicCtx => {
+        this.setState({ prismicCtx })
       })
-      .catch((e) => {
-        console.error(`Cannot contact the API, check your prismic configuration:\n${e}`);
-      });
+      .catch(e => {
+        console.error(
+          `Cannot contact the API, check your prismic configuration:\n${e}`
+        )
+      })
   }
 
   render() {
@@ -62,20 +64,29 @@ class App extends React.Component {
                   exact
                   path="/"
                   render={routeProps => (
-                    <Portfolio {...routeProps} prismicCtx={this.state.prismicCtx} />
+                    <Portfolio
+                      {...routeProps}
+                      prismicCtx={this.state.prismicCtx}
+                    />
                   )}
                 />
                 <Route
                   exact
                   path="/landing"
                   render={routeProps => (
-                    <Landing {...routeProps} prismicCtx={this.state.prismicCtx} />
+                    <Landing
+                      {...routeProps}
+                      prismicCtx={this.state.prismicCtx}
+                    />
                   )}
                 />
                 <Route
                   path="/portfolio/:uid"
                   render={routeProps => (
-                    <Project {...routeProps} prismicCtx={this.state.prismicCtx} />
+                    <Project
+                      {...routeProps}
+                      prismicCtx={this.state.prismicCtx}
+                    />
                   )}
                 />
                 <Route
@@ -90,8 +101,8 @@ class App extends React.Component {
           </ScrollToTop>
         </Router>
       </ThemeProvider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

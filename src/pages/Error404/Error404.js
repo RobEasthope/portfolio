@@ -1,5 +1,5 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
 const Error404 = () => (
   <div>
@@ -9,6 +9,6 @@ const Error404 = () => (
 
     <div>Error 404</div>
   </div>
-);
+)
 
-export default Error404;
+export default Error404
