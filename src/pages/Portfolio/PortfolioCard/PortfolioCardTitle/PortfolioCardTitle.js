@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const PortfolioCardTitle = styled('h4')`
   margin: 0 5%;
@@ -6,6 +6,6 @@ const PortfolioCardTitle = styled('h4')`
   line-height: 1.5em;
 
   margin-bottom: 0.5em;
-`;
+`
 
-export default PortfolioCardTitle;
+export default PortfolioCardTitle

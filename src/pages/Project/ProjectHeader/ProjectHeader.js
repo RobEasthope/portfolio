@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const ProjectHeader = styled.div`
   position: relative;
@@ -11,6 +11,6 @@ const ProjectHeader = styled.div`
   height: 50vh;
 
   margin-bottom: 5em;
-`;
+`
 
-export default ProjectHeader;
+export default ProjectHeader

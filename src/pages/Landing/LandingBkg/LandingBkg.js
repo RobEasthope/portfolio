@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const LandingBkg = styled.div`
   position: relative;
@@ -7,6 +7,6 @@ const LandingBkg = styled.div`
   background-size: cover;
   background-position: center center;
   min-height: calc(100vh - (6em * 2));
-`;
+`
 
-export default LandingBkg;
+export default LandingBkg
