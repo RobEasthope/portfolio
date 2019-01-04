@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 // Styling
 import 'sanitize.css/sanitize.css'
-import './styles/global-styles'
+import GlobalStyles from './styles/GlobalStyles'
 import theme from './styles/theme'
 
 import buildContext from './utils/prismicContext'
@@ -56,6 +56,7 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
           <ScrollToTop>
+            <GlobalStyles />
             <WideWrapper>
               <Header />
 

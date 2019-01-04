@@ -1,9 +1,9 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import palette from './colour-palette'
 import rem from '../utils/rem'
 
 /* eslint no-unused-expressions: 0 */
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
   @import url("https://use.typekit.net/wij4ayn.css");
 
   * {
@@ -125,3 +125,5 @@ injectGlobal`
     vertical-align: middle
   }
 `
+
+export default GlobalStyles
