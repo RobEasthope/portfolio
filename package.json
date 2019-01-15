@@ -27,9 +27,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "firebase-tools": "^6.2.2"
-  },
+  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",
