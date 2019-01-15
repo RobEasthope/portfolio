@@ -34,6 +34,18 @@ const MetaData = props => (
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@robeasthope" />
     <meta name="twitter:creator" content="@robeasthope" />
+    <meta
+      name="twitter:url"
+      content={`http://robeasthope.com${props.currentUrl}`}
+    />
+    <meta
+      name="twitter:title"
+      content={PrismicReact.RichText.asText(props.metaTitle)}
+    />
+    <meta
+      name="twitter:description"
+      content={PrismicReact.RichText.asText(props.metaDescription)}
+    />
   </Helmet>
 );
 
