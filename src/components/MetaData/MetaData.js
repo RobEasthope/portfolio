@@ -19,7 +19,7 @@ const MetaData = props => (
     />
     <meta
       property="og:url"
-      content={`http://robeasthope.com${props.currentUrl}`}
+      content={`https://robeasthope.com${props.currentUrl}`}
     />
     <meta property="og:site_name" content="Rob Easthope" />
     <meta property="og:type" content="website" />
@@ -36,7 +36,7 @@ const MetaData = props => (
     <meta name="twitter:creator" content="@robeasthope" />
     <meta
       name="twitter:url"
-      content={`http://robeasthope.com${props.currentUrl}`}
+      content={`https://robeasthope.com${props.currentUrl}`}
     />
     <meta
       name="twitter:title"
