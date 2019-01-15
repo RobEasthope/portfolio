@@ -10,7 +10,7 @@ const MetaData = props => (
       property="description"
       content={PrismicReact.RichText.asText(props.metaDescription)}
     />
-    <link rel="canonical" href="https://robeasthope.com" />
+    <link rel="canonical" href={`https://robeasthope.com${props.currentUrl}`} />
 
     {/* Open Graph meta data */}
     <meta
