@@ -4,6 +4,7 @@
   "description": "Portfolio site",
   "author": "Rob Easthope <hello@robeasthope.com>",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -11,6 +12,7 @@
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-source-prismic": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.8",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
