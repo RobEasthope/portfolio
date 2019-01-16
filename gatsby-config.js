@@ -1,3 +1,5 @@
+require("dotenv").config({ path: `./.env` });
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -15,13 +17,13 @@ module.exports = {
         // The name of your prismic.io repository. This is required.
         // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
         // is 'gatsby-source-prismic-test-site.prismic.io'.
-        repositoryName: process.env.REACT_APP_PRISMIC_REPO,
+        repositoryName: `${process.env.PRISMIC_REPO}`,
 
         // An API access token to your prismic.io repository. This is required.
         // You can generate an access token in the "API & Security" section of
         // your repository settings. Setting a "Callback URL" is not necessary.
         // The token will be listed under "Permanent access tokens".
-        accessToken: process.env.REACT_APP_PRISMIC_KEY,
+        accessToken: process.env.PRISMIC_KEY,
 
         // Set a link resolver function used to process links in your content.
         // Fields with rich text formatting or links to internal content use this
@@ -30,16 +32,16 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different link resolver logic for each field if necessary.
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
-        linkResolver: ({ node, key, value }) => doc => {
-          // Your link resolver
-        },
+        // linkResolver: ({ node, key, value }) => doc => {
+        //   // Your link resolver
+        // },
 
         // Set a list of links to fetch and be made available in your link
         // resolver function.
         // See: https://prismic.io/docs/javascript/query-the-api/fetch-linked-document-fields
-        fetchLinks: [
-          // Your list of links
-        ],
+        // fetchLinks: [
+        //   // Your list of links
+        // ],
 
         // Set an HTML serializer function used to process formatted content.
         // Fields with rich text formatting use this function to generate the
@@ -48,14 +50,14 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different HTML serializer logic for each field if necessary.
         // See: https://prismic.io/docs/nodejs/beyond-the-api/html-serializer
-        htmlSerializer: ({ node, key, value }) => (
-          type,
-          element,
-          content,
-          children
-        ) => {
-          // Your HTML serializer
-        },
+        // htmlSerializer: ({ node, key, value }) => (
+        //   type,
+        //   element,
+        //   content,
+        //   children
+        // ) => {
+        //   // Your HTML serializer
+        // },
       },
     },
     `gatsby-plugin-react-helmet`,
