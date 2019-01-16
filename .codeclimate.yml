@@ -1,0 +1,2 @@
+exclude_patterns:
+  - "1.x-archive/"
