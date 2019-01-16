@@ -15,14 +15,13 @@ module.exports = {
         // The name of your prismic.io repository. This is required.
         // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
         // is 'gatsby-source-prismic-test-site.prismic.io'.
-        repositoryName: "gatsby-source-prismic-test-site",
+        repositoryName: process.env.REACT_APP_PRISMIC_REPO,
 
         // An API access token to your prismic.io repository. This is required.
         // You can generate an access token in the "API & Security" section of
         // your repository settings. Setting a "Callback URL" is not necessary.
         // The token will be listed under "Permanent access tokens".
-        accessToken:
-          "example-wou7evoh0eexuf6chooz2jai2qui9pae4tieph1sei4deiboj",
+        accessToken: process.env.REACT_APP_PRISMIC_KEY,
 
         // Set a link resolver function used to process links in your content.
         // Fields with rich text formatting or links to internal content use this
