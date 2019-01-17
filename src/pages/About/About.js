@@ -27,10 +27,6 @@ class About extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   fetchPage(props) {
     if (props.prismicCtx) {
       return props.prismicCtx.api.getByUID(
@@ -64,7 +60,6 @@ class About extends React.Component {
             currentUrl={match.url}
           />
 
-          {/* <AboutBodyContent content={doc.data.body} /> */}
           {doc.data.body.map(slice => {
             switch (slice.slice_type) {
               case "general_content":

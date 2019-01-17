@@ -26,10 +26,6 @@ class Landing extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   fetchPage(props) {
     if (props.prismicCtx) {
       return props.prismicCtx.api.getByUID(
