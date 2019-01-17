@@ -11,21 +11,22 @@ import PortfolioCardSubTitle from "./PortfolioCardSubTitle/PortfolioCardSubTitle
 import PortfolioCardLink from "./PortfolioCardLink/PortfolioCardLink";
 
 const PortfolioCard = props => {
-  if (props.url.uid) {
+  const { url, bkg, title, subtitle } = props;
+  if (url.uid) {
     return (
       <PortfolioCardWrapper
         size={{
           xs: 1 / 1,
           sm: 1 / 2,
-          md: 1 / 3,
+          md: 1 / 3
         }}
       >
-        <PortfolioCardLink to={prismicLinkResolver(props.url)}>
-          <PortfolioCardBkg bkg={props.bkg} />
+        <PortfolioCardLink to={prismicLinkResolver(url)}>
+          <PortfolioCardBkg bkg={bkg} />
           <PortfolioCardTitle>
-            {`${PrismicReact.RichText.asText(props.title)} `}
+            {`${PrismicReact.RichText.asText(title)} `}
             <PortfolioCardSubTitle>
-              {PrismicReact.RichText.asText(props.subtitle)}
+              {PrismicReact.RichText.asText(subtitle)}
             </PortfolioCardSubTitle>
           </PortfolioCardTitle>
         </PortfolioCardLink>
@@ -38,14 +39,14 @@ const PortfolioCard = props => {
 PortfolioCard.defaultProps = {
   bkg: "",
   title: "???",
-  subtitle: "???",
+  subtitle: "???"
   // url: '#',
 };
 
 PortfolioCard.propTypes = {
   bkg: PropTypes.string,
   title: PropTypes.arrayOf(PropTypes.shape),
-  subtitle: PropTypes.arrayOf(PropTypes.shape),
+  subtitle: PropTypes.arrayOf(PropTypes.shape)
   // url: PropTypes.objectOf(PropTypes.array),
 };
 

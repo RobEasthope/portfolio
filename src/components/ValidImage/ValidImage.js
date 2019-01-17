@@ -2,22 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ValidImage = props => {
-  if (props.src.url) {
-    return <img src={props.src.url} alt={props.src.alt} />;
+  const { src } = props;
+  if (src.url) {
+    return <img src={src.url} alt={src.alt} />;
   }
   return null;
 };
 
 ValidImage.defaultProps = {
-  src: [],
-  url: "",
-  alt: "",
+  src: []
 };
 
 ValidImage.propTypes = {
-  src: PropTypes.arrayOf(PropTypes.shape),
-  url: PropTypes.string.required,
-  alt: PropTypes.string,
+  src: PropTypes.arrayOf(PropTypes.shape)
 };
 
 export default ValidImage;

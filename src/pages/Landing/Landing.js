@@ -14,7 +14,7 @@ class Landing extends React.Component {
 
     this.state = {
       doc: null,
-      notFound: false,
+      notFound: false
     };
   }
 
@@ -52,15 +52,17 @@ class Landing extends React.Component {
   }
 
   render() {
+    const { doc, notFound } = this.state;
+    const { match } = this.props;
+
     if (this.state.doc) {
-      const { doc } = this.state;
       return (
-        <div data-wio-id={this.state.doc.id}>
+        <div data-wio-id={doc.id}>
           <MetaData
             metaTitle={doc.data.meta_title}
             metaDescription={doc.data.meta_title}
             metaImage={doc.data.meta_image.url}
-            currentUrl={this.props.match.url}
+            currentUrl={match.url}
           />
           <LandingBkg src={doc.data.landing_image.url} type="bg" fluid>
             <LandingGreeting>
@@ -73,7 +75,8 @@ class Landing extends React.Component {
           {/* This is how to insert a Rich Text field into your template as html */}
         </div>
       );
-    } else if (this.state.notFound) {
+    }
+    if (notFound) {
       return <Error404 />;
     }
     return "";
@@ -82,7 +85,7 @@ class Landing extends React.Component {
 
 Landing.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
-  match: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape)
 };
 
 export default Landing;

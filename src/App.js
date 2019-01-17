@@ -35,7 +35,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      prismicCtx: null,
+      prismicCtx: null
     };
   }
 
@@ -52,9 +52,11 @@ class App extends React.Component {
   }
 
   render() {
+    const { prismicCtx } = this.state;
+
     return (
       <ThemeProvider theme={theme}>
-        <Router onUpdate={fireTracking} prismicCtx={this.state.prismicCtx}>
+        <Router onUpdate={fireTracking} prismicCtx={prismicCtx}>
           <ScrollToTop>
             <GlobalStyles />
             <WideWrapper>
@@ -65,35 +67,26 @@ class App extends React.Component {
                   exact
                   path="/"
                   render={routeProps => (
-                    <Portfolio
-                      {...routeProps}
-                      prismicCtx={this.state.prismicCtx}
-                    />
+                    <Portfolio {...routeProps} prismicCtx={prismicCtx} />
                   )}
                 />
                 <Route
                   exact
                   path="/landing"
                   render={routeProps => (
-                    <Landing
-                      {...routeProps}
-                      prismicCtx={this.state.prismicCtx}
-                    />
+                    <Landing {...routeProps} prismicCtx={prismicCtx} />
                   )}
                 />
                 <Route
                   path="/portfolio/:uid"
                   render={routeProps => (
-                    <Project
-                      {...routeProps}
-                      prismicCtx={this.state.prismicCtx}
-                    />
+                    <Project {...routeProps} prismicCtx={prismicCtx} />
                   )}
                 />
                 <Route
                   path="/about"
                   render={routeProps => (
-                    <About {...routeProps} prismicCtx={this.state.prismicCtx} />
+                    <About {...routeProps} prismicCtx={prismicCtx} />
                   )}
                 />
                 <Route component={Error404} />
