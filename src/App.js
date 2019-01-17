@@ -19,6 +19,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Project from "./pages/Project/Project";
 import About from "./pages/About/About";
 import Error404 from "./pages/Error404/Error404";
+import Preview from "./components/Preview/Preview";
 
 // Google Analytics
 const production = process.env.NODE_ENV === "production";
@@ -87,6 +88,13 @@ class App extends React.Component {
                   path="/about"
                   render={routeProps => (
                     <About {...routeProps} prismicCtx={prismicCtx} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/preview"
+                  render={routeProps => (
+                    <Preview {...routeProps} prismicCtx={prismicCtx} />
                   )}
                 />
                 <Route component={Error404} />
