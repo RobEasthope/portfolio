@@ -1,5 +1,4 @@
 import React from "react";
-import PrismicReact from "prismic-reactjs";
 import shortid from "shortid";
 
 import { Row, Block } from "../Grid/Grid";
@@ -7,19 +6,13 @@ import SlimWrapper from "../SlimWrapper/SlimWrapper";
 import WideWrapper from "../WideWrapper/WideWrapper";
 import Image from "../Image/Image";
 
+import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
+
 const AboutBodyContent = props =>
   props.content.map(slice => {
     switch (slice.slice_type) {
       case "general_content":
-        return (
-          <SlimWrapper key={shortid.generate()}>
-            {slice.items.map(content => (
-              <React.Fragment key={shortid.generate()}>
-                {PrismicReact.RichText.render(content.rich_text)}
-              </React.Fragment>
-            ))}
-          </SlimWrapper>
-        );
+        return <GeneralContentSlice key={shortid.generate()} slice={slice} />;
 
       case "slim_image_gallery":
         return (
