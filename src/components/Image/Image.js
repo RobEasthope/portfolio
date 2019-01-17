@@ -25,7 +25,7 @@ Image.defaultProps = {
 };
 
 Image.propTypes = {
-  src: PropTypes.arrayOf(PropTypes.shape)
+  src: PropTypes.objectOf(PropTypes.shape)
 };
 
 export default Image;
