@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import NavLink from '../NavLink/NavLink'
+import React from "react";
+import styled from "styled-components";
+import NavLink from "../NavLink/NavLink";
 
-import palette from '../../../styles/colour-palette'
+import palette from "../../../styles/colour-palette";
 
-const NavWrapper = styled('nav')`
+const NavWrapper = styled("nav")`
   text-align: right;
 
   .active-link {
     border-bottom: 1px solid ${palette.ink};
   }
-`
+`;
 
 const Nav = () => (
   <NavWrapper>
@@ -24,6 +24,6 @@ const Nav = () => (
       Contact
     </NavLink> */}
   </NavWrapper>
-)
+);
 
-export default Nav
+export default Nav;

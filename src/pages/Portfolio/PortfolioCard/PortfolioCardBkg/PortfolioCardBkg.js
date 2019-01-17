@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { breakpoints as bk } from '../../../../styles/breakpoints'
+import { breakpoints as bk } from "../../../../styles/breakpoints";
 
 const PortfolioCardBkg = styled.div`
   position: relative;
@@ -22,6 +22,6 @@ const PortfolioCardBkg = styled.div`
   @media (min-width: ${bk.md}px) {
     padding-bottom: 100%;
   }
-`
+`;
 
-export default PortfolioCardBkg
+export default PortfolioCardBkg;

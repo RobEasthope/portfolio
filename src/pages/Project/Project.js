@@ -1,59 +1,59 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import PrismicReact from 'prismic-reactjs'
+import React from "react";
+import PropTypes from "prop-types";
+import PrismicReact from "prismic-reactjs";
 
-import MetaData from '../../components/MetaData/MetaData'
-import Error404 from '../Error404/Error404'
+import MetaData from "../../components/MetaData/MetaData";
+import Error404 from "../Error404/Error404";
 
-import ProjectBodyContent from '../../components/ProjectBodyContent/ProjectBodyContent'
-import ProjectTitle from './ProjectTitle/ProjectTitle'
+import ProjectBodyContent from "../../components/ProjectBodyContent/ProjectBodyContent";
+import ProjectTitle from "./ProjectTitle/ProjectTitle";
 
 class Project extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       doc: null,
       notFound: false,
-    }
+    };
   }
 
   componentWillMount() {
-    this.fetchPage(this.props)
+    this.fetchPage(this.props);
   }
 
   componentWillReceiveProps(props) {
-    this.fetchPage(props)
+    this.fetchPage(props);
   }
 
   uid() {
     if (this.props.match) {
-      return this.props.match.params.uid
+      return this.props.match.params.uid;
     }
-    return ''
+    return "";
   }
 
   fetchPage(props) {
     if (props.prismicCtx) {
       return props.prismicCtx.api.getByUID(
-        'project',
+        "project",
         this.uid(),
         {},
         (err, doc) => {
           if (doc) {
-            this.setState({ doc })
+            this.setState({ doc });
           } else {
-            this.setState({ notFound: !doc })
+            this.setState({ notFound: !doc });
           }
         }
-      )
+      );
     }
-    return null
+    return null;
   }
 
   render() {
     if (this.state.doc) {
-      const { doc } = this.state
+      const { doc } = this.state;
       return (
         <div data-wio-id={this.state.doc.id}>
           <MetaData
@@ -70,17 +70,17 @@ class Project extends React.Component {
 
           <ProjectBodyContent content={doc.data.body} />
         </div>
-      )
+      );
     } else if (this.state.notFound) {
-      return <Error404 />
+      return <Error404 />;
     }
-    return ''
+    return "";
   }
 }
 
 Project.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
-}
+};
 
-export default Project
+export default Project;

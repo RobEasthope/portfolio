@@ -6,6 +6,6 @@ const theme = {
     lg: 992,
     xl: 1200,
   },
-}
+};
 
-export default theme
+export default theme;

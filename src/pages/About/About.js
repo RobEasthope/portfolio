@@ -1,26 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-import MetaData from '../../components/MetaData/MetaData'
-import Error404 from '../Error404/Error404'
-import AboutBodyContent from '../../components/AboutBodyContent/AboutBodyContent'
+import MetaData from "../../components/MetaData/MetaData";
+import Error404 from "../Error404/Error404";
+import AboutBodyContent from "../../components/AboutBodyContent/AboutBodyContent";
 
 class About extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       doc: null,
       notFound: false,
-    }
+    };
   }
 
   componentWillMount() {
-    this.fetchPage(this.props)
+    this.fetchPage(this.props);
   }
 
   componentWillReceiveProps(props) {
-    this.fetchPage(props)
+    this.fetchPage(props);
   }
 
   componentDidUpdate() {
@@ -31,26 +31,26 @@ class About extends React.Component {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID(
-        'about',
-        'about-page',
+        "about",
+        "about-page",
         {},
         (err, doc) => {
           if (doc) {
             // We put the retrieved content in the state as a doc variable
-            this.setState({ doc })
+            this.setState({ doc });
           } else {
             // We changed the state to display error not found if no matched doc
-            this.setState({ notFound: !doc })
+            this.setState({ notFound: !doc });
           }
         }
-      )
+      );
     }
-    return null
+    return null;
   }
 
   render() {
     if (this.state.doc) {
-      const { doc } = this.state
+      const { doc } = this.state;
       return (
         <div data-wio-id={this.state.doc.id}>
           <MetaData
@@ -62,17 +62,17 @@ class About extends React.Component {
 
           <AboutBodyContent content={doc.data.body} />
         </div>
-      )
+      );
     } else if (this.state.notFound) {
-      return <Error404 />
+      return <Error404 />;
     }
-    return ''
+    return "";
   }
 }
 
 About.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
-}
+};
 
-export default About
+export default About;

@@ -1,28 +1,28 @@
-import React from 'react'
-import PrismicReact from 'prismic-reactjs'
+import React from "react";
+import PrismicReact from "prismic-reactjs";
 
-import { Row, Block } from '../Grid/Grid'
-import SlimWrapper from '../SlimWrapper/SlimWrapper'
-import WideWrapper from '../WideWrapper/WideWrapper'
-import ProjectDetail from '../../pages/Project/ProjectDetail/ProjectDetail'
-import ProjectDevDetail from '../../pages/Project/ProjectDevDetail/ProjectDevDetail'
-import ProjectMiscDetails from '../../pages/Project/ProjectMiscDetails/ProjectMiscDetails'
-import prismicLinkResolver from '../../prismic-link-resolver'
-import Image from '../Image/Image'
+import { Row, Block } from "../Grid/Grid";
+import SlimWrapper from "../SlimWrapper/SlimWrapper";
+import WideWrapper from "../WideWrapper/WideWrapper";
+import ProjectDetail from "../../pages/Project/ProjectDetail/ProjectDetail";
+import ProjectDevDetail from "../../pages/Project/ProjectDevDetail/ProjectDevDetail";
+import ProjectMiscDetails from "../../pages/Project/ProjectMiscDetails/ProjectMiscDetails";
+import prismicLinkResolver from "../../prismic-link-resolver";
+import Image from "../Image/Image";
 
 const ProjectBodyContent = props =>
   props.content.map(slice => {
     switch (slice.slice_type) {
-      case 'general_content':
+      case "general_content":
         return (
           <SlimWrapper>
             {slice.items.map(content =>
               PrismicReact.RichText.render(content.rich_text)
             )}
           </SlimWrapper>
-        )
+        );
 
-      case 'image_gallery':
+      case "image_gallery":
         return (
           <WideWrapper>
             <Row>
@@ -33,18 +33,18 @@ const ProjectBodyContent = props =>
               ))}
             </Row>
           </WideWrapper>
-        )
+        );
 
-      case 'single_image':
+      case "single_image":
         return (
           <SlimWrapper>
             {slice.items.map(content => (
               <Image src={content.image} />
             ))}
           </SlimWrapper>
-        )
+        );
 
-      case 'project_type_year':
+      case "project_type_year":
         return (
           <SlimWrapper>
             <ProjectMiscDetails>
@@ -53,9 +53,9 @@ const ProjectBodyContent = props =>
               {slice.primary.project_year}
             </ProjectMiscDetails>
           </SlimWrapper>
-        )
+        );
 
-      case 'project_details':
+      case "project_details":
         return (
           <SlimWrapper>
             {slice.items.map(content => (
@@ -66,9 +66,9 @@ const ProjectBodyContent = props =>
               />
             ))}
           </SlimWrapper>
-        )
+        );
 
-      case 'development_details':
+      case "development_details":
         return (
           <SlimWrapper>
             <ProjectDevDetail>
@@ -86,11 +86,11 @@ const ProjectBodyContent = props =>
               </a> */}
             </ProjectDevDetail>
           </SlimWrapper>
-        )
+        );
 
       default:
-        return <div>Slice module hasn't been templated</div>
+        return <div>Slice module hasn't been templated</div>;
     }
-  })
+  });
 
-export default ProjectBodyContent
+export default ProjectBodyContent;

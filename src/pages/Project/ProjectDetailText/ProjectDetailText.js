@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import rem from '../../../utils/rem'
+import styled from "styled-components";
+import rem from "../../../utils/rem";
 
-const ProjectDetailText = styled('div')`
+const ProjectDetailText = styled("div")`
   display: block;
   padding: 0.75em 0;
   border-bottom: 1px solid #000;
@@ -20,6 +20,6 @@ const ProjectDetailText = styled('div')`
   &:last-child {
     border-bottom: none;
   }
-`
+`;
 
-export default ProjectDetailText
+export default ProjectDetailText;

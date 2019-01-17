@@ -7,7 +7,7 @@ const MetaData = props => (
   <Helmet>
     <title>{PrismicReact.RichText.asText(props.metaTitle)}</title>
     <meta
-      property="description"
+      name="description"
       content={PrismicReact.RichText.asText(props.metaDescription)}
     />
     <link rel="canonical" href={`https://robeasthope.com${props.currentUrl}`} />
@@ -53,14 +53,14 @@ MetaData.defaultProps = {
   metaTitle: "Rob Easthope",
   metaDescription: "Portfolio",
   currentUrl: "/",
-  metaImage: { url: "" }
+  metaImage: { url: "" },
 };
 
 MetaData.propTypes = {
   metaTitle: PropTypes.arrayOf(PropTypes.shape),
   metaDescription: PropTypes.PropTypes.arrayOf(PropTypes.shape),
   currentUrl: PropTypes.string,
-  metaImage: PropTypes.string
+  metaImage: PropTypes.string,
 };
 
 export default MetaData;

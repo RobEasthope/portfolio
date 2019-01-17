@@ -1,51 +1,51 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Grid from 'styled-components-grid'
+import React from "react";
+import PropTypes from "prop-types";
+import Grid from "styled-components-grid";
 
-import PortfolioWrapper from './PortfolioWrapper/PortfolioWrapper'
-import PortfolioCards from './PortfolioCards/PortfolioCards'
-import MetaData from '../../components/MetaData/MetaData'
-import PortfolioTitle from './PortfolioTitle/PortfolioTitle'
+import PortfolioWrapper from "./PortfolioWrapper/PortfolioWrapper";
+import PortfolioCards from "./PortfolioCards/PortfolioCards";
+import MetaData from "../../components/MetaData/MetaData";
+import PortfolioTitle from "./PortfolioTitle/PortfolioTitle";
 
 class Portfolio extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       doc: null,
       notFound: false,
-    }
+    };
   }
 
   componentWillMount() {
-    this.fetchPage(this.props)
+    this.fetchPage(this.props);
   }
 
   componentWillReceiveProps(props) {
-    this.fetchPage(props)
+    this.fetchPage(props);
   }
 
   fetchPage(props) {
     if (props.prismicCtx) {
       return props.prismicCtx.api.getByUID(
-        'portfolio',
-        'portfolio-page',
+        "portfolio",
+        "portfolio-page",
         {},
         (err, doc) => {
           if (doc) {
-            this.setState({ doc })
+            this.setState({ doc });
           } else {
-            this.setState({ notFound: !doc })
+            this.setState({ notFound: !doc });
           }
         }
-      )
+      );
     }
-    return null
+    return null;
   }
 
   render() {
     if (this.state.doc) {
-      const { doc } = this.state
+      const { doc } = this.state;
       return (
         <div data-wio-id={this.state.doc.id}>
           <MetaData
@@ -64,17 +64,17 @@ class Portfolio extends React.Component {
             </Grid>
           </PortfolioWrapper>
         </div>
-      )
+      );
     } else if (this.state.notFound) {
-      return 'No project found'
+      return "No project found";
     }
-    return ''
+    return "";
   }
 }
 
 Portfolio.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
-}
+};
 
-export default Portfolio
+export default Portfolio;

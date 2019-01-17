@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const LandingGreeting = styled.h1`
   font-size: 100px;
@@ -11,6 +11,6 @@ const LandingGreeting = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`
+`;
 
-export default LandingGreeting
+export default LandingGreeting;
