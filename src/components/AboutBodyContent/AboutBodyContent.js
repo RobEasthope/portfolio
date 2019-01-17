@@ -7,6 +7,7 @@ import WideWrapper from "../WideWrapper/WideWrapper";
 import Image from "../Image/Image";
 
 import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
+import SlimImageGallery from "../../slices/SlimImageGallery/SlimImageGallery";
 
 const AboutBodyContent = props =>
   props.content.map(slice => {
@@ -15,13 +16,7 @@ const AboutBodyContent = props =>
         return <GeneralContentSlice key={shortid.generate()} slice={slice} />;
 
       case "slim_image_gallery":
-        return (
-          <SlimWrapper key={shortid.generate()}>
-            {slice.items.map(content => (
-              <Image key={shortid.generate()} src={content.image} />
-            ))}
-          </SlimWrapper>
-        );
+        return <SlimImageGallery key={shortid.generate()} slice={slice} />;
 
       case "wide_image_gallery":
         return (
