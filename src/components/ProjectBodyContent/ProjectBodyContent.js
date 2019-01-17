@@ -1,5 +1,6 @@
 import React from "react";
 import PrismicReact from "prismic-reactjs";
+import shortid from "shortid";
 
 import { Row, Block } from "../Grid/Grid";
 import SlimWrapper from "../SlimWrapper/SlimWrapper";
@@ -15,19 +16,21 @@ const ProjectBodyContent = props =>
     switch (slice.slice_type) {
       case "general_content":
         return (
-          <SlimWrapper>
-            {slice.items.map(content =>
-              PrismicReact.RichText.render(content.rich_text)
-            )}
+          <SlimWrapper key={shortid.generate()}>
+            {slice.items.map(content => (
+              <React.Fragment key={shortid.generate()}>
+                {PrismicReact.RichText.render(content.rich_text)}
+              </React.Fragment>
+            ))}
           </SlimWrapper>
         );
 
       case "image_gallery":
         return (
-          <WideWrapper>
+          <WideWrapper key={shortid.generate()}>
             <Row>
               {slice.items.map(content => (
-                <Block size={1 / 1}>
+                <Block key={shortid.generate()} size={1 / 1}>
                   <Image src={content.image} />
                 </Block>
               ))}
@@ -37,16 +40,16 @@ const ProjectBodyContent = props =>
 
       case "single_image":
         return (
-          <SlimWrapper>
+          <SlimWrapper key={shortid.generate()}>
             {slice.items.map(content => (
-              <Image src={content.image} />
+              <Image key={shortid.generate()} src={content.image} />
             ))}
           </SlimWrapper>
         );
 
       case "project_type_year":
         return (
-          <SlimWrapper>
+          <SlimWrapper key={shortid.generate()}>
             <ProjectMiscDetails>
               {PrismicReact.RichText.asText(slice.primary.project_type)}
               <span>⋅</span>
@@ -57,9 +60,10 @@ const ProjectBodyContent = props =>
 
       case "project_details":
         return (
-          <SlimWrapper>
+          <SlimWrapper key={shortid.generate()}>
             {slice.items.map(content => (
               <ProjectDetail
+                key={shortid.generate()}
                 detailType={content.detail_type}
                 title={content.detail_text}
                 url={content.detail_url}
@@ -70,7 +74,7 @@ const ProjectBodyContent = props =>
 
       case "development_details":
         return (
-          <SlimWrapper>
+          <SlimWrapper key={shortid.generate()}>
             <ProjectDevDetail>
               <a
                 href={PrismicReact.Link.url(
@@ -89,7 +93,9 @@ const ProjectBodyContent = props =>
         );
 
       default:
-        return <div>Slice module hasn't been templated</div>;
+        return (
+          <div key={shortid.generate()}>Slice module hasn't been templated</div>
+        );
     }
   });
 
