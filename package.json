@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "postbuild": "react-snap",
-    "format": "prettier --write 'src/**/*.js'",
+    "prettier": "prettier --write 'src/**/*.js'",
     "lint": "eslint src -c .eslintrc --ext js,jsx",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
