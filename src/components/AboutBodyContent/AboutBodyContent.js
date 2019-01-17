@@ -8,6 +8,7 @@ import Image from "../Image/Image";
 
 import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
 import SlimImageGallery from "../../slices/SlimImageGallery/SlimImageGallery";
+import WideImageGallery from "../../slices/WideImageGallery/WideImageGallery";
 
 const AboutBodyContent = props =>
   props.content.map(slice => {
@@ -19,17 +20,7 @@ const AboutBodyContent = props =>
         return <SlimImageGallery key={shortid.generate()} slice={slice} />;
 
       case "wide_image_gallery":
-        return (
-          <WideWrapper key={shortid.generate()}>
-            <Row>
-              {slice.items.map(content => (
-                <Block key={shortid.generate()} size={1 / 1}>
-                  <Image src={content.image} />
-                </Block>
-              ))}
-            </Row>
-          </WideWrapper>
-        );
+        return <WideImageGallery key={shortid.generate()} slice={slice} />;
 
       default:
         return "Untemplated slice";
