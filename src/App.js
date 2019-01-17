@@ -1,29 +1,29 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ReactGA from 'react-ga';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ReactGA from "react-ga";
+import { ThemeProvider } from "styled-components";
 
 // Styling
-import 'sanitize.css/sanitize.css';
-import GlobalStyles from './styles/GlobalStyles';
-import theme from './styles/theme';
+import "sanitize.css/sanitize.css";
+import GlobalStyles from "./styles/GlobalStyles";
+import theme from "./styles/theme";
 
-import buildContext from './utils/prismicContext';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import buildContext from "./utils/prismicContext";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
-import WideWrapper from './components/WideWrapper/WideWrapper';
-import Header from './components/Header/Header';
+import WideWrapper from "./components/WideWrapper/WideWrapper";
+import Header from "./components/Header/Header";
 
-import Landing from './pages/Landing/Landing';
-import Portfolio from './pages/Portfolio/Portfolio';
-import Project from './pages/Project/Project';
-import About from './pages/About/About';
-import Error404 from './pages/Error404/Error404';
+import Landing from "./pages/Landing/Landing";
+import Portfolio from "./pages/Portfolio/Portfolio";
+import Project from "./pages/Project/Project";
+import About from "./pages/About/About";
+import Error404 from "./pages/Error404/Error404";
 
 // Google Analytics
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === "production";
 if (production) {
-  ReactGA.initialize('UA-41755337-1');
+  ReactGA.initialize("UA-41755337-1");
 }
 
 function fireTracking() {

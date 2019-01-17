@@ -1,6 +1,6 @@
-import Prismic from 'prismic-javascript';
+import Prismic from "prismic-javascript";
 
-import prismicLinkResolver from '../prismic-link-resolver';
+import prismicLinkResolver from "../prismic-link-resolver";
 
 const refreshToolbar = () => {
   const maybeCurrentExperiment = this.api.currentExperiment();

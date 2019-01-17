@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PrismicReact from 'prismic-reactjs';
-import prismicLinkResolver from '../../prismic-link-resolver';
+import React from "react";
+import PropTypes from "prop-types";
+import PrismicReact from "prismic-reactjs";
+import prismicLinkResolver from "../../prismic-link-resolver";
 
 const LinkOrNoLink = props => {
   if (props.title !== null && props.url.url == null) {

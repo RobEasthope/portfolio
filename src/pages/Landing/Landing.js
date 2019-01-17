@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PrismicReact from 'prismic-reactjs';
+import React from "react";
+import PropTypes from "prop-types";
+import PrismicReact from "prismic-reactjs";
 
-import MetaData from '../../components/MetaData/MetaData';
-import Error404 from '../Error404/Error404';
+import MetaData from "../../components/MetaData/MetaData";
+import Error404 from "../Error404/Error404";
 
-import LandingGreeting from './LandingGreeting/LandingGreeting';
-import LandingBkg from './LandingBkg/LandingBkg';
+import LandingGreeting from "./LandingGreeting/LandingGreeting";
+import LandingBkg from "./LandingBkg/LandingBkg";
 
 class Landing extends React.Component {
   constructor() {
@@ -34,8 +34,8 @@ class Landing extends React.Component {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID(
-        'landing',
-        'landing-page',
+        "landing",
+        "landing-page",
         {},
         (err, doc) => {
           if (doc) {
@@ -76,7 +76,7 @@ class Landing extends React.Component {
     } else if (this.state.notFound) {
       return <Error404 />;
     }
-    return '';
+    return "";
   }
 }
 

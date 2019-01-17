@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import rem from '../../../utils/rem';
+import styled from "styled-components";
+import rem from "../../../utils/rem";
 
-const PortfolioWrapper = styled('main')`
+const PortfolioWrapper = styled("main")`
   margin-left: -3em;
   margin-right: -3em;
   margin-bottom: 50px;

@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PrismicReact from 'prismic-reactjs';
+import React from "react";
+import PropTypes from "prop-types";
+import PrismicReact from "prismic-reactjs";
 
-import prismicLinkResolver from '../../../prismic-link-resolver';
+import prismicLinkResolver from "../../../prismic-link-resolver";
 
-import PortfolioCardWrapper from './PortfolioCardWrapper/PortfolioCardWrapper';
-import PortfolioCardBkg from './PortfolioCardBkg/PortfolioCardBkg';
-import PortfolioCardTitle from './PortfolioCardTitle/PortfolioCardTitle';
-import PortfolioCardSubTitle from './PortfolioCardSubTitle/PortfolioCardSubTitle';
-import PortfolioCardLink from './PortfolioCardLink/PortfolioCardLink';
+import PortfolioCardWrapper from "./PortfolioCardWrapper/PortfolioCardWrapper";
+import PortfolioCardBkg from "./PortfolioCardBkg/PortfolioCardBkg";
+import PortfolioCardTitle from "./PortfolioCardTitle/PortfolioCardTitle";
+import PortfolioCardSubTitle from "./PortfolioCardSubTitle/PortfolioCardSubTitle";
+import PortfolioCardLink from "./PortfolioCardLink/PortfolioCardLink";
 
 const PortfolioCard = props => {
   if (props.url.uid) {
@@ -36,9 +36,9 @@ const PortfolioCard = props => {
 };
 
 PortfolioCard.defaultProps = {
-  bkg: '',
-  title: '???',
-  subtitle: '???',
+  bkg: "",
+  title: "???",
+  subtitle: "???",
   // url: '#',
 };
 

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import PrismicReact from 'prismic-reactjs';
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import PrismicReact from "prismic-reactjs";
 
 const MetaData = props => (
   <Helmet>
@@ -50,10 +50,10 @@ const MetaData = props => (
 );
 
 MetaData.defaultProps = {
-  metaTitle: 'Rob Easthope',
-  metaDescription: 'Portfolio',
-  currentUrl: '/',
-  metaImage: { url: '' },
+  metaTitle: "Rob Easthope",
+  metaDescription: "Portfolio",
+  currentUrl: "/",
+  metaImage: { url: "" },
 };
 
 MetaData.propTypes = {

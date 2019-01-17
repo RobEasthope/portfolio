@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import MetaData from '../../components/MetaData/MetaData';
-import Error404 from '../Error404/Error404';
-import AboutBodyContent from '../../components/AboutBodyContent/AboutBodyContent';
+import MetaData from "../../components/MetaData/MetaData";
+import Error404 from "../Error404/Error404";
+import AboutBodyContent from "../../components/AboutBodyContent/AboutBodyContent";
 
 class About extends React.Component {
   constructor() {
@@ -31,8 +31,8 @@ class About extends React.Component {
     if (props.prismicCtx) {
       // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID(
-        'about',
-        'about-page',
+        "about",
+        "about-page",
         {},
         (err, doc) => {
           if (doc) {
@@ -66,7 +66,7 @@ class About extends React.Component {
     } else if (this.state.notFound) {
       return <Error404 />;
     }
-    return '';
+    return "";
   }
 }
 

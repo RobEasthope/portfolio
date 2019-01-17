@@ -1,15 +1,15 @@
-import React from 'react';
-import PrismicReact from 'prismic-reactjs';
+import React from "react";
+import PrismicReact from "prismic-reactjs";
 
-import { Row, Block } from '../Grid/Grid';
-import SlimWrapper from '../SlimWrapper/SlimWrapper';
-import WideWrapper from '../WideWrapper/WideWrapper';
-import Image from '../Image/Image';
+import { Row, Block } from "../Grid/Grid";
+import SlimWrapper from "../SlimWrapper/SlimWrapper";
+import WideWrapper from "../WideWrapper/WideWrapper";
+import Image from "../Image/Image";
 
 const AboutBodyContent = props =>
   props.content.map(slice => {
     switch (slice.slice_type) {
-      case 'general_content':
+      case "general_content":
         return (
           <SlimWrapper>
             {slice.items.map(content =>
@@ -18,7 +18,7 @@ const AboutBodyContent = props =>
           </SlimWrapper>
         );
 
-      case 'slim_image_gallery':
+      case "slim_image_gallery":
         return (
           <SlimWrapper>
             {slice.items.map(content => (
@@ -27,7 +27,7 @@ const AboutBodyContent = props =>
           </SlimWrapper>
         );
 
-      case 'wide_image_gallery':
+      case "wide_image_gallery":
         return (
           <WideWrapper>
             <Row>
@@ -41,7 +41,7 @@ const AboutBodyContent = props =>
         );
 
       default:
-        return 'Untemplated slice';
+        return "Untemplated slice";
     }
   });
 

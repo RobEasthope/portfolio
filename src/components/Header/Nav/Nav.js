@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import NavLink from '../NavLink/NavLink';
+import React from "react";
+import styled from "styled-components";
+import NavLink from "../NavLink/NavLink";
 
-import palette from '../../../styles/colour-palette';
+import palette from "../../../styles/colour-palette";
 
-const NavWrapper = styled('nav')`
+const NavWrapper = styled("nav")`
   text-align: right;
 
   .active-link {

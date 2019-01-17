@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Grid from 'styled-components-grid';
+import React from "react";
+import PropTypes from "prop-types";
+import Grid from "styled-components-grid";
 
-import PortfolioWrapper from './PortfolioWrapper/PortfolioWrapper';
-import PortfolioCards from './PortfolioCards/PortfolioCards';
-import MetaData from '../../components/MetaData/MetaData';
-import PortfolioTitle from './PortfolioTitle/PortfolioTitle';
+import PortfolioWrapper from "./PortfolioWrapper/PortfolioWrapper";
+import PortfolioCards from "./PortfolioCards/PortfolioCards";
+import MetaData from "../../components/MetaData/MetaData";
+import PortfolioTitle from "./PortfolioTitle/PortfolioTitle";
 
 class Portfolio extends React.Component {
   constructor() {
@@ -28,8 +28,8 @@ class Portfolio extends React.Component {
   fetchPage(props) {
     if (props.prismicCtx) {
       return props.prismicCtx.api.getByUID(
-        'portfolio',
-        'portfolio-page',
+        "portfolio",
+        "portfolio-page",
         {},
         (err, doc) => {
           if (doc) {
@@ -66,9 +66,9 @@ class Portfolio extends React.Component {
         </div>
       );
     } else if (this.state.notFound) {
-      return 'No project found';
+      return "No project found";
     }
-    return '';
+    return "";
   }
 }
 

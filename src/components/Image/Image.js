@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import rem from '../../utils/rem';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import rem from "../../utils/rem";
 
-const ImageWrapper = styled('div')`
+const ImageWrapper = styled("div")`
   margin-bottom: ${rem(18 * 1.65)};
 `;
 
@@ -20,8 +20,8 @@ const Image = props => {
 
 Image.defaultProps = {
   src: [],
-  url: '',
-  alt: '',
+  url: "",
+  alt: "",
 };
 
 Image.propTypes = {

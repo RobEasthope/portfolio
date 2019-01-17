@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import palette from '../../../../styles/colour-palette';
+import palette from "../../../../styles/colour-palette";
 
-const PortfolioCardTitle = styled('span')`
+const PortfolioCardTitle = styled("span")`
   color: ${palette.lightGrey};
 `;
 

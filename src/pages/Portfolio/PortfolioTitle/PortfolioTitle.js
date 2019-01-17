@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const PortfolioTitle = styled('h1')`
+const PortfolioTitle = styled("h1")`
   font-weight: 500;
   line-height: 1.2;
   text-align: center;

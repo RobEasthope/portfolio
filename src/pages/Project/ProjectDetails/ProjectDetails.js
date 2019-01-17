@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import SlimWrapper from '../../../components/SlimWrapper/SlimWrapper';
-import ProjectDetail from '../ProjectDetail/ProjectDetail';
+import SlimWrapper from "../../../components/SlimWrapper/SlimWrapper";
+import ProjectDetail from "../ProjectDetail/ProjectDetail";
 
 const ProjectDetails = props => (
   <SlimWrapper>

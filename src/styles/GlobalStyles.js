@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import palette from './colour-palette';
-import rem from '../utils/rem';
+import { createGlobalStyle } from "styled-components";
+import palette from "./colour-palette";
+import rem from "../utils/rem";
 
 /* eslint no-unused-expressions: 0 */
 const GlobalStyles = createGlobalStyle`

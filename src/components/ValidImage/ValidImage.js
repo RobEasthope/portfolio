@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const ValidImage = props => {
   if (props.src.url) {
@@ -10,8 +10,8 @@ const ValidImage = props => {
 
 ValidImage.defaultProps = {
   src: [],
-  url: '',
-  alt: '',
+  url: "",
+  alt: "",
 };
 
 ValidImage.propTypes = {
