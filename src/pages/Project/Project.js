@@ -27,10 +27,8 @@ class Project extends React.Component {
   }
 
   uid() {
-    const match = this.props;
-
-    if (match) {
-      return match.params.uid;
+    if (this.props.match) {
+      return this.props.match.params.uid;
     }
     return "";
   }
@@ -55,8 +53,6 @@ class Project extends React.Component {
 
   render() {
     const { doc, notFound } = this.state;
-    const match = this.props;
-
     if (doc) {
       return (
         <div data-wio-id={doc.id}>
@@ -64,7 +60,7 @@ class Project extends React.Component {
             metaTitle={doc.data.meta_title}
             metaDescription={doc.data.meta_title}
             metaImage={doc.data.meta_image.url}
-            currentUrl={match.url}
+            currentUrl={this.props.match.url}
           />
 
           {/* Project header */}
