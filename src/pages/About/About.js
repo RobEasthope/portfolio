@@ -11,7 +11,7 @@ class About extends React.Component {
 
     this.state = {
       doc: null,
-      notFound: false,
+      notFound: false
     };
   }
 
@@ -72,7 +72,7 @@ class About extends React.Component {
 
 About.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
-  match: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape)
 };
 
 export default About;

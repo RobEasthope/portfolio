@@ -11,13 +11,13 @@ const ValidImage = props => {
 ValidImage.defaultProps = {
   src: [],
   url: "",
-  alt: "",
+  alt: ""
 };
 
 ValidImage.propTypes = {
   src: PropTypes.arrayOf(PropTypes.shape),
   url: PropTypes.string.required,
-  alt: PropTypes.string,
+  alt: PropTypes.string
 };
 
 export default ValidImage;

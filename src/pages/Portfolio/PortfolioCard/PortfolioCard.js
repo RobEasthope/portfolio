@@ -17,7 +17,7 @@ const PortfolioCard = props => {
         size={{
           xs: 1 / 1,
           sm: 1 / 2,
-          md: 1 / 3,
+          md: 1 / 3
         }}
       >
         <PortfolioCardLink to={prismicLinkResolver(props.url)}>
@@ -38,14 +38,14 @@ const PortfolioCard = props => {
 PortfolioCard.defaultProps = {
   bkg: "",
   title: "???",
-  subtitle: "???",
+  subtitle: "???"
   // url: '#',
 };
 
 PortfolioCard.propTypes = {
   bkg: PropTypes.string,
   title: PropTypes.arrayOf(PropTypes.shape),
-  subtitle: PropTypes.arrayOf(PropTypes.shape),
+  subtitle: PropTypes.arrayOf(PropTypes.shape)
   // url: PropTypes.objectOf(PropTypes.array),
 };
 

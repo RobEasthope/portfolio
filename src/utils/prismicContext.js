@@ -13,13 +13,13 @@ const refreshToolbar = () => {
 const buildContext = () => {
   const accessToken = process.env.REACT_APP_PRISMIC_KEY;
   return Prismic.api(process.env.REACT_APP_PRISMIC_ENDPOINT, {
-    accessToken,
+    accessToken
   }).then(api => ({
     api,
     endpoint: process.env.REACT_APP_PRISMIC_ENDPOINT,
     accessToken,
     linkResolver: prismicLinkResolver,
-    toolbar: refreshToolbar,
+    toolbar: refreshToolbar
   }));
 };
 

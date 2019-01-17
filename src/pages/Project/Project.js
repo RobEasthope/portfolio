@@ -14,7 +14,7 @@ class Project extends React.Component {
 
     this.state = {
       doc: null,
-      notFound: false,
+      notFound: false
     };
   }
 
@@ -80,7 +80,7 @@ class Project extends React.Component {
 
 Project.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
-  match: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape)
 };
 
 export default Project;

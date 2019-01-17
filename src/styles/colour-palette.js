@@ -4,7 +4,7 @@ const palette = {
   waterPink: "#FC5E58",
   typographicPink: "#e75b4d",
   typographicRed: "#f74e3d",
-  highlight: "#f74e3d",
+  highlight: "#f74e3d"
 };
 
 export default palette;

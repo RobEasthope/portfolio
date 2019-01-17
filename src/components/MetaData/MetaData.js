@@ -53,14 +53,14 @@ MetaData.defaultProps = {
   metaTitle: "Rob Easthope",
   metaDescription: "Portfolio",
   currentUrl: "/",
-  metaImage: { url: "" },
+  metaImage: { url: "" }
 };
 
 MetaData.propTypes = {
   metaTitle: PropTypes.arrayOf(PropTypes.shape),
   metaDescription: PropTypes.PropTypes.arrayOf(PropTypes.shape),
   currentUrl: PropTypes.string,
-  metaImage: PropTypes.string,
+  metaImage: PropTypes.string
 };
 
 export default MetaData;

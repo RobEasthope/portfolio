@@ -14,7 +14,7 @@ class Landing extends React.Component {
 
     this.state = {
       doc: null,
-      notFound: false,
+      notFound: false
     };
   }
 
@@ -82,7 +82,7 @@ class Landing extends React.Component {
 
 Landing.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
-  match: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape)
 };
 
 export default Landing;

@@ -13,7 +13,7 @@ class Portfolio extends React.Component {
 
     this.state = {
       doc: null,
-      notFound: false,
+      notFound: false
     };
   }
 
@@ -74,7 +74,7 @@ class Portfolio extends React.Component {
 
 Portfolio.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
-  match: PropTypes.shape(PropTypes.shape),
+  match: PropTypes.shape(PropTypes.shape)
 };
 
 export default Portfolio;

@@ -18,12 +18,12 @@ const LinkOrNoLink = props => {
 
 LinkOrNoLink.defaultProps = {
   title: [],
-  url: [],
+  url: []
 };
 
 LinkOrNoLink.propTypes = {
   title: PropTypes.arrayOf(PropTypes.shape),
-  url: PropTypes.arrayOf(PropTypes.shape),
+  url: PropTypes.arrayOf(PropTypes.shape)
 };
 
 export default LinkOrNoLink;

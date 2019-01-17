@@ -21,13 +21,13 @@ const Image = props => {
 Image.defaultProps = {
   src: [],
   url: "",
-  alt: "",
+  alt: ""
 };
 
 Image.propTypes = {
   src: PropTypes.arrayOf(PropTypes.shape),
   url: PropTypes.string.required,
-  alt: PropTypes.string,
+  alt: PropTypes.string
 };
 
 export default Image;
