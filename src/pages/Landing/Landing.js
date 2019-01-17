@@ -58,7 +58,7 @@ class Landing extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={match.url}
           />
-          <LandingBkg src={doc.data.landing_image.url} type="bg" fluid>
+          <LandingBkg bkg={doc.data.landing_image.url}>
             <LandingGreeting>
               {PrismicReact.RichText.asText(doc.data.greeting)}
             </LandingGreeting>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LandingGreeting = styled.h1`
-  font-size: 100px;
+  font-size: 50px;
   line-height: 1;
   margin: 0;
 
