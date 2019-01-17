@@ -2,10 +2,6 @@ import React from "react";
 import shortid from "shortid";
 
 import { Row, Block } from "../Grid/Grid";
-import SlimWrapper from "../SlimWrapper/SlimWrapper";
-import WideWrapper from "../WideWrapper/WideWrapper";
-import Image from "../Image/Image";
-
 import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
 import SlimImageGallery from "../../slices/SlimImageGallery/SlimImageGallery";
 import WideImageGallery from "../../slices/WideImageGallery/WideImageGallery";
