@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import rem from '../../../utils/rem'
+import styled from 'styled-components';
+import rem from '../../../utils/rem';
 
 const ProjectMiscDetails = styled('div')`
   font-family: 'p22-underground', sans-serif;
@@ -11,6 +11,6 @@ const ProjectMiscDetails = styled('div')`
   span {
     margin: 0 ${rem(6)};
   }
-`
+`;
 
-export default ProjectMiscDetails
+export default ProjectMiscDetails;

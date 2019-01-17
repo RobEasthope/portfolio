@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import SlimWrapper from '../../../components/SlimWrapper/SlimWrapper'
-import ProjectDetail from '../ProjectDetail/ProjectDetail'
+import SlimWrapper from '../../../components/SlimWrapper/SlimWrapper';
+import ProjectDetail from '../ProjectDetail/ProjectDetail';
 
 const ProjectDetails = props => (
   <SlimWrapper>
@@ -16,6 +16,6 @@ const ProjectDetails = props => (
       url={props.content.agency_url}
     />
   </SlimWrapper>
-)
+);
 
-export default ProjectDetails
+export default ProjectDetails;

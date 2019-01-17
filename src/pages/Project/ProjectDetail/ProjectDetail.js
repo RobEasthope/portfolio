@@ -1,8 +1,8 @@
-import React from 'react'
-import PrismicReact from 'prismic-reactjs'
+import React from 'react';
+import PrismicReact from 'prismic-reactjs';
 
-import LinkOrNoLink from '../../../components/LinkOrNoLink/LinkOrNoLink'
-import ProjectDetailText from '../ProjectDetailText/ProjectDetailText'
+import LinkOrNoLink from '../../../components/LinkOrNoLink/LinkOrNoLink';
+import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
 
 const ProjectDetail = props => {
   if (props.title) {
@@ -12,9 +12,9 @@ const ProjectDetail = props => {
         <span> × </span>
         <LinkOrNoLink title={props.title} url={props.url} />
       </ProjectDetailText>
-    )
+    );
   }
-  return null
-}
+  return null;
+};
 
-export default ProjectDetail
+export default ProjectDetail;

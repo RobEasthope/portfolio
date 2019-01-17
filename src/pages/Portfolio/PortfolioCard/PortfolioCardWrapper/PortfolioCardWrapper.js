@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Grid from 'styled-components-grid'
+import styled from 'styled-components';
+import Grid from 'styled-components-grid';
 
 const PortfolioCardWrapper = styled(Grid.Unit)`
   padding: 0 3em;
@@ -11,6 +11,6 @@ const PortfolioCardWrapper = styled(Grid.Unit)`
   @media (min-width: 1020px) {
     margin-bottom: 3em;
   }
-`
+`;
 
-export default PortfolioCardWrapper
+export default PortfolioCardWrapper;

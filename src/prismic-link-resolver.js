@@ -1,26 +1,26 @@
 /* eslint-disable no-unused-vars */
 const prismicLinkResolver = (doc, ctx) => {
-  let path = '/'
+  let path = '/';
 
   if (doc) {
     if (doc.type === 'landing') {
-      path = '/'
+      path = '/';
     }
     if (doc.type === 'portfolio') {
-      path = '/portfolio'
+      path = '/portfolio';
     }
     if (doc.type === 'project') {
-      path = `/portfolio/${doc.uid}`
+      path = `/portfolio/${doc.uid}`;
     }
     if (doc.type === 'about') {
-      path = '/about'
+      path = '/about';
     }
     if (doc.type === 'contact') {
-      path = '/contact'
+      path = '/contact';
     }
   }
 
-  return path
-}
+  return path;
+};
 
-export default prismicLinkResolver
+export default prismicLinkResolver;

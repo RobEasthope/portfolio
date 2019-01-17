@@ -1,29 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import PrismicReact from 'prismic-reactjs'
+import React from 'react';
+import PropTypes from 'prop-types';
+import PrismicReact from 'prismic-reactjs';
 
-import MetaData from '../../components/MetaData/MetaData'
-import Error404 from '../Error404/Error404'
+import MetaData from '../../components/MetaData/MetaData';
+import Error404 from '../Error404/Error404';
 
-import LandingGreeting from './LandingGreeting/LandingGreeting'
-import LandingBkg from './LandingBkg/LandingBkg'
+import LandingGreeting from './LandingGreeting/LandingGreeting';
+import LandingBkg from './LandingBkg/LandingBkg';
 
 class Landing extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       doc: null,
       notFound: false,
-    }
+    };
   }
 
   componentWillMount() {
-    this.fetchPage(this.props)
+    this.fetchPage(this.props);
   }
 
   componentWillReceiveProps(props) {
-    this.fetchPage(props)
+    this.fetchPage(props);
   }
 
   componentDidUpdate() {
@@ -40,20 +40,20 @@ class Landing extends React.Component {
         (err, doc) => {
           if (doc) {
             // We put the retrieved content in the state as a doc variable
-            this.setState({ doc })
+            this.setState({ doc });
           } else {
             // We changed the state to display error not found if no matched doc
-            this.setState({ notFound: !doc })
+            this.setState({ notFound: !doc });
           }
-        }
-      )
+        },
+      );
     }
-    return null
+    return null;
   }
 
   render() {
     if (this.state.doc) {
-      const { doc } = this.state
+      const { doc } = this.state;
       return (
         <div data-wio-id={this.state.doc.id}>
           <MetaData
@@ -72,17 +72,17 @@ class Landing extends React.Component {
           {/* This is how to insert a Rich Text field as plain text */}
           {/* This is how to insert a Rich Text field into your template as html */}
         </div>
-      )
+      );
     } else if (this.state.notFound) {
-      return <Error404 />
+      return <Error404 />;
     }
-    return ''
+    return '';
   }
 }
 
 Landing.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
   match: PropTypes.shape(PropTypes.shape),
-}
+};
 
-export default Landing
+export default Landing;
