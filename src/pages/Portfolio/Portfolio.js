@@ -44,15 +44,17 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    if (this.state.doc) {
-      const { doc } = this.state;
+    const { doc, notFound } = this.state;
+    const { match } = this.props;
+
+    if (doc) {
       return (
-        <div data-wio-id={this.state.doc.id}>
+        <div data-wio-id={doc.id}>
           <MetaData
             metaTitle={doc.data.meta_title}
             metaDescription={doc.data.meta_title}
             metaImage={doc.data.meta_image.url}
-            currentUrl={this.props.match.url}
+            currentUrl={match.url}
           />
 
           <PortfolioTitle>
@@ -65,7 +67,8 @@ class Portfolio extends React.Component {
           </PortfolioWrapper>
         </div>
       );
-    } else if (this.state.notFound) {
+    }
+    if (notFound) {
       return "No project found";
     }
     return "";

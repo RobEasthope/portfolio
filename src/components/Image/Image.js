@@ -8,10 +8,12 @@ const ImageWrapper = styled("div")`
 `;
 
 const Image = props => {
-  if (props.src.url) {
+  const { src } = props;
+
+  if (src.url) {
     return (
       <ImageWrapper>
-        <img src={props.src.url} alt={props.src.alt} />
+        <img src={src.url} alt={src.alt} />
       </ImageWrapper>
     );
   }
@@ -19,15 +21,11 @@ const Image = props => {
 };
 
 Image.defaultProps = {
-  src: [],
-  url: "",
-  alt: ""
+  src: []
 };
 
 Image.propTypes = {
-  src: PropTypes.arrayOf(PropTypes.shape),
-  url: PropTypes.string.required,
-  alt: PropTypes.string
+  src: PropTypes.arrayOf(PropTypes.shape)
 };
 
 export default Image;

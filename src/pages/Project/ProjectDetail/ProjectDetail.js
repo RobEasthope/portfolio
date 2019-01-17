@@ -5,12 +5,14 @@ import LinkOrNoLink from "../../../components/LinkOrNoLink/LinkOrNoLink";
 import ProjectDetailText from "../ProjectDetailText/ProjectDetailText";
 
 const ProjectDetail = props => {
-  if (props.title) {
+  const { title, detailType, url } = props;
+
+  if (title) {
     return (
       <ProjectDetailText>
-        {PrismicReact.RichText.asText(props.detailType)}
+        {PrismicReact.RichText.asText(detailType)}
         <span> × </span>
-        <LinkOrNoLink title={props.title} url={props.url} />
+        <LinkOrNoLink title={title} url={url} />
       </ProjectDetailText>
     );
   }

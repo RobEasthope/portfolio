@@ -4,9 +4,12 @@ import PrismicReact from "prismic-reactjs";
 import prismicLinkResolver from "../../prismic-link-resolver";
 
 const LinkOrNoLink = props => {
-  if (props.title !== null && props.url.url == null) {
+  const { title, url } = props;
+
+  if (title !== null && url.url == null) {
     return PrismicReact.RichText.asText(props.title);
-  } else if (props.title !== null && props.url.url !== null) {
+  }
+  if (title !== null && url.url !== null) {
     return (
       <a href={PrismicReact.Link.url(props.url, prismicLinkResolver)}>
         {PrismicReact.RichText.asText(props.title)}

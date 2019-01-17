@@ -49,26 +49,34 @@ class About extends React.Component {
   }
 
   render() {
-    if (this.state.doc) {
-      const { doc } = this.state;
+    const { doc, notFound } = this.state;
+    const { match } = this.props;
+
+    if (doc) {
       return (
-        <div data-wio-id={this.state.doc.id}>
+        <div data-wio-id={doc.id}>
           <MetaData
             metaTitle={doc.data.meta_title}
             metaDescription={doc.data.meta_title}
             metaImage={doc.data.meta_image.url}
-            currentUrl={this.props.match.url}
+            currentUrl={match.url}
           />
 
           <AboutBodyContent content={doc.data.body} />
         </div>
       );
-    } else if (this.state.notFound) {
+    }
+    if (notFound) {
       return <Error404 />;
     }
     return "";
   }
 }
+
+About.defaultProps = {
+  prismicCtx: {},
+  match: {}
+};
 
 About.propTypes = {
   prismicCtx: PropTypes.shape(PropTypes.shape),
