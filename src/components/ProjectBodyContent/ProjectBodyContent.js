@@ -17,7 +17,7 @@ const ProjectBodyContent = props =>
         return (
           <SlimWrapper>
             {slice.items.map(content =>
-              PrismicReact.RichText.render(content.rich_text),
+              PrismicReact.RichText.render(content.rich_text)
             )}
           </SlimWrapper>
         );
@@ -75,7 +75,7 @@ const ProjectBodyContent = props =>
               <a
                 href={PrismicReact.Link.url(
                   slice.primary.site_url,
-                  prismicLinkResolver,
+                  prismicLinkResolver
                 )}
               >
                 {PrismicReact.RichText.asText(slice.primary.site_text)}

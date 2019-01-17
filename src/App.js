@@ -46,7 +46,7 @@ class App extends React.Component {
       })
       .catch(e => {
         console.error(
-          `Cannot contact the API, check your prismic configuration:\n${e}`,
+          `Cannot contact the API, check your prismic configuration:\n${e}`
         );
       });
   }

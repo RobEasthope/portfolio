@@ -45,7 +45,7 @@ class Project extends React.Component {
           } else {
             this.setState({ notFound: !doc });
           }
-        },
+        }
       );
     }
     return null;

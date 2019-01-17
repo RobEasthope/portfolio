@@ -13,7 +13,7 @@ const AboutBodyContent = props =>
         return (
           <SlimWrapper>
             {slice.items.map(content =>
-              PrismicReact.RichText.render(content.rich_text),
+              PrismicReact.RichText.render(content.rich_text)
             )}
           </SlimWrapper>
         );

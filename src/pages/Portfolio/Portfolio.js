@@ -37,7 +37,7 @@ class Portfolio extends React.Component {
           } else {
             this.setState({ notFound: !doc });
           }
-        },
+        }
       );
     }
     return null;

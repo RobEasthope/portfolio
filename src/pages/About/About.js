@@ -42,7 +42,7 @@ class About extends React.Component {
             // We changed the state to display error not found if no matched doc
             this.setState({ notFound: !doc });
           }
-        },
+        }
       );
     }
     return null;
