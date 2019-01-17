@@ -11,19 +11,13 @@ import ProjectMiscDetails from "../../pages/Project/ProjectMiscDetails/ProjectMi
 import prismicLinkResolver from "../../prismic-link-resolver";
 import Image from "../Image/Image";
 
+import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
+
 const ProjectBodyContent = props =>
   props.content.map(slice => {
     switch (slice.slice_type) {
       case "general_content":
-        return (
-          <SlimWrapper key={shortid.generate()}>
-            {slice.items.map(content => (
-              <React.Fragment key={shortid.generate()}>
-                {PrismicReact.RichText.render(content.rich_text)}
-              </React.Fragment>
-            ))}
-          </SlimWrapper>
-        );
+        return <GeneralContentSlice key={shortid.generate()} slice={slice} />;
 
       case "image_gallery":
         return (
