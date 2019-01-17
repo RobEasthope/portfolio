@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import PrismicReact from "prismic-reactjs";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import PrismicReact from 'prismic-reactjs';
 
 const MetaData = props => (
   <Helmet>
     <title>{PrismicReact.RichText.asText(props.metaTitle)}</title>
     <meta
-      property="description"
+      name="description"
       content={PrismicReact.RichText.asText(props.metaDescription)}
     />
     <link rel="canonical" href={`https://robeasthope.com${props.currentUrl}`} />
@@ -50,17 +50,17 @@ const MetaData = props => (
 );
 
 MetaData.defaultProps = {
-  metaTitle: "Rob Easthope",
-  metaDescription: "Portfolio",
-  currentUrl: "/",
-  metaImage: { url: "" }
+  metaTitle: 'Rob Easthope',
+  metaDescription: 'Portfolio',
+  currentUrl: '/',
+  metaImage: { url: '' },
 };
 
 MetaData.propTypes = {
   metaTitle: PropTypes.arrayOf(PropTypes.shape),
   metaDescription: PropTypes.PropTypes.arrayOf(PropTypes.shape),
   currentUrl: PropTypes.string,
-  metaImage: PropTypes.string
+  metaImage: PropTypes.string,
 };
 
 export default MetaData;
