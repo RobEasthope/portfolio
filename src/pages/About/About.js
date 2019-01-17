@@ -4,7 +4,6 @@ import shortid from "shortid";
 
 import MetaData from "../../components/MetaData/MetaData";
 import Error404 from "../Error404/Error404";
-import AboutBodyContent from "../../components/AboutBodyContent/AboutBodyContent";
 
 import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
 import SlimImageGallery from "../../slices/SlimImageGallery/SlimImageGallery";
