@@ -2,9 +2,7 @@ import React from "react";
 import PrismicReact from "prismic-reactjs";
 import shortid from "shortid";
 
-import { Row, Block } from "../Grid/Grid";
 import SlimWrapper from "../SlimWrapper/SlimWrapper";
-import WideWrapper from "../WideWrapper/WideWrapper";
 import ProjectDetail from "../../pages/Project/ProjectDetail/ProjectDetail";
 import ProjectDevDetail from "../../pages/Project/ProjectDevDetail/ProjectDevDetail";
 import ProjectMiscDetails from "../../pages/Project/ProjectMiscDetails/ProjectMiscDetails";
@@ -12,6 +10,7 @@ import prismicLinkResolver from "../../prismic-link-resolver";
 import Image from "../Image/Image";
 
 import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
+import WideImageGallery from "../../slices/WideImageGallery/WideImageGallery";
 
 const ProjectBodyContent = props =>
   props.content.map(slice => {
@@ -20,17 +19,7 @@ const ProjectBodyContent = props =>
         return <GeneralContentSlice key={shortid.generate()} slice={slice} />;
 
       case "image_gallery":
-        return (
-          <WideWrapper key={shortid.generate()}>
-            <Row>
-              {slice.items.map(content => (
-                <Block key={shortid.generate()} size={1 / 1}>
-                  <Image src={content.image} />
-                </Block>
-              ))}
-            </Row>
-          </WideWrapper>
-        );
+        return <WideImageGallery key={shortid.generate()} slice={slice} />;
 
       case "single_image":
         return (
