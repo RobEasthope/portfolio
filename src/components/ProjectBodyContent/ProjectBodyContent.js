@@ -7,10 +7,10 @@ import ProjectDetail from "../../pages/Project/ProjectDetail/ProjectDetail";
 import ProjectDevDetail from "../../pages/Project/ProjectDevDetail/ProjectDevDetail";
 import ProjectMiscDetails from "../../pages/Project/ProjectMiscDetails/ProjectMiscDetails";
 import prismicLinkResolver from "../../prismic-link-resolver";
-import Image from "../Image/Image";
 
 import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
 import WideImageGallery from "../../slices/WideImageGallery/WideImageGallery";
+import SingleImage from "../../slices/SingleImage/SingleImage";
 
 const ProjectBodyContent = props =>
   props.content.map(slice => {
@@ -22,13 +22,7 @@ const ProjectBodyContent = props =>
         return <WideImageGallery key={shortid.generate()} slice={slice} />;
 
       case "single_image":
-        return (
-          <SlimWrapper key={shortid.generate()}>
-            {slice.items.map(content => (
-              <Image key={shortid.generate()} src={content.image} />
-            ))}
-          </SlimWrapper>
-        );
+        return <SingleImage key={shortid.generate()} slice={slice} />;
 
       case "project_type_year":
         return (
