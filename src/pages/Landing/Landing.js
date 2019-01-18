@@ -26,24 +26,18 @@ class Landing extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   fetchPage(props) {
     if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID(
         "landing",
         "landing-page",
         {},
         (err, doc) => {
           if (doc) {
-            // We put the retrieved content in the state as a doc variable
             this.setState({ doc });
           } else {
-            // We changed the state to display error not found if no matched doc
-            this.setState({ notFound: !doc });
+            console.log(err);
+            this.setState({ notFound: true });
           }
         }
       );
@@ -64,7 +58,7 @@ class Landing extends React.Component {
             metaImage={doc.data.meta_image.url}
             currentUrl={match.url}
           />
-          <LandingBkg src={doc.data.landing_image.url} type="bg" fluid>
+          <LandingBkg bkg={doc.data.landing_image.url}>
             <LandingGreeting>
               {PrismicReact.RichText.asText(doc.data.greeting)}
             </LandingGreeting>

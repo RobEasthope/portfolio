@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import shortid from "shortid";
 
 import MetaData from "../../components/MetaData/MetaData";
 import Error404 from "../Error404/Error404";
-import AboutBodyContent from "../../components/AboutBodyContent/AboutBodyContent";
+
+import GeneralContentSlice from "../../slices/GeneralContentSlice/GeneralContentSlice";
+import SlimImageGallery from "../../slices/SlimImageGallery/SlimImageGallery";
+import WideImageGallery from "../../slices/WideImageGallery/WideImageGallery";
 
 class About extends React.Component {
   constructor() {
@@ -23,24 +27,18 @@ class About extends React.Component {
     this.fetchPage(props);
   }
 
-  componentDidUpdate() {
-    // this.props.prismicCtx.toolbar();
-  }
-
   fetchPage(props) {
     if (props.prismicCtx) {
-      // We are using the function to get a document by its uid
       return props.prismicCtx.api.getByUID(
         "about",
         "about-page",
         {},
         (err, doc) => {
           if (doc) {
-            // We put the retrieved content in the state as a doc variable
             this.setState({ doc });
           } else {
-            // We changed the state to display error not found if no matched doc
-            this.setState({ notFound: !doc });
+            console.log(err);
+            this.setState({ notFound: true });
           }
         }
       );
@@ -62,7 +60,27 @@ class About extends React.Component {
             currentUrl={match.url}
           />
 
-          <AboutBodyContent content={doc.data.body} />
+          {doc.data.body.map(slice => {
+            switch (slice.slice_type) {
+              case "general_content":
+                return (
+                  <GeneralContentSlice key={shortid.generate()} slice={slice} />
+                );
+
+              case "slim_image_gallery":
+                return (
+                  <SlimImageGallery key={shortid.generate()} slice={slice} />
+                );
+
+              case "wide_image_gallery":
+                return (
+                  <WideImageGallery key={shortid.generate()} slice={slice} />
+                );
+
+              default:
+                return "Untemplated slice";
+            }
+          })}
         </div>
       );
     }

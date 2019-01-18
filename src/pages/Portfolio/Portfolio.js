@@ -35,7 +35,8 @@ class Portfolio extends React.Component {
           if (doc) {
             this.setState({ doc });
           } else {
-            this.setState({ notFound: !doc });
+            console.log(err);
+            this.setState({ notFound: true });
           }
         }
       );
@@ -60,6 +61,7 @@ class Portfolio extends React.Component {
           <PortfolioTitle>
             Hello, I'm Rob, a front end developer based in London.
           </PortfolioTitle>
+
           <PortfolioWrapper>
             <Grid>
               <PortfolioCards cards={doc.data.body} />
