@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
@@ -26,7 +27,9 @@ const IndexPage = ({ data }) => (
 
     {data.allSanityProject.edges.map(({ node: project }) => (
       <li key={project.slug.current}>
-        <h2 style={{ fontSize: '24px' }}>{project.title}</h2>
+        <h2 style={{ fontSize: '24px' }}>
+          <Link to={project.slug.current}>{project.title}</Link>
+        </h2>
       </li>
     ))}
   </Layout>
