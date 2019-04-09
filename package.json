@@ -6,6 +6,7 @@
   "author": "Rob Easthope <hello@robeasthope.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "dotenv": "^7.0.0",
     "eslint-config-react-app": "^3.0.8",
     "gatsby": "^2.1.23",
     "gatsby-image": "^2.0.31",
