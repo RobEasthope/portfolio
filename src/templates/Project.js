@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 
 export const query = graphql`
@@ -10,8 +10,10 @@ export const query = graphql`
   }
 `;
 
-export default ({ data }) => (
+const Project = ({ data }) => (
   <Layout>
     <h1>{data.sanityProject.title}</h1>
   </Layout>
 );
+
+export default Project;
