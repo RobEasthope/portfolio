@@ -7,27 +7,13 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 import theme from "../../styles/theme";
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <main>{children}</main>
-      </ThemeProvider>
-    )}
-  />
+  <ThemeProvider theme={theme}>
+    <main>{children}</main>
+  </ThemeProvider>
 );
 
 Layout.propTypes = {
