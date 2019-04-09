@@ -49,18 +49,6 @@ function SEO({ description, lang, meta, keywords, title }) {
           content: metaDescription,
         },
         {
-          property: `og:url`,
-          content: 'https://robeasthope.com',
-        },
-        {
-          property: `og:site_name`,
-          content: `Rob Easthope`,
-        },
-        {
-          property: `og:image`,
-          content: 'image',
-        },
-        {
           property: `og:type`,
           content: `website`,
         },
@@ -79,10 +67,6 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
-        },
-        {
-          name: `twitter:url`,
-          content: 'url',
         },
       ]
         .concat(
