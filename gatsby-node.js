@@ -21,16 +21,16 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  const projects = result.data.allSanityProject.edges || [];
-  projects.forEach((edge, index) => {
-    const path = `/project/${edge.node.slug.current}`;
+  // const projects = result.data.allSanityProject.edges || [];
+  // projects.forEach((edge, index) => {
+  //   const path = `/project/${edge.node.slug.current}`;
 
-    createPage({
-      path,
-      component: require.resolve("./src/templates/project.js"),
-      context: { slug: edge.node.slug.current }
-    });
+  //   createPage({
+  //     path,
+  //     component: require.resolve("./src/templates/project.js"),
+  //     context: { slug: edge.node.slug.current }
+  //   });
 
-    createPageDependency({ path, nodeId: edge.node.id });
-  });
+  //   createPageDependency({ path, nodeId: edge.node.id });
+  // });
 };
