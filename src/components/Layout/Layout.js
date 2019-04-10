@@ -3,27 +3,29 @@ import PropTypes from 'prop-types';
 
 import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-import { Flex, Box } from 'rebass';
+import { Box } from 'rebass';
 
 import theme from '../../styles/theme';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import AppWrapper from '../Grid/AppWrapper';
+import MainContent from '../Grid/MainContent';
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <>
       <Normalize />
-      <Flex flexWrap="wrap" flexDirection="row">
-        <Box width={[1]}>
+      <AppWrapper flexDirection="column">
+        <Box width={1}>
           <Header />
         </Box>
-        <Box width={1}>
+        <MainContent width={1}>
           <main>{children}</main>
-        </Box>
+        </MainContent>
         <Box width={1} alignSelf="flex-end">
           <Footer />
         </Box>
-      </Flex>
+      </AppWrapper>
     </>
   </ThemeProvider>
 );
