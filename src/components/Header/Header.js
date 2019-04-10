@@ -1,12 +1,19 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
+import Nav from '../Nav/Nav';
+import NavLink from '../NavLink/Navlink';
+import Logo from '../Logo/Logo';
+
+import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 
 const Header = () => (
   <header>
     <nav>
-      <Link to="/">Portfolio</Link>
-      <Link to="/landing">Landing</Link>
-      <Link to="/about">About</Link>
+      <Nav as="ul" alignItems="center" justifyContent="center">
+        <NavLink to="/" title="Portfolio" textAlign="right" />
+        <Logo url="/landing" src={LogoAsset} altText="Rob Easthope" />
+        <NavLink to="/about" title="About" textAlign="left" />
+      </Nav>
     </nav>
   </header>
 );
