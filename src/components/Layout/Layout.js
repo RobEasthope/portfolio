@@ -24,9 +24,9 @@ const Layout = ({ children }) => (
         <MainContent width={1}>
           <main>{children}</main>
         </MainContent>
-        <Box width={1} alignSelf="flex-end">
+        {/* <Box width={1} alignSelf="flex-end">
           <Footer />
-        </Box>
+        </Box> */}
       </AppWrapper>
     </>
   </ThemeProvider>
