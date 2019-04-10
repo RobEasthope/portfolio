@@ -6,6 +6,7 @@ import { Normalize } from 'styled-normalize';
 import { Box } from 'rebass';
 
 import theme from '../../styles/theme';
+import GlobalStyles from '../../styles/globalStyles';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import AppWrapper from '../Grid/AppWrapper';
@@ -15,6 +16,7 @@ const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <>
       <Normalize />
+      <GlobalStyles />
       <AppWrapper flexDirection="column">
         <Box width={1}>
           <Header />

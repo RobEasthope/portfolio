@@ -23,7 +23,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Landing page</h1>
+    <h1>Portfolio</h1>
 
     {data.allSanityProject.edges.map(({ node: project }) => (
       <li key={project.slug.current}>
