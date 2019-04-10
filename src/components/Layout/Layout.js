@@ -4,9 +4,14 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../styles/theme';
 
+import Header from '../Header/Header';
+
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <main>{children}</main>
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
   </ThemeProvider>
 );
 
