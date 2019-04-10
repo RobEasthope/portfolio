@@ -3,10 +3,18 @@ import React from 'react';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 
-const LandingPage = () => (
+export const query = graphql`
+  {
+    sanityLandingPage {
+      tagline
+    }
+  }
+`;
+
+const LandingPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Landing</h1>
+    <h1>{data.sanityLandingPage.tagline}</h1>
   </Layout>
 );
 
