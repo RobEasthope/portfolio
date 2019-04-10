@@ -1,13 +1,11 @@
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createPageDependency } = actions;
+const path = require('path');
 
+exports.createPages = async ({ actions, graphql }) => {
   const result = await graphql(`
     {
-      allSanityProject(filter: { slug: { current: { ne: null } } }) {
+      allSanityProject {
         edges {
           node {
-            title
-            description
             slug {
               current
             }
@@ -17,20 +15,15 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  if (result.errors) {
-    throw result.errors;
-  }
+  const projects = result.data.allSanityProject.edges.map(({ node }) => node);
 
-  // const projects = result.data.allSanityProject.edges || [];
-  // projects.forEach((edge, index) => {
-  //   const path = `/project/${edge.node.slug.current}`;
-
-  //   createPage({
-  //     path,
-  //     component: require.resolve("./src/templates/project.js"),
-  //     context: { slug: edge.node.slug.current }
-  //   });
-
-  //   createPageDependency({ path, nodeId: edge.node.id });
-  // });
+  projects.forEach(project => {
+    actions.createPage({
+      path: project.slug.current,
+      component: path.resolve('./src/templates/Project.js'),
+      context: {
+        slug: project.slug.current,
+      },
+    });
+  });
 };
