@@ -5,12 +5,14 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../../styles/theme';
 
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <>
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   </ThemeProvider>
 );
