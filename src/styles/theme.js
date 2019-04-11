@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 // Breakpoints
 const breakpoints = [
+  '0em', // 0px
   '28em', // 448px
   '40em', // 640px
   '52em', // 832px
@@ -8,10 +9,11 @@ const breakpoints = [
 ];
 
 // Breakpoint aliases
-breakpoints.sm = breakpoints[0];
-breakpoints.md = breakpoints[1];
-breakpoints.lg = breakpoints[2];
-breakpoints.xlg = breakpoints[3];
+breakpoints.b = breakpoints[0];
+breakpoints.sm = breakpoints[1];
+breakpoints.md = breakpoints[2];
+breakpoints.lg = breakpoints[3];
+breakpoints.xlg = breakpoints[4];
 
 // Typescale
 const fontSizes = [
