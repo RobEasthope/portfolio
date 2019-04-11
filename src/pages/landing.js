@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Box } from 'rebass';
+import { graphql } from 'gatsby';
 
 import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
 import Layout from '../components/Layout/Layout';
