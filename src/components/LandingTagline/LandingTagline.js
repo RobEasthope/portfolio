@@ -9,6 +9,7 @@ const LandingTagline = styled(Text)`
   max-width: 9em;
   margin: 30px;
   line-height: 1;
+  text-shadow: 0px 0px 6px rgba(1, 255, 233, 1);
 
   position: absolute;
   bottom: 0;
