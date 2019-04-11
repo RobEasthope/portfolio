@@ -8,7 +8,6 @@ const NavLinkText = styled(Link)`
   color: black;
   font-family: 'Gotham', sans-serif;
   font-weight: bold;
-  /* transform: translateY(-15%); */
   text-transform: uppercase;
   text-decoration: none;
 `;
