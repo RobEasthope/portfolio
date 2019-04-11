@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Box } from 'rebass';
-import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
 
+import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 import LandingTagline from '../components/LandingTagline/LandingTagline';
