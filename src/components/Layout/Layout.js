@@ -21,12 +21,10 @@ const Layout = ({ children }) => (
         <Box width={1}>
           <Header />
         </Box>
-        <MainContent width={1}>
-          <main>{children}</main>
-        </MainContent>
-        <Box width={1} alignSelf="flex-end">
+        <MainContent>{children}</MainContent>
+        {/* <Box width={1} alignSelf="flex-end">
           <Footer />
-        </Box>
+        </Box> */}
       </AppWrapper>
     </>
   </ThemeProvider>
