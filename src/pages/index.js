@@ -47,12 +47,10 @@ const IndexPage = ({ data }) => (
             width={{ b: 1 / 2, sm: 1 / 2, md: 1 / 3, lg: 1 / 4, xlg: 1 / 5 }}
             key={project.slug.current}
           >
-            <h2 style={{ fontSize: '24px' }}>
-              <Link to={project.slug.current}>
-                <Image fluid={project.thumbnailImage.imageAsset.asset.fluid} />
-                {project.title}
-              </Link>
-            </h2>
+            <Link to={project.slug.current}>
+              <Image fluid={project.thumbnailImage.imageAsset.asset.fluid} />
+              <h2 style={{ fontSize: '24px' }}>{project.title}</h2>
+            </Link>
           </Box>
         ))}
       </PortfolioIndex>
