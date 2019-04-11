@@ -43,7 +43,7 @@ const LandingPage = ({ data }) => (
           <LandingJumbotron
             fluid={data.sanityLandingPage.landingImage.imageAsset.asset.fluid}
           />
-          <LandingTagline as="h1" fontSize={[5, 5, 6, 7]}>
+          <LandingTagline as="h1" fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}>
             {data.sanityLandingPage.tagline}
           </LandingTagline>
         </Box>
