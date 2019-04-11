@@ -3,7 +3,6 @@ import { Text } from 'rebass';
 
 const LandingTagline = styled(Text)`
   color: #01ffe9;
-  font-family: 'Gotham', sans-serif;
   font-weight: bold;
   font-size: 72px;
   max-width: 9em;

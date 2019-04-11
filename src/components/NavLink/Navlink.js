@@ -6,7 +6,6 @@ import { Text } from 'rebass';
 const NavLinkText = styled(Link)`
   display: inline-block;
   color: black;
-  font-family: 'Gotham', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
