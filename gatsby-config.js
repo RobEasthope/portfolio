@@ -52,7 +52,7 @@ module.exports = {
       options: {
         name: `Rob Easthope`,
         short_name: `Rob Easthope`,
-        start_url: `/`,
+        start_url: `https://www.robeasthope.com`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
