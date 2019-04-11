@@ -10,6 +10,7 @@ export const query = graphql`
       seoMetaData {
         title
         description
+        keywords
       }
     }
   }
@@ -21,6 +22,7 @@ const LandingPage = ({ data }) => (
       title={data.sanityLandingPage.seoMetaData.title}
       description={data.sanityLandingPage.seoMetaData.description}
       keywords={[`gatsby`, `application`, `react`]}
+      keywords={data.sanityLandingPage.seoMetaData.keywords}
     />
     <h1>{data.sanityLandingPage.tagline}</h1>
   </Layout>
