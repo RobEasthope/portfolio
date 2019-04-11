@@ -1,13 +1,14 @@
 export default {
   fontSizes: [
-    '875rem', // 14px
-    '1rem', // 16px,
-    '1.25rem', // 20px
-    '1.5rem', // 24px
-    '2.25rem', // 36px
-    '3rem', // 48px
-    '5rem', // 80px
-    '6rem', // 96px
+    '0', // Zero - 0
+    '.875rem', // 14px - 1
+    '1rem', // 16px, - 2
+    '1.25rem', // 20px -3
+    '1.5rem', // 24px - 4
+    '2.25rem', // 36px - 5
+    '3rem', // 48px - 6
+    '5rem', // 80px - 7
+    '6rem', // 96px - 8
   ],
   breakpoints: [
     '28em', // 448px
