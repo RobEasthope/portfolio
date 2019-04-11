@@ -40,7 +40,6 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Container>
-      <h1>Portfolio</h1>
       <PortfolioIndex as="ul">
         {data.sanityPortfolio.portfolioIndex.map(project => (
           <Box
