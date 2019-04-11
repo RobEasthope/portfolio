@@ -9,5 +9,10 @@ export default {
     '5rem', // 80px
     '6rem', // 96px
   ],
+  breakpoints: [
+    '40em', // 640px
+    '52em', // 832px
+    '64em', // 1024px
+  ],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 };
