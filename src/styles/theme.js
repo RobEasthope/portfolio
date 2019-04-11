@@ -16,5 +16,12 @@ export default {
     '52em', // 832px
     '64em', // 1024px
   ],
+  breakpoints: {
+    sm: breakpoints[0],
+    md: breakpoints[1],
+    lg: breakpoints[2],
+    xlg: breakpoints[3]
+  }
+
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 };
