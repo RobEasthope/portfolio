@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Text } from 'rebass';
 
 const LandingTagline = styled(Text)`
-  color: #f04a39;
+  color: #01ffe9;
   font-family: 'Gotham', sans-serif;
   font-weight: bold;
   font-size: 72px;
