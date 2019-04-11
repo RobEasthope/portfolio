@@ -4,7 +4,7 @@ import { Text } from 'rebass';
 const LandingTagline = styled(Text)`
   color: #01ffe9;
   font-weight: bold;
-  max-width: 9em;
+  max-width: 10em;
   margin: 30px;
   line-height: 1;
   text-shadow: 0px 0px 6px rgba(1, 255, 233, 1);
