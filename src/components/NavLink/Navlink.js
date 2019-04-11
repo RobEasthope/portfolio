@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Text } from 'rebass';
+import palette from '../../styles/palette';
 
 const NavLinkText = styled(Link)`
   display: inline-block;
-  color: black;
+  color: ${palette.ink};
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
