@@ -10,16 +10,18 @@ import Footer from '../Footer/Footer';
 import AppWrapper from '../Grid/AppWrapper';
 import MainContent from '../Grid/MainContent';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, footer }) => (
   <App>
     <AppWrapper flexDirection="column">
       <Box width={1}>
         <Header />
       </Box>
       <MainContent>{children}</MainContent>
-      {/* <Box width={1} alignSelf="flex-end">
+      {footer && (
+        <Box width={1} alignSelf="flex-end">
           <Footer />
-        </Box> */}
+        </Box>
+      )}
     </AppWrapper>
   </App>
 );
