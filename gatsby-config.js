@@ -47,6 +47,18 @@ module.exports = {
         watchMode: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Rob Easthope`,
+        short_name: `Rob Easthope`,
+        start_url: `https://www.robeasthope.com`,
+        icon: `src/images/saladin-logo-dark-with-diamond.jpg`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
