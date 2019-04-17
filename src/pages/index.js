@@ -7,6 +7,8 @@ import SEO from '../components/Seo/Seo';
 import Container from '../components/Grid/Container';
 import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
 import Box from '../components/Grid/Box';
+import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
+import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
 
 export const query = graphql`
   {
@@ -42,16 +44,16 @@ const IndexPage = ({ data }) => (
     <Container>
       <PortfolioIndex as="ul" flexWrap="wrap">
         {data.sanityPortfolio.portfolioIndex.map(project => (
-          <Box
+          <PortfolioCard
             as="li"
             width={{ b: 1 / 2, sm: 1 / 2, md: 1 / 3, lg: 1 / 4, xlg: 1 / 5 }}
             key={project.slug.current}
           >
             <Link to={project.slug.current}>
               <Image fluid={project.thumbnailImage.imageAsset.asset.fluid} />
-              <h2 style={{ fontSize: '24px' }}>{project.title}</h2>
+              <PortfolioCardTitle>{project.title}</PortfolioCardTitle>
             </Link>
-          </Box>
+          </PortfolioCard>
         ))}
       </PortfolioIndex>
     </Container>
