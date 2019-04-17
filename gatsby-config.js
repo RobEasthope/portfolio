@@ -72,7 +72,7 @@ module.exports = {
         name: `Rob Easthope`,
         short_name: `Rob Easthope`,
         start_url: `https://www.robeasthope.com`,
-        icon: `src/images/saladin-logo-dark-with-diamond.jpg`,
+        icon: `src/images/saladin-logo-dark-with-bkg.png`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
