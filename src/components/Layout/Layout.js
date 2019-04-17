@@ -17,6 +17,8 @@ const Layout = ({ children, footer }) => (
         <Header />
       </Box>
       <MainContent>{children}</MainContent>
+
+      {/* Toggle footer */}
       {footer && (
         <Box width={1} alignSelf="flex-end">
           <Footer />
