@@ -37,7 +37,7 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <Layout footer>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Container>
       <PortfolioIndex as="ul" flexWrap="wrap">

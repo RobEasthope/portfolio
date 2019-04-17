@@ -4,12 +4,16 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Rob Easthope`,
+    description: `Porfolio`,
+    author: `@robeasthope`,
+    siteUrl: 'https://www.robeasthope.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-robots-txt`,
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -17,6 +21,21 @@ module.exports = {
     //     path: `${__dirname}/src/images`
     //   }
     // },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: 'https://www.robeasthope.com',
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
