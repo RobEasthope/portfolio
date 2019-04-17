@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Box as rebassBox } from 'rebass';
 
-const WideMeasure = styled(rebassBox)`
-  max-width: 34em;
+const StandardMeasure = styled(rebassBox)`
+  max-width: 30em;
 `;
 
-export default WideMeasure;
+export default StandardMeasure;
