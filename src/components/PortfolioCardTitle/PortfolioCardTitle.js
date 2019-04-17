@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Text } from 'rebass';
 
-const PortfolioCardTitle = styled(Link)`
+const PortfolioCardTitle = styled(Text)`
   position: absolute;
   left: 50%;
   top: 50%;
