@@ -39,6 +39,9 @@ export const query = graphql`
       techUsed {
         name
       }
+      seoMetaData {
+        keywords
+      }
     }
   }
 `;
@@ -48,6 +51,7 @@ const Project = ({ data }) => (
     <SEO
       title={data.sanityProject.shortTitle}
       description={data.sanityProject.shortDescription}
+      // keywords={data.sanityLandingPage.seoMetaData.keywords}
     />
     <ContentContainer>
       <Flex flexWrap="wrap">
