@@ -40,7 +40,7 @@ const LandingPage = ({ data }) => (
 
     <Layout>
       <Flex flexDirection="column">
-        <Box width={1}>
+        <Box width={1} px="4">
           <LandingJumbotron
             fluid={data.sanityLandingPage.landingImage.imageAsset.asset.fluid}
           />

@@ -7,7 +7,6 @@ const PortfolioCardTitle = styled(Text)`
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 8px;
   text-align: center;
   color: black;
   text-decoration: none;

@@ -10,7 +10,8 @@ const LandingTagline = styled(Text)`
   text-shadow: 0px 0px 6px rgba(1, 255, 233, 1);
 
   position: absolute;
-  bottom: 0;
+  left: 32px;
+  bottom: 32px;
 `;
 
 export default LandingTagline;
