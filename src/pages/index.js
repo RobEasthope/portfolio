@@ -34,12 +34,17 @@ const LandingPage = ({ data }) => (
 
     <Layout>
       <Flex flexDirection="column">
-        <Box width={1} px="4">
+        <Box width={1} px="0">
           <LandingJumbotron
             fluid={data.sanityLandingPage.landingImage.imageAsset.asset.fluid}
           />
-          <LandingTagline as="h1" fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}>
-            {data.sanityLandingPage.tagline}
+          <LandingTagline
+            as="h1"
+            ml="4"
+            mb="4"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 6 }}
+          >
+            {/* {data.sanityLandingPage.tagline} */}
           </LandingTagline>
         </Box>
       </Flex>

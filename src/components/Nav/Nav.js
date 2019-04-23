@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Flex } from 'rebass';
 
 const Nav = styled(Flex)`
-  font-size: 16px;
+  font-size: 14px;
 
   list-style-type: none;
   margin: 0;

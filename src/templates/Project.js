@@ -54,16 +54,18 @@ const Project = ({ data }) => (
       // keywords={data.sanityLandingPage.seoMetaData.keywords}
     />
     <ContentContainer>
-      <Flex flexWrap="wrap">
-        <Box width={1 / 1} px="3" py="5">
+      <Flex flexWrap="wrap" mx="-4">
+        <Box width={1 / 1} px="3" pt="7" pb="7" justifyContent="center">
           {data.sanityProject.projectType && (
-            <Text>{data.sanityProject.projectType}</Text>
+            <Text textAlign="center">{data.sanityProject.projectType}</Text>
           )}
           {data.sanityProject.title && (
-            <Text as="h1">{data.sanityProject.title}</Text>
+            <Text as="h1" textAlign="center">
+              {data.sanityProject.title}
+            </Text>
           )}
         </Box>
-        <Box width={{ b: 1, md: 2 / 3 }} px="3">
+        <Box width={{ b: 1, md: 6 / 10 }} px="4">
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
               <Box mb="4" key={image._key}>
@@ -74,42 +76,67 @@ const Project = ({ data }) => (
               </Box>
             ))}
         </Box>
-        <Box width={{ b: 1, md: 1 / 3 }} px="3">
-          {data.sanityProject.date && <Text>{data.sanityProject.date}</Text>}
 
-          <BlockContent blocks={data.sanityProject._rawBody} />
-          {data.sanityProject.repoUrl && (
-            <React.Fragment>
-              <Text>Client</Text>
-              <Text pb="3">{data.sanityProject.client.name}</Text>
-            </React.Fragment>
+        <Box width={{ b: 1, md: 4 / 10 }} px="4">
+          {/* {data.sanityProject.title && (
+            <Text as="h1" mt="0" textAlign="left">
+              {data.sanityProject.title}
+            </Text>
           )}
-          {data.sanityProject.repoUrl && (
-            <React.Fragment>
-              <Text>Agency</Text>
-              <Text pb="3">{data.sanityProject.agency.name}</Text>
-            </React.Fragment>
-          )}
-          {data.sanityProject.repoUrl && (
-            <React.Fragment>
-              <Text>Production site</Text>
-              <Text pb="3">
-                <Link to={data.sanityProject.projectUrlTitle}>
-                  {data.sanityProject.projectUrlTitle}
-                </Link>
-              </Text>
-            </React.Fragment>
-          )}
-          {data.sanityProject.repoUrl && (
-            <React.Fragment>
-              <Text>Github repo</Text>
-              <Text pb="3">
-                <Link to={data.sanityProject.repoUrl}>
-                  {data.sanityProject.repoUrl}
-                </Link>
-              </Text>
-            </React.Fragment>
-          )}
+
+          <Flex mb="4">
+            {data.sanityProject.projectType && (
+              <Text textAlign="left">{data.sanityProject.projectType} </Text>
+            )}
+            {data.sanityProject.date && (
+              <Text> / {data.sanityProject.date}</Text>
+            )}
+          </Flex> */}
+          <Box pb="4">
+            <BlockContent blocks={data.sanityProject._rawBody} />
+          </Box>
+          <Flex mx="-16px" flexWrap="wrap">
+            <Box width={{ b: 1, lg: 1 / 2 }} px="3">
+              {data.sanityProject.repoUrl && (
+                <React.Fragment>
+                  <Text>Client</Text>
+                  <Text pb="4">{data.sanityProject.client.name}</Text>
+                </React.Fragment>
+              )}
+            </Box>
+            <Box width={{ b: 1, lg: 1 / 2 }} px="3">
+              {data.sanityProject.repoUrl && (
+                <React.Fragment>
+                  <Text>Agency</Text>
+                  <Text pb="4">{data.sanityProject.agency.name}</Text>
+                </React.Fragment>
+              )}
+            </Box>
+            <Box width={{ b: 1, lg: 1 / 2 }} px="3">
+              {data.sanityProject.repoUrl && (
+                <React.Fragment>
+                  <Text>Production site</Text>
+                  <Text pb="3">
+                    <Link to={data.sanityProject.projectUrlTitle}>
+                      {data.sanityProject.projectUrlTitle}
+                    </Link>
+                  </Text>
+                </React.Fragment>
+              )}
+            </Box>
+            <Box width={{ b: 1, lg: 1 / 2 }} px="3">
+              {data.sanityProject.repoUrl && (
+                <React.Fragment>
+                  <Text>Github repo</Text>
+                  <Text pb="3">
+                    <Link to={data.sanityProject.repoUrl}>
+                      {data.sanityProject.repoUrl}
+                    </Link>
+                  </Text>
+                </React.Fragment>
+              )}
+            </Box>
+          </Flex>
         </Box>
       </Flex>
     </ContentContainer>
