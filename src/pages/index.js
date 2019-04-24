@@ -44,7 +44,7 @@ const LandingPage = ({ data }) => (
             mb="4"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 6 }}
           >
-            {/* {data.sanityLandingPage.tagline} */}
+            {data.sanityLandingPage.tagline}
           </LandingTagline>
         </Box>
       </Flex>
