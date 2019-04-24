@@ -97,7 +97,7 @@ const Project = ({ data }) => (
           </Box>
           <Flex mx="-16px" flexWrap="wrap">
             <Box width={{ b: 1, lg: 1 / 2 }} px="3">
-              {data.sanityProject.repoUrl && (
+              {data.sanityProject.client && (
                 <React.Fragment>
                   <Text>Client</Text>
                   <Text pb="4">{data.sanityProject.client.name}</Text>
@@ -105,7 +105,7 @@ const Project = ({ data }) => (
               )}
             </Box>
             <Box width={{ b: 1, lg: 1 / 2 }} px="3">
-              {data.sanityProject.repoUrl && (
+              {data.sanityProject.agency && (
                 <React.Fragment>
                   <Text>Agency</Text>
                   <Text pb="4">{data.sanityProject.agency.name}</Text>
@@ -113,16 +113,17 @@ const Project = ({ data }) => (
               )}
             </Box>
             <Box width={{ b: 1, lg: 1 / 2 }} px="3">
-              {data.sanityProject.repoUrl && (
-                <React.Fragment>
-                  <Text>Production site</Text>
-                  <Text pb="3">
-                    <Link to={data.sanityProject.projectUrlTitle}>
-                      {data.sanityProject.projectUrlTitle}
-                    </Link>
-                  </Text>
-                </React.Fragment>
-              )}
+              {data.sanityProject.projectUrl &&
+                data.sanityProject.projectUrlTitle && (
+                  <React.Fragment>
+                    <Text>Production site</Text>
+                    <Text pb="3">
+                      <Link to={data.sanityProject.projectUrl}>
+                        {data.sanityProject.projectUrlTitle}
+                      </Link>
+                    </Text>
+                  </React.Fragment>
+                )}
             </Box>
             <Box width={{ b: 1, lg: 1 / 2 }} px="3">
               {data.sanityProject.repoUrl && (
