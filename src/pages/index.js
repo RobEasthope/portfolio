@@ -30,7 +30,10 @@ export const query = graphql`
 
 const LandingPage = ({ data }) => (
   <React.Fragment>
-    <SEO keywords={data.sanityLandingPage.seoMetaData.keywords} />
+    <SEO
+      title="Rob Easthope"
+      keywords={data.sanityLandingPage.seoMetaData.keywords}
+    />
 
     <Layout>
       <Flex flexDirection="column">
