@@ -3,7 +3,7 @@ import palette from './palette';
 
 const GlobalStyles = createGlobalStyle`
   body {
-    font-family: sans-serif;
+    font-family: "adobe-garamond-pro", serif;
     color: ${palette.ink};
   }
 `;
