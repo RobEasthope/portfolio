@@ -1,9 +1,10 @@
 import React from 'react';
-import { Flex, Box } from 'rebass';
+import { Flex, Box, Text } from 'rebass';
 import { graphql } from 'gatsby';
 
 import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
 import Layout from '../components/Layout/Layout';
+import RelativeBox from '../components/RelativeBox/RelativeBox';
 import SEO from '../components/Seo/Seo';
 import LandingTagline from '../components/LandingTagline/LandingTagline';
 
@@ -37,19 +38,47 @@ const LandingPage = ({ data }) => (
 
     <Layout>
       <Flex>
-        <Box width={1} px="0">
+        <RelativeBox width={1} px="0">
           <LandingTagline
             as="h1"
             width="100%"
             px="4"
             m="0"
-            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            fontSize={{ sm: 5, md: 6, lg: 7, xlg: 8 }}
           >
             {data.sanityLandingPage.tagline}
           </LandingTagline>
           <LandingJumbotron
             fluid={data.sanityLandingPage.landingImage.imageAsset.asset.fluid}
           />
+        </RelativeBox>
+      </Flex>
+      <Flex flexDirection="row">
+        <Box width={1} p="4" as="section">
+          <Text
+            as="h2"
+            justifySelf="flex-end"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            Portfolio
+          </Text>
+          <Text
+            as="h2"
+            justifySelf="flex-end"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            About
+          </Text>
+          <Text
+            as="h2"
+            justifySelf="flex-end"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            Contact
+          </Text>
         </Box>
       </Flex>
     </Layout>
