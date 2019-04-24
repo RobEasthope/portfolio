@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 // Breakpoints
-const breakpoints = [
+export const breakpoints = [
   '0em', // 0px
   '28em', // 448px
   '40em', // 640px
@@ -16,7 +16,7 @@ breakpoints.lg = breakpoints[3];
 breakpoints.xlg = breakpoints[4];
 
 // Typescale
-const fontSizes = [
+export const fontSizes = [
   '0', // Zero - 0
   '.875rem', // 14px - 1
   '1rem', // 16px, - 2
@@ -29,6 +29,6 @@ const fontSizes = [
 ];
 
 // Spacing
-const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+export const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 
 export default { breakpoints, fontSizes, space };

@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { breakpoints } from '../../styles/theme';
+
 import Nav from '../Nav/Nav';
 import NavLink from '../NavLink/Navlink';
 import Logo from '../Logo/Logo';
 
 import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 
-const HeaderWrapper = styled.main`
-  position: fixed;
+const HeaderWrapper = styled.header`
+  display: none;
+  @media (min-width: ${breakpoints.md}) {
+    position: fixed;
+    display: block;
+  }
 `;
 
 const Header = () => (
