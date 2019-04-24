@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Nav from '../Nav/Nav';
 import NavLink from '../NavLink/Navlink';
@@ -6,8 +7,12 @@ import Logo from '../Logo/Logo';
 
 import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 
+const HeaderWrapper = styled.main`
+  position: fixed;
+`;
+
 const Header = () => (
-  <header>
+  <HeaderWrapper>
     <nav>
       <Nav
         as="ul"
@@ -26,7 +31,7 @@ const Header = () => (
         <NavLink to="/about" title="About" />
       </Nav>
     </nav>
-  </header>
+  </HeaderWrapper>
 );
 
 export default Header;
