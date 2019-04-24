@@ -9,6 +9,7 @@ const NavLinkText = styled(Link)`
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
+  font-size: 18px;
 `;
 
 const NavLink = ({ to, title }) => (
