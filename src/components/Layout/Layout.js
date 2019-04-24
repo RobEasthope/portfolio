@@ -12,7 +12,7 @@ import MainContent from '../Grid/MainContent';
 
 const Layout = ({ children, footer }) => (
   <App>
-    <AppWrapper flexDirection="column">
+    <AppWrapper flexDirection="row">
       <Box width={1}>
         <Header />
       </Box>

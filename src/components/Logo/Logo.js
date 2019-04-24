@@ -8,14 +8,11 @@ const Glyph = styled.img`
   width: 36px;
 `;
 const LogoWrapper = styled(Box)`
-  margin: 0 16px;
-  @media (min-width: 800px) {
-    margin: 0 120px;
-  }
+  flex: 1;
 `;
 
 const Logo = ({ url, src, altText }) => (
-  <LogoWrapper as="li">
+  <LogoWrapper as="li" justifySelf="flex-start">
     <Link to={url}>
       <Glyph src={src} alt={altText} />
     </Link>

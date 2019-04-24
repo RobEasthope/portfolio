@@ -3,7 +3,8 @@ import { Flex } from 'rebass';
 
 const Nav = styled(Flex)`
   list-style-type: none;
-  margin: 0;
+  min-width: 154px;
+  height: 100vh;
 `;
 
 export default Nav;

@@ -9,10 +9,21 @@ import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 const Header = () => (
   <header>
     <nav>
-      <Nav as="ul" px="2" py="4" alignItems="center" justifyContent="center">
-        <NavLink to="/portfolio" title="Portfolio" textAlign="right" />
+      <Nav
+        as="ul"
+        // px="4"
+        pl="4"
+        pr="5"
+        py="4"
+        m="0"
+        // alignItems="center"
+        justifyContent="flex-end"
+        flexWrap="wrap"
+        flexDirection="column"
+      >
         <Logo url="/" src={LogoAsset} altText="Rob Easthope" />
-        <NavLink to="/about" title="About" textAlign="left" />
+        <NavLink to="/portfolio" title="Portfolio" />
+        <NavLink to="/about" title="About" />
       </Nav>
     </nav>
   </header>
