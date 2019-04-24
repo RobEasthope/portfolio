@@ -12,7 +12,7 @@ import MainContent from '../Grid/MainContent';
 
 const Layout = ({ children, footer }) => (
   <App>
-    <AppWrapper flexDirection="row">
+    <AppWrapper flexDirection="column">
       <Box width={1}>
         <Header />
       </Box>
@@ -20,7 +20,7 @@ const Layout = ({ children, footer }) => (
 
       {/* Toggle footer */}
       {footer && (
-        <Box width={1} alignSelf="flex-end">
+        <Box p="4" alignSelf="flex-end">
           <Footer />
         </Box>
       )}
