@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Text } from 'rebass';
+import { Flex, Box, Heading } from 'rebass';
 import { graphql } from 'gatsby';
 
 import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
@@ -55,30 +55,30 @@ const LandingPage = ({ data }) => (
       </Flex>
       <Flex flexDirection="row">
         <Box width={1} p="4" as="section">
-          <Text
+          <Heading
             as="h2"
             justifySelf="flex-end"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
             Portfolio
-          </Text>
-          <Text
+          </Heading>
+          <Heading
             as="h2"
             justifySelf="flex-end"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
             About
-          </Text>
-          <Text
+          </Heading>
+          <Heading
             as="h2"
             justifySelf="flex-end"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
             Contact
-          </Text>
+          </Heading>
         </Box>
       </Flex>
     </Layout>
