@@ -7,9 +7,8 @@ import palette from '../../styles/palette';
 const NavLinkText = styled(Link)`
   color: ${palette.ink};
   font-weight: bold;
-  text-transform: uppercase;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 21px;
 `;
 
 const NavLink = ({ to, title }) => (
