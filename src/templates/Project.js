@@ -95,20 +95,6 @@ const Project = props => {
           </Box>
 
           <Box width={{ b: 1, md: 4 / 10 }} px="4">
-            {/* {data.sanityProject.title && (
-            <Text as="h1" mt="0" textAlign="left">
-              {data.sanityProject.title}
-            </Text>
-          )}
-
-          <Flex mb="4">
-            {data.sanityProject.projectType && (
-              <Text textAlign="left">{data.sanityProject.projectType} </Text>
-            )}
-            {data.sanityProject.date && (
-              <Text> / {data.sanityProject.date}</Text>
-            )}
-          </Flex> */}
             <Box pb="4">
               <BlockContent blocks={data.sanityProject._rawBody} />
             </Box>
