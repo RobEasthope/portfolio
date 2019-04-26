@@ -1,0 +1,9 @@
+{
+  "name": "portfolio",
+  "version": "3.0.0",
+  "description": "Portfolio site for Rob Easthope",
+  "repository": "https://github.com/RobEasthope/portfolio.git",
+  "author": "Rob Easthope <hello@robeasthope.com>",
+  "license": "MIT",
+  "private": true
+}
