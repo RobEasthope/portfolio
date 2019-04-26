@@ -13,6 +13,7 @@ import LandingTagline from '../components/LandingTagline/LandingTagline';
 import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
 import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
 import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
+import PortfolioCardDescription from '../components/PortfolioCardDescription/PortfolioCardDescription';
 
 export const query = graphql`
   {
@@ -124,7 +125,9 @@ const LandingPage = props => {
                       <Image fluid={project.thumbnailImage.asset.fluid} />
                     )} */}
                   <PortfolioCardTitle>{project.shortTitle}</PortfolioCardTitle>
-                  <Text>{project.description}</Text>
+                  <PortfolioCardDescription>
+                    {project.description}
+                  </PortfolioCardDescription>
                 </Link>
               </PortfolioCard>
             ))}
