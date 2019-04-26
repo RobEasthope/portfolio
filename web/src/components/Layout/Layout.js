@@ -13,9 +13,7 @@ import MainContent from '../Grid/MainContent';
 const Layout = ({ children }) => (
   <App>
     <AppWrapper flexDirection="column">
-      <Box width={1}>
-        <Header />
-      </Box>
+      <Header />
       <MainContent>{children}</MainContent>
 
       <Box p="4" alignSelf="flex-end">

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Box } from 'rebass';
 
 import { breakpoints } from '../../styles/theme';
 
@@ -9,7 +10,7 @@ import Logo from '../Logo/Logo';
 
 import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled(Box)`
   display: none;
   @media (min-width: ${breakpoints.md}) {
     position: fixed;
@@ -18,7 +19,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Header = () => (
-  <HeaderWrapper>
+  <HeaderWrapper as="header">
     <nav>
       <Nav
         as="ul"
