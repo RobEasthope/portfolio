@@ -67,10 +67,7 @@ const LandingPage = props => {
 
   return (
     <React.Fragment>
-      <SEO
-        title="Rob Easthope"
-        // keywords={landing.seoMetaData.keywords}
-      />
+      <SEO title="Rob Easthope" />
 
       <Layout>
         <Flex>
@@ -152,8 +149,5 @@ const LandingPage = props => {
     </React.Fragment>
   );
 };
-// const LandingPage = ({ data }) => (
-
-// );
 
 export default LandingPage;
