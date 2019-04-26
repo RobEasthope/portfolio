@@ -12,6 +12,7 @@ import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTi
 export const query = graphql`
   {
     sanityPortfolio {
+      title
       portfolioIndex {
         id
         shortTitle
