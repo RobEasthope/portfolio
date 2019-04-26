@@ -9,5 +9,18 @@
   "dependencies": {
     "lerna": "^3.13.4",
     "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "clean": "lerna clean",
+    "deploy": "lerna run deploy",
+    "empty-cache": "rimraf web/.cache",
+    "init": "cd studio && sanity init && lerna run graphql-deploy",
+    "format": "lerna run format",
+    "graphql-deploy": "lerna run graphql-deploy",
+    "lint": "lerna run lint",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run sanity-deploy",
+    "start": "lerna run empty-cache && lerna run start --parallel",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
