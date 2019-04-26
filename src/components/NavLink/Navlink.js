@@ -8,7 +8,7 @@ const NavLinkText = styled(Link)`
   color: ${palette.ink};
   font-weight: bold;
   text-decoration: none;
-  font-size: 21px;
+  font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1680 - 320)));
 `;
 
 const NavLink = ({ to, title }) => (
