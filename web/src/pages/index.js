@@ -70,7 +70,7 @@ const LandingPage = props => {
       <SEO title="Rob Easthope" />
 
       <Layout>
-        <Flex>
+        <Flex as="section">
           <RelativeBox width={1} px="0">
             <LandingTagline
               as="h1"
@@ -84,61 +84,61 @@ const LandingPage = props => {
             <LandingJumbotron fluid={landing.image.imageAsset.asset.fluid} />
           </RelativeBox>
         </Flex>
-        <Flex flexDirection="row">
-          <Box width={1} p="4" as="section">
-            <Heading
-              as="h2"
-              justifySelf="flex-end"
-              fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-              textAlign="right"
-            >
-              {portfolio.title}
-            </Heading>
-            <PortfolioIndex
-              as="ul"
-              width="40em"
-              py="4"
-              px="2"
-              m="0"
-              flexWrap="wrap"
-              alignSelf="flex-end"
-            >
-              {portfolio.portfolioIndex.map(project => (
-                <PortfolioCard
-                  as="li"
-                  width={1}
-                  px="3"
-                  mb="4"
-                  key={project.slug.current}
-                >
-                  <Link to={project.slug.current}>
-                    {/* {project.thumbnailImage && (
+        <Flex as="section" flexDirection="row">
+          <Heading
+            as="h2"
+            justifySelf="flex-end"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            {portfolio.title}
+          </Heading>
+          <PortfolioIndex
+            as="ul"
+            width="40em"
+            py="4"
+            px="2"
+            m="0"
+            flexWrap="wrap"
+            alignSelf="flex-end"
+          >
+            {portfolio.portfolioIndex.map(project => (
+              <PortfolioCard
+                as="li"
+                width={1}
+                px="3"
+                mb="4"
+                key={project.slug.current}
+              >
+                <Link to={project.slug.current}>
+                  {/* {project.thumbnailImage && (
                       <Image fluid={project.thumbnailImage.asset.fluid} />
                     )} */}
-                    <PortfolioCardTitle>
-                      {project.shortTitle}
-                    </PortfolioCardTitle>
-                  </Link>
-                </PortfolioCard>
-              ))}
-            </PortfolioIndex>
-            <Heading
-              as="h2"
-              justifySelf="flex-end"
-              fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-              textAlign="right"
-            >
-              About
-            </Heading>
-            <Heading
-              as="h2"
-              justifySelf="flex-end"
-              fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-              textAlign="right"
-            >
-              Contact
-            </Heading>
-          </Box>
+                  <PortfolioCardTitle>{project.shortTitle}</PortfolioCardTitle>
+                </Link>
+              </PortfolioCard>
+            ))}
+          </PortfolioIndex>
+        </Flex>
+        <Flex as="section" flexDirection="row">
+          <Heading
+            as="h2"
+            justifySelf="flex-end"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            About
+          </Heading>
+        </Flex>
+        <Flex as="section" flexDirection="row">
+          <Heading
+            as="h2"
+            justifySelf="flex-end"
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            Contact
+          </Heading>
         </Flex>
       </Layout>
     </React.Fragment>
