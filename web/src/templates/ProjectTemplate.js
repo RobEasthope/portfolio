@@ -47,7 +47,7 @@ export const query = graphql`
   }
 `;
 
-const Project = props => {
+const ProjectTemplate = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -149,4 +149,4 @@ const Project = props => {
   );
 };
 
-export default Project;
+export default ProjectTemplate;
