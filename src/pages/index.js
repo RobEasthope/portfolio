@@ -11,9 +11,9 @@ import LandingTagline from '../components/LandingTagline/LandingTagline';
 
 export const query = graphql`
   {
-    landing: sanityLandingPage {
+    landing: sanityLanding {
       tagline
-      landingImage {
+      image {
         imageAsset {
           asset {
             fluid {
@@ -62,9 +62,7 @@ const LandingPage = props => {
             >
               {landing.tagline}
             </LandingTagline>
-            <LandingJumbotron
-              fluid={landing.landingImage.imageAsset.asset.fluid}
-            />
+            <LandingJumbotron fluid={landing.image.imageAsset.asset.fluid} />
           </RelativeBox>
         </Flex>
         <Flex flexDirection="row">
