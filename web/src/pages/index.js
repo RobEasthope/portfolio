@@ -96,7 +96,6 @@ const LandingPage = props => {
         >
           <Heading
             as="h2"
-            justifySelf="flex-end"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
@@ -139,7 +138,6 @@ const LandingPage = props => {
         >
           <Heading
             as="h2"
-            justifySelf="flex-end"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
@@ -157,7 +155,6 @@ const LandingPage = props => {
         >
           <Heading
             as="h2"
-            justifySelf="flex-end"
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
