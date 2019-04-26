@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Box, Heading } from 'rebass';
 import { graphql } from 'gatsby';
 
+import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
 import Layout from '../components/Layout/Layout';
 import RelativeBox from '../components/RelativeBox/RelativeBox';
