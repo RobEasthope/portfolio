@@ -5,5 +5,8 @@
   "repository": "https://github.com/RobEasthope/portfolio.git",
   "author": "Rob Easthope <hello@robeasthope.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "lerna": "^3.13.4"
+  }
 }
