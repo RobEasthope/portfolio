@@ -122,9 +122,12 @@ const LandingPage = props => {
                 key={project.slug.current}
               >
                 <PortfolioCardLink to={project.slug.current}>
-                  {/* {project.thumbnailImage && (
-                      <Image fluid={project.thumbnailImage.asset.fluid} />
-                    )} */}
+                  {project.thumbnailImage && (
+                    <Image
+                      className="projectThumbnail"
+                      fluid={project.thumbnailImage.asset.fluid}
+                    />
+                  )}
                   <PortfolioCardTitle>{project.shortTitle}</PortfolioCardTitle>
                   <PortfolioCardDescription>
                     {project.description}
