@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Box } from 'rebass';
 
-const PortfolioCard = styled(Box)`
+const RelativeBox = styled(Box)`
   position: relative;
 `;
 
-export default PortfolioCard;
+export default RelativeBox;
