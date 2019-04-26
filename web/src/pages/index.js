@@ -34,7 +34,7 @@ export const query = graphql`
       portfolioIndex {
         id
         shortTitle
-        projectType
+        description
         slug {
           current
         }
@@ -124,7 +124,7 @@ const LandingPage = props => {
                       <Image fluid={project.thumbnailImage.asset.fluid} />
                     )} */}
                   <PortfolioCardTitle>{project.shortTitle}</PortfolioCardTitle>
-                  <Text>{project.projectType}</Text>
+                  <Text>{project.description}</Text>
                 </Link>
               </PortfolioCard>
             ))}

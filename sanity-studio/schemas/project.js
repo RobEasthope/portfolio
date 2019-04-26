@@ -16,6 +16,12 @@ export default {
       validation: Rule => Rule.required().warning('Required field'),
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: Rule => Rule.required().warning('Required field'),
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -35,12 +41,6 @@ export default {
       title: 'Image gallery',
       type: 'array',
       of: [{ type: 'altImage' }],
-    },
-    {
-      name: 'projectType',
-      title: 'Project type',
-      type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
     },
     {
       name: 'shortDescription',
