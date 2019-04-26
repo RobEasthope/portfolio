@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Heading } from 'rebass';
+import { Flex, Heading, Text } from 'rebass';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 
@@ -34,6 +34,7 @@ export const query = graphql`
       portfolioIndex {
         id
         shortTitle
+        projectType
         slug {
           current
         }
@@ -123,6 +124,7 @@ const LandingPage = props => {
                       <Image fluid={project.thumbnailImage.asset.fluid} />
                     )} */}
                   <PortfolioCardTitle>{project.shortTitle}</PortfolioCardTitle>
+                  <Text>{project.projectType}</Text>
                 </Link>
               </PortfolioCard>
             ))}
