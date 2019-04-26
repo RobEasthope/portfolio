@@ -15,6 +15,7 @@ import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
 import PortfolioCardLink from '../components/PortfolioCardLink/PortfolioCardLink';
 import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
 import PortfolioCardDescription from '../components/PortfolioCardDescription/PortfolioCardDescription';
+import PortfolioCardThumbnail from '../components/PortfolioCardThumbnail/PortfolioCardThumbnail';
 
 export const query = graphql`
   {
@@ -123,15 +124,21 @@ const LandingPage = props => {
               >
                 <PortfolioCardLink to={project.slug.current}>
                   {project.thumbnailImage && (
-                    <Image
-                      className="projectThumbnail"
-                      fluid={project.thumbnailImage.asset.fluid}
-                    />
+                    <PortfolioCardThumbnail>
+                      <Image
+                        className="projectThumbnail"
+                        fluid={project.thumbnailImage.asset.fluid}
+                      />
+                    </PortfolioCardThumbnail>
                   )}
-                  <PortfolioCardTitle>{project.shortTitle}</PortfolioCardTitle>
-                  <PortfolioCardDescription>
-                    {project.description}
-                  </PortfolioCardDescription>
+                  <div>
+                    <PortfolioCardTitle>
+                      {project.shortTitle}
+                    </PortfolioCardTitle>
+                    <PortfolioCardDescription>
+                      {project.description}
+                    </PortfolioCardDescription>
+                  </div>
                 </PortfolioCardLink>
               </PortfolioCard>
             ))}
