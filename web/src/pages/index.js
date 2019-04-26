@@ -70,6 +70,7 @@ const LandingPage = props => {
       <SEO title="Rob Easthope" />
 
       <Layout>
+        {/* Landing */}
         <Flex as="section">
           <RelativeBox width={1} px="0">
             <LandingTagline
@@ -84,7 +85,15 @@ const LandingPage = props => {
             <LandingJumbotron fluid={landing.image.imageAsset.asset.fluid} />
           </RelativeBox>
         </Flex>
-        <Flex as="section" flexDirection="row">
+
+        {/* Portfolio */}
+        <Flex
+          as="section"
+          flexDirection="row"
+          flexWrap="wrap"
+          px="4"
+          justifyContent="flex-end"
+        >
           <Heading
             as="h2"
             justifySelf="flex-end"
@@ -100,7 +109,6 @@ const LandingPage = props => {
             px="2"
             m="0"
             flexWrap="wrap"
-            alignSelf="flex-end"
           >
             {portfolio.portfolioIndex.map(project => (
               <PortfolioCard
@@ -120,7 +128,15 @@ const LandingPage = props => {
             ))}
           </PortfolioIndex>
         </Flex>
-        <Flex as="section" flexDirection="row">
+
+        {/* About */}
+        <Flex
+          as="section"
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="flex-end"
+          px="4"
+        >
           <Heading
             as="h2"
             justifySelf="flex-end"
@@ -130,7 +146,15 @@ const LandingPage = props => {
             About
           </Heading>
         </Flex>
-        <Flex as="section" flexDirection="row">
+
+        {/* Contact */}
+        <Flex
+          as="section"
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="flex-end"
+          px="4"
+        >
           <Heading
             as="h2"
             justifySelf="flex-end"
