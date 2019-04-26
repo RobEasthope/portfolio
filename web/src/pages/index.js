@@ -96,31 +96,26 @@ const LandingPage = props => {
             </Heading>
             <PortfolioIndex
               as="ul"
-              width={1}
+              width="40em"
               py="4"
               px="2"
               m="0"
               flexWrap="wrap"
+              alignSelf="flex-end"
             >
               {portfolio.portfolioIndex.map(project => (
                 <PortfolioCard
                   as="li"
-                  width={{
-                    b: 1 / 2,
-                    sm: 1 / 2,
-                    md: 1 / 3,
-                    lg: 1 / 4,
-                    xlg: 1 / 5,
-                  }}
+                  width={1}
                   px="3"
                   mb="4"
                   key={project.slug.current}
                 >
                   <Link to={project.slug.current}>
-                    {project.thumbnailImage && (
+                    {/* {project.thumbnailImage && (
                       <Image fluid={project.thumbnailImage.asset.fluid} />
-                    )}
-                    <PortfolioCardTitle p="2">
+                    )} */}
+                    <PortfolioCardTitle>
                       {project.shortTitle}
                     </PortfolioCardTitle>
                   </Link>
