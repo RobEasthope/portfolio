@@ -7,9 +7,13 @@
   "author": "Rob Easthope <hello@robeasthope.com>",
   "license": "UNLICENSED",
   "scripts": {
+    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
+    "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
+    "graphql-deploy": "sanity graphql deploy --playground",
+    "sanity-deploy": "sanity deploy",
+    "lint": "eslint .",
     "start": "sanity start",
-    "test": "sanity check",
-    "sanity-deploy": "sanity deploy"
+    "test": "sanity check"
   },
   "keywords": [
     "sanity"
