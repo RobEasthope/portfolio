@@ -1,6 +1,6 @@
 function fontSizing(
-  minFontSize,
-  maxFontSize,
+  minFontSize = 16,
+  maxFontSize = 21,
   minViewport = 320,
   maxViewport = 1680
 ) {
