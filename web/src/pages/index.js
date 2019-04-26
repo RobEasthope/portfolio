@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Box, Heading } from 'rebass';
+import { Flex, Heading } from 'rebass';
 import { graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
@@ -8,6 +9,13 @@ import Layout from '../components/Layout/Layout';
 import RelativeBox from '../components/RelativeBox/RelativeBox';
 import SEO from '../components/Seo/Seo';
 import LandingTagline from '../components/LandingTagline/LandingTagline';
+
+import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
+import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
+import PortfolioCardLink from '../components/PortfolioCardLink/PortfolioCardLink';
+import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
+import PortfolioCardDescription from '../components/PortfolioCardDescription/PortfolioCardDescription';
+import PortfolioCardThumbnail from '../components/PortfolioCardThumbnail/PortfolioCardThumbnail';
 
 export const query = graphql`
   {
@@ -22,6 +30,24 @@ export const query = graphql`
           }
         }
         altText
+      }
+    }
+    portfolio: sanityPortfolio {
+      title
+      portfolioIndex {
+        id
+        shortTitle
+        description
+        slug {
+          current
+        }
+        thumbnailImage {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
       }
     }
   }
@@ -41,17 +67,15 @@ const LandingPage = props => {
     throw new Error('Missing landing page data.');
   }
 
-  const { landing } = data;
+  const { landing, portfolio } = data;
 
   return (
     <React.Fragment>
-      <SEO
-        title="Rob Easthope"
-        // keywords={landing.seoMetaData.keywords}
-      />
+      <SEO title="Rob Easthope" />
 
       <Layout>
-        <Flex>
+        {/* Landing */}
+        <Flex as="section">
           <RelativeBox width={1} px="0">
             <LandingTagline
               as="h1"
@@ -65,40 +89,100 @@ const LandingPage = props => {
             <LandingJumbotron fluid={landing.image.imageAsset.asset.fluid} />
           </RelativeBox>
         </Flex>
-        <Flex flexDirection="row">
-          <Box width={1} p="4" as="section">
-            <Heading
-              as="h2"
-              justifySelf="flex-end"
-              fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-              textAlign="right"
-            >
-              Portfolio
-            </Heading>
-            <Heading
-              as="h2"
-              justifySelf="flex-end"
-              fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-              textAlign="right"
-            >
-              About
-            </Heading>
-            <Heading
-              as="h2"
-              justifySelf="flex-end"
-              fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-              textAlign="right"
-            >
-              Contact
-            </Heading>
-          </Box>
+
+        {/* Portfolio */}
+        <Flex
+          as="section"
+          flexDirection="row"
+          flexWrap="wrap"
+          px="4"
+          justifyContent="flex-end"
+        >
+          <Heading
+            as="h2"
+            width={1}
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            {portfolio.title}
+          </Heading>
+          <PortfolioIndex
+            as="ul"
+            width="auto"
+            py="4"
+            px="2"
+            m="0"
+            flexWrap="wrap"
+          >
+            {portfolio.portfolioIndex.map(project => (
+              <PortfolioCard
+                as="li"
+                width={1}
+                px="3"
+                mb="4"
+                key={project.slug.current}
+              >
+                <PortfolioCardLink to={project.slug.current}>
+                  {project.thumbnailImage && (
+                    <PortfolioCardThumbnail>
+                      <Image
+                        className="projectThumbnail"
+                        fluid={project.thumbnailImage.asset.fluid}
+                      />
+                    </PortfolioCardThumbnail>
+                  )}
+                  <div>
+                    <PortfolioCardTitle>
+                      {project.shortTitle}
+                    </PortfolioCardTitle>
+                    <PortfolioCardDescription>
+                      {project.description}
+                    </PortfolioCardDescription>
+                  </div>
+                </PortfolioCardLink>
+              </PortfolioCard>
+            ))}
+          </PortfolioIndex>
+        </Flex>
+
+        {/* About */}
+        <Flex
+          as="section"
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="flex-end"
+          px="4"
+        >
+          <Heading
+            as="h2"
+            width={1}
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            About
+          </Heading>
+        </Flex>
+
+        {/* Contact */}
+        <Flex
+          as="section"
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="flex-end"
+          px="4"
+        >
+          <Heading
+            as="h2"
+            width={1}
+            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
+            textAlign="right"
+          >
+            Contact
+          </Heading>
         </Flex>
       </Layout>
     </React.Fragment>
   );
 };
-// const LandingPage = ({ data }) => (
-
-// );
 
 export default LandingPage;

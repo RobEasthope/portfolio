@@ -26,8 +26,7 @@ export const query = graphql`
         }
         altText
       }
-      projectType
-      shortDescription
+      description
       client {
         name
       }
@@ -48,7 +47,7 @@ export const query = graphql`
   }
 `;
 
-const Project = props => {
+const ProjectTemplate = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -75,8 +74,8 @@ const Project = props => {
       <ContentContainer>
         <Flex flexWrap="wrap" mx="-4">
           <Box width={1 / 1} px="3" pt="7" pb="7" justifyContent="center">
-            {data.sanityProject.projectType && (
-              <Text textAlign="center">{data.sanityProject.projectType}</Text>
+            {data.sanityProject.description && (
+              <Text textAlign="center">{data.sanityProject.description}</Text>
             )}
             {data.sanityProject.title && (
               <Text as="h1" textAlign="center">
@@ -150,4 +149,4 @@ const Project = props => {
   );
 };
 
-export default Project;
+export default ProjectTemplate;

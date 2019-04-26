@@ -10,20 +10,12 @@ import Footer from '../Footer/Footer';
 import AppWrapper from '../Grid/AppWrapper';
 import MainContent from '../Grid/MainContent';
 
-const Layout = ({ children, footer }) => (
+const Layout = ({ children }) => (
   <App>
     <AppWrapper flexDirection="column">
-      <Box width={1}>
-        <Header />
-      </Box>
+      <Header />
       <MainContent>{children}</MainContent>
-
-      {/* Toggle footer */}
-      {footer && (
-        <Box p="4" alignSelf="flex-end">
-          <Footer />
-        </Box>
-      )}
+      <Footer />
     </AppWrapper>
   </App>
 );
