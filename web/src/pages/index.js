@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flex, Box, Heading } from 'rebass';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
@@ -8,6 +9,10 @@ import Layout from '../components/Layout/Layout';
 import RelativeBox from '../components/RelativeBox/RelativeBox';
 import SEO from '../components/Seo/Seo';
 import LandingTagline from '../components/LandingTagline/LandingTagline';
+
+import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
+import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
+import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
 
 export const query = graphql`
   {
@@ -92,6 +97,39 @@ const LandingPage = props => {
             >
               Portfolio
             </Heading>
+            <PortfolioIndex
+              as="ul"
+              width={1}
+              py="4"
+              px="2"
+              m="0"
+              flexWrap="wrap"
+            >
+              {portfolio.portfolioIndex.map(project => (
+                <PortfolioCard
+                  as="li"
+                  width={{
+                    b: 1 / 2,
+                    sm: 1 / 2,
+                    md: 1 / 3,
+                    lg: 1 / 4,
+                    xlg: 1 / 5,
+                  }}
+                  px="3"
+                  mb="4"
+                  key={project.slug.current}
+                >
+                  <Link to={project.slug.current}>
+                    {project.thumbnailImage && (
+                      <Image fluid={project.thumbnailImage.asset.fluid} />
+                    )}
+                    <PortfolioCardTitle p="2">
+                      {project.shortTitle}
+                    </PortfolioCardTitle>
+                  </Link>
+                </PortfolioCard>
+              ))}
+            </PortfolioIndex>
             <Heading
               as="h2"
               justifySelf="flex-end"
