@@ -26,9 +26,6 @@ export const query = graphql`
           }
         }
       }
-      seoMetaData {
-        keywords
-      }
     }
   }
 `;
