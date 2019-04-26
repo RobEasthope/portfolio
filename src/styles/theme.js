@@ -31,4 +31,9 @@ export const fontSizes = [
 // Spacing
 export const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 
+export const contentWidth = {
+  min: '320',
+  max: '1680',
+};
+
 export default { breakpoints, fontSizes, space };
