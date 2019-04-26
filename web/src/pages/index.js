@@ -92,7 +92,7 @@ const LandingPage = props => {
               fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
               textAlign="right"
             >
-              Portfolio
+              {portfolio.title}
             </Heading>
             <PortfolioIndex
               as="ul"
