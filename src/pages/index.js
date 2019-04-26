@@ -11,7 +11,7 @@ import LandingTagline from '../components/LandingTagline/LandingTagline';
 
 export const query = graphql`
   {
-    sanityLandingPage {
+    landing: sanityLandingPage {
       tagline
       landingImage {
         imageAsset {
@@ -22,9 +22,6 @@ export const query = graphql`
           }
         }
         altText
-      }
-      seoMetaData {
-        keywords
       }
     }
   }
@@ -40,17 +37,17 @@ const LandingPage = props => {
     );
   }
 
-  const page = data;
-
-  if (!page) {
+  if (!data) {
     throw new Error('Missing landing page data.');
   }
+
+  const { landing } = data;
 
   return (
     <React.Fragment>
       <SEO
         title="Rob Easthope"
-        keywords={data.sanityLandingPage.seoMetaData.keywords}
+        // keywords={landing.seoMetaData.keywords}
       />
 
       <Layout>
@@ -63,10 +60,10 @@ const LandingPage = props => {
               m="0"
               fontSize={{ sm: 5, md: 6, lg: 7, xlg: 8 }}
             >
-              {data.sanityLandingPage.tagline}
+              {landing.tagline}
             </LandingTagline>
             <LandingJumbotron
-              fluid={data.sanityLandingPage.landingImage.imageAsset.asset.fluid}
+              fluid={landing.landingImage.imageAsset.asset.fluid}
             />
           </RelativeBox>
         </Flex>
