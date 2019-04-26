@@ -96,6 +96,7 @@ const LandingPage = props => {
         >
           <Heading
             as="h2"
+            width={1}
             fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
             textAlign="right"
           >
@@ -103,7 +104,7 @@ const LandingPage = props => {
           </Heading>
           <PortfolioIndex
             as="ul"
-            width="40em"
+            width="auto"
             py="4"
             px="2"
             m="0"

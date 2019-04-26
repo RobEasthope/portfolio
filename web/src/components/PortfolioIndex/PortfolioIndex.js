@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Flex from '../Grid/Flex';
+import { Box } from 'rebass';
 
-const PortfolioIndex = styled(Flex)`
+const PortfolioIndex = styled(Box)`
   list-style-type: none;
 `;
 
