@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import { Text } from 'rebass';
 
+import palette from '../../styles/palette';
+
 const PortfolioCardTitle = styled(Text)`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  text-align: center;
-  color: black;
+  color: ${palette.ink};
   text-decoration: none;
 `;
 
