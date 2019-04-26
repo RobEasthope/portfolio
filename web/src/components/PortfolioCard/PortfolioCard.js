@@ -5,12 +5,12 @@ const PortfolioCard = styled(Box)`
   position: relative;
 
   .projectThumbnail {
-    display: none;
+    visibility: hidden;
   }
 
   :hover {
     .projectThumbnail {
-      display: block;
+      visibility: visible;
     }
   }
 `;
