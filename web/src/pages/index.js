@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex, Heading, Text } from 'rebass';
-import { graphql, Link } from 'gatsby';
+import { Flex, Heading } from 'rebass';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
@@ -12,6 +12,7 @@ import LandingTagline from '../components/LandingTagline/LandingTagline';
 
 import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
 import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
+import PortfolioCardLink from '../components/PortfolioCardLink/PortfolioCardLink';
 import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
 import PortfolioCardDescription from '../components/PortfolioCardDescription/PortfolioCardDescription';
 
@@ -120,7 +121,7 @@ const LandingPage = props => {
                 mb="4"
                 key={project.slug.current}
               >
-                <Link to={project.slug.current}>
+                <PortfolioCardLink to={project.slug.current}>
                   {/* {project.thumbnailImage && (
                       <Image fluid={project.thumbnailImage.asset.fluid} />
                     )} */}
@@ -128,7 +129,7 @@ const LandingPage = props => {
                   <PortfolioCardDescription>
                     {project.description}
                   </PortfolioCardDescription>
-                </Link>
+                </PortfolioCardLink>
               </PortfolioCard>
             ))}
           </PortfolioIndex>
