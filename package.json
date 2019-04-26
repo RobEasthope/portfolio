@@ -14,7 +14,7 @@
     "clean": "lerna clean",
     "deploy": "lerna run deploy",
     "empty-cache": "rimraf web/.cache",
-    "init": "cd studio && sanity init && lerna run graphql-deploy",
+    "init": "cd sanity-studio && sanity init && lerna run graphql-deploy",
     "install": "cd sanity-studio && yarn install && cd ../web && yarn install",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
