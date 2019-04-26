@@ -36,6 +36,7 @@ const Header = () => (
         <Logo url="/" src={LogoAsset} altText="Rob Easthope" />
         <NavLink to="/portfolio" title="Portfolio" />
         <NavLink to="/about" title="About" />
+        <NavLink to="/contact" title="Contact" />
       </Nav>
     </nav>
   </HeaderWrapper>
