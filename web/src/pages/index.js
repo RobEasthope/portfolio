@@ -24,6 +24,23 @@ export const query = graphql`
         altText
       }
     }
+    portfolio: sanityPortfolio {
+      title
+      portfolioIndex {
+        id
+        shortTitle
+        slug {
+          current
+        }
+        thumbnailImage {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
   }
 `;
 const LandingPage = props => {
@@ -41,7 +58,7 @@ const LandingPage = props => {
     throw new Error('Missing landing page data.');
   }
 
-  const { landing } = data;
+  const { landing, portfolio } = data;
 
   return (
     <React.Fragment>
