@@ -6,7 +6,7 @@
   "author": "Rob Easthope <hello@robeasthope.com>",
   "license": "MIT",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "lerna": "^3.13.4",
     "rimraf": "^2.6.3"
   },
