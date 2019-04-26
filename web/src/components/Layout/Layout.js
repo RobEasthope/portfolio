@@ -15,10 +15,7 @@ const Layout = ({ children }) => (
     <AppWrapper flexDirection="column">
       <Header />
       <MainContent>{children}</MainContent>
-
-      <Box p="4" alignSelf="flex-end">
-        <Footer />
-      </Box>
+      <Footer />
     </AppWrapper>
   </App>
 );
