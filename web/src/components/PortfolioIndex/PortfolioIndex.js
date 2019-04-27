@@ -1,5 +1,13 @@
+import React from 'react';
+import Image from 'gatsby-image';
 import styled from 'styled-components';
 import { Box } from 'rebass';
+
+import PortfolioCard from '../PortfolioCard/PortfolioCard';
+import PortfolioCardLink from '../PortfolioCardLink/PortfolioCardLink';
+import PortfolioCardTitle from '../PortfolioCardTitle/PortfolioCardTitle';
+import PortfolioCardDescription from '../PortfolioCardDescription/PortfolioCardDescription';
+import PortfolioCardThumbnail from '../PortfolioCardThumbnail/PortfolioCardThumbnail';
 
 const PortfolioIndexWrapper = styled(Box)`
   list-style-type: none;

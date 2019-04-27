@@ -9,13 +9,7 @@ import Layout from '../components/Layout/Layout';
 import RelativeBox from '../components/RelativeBox/RelativeBox';
 import SEO from '../components/Seo/Seo';
 import LandingTagline from '../components/LandingTagline/LandingTagline';
-
 import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
-import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
-import PortfolioCardLink from '../components/PortfolioCardLink/PortfolioCardLink';
-import PortfolioCardTitle from '../components/PortfolioCardTitle/PortfolioCardTitle';
-import PortfolioCardDescription from '../components/PortfolioCardDescription/PortfolioCardDescription';
-import PortfolioCardThumbnail from '../components/PortfolioCardThumbnail/PortfolioCardThumbnail';
 
 export const query = graphql`
   {
@@ -107,43 +101,7 @@ const LandingPage = props => {
           >
             {portfolio.title}
           </Heading>
-          <PortfolioIndex
-            as="ul"
-            width="auto"
-            py="4"
-            px="2"
-            m="0"
-            flexWrap="wrap"
-          >
-            {portfolio.portfolioIndex.map(project => (
-              <PortfolioCard
-                as="li"
-                width={1}
-                px="3"
-                mb="4"
-                key={project.slug.current}
-              >
-                <PortfolioCardLink to={project.slug.current}>
-                  {project.thumbnailImage && (
-                    <PortfolioCardThumbnail>
-                      <Image
-                        className="projectThumbnail"
-                        fluid={project.thumbnailImage.asset.fluid}
-                      />
-                    </PortfolioCardThumbnail>
-                  )}
-                  <div>
-                    <PortfolioCardTitle>
-                      {project.shortTitle}
-                    </PortfolioCardTitle>
-                    <PortfolioCardDescription>
-                      {project.description}
-                    </PortfolioCardDescription>
-                  </div>
-                </PortfolioCardLink>
-              </PortfolioCard>
-            ))}
-          </PortfolioIndex>
+          <PortfolioIndex portfolioIndex={portfolio.portfolioIndex} />
         </Flex>
 
         {/* About */}
