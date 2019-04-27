@@ -92,6 +92,7 @@ const LandingPage = props => {
 
         {/* Portfolio */}
         <Flex
+          id="portfolio"
           as="section"
           flexDirection="row"
           flexWrap="wrap"
@@ -147,6 +148,7 @@ const LandingPage = props => {
 
         {/* About */}
         <Flex
+          id="about"
           as="section"
           flexDirection="row"
           flexWrap="wrap"
@@ -165,6 +167,7 @@ const LandingPage = props => {
 
         {/* Contact */}
         <Flex
+          id="contact"
           as="section"
           flexDirection="row"
           flexWrap="wrap"
