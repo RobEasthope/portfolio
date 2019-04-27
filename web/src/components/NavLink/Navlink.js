@@ -7,9 +7,7 @@ import fontSizing from '../../utils/fontsizing';
 
 const NavLinkText = styled(Link)`
   color: ${palette.ink};
-  font-weight: bold;
   text-decoration: none;
-  /* font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1680 - 320))); */
   font-size: ${fontSizing(18, 24)};
 `;
 
