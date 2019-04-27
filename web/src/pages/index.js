@@ -68,7 +68,7 @@ const LandingPage = props => {
 
       <Layout>
         {/* Landing */}
-        <LandingSection title={landing.tagline} image={landing.image} />
+        <LandingSection tagline={landing.tagline} image={landing.image} />
 
         {/* Portfolio */}
         <PortfolioSection
