@@ -33,7 +33,7 @@ const PortfolioIndex = props => {
           mb="4"
           key={project.slug.current}
         >
-          <PortfolioCardLink to={project.slug.current}>
+          <PortfolioCardLink href={project.slug.current}>
             {project.thumbnailImage && (
               <PortfolioCardThumbnail>
                 <Image
