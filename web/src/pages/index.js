@@ -1,15 +1,14 @@
 import React from 'react';
-import { Flex, Heading } from 'rebass';
 import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
-import LandingJumbotron from '../components/LandingJumbotron/LandingJumbotron';
 import Layout from '../components/Layout/Layout';
-import RelativeBox from '../components/RelativeBox/RelativeBox';
 import SEO from '../components/Seo/Seo';
-import LandingTagline from '../components/LandingTagline/LandingTagline';
-import PortfolioIndex from '../components/PortfolioIndex/PortfolioIndex';
+
+import LandingSection from '../components/LandingSection/LandingSection';
+import PortfolioSection from '../components/PortfolioSection/PortfolioSection';
+import AboutSection from '../components/AboutSection/AboutSection';
+import ContactSection from '../components/ContactSection/ContactSection';
 
 export const query = graphql`
   {
@@ -69,78 +68,19 @@ const LandingPage = props => {
 
       <Layout>
         {/* Landing */}
-        <Flex as="section">
-          <RelativeBox width={1} px="0">
-            <LandingTagline
-              as="h1"
-              width="100%"
-              px="4"
-              m="0"
-              fontSize={{ sm: 5, md: 6, lg: 7, xlg: 8 }}
-            >
-              {landing.tagline}
-            </LandingTagline>
-            <LandingJumbotron fluid={landing.image.imageAsset.asset.fluid} />
-          </RelativeBox>
-        </Flex>
+        <LandingSection title={landing.tagline} image={landing.image} />
 
         {/* Portfolio */}
-        <Flex
-          id="portfolio"
-          as="section"
-          flexDirection="row"
-          flexWrap="wrap"
-          px="4"
-          justifyContent="flex-end"
-        >
-          <Heading
-            as="h2"
-            width={1}
-            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-            textAlign="right"
-          >
-            {portfolio.title}
-          </Heading>
-          <PortfolioIndex portfolioIndex={portfolio.portfolioIndex} />
-        </Flex>
+        <PortfolioSection
+          title={portfolio.title}
+          portfolioIndex={portfolio.portfolioIndex}
+        />
 
         {/* About */}
-        <Flex
-          id="about"
-          as="section"
-          flexDirection="row"
-          flexWrap="wrap"
-          justifyContent="flex-end"
-          px="4"
-        >
-          <Heading
-            as="h2"
-            width={1}
-            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-            textAlign="right"
-          >
-            About
-          </Heading>
-        </Flex>
+        <AboutSection title="About" />
 
         {/* Contact */}
-        <Flex
-          id="contact"
-          as="section"
-          flexDirection="row"
-          flexWrap="wrap"
-          justifyContent="flex-end"
-          px="4"
-        >
-          <Heading
-            as="h2"
-            width={1}
-            fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-            textAlign="right"
-          >
-            Contact
-          </Heading>
-        </Flex>
+        <ContactSection title="Contact" />
       </Layout>
     </React.Fragment>
   );
