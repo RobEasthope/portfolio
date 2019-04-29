@@ -18,7 +18,9 @@ const Nav = styled(Flex)`
     padding: 0;
 
     a {
+      display: inline-block;
       text-decoration: none;
+      margin-top: 0.5em;
     }
   }
 `;

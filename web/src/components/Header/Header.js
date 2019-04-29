@@ -24,7 +24,6 @@ const Header = () => (
     <nav>
       <Nav
         as="ul"
-        // px="4"
         pl="4"
         pr="5"
         py="4"
