@@ -23,6 +23,11 @@ const GlobalStyles = createGlobalStyle`
       color: ${palette.imperialRed};
     }
   }
+
+  /* Scrollspy styling */
+  .is-current {
+    font-style: italic;
+  }
 `;
 
 export default GlobalStyles;
