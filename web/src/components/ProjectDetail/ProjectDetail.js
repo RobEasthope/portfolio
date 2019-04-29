@@ -40,7 +40,9 @@ const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
       <ProjectDetailWrapper width={1}>
         <dt>{detailTitle}</dt>
         <dd>
-          <ProjectDetailLink href={detailUrl}>{detailText}</ProjectDetailLink>
+          <ProjectDetailLink href={detailUrl} target="_blank">
+            {detailText}
+          </ProjectDetailLink>
         </dd>
       </ProjectDetailWrapper>
     );

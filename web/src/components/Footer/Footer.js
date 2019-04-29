@@ -21,6 +21,7 @@ const Footer = () => (
       href="https://www.linkedin.com/in/rob-easthope-9b0bb436/"
       ml={{ b: '0', md: '2em' }}
       mr={{ b: '2em', md: '0' }}
+      target="_blank"
     >
       Linkedin
     </FooterLink>
