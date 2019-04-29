@@ -5,7 +5,7 @@ export const breakpoints = [
   '28em', // 448px
   '40em', // 640px
   '52em', // 832px
-  '64em', // 1024px
+  '68em', // 1024px
 ];
 
 // Breakpoint aliases
