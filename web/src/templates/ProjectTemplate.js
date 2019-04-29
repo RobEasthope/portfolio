@@ -86,7 +86,6 @@ const ProjectTemplate = props => {
         </ProjectTitle>
         <Flex flexWrap="wrap" flexDirection="row">
           <Box>
-            {/* <Flex flexDirection="row" flexWrap="wrap" justifyContent="flex-end"> */}
             {data.sanityProject.client && (
               <ProjectDetail
                 detailTitle="Client"
@@ -114,7 +113,6 @@ const ProjectTemplate = props => {
                 detailUrl={data.sanityProject.repoUrl}
               />
             )}
-            {/* </Flex> */}
           </Box>
 
           <Box pb="3">

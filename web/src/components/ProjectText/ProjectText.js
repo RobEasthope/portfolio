@@ -7,7 +7,7 @@ import { measure } from '../../styles/theme';
 const ProjectText = styled(Text)`
   font-size: ${fontSizing(20, 24)};
   margin-bottom: 0.5em;
-  max-width: 25em;
+  max-width: 27em;
 `;
 
 export default ProjectText;

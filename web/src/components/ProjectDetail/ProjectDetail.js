@@ -10,7 +10,12 @@ const ProjectDetailWrapper = styled(Box)`
   display: block;
   font-size: ${fontSizing(20, 24)};
   margin-right: 2em;
-  max-width: ${measure.narrow};
+  min-width: 6em;
+  max-width: 12em;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 
   dt,
   dd {
