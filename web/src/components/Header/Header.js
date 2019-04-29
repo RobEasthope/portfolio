@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
+import Scrollspy from 'react-scrollspy';
 
 import { breakpoints } from '../../styles/theme';
 
@@ -23,7 +24,6 @@ const Header = () => (
     <nav>
       <Nav
         as="ul"
-        // px="4"
         pl="4"
         pr="5"
         py="4"
@@ -34,9 +34,20 @@ const Header = () => (
         flexDirection="column"
       >
         <Logo url="/" src={LogoAsset} altText="Rob Easthope" />
-        <NavLink to="/#portfolio" title="Portfolio" />
-        <NavLink to="/#about" title="About" />
-        <NavLink to="/#contact" title="Contact" />
+        <Scrollspy
+          items={['portfolio', 'about', 'contact']}
+          currentClassName="is-current"
+        >
+          <li>
+            <a href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </Scrollspy>
       </Nav>
     </nav>
   </HeaderWrapper>

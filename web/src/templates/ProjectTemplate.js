@@ -113,7 +113,7 @@ const ProjectTemplate = props => {
               <ProjectDetail
                 detailTitle="Client"
                 detailText={data.sanityProject.agency.name}
-                detailUrl={data.sanityProject.client.url}
+                detailUrl={data.sanityProject.agency.url}
               />
             )}
             {data.sanityProject.projectUrl &&

@@ -6,6 +6,7 @@ import FooterLink from '../FooterLink/FooterLink';
 const Footer = () => (
   <Flex
     as="footer"
+    width={1}
     p="4"
     flexDirection="row"
     justifyContent={{ b: 'flex-start', md: 'flex-end' }}
