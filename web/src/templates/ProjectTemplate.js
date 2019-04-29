@@ -121,7 +121,7 @@ const ProjectTemplate = props => {
             </ProjectText>
           </Box>
         </Flex>
-        <Box width={{ b: 1, md: 7 / 10 }}>
+        <Box width={{ b: 1 }}>
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
               <Box mb="4" key={image._key}>
