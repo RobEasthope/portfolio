@@ -22,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: ${palette.ink};
+
+    &:hover {
+      color: ${palette.imperialRed};
+    }
   }
 `;
 
