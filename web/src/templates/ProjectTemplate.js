@@ -9,6 +9,7 @@ import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
 import ProjectText from '../components/ProjectText/ProjectText';
+import ProjectDetail from '../components/ProjectDetail/ProjectDetail';
 
 export const query = graphql`
   query($slug: String) {
@@ -85,47 +86,33 @@ const ProjectTemplate = props => {
         </ProjectTitle>
         <Flex flexWrap="wrap">
           <Box width={{ b: 1 / 3 }}>
-            <Box width={{ b: 1 }} px="3">
-              {data.sanityProject.client && (
-                <React.Fragment>
-                  <Text>Client</Text>
-                  <Text pb="4">{data.sanityProject.client.name}</Text>
-                </React.Fragment>
+            {data.sanityProject.client && (
+              <ProjectDetail
+                detailTitle="Client"
+                detailText={data.sanityProject.client.name}
+              />
+            )}
+            {data.sanityProject.agency && (
+              <ProjectDetail
+                detailTitle="Client"
+                detailText={data.sanityProject.agency.name}
+              />
+            )}
+            {data.sanityProject.projectUrl &&
+              data.sanityProject.projectUrlTitle && (
+                <ProjectDetail
+                  detailTitle={data.sanityProject.projectUrlTitle}
+                  detailText={data.sanityProject.projectUrl}
+                  detailUrl={data.sanityProject.projectUrl}
+                />
               )}
-            </Box>
-            <Box width={{ b: 1 }} px="3">
-              {data.sanityProject.agency && (
-                <React.Fragment>
-                  <Text>Agency</Text>
-                  <Text pb="4">{data.sanityProject.agency.name}</Text>
-                </React.Fragment>
-              )}
-            </Box>
-            <Box width={{ b: 1 }} px="3">
-              {data.sanityProject.projectUrl &&
-                data.sanityProject.projectUrlTitle && (
-                  <React.Fragment>
-                    <Text>Production site</Text>
-                    <Text pb="3">
-                      <Link to={data.sanityProject.projectUrl}>
-                        {data.sanityProject.projectUrlTitle}
-                      </Link>
-                    </Text>
-                  </React.Fragment>
-                )}
-            </Box>
-            <Box width={{ b: 1 }} px="3">
-              {data.sanityProject.repoUrl && (
-                <React.Fragment>
-                  <Text>Github repo</Text>
-                  <Text pb="3">
-                    <Link to={data.sanityProject.repoUrl}>
-                      {data.sanityProject.repoUrl}
-                    </Link>
-                  </Text>
-                </React.Fragment>
-              )}
-            </Box>
+            {data.sanityProject.repoUrl && (
+              <ProjectDetail
+                detailTitle="Github repo"
+                detailText={data.sanityProject.repoUrl}
+                detailUrl={data.sanityProject.repoUrl}
+              />
+            )}
           </Box>
           <Box width={{ b: 2 / 3 }} pb="4">
             <ProjectText>
