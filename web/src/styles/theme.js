@@ -28,6 +28,12 @@ export const fontSizes = [
   '6rem', // 96px - 8
 ];
 
+export const measure = {
+  narrow: '20em',
+  standard: '30em',
+  wide: '34em',
+};
+
 // Spacing
 export const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 
