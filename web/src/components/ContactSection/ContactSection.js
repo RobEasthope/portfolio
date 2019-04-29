@@ -8,7 +8,7 @@ const ContactSection = props => {
 
   return (
     <Flex
-      id="portfolio"
+      id="contact"
       as="section"
       flexDirection="row"
       flexWrap="wrap"
