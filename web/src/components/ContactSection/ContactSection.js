@@ -12,10 +12,10 @@ const ContactSection = props => {
       as="section"
       flexDirection="row"
       flexWrap="wrap"
-      px="4"
+      px={{ b: 3, md: 4 }}
       justifyContent="flex-end"
     >
-      <SectionTitle as="h2" width={1} textAlign="right">
+      <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
         {title}
       </SectionTitle>
     </Flex>

@@ -23,10 +23,10 @@ const PortfolioSection = props => {
       as="section"
       flexDirection="row"
       flexWrap="wrap"
-      px="4"
-      justifyContent="flex-end"
+      px={{ b: 3, md: 4 }}
+      justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <SectionTitle as="h2" width={1} textAlign="right">
+      <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
         {title}
       </SectionTitle>
 
@@ -34,24 +34,18 @@ const PortfolioSection = props => {
         as="ul"
         width="auto"
         py="4"
-        px="2"
+        px="0"
         m="0"
         flexWrap="wrap"
       >
         {portfolioIndex.map(project => (
-          <PortfolioCard
-            as="li"
-            width={1}
-            px="3"
-            mb="3"
-            key={project.slug.current}
-          >
+          <PortfolioCard as="li" width={1} mb="3" key={project.slug.current}>
             <PortfolioCardLink href={project.slug.current}>
               {project.thumbnailImage && (
                 <PortfolioCardThumbnail>
                   <Image
-                    className="projectThumbnail"
                     fluid={project.thumbnailImage.asset.fluid}
+                    className="projectThumbnail"
                   />
                 </PortfolioCardThumbnail>
               )}
