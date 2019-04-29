@@ -1,13 +1,17 @@
 import React from 'react';
-import { Box, Link } from 'rebass';
+import { Box } from 'rebass';
+
+import FooterLink from '../FooterLink/FooterLink';
 
 const Footer = () => (
   <Box as="footer" p="4" alignSelf="flex-end">
     <nav>
-      <Link href="mailto:hello@robeasthope.com">hello@robeasthope.com</Link>
-      <Link href="https://www.linkedin.com/in/rob-easthope-9b0bb436/">
+      <FooterLink href="mailto:hello@robeasthope.com">
+        hello@robeasthope.com
+      </FooterLink>
+      <FooterLink href="https://www.linkedin.com/in/rob-easthope-9b0bb436/">
         Linkedin
-      </Link>
+      </FooterLink>
     </nav>
   </Box>
 );
