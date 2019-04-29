@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { Box, Flex, Link, Text } from 'rebass';
+import { Box, Flex } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
