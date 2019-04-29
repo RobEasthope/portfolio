@@ -10,6 +10,7 @@ import SEO from '../components/Seo/Seo';
 import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
 import ProjectText from '../components/ProjectText/ProjectText';
 import ProjectDetail from '../components/ProjectDetail/ProjectDetail';
+import MediaGallery from '../components/MediaGallery/MediaGallery';
 
 export const query = graphql`
   query($slug: String) {
@@ -92,24 +93,14 @@ const ProjectTemplate = props => {
         <Flex
           flexWrap="wrap"
           flexDirection="row"
-          justifyContent={{ b: 'flex-start', xlg: 'flex-end' }}
+          justifyContent={{ b: 'flex-start', md: 'flex-end' }}
         >
           <Box order={{ b: 1, xlg: 2 }}>
             <ProjectText>
               <BlockContent blocks={data.sanityProject._rawBody} />
             </ProjectText>
           </Box>
-          <Box width={{ b: 1 }} order={{ b: 2, xlg: 3 }}>
-            {data.sanityProject.gallery &&
-              data.sanityProject.gallery.map(image => (
-                <Box mb="4" key={image._key}>
-                  <Image
-                    fluid={image.imageAsset.asset.fluid}
-                    alt={image.altText}
-                  />
-                </Box>
-              ))}
-          </Box>
+
           <Box pb="3" order={{ b: 3, xlg: 1 }}>
             {data.sanityProject.client && (
               <ProjectDetail
@@ -142,6 +133,17 @@ const ProjectTemplate = props => {
             )}
           </Box>
         </Flex>
+        <MediaGallery order={{ b: 2, xlg: 3 }}>
+          {data.sanityProject.gallery &&
+            data.sanityProject.gallery.map(image => (
+              <Box mb="4" key={image._key}>
+                <Image
+                  fluid={image.imageAsset.asset.fluid}
+                  alt={image.altText}
+                />
+              </Box>
+            ))}
+        </MediaGallery>
       </Flex>
     </Layout>
   );
