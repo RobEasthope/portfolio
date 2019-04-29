@@ -1,5 +1,7 @@
 import React from 'react';
-import { Flex, Heading } from 'rebass';
+import { Flex } from 'rebass';
+
+import SectionTitle from '../SectionTitle/SectionTitle';
 
 const ContactSection = props => {
   const { title } = props;
@@ -13,14 +15,9 @@ const ContactSection = props => {
       px="4"
       justifyContent="flex-end"
     >
-      <Heading
-        as="h2"
-        width={1}
-        fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-        textAlign="right"
-      >
+      <SectionTitle as="h2" width={1} textAlign="right">
         {title}
-      </Heading>
+      </SectionTitle>
     </Flex>
   );
 };

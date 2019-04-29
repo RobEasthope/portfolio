@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'gatsby-image';
 import styled from 'styled-components';
-import { Box, Flex, Heading } from 'rebass';
+import { Box, Flex } from 'rebass';
 
+import SectionTitle from '../SectionTitle/SectionTitle';
 import PortfolioCard from '../PortfolioCard/PortfolioCard';
 import PortfolioCardLink from '../PortfolioCardLink/PortfolioCardLink';
 import PortfolioCardTitle from '../PortfolioCardTitle/PortfolioCardTitle';
@@ -25,14 +26,10 @@ const PortfolioSection = props => {
       px="4"
       justifyContent="flex-end"
     >
-      <Heading
-        as="h2"
-        width={1}
-        fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-        textAlign="right"
-      >
+      <SectionTitle as="h2" width={1} textAlign="right">
         {title}
-      </Heading>
+      </SectionTitle>
+
       <PortfolioIndexWrapper
         as="ul"
         width="auto"
@@ -46,7 +43,7 @@ const PortfolioSection = props => {
             as="li"
             width={1}
             px="3"
-            mb="4"
+            mb="3"
             key={project.slug.current}
           >
             <PortfolioCardLink href={project.slug.current}>
