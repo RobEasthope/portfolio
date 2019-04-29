@@ -84,8 +84,9 @@ const ProjectTemplate = props => {
         <ProjectTitle as="h2" width={1} textAlign="right" mt="2">
           {data.sanityProject.title}
         </ProjectTitle>
-        <Flex flexWrap="wrap">
-          <Box width={{ b: 1 / 3 }}>
+        <Flex flexWrap="wrap" flexDirection="row">
+          <Box>
+            {/* <Flex flexDirection="row" flexWrap="wrap" justifyContent="flex-end"> */}
             {data.sanityProject.client && (
               <ProjectDetail
                 detailTitle="Client"
@@ -113,8 +114,10 @@ const ProjectTemplate = props => {
                 detailUrl={data.sanityProject.repoUrl}
               />
             )}
+            {/* </Flex> */}
           </Box>
-          <Box width={{ b: 2 / 3 }} pb="3">
+
+          <Box pb="3">
             <ProjectText>
               <BlockContent blocks={data.sanityProject._rawBody} />
             </ProjectText>

@@ -6,12 +6,23 @@ import fontSizing from '../../utils/fontsizing';
 import { measure } from '../../styles/theme';
 import palette from '../../styles/palette';
 
-const ProjectDetailText = styled(Text)`
+const ProjectDetailWrapper = styled(Box)`
+  display: block;
   font-size: ${fontSizing(20, 24)};
-  margin: 0;
+  margin-right: 2em;
   max-width: ${measure.narrow};
+
+  dt,
+  dd {
+    margin: 0;
+  }
+
+  dd {
+    margin-bottom: 1em;
+  }
 `;
 const ProjectDetailLink = styled(Link)`
+  display: block;
   font-size: ${fontSizing(20, 24)};
   color: ${palette.ink};
   margin: 0;
@@ -21,23 +32,19 @@ const ProjectDetailLink = styled(Link)`
 const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
   if (detailUrl) {
     return (
-      <Box width={{ b: 1 }} pb="3">
-        <ProjectDetailText as="dt" width={1}>
-          {detailTitle}
-        </ProjectDetailText>
-        <ProjectDetailText as="dd">
+      <ProjectDetailWrapper width={1}>
+        <dt>{detailTitle}</dt>
+        <dd>
           <ProjectDetailLink href={detailUrl}>{detailText}</ProjectDetailLink>
-        </ProjectDetailText>
-      </Box>
+        </dd>
+      </ProjectDetailWrapper>
     );
   }
   return (
-    <Box width={{ b: 1 }} pb="3">
-      <ProjectDetailText as="dt" width={1}>
-        {detailTitle}
-      </ProjectDetailText>
-      <ProjectDetailText as="dd">{detailText}</ProjectDetailText>
-    </Box>
+    <ProjectDetailWrapper width={1}>
+      <dt as="dt">{detailTitle}</dt>
+      <dd as="dd">{detailText}</dd>
+    </ProjectDetailWrapper>
   );
 };
 
