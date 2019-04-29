@@ -13,6 +13,10 @@ const ProjectDetailWrapper = styled(Box)`
   min-width: 6em;
   max-width: 12em;
 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+
   dt,
   dd {
     margin: 0;
