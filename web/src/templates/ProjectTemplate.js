@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { Box, Flex, Heading, Link, Text } from 'rebass';
+import { Box, Flex, Link, Text } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
-import ContentContainer from '../components/Grid/ContentContainer';
+import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
 
 export const query = graphql`
   query($slug: String) {
@@ -79,14 +79,9 @@ const ProjectTemplate = props => {
         px="4"
         justifyContent="flex-end"
       >
-        <Heading
-          as="h2"
-          width={1}
-          fontSize={{ sm: 5, md: 5, lg: 6, xlg: 7 }}
-          textAlign="right"
-        >
+        <ProjectTitle as="h2" width={1} textAlign="right">
           {data.sanityProject.title}
-        </Heading>
+        </ProjectTitle>
         <Flex flexWrap="wrap">
           <Box width={{ b: 1 / 3 }}>
             <Box width={{ b: 1 }} px="3">
