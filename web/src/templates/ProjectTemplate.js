@@ -89,8 +89,28 @@ const ProjectTemplate = props => {
         >
           {data.sanityProject.title}
         </ProjectTitle>
-        <Flex flexWrap="wrap" flexDirection="row">
-          <Box>
+        <Flex
+          flexWrap="wrap"
+          flexDirection="row"
+          justifyContent={{ b: 'flex-start', xlg: 'flex-end' }}
+        >
+          <Box order={{ b: 1, xlg: 2 }}>
+            <ProjectText>
+              <BlockContent blocks={data.sanityProject._rawBody} />
+            </ProjectText>
+          </Box>
+          <Box width={{ b: 1 }} order={{ b: 2, xlg: 3 }}>
+            {data.sanityProject.gallery &&
+              data.sanityProject.gallery.map(image => (
+                <Box mb="4" key={image._key}>
+                  <Image
+                    fluid={image.imageAsset.asset.fluid}
+                    alt={image.altText}
+                  />
+                </Box>
+              ))}
+          </Box>
+          <Box pb="3" order={{ b: 3, xlg: 1 }}>
             {data.sanityProject.client && (
               <ProjectDetail
                 detailTitle="Client"
@@ -121,24 +141,7 @@ const ProjectTemplate = props => {
               />
             )}
           </Box>
-
-          <Box pb="3">
-            <ProjectText>
-              <BlockContent blocks={data.sanityProject._rawBody} />
-            </ProjectText>
-          </Box>
         </Flex>
-        <Box width={{ b: 1 }}>
-          {data.sanityProject.gallery &&
-            data.sanityProject.gallery.map(image => (
-              <Box mb="4" key={image._key}>
-                <Image
-                  fluid={image.imageAsset.asset.fluid}
-                  alt={image.altText}
-                />
-              </Box>
-            ))}
-        </Box>
       </Flex>
     </Layout>
   );
