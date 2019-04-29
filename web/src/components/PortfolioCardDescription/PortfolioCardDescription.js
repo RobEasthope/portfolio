@@ -9,7 +9,6 @@ const PortfolioCardDescription = styled(Text)`
   font-size: ${fontSizing(20, 24)};
   color: ${palette.ink};
   text-decoration: none;
-  margin-left: 1em;
 `;
 
 export default PortfolioCardDescription;
