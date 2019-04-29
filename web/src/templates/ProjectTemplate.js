@@ -81,7 +81,7 @@ const ProjectTemplate = props => {
         px="4"
         justifyContent="flex-end"
       >
-        <ProjectTitle as="h2" width={1} textAlign="right">
+        <ProjectTitle as="h2" width={1} textAlign="right" mt="2">
           {data.sanityProject.title}
         </ProjectTitle>
         <Flex flexWrap="wrap">
