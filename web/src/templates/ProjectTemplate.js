@@ -114,13 +114,13 @@ const ProjectTemplate = props => {
               />
             )}
           </Box>
-          <Box width={{ b: 2 / 3 }} pb="4">
+          <Box width={{ b: 2 / 3 }} pb="3">
             <ProjectText>
               <BlockContent blocks={data.sanityProject._rawBody} />
             </ProjectText>
           </Box>
         </Flex>
-        <Box width={{ b: 1, md: 7 / 10 }} px="4">
+        <Box width={{ b: 1, md: 7 / 10 }}>
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
               <Box mb="4" key={image._key}>
