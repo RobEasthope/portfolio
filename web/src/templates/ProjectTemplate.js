@@ -8,6 +8,7 @@ import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
+import ProjectText from '../components/ProjectText/ProjectText';
 
 export const query = graphql`
   query($slug: String) {
@@ -127,7 +128,9 @@ const ProjectTemplate = props => {
             </Box>
           </Box>
           <Box width={{ b: 2 / 3 }} pb="4">
-            <BlockContent blocks={data.sanityProject._rawBody} />
+            <ProjectText>
+              <BlockContent blocks={data.sanityProject._rawBody} />
+            </ProjectText>
           </Box>
         </Flex>
         <Box width={{ b: 1, md: 7 / 10 }} px="4">
