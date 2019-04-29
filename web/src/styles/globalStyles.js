@@ -15,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
   p {
     margin-top: 0;
   }
+
+  a {
+    color: ${palette.ink};
+  }
 `;
 
 export default GlobalStyles;
