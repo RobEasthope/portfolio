@@ -11,8 +11,10 @@ const Layout = ({ children }) => (
   <App>
     <AppWrapper flexDirection="column">
       <Header />
-      <MainContent>{children}</MainContent>
-      <Footer />
+      <MainContent>
+        {children}
+        <Footer />
+      </MainContent>
     </AppWrapper>
   </App>
 );
