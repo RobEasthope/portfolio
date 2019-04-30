@@ -17,6 +17,9 @@ export default {
       name: 'portrait',
       title: 'Portrait',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'email',
