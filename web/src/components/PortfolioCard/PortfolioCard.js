@@ -13,8 +13,8 @@ const PortfolioCard = styled(Box)`
   } */
 
   .projectThumbnail {
-    display: none;
-    visibility: hidden;
+    /* display: none;
+    visibility: hidden; */
     border-radius: 50%;
   }
 
