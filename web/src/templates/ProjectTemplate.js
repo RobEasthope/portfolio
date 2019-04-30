@@ -86,7 +86,7 @@ const ProjectTemplate = props => {
         justifyContent={{ b: 'flex-start', md: 'flex-end' }}
       >
         <Box width={1}>
-          <ProjectTitle as="h2" textAlign={{ b: 'left', md: 'right' }} mt="2">
+          <ProjectTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
             {data.sanityProject.title}
           </ProjectTitle>
         </Box>
