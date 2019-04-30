@@ -35,7 +35,7 @@ const ProjectDetailLink = styled(Link)`
 `;
 
 const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
-  if (detailUrl) {
+  if (detailUrl && detailTitle && detailText) {
     return (
       <ProjectDetailWrapper width={1}>
         <dt>{detailTitle}</dt>
@@ -47,9 +47,16 @@ const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
       </ProjectDetailWrapper>
     );
   }
+  if (detailTitle && detailText) {
+    return (
+      <ProjectDetailWrapper width={1}>
+        <dt as="dt">{detailTitle}</dt>
+        <dd as="dd">{detailText}</dd>
+      </ProjectDetailWrapper>
+    );
+  }
   return (
     <ProjectDetailWrapper width={1}>
-      <dt as="dt">{detailTitle}</dt>
       <dd as="dd">{detailText}</dd>
     </ProjectDetailWrapper>
   );
