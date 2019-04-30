@@ -18,6 +18,21 @@ export default {
       title: 'Portrait',
       type: 'image',
     },
+    {
+      name: 'email',
+      title: 'Email address',
+      type: 'email',
+    },
+    {
+      name: 'twitter',
+      title: 'Twitter profile',
+      type: 'url',
+    },
+    {
+      name: 'linkedin',
+      title: 'LinkedIn profile',
+      type: 'url',
+    },
   ],
 
   preview: {
