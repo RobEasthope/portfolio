@@ -43,11 +43,6 @@ export default {
       of: [{ type: 'altImage' }],
     },
     {
-      name: 'shortDescription',
-      title: 'Short description',
-      type: 'text',
-    },
-    {
       name: 'client',
       title: 'Client',
       type: 'reference',
