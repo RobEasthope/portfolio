@@ -16,6 +16,7 @@ import project from './project';
 import organisation from './organisation';
 import portfolio from './portfolio';
 import landing from './landing';
+import about from './about';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,6 +34,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     portfolio,
     landing,
+    about,
     blockContent,
     seoMetaData,
     altImage,
