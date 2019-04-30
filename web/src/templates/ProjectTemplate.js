@@ -10,6 +10,7 @@ import SEO from '../components/Seo/Seo';
 import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
 import ProjectText from '../components/ProjectText/ProjectText';
 import ProjectDetail from '../components/ProjectDetail/ProjectDetail';
+import ProjectDetailText from '../components/ProjectDetailText/ProjectDetailText';
 import MediaGallery from '../components/MediaGallery/MediaGallery';
 
 export const query = graphql`
@@ -32,9 +33,11 @@ export const query = graphql`
       description
       client {
         name
+        url
       }
       agency {
         name
+        url
       }
       date
       projectUrlTitle
@@ -92,13 +95,18 @@ const ProjectTemplate = props => {
           flexDirection="row"
           justifyContent={{ b: 'flex-start', md: 'flex-end' }}
         >
-          <Box order={{ b: 1, xlg: 2 }}>
+          <Box mb="3" order={{ b: 1, xlg: 2 }}>
             <ProjectText>
               <BlockContent blocks={data.sanityProject._rawBody} />
             </ProjectText>
           </Box>
 
           <Box pb="3" order={{ b: 3, xlg: 1 }}>
+            {data.sanityProject.date && (
+              <ProjectDetailText mb="1em">
+                {data.sanityProject.date}
+              </ProjectDetailText>
+            )}
             {data.sanityProject.client && (
               <ProjectDetail
                 detailTitle="Client"
@@ -108,7 +116,7 @@ const ProjectTemplate = props => {
             )}
             {data.sanityProject.agency && (
               <ProjectDetail
-                detailTitle="Client"
+                detailTitle="Agency"
                 detailText={data.sanityProject.agency.name}
                 detailUrl={data.sanityProject.agency.url}
               />
