@@ -10,6 +10,7 @@ import SEO from '../components/Seo/Seo';
 import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
 import ProjectText from '../components/ProjectText/ProjectText';
 import ProjectDetail from '../components/ProjectDetail/ProjectDetail';
+import ProjectDetailText from '../components/ProjectDetailText/ProjectDetailText';
 import MediaGallery from '../components/MediaGallery/MediaGallery';
 
 export const query = graphql`
@@ -131,7 +132,7 @@ const ProjectTemplate = props => {
               />
             )}
             {data.sanityProject.date && (
-              <ProjectDetail detailText={data.sanityProject.date} />
+              <ProjectDetailText>{data.sanityProject.date}</ProjectDetailText>
             )}
           </Box>
         </Flex>
