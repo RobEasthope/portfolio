@@ -95,7 +95,11 @@ const LandingPage = props => {
         />
 
         {/* Contact */}
-        <ContactSection title="Contact" />
+        {/* <ContactSection
+          title="Contact"
+          email={about.email}
+          linkedin={about.linkedin}
+        /> */}
       </Layout>
     </React.Fragment>
   );
