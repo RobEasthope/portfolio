@@ -82,14 +82,11 @@ const ProjectTemplate = props => {
         px="4"
         justifyContent={{ b: 'flex-start', md: 'flex-end' }}
       >
-        <ProjectTitle
-          as="h2"
-          width={1}
-          textAlign={{ b: 'left', md: 'right' }}
-          mt="2"
-        >
-          {data.sanityProject.title}
-        </ProjectTitle>
+        <Box width={1}>
+          <ProjectTitle as="h2" textAlign={{ b: 'left', md: 'right' }} mt="2">
+            {data.sanityProject.title}
+          </ProjectTitle>
+        </Box>
         <Flex
           flexWrap="wrap"
           flexDirection="row"
