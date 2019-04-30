@@ -103,7 +103,9 @@ const ProjectTemplate = props => {
 
           <Box pb="3" order={{ b: 3, xlg: 1 }}>
             {data.sanityProject.date && (
-              <ProjectDetailText>{data.sanityProject.date}</ProjectDetailText>
+              <ProjectDetailText mb="1em">
+                {data.sanityProject.date}
+              </ProjectDetailText>
             )}
             {data.sanityProject.client && (
               <ProjectDetail
