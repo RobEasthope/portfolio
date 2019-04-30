@@ -101,7 +101,7 @@ const ProjectTemplate = props => {
             </ProjectText>
           </Box>
 
-          <Box pb="3" order={{ b: 3, xlg: 1 }}>
+          <Box as="dl" m="0" pb="3" order={{ b: 3, xlg: 1 }}>
             {data.sanityProject.date && (
               <ProjectDetailText mb="1em">
                 {data.sanityProject.date}
