@@ -89,6 +89,9 @@ export default {
       name: 'thumbnailImage',
       title: 'Thumbnail image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
       validation: Rule => Rule.required().warning('Required field'),
     },
     {
