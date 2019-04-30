@@ -102,6 +102,9 @@ const ProjectTemplate = props => {
           </Box>
 
           <Box pb="3" order={{ b: 3, xlg: 1 }}>
+            {data.sanityProject.date && (
+              <ProjectDetailText>{data.sanityProject.date}</ProjectDetailText>
+            )}
             {data.sanityProject.client && (
               <ProjectDetail
                 detailTitle="Client"
@@ -130,9 +133,6 @@ const ProjectTemplate = props => {
                 detailText={data.sanityProject.repoUrl}
                 detailUrl={data.sanityProject.repoUrl}
               />
-            )}
-            {data.sanityProject.date && (
-              <ProjectDetailText>{data.sanityProject.date}</ProjectDetailText>
             )}
           </Box>
         </Flex>
