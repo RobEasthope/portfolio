@@ -50,14 +50,14 @@ const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
   if (detailTitle && detailText) {
     return (
       <ProjectDetailWrapper width={1}>
-        <dt as="dt">{detailTitle}</dt>
-        <dd as="dd">{detailText}</dd>
+        <dt>{detailTitle}</dt>
+        <dd>{detailText}</dd>
       </ProjectDetailWrapper>
     );
   }
   return (
     <ProjectDetailWrapper width={1}>
-      <dd as="dd">{detailText}</dd>
+      <dd>{detailText}</dd>
     </ProjectDetailWrapper>
   );
 };
