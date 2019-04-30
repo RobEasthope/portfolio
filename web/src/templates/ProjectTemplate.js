@@ -32,9 +32,11 @@ export const query = graphql`
       description
       client {
         name
+        url
       }
       agency {
         name
+        url
       }
       date
       projectUrlTitle
