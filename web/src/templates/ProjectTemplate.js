@@ -95,7 +95,7 @@ const ProjectTemplate = props => {
           flexDirection="row"
           justifyContent={{ b: 'flex-start', md: 'flex-end' }}
         >
-          <Box order={{ b: 1, xlg: 2 }}>
+          <Box mb="3" order={{ b: 1, xlg: 2 }}>
             <ProjectText>
               <BlockContent blocks={data.sanityProject._rawBody} />
             </ProjectText>
