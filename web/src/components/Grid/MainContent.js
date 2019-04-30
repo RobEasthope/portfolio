@@ -7,8 +7,8 @@ const MainContent = styled.main`
   min-width: 100vw;
   margin-left: 0;
   @media (min-width: ${breakpoints.md}) {
-    min-width: calc(100vw - 166px);
-    margin-left: 166px;
+    min-width: calc(100vw - 178px);
+    margin-left: 178px;
   }
 `;
 

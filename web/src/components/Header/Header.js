@@ -26,7 +26,8 @@ const Header = () => (
         as="ul"
         pl="4"
         pr="5"
-        py="4"
+        pt="4"
+        pb="5"
         m="0"
         // alignItems="center"
         justifyContent="flex-end"
@@ -44,9 +45,9 @@ const Header = () => (
           <li>
             <a href="#about">About</a>
           </li>
-          <li>
+          {/* <li>
             <a href="#contact">Contact</a>
-          </li>
+          </li> */}
         </Scrollspy>
       </Nav>
     </nav>

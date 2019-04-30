@@ -33,7 +33,7 @@ const PortfolioSection = props => {
       <PortfolioIndexWrapper
         as="ul"
         width="auto"
-        py="4"
+        pb="4"
         px="0"
         m="0"
         flexWrap="wrap"

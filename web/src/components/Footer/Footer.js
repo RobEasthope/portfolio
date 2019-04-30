@@ -7,7 +7,8 @@ const Footer = () => (
   <Flex
     as="footer"
     width={1}
-    p="4"
+    px="4"
+    py="5"
     flexDirection="row"
     justifyContent={{ b: 'flex-start', md: 'flex-end' }}
   >

@@ -5,6 +5,7 @@ import {
   GoCode,
   GoNote,
   GoPaintcan,
+  GoPerson,
   GoTerminal,
 } from 'react-icons/go';
 import { FaRegAddressCard } from 'react-icons/fa';
@@ -45,6 +46,15 @@ export default () =>
                     .documentId('portfolio')
                 )
                 .icon(GoBookmark),
+              S.listItem()
+                .title('About section')
+                .child(
+                  S.editor()
+                    .id('about')
+                    .schemaType('about')
+                    .documentId('about')
+                )
+                .icon(GoPerson),
             ])
         ),
       S.listItem()

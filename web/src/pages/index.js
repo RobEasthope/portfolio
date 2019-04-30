@@ -43,6 +43,17 @@ export const query = graphql`
         }
       }
     }
+    about: sanityAbout {
+      title
+      _rawBody
+      portrait {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+    }
   }
 `;
 const LandingPage = props => {
@@ -60,7 +71,7 @@ const LandingPage = props => {
     throw new Error('Missing landing page data.');
   }
 
-  const { landing, portfolio } = data;
+  const { landing, portfolio, about } = data;
 
   return (
     <React.Fragment>
@@ -77,10 +88,18 @@ const LandingPage = props => {
         />
 
         {/* About */}
-        <AboutSection title="About" />
+        <AboutSection
+          title={about.title}
+          blurb={about._rawBody}
+          portrait={about.portrait}
+        />
 
         {/* Contact */}
-        <ContactSection title="Contact" />
+        {/* <ContactSection
+          title="Contact"
+          email={about.email}
+          linkedin={about.linkedin}
+        /> */}
       </Layout>
     </React.Fragment>
   );
