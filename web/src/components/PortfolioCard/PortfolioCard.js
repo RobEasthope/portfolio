@@ -4,9 +4,6 @@ import { breakpoints } from '../../styles/theme';
 import palette from '../../styles/palette';
 
 const PortfolioCard = styled(Box)`
-  position: relative;
-
-  padding-bottom: 8px;
   border-bottom: 1px solid #ececec;
   &:last-child {
     border-bottom: 0;

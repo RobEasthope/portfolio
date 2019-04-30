@@ -11,7 +11,7 @@ const PortfolioCardThumbnail = styled(Box)`
   display: block;
   width: ${fontSizing(32, 72)};
   height: ${fontSizing(32, 72)};
-  transform: translateX(-100%);
+  transform: translateX(-110%);
 `;
 
 export default PortfolioCardThumbnail;

@@ -9,6 +9,7 @@ import PortfolioCardLink from '../PortfolioCardLink/PortfolioCardLink';
 import PortfolioCardTitle from '../PortfolioCardTitle/PortfolioCardTitle';
 import PortfolioCardDescription from '../PortfolioCardDescription/PortfolioCardDescription';
 import PortfolioCardThumbnail from '../PortfolioCardThumbnail/PortfolioCardThumbnail';
+import RelativeBox from '../RelativeBox/RelativeBox';
 
 const PortfolioIndexWrapper = styled(Box)`
   list-style-type: none;
@@ -39,25 +40,33 @@ const PortfolioSection = props => {
         flexWrap="wrap"
       >
         {portfolioIndex.map(project => (
-          <PortfolioCard as="li" width={1} mb="3" key={project.slug.current}>
-            <PortfolioCardLink href={project.slug.current}>
-              {project.thumbnailImage && (
-                <PortfolioCardThumbnail>
-                  <Image
-                    fluid={project.thumbnailImage.asset.fluid}
-                    className="projectThumbnail"
-                  />
-                </PortfolioCardThumbnail>
-              )}
-              <div>
-                <PortfolioCardTitle ml={{ b: 0, md: '0.25em' }} mr="0.3em">
-                  {project.shortTitle}
-                </PortfolioCardTitle>
-                <PortfolioCardDescription>
-                  {project.description}
-                </PortfolioCardDescription>
-              </div>
-            </PortfolioCardLink>
+          <PortfolioCard
+            as="li"
+            width={1}
+            pt={3}
+            pb={2}
+            key={project.slug.current}
+          >
+            <RelativeBox>
+              <PortfolioCardLink href={project.slug.current}>
+                {project.thumbnailImage && (
+                  <PortfolioCardThumbnail>
+                    <Image
+                      fluid={project.thumbnailImage.asset.fluid}
+                      className="projectThumbnail"
+                    />
+                  </PortfolioCardThumbnail>
+                )}
+                <div>
+                  <PortfolioCardTitle ml={{ b: 0, md: '0.25em' }} mr="0.3em">
+                    {project.shortTitle}
+                  </PortfolioCardTitle>
+                  <PortfolioCardDescription>
+                    {project.description}
+                  </PortfolioCardDescription>
+                </div>
+              </PortfolioCardLink>
+            </RelativeBox>
           </PortfolioCard>
         ))}
       </PortfolioIndexWrapper>
