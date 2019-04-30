@@ -10,20 +10,7 @@ const PortfolioCard = styled(Box)`
   }
 
   .projectThumbnail {
-    /* display: none;
-    visibility: hidden; */
     border-radius: 50%;
-  }
-
-  @media (min-width: ${breakpoints.md}) {
-    .projectThumbnail {
-      display: block;
-    }
-    &:hover {
-      .projectThumbnail {
-        visibility: visible;
-      }
-    }
   }
 `;
 
