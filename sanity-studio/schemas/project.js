@@ -58,6 +58,7 @@ export default {
       name: 'date',
       title: 'Date',
       type: 'string',
+      validation: Rule => Rule.required().warning('Required field'),
     },
     {
       name: 'projectUrlTitle',
