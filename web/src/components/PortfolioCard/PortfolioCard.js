@@ -6,11 +6,11 @@ import palette from '../../styles/palette';
 const PortfolioCard = styled(Box)`
   position: relative;
 
-  /* padding-bottom: 8px;
-  border-bottom: 1px solid ${palette.ink};
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ececec;
   &:last-child {
     border-bottom: 0;
-  } */
+  }
 
   .projectThumbnail {
     /* display: none;
