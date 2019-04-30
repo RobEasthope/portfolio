@@ -4,10 +4,7 @@ import Image from 'gatsby-image';
 import breakpoints from '../../styles/theme';
 
 const LandingJumbotron = styled(Image)`
-  max-width: 100vw;
-  @media (min-width: ${breakpoints.md}) {
-    max-width: calc(100vw - 186px);
-  }
+  width: 100%;
   height: 100vh;
 `;
 
