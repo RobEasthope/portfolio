@@ -108,7 +108,7 @@ const ProjectTemplate = props => {
             )}
             {data.sanityProject.agency && (
               <ProjectDetail
-                detailTitle="Client"
+                detailTitle="Agency"
                 detailText={data.sanityProject.agency.name}
                 detailUrl={data.sanityProject.agency.url}
               />
