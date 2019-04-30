@@ -23,11 +23,11 @@ const AboutSection = ({ title, blurb, portrait }) => (
       flexDirection="row"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <Box width={1} pb={3}>
+      <Box width={1}>
         <Image fluid={portrait.asset.fluid} />
       </Box>
       <Box width={1} pb={3}>
-        <ProjectText>
+        <ProjectText mt="1em">
           <BlockContent blocks={blurb} />
         </ProjectText>
       </Box>
