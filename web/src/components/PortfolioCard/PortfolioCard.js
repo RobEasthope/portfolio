@@ -5,6 +5,7 @@ import palette from '../../styles/palette';
 
 const PortfolioCard = styled(Box)`
   position: relative;
+
   /* padding-bottom: 8px;
   border-bottom: 1px solid ${palette.ink};
   &:last-child {
@@ -14,6 +15,7 @@ const PortfolioCard = styled(Box)`
   .projectThumbnail {
     display: none;
     visibility: hidden;
+    border-radius: 50%;
   }
 
   @media (min-width: ${breakpoints.md}) {
