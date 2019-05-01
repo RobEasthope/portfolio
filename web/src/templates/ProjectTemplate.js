@@ -73,9 +73,9 @@ const ProjectTemplate = props => {
   return (
     <Layout>
       <SEO
-        title={data.sanityProject.shortTitle}
-        description={data.sanityProject.shortDescription}
-        // keywords={data.sanityLandingPage.seoMetaData.keywords}
+        title={`${data.sanityProject.shortTitle} - Rob Easthope`}
+        description={data.sanityProject.description}
+        // keywords={data.sanityProject.seoMetaData.keywords}
       />
       <Flex
         id="portfolio"
@@ -138,7 +138,7 @@ const ProjectTemplate = props => {
             )}
           </Box>
         </Flex>
-        <MediaGallery order={{ b: 2, xlg: 3 }}>
+        <MediaGallery mt="4" order={{ b: 2, xlg: 3 }}>
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
               <Box mb="4" key={image._key}>
