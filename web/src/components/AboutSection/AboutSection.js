@@ -29,7 +29,7 @@ const AboutSection = ({ title, blurb, portrait }) => (
         <Image fluid={portrait.asset.fluid} />
       </Box>
       <Box width={1} pb={3}>
-        <ProjectText mt="1em">
+        <ProjectText mt="2em">
           <BlockContent blocks={blurb} />
         </ProjectText>
       </Box>
