@@ -6,6 +6,7 @@ const ProjectTitle = styled(Heading)`
   font-weight: normal;
   margin-top: 2rem;
   margin-bottom: 0.25em;
+  line-height: 1;
 `;
 
 export default ProjectTitle;
