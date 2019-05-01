@@ -27,9 +27,11 @@ const PortfolioSection = props => {
       px={{ b: 3, md: 4 }}
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
-        {title}
-      </SectionTitle>
+      <Flex width={1} justifyContent={{ md: 'flex-end' }}>
+        <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
+          {title}
+        </SectionTitle>
+      </Flex>
 
       <PortfolioIndexWrapper
         as="ul"
