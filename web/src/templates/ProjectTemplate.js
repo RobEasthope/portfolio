@@ -138,7 +138,7 @@ const ProjectTemplate = props => {
             )}
           </Box>
         </Flex>
-        <MediaGallery order={{ b: 2, xlg: 3 }}>
+        <MediaGallery mt="4" order={{ b: 2, xlg: 3 }}>
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
               <Box mb="4" key={image._key}>
