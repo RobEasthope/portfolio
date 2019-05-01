@@ -15,9 +15,11 @@ const AboutSection = ({ title, blurb, portrait }) => (
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
-    <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
-      {title}
-    </SectionTitle>
+    <Flex width={1} justifyContent={{ md: 'flex-end' }}>
+      <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
+        {title}
+      </SectionTitle>
+    </Flex>
     <Flex
       flexWrap="wrap"
       flexDirection="row"
@@ -27,7 +29,7 @@ const AboutSection = ({ title, blurb, portrait }) => (
         <Image fluid={portrait.asset.fluid} />
       </Box>
       <Box width={1} pb={3}>
-        <ProjectText mt="1em">
+        <ProjectText mt="2em">
           <BlockContent blocks={blurb} />
         </ProjectText>
       </Box>
