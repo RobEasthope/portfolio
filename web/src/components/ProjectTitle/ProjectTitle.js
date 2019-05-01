@@ -4,7 +4,7 @@ import { Heading } from 'rebass';
 const ProjectTitle = styled(Heading)`
   font-size: 8vw;
   font-weight: normal;
-  margin-top: 24px;
+  margin-top: 2rem;
   margin-bottom: 0.25em;
 `;
 
