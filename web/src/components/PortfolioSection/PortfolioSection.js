@@ -60,7 +60,7 @@ const PortfolioSection = props => {
                   </PortfolioCardThumbnail>
                 )}
                 <div>
-                  <PortfolioCardTitle ml={{ b: 0, md: '0.25em' }} mr="0.3em">
+                  <PortfolioCardTitle ml={{ b: 0 }} mr="0.3em">
                     {project.shortTitle}
                   </PortfolioCardTitle>
                   <PortfolioCardDescription>
