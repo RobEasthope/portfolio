@@ -73,8 +73,8 @@ const ProjectTemplate = props => {
   return (
     <Layout>
       <SEO
-        title={data.sanityProject.shortTitle}
-        description={data.sanityProject.shortDescription}
+        title={`${data.sanityProject.shortTitle} - Rob Easthope`}
+        description={data.sanityProject.description}
         // keywords={data.sanityLandingPage.seoMetaData.keywords}
       />
       <Flex
