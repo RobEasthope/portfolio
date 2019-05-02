@@ -3287,6 +3287,30 @@ get-document@1:
   version "1.0.0"
   resolved "https://registry.npmjs.org/get-document/-/get-document-1.0.0.tgz#4821bce66f1c24cb0331602be6cb6b12c4f01c4b"
 
+get-it@^4.0.4:
+  version "4.1.4"
+  resolved "https://registry.npmjs.org/get-it/-/get-it-4.1.4.tgz#440f837226de99abb5ecfe10e6597ca7cb8947c2"
+  dependencies:
+    create-error-class "^3.0.2"
+    debug "^2.6.8"
+    decompress-response "^3.3.0"
+    follow-redirects "^1.2.4"
+    form-urlencoded "^2.0.7"
+    in-publish "^2.0.0"
+    into-stream "^3.1.0"
+    is-plain-object "^2.0.4"
+    is-retry-allowed "^1.1.0"
+    is-stream "^1.1.0"
+    nano-pubsub "^1.0.2"
+    object-assign "^4.1.1"
+    parse-headers "^2.0.1"
+    progress-stream "^2.0.0"
+    same-origin "^0.1.1"
+    simple-concat "^1.0.0"
+    timed-out "^4.0.1"
+    tunnel-agent "^0.6.0"
+    url-parse "^1.1.9"
+
 get-it@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/get-it/-/get-it-5.0.0.tgz#d63d93fc95ed11f7f68c035284b8fafcd2467384"
@@ -3514,6 +3538,13 @@ history@^4.6.3:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
     value-equal "^0.4.0"
+
+hls.js@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.npmjs.org/hls.js/-/hls.js-0.11.0.tgz#a205fb61725d9d69bf6258984be3dc2ee829fa9e"
+  dependencies:
+    string.prototype.endswith "^0.2.0"
+    url-toolkit "^2.1.2"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -4324,7 +4355,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.1.1, lodash@^4.12.0, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.3.0, lodash@^4.8.0:
+lodash@^4.1.1, lodash@^4.12.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.3.0, lodash@^4.8.0:
   version "4.17.11"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -6149,7 +6180,7 @@ react-tippy@^1.2.3:
   dependencies:
     popper.js "^1.11.1"
 
-react@^16.2:
+react@^16.2, react@^16.2.0:
   version "16.8.6"
   resolved "https://registry.npmjs.org/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   dependencies:
@@ -6490,6 +6521,17 @@ safe-regex@^1.1.0:
 same-origin@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/same-origin/-/same-origin-0.1.1.tgz#c2287d3192577df517acbbd6d1451a9c3c3914f5"
+
+sanity-plugin-mux-input@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.npmjs.org/sanity-plugin-mux-input/-/sanity-plugin-mux-input-0.1.9.tgz#88604492e32ac692c1a3128b2c29e27362a0d8b9"
+  dependencies:
+    get-it "^4.0.4"
+    hls.js "^0.11.0"
+    lodash "^4.17.10"
+    prop-types "^15.6.0"
+    react "^16.2.0"
+    uuid "^3.3.2"
 
 sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
@@ -6932,6 +6974,10 @@ string-width@^1.0.1:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
 
+string.prototype.endswith@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/string.prototype.endswith/-/string.prototype.endswith-0.2.0.tgz#a19c20dee51a98777e9a47e10f09be393b9bba75"
+
 string.prototype.trim@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/string.prototype.trim/-/string.prototype.trim-1.1.2.tgz#d04de2c89e137f4d7d206f086b5ed2fae6be8cea"
@@ -7354,6 +7400,10 @@ url-parse@^1.1.9, url-parse@^1.4.3:
   dependencies:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
+
+url-toolkit@^2.1.2:
+  version "2.1.6"
+  resolved "https://registry.npmjs.org/url-toolkit/-/url-toolkit-2.1.6.tgz#6d03246499e519aad224c44044a4ae20544154f2"
 
 url@^0.11.0:
   version "0.11.0"
