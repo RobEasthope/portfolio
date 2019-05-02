@@ -37,6 +37,12 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'videoGallery',
+      title: 'Video gallery',
+      type: 'array',
+      of: [{ type: 'mux.video' }],
+    },
+    {
       name: 'gallery',
       title: 'Image gallery',
       type: 'array',
