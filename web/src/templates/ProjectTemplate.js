@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { Box, Flex } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
+import SanityMuxPlayer from 'sanity-mux-player';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
@@ -19,6 +20,40 @@ export const query = graphql`
       title
       shortTitle
       _rawBody
+      showreel {
+        asset {
+          _id
+          _rev
+          _type
+          data {
+            aspect_ratio
+            created_at
+            duration
+            id
+            max_stored_frame_rate
+            max_stored_resolution
+            mp4_support
+            passthrough
+            playback_ids {
+              id
+              policy
+            }
+            status
+            tracks {
+              duration
+              id
+              max_frame_rate
+              max_height
+              max_width
+              type
+            }
+          }
+          filename
+          playbackId
+          status
+          thumbTime
+        }
+      }
       gallery {
         _key
         imageAsset {
@@ -86,6 +121,17 @@ const ProjectTemplate = props => {
         justifyContent={{ b: 'flex-start', md: 'flex-end' }}
       >
         <Box width={1}>
+          {data.sanityProject.showreel.asset.playbackId}
+          <SanityMuxPlayer
+            assetDocument={data.sanityProject.showreel.asset}
+            autoload
+            autoplay
+            showControls
+            muted={false}
+            loop={false}
+          />
+        </Box>
+        <Box width={1}>
           <ProjectTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
             {data.sanityProject.title}
           </ProjectTitle>
@@ -138,6 +184,7 @@ const ProjectTemplate = props => {
             )}
           </Box>
         </Flex>
+
         <MediaGallery mt="4" order={{ b: 2, xlg: 3 }}>
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
