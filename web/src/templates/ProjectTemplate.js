@@ -175,15 +175,18 @@ const ProjectTemplate = props => {
         </Flex>
 
         <MediaGallery mt="4" order={{ b: 2, xlg: 3 }}>
-          <Box width={1} mb="4">
-            <SanityMuxPlayer
-              assetDocument={data.sanityProject.showreel.asset}
-              autoload
-              showControls
-              muted={false}
-              loop={false}
-            />
-          </Box>
+          {data.sanityProject.gallery && (
+            <Box width={1} mb="4">
+              <SanityMuxPlayer
+                assetDocument={data.sanityProject.showreel.asset}
+                autoload
+                showControls
+                muted={false}
+                loop={false}
+              />
+            </Box>
+          )}
+
           {data.sanityProject.gallery &&
             data.sanityProject.gallery.map(image => (
               <Box mb="4" key={image._key}>
