@@ -37,6 +37,11 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'showreel',
+      title: 'Showreel',
+      type: 'mux.video',
+    },
+    {
       name: 'gallery',
       title: 'Image gallery',
       type: 'array',
