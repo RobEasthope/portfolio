@@ -175,7 +175,7 @@ const ProjectTemplate = props => {
         </Flex>
 
         <MediaGallery mt="4" order={{ b: 2, xlg: 3 }}>
-          {data.sanityProject.gallery && (
+          {data.sanityProject.showreel && (
             <Box width={1} mb="4">
               <SanityMuxPlayer
                 assetDocument={data.sanityProject.showreel.asset}
