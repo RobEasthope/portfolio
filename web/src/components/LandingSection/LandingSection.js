@@ -23,7 +23,7 @@ const LandingSection = props => {
             {tagline}
           </LandingTagline>
         )}
-        {/* {image && <LandingJumbotron fluid={image.imageAsset.asset.fluid} />} */}
+        {image && <LandingJumbotron fluid={image.imageAsset.asset.fluid} />}
         {video && (
           <LandingVideoJumbotron
             assetDocument={video.asset}
