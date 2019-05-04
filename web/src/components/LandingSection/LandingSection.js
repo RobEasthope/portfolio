@@ -11,16 +11,18 @@ const LandingSection = props => {
   return (
     <Flex as="section">
       <RelativeBox width={1} px="0">
-        <LandingTagline
-          as="h1"
-          width="100%"
-          px="4"
-          m="0"
-          fontSize={{ sm: 5, md: 6, lg: 7, xlg: 8 }}
-        >
-          {tagline}
-        </LandingTagline>
-        <LandingJumbotron fluid={image.imageAsset.asset.fluid} />
+        {tagline && (
+          <LandingTagline
+            as="h1"
+            width="100%"
+            px="4"
+            m="0"
+            fontSize={{ sm: 5, md: 6, lg: 7, xlg: 8 }}
+          >
+            {tagline}
+          </LandingTagline>
+        )}
+        {image && <LandingJumbotron fluid={image.imageAsset.asset.fluid} />}
       </RelativeBox>
     </Flex>
   );

@@ -15,24 +15,30 @@ const AboutSection = ({ title, blurb, portrait }) => (
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
-    <Flex width={1} justifyContent={{ md: 'flex-end' }}>
-      <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
-        {title}
-      </SectionTitle>
-    </Flex>
+    {title && (
+      <Flex width={1} justifyContent={{ md: 'flex-end' }}>
+        <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
+          {title}
+        </SectionTitle>
+      </Flex>
+    )}
     <Flex
       flexWrap="wrap"
       flexDirection="row"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <Box width={1}>
-        <Image fluid={portrait.asset.fluid} />
-      </Box>
-      <Box width={1} pb={3}>
-        <ProjectText mt="2em">
-          <BlockContent blocks={blurb} />
-        </ProjectText>
-      </Box>
+      {portrait && (
+        <Box width={1}>
+          <Image fluid={portrait.asset.fluid} />
+        </Box>
+      )}
+      {blurb && (
+        <Box width={1} pb={3}>
+          <ProjectText mt="2em">
+            <BlockContent blocks={blurb} />
+          </ProjectText>
+        </Box>
+      )}
     </Flex>
   </Flex>
 );
