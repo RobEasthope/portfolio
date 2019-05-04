@@ -24,6 +24,40 @@ export const query = graphql`
         }
         altText
       }
+      video {
+        asset {
+          _id
+          _rev
+          _type
+          data {
+            aspect_ratio
+            created_at
+            duration
+            id
+            max_stored_frame_rate
+            max_stored_resolution
+            mp4_support
+            passthrough
+            playback_ids {
+              id
+              policy
+            }
+            status
+            tracks {
+              duration
+              id
+              max_frame_rate
+              max_height
+              max_width
+              type
+            }
+          }
+          filename
+          playbackId
+          status
+          thumbTime
+        }
+      }
     }
     portfolio: sanityPortfolio {
       title
@@ -79,7 +113,11 @@ const LandingPage = props => {
 
       <Layout>
         {/* Landing */}
-        <LandingSection tagline={landing.tagline} image={landing.image} />
+        <LandingSection
+          tagline={landing.tagline}
+          image={landing.image}
+          video={landing.video}
+        />
 
         {/* Portfolio */}
         <PortfolioSection

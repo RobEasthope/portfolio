@@ -15,5 +15,10 @@ export default {
       type: 'altImage',
       validation: Rule => Rule.required().warning('Required field'),
     },
+    {
+      name: 'video',
+      title: 'Landing video',
+      type: 'mux.video',
+    },
   ],
 };
