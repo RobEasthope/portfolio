@@ -27,10 +27,11 @@ const LandingSection = props => {
         {video && (
           <LandingVideoJumbotron
             assetDocument={video.asset}
+            autoplay
             autoload
-            showControls
-            muted={false}
-            loop={false}
+            showControls={false}
+            muted
+            loop
           />
         )}
       </RelativeBox>
