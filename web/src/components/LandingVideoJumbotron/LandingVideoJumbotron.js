@@ -15,9 +15,13 @@ const LandingJumbotron = styled(SanityMuxPlayer)`
   }
 
   video {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
   }
 `;
 
