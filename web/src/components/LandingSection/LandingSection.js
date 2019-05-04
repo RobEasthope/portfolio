@@ -4,9 +4,10 @@ import RelativeBox from '../RelativeBox/RelativeBox';
 
 import LandingTagline from '../LandingTagline/LandingTagline';
 import LandingJumbotron from '../LandingJumbotron/LandingJumbotron';
+import LandingVideoJumbotron from '../LandingVideoJumbotron/LandingVideoJumbotron';
 
 const LandingSection = props => {
-  const { tagline, image } = props;
+  const { tagline, image, video } = props;
 
   return (
     <Flex as="section">
@@ -23,6 +24,15 @@ const LandingSection = props => {
           </LandingTagline>
         )}
         {image && <LandingJumbotron fluid={image.imageAsset.asset.fluid} />}
+        {video && (
+          <LandingVideoJumbotron
+            assetDocument={video.asset}
+            autoload
+            showControls
+            muted={false}
+            loop={false}
+          />
+        )}
       </RelativeBox>
     </Flex>
   );
