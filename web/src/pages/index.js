@@ -116,7 +116,7 @@ const LandingPage = props => {
         <LandingSection
           tagline={landing.tagline}
           image={landing.image}
-          image={landing.video}
+          video={landing.video}
         />
 
         {/* Portfolio */}
