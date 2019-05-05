@@ -11,7 +11,6 @@ const PortfolioCard = styled(Box)`
 
   .projectThumbnail {
     display: none;
-    border-radius: 50%;
   }
 
   @media (min-width: ${breakpoints.md}) {
