@@ -155,7 +155,7 @@ const ProjectTemplate = props => {
                 detailUrl={project.agency.url}
               />
             )}
-            {project.projectUrl && data.sanityProject.projectUrlTitle && (
+            {project.projectUrl && project.projectUrlTitle && (
               <ProjectDetail
                 detailTitle={project.projectUrlTitle}
                 detailText={project.projectUrl}
@@ -186,7 +186,7 @@ const ProjectTemplate = props => {
           )}
 
           {project.gallery &&
-            data.sanityProject.gallery.map(image => (
+            project.gallery.map(image => (
               <Box mb="4" key={image._key}>
                 <Image
                   fluid={image.imageAsset.asset.fluid}
