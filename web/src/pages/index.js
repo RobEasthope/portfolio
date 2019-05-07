@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
@@ -141,6 +142,16 @@ const LandingPage = props => {
       </Layout>
     </React.Fragment>
   );
+};
+
+LandingPage.defaultProps = {
+  data: {},
+  errors: {},
+};
+
+LandingPage.propTypes = {
+  data: PropTypes.object,
+  errors: PropTypes.object,
 };
 
 export default LandingPage;
