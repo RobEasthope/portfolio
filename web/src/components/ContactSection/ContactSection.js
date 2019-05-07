@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 
 import SectionTitle from '../SectionTitle/SectionTitle';
@@ -20,6 +21,14 @@ const ContactSection = props => {
       </SectionTitle>
     </Flex>
   );
+};
+
+ContactSection.defaultProps = {
+  title: '',
+};
+
+ContactSection.propTypes = {
+  title: PropTypes.string,
 };
 
 export default ContactSection;

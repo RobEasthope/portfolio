@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Flex, Box } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'gatsby-image';
@@ -42,5 +43,17 @@ const AboutSection = ({ title, blurb, portrait }) => (
     </Flex>
   </Flex>
 );
+
+AboutSection.defaultProps = {
+  title: '',
+  blurb: [],
+  portrait: {},
+};
+
+AboutSection.propTypes = {
+  title: PropTypes.string,
+  blurb: PropTypes.arrayOf(PropTypes.object),
+  portrait: PropTypes.object,
+};
 
 export default AboutSection;

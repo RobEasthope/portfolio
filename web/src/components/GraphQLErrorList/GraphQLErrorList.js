@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const GraphQLErrorList = ({ errors }) => (
   <div>
@@ -8,5 +9,13 @@ const GraphQLErrorList = ({ errors }) => (
     ))}
   </div>
 );
+
+GraphQLErrorList.defaultProps = {
+  errors: [],
+};
+
+GraphQLErrorList.propTypes = {
+  errors: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default GraphQLErrorList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { Box, Flex } from 'rebass';
@@ -200,6 +201,16 @@ const ProjectTemplate = props => {
       </Flex>
     </Layout>
   );
+};
+
+ProjectTemplate.defaultProps = {
+  data: null,
+  errors: null,
+};
+
+ProjectTemplate.propTypes = {
+  data: PropTypes.object,
+  errors: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ProjectTemplate;

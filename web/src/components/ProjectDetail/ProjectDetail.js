@@ -1,9 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import fontSizing from '../../utils/fontsizing';
-import { measure } from '../../styles/theme';
-import palette from '../../styles/palette';
 import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
 
 const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
@@ -12,7 +7,7 @@ const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
       <ProjectDetailText width={1}>
         <dt>{detailTitle}</dt>
         <dd>
-          <a href={detailUrl} target="_blank">
+          <a href={detailUrl} target="_blank" rel="noreferrer noopener">
             {detailText}
           </a>
         </dd>
@@ -25,8 +20,6 @@ const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
       <dd>{detailText}</dd>
     </ProjectDetailText>
   );
-
-  return null;
 };
 
 export default ProjectDetail;

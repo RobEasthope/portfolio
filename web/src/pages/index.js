@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
@@ -8,7 +9,6 @@ import SEO from '../components/Seo/Seo';
 import LandingSection from '../components/LandingSection/LandingSection';
 import PortfolioSection from '../components/PortfolioSection/PortfolioSection';
 import AboutSection from '../components/AboutSection/AboutSection';
-import ContactSection from '../components/ContactSection/ContactSection';
 
 export const query = graphql`
   {
@@ -90,7 +90,7 @@ export const query = graphql`
     }
   }
 `;
-const LandingPage = props => {
+const IndexPage = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -112,35 +112,35 @@ const LandingPage = props => {
       <SEO title="Rob Easthope" />
 
       <Layout>
-        {/* Landing */}
         <LandingSection
           tagline={landing.tagline}
           image={landing.image}
           video={landing.video}
         />
 
-        {/* Portfolio */}
         <PortfolioSection
           title={portfolio.title}
           portfolioIndex={portfolio.portfolioIndex}
         />
 
-        {/* About */}
         <AboutSection
           title={about.title}
           blurb={about._rawBody}
           portrait={about.portrait}
         />
-
-        {/* Contact */}
-        {/* <ContactSection
-          title="Contact"
-          email={about.email}
-          linkedin={about.linkedin}
-        /> */}
       </Layout>
     </React.Fragment>
   );
 };
 
-export default LandingPage;
+IndexPage.defaultProps = {
+  data: null,
+  errors: null,
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.object,
+  errors: PropTypes.arrayOf(PropTypes.string),
+};
+
+export default IndexPage;

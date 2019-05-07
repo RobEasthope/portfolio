@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
@@ -74,6 +75,16 @@ const PortfolioSection = props => {
       </PortfolioIndexWrapper>
     </Flex>
   );
+};
+
+PortfolioSection.defaultProps = {
+  title: '',
+  portfolioIndex: [],
+};
+
+PortfolioSection.propTypes = {
+  title: PropTypes.string,
+  portfolioIndex: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default PortfolioSection;
