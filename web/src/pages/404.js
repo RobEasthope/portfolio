@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 import ProjectText from '../components/ProjectText/ProjectText';
+import TextWrapper from '../components/TextWrapper/TextWrapper';
 
 const NotFoundPage = () => (
   <Layout>
@@ -17,7 +18,7 @@ const NotFoundPage = () => (
       px="4"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <Flex
+      <TextWrapper
         flexWrap="wrap"
         flexDirection="row"
         justifyContent={{ b: 'flex-start', md: 'flex-end' }}
@@ -39,7 +40,7 @@ const NotFoundPage = () => (
             />
           </ProjectText>
         </Box>
-      </Flex>
+      </TextWrapper>
     </Flex>
   </Layout>
 );

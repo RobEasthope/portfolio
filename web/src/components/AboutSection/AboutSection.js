@@ -6,6 +6,7 @@ import Image from 'gatsby-image';
 
 import SectionTitle from '../SectionTitle/SectionTitle';
 import ProjectText from '../ProjectText/ProjectText';
+import TextWrapper from '../TextWrapper/TextWrapper';
 
 const AboutSection = ({ title, blurb, portrait }) => (
   <Flex
@@ -23,7 +24,7 @@ const AboutSection = ({ title, blurb, portrait }) => (
         </SectionTitle>
       </Flex>
     )}
-    <Flex
+    <TextWrapper
       flexWrap="wrap"
       flexDirection="row"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
@@ -40,7 +41,7 @@ const AboutSection = ({ title, blurb, portrait }) => (
           </ProjectText>
         </Box>
       )}
-    </Flex>
+    </TextWrapper>
   </Flex>
 );
 
