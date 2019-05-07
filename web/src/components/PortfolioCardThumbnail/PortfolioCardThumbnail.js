@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Box } from 'rebass';
 
 import fontSizing from '../../utils/fontsizing';
+import { colors } from '../../styles/theme';
 
 const PortfolioCardThumbnail = styled(Box)`
   position: absolute;
