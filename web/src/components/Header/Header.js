@@ -29,7 +29,6 @@ const Header = () => (
         pt="48px"
         pb="48px"
         m="0"
-        // alignItems="center"
         justifyContent="flex-end"
         flexWrap="wrap"
         flexDirection="column"
@@ -45,9 +44,6 @@ const Header = () => (
           <li>
             <a href="/#about">About</a>
           </li>
-          {/* <li>
-            <a href="#contact">Contact</a>
-          </li> */}
         </Scrollspy>
       </Nav>
     </nav>
