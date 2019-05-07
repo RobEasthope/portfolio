@@ -134,7 +134,7 @@ const IndexPage = props => {
 };
 
 IndexPage.defaultProps = {
-  data: {},
+  data: null,
   errors: null,
 };
 

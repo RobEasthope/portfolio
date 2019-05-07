@@ -204,7 +204,7 @@ const ProjectTemplate = props => {
 };
 
 ProjectTemplate.defaultProps = {
-  data: {},
+  data: null,
   errors: null,
 };
 
