@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Text } from 'rebass';
 
-import palette from '../../styles/palette';
+import { colors } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
 
 const PortfolioCardTitle = styled(Text)`
   display: inline-block;
   font-size: ${fontSizing(32, 72)};
-  color: ${palette.ink};
+  color: ${colors.ink};
   text-decoration: none;
 `;
 

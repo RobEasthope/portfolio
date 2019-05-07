@@ -15,6 +15,17 @@ breakpoints.md = breakpoints[2];
 breakpoints.lg = breakpoints[3];
 breakpoints.xlg = breakpoints[4];
 
+// Colour palette
+export const colors = {
+  black: '#000',
+  white: '#fff',
+  ink: 'rgb(36, 36, 36)',
+  imperialRed: 'rgb(237, 41, 57)',
+  carmine: 'rgb(150, 0, 24)',
+  japaneseCarmine: 'rgb(157, 41, 51)',
+  warmRed: 'rgb(247, 78, 61)',
+};
+
 // Typescale
 export const fontSizes = [
   '0', // Zero - 0
@@ -42,4 +53,4 @@ export const contentWidth = {
   max: '1680',
 };
 
-export default { breakpoints, fontSizes, space };
+export default { breakpoints, colors, fontSizes, space };
