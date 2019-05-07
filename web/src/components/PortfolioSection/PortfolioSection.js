@@ -25,6 +25,7 @@ const PortfolioSection = props => {
       as="section"
       flexDirection="row"
       flexWrap="wrap"
+      ml={{ b: 0, md: 4 }}
       px={{ b: 3, md: 4 }}
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
