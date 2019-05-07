@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import App from '../App/App';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import AppWrapper from '../Grid/AppWrapper';
-import MainContent from '../Grid/MainContent';
+import AppWrapper from '../AppWrapper/AppWrapper';
+import MainContent from '../MainContent/MainContent';
 
 const Layout = ({ children }) => (
   <App>
