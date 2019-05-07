@@ -6,9 +6,7 @@ import Scrollspy from 'react-scrollspy';
 import { breakpoints } from '../../styles/theme';
 
 import Nav from '../Nav/Nav';
-import NavLink from '../NavLink/Navlink';
 import Logo from '../Logo/Logo';
-
 import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 
 const HeaderWrapper = styled(Box)`
