@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
-import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
 import ProjectText from '../components/ProjectText/ProjectText';
 
 const NotFoundPage = () => (

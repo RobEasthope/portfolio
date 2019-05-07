@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Text } from 'rebass';
 
 import fontSizing from '../../utils/fontsizing';
-import { measure } from '../../styles/theme';
 
 const ProjectText = styled(Text)`
   font-size: ${fontSizing(20, 24)};
