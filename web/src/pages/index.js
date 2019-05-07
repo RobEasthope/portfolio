@@ -90,7 +90,7 @@ export const query = graphql`
     }
   }
 `;
-const LandingPage = props => {
+const IndexPage = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -133,14 +133,14 @@ const LandingPage = props => {
   );
 };
 
-LandingPage.defaultProps = {
+IndexPage.defaultProps = {
   data: {},
   errors: {},
 };
 
-LandingPage.propTypes = {
+IndexPage.propTypes = {
   data: PropTypes.object,
   errors: PropTypes.object,
 };
 
-export default LandingPage;
+export default IndexPage;
