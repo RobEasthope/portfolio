@@ -1,9 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import fontSizing from '../../utils/fontsizing';
-import { measure } from '../../styles/theme';
-import palette from '../../styles/palette';
 import ProjectDetailText from '../ProjectDetailText/ProjectDetailText';
 
 const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
