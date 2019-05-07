@@ -6,7 +6,6 @@ import fontSizing from '../../utils/fontsizing';
 
 const Nav = styled(Flex)`
   list-style-type: none;
-  /* min-width: 154px; */
   height: 100vh;
 
   ul {
