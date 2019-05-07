@@ -205,12 +205,12 @@ const ProjectTemplate = props => {
 
 ProjectTemplate.defaultProps = {
   data: {},
-  errors: {},
+  errors: null,
 };
 
 ProjectTemplate.propTypes = {
   data: PropTypes.object,
-  errors: PropTypes.object,
+  errors: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ProjectTemplate;

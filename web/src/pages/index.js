@@ -135,12 +135,12 @@ const IndexPage = props => {
 
 IndexPage.defaultProps = {
   data: {},
-  errors: {},
+  errors: null,
 };
 
 IndexPage.propTypes = {
   data: PropTypes.object,
-  errors: PropTypes.object,
+  errors: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default IndexPage;
