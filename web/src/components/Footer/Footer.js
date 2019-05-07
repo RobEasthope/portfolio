@@ -25,6 +25,7 @@ const Footer = () => (
       ml={{ b: '0', md: '2em' }}
       mr={{ b: '2em', md: '0' }}
       target="_blank"
+      rel="noreferrer noopener"
     >
       Linkedin
     </FooterLink>
