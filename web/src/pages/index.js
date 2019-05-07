@@ -9,7 +9,6 @@ import SEO from '../components/Seo/Seo';
 import LandingSection from '../components/LandingSection/LandingSection';
 import PortfolioSection from '../components/PortfolioSection/PortfolioSection';
 import AboutSection from '../components/AboutSection/AboutSection';
-import ContactSection from '../components/ContactSection/ContactSection';
 
 export const query = graphql`
   {
@@ -113,32 +112,22 @@ const LandingPage = props => {
       <SEO title="Rob Easthope" />
 
       <Layout>
-        {/* Landing */}
         <LandingSection
           tagline={landing.tagline}
           image={landing.image}
           video={landing.video}
         />
 
-        {/* Portfolio */}
         <PortfolioSection
           title={portfolio.title}
           portfolioIndex={portfolio.portfolioIndex}
         />
 
-        {/* About */}
         <AboutSection
           title={about.title}
           blurb={about._rawBody}
           portrait={about.portrait}
         />
-
-        {/* Contact */}
-        {/* <ContactSection
-          title="Contact"
-          email={about.email}
-          linkedin={about.linkedin}
-        /> */}
       </Layout>
     </React.Fragment>
   );
