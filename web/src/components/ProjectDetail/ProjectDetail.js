@@ -20,8 +20,6 @@ const ProjectDetail = ({ detailTitle, detailText, detailUrl }) => {
       <dd>{detailText}</dd>
     </ProjectDetailText>
   );
-
-  return null;
 };
 
 export default ProjectDetail;
