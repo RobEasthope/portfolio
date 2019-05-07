@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Text } from 'rebass';
@@ -16,5 +17,15 @@ const NavLink = ({ to, title }) => (
     <NavLinkText to={to}>{title}</NavLinkText>
   </Text>
 );
+
+NavLink.defaultProps = {
+  to: '',
+  title: '',
+};
+
+NavLink.propTypes = {
+  to: PropTypes.string,
+  title: PropTypes.string,
+};
 
 export default NavLink;
