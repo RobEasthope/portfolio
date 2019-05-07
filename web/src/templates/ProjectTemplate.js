@@ -6,6 +6,8 @@ import { Box, Flex } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 import SanityMuxPlayer from 'sanity-mux-player';
 
+import styled from 'styled-components';
+
 import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
@@ -89,6 +91,10 @@ export const query = graphql`
   }
 `;
 
+const ProjectTextWrapper = styled(Flex)`
+  max-width: 900px;
+`;
+
 const ProjectTemplate = props => {
   const { data, errors } = props;
 
@@ -126,18 +132,24 @@ const ProjectTemplate = props => {
             {project.title}
           </ProjectTitle>
         </Box>
-        <Flex
+        <ProjectTextWrapper
           flexWrap="wrap"
           flexDirection="row"
           justifyContent={{ b: 'flex-start', md: 'flex-end' }}
         >
-          <Box mb="3" order={{ b: 1, xlg: 2 }}>
+          <Box mb="3" width={{ b: 1 / 1, xlg: 2 / 3 }} order={{ b: 1, xlg: 2 }}>
             <ProjectText>
               <BlockContent blocks={project._rawBody} />
             </ProjectText>
           </Box>
 
-          <Box as="dl" m="0" pb="3" order={{ b: 3, xlg: 1 }}>
+          <Box
+            as="dl"
+            width={{ b: 1 / 1, xlg: 1 / 3 }}
+            m="0"
+            pb="3"
+            order={{ b: 2, xlg: 1 }}
+          >
             {project.date && (
               <ProjectDetailText mb="1em">{project.date}</ProjectDetailText>
             )}
@@ -170,9 +182,9 @@ const ProjectTemplate = props => {
               />
             )}
           </Box>
-        </Flex>
+        </ProjectTextWrapper>
 
-        <MediaGallery mt="4" order={{ b: 2, xlg: 3 }}>
+        <MediaGallery mt="4" order={{ b: 2, lg: 3 }}>
           {project.showreel && (
             <Box width={1} mb="4">
               <SanityMuxPlayer
