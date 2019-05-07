@@ -12,6 +12,10 @@ const PortfolioCardThumbnail = styled(Box)`
   width: ${fontSizing(32, 72)};
   height: ${fontSizing(32, 72)};
   transform: translateX(-125%);
+
+  .projectThumbnail {
+    border-radius: 50%;
+  }
 `;
 
 export default PortfolioCardThumbnail;
