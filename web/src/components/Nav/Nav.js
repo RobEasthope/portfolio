@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Flex } from 'rebass';
 
-import palette from '../../styles/palette';
+import { colors } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
 
 const Nav = styled(Flex)`
@@ -10,7 +10,7 @@ const Nav = styled(Flex)`
 
   ul {
     list-style-type: none;
-    color: ${palette.ink};
+    color: ${colors.ink};
 
     font-size: ${fontSizing(18, 24)};
     margin: 0;

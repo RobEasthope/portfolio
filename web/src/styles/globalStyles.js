@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import palette from './palette';
+import { colors } from './theme';
 
 const GlobalStyles = createGlobalStyle`
   body {
     font-family: "adobe-garamond-pro", serif;
     font-weight: 400;
-    color: ${palette.ink};
+    color: ${colors.ink};
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -17,10 +17,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: ${palette.ink};
+    color: ${colors.ink};
 
     &:hover {
-      color: ${palette.imperialRed};
+      color: ${colors.imperialRed};
     }
   }
 

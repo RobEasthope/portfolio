@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'rebass';
 
-import palette from '../../styles/palette';
+import { colors } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
 
 const FooterLink = styled(Link)`
   font-size: ${fontSizing(18, 24)};
-  color: ${palette.ink};
+  color: ${colors.ink};
 `;
 
 export default FooterLink;
