@@ -8,14 +8,14 @@ import SanityMuxPlayer from 'sanity-mux-player';
 
 import styled from 'styled-components';
 
-import GraphQLErrorList from '../../components/GraphQLErrorList/GraphQLErrorList';
-import Layout from '../../components/Layout/Layout';
-import SEO from '../../components/Seo/Seo';
-import ProjectTitle from '../../components/ProjectTitle/ProjectTitle';
-import ProjectText from '../../components/ProjectText/ProjectText';
-import ProjectDetail from '../../components/ProjectDetail/ProjectDetail';
-import ProjectDetailText from '../../components/ProjectDetailText/ProjectDetailText';
-import MediaGallery from '../../components/MediaGallery/MediaGallery';
+import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
+import Layout from '../components/Layout/Layout';
+import SEO from '../components/Seo/Seo';
+import ProjectTitle from '../components/ProjectTitle/ProjectTitle';
+import ProjectText from '../components/ProjectText/ProjectText';
+import ProjectDetail from '../components/ProjectDetail/ProjectDetail';
+import ProjectDetailText from '../components/ProjectDetailText/ProjectDetailText';
+import MediaGallery from '../components/MediaGallery/MediaGallery';
 
 export const query = graphql`
   query($slug: String) {
@@ -95,7 +95,7 @@ const ProjectTextWrapper = styled(Flex)`
   max-width: 900px;
 `;
 
-const Project = props => {
+const ProjectTemplate = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -212,14 +212,14 @@ const Project = props => {
   );
 };
 
-Project.defaultProps = {
+ProjectTemplate.defaultProps = {
   data: null,
   errors: null,
 };
 
-Project.propTypes = {
+ProjectTemplate.propTypes = {
   data: PropTypes.object,
   errors: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default Project;
+export default ProjectTemplate;
