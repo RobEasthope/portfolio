@@ -1,10 +1,10 @@
 import React from 'react';
 import { Flex } from 'rebass';
-import RelativeBox from '../RelativeBox/RelativeBox';
+import RelativeBox from '../../components/RelativeBox/RelativeBox';
 
-import LandingTagline from '../LandingTagline/LandingTagline';
-import LandingJumbotron from '../LandingJumbotron/LandingJumbotron';
-import LandingVideoJumbotron from '../LandingVideoJumbotron/LandingVideoJumbotron';
+import LandingTagline from '../../components/LandingTagline/LandingTagline';
+import LandingJumbotron from '../../components/LandingJumbotron/LandingJumbotron';
+import LandingVideoJumbotron from '../../components/LandingVideoJumbotron/LandingVideoJumbotron';
 
 const LandingSection = props => {
   const { tagline, image, video } = props;
