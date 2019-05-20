@@ -6,9 +6,9 @@ import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 
-import LandingSection from '../components/LandingSection/LandingSection';
-import PortfolioSection from '../components/PortfolioSection/PortfolioSection';
-import AboutSection from '../components/AboutSection/AboutSection';
+import LandingSection from '../components/index-sections/LandingSection/LandingSection';
+import PortfolioSection from '../components/index-sections/PortfolioSection/PortfolioSection';
+import AboutSection from '../components/index-sections/AboutSection/AboutSection';
 
 export const query = graphql`
   {

@@ -4,13 +4,13 @@ import Image from 'gatsby-image';
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
 
-import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
-import PortfolioCardLink from '../../components/PortfolioCardLink/PortfolioCardLink';
-import PortfolioCardTitle from '../../components/PortfolioCardTitle/PortfolioCardTitle';
-import PortfolioCardDescription from '../../components/PortfolioCardDescription/PortfolioCardDescription';
-import PortfolioCardThumbnail from '../../components/PortfolioCardThumbnail/PortfolioCardThumbnail';
-import RelativeBox from '../../components/RelativeBox/RelativeBox';
+import SectionTitle from '../../SectionTitle/SectionTitle';
+import PortfolioCard from '../../PortfolioCard/PortfolioCard';
+import PortfolioCardLink from '../../PortfolioCard/components/PortfolioCardLink/PortfolioCardLink';
+import PortfolioCardTitle from '../../PortfolioCard/components/PortfolioCardTitle/PortfolioCardTitle';
+import PortfolioCardDescription from '../../PortfolioCard/components/PortfolioCardDescription/PortfolioCardDescription';
+import PortfolioCardThumbnail from '../../PortfolioCard/components/PortfolioCardThumbnail/PortfolioCardThumbnail';
+import RelativeBox from '../../RelativeBox/RelativeBox';
 
 const PortfolioIndexWrapper = styled(Box)`
   list-style-type: none;

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Text } from 'rebass';
-import { colors } from '../../styles/theme';
-import fontSizing from '../../utils/fontsizing';
+import { colors } from '../../../../styles/theme';
+import fontSizing from '../../../../utils/fontsizing';
 
 const NavLinkText = styled(Link)`
   color: ${colors.ink};
