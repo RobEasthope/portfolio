@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 
-import SectionTitle from '../../SectionTitle/SectionTitle';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const ContactSection = props => {
   const { title } = props;

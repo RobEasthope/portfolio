@@ -4,9 +4,9 @@ import { Flex, Box } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'gatsby-image';
 
-import SectionTitle from '../../SectionTitle/SectionTitle';
-import ProjectText from '../../ProjectText/ProjectText';
-import TextWrapper from '../../TextWrapper/TextWrapper';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import ProjectText from '../../components/ProjectText/ProjectText';
+import TextWrapper from '../../components/TextWrapper/TextWrapper';
 
 const AboutSection = ({ title, blurb, portrait }) => (
   <Flex

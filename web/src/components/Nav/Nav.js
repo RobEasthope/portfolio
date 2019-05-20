@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Flex } from 'rebass';
 
-import { colors } from '../../../../styles/theme';
-import fontSizing from '../../../../utils/fontsizing';
+import { colors } from '../../styles/theme';
+import fontSizing from '../../utils/fontsizing';
 
 const Nav = styled(Flex)`
   list-style-type: none;

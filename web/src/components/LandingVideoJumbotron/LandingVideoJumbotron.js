@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import SanityMuxPlayer from 'sanity-mux-player';
 
-import { breakpoints } from '../../../../../styles/theme';
+import { breakpoints } from '../../styles/theme';
 
 const LandingJumbotron = styled(SanityMuxPlayer)`
   position: relative;

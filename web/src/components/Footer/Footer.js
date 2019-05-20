@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from 'rebass';
 
-import FooterLink from './components/FooterLink/FooterLink';
+import FooterLink from '../FooterLink/FooterLink';
 
 const Footer = () => (
   <Flex
