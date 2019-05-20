@@ -8,6 +8,7 @@ import SEO from '../components/Seo/Seo';
 
 import LandingSection from '../sections/LandingSection/LandingSection';
 import PortfolioSection from '../sections/PortfolioSection/PortfolioSection';
+import SandboxSection from '../sections/SandboxSection/SandboxSection';
 import AboutSection from '../sections/AboutSection/AboutSection';
 
 export const query = graphql`
@@ -77,6 +78,24 @@ export const query = graphql`
         }
       }
     }
+    sandbox: sanitySandbox {
+      title
+      sandboxIndex {
+        id
+        shortTitle
+        description
+        slug {
+          current
+        }
+        thumbnailImage {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
     about: sanityAbout {
       title
       _rawBody
@@ -105,7 +124,7 @@ const IndexPage = props => {
     throw new Error('Missing landing page data.');
   }
 
-  const { landing, portfolio, about } = data;
+  const { landing, portfolio, sandbox, about } = data;
 
   return (
     <React.Fragment>
@@ -121,6 +140,11 @@ const IndexPage = props => {
         <PortfolioSection
           title={portfolio.title}
           portfolioIndex={portfolio.portfolioIndex}
+        />
+
+        <SandboxSection
+          title={sandbox.title}
+          sandIndex={sandbox.sandboxIndex}
         />
 
         <AboutSection
