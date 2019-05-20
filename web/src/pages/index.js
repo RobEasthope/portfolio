@@ -131,22 +131,26 @@ const IndexPage = props => {
 
       <Layout>
         <LandingSection
+          sectionId="landing"
           tagline={landing.tagline}
           image={landing.image}
           video={landing.video}
         />
 
         <PortfolioSection
+          sectionId="portfolio"
           title={portfolio.title}
           portfolioIndex={portfolio.portfolioIndex}
         />
 
         <PortfolioSection
+          sectionId="side-projects"
           title={sandbox.title}
           portfolioIndex={sandbox.sandboxIndex}
         />
 
         <AboutSection
+          sectionId="about"
           title={about.title}
           blurb={about._rawBody}
           portrait={about.portrait}
