@@ -8,7 +8,6 @@ import SEO from '../components/Seo/Seo';
 
 import LandingSection from '../sections/LandingSection/LandingSection';
 import PortfolioSection from '../sections/PortfolioSection/PortfolioSection';
-import SandboxSection from '../sections/SandboxSection/SandboxSection';
 import AboutSection from '../sections/AboutSection/AboutSection';
 
 export const query = graphql`
@@ -142,9 +141,9 @@ const IndexPage = props => {
           portfolioIndex={portfolio.portfolioIndex}
         />
 
-        <SandboxSection
+        <PortfolioSection
           title={sandbox.title}
-          sandIndex={sandbox.sandboxIndex}
+          portfolioIndex={sandbox.sandboxIndex}
         />
 
         <AboutSection
