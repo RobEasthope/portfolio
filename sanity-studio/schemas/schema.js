@@ -15,6 +15,7 @@ import tech from './tech';
 import project from './project';
 import organisation from './organisation';
 import portfolio from './portfolio';
+import sandbox from './sandbox';
 import landing from './landing';
 import about from './about';
 
@@ -33,6 +34,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     portfolio,
+    sandbox,
     landing,
     about,
     blockContent,

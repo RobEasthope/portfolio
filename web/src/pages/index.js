@@ -6,9 +6,9 @@ import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 
-import LandingSection from '../components/LandingSection/LandingSection';
-import PortfolioSection from '../components/PortfolioSection/PortfolioSection';
-import AboutSection from '../components/AboutSection/AboutSection';
+import LandingSection from '../sections/LandingSection/LandingSection';
+import PortfolioSection from '../sections/PortfolioSection/PortfolioSection';
+import AboutSection from '../sections/AboutSection/AboutSection';
 
 export const query = graphql`
   {
@@ -77,6 +77,24 @@ export const query = graphql`
         }
       }
     }
+    sandbox: sanitySandbox {
+      title
+      sandboxIndex {
+        id
+        shortTitle
+        description
+        slug {
+          current
+        }
+        thumbnailImage {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
     about: sanityAbout {
       title
       _rawBody
@@ -105,7 +123,7 @@ const IndexPage = props => {
     throw new Error('Missing landing page data.');
   }
 
-  const { landing, portfolio, about } = data;
+  const { landing, portfolio, sandbox, about } = data;
 
   return (
     <React.Fragment>
@@ -113,17 +131,26 @@ const IndexPage = props => {
 
       <Layout>
         <LandingSection
+          sectionId="landing"
           tagline={landing.tagline}
           image={landing.image}
           video={landing.video}
         />
 
         <PortfolioSection
+          sectionId="portfolio"
           title={portfolio.title}
           portfolioIndex={portfolio.portfolioIndex}
         />
 
+        <PortfolioSection
+          sectionId="side-projects"
+          title={sandbox.title}
+          portfolioIndex={sandbox.sandboxIndex}
+        />
+
         <AboutSection
+          sectionId="about"
           title={about.title}
           blurb={about._rawBody}
           portrait={about.portrait}

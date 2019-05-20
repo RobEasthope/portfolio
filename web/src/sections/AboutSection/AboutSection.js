@@ -4,13 +4,13 @@ import { Flex, Box } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'gatsby-image';
 
-import SectionTitle from '../SectionTitle/SectionTitle';
-import ProjectText from '../ProjectText/ProjectText';
-import TextWrapper from '../TextWrapper/TextWrapper';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import ProjectText from '../../components/ProjectText/ProjectText';
+import TextWrapper from '../../components/TextWrapper/TextWrapper';
 
-const AboutSection = ({ title, blurb, portrait }) => (
+const AboutSection = ({ sectionId, title, blurb, portrait }) => (
   <Flex
-    id="about"
+    id={sectionId}
     as="section"
     flexDirection="row"
     flexWrap="wrap"
@@ -46,12 +46,14 @@ const AboutSection = ({ title, blurb, portrait }) => (
 );
 
 AboutSection.defaultProps = {
+  sectionId: '',
   title: '',
   blurb: [],
   portrait: {},
 };
 
 AboutSection.propTypes = {
+  sectionId: PropTypes.string,
   title: PropTypes.string,
   blurb: PropTypes.arrayOf(PropTypes.object),
   portrait: PropTypes.object,
