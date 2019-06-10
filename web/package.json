@@ -8,7 +8,7 @@
     "@sanity/block-content-to-react": "^2.0.6",
     "babel-plugin-styled-components": "^1.10.0",
     "dotenv": "^7.0.0",
-    "gatsby": "2.1.22",
+    "gatsby": "^2.4.0",
     "gatsby-image": "^2.0.31",
     "gatsby-plugin-canonical-urls": "^2.0.12",
     "gatsby-plugin-catch-links": "^2.0.13",
