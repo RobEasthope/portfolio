@@ -2,6 +2,14 @@ require('dotenv').config({
   path: `.env`,
 });
 
+// require('dotenv').config({
+//   path: `.env.${process.env.NODE_ENV || 'development'}`,
+// });
+
+const isProd = process.env.NODE_ENV === 'production';
+
+const token = process.env.SANITY_TOKEN;
+
 module.exports = {
   siteMetadata: {
     title: `Rob Easthope`,
@@ -50,8 +58,8 @@ module.exports = {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_PROJECT_DATASET,
         token: process.env.SANITY_TOKEN,
-        overlayDrafts: true,
-        watchMode: true,
+        overlayDrafts: !isProd && token,
+        watchMode: !isProd,
       },
     },
     {
