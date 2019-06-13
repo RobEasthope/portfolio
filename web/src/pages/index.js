@@ -26,37 +26,14 @@ export const query = graphql`
       }
       video {
         asset {
-          _id
-          _rev
-          _type
-          data {
-            aspect_ratio
-            created_at
-            duration
-            id
-            max_stored_frame_rate
-            max_stored_resolution
-            mp4_support
-            passthrough
-            playback_ids {
-              id
-              policy
-            }
-            status
-            tracks {
-              duration
-              id
-              max_frame_rate
-              max_height
-              max_width
-              type
-            }
-          }
-          filename
-          playbackId
           status
-          thumbTime
+          playbackId
+          assetId
+          _type
+          _key
         }
+        _type
+        _key
       }
     }
     portfolio: sanityPortfolio {
