@@ -24,37 +24,14 @@ export const query = graphql`
       shortTitle
       _rawBody
       showreel {
+        _key
+        _type
         asset {
-          _id
-          _rev
+          _key
           _type
-          data {
-            aspect_ratio
-            created_at
-            duration
-            id
-            max_stored_frame_rate
-            max_stored_resolution
-            mp4_support
-            passthrough
-            playback_ids {
-              id
-              policy
-            }
-            status
-            tracks {
-              duration
-              id
-              max_frame_rate
-              max_height
-              max_width
-              type
-            }
-          }
-          filename
+          assetId
           playbackId
           status
-          thumbTime
         }
       }
       gallery {
@@ -117,7 +94,7 @@ const Project = props => {
       <SEO
         title={`${project.shortTitle} - Rob Easthope`}
         description={project.description}
-        // keywords={project.seoMetaData.keywords}
+      // keywords={project.seoMetaData.keywords}
       />
       <Flex
         id="portfolio"
