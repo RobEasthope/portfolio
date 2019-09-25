@@ -33,7 +33,7 @@ const Header = () => (
       >
         <Logo url="/" src={LogoAsset} altText="Rob Easthope" />
         <Scrollspy
-          items={['portfolio', 'about', 'contact']}
+          items={['portfolio', 'side-projects', 'about']}
           currentClassName="is-current"
         >
           <li>
