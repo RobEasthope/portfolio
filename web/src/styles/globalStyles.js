@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: ${colors.ink};
+    transition: 0.4s color;
 
     &:hover {
       color: ${colors.typographyRed};
