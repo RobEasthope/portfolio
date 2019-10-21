@@ -24,6 +24,7 @@ export const colors = {
   carmine: 'rgb(150, 0, 24)',
   japaneseCarmine: 'rgb(157, 41, 51)',
   warmRed: 'rgb(247, 78, 61)',
+  typographyRed: '#e52814'
 };
 
 // Typescale
