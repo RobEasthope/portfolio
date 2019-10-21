@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${colors.ink};
 
     &:hover {
-      color: ${colors.imperialRed};
+      color: ${colors.typographyRed};
     }
   }
 
