@@ -68,12 +68,20 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title('Tech & Orgs')
+        .title('Resume')
         .icon(GoTerminal)
         .child(
           S.list()
-            .title('Tech & Orgs')
+            .title('Resume')
             .items([
+              S.listItem()
+                .title('Gigs')
+                .icon(GoCode)
+                .child(
+                  S.documentTypeList('gig').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
               S.listItem()
                 .title('Technologies')
                 .icon(GoCode)
