@@ -45,7 +45,6 @@ export default {
       options: {
         dateFormat: 'DD-MMMM-YYYY',
       },
-      validation: Rule => Rule.required().warning('Required field'),
     },
     
   ],
