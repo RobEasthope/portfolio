@@ -61,5 +61,21 @@ export default {
         subtitle: `${startDate.split(' -')} - ${endDate ? endDate.split(' -') : 'Present'}` // YYYY-MM-DD --> YYYY,
       }
     }
-  }
+  },
+  orderings: [
+    {
+      title: 'Start Date, New',
+      name: 'startDateDesc',
+      by: [
+        { field: 'startDate.utc', direction: 'desc' }
+      ]
+    },
+    {
+      title: 'Start Date, Old',
+      name: 'startDateAsc',
+      by: [
+        { field: 'startDate.utc', direction: 'asc' }
+      ]
+    },
+  ]
 };
