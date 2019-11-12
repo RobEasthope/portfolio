@@ -14,7 +14,9 @@ const NavLinkText = styled(Link)`
 
 const NavLink = ({ to, title }) => (
   <Text as="li" width={1} mt="3">
-    <NavLinkText to={to}>{title}</NavLinkText>
+    <NavLinkText to={to} activeStyle={{ color: colors.typographyRed }}>
+      {title}
+    </NavLinkText>
   </Text>
 );
 
