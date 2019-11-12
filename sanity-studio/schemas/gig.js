@@ -25,7 +25,6 @@ export default {
     {
       name: 'projects',
       title: 'Related projects',
-      type: 'reference',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'project' } }],
     },
@@ -48,6 +47,22 @@ export default {
     },
     
   ],
+  orderings: [
+    {
+      title: 'Start Date, New',
+      name: 'startDateDesc',
+      by: [
+        { field: 'startDate', direction: 'desc' }
+      ]
+    },
+    {
+      title: 'Start Date, Old',
+      name: 'startDateAsc',
+      by: [
+        { field: 'startDate', direction: 'asc' }
+      ]
+    },
+  ],
   preview: {
     select: {
       title: 'employer.name',
@@ -62,20 +77,5 @@ export default {
       }
     }
   },
-  orderings: [
-    {
-      title: 'Start Date, New',
-      name: 'startDateDesc',
-      by: [
-        { field: 'startDate.utc', direction: 'desc' }
-      ]
-    },
-    {
-      title: 'Start Date, Old',
-      name: 'startDateAsc',
-      by: [
-        { field: 'startDate.utc', direction: 'asc' }
-      ]
-    },
-  ]
+  
 };
