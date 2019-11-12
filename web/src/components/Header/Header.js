@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Link } from 'rebass';
-import Scrollspy from 'react-scrollspy';
+import { Box } from 'rebass';
 
 import { breakpoints } from '../../styles/theme';
 
 import Nav from '../Nav/Nav';
 import Logo from '../Logo/Logo';
 import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
+import NavLink from '../NavLink/Navlink';
 
 const HeaderWrapper = styled(Box)`
   display: none;
@@ -32,20 +32,10 @@ const Header = () => (
         flexDirection="column"
       >
         <Logo url="/" src={LogoAsset} altText="Rob Easthope" />
-        <Scrollspy
-          items={['portfolio', 'side-projects', 'about']}
-          currentClassName="is-current"
-        >
-          <li>
-            <Link href="/portfolio">Portfolio</Link>
-          </li>
-          <li>
-            <Link href="/side-projects">Side projects</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-        </Scrollspy>
+
+        <NavLink to="/portfolio" title="Portfolio" />
+        <NavLink to="/side-projects" title="Side projects" />
+        <NavLink to="/about" title="About" />
       </Nav>
     </nav>
   </HeaderWrapper>
