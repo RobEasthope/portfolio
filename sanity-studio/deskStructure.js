@@ -2,6 +2,7 @@ import S from '@sanity/desk-tool/structure-builder';
 import {
   GoBook,
   GoBookmark,
+  GoBriefcase,
   GoCode,
   GoNote,
   GoPaintcan,
@@ -75,8 +76,17 @@ export default () =>
             .title('Resume')
             .items([
               S.listItem()
+                .title('CV')
+                .child(
+                  S.editor()
+                    .id('cv')
+                    .schemaType('cv')
+                    .documentId('cv')
+                )
+                .icon(GoNote),
+              S.listItem()
                 .title('Gigs')
-                .icon(GoCode)
+                .icon(GoBriefcase)
                 .child(
                   S.documentTypeList('gig').defaultOrdering([
                     { field: 'name', direction: 'desc' },
