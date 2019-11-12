@@ -27,6 +27,11 @@ export default {
       type: 'email',
     },
     {
+      name: 'phoneNumber',
+      title: 'Phone number',
+      type: 'string',
+    },
+    {
       name: 'twitter',
       title: 'Twitter profile',
       type: 'url',
