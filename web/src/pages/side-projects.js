@@ -6,37 +6,31 @@ import GraphQLErrorList from '../components/GraphQLErrorList/GraphQLErrorList';
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/Seo/Seo';
 
-import LandingSection from '../sections/LandingSection/LandingSection';
+import PortfolioSection from '../sections/PortfolioSection/PortfolioSection';
 
 export const query = graphql`
   {
-    landing: sanityLanding {
-      tagline
-      image {
-        imageAsset {
+    sandbox: sanitySandbox {
+      title
+      sandboxIndex {
+        id
+        shortTitle
+        description
+        slug {
+          current
+        }
+        thumbnailImage {
           asset {
             fluid {
               ...GatsbySanityImageFluid
             }
           }
         }
-        altText
-      }
-      video {
-        asset {
-          status
-          playbackId
-          assetId
-          _type
-          _key
-        }
-        _type
-        _key
       }
     }
   }
 `;
-const IndexPage = props => {
+const SideProjectsPage = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -51,32 +45,31 @@ const IndexPage = props => {
     throw new Error('Missing landing page data.');
   }
 
-  const { landing } = data;
+  const { sandbox } = data;
 
   return (
     <React.Fragment>
       <SEO title="Rob Easthope" />
 
       <Layout>
-        <LandingSection
-          sectionId="landing"
-          tagline={landing.tagline}
-          image={landing.image}
-          video={landing.video}
+        <PortfolioSection
+          sectionId="side-projects"
+          title={sandbox.title}
+          portfolioIndex={sandbox.sandboxIndex}
         />
       </Layout>
     </React.Fragment>
   );
 };
 
-IndexPage.defaultProps = {
+SideProjectsPage.defaultProps = {
   data: null,
   errors: null,
 };
 
-IndexPage.propTypes = {
+SideProjectsPage.propTypes = {
   data: PropTypes.object,
   errors: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default IndexPage;
+export default SideProjectsPage;
