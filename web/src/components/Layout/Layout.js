@@ -12,7 +12,7 @@ const Layout = ({ children }) => (
     <AppWrapper flexDirection="column">
       <Header />
       <MainContent>{children}</MainContent>
-      <Footer />
+      {/* <Footer /> */}
     </AppWrapper>
   </App>
 );
