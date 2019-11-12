@@ -50,14 +50,14 @@ export default {
   ],
   preview: {
     select: {
-      employer: 'employer.name',
+      title: 'employer.name',
       startDate: 'startDate',
       endDate: 'endDate',
     },
     prepare(selection) {
-      const { startDate, endDate, employer } = selection
+      const { startDate, endDate, title } = selection
       return {
-        title: employer,
+        title: title,
         subtitle: `${startDate.split(' -')} - ${endDate ? endDate.split(' -') : 'Present'}` // YYYY-MM-DD --> YYYY,
       }
     }
