@@ -17,6 +17,7 @@ const Nav = styled(Flex)`
     padding: 0;
 
     a {
+      color: ${colors.ink};
       display: inline-block;
       text-decoration: none;
       margin-top: 0.5em;

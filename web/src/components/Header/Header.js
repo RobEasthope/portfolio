@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'rebass';
+import { Box, Link } from 'rebass';
 import Scrollspy from 'react-scrollspy';
 
 import { breakpoints } from '../../styles/theme';
@@ -37,13 +37,13 @@ const Header = () => (
           currentClassName="is-current"
         >
           <li>
-            <a href="/#portfolio">Portfolio</a>
+            <Link href="/portfolio">Portfolio</Link>
           </li>
           <li>
-            <a href="/#side-projects">Side projects</a>
+            <Link href="/side-projects">Side projects</Link>
           </li>
           <li>
-            <a href="/#about">About</a>
+            <Link href="/about">About</Link>
           </li>
         </Scrollspy>
       </Nav>

@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Scrollspy styling */
   .is-current {
-    font-style: italic;
+    color: ${colors.typographyRed};
   }
 `;
 
