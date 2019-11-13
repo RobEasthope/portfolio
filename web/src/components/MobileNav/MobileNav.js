@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReactModal from 'react-modal';
-import { Box, Flex } from 'rebass';
+import { Box, Button, Flex } from 'rebass';
 
 import { breakpoints, colors } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
@@ -15,6 +15,13 @@ const MobileModal = styled(ReactModal)`
   padding: 1rem;
   background-color: white;
   height: 100vh;
+`;
+
+const MobileNavBtn = styled(Button)`
+  border: none;
+  padding: 0;
+  background-color: white;
+  color: ${colors.ink};
 `;
 
 const HeaderWrapper = styled(Box)`
@@ -61,9 +68,9 @@ const Header = () => {
       <Flex width="100vw" pl="3" pr="3" pt="3">
         <Logo as="div" url="/" src={LogoAsset} altText="Rob Easthope" />
 
-        <button type="button" onClick={openMobileNav}>
+        <MobileNavBtn type="button" onClick={openMobileNav}>
           Open
-        </button>
+        </MobileNavBtn>
       </Flex>
 
       <MobileModal
@@ -76,9 +83,9 @@ const Header = () => {
           <Flex width="100%" pb="3">
             <Logo as="span" url="/" src={LogoAsset} altText="Rob Easthope" />
 
-            <button type="button" onClick={closeMobileNav}>
+            <MobileNavBtn type="button" onClick={closeMobileNav}>
               Close
-            </button>
+            </MobileNavBtn>
           </Flex>
           <MobileNavList
             as="ul"
@@ -91,6 +98,7 @@ const Header = () => {
             flexWrap="wrap"
             flexDirection="row"
           >
+            <NavLink to="/" title="Home" />
             <NavLink to="/portfolio" title="Portfolio" />
             <NavLink to="/side-projects" title="Side projects" />
             <NavLink to="/about" title="About" />
