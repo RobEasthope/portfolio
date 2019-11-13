@@ -7,7 +7,8 @@ const Footer = () => (
   <Flex
     as="footer"
     width={1}
-    px="4"
+    pl="3"
+    pr="4"
     pt={6}
     pb="48px"
     flexDirection="row"
