@@ -59,7 +59,6 @@ const IndexPage = props => {
 
       <Layout disableFooter>
         <LandingSection
-          sectionId="landing"
           tagline={landing.tagline}
           image={landing.image}
           video={landing.video}

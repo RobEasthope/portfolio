@@ -17,11 +17,10 @@ const PortfolioIndexWrapper = styled(Box)`
 `;
 
 const PortfolioSection = props => {
-  const { sectionId, title, portfolioIndex } = props;
+  const { title, portfolioIndex } = props;
 
   return (
     <Flex
-      id={sectionId}
       as="section"
       flexDirection="row"
       flexWrap="wrap"

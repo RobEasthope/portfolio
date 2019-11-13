@@ -4,9 +4,8 @@ import { Flex } from 'rebass';
 
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
-const ContactSection = ({ sectionId, title }) => (
+const ContactSection = ({ title }) => (
   <Flex
-    id={sectionId}
     as="section"
     flexDirection="row"
     flexWrap="wrap"

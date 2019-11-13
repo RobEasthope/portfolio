@@ -94,10 +94,9 @@ const Project = props => {
       <SEO
         title={`${project.shortTitle} - Rob Easthope`}
         description={project.description}
-      // keywords={project.seoMetaData.keywords}
+        // keywords={project.seoMetaData.keywords}
       />
       <Flex
-        id="portfolio"
         as="section"
         flexDirection="row"
         flexWrap="wrap"

@@ -53,7 +53,6 @@ const PortfolioPage = props => {
 
       <Layout>
         <PortfolioSection
-          sectionId="portfolio"
           title={portfolio.title}
           portfolioIndex={portfolio.portfolioIndex}
         />

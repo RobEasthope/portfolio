@@ -8,9 +8,8 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
 
-const AboutSection = ({ sectionId, title, blurb, portrait }) => (
+const AboutSection = ({ title, blurb, portrait }) => (
   <Flex
-    id={sectionId}
     as="section"
     flexDirection="row"
     flexWrap="wrap"
@@ -46,14 +45,12 @@ const AboutSection = ({ sectionId, title, blurb, portrait }) => (
 );
 
 AboutSection.defaultProps = {
-  sectionId: '',
   title: '',
   blurb: [],
   portrait: {},
 };
 
 AboutSection.propTypes = {
-  sectionId: PropTypes.string,
   title: PropTypes.string,
   blurb: PropTypes.arrayOf(PropTypes.object),
   portrait: PropTypes.object,
