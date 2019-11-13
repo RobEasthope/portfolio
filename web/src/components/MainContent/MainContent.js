@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { breakpoints } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
 
-let sidebarWidth = fontSizing(191, 212);
+const sidebarWidth = fontSizing(191, 212);
 
 const MainContent = styled.main`
   flex: 1;
