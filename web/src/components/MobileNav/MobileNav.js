@@ -87,10 +87,11 @@ const Header = () => {
               Close
             </MobileNavBtn>
           </Flex>
+
           <MobileNavList
             as="ul"
             pl="0"
-            pr="5"
+            pr="0"
             pt="0"
             pb="48px"
             m="0"
