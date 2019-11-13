@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { slide as Menu } from 'react-burger-menu';
 
@@ -19,35 +19,15 @@ const Layout = ({ disableFooter, children }) => {
 
   const [sidebarOpen, setSideBarOpen] = useState(mql.matches);
 
-  // function toggleSidebar() {
-  //   useEffect(() => {
-  //     if (sidebarOpen) {
-  //       setSideBarOpen(false);
-  //     } else {
-  //       setSideBarOpen(true);
-  //     }
-  //   }, []);
-  // }
-  mql.addListener(responsiveSidebar);
-  // useEffect(() => {
-  //   if (mql.matches) {
-  //     setSideBarOpen(true);
-  //   } else {
-  //     setSideBarOpen(false);
-  //   }
-  // }, [mql.matches]);
-
-  function responsiveSidebar() {
+  function toggleSidebar() {
     useEffect(() => {
-      if (mql.matches) {
-        setSideBarOpen(true);
-      } else {
+      if (sidebarOpen) {
         setSideBarOpen(false);
+      } else {
+        setSideBarOpen(true);
       }
     }, []);
   }
-
-  console.log(mql.matches);
 
   return (
     <App>
@@ -55,12 +35,7 @@ const Layout = ({ disableFooter, children }) => {
         <header>
           <button type="button">Menu</button>
         </header>
-        <Menu
-          isOpen={sidebarOpen}
-          noOverlay
-          disableCloseOnEsc
-          disableOverlayClick
-        >
+        <Menu isOpen={sidebarOpen} noOverlay>
           <Header />
         </Menu>
         <MainContent>{children}</MainContent>
