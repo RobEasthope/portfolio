@@ -53,7 +53,7 @@ const MobileNavList = styled(Box)`
 `;
 
 const Header = () => {
-  const [mobileNavOpen, setMobileNavOpen] = useState(true);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const openMobileNav = () => {
     setMobileNavOpen(true);
