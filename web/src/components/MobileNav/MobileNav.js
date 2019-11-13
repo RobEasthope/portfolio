@@ -75,7 +75,7 @@ const Header = () => {
 
       <MobileModal
         isOpen={mobileNavOpen}
-        contentLabel="Minimal Modal Example"
+        contentLabel="Navigation"
         onRequestClose={closeMobileNav}
         ariaHideApp={false}
       >
