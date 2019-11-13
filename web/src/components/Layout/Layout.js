@@ -15,7 +15,9 @@ function showFooter(disableFooter) {
 }
 
 const Layout = ({ disableFooter, children }) => {
-  const [sidebarOpen, setSideBarOpen] = useState(false);
+  const mql = window.matchMedia(`(min-width: 800px)`);
+
+  const [sidebarOpen, setSideBarOpen] = useState(mql.matches);
 
   function toggleSidebar() {
     useEffect(() => {
