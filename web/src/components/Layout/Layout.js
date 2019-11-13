@@ -57,9 +57,9 @@ const Layout = ({ disableFooter, children }) => {
         </header>
         <Menu
           isOpen={sidebarOpen}
-          noOverlay
-          disableCloseOnEsc
-          disableOverlayClick
+          noOverlay={mql.matches}
+          disableCloseOnEsc={mql.matches}
+          disableOverlayClick={mql.matches}
         >
           <Header />
         </Menu>
