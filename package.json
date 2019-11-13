@@ -23,5 +23,9 @@
     "sanity-deploy": "lerna run sanity-deploy",
     "start": "lerna run empty-cache && lerna run start --parallel",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/react-sidebar": "^3.0.0",
+    "react-sidebar": "^3.0.2"
   }
 }
