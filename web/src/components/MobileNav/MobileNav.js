@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReactModal from 'react-modal';
 import { Box, Button, Flex } from 'rebass';
+import { IoIosMenu, IoMdClose } from 'react-icons/io';
 
 import { breakpoints, colors } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
@@ -22,6 +23,11 @@ const MobileNavBtn = styled(Button)`
   padding: 0;
   background-color: white;
   color: ${colors.ink};
+
+  svg {
+    width: ${fontSizing(24, 32)};
+    height: ${fontSizing(24, 32)};
+  }
 `;
 
 const HeaderWrapper = styled(Box)`
@@ -69,7 +75,7 @@ const Header = () => {
         <Logo as="div" url="/" src={LogoAsset} altText="Rob Easthope" />
 
         <MobileNavBtn type="button" onClick={openMobileNav}>
-          Open
+          <IoIosMenu />
         </MobileNavBtn>
       </Flex>
 
@@ -84,7 +90,7 @@ const Header = () => {
             <Logo as="span" url="/" src={LogoAsset} altText="Rob Easthope" />
 
             <MobileNavBtn type="button" onClick={closeMobileNav}>
-              Close
+              <IoMdClose />
             </MobileNavBtn>
           </Flex>
 
