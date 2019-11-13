@@ -22,8 +22,8 @@ const LogoWrapper = styled(Box)`
 //   margin-top: 0.5em;
 // `;
 
-const Logo = ({ url, src, altText }) => (
-  <LogoWrapper as="li" justifySelf="flex-start">
+const Logo = ({ as, url, src, altText }) => (
+  <LogoWrapper as={as} justifySelf="flex-start">
     <Link to={url}>
       <Glyph src={src} alt={altText} />
     </Link>
