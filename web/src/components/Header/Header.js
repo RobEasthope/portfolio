@@ -10,11 +10,12 @@ import LogoAsset from '../../images/saladin-logo-dark-with-diamond.svg';
 import NavLink from '../NavLink/Navlink';
 
 const HeaderWrapper = styled(Box)`
-  display: none;
-  @media (min-width: ${breakpoints.md}) {
-    position: fixed;
-    display: block;
-  }
+  position: fixed;
+  display: block;
+  background-color: white;
+
+  /* @media (min-width: ${breakpoints.md}) {
+  } */
 `;
 
 const Header = () => (

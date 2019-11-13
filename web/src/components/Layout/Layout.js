@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { slide as Menu } from 'react-burger-menu';
 
 import App from '../App/App';
 import Header from '../Header/Header';
@@ -13,15 +14,34 @@ function showFooter(disableFooter) {
   }
 }
 
-const Layout = ({ disableFooter, children }) => (
-  <App>
-    <AppWrapper flexDirection="column">
-      <Header />
-      <MainContent>{children}</MainContent>
-      {showFooter(disableFooter)}
-    </AppWrapper>
-  </App>
-);
+const Layout = ({ disableFooter, children }) => {
+  const [sidebarOpen, setSideBarOpen] = useState(false);
+
+  function toggleSidebar() {
+    useEffect(() => {
+      if (sidebarOpen) {
+        setSideBarOpen(false);
+      } else {
+        setSideBarOpen(true);
+      }
+    }, []);
+  }
+
+  return (
+    <App>
+      <AppWrapper flexDirection="column">
+        <header>
+          <button type="button">Menu</button>
+        </header>
+        <Menu isOpen={sidebarOpen} noOverlay>
+          <Header />
+        </Menu>
+        <MainContent>{children}</MainContent>
+        {showFooter(disableFooter)}
+      </AppWrapper>
+    </App>
+  );
+};
 
 Layout.propTypes = {
   disableFooter: PropTypes.bool,
