@@ -9,6 +9,9 @@ import { Link } from 'gatsby';
 
 const Glyph = styled.img`
   width: 36px;
+  background-color: white;
+  padding: 3px;
+  border-radius: 50%;
 `;
 const LogoWrapper = styled(Box)`
   flex: 1;
