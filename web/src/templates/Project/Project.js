@@ -101,7 +101,7 @@ const Project = props => {
         as="section"
         flexDirection="row"
         flexWrap="wrap"
-        px="4"
+        px={{ b: 3, md: 4 }}
         justifyContent={{ b: 'flex-start', md: 'flex-end' }}
       >
         <Box width={1}>
