@@ -26,7 +26,6 @@
     "gatsby-transformer-sharp": "^2.1.15",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-burger-menu": "^2.6.12",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-scrollspy": "^3.4.0",
