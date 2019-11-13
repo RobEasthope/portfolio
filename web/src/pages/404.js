@@ -11,7 +11,6 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Flex
-      id="portfolio"
       as="section"
       flexDirection="row"
       flexWrap="wrap"

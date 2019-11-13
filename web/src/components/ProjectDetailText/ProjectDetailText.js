@@ -21,6 +21,10 @@ const ProjectDetailText = styled(Box)`
 
   dd {
     margin-bottom: 1em;
+
+    a {
+      text-decoration: none;
+    }
   }
 `;
 

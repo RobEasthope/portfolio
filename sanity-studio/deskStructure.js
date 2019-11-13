@@ -12,7 +12,7 @@ import {
 } from 'react-icons/go';
 import { FaRegAddressCard } from 'react-icons/fa';
 
-const hiddenTypes = ['project'];
+// const hiddenTypes = ['project'];
 
 export default () =>
   S.list()

@@ -28,11 +28,6 @@ const GlobalStyles = createGlobalStyle`
   video:focus {
     outline: none;
   }
-
-  /* Scrollspy styling */
-  .is-current {
-    font-style: italic;
-  }
 `;
 
 export default GlobalStyles;

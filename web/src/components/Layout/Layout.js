@@ -6,18 +6,27 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import AppWrapper from '../AppWrapper/AppWrapper';
 import MainContent from '../MainContent/MainContent';
+import MobileNav from '../MobileNav/MobileNav';
 
-const Layout = ({ children }) => (
+function showFooter(disableFooter) {
+  if (disableFooter !== true) {
+    return <Footer />;
+  }
+}
+
+const Layout = ({ disableFooter, children }) => (
   <App>
     <AppWrapper flexDirection="column">
+      <MobileNav></MobileNav>
       <Header />
       <MainContent>{children}</MainContent>
-      <Footer />
+      {showFooter(disableFooter)}
     </AppWrapper>
   </App>
 );
 
 Layout.propTypes = {
+  disableFooter: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 

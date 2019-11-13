@@ -7,10 +7,10 @@ import LandingJumbotron from '../../components/LandingJumbotron/LandingJumbotron
 import LandingVideoJumbotron from '../../components/LandingVideoJumbotron/LandingVideoJumbotron';
 
 const LandingSection = props => {
-  const { sectionId, tagline, image, video } = props;
+  const { tagline, image, video } = props;
 
   return (
-    <Flex id={sectionId} as="section">
+    <Flex as="section">
       <RelativeBox width={1} px="0">
         {tagline && (
           <LandingTagline
