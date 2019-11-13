@@ -6,6 +6,7 @@
   "author": "Rob Easthope <hello@robeasthope.com>",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
+    "@types/react-sidebar": "^3.0.0",
     "babel-plugin-styled-components": "^1.10.0",
     "dotenv": "^7.0.0",
     "gatsby": "^2.4.0",
@@ -29,6 +30,7 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-scrollspy": "^3.4.0",
+    "react-sidebar": "^3.0.2",
     "rebass": "^3.1.0",
     "sanity-mux-player": "^0.0.26",
     "styled-components": "^4.2.0",
