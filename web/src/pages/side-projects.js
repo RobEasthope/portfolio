@@ -53,7 +53,6 @@ const SideProjectsPage = props => {
 
       <Layout>
         <PortfolioSection
-          sectionId="side-projects"
           title={sandbox.title}
           portfolioIndex={sandbox.sandboxIndex}
         />

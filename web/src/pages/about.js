@@ -46,7 +46,6 @@ const AboutPage = props => {
 
       <Layout>
         <AboutSection
-          sectionId="about"
           title={about.title}
           blurb={about._rawBody}
           portrait={about.portrait}
