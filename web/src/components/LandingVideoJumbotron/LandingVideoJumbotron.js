@@ -9,10 +9,10 @@ const LandingJumbotron = styled(SanityMuxPlayer)`
   height: 100vh !important;
   overflow: hidden;
 
-  display: none;
+  /* display: none;
   @media (min-width: ${breakpoints.md}) {
     display: block;
-  }
+  } */
 
   video {
     width: 100%;

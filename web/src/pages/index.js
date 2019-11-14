@@ -57,7 +57,7 @@ const IndexPage = props => {
     <React.Fragment>
       <SEO title="Rob Easthope" />
 
-      <Layout disableFooter>
+      <Layout disableFooter landingPageStyling>
         <LandingSection
           tagline={landing.tagline}
           image={landing.image}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ReactModal from 'react-modal';
 import { Box, Button, Flex } from 'rebass';
 import { IoIosMenu, IoMdClose } from 'react-icons/io';
@@ -16,12 +16,13 @@ const MobileModal = styled(ReactModal)`
   padding: 1rem;
   background-color: white;
   height: 100vh;
+  z-index: 4;
 `;
 
 const MobileNavBtn = styled(Button)`
   border: none;
   padding: 0;
-  background-color: white;
+  background-color: transparent;
   color: ${colors.ink};
 
   svg {
@@ -36,6 +37,17 @@ const HeaderWrapper = styled(Box)`
   @media (min-width: ${breakpoints.md}) {
     display: none;
   }
+
+  position: relative;
+
+  ${props =>
+    props.landingPageStyling &&
+    css`
+      position: absolute;
+      z-index: 3;
+      /* background-color: white; */
+      padding-bottom: 1rem;
+    `}
 `;
 
 const MobileNavList = styled(Box)`
@@ -58,7 +70,22 @@ const MobileNavList = styled(Box)`
   }
 `;
 
-const Header = () => {
+function mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen) {
+  if (mobileNavOpen) {
+    return (
+      <MobileNavBtn type="button" onClick={closeMobileNav}>
+        <IoMdClose />
+      </MobileNavBtn>
+    );
+  }
+  return (
+    <MobileNavBtn type="button" onClick={openMobileNav}>
+      <IoIosMenu />
+    </MobileNavBtn>
+  );
+}
+
+const MobileNav = ({ landingPageStyling }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const openMobileNav = () => {
@@ -70,13 +97,11 @@ const Header = () => {
   };
 
   return (
-    <HeaderWrapper as="header">
+    <HeaderWrapper as="header" landingPageStyling={landingPageStyling}>
       <Flex width="100vw" pl="3" pr="3" pt="3">
         <Logo as="div" url="/" src={LogoAsset} altText="Rob Easthope" />
 
-        <MobileNavBtn type="button" onClick={openMobileNav}>
-          <IoIosMenu />
-        </MobileNavBtn>
+        {mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen)}
       </Flex>
 
       <MobileModal
@@ -116,4 +141,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MobileNav;

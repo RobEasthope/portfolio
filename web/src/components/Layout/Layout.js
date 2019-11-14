@@ -14,10 +14,10 @@ function showFooter(disableFooter) {
   }
 }
 
-const Layout = ({ disableFooter, children }) => (
+const Layout = ({ disableFooter, landingPageStyling, children }) => (
   <App>
     <AppWrapper flexDirection="column">
-      <MobileNav></MobileNav>
+      <MobileNav landingPageStyling={landingPageStyling}></MobileNav>
       <Header />
       <MainContent>{children}</MainContent>
       {showFooter(disableFooter)}
