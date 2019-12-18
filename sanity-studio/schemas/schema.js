@@ -18,6 +18,7 @@ import portfolio from './portfolio';
 import sandbox from './sandbox';
 import landing from './landing';
 import about from './about';
+import details from './details';
 import gig from './gig';
 import cv from './cv';
 
@@ -41,6 +42,7 @@ export default createSchema({
     sandbox,
     landing,
     about,
+    details,
     blockContent,
     seoMetaData,
     altImage,

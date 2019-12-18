@@ -108,6 +108,15 @@ export default () =>
                     { field: 'name', direction: 'desc' },
                   ])
                 ),
+              S.listItem()
+                .title('Details')
+                .child(
+                  S.editor()
+                    .id('details')
+                    .schemaType('details')
+                    .documentId('details')
+                )
+                .icon(FaRegAddressCard),
             ])
         ),
     ]);
