@@ -4,6 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'title',
+      title: 'About section title',
+      type: 'string',
+    },
+    {
       name: 'profile',
       title: 'Profile',
       type: 'blockContent',
