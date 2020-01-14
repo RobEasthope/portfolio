@@ -4,6 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
       name: 'email',
       title: 'Email address',
       type: 'email',
@@ -21,6 +26,16 @@ export default {
     {
       name: 'linkedin',
       title: 'LinkedIn profile',
+      type: 'url',
+    },
+    {
+      name: 'github',
+      title: 'Github profile',
+      type: 'url',
+    },
+    {
+      name: 'portfolioUrl',
+      title: 'Portfolio URL',
       type: 'url',
     },
   ],
