@@ -13,6 +13,7 @@ export default {
       name: 'url',
       title: 'URL',
       type: 'url',
+      validation: Rule => Rule.required().warning('Required field'),
     },
     {
       name: 'logo',
