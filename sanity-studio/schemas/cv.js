@@ -54,7 +54,15 @@ export default {
             name: 'when',
             title: 'When',
             type: 'string'
-          }
+          },
+          {
+            name: 'logo',
+            title: 'Logo',
+            type: 'image',
+            options: {
+              hotspot: true,
+            }
+          },
         ]
       }],
     },
