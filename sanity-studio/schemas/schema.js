@@ -21,7 +21,7 @@ import landing from './landing';
 import about from './about';
 import details from './details';
 import gig from './gig';
-import cv from './cv';
+import cv from './about';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,7 +37,6 @@ export default createSchema({
     organisation,
     gig,
     education,
-    cv,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     portfolio,

@@ -56,16 +56,7 @@ export default () =>
                     .schemaType('sandbox')
                     .documentId('sandbox')
                 )
-                .icon(GoRocket),
-              S.listItem()
-                .title('About section')
-                .child(
-                  S.editor()
-                    .id('about')
-                    .schemaType('about')
-                    .documentId('about')
-                )
-                .icon(GoPerson),
+                .icon(GoRocket)
             ])
         ),
       S.listItem()
@@ -76,14 +67,14 @@ export default () =>
             .title('About')
             .items([
               S.listItem()
-                .title('CV')
+                .title('About section')
                 .child(
                   S.editor()
-                    .id('cv')
-                    .schemaType('cv')
-                    .documentId('cv')
+                    .id('about')
+                    .schemaType('about')
+                    .documentId('about')
                 )
-                .icon(GoNote),
+                .icon(GoPerson),
               S.listItem()
                 .title('Gigs')
                 .icon(GoBriefcase)

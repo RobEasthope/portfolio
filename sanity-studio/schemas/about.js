@@ -9,43 +9,41 @@ export default {
       type: 'string',
     },
     {
-      name: 'body',
-      title: 'About blurb',
+      name: 'profile',
+      title: 'Profile',
       type: 'blockContent',
     },
     {
-      name: 'portrait',
-      title: 'Portrait',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'experience',
+      title: 'Experience',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'gig' } }],
     },
     {
-      name: 'email',
-      title: 'Email address',
-      type: 'email',
+      name: 'coreSkills',
+      title: 'Core skills',
+      type: 'array',
+      of: [{ type: 'string' }],
     },
     {
-      name: 'phoneNumber',
-      title: 'Phone number',
-      type: 'string',
+      name: 'sideProjects',
+      title: 'Side projects',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'project' } }],
     },
+    
     {
-      name: 'twitter',
-      title: 'Twitter profile',
-      type: 'url',
-    },
-    {
-      name: 'linkedin',
-      title: 'LinkedIn profile',
-      type: 'url',
+      name: 'education',
+      title: 'Education',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'education' } }],
     },
   ],
-
   preview: {
-    select: {
-      title: 'title',
-    },
+    prepare() {
+      return {
+        title: `CV`,
+      }
+    }
   },
 };
