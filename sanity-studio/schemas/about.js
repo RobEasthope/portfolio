@@ -31,12 +31,17 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'project' } }],
     },
-    
     {
       name: 'education',
       title: 'Education',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'education' } }],
+    },
+    {
+      name: 'clients',
+      title: 'Clients',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'organisation' } }],
     },
   ],
   preview: {
