@@ -5,7 +5,7 @@ import { colors } from '../../styles/theme';
 import fontSizing from '../../utils/fontsizing';
 
 const FooterText = styled(Text)`
-  font-size: ${fontSizing(14, 20)};
+  font-size: ${fontSizing(14, 18)};
   color: ${colors.ink};
 `;
 
