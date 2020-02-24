@@ -117,7 +117,7 @@ export default () =>
                   ])
                 ),
               S.listItem()
-                .title('Details')
+                .title('Contact details')
                 .child(
                   S.editor()
                     .id('details')
