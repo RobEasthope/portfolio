@@ -69,11 +69,11 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title('Resume')
+        .title('About')
         .icon(GoTerminal)
         .child(
           S.list()
-            .title('Resume')
+            .title('About')
             .items([
               S.listItem()
                 .title('CV')
