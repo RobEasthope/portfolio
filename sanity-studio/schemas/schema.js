@@ -17,6 +17,7 @@ import organisation from './organisation';
 import education from './education';
 import portfolio from './portfolio';
 import sandbox from './sandbox';
+import opensource from './opensource';
 import landing from './landing';
 import about from './about';
 import details from './details';
@@ -41,6 +42,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     portfolio,
     sandbox,
+    opensource,
     landing,
     about,
     details,
