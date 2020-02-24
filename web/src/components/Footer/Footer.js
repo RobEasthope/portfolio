@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from 'rebass';
 
-import FooterLink from '../FooterLink/FooterLink';
+import FooterText from '../FooterText/FooterText';
 
 const Footer = () => (
   <Flex
@@ -14,22 +14,9 @@ const Footer = () => (
     flexDirection="row"
     justifyContent={{ b: 'flex-start', md: 'flex-end' }}
   >
-    <FooterLink
-      href="mailto:hello@robeasthope.com"
-      ml={{ b: '0', md: '2em' }}
-      mr={{ b: '2em', md: '0' }}
-    >
-      hello@robeasthope.com
-    </FooterLink>
-    <FooterLink
-      href="https://www.linkedin.com/in/rob-easthope-9b0bb436/"
-      ml={{ b: '0', md: '2em' }}
-      mr={{ b: '2em', md: '0' }}
-      target="_blank"
-      rel="noreferrer noopener"
-    >
-      Linkedin
-    </FooterLink>
+    <FooterText ml={{ b: '0', md: '2em' }} mr={{ b: '2em', md: '0' }}>
+      © 2020 Rob Easthope. All right reserved
+    </FooterText>
   </Flex>
 );
 
