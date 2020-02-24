@@ -36,35 +36,7 @@ export default {
       name: 'education',
       title: 'Education',
       type: 'array',
-      of: [{
-        title: 'Institution',
-        type: 'object',
-        fields: [
-          {
-            name: 'name',
-            title: 'Name',
-            type: 'string'
-          },
-          {
-            name: 'qualification',
-            title: 'Qualification',
-            type: 'string'
-          },
-          {
-            name: 'when',
-            title: 'When',
-            type: 'string'
-          },
-          {
-            name: 'logo',
-            title: 'Logo',
-            type: 'image',
-            options: {
-              hotspot: true,
-            }
-          },
-        ]
-      }],
+      of: [{ type: 'reference', to: { type: 'education' } }],
     },
   ],
   preview: {

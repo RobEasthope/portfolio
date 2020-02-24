@@ -10,7 +10,7 @@ import {
   GoRocket,
   GoTerminal,
 } from 'react-icons/go';
-import { FaRegAddressCard } from 'react-icons/fa';
+import { FaRegAddressCard, FaUniversity } from 'react-icons/fa';
 
 // const hiddenTypes = ['project'];
 
@@ -105,6 +105,14 @@ export default () =>
                 .icon(FaRegAddressCard)
                 .child(
                   S.documentTypeList('organisation').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Education')
+                .icon(FaUniversity)
+                .child(
+                  S.documentTypeList('education').defaultOrdering([
                     { field: 'name', direction: 'desc' },
                   ])
                 ),

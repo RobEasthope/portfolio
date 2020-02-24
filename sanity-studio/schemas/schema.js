@@ -14,6 +14,7 @@ import altImage from './altImage';
 import tech from './tech';
 import project from './project';
 import organisation from './organisation';
+import education from './education';
 import portfolio from './portfolio';
 import sandbox from './sandbox';
 import landing from './landing';
@@ -35,6 +36,7 @@ export default createSchema({
     tech,
     organisation,
     gig,
+    education,
     cv,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
