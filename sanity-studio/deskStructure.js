@@ -67,7 +67,7 @@ export default () =>
             .title('About')
             .items([
               S.listItem()
-                .title('About section')
+                .title('Profile')
                 .child(
                   S.editor()
                     .id('about')
