@@ -3,6 +3,8 @@ import { Flex } from 'rebass';
 
 import FooterText from '../FooterText/FooterText';
 
+const CurrentYear = new Date().getUTCFullYear();
+
 const Footer = () => (
   <Flex
     as="footer"
@@ -15,7 +17,7 @@ const Footer = () => (
     justifyContent={{ b: 'flex-start', md: 'flex-end' }}
   >
     <FooterText ml={{ b: '0', md: '2em' }} mr={{ b: '2em', md: '0' }}>
-      © 2020 Rob Easthope. All right reserved
+      © {CurrentYear} Rob Easthope. All right reserved.
     </FooterText>
   </Flex>
 );
