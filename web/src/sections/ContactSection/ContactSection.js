@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
+import ProjectText from '../../components/ProjectText/ProjectText';
 import FooterLink from '../../components/FooterLink/FooterLink';
 
 const ContactSection = ({ email, linkedin }) => (
@@ -20,6 +21,10 @@ const ContactSection = ({ email, linkedin }) => (
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
       textAlign="right"
     >
+      <ProjectText>
+        If you want to work together on a project or are looking for some
+        technical advice, get in touch.
+      </ProjectText>
       <FooterLink
         href={email}
         width={1}
