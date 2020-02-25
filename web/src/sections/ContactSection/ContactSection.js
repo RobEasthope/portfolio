@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import TextWrapper from '../../components/TextWrapper/TextWrapper';
+import FooterLink from '../../components/FooterLink/FooterLink';
 
-const ContactSection = ({ title }) => (
+const ContactSection = ({ title, email, linkedin }) => (
   <Flex
     as="section"
     flexDirection="row"
@@ -15,6 +17,31 @@ const ContactSection = ({ title }) => (
     <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
       {title}
     </SectionTitle>
+    <TextWrapper
+      flexWrap="wrap"
+      flexDirection="row"
+      justifyContent={{ b: 'flex-start', md: 'flex-end' }}
+      textAlign="right"
+    >
+      <FooterLink
+        href={email}
+        width={1}
+        mb={{ b: '0', md: '2em' }}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        {email}
+      </FooterLink>
+      <FooterLink
+        href={linkedin}
+        width={1}
+        mb={{ b: '0', md: '2em' }}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Linkedin
+      </FooterLink>
+    </TextWrapper>
   </Flex>
 );
 

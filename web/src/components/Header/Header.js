@@ -36,6 +36,7 @@ const Header = () => (
         <NavLink to="/portfolio" title="Portfolio" />
         <NavLink to="/side-projects" title="Side projects" />
         <NavLink to="/about" title="About" />
+        <NavLink to="/contact" title="Contact" />
       </Nav>
     </nav>
   </HeaderWrapper>
