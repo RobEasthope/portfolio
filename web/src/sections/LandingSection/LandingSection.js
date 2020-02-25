@@ -17,7 +17,7 @@ const LandingSection = props => {
 
   return (
     <Flex as="section">
-      <RelativeBox width={1} p="1em" style={{ zIndex: -1 }}>
+      <RelativeBox width={1} p="1em" pl={{ md: 0 }} style={{ zIndex: -1 }}>
         {tagline && (
           // <LandingTaglineWrapper>
           <LandingTagline
