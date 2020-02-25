@@ -20,7 +20,6 @@ const ContactSection = ({ email, linkedin }) => (
       flexWrap="wrap"
       flexDirection="row"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
-      textAlign="right"
     >
       <ProjectText>
         If you want to work together on a project or are looking for some
