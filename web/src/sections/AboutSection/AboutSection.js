@@ -4,13 +4,12 @@ import { Flex, Box } from 'rebass';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'gatsby-image';
 
-import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
-import ProfileList from '../../components/ProfileList/ProfileList';
-import EducationList from '../../components/EducationList/EducationList';
+// import ProfileList from '../../components/ProfileList/ProfileList';
+// import EducationList from '../../components/EducationList/EducationList';
 
-const AboutSection = ({ title, blurb, portrait, clients, education }) => (
+const AboutSection = ({ blurb, portrait, clients, education }) => (
   <Flex
     as="section"
     flexDirection="row"
@@ -18,13 +17,6 @@ const AboutSection = ({ title, blurb, portrait, clients, education }) => (
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
-    {/* {title && (
-      <Flex width={1} justifyContent={{ md: 'flex-end' }}>
-        <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
-          {title}
-        </SectionTitle>
-      </Flex>
-    )} */}
     <TextWrapper
       flexWrap="wrap"
       flexDirection="row"
@@ -66,7 +58,6 @@ const AboutSection = ({ title, blurb, portrait, clients, education }) => (
 );
 
 AboutSection.defaultProps = {
-  title: '',
   blurb: [],
   clients: [],
   education: [],
@@ -74,7 +65,6 @@ AboutSection.defaultProps = {
 };
 
 AboutSection.propTypes = {
-  title: PropTypes.string,
   blurb: PropTypes.arrayOf(PropTypes.object),
   clients: PropTypes.arrayOf(PropTypes.object),
   education: PropTypes.arrayOf(PropTypes.object),

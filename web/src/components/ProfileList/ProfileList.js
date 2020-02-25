@@ -27,10 +27,12 @@ const ProfileList = props => {
 };
 
 ProfileList.defaultProps = {
+  title: '',
   list: [],
 };
 
 ProfileList.propTypes = {
+  title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.object),
 };
 

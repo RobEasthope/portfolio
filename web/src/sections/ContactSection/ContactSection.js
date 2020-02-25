@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 
-import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
 import FooterLink from '../../components/FooterLink/FooterLink';
 
-const ContactSection = ({ title, email, linkedin }) => (
+const ContactSection = ({ email, linkedin }) => (
   <Flex
     as="section"
     flexDirection="row"
@@ -15,9 +14,6 @@ const ContactSection = ({ title, email, linkedin }) => (
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
-    {/* <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
-      {title}
-    </SectionTitle> */}
     <TextWrapper
       flexWrap="wrap"
       flexDirection="row"
@@ -47,11 +43,13 @@ const ContactSection = ({ title, email, linkedin }) => (
 );
 
 ContactSection.defaultProps = {
-  title: '',
+  email: '',
+  linkedin: '',
 };
 
 ContactSection.propTypes = {
-  title: PropTypes.string,
+  email: PropTypes.string,
+  linkedin: PropTypes.string,
 };
 
 export default ContactSection;

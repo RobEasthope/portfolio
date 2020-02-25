@@ -27,10 +27,12 @@ const EducationList = props => {
 };
 
 EducationList.defaultProps = {
+  title: '',
   list: [],
 };
 
 EducationList.propTypes = {
+  title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.object),
 };
 
