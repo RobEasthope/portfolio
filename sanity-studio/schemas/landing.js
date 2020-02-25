@@ -20,5 +20,10 @@ export default {
       title: 'Landing video',
       type: 'mux.video',
     },
+    {
+      name: 'caption',
+      title: 'Caption',
+      type: 'string',
+    },
   ],
 };
