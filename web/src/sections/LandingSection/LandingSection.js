@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 import RelativeBox from '../../components/RelativeBox/RelativeBox';
 
+import LandingCaption from '../../components/LandingCaption/LandingCaption';
 import LandingVideoJumbotron from '../../components/LandingVideoJumbotron/LandingVideoJumbotron';
 
 const LandingSection = props => {
-  const { video } = props;
+  const { video, caption } = props;
 
   return (
     <Flex as="section">
@@ -20,6 +21,11 @@ const LandingSection = props => {
             muted
             loop
           />
+        )}
+        {caption && (
+          <LandingCaption as="p" m="0">
+            {caption}
+          </LandingCaption>
         )}
       </RelativeBox>
     </Flex>

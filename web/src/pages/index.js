@@ -32,6 +32,7 @@ export const query = graphql`
         _type
         _key
       }
+      caption
     }
   }
 `;
@@ -57,7 +58,11 @@ const IndexPage = props => {
       <SEO title="Rob Easthope" />
 
       <Layout disableFooter landingPageStyling>
-        <LandingSection image={landing.image} video={landing.video} />
+        <LandingSection
+          image={landing.image}
+          video={landing.video}
+          caption={landing.caption}
+        />
       </Layout>
     </React.Fragment>
   );
