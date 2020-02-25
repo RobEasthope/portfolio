@@ -1,22 +1,15 @@
 import styled from 'styled-components';
 import SanityMuxPlayer from 'sanity-mux-player';
 
-import { breakpoints } from '../../styles/theme';
-
 const LandingJumbotron = styled(SanityMuxPlayer)`
   position: relative;
   width: 100%;
-  height: 100vh !important;
+  height: calc(100vh - 2em) !important;
   overflow: hidden;
-
-  /* display: none;
-  @media (min-width: ${breakpoints.md}) {
-    display: block;
-  } */
 
   video {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 2em) !important;
     object-fit: cover;
     object-position: center;
   }
