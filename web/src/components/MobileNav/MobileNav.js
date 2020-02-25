@@ -134,6 +134,7 @@ const MobileNav = ({ landingPageStyling }) => {
             <NavLink to="/portfolio" title="Portfolio" />
             <NavLink to="/side-projects" title="Side projects" />
             <NavLink to="/about" title="About" />
+            <NavLink to="/contact" title="Contact" />
           </MobileNavList>
         </nav>
       </MobileModal>
