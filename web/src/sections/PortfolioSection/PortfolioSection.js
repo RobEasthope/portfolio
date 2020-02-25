@@ -4,7 +4,6 @@ import Image from 'gatsby-image';
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
 
-import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import PortfolioCardLink from '../../components/PortfolioCardLink/PortfolioCardLink';
 import PortfolioCardTitle from '../../components/PortfolioCardTitle/PortfolioCardTitle';
@@ -17,7 +16,7 @@ const PortfolioIndexWrapper = styled(Box)`
 `;
 
 const PortfolioSection = props => {
-  const { title, portfolioIndex } = props;
+  const { portfolioIndex } = props;
 
   return (
     <Flex
@@ -25,15 +24,10 @@ const PortfolioSection = props => {
       flexDirection="row"
       flexWrap="wrap"
       ml={{ b: 0, md: 4 }}
+      pt={{ b: 3, md: 4 }}
       px={{ b: 3, md: 4 }}
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <Flex width={1} justifyContent={{ md: 'flex-end' }}>
-        <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
-          {title}
-        </SectionTitle>
-      </Flex>
-
       <PortfolioIndexWrapper
         as="ul"
         width="auto"
@@ -78,12 +72,10 @@ const PortfolioSection = props => {
 };
 
 PortfolioSection.defaultProps = {
-  title: '',
   portfolioIndex: [],
 };
 
 PortfolioSection.propTypes = {
-  title: PropTypes.string,
   portfolioIndex: PropTypes.arrayOf(PropTypes.object),
 };
 

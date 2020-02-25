@@ -10,7 +10,7 @@ import {
   GoRocket,
   GoTerminal,
 } from 'react-icons/go';
-import { FaRegAddressCard } from 'react-icons/fa';
+import { FaRegAddressCard, FaUniversity } from 'react-icons/fa';
 
 // const hiddenTypes = ['project'];
 
@@ -56,9 +56,18 @@ export default () =>
                     .schemaType('sandbox')
                     .documentId('sandbox')
                 )
-                .icon(GoRocket),
+                .icon(GoRocket)
+            ])
+        ),
+      S.listItem()
+        .title('About')
+        .icon(GoTerminal)
+        .child(
+          S.list()
+            .title('About')
+            .items([
               S.listItem()
-                .title('About section')
+                .title('Profile')
                 .child(
                   S.editor()
                     .id('about')
@@ -66,24 +75,6 @@ export default () =>
                     .documentId('about')
                 )
                 .icon(GoPerson),
-            ])
-        ),
-      S.listItem()
-        .title('Resume')
-        .icon(GoTerminal)
-        .child(
-          S.list()
-            .title('Resume')
-            .items([
-              S.listItem()
-                .title('CV')
-                .child(
-                  S.editor()
-                    .id('cv')
-                    .schemaType('cv')
-                    .documentId('cv')
-                )
-                .icon(GoNote),
               S.listItem()
                 .title('Gigs')
                 .icon(GoBriefcase)
@@ -108,6 +99,23 @@ export default () =>
                     { field: 'name', direction: 'desc' },
                   ])
                 ),
+              S.listItem()
+                .title('Education')
+                .icon(FaUniversity)
+                .child(
+                  S.documentTypeList('education').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Contact details')
+                .child(
+                  S.editor()
+                    .id('details')
+                    .schemaType('details')
+                    .documentId('details')
+                )
+                .icon(FaRegAddressCard),
             ])
         ),
     ]);

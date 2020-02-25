@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Flex, Box } from 'rebass';
 import styled from 'styled-components';
 import RelativeBox from '../../components/RelativeBox/RelativeBox';
@@ -12,11 +13,11 @@ const LandingTaglineWrapper = styled(Box)`
 `;
 
 const LandingSection = props => {
-  const { tagline, image, video } = props;
+  const { tagline, video } = props;
 
   return (
     <Flex as="section">
-      <RelativeBox width={1} px="0" style={{'zIndex': -1}}>
+      <RelativeBox width={1} px="0" style={{ zIndex: -1 }}>
         {tagline && (
           // <LandingTaglineWrapper>
           <LandingTagline
@@ -44,6 +45,16 @@ const LandingSection = props => {
       </RelativeBox>
     </Flex>
   );
+};
+
+LandingSection.defaultProps = {
+  tagline: '',
+  education: [],
+};
+
+LandingSection.propTypes = {
+  tagline: PropTypes.string,
+  video: PropTypes.object,
 };
 
 export default LandingSection;

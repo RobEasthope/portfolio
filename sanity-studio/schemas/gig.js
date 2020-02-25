@@ -68,11 +68,13 @@ export default {
       title: 'employer.name',
       startDate: 'startDate',
       endDate: 'endDate',
+      employerLogo: 'employer.logo',
     },
     prepare(selection) {
-      const { startDate, endDate, title } = selection
+      const { startDate, endDate, title, employerLogo } = selection
       return {
         title: title,
+        media: employerLogo,
         subtitle: `${startDate.split(' -')} - ${endDate ? endDate.split(' -') : 'Present'}` // YYYY-MM-DD --> YYYY,
       }
     }

@@ -9,8 +9,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'body',
-      title: 'About blurb',
+      name: 'profile',
+      title: 'Profile',
       type: 'blockContent',
     },
     {
@@ -22,30 +22,41 @@ export default {
       },
     },
     {
-      name: 'email',
-      title: 'Email address',
-      type: 'email',
+      name: 'employeers',
+      title: 'Employeers',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'organisation' } }],
     },
     {
-      name: 'phoneNumber',
-      title: 'Phone number',
-      type: 'string',
+      name: 'Skills',
+      title: 'Skills',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'tech' } }],
     },
     {
-      name: 'twitter',
-      title: 'Twitter profile',
-      type: 'url',
+      name: 'opensource',
+      title: 'Open source projects',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'opensource' } }],
     },
     {
-      name: 'linkedin',
-      title: 'LinkedIn profile',
-      type: 'url',
+      name: 'education',
+      title: 'Education',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'education' } }],
+    },
+    {
+      name: 'clients',
+      title: 'Clients',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'organisation' } }],
     },
   ],
-
   preview: {
-    select: {
-      title: 'title',
-    },
+    prepare() {
+      return {
+        title: `CV`,
+      }
+    }
   },
 };
