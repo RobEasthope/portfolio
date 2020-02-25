@@ -26,7 +26,7 @@ const ContactSection = ({ email, linkedin }) => (
         technical advice, get in touch.
       </ProjectText>
       <FooterLink
-        href={email}
+        href={`mailto:${email}`}
         width={1}
         mb={{ b: '0', md: '2em' }}
         target="_blank"
