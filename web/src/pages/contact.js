@@ -11,6 +11,7 @@ import ContactSection from '../sections/ContactSection/ContactSection';
 export const query = graphql`
   {
     contact: sanityDetails {
+      id
       email
       github
       linkedin
