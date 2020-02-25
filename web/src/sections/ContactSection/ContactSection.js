@@ -11,7 +11,8 @@ const ContactSection = ({ email, linkedin }) => (
     as="section"
     flexDirection="row"
     flexWrap="wrap"
-    py={{ b: 3, md: 4 }}
+    ml={{ b: 0, md: 4 }}
+    pt={{ b: 3, md: '3em' }}
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
@@ -28,6 +29,7 @@ const ContactSection = ({ email, linkedin }) => (
       <FooterLink
         href={`mailto:${email}`}
         width={1}
+        mt={{ b: '0', md: '1em' }}
         mb={{ b: '0', md: '2em' }}
         target="_blank"
         rel="noreferrer noopener"

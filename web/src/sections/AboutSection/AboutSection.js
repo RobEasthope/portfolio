@@ -15,6 +15,7 @@ const AboutSection = ({ blurb, portrait, clients, education }) => (
     flexDirection="row"
     flexWrap="wrap"
     px={{ b: 3, md: 4 }}
+    pt={{ b: 3, md: '3em' }}
     justifyContent="flex-end"
   >
     <TextWrapper
@@ -23,7 +24,7 @@ const AboutSection = ({ blurb, portrait, clients, education }) => (
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
       {portrait && (
-        <Box width={1} mt="3em">
+        <Box width={1}>
           <Image fluid={portrait.asset.fluid} />
         </Box>
       )}
