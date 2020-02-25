@@ -42,7 +42,7 @@ const AboutSection = ({ title, blurb, portrait, clients, education }) => (
           </ProjectText>
         </Box>
       )}
-      <Box width={1 / 3} pb={3}>
+      {/* <Box width={1 / 3} pb={3}>
         <ProjectText>History</ProjectText>
         <ProjectText>
           Freelanced for five years at various agencies since 2015 with three
@@ -55,11 +55,12 @@ const AboutSection = ({ title, blurb, portrait, clients, education }) => (
           <EducationList title="Education" list={education} />
         </Box>
       )}
+
       {clients && (
         <Box width={1 / 3} pb={3}>
           <ProfileList title="Clients" list={clients} />
         </Box>
-      )}
+      )} */}
     </TextWrapper>
   </Flex>
 );
