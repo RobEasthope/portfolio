@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Box } from 'rebass';
 import { Link } from 'gatsby';
+import { breakpoints } from '../../styles/theme';
 
 // import { colors } from '../../styles/theme';
 // import fontSizing from '../../utils/fontsizing';
@@ -16,6 +17,9 @@ const Glyph = styled.img`
 const LogoWrapper = styled(Box)`
   flex: 1;
   padding: 1em;
+  @media (min-width: ${breakpoints.md}) {
+    padding: 0;
+  }
 `;
 
 // const SiteTitleText = styled(Link)`
