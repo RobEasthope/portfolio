@@ -7,8 +7,10 @@ import Image from 'gatsby-image';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
+import ProfileList from '../../components/ProfileList/ProfileList';
+import EducationList from '../../components/EducationList/EducationList';
 
-const AboutSection = ({ title, blurb, portrait }) => (
+const AboutSection = ({ title, blurb, portrait, clients, education }) => (
   <Flex
     as="section"
     flexDirection="row"
@@ -16,20 +18,20 @@ const AboutSection = ({ title, blurb, portrait }) => (
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
-    {title && (
+    {/* {title && (
       <Flex width={1} justifyContent={{ md: 'flex-end' }}>
         <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
           {title}
         </SectionTitle>
       </Flex>
-    )}
+    )} */}
     <TextWrapper
       flexWrap="wrap"
       flexDirection="row"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
       {portrait && (
-        <Box width={1}>
+        <Box width={1} mt="3em">
           <Image fluid={portrait.asset.fluid} />
         </Box>
       )}
@@ -40,6 +42,24 @@ const AboutSection = ({ title, blurb, portrait }) => (
           </ProjectText>
         </Box>
       )}
+      <Box width={1 / 3} pb={3}>
+        <ProjectText>History</ProjectText>
+        <ProjectText>
+          Freelanced for five years at various agencies since 2015 with three
+          years experience prior to that.
+        </ProjectText>
+      </Box>
+
+      {education && (
+        <Box width={1 / 3} pb={3}>
+          <EducationList title="Education" list={education} />
+        </Box>
+      )}
+      {clients && (
+        <Box width={1 / 3} pb={3}>
+          <ProfileList title="Clients" list={clients} />
+        </Box>
+      )}
     </TextWrapper>
   </Flex>
 );
@@ -47,12 +67,16 @@ const AboutSection = ({ title, blurb, portrait }) => (
 AboutSection.defaultProps = {
   title: '',
   blurb: [],
+  clients: [],
+  education: [],
   portrait: {},
 };
 
 AboutSection.propTypes = {
   title: PropTypes.string,
   blurb: PropTypes.arrayOf(PropTypes.object),
+  clients: PropTypes.arrayOf(PropTypes.object),
+  education: PropTypes.arrayOf(PropTypes.object),
   portrait: PropTypes.object,
 };
 

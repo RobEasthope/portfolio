@@ -12,11 +12,28 @@ export const query = graphql`
   {
     about: sanityAbout {
       title
-      _rawBody
+      _rawProfile
       portrait {
         asset {
           fluid {
             ...GatsbySanityImageFluid
+          }
+        }
+      }
+      clients {
+        name
+        id
+      }
+      education {
+        id
+        qualification
+        name
+        when
+        logo {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
           }
         }
       }
@@ -47,8 +64,10 @@ const AboutPage = props => {
       <Layout>
         <AboutSection
           title={about.title}
-          blurb={about._rawBody}
+          blurb={about._rawProfile}
           portrait={about.portrait}
+          clients={about.clients}
+          education={about.education}
         />
       </Layout>
     </React.Fragment>
