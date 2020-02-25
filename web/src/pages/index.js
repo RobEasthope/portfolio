@@ -11,7 +11,6 @@ import LandingSection from '../sections/LandingSection/LandingSection';
 export const query = graphql`
   {
     landing: sanityLanding {
-      tagline
       image {
         imageAsset {
           asset {
@@ -58,11 +57,7 @@ const IndexPage = props => {
       <SEO title="Rob Easthope" />
 
       <Layout disableFooter landingPageStyling>
-        <LandingSection
-          tagline={landing.tagline}
-          image={landing.image}
-          video={landing.video}
-        />
+        <LandingSection image={landing.image} video={landing.video} />
       </Layout>
     </React.Fragment>
   );
