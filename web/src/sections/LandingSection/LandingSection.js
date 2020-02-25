@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Flex, Box } from 'rebass';
-import styled from 'styled-components';
+import { Flex } from 'rebass';
 import RelativeBox from '../../components/RelativeBox/RelativeBox';
 
 import LandingTagline from '../../components/LandingTagline/LandingTagline';
-// import LandingJumbotron from '../../components/LandingJumbotron/LandingJumbotron';
 import LandingVideoJumbotron from '../../components/LandingVideoJumbotron/LandingVideoJumbotron';
-
-const LandingTaglineWrapper = styled(Box)`
-  z-index: -1;
-`;
 
 const LandingSection = props => {
   const { tagline, video } = props;
 
   return (
     <Flex as="section">
-      <RelativeBox width={1} px="0" style={{ zIndex: -1 }}>
+      <RelativeBox width={1} p="1em" pl={{ md: 0 }} style={{ zIndex: -1 }}>
         {tagline && (
-          // <LandingTaglineWrapper>
           <LandingTagline
             as="h1"
             width="100%"
@@ -29,9 +22,8 @@ const LandingSection = props => {
           >
             {tagline}
           </LandingTagline>
-          // </LandingTaglineWrapper>
         )}
-        {/* {image && <LandingJumbotron fluid={image.imageAsset.asset.fluid} />} */}
+
         {video && (
           <LandingVideoJumbotron
             assetDocument={video.asset}
@@ -49,7 +41,7 @@ const LandingSection = props => {
 
 LandingSection.defaultProps = {
   tagline: '',
-  education: [],
+  video: {},
 };
 
 LandingSection.propTypes = {

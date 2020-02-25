@@ -15,6 +15,7 @@ const Glyph = styled.img`
 `;
 const LogoWrapper = styled(Box)`
   flex: 1;
+  padding: 1em;
 `;
 
 // const SiteTitleText = styled(Link)`

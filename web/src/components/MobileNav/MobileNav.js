@@ -21,7 +21,7 @@ const MobileModal = styled(ReactModal)`
 
 const MobileNavBtn = styled(Button)`
   border: none;
-  padding: 0;
+  padding: 1em;
   background-color: transparent;
   color: ${colors.ink};
 
@@ -121,7 +121,7 @@ const MobileNav = ({ landingPageStyling }) => {
 
           <MobileNavList
             as="ul"
-            pl="0"
+            pl="1em"
             pr="0"
             pt="0"
             pb="48px"
