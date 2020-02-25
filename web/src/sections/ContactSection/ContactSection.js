@@ -11,12 +11,13 @@ const ContactSection = ({ title, email, linkedin }) => (
     as="section"
     flexDirection="row"
     flexWrap="wrap"
+    py={{ b: 3, md: 4 }}
     px={{ b: 3, md: 4 }}
     justifyContent="flex-end"
   >
-    <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
+    {/* <SectionTitle as="h2" width={1} textAlign={{ b: 'left', md: 'right' }}>
       {title}
-    </SectionTitle>
+    </SectionTitle> */}
     <TextWrapper
       flexWrap="wrap"
       flexDirection="row"

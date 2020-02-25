@@ -25,13 +25,14 @@ const PortfolioSection = props => {
       flexDirection="row"
       flexWrap="wrap"
       ml={{ b: 0, md: 4 }}
+      pt={{ b: 3, md: 4 }}
       px={{ b: 3, md: 4 }}
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
       <Flex width={1} justifyContent={{ md: 'flex-end' }}>
-        <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
+        {/* <SectionTitle as="h2" textAlign={{ b: 'left', md: 'right' }}>
           {title}
-        </SectionTitle>
+        </SectionTitle> */}
       </Flex>
 
       <PortfolioIndexWrapper
