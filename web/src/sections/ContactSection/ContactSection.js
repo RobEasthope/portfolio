@@ -28,7 +28,7 @@ const ContactSection = ({ email, linkedin }) => (
       <FooterLink
         href={`mailto:${email}`}
         width={1}
-        mt={{ b: '0', md: '1em' }}
+        mt={{ b: '0', md: '2em' }}
         mb={{ b: '0', md: '2em' }}
         target="_blank"
         rel="noreferrer noopener"
