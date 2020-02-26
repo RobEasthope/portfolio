@@ -6,8 +6,6 @@ import fontSizing from '../../utils/fontsizing';
 const ProjectText = styled(Text)`
   font-size: ${fontSizing(20, 24)};
   margin-bottom: 0.5em;
-  /* width: 100%; */
-  /* max-width: 27em; */
 
   img {
     max-width: 100%;
