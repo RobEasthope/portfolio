@@ -9,6 +9,12 @@ export default {
       type: 'string'
     },
     {
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+      validation: Rule => Rule.required().warning('Required field'),
+    },
+    {
       name: 'qualification',
       title: 'Qualification',
       type: 'string'
