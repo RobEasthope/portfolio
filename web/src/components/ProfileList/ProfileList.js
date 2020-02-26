@@ -16,7 +16,7 @@ const ProfileList = props => {
   return (
     <>
       <ProfileListTitle>{title}</ProfileListTitle>
-      <PortfolioIndexWrapper as="ul" width={1}>
+      <PortfolioIndexWrapper as="ul" mb="3em" width={1}>
         {list.map(item => (
           <ProjectText key={item.id} as="li">
             {item.name}
