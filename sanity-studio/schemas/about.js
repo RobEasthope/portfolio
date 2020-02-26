@@ -28,7 +28,7 @@ export default {
       of: [{ type: 'reference', to: { type: 'organisation' } }],
     },
     {
-      name: 'Skills',
+      name: 'skills',
       title: 'Skills',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'tech' } }],
