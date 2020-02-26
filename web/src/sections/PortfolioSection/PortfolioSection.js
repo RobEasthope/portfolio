@@ -10,10 +10,7 @@ import PortfolioCardTitle from '../../components/PortfolioCardTitle/PortfolioCar
 import PortfolioCardDescription from '../../components/PortfolioCardDescription/PortfolioCardDescription';
 import PortfolioCardThumbnail from '../../components/PortfolioCardThumbnail/PortfolioCardThumbnail';
 import RelativeBox from '../../components/RelativeBox/RelativeBox';
-
-const PortfolioIndexWrapper = styled(Box)`
-  list-style-type: none;
-`;
+import UnstyledList from '../../components/UnstyledList/UnstyledList';
 
 const PortfolioSection = props => {
   const { portfolioIndex } = props;
@@ -28,14 +25,7 @@ const PortfolioSection = props => {
       px={{ b: 3, md: 4 }}
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      <PortfolioIndexWrapper
-        as="ul"
-        width="auto"
-        pb="4"
-        px="0"
-        m="0"
-        flexWrap="wrap"
-      >
+      <UnstyledList as="ul" width="auto" pb="4" px="0" m="0" flexWrap="wrap">
         {portfolioIndex.map(project => (
           <PortfolioCard
             as="li"
@@ -66,7 +56,7 @@ const PortfolioSection = props => {
             </RelativeBox>
           </PortfolioCard>
         ))}
-      </PortfolioIndexWrapper>
+      </UnstyledList>
     </Flex>
   );
 };
