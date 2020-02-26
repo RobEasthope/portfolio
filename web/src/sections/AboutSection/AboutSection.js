@@ -7,7 +7,6 @@ import Image from 'gatsby-image';
 import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
 import ProfileList from '../../components/ProfileList/ProfileList';
-import EmployeersList from '../../components/EmployeersList/EmployeersList';
 import UniversityList from '../../components/UniversityList/UniversityList';
 import ProfileListTitle from '../../components/ProfileListTitle/ProfileListTitle';
 

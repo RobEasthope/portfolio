@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Box } from 'rebass';
 import ProjectText from '../ProjectText/ProjectText';
 import TextLink from '../TextLink/TextLink';
 import ProfileListTitle from '../ProfileListTitle/ProfileListTitle';

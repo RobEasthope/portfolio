@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Box } from 'rebass';
 import ProjectText from '../ProjectText/ProjectText';
 import TextLink from '../TextLink/TextLink';
 import UnstyledList from '../UnstyledList/UnstyledList';
 
 const EmployeersList = props => {
-  const { title, list } = props;
+  const {
+    // title,
+    list,
+  } = props;
 
   return (
     <>
@@ -30,12 +31,12 @@ const EmployeersList = props => {
 };
 
 EmployeersList.defaultProps = {
-  title: '',
+  // title: '',
   list: [],
 };
 
 EmployeersList.propTypes = {
-  title: PropTypes.string,
+  // title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.object),
 };
 
