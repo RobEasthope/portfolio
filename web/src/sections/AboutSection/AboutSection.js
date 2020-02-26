@@ -74,6 +74,8 @@ const AboutSection = ({
 
 AboutSection.defaultProps = {
   blurb: [],
+  employeers: [],
+  skills: [],
   clients: [],
   education: [],
   portrait: {},
@@ -81,6 +83,8 @@ AboutSection.defaultProps = {
 
 AboutSection.propTypes = {
   blurb: PropTypes.arrayOf(PropTypes.object),
+  employeers: PropTypes.arrayOf(PropTypes.object),
+  skills: PropTypes.arrayOf(PropTypes.object),
   clients: PropTypes.arrayOf(PropTypes.object),
   education: PropTypes.arrayOf(PropTypes.object),
   portrait: PropTypes.object,
