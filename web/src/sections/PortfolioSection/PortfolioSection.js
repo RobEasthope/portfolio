@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
-import styled from 'styled-components';
-import { Box, Flex } from 'rebass';
+import { Flex } from 'rebass';
 
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import PortfolioCardLink from '../../components/PortfolioCardLink/PortfolioCardLink';
