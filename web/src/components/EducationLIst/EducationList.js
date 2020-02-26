@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 import ProjectText from '../ProjectText/ProjectText';
+import ProfileListTitle from '../ProfileListTitle/ProfileListTitle';
 
 const PortfolioIndexWrapper = styled(Box)`
   list-style-type: none;
@@ -14,7 +15,7 @@ const EducationList = props => {
 
   return (
     <>
-      <ProjectText>{title}</ProjectText>
+      <ProfileListTitle>{title}</ProfileListTitle>
       <PortfolioIndexWrapper as="ul" width={1}>
         {list.map(item => (
           <ProjectText key={item.id} as="li">

@@ -8,6 +8,7 @@ import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
 import ProfileList from '../../components/ProfileList/ProfileList';
 import EducationList from '../../components/EducationList/EducationList';
+import ProfileListTitle from '../../components/ProfileListTitle/ProfileListTitle';
 
 const AboutSection = ({ blurb, portrait, clients, education }) => (
   <Flex
@@ -40,7 +41,7 @@ const AboutSection = ({ blurb, portrait, clients, education }) => (
 
     <Flex mx={-4}>
       <Box width={1 / 3} px={4} pb={3}>
-        <ProjectText>History</ProjectText>
+        <ProfileListTitle>History</ProfileListTitle>
         <ProjectText>
           Freelanced for five years at various agencies since 2015 with three
           years experience prior to that.
