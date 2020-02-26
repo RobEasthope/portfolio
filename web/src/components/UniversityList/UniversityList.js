@@ -5,15 +5,16 @@ import TextLink from '../TextLink/TextLink';
 import ProfileListTitle from '../ProfileListTitle/ProfileListTitle';
 import UnstyledList from '../UnstyledList/UnstyledList';
 
-const ProfileList = props => {
+const UniversityList = props => {
   const { title, list } = props;
 
   return (
     <>
       <ProfileListTitle>{title}</ProfileListTitle>
-      <UnstyledList as="ul" mb="3em" width={1}>
+      <UnstyledList as="ul" width={1}>
         {list.map(item => (
           <ProjectText key={item.id} as="li">
+            {item.qualification} at{' '}
             <TextLink href={item.url} target="_blank" rel="noreferrer noopener">
               {item.name}
             </TextLink>
@@ -24,14 +25,14 @@ const ProfileList = props => {
   );
 };
 
-ProfileList.defaultProps = {
+UniversityList.defaultProps = {
   title: '',
   list: [],
 };
 
-ProfileList.propTypes = {
+UniversityList.propTypes = {
   title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default ProfileList;
+export default UniversityList;

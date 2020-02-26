@@ -3,13 +3,10 @@ import { Text } from 'rebass';
 
 import fontSizing from '../../utils/fontsizing';
 
-const ProjectText = styled(Text)`
+const ProfileListTitle = styled(Text)`
   font-size: ${fontSizing(20, 24)};
-  margin-bottom: 0.5em;
-
-  img {
-    max-width: 100%;
-  }
+  margin-bottom: 1em;
+  text-decoration: underline;
 `;
 
-export default ProjectText;
+export default ProfileListTitle;

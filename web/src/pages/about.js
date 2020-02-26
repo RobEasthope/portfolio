@@ -20,9 +20,20 @@ export const query = graphql`
           }
         }
       }
-      clients {
-        name
+      employeers {
         id
+        name
+        url
+      }
+      skills {
+        id
+        name
+        url
+      }
+      clients {
+        id
+        name
+        url
       }
       education {
         id
@@ -66,6 +77,8 @@ const AboutPage = props => {
           title={about.title}
           blurb={about._rawProfile}
           portrait={about.portrait}
+          employeers={about.employeers}
+          skills={about.skills}
           clients={about.clients}
           education={about.education}
         />
