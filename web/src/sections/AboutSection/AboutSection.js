@@ -10,7 +10,7 @@ import ProfileList from '../../components/ProfileList/ProfileList';
 import EducationList from '../../components/EducationList/EducationList';
 import ProfileListTitle from '../../components/ProfileListTitle/ProfileListTitle';
 
-const AboutSection = ({ blurb, portrait, clients, education }) => (
+const AboutSection = ({ blurb, portrait, clients, skills, education }) => (
   <Flex
     as="section"
     flexDirection="row"
