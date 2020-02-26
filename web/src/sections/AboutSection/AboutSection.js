@@ -6,8 +6,8 @@ import Image from 'gatsby-image';
 
 import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
-// import ProfileList from '../../components/ProfileList/ProfileList';
-// import EducationList from '../../components/EducationList/EducationList';
+import ProfileList from '../../components/ProfileList/ProfileList';
+import EducationList from '../../components/EducationList/EducationList';
 
 const AboutSection = ({ blurb, portrait, clients, education }) => (
   <Flex
@@ -17,25 +17,29 @@ const AboutSection = ({ blurb, portrait, clients, education }) => (
     px={{ b: 3, md: 4 }}
     pt={{ b: 3, md: '3em' }}
     justifyContent="flex-end"
+    alignItems="stretch"
   >
+    {portrait && (
+      <Box width={1} maxWidth="300px" mr={4}>
+        <Image fluid={portrait.asset.fluid} />
+      </Box>
+    )}
     <TextWrapper
       flexWrap="wrap"
       flexDirection="row"
       justifyContent={{ b: 'flex-start', md: 'flex-end' }}
     >
-      {portrait && (
-        <Box width={1}>
-          <Image fluid={portrait.asset.fluid} />
-        </Box>
-      )}
       {blurb && (
         <Box width={1} pb={3}>
-          <ProjectText mt="2em">
+          <ProjectText>
             <BlockContent blocks={blurb} />
           </ProjectText>
         </Box>
       )}
-      {/* <Box width={1 / 3} pb={3}>
+    </TextWrapper>
+
+    <Flex mx={-4}>
+      <Box width={1 / 3} px={4} pb={3}>
         <ProjectText>History</ProjectText>
         <ProjectText>
           Freelanced for five years at various agencies since 2015 with three
@@ -44,17 +48,17 @@ const AboutSection = ({ blurb, portrait, clients, education }) => (
       </Box>
 
       {education && (
-        <Box width={1 / 3} pb={3}>
+        <Box width={1 / 3} px={4} pb={3}>
           <EducationList title="Education" list={education} />
         </Box>
       )}
 
       {clients && (
-        <Box width={1 / 3} pb={3}>
+        <Box width={1 / 3} px={4} pb={3}>
           <ProfileList title="Clients" list={clients} />
         </Box>
-      )} */}
-    </TextWrapper>
+      )}
+    </Flex>
   </Flex>
 );
 
