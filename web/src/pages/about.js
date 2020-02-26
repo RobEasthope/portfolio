@@ -77,6 +77,7 @@ const AboutPage = props => {
           title={about.title}
           blurb={about._rawProfile}
           portrait={about.portrait}
+          employeers={about.employeers}
           skills={about.skills}
           clients={about.clients}
           education={about.education}

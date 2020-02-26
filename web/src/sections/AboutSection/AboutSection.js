@@ -10,7 +10,14 @@ import ProfileList from '../../components/ProfileList/ProfileList';
 import EducationList from '../../components/EducationList/EducationList';
 import ProfileListTitle from '../../components/ProfileListTitle/ProfileListTitle';
 
-const AboutSection = ({ blurb, portrait, clients, skills, education }) => (
+const AboutSection = ({
+  blurb,
+  portrait,
+  employeers,
+  clients,
+  skills,
+  education,
+}) => (
   <Flex
     as="section"
     flexDirection="row"
@@ -46,6 +53,7 @@ const AboutSection = ({ blurb, portrait, clients, skills, education }) => (
           Freelanced for five years at various agencies since 2015 with three
           years experience prior to that.
         </ProjectText>
+        <ProfileList title="" list={employeers} />
       </Box>
 
       {education && (
