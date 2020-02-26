@@ -22,7 +22,6 @@ import landing from './landing';
 import about from './about';
 import details from './details';
 import gig from './gig';
-import cv from './about';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
