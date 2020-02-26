@@ -29,7 +29,7 @@ const AboutSection = ({
     alignItems="stretch"
   >
     {portrait && (
-      <Box width={1} maxWidth="300px" mr={4}>
+      <Box width={1} maxWidth="300px" mr={4} mb={4}>
         <Image fluid={portrait.asset.fluid} />
       </Box>
     )}
@@ -47,25 +47,26 @@ const AboutSection = ({
       )}
     </TextWrapper>
 
-    <Flex mx={-4}>
-      <Box width={1 / 3} px={4} pb={3}>
+    <Flex flexWrap="wrap" mx={-4}>
+      <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
         <ProfileListTitle>History</ProfileListTitle>
-        <ProjectText>
-          Freelanced for five years at various agencies since 2015 with three
-          years experience prior to that.
+        <ProjectText pb="1em">
+          Freelanced for five years at various agencies and clients since
+          November 2015 to the present with three years experience prior to
+          that.
         </ProjectText>
-        <EmployeersList title="" list={employeers} />
+        <ProfileList title="Agencies" list={employeers} />
       </Box>
 
       {education && (
-        <Box width={1 / 3} px={4} pb={3}>
+        <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
           <ProfileList title="Skills" list={skills} />
           <EducationList title="Education" list={education} />
         </Box>
       )}
 
       {clients && (
-        <Box width={1 / 3} px={4} pb={3}>
+        <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
           <ProfileList title="Clients" list={clients} />
         </Box>
       )}
