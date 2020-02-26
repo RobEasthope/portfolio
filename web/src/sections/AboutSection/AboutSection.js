@@ -8,7 +8,7 @@ import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
 import ProfileList from '../../components/ProfileList/ProfileList';
 import EmployeersList from '../../components/EmployeersList/EmployeersList';
-import EducationList from '../../components/EducationList/EducationList';
+import UniversityList from '../../components/UniversityList/UniversityList';
 import ProfileListTitle from '../../components/ProfileListTitle/ProfileListTitle';
 
 const AboutSection = ({
@@ -61,7 +61,7 @@ const AboutSection = ({
       {education && (
         <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
           <ProfileList title="Skills" list={skills} />
-          <EducationList title="Education" list={education} />
+          <UniversityList title="Education" list={education} />
         </Box>
       )}
 
