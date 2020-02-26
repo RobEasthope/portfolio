@@ -7,6 +7,7 @@ import Image from 'gatsby-image';
 import ProjectText from '../../components/ProjectText/ProjectText';
 import TextWrapper from '../../components/TextWrapper/TextWrapper';
 import ProfileList from '../../components/ProfileList/ProfileList';
+import EmployeersList from '../../components/EmployeersList/EmployeersList';
 import EducationList from '../../components/EducationList/EducationList';
 import ProfileListTitle from '../../components/ProfileListTitle/ProfileListTitle';
 
@@ -53,7 +54,7 @@ const AboutSection = ({
           Freelanced for five years at various agencies since 2015 with three
           years experience prior to that.
         </ProjectText>
-        <ProfileList title="" list={employeers} />
+        <EmployeersList title="" list={employeers} />
       </Box>
 
       {education && (
