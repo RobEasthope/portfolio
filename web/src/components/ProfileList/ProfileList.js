@@ -20,7 +20,9 @@ const ProfileList = props => {
       <PortfolioIndexWrapper as="ul" mb="3em" width={1}>
         {list.map(item => (
           <ProjectText key={item.id} as="li">
-            <TextLink href={item.url}>{item.name}</TextLink>
+            <TextLink href={item.url} target="_blank" rel="noreferrer noopener">
+              {item.name}
+            </TextLink>
           </ProjectText>
         ))}
       </PortfolioIndexWrapper>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 import ProjectText from '../ProjectText/ProjectText';
+import TextLink from '../TextLink/TextLink';
 import ProfileListTitle from '../ProfileListTitle/ProfileListTitle';
 
 const PortfolioIndexWrapper = styled(Box)`
@@ -19,7 +20,10 @@ const EducationList = props => {
       <PortfolioIndexWrapper as="ul" width={1}>
         {list.map(item => (
           <ProjectText key={item.id} as="li">
-            {item.qualification} at {item.name}
+            {item.qualification} at{' '}
+            <TextLink href={item.url} target="_blank" rel="noreferrer noopener">
+              {item.name}
+            </TextLink>
           </ProjectText>
         ))}
       </PortfolioIndexWrapper>

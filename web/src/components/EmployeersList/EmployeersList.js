@@ -23,7 +23,9 @@ const EmployeersList = props => {
         </ProjectText>
         {list.map(item => (
           <ProjectText key={item.id} as="span">
-            <TextLink href={item.url}>{item.name}, </TextLink>
+            <TextLink href={item.url} target="_blank" rel="noreferrer noopener">
+              {item.name},{' '}
+            </TextLink>
           </ProjectText>
         ))}
         <ProjectText as="span">and many others.</ProjectText>
