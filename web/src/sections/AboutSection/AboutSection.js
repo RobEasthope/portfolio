@@ -50,6 +50,7 @@ const AboutSection = ({ blurb, portrait, clients, education }) => (
 
       {education && (
         <Box width={1 / 3} px={4} pb={3}>
+          <ProfileList title="Skills" list={skills} />
           <EducationList title="Education" list={education} />
         </Box>
       )}
