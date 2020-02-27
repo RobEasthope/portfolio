@@ -21,7 +21,12 @@ const MobileModal = styled(ReactModal)`
 
 const MobileNavBtn = styled(Button)`
   border: none;
-  padding: 1em;
+  padding-top: 0;
+  ${props =>
+    props.landingPageStyling &&
+    css`
+      padding: 1em;
+    `}
   background-color: transparent;
   color: ${colors.ink};
 
@@ -70,16 +75,29 @@ const MobileNavList = styled(Box)`
   }
 `;
 
-function mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen) {
+function mobileNavLogo(
+  openMobileNav,
+  closeMobileNav,
+  mobileNavOpen,
+  landingPageStyling
+) {
   if (mobileNavOpen) {
     return (
-      <MobileNavBtn type="button" onClick={closeMobileNav}>
+      <MobileNavBtn
+        type="button"
+        onClick={closeMobileNav}
+        landingPageStyling={landingPageStyling}
+      >
         <IoMdClose />
       </MobileNavBtn>
     );
   }
   return (
-    <MobileNavBtn type="button" onClick={openMobileNav}>
+    <MobileNavBtn
+      type="button"
+      onClick={openMobileNav}
+      landingPageStyling={landingPageStyling}
+    >
       <IoIosMenu />
     </MobileNavBtn>
   );
@@ -99,9 +117,20 @@ const MobileNav = ({ landingPageStyling }) => {
   return (
     <HeaderWrapper as="header" landingPageStyling={landingPageStyling}>
       <Flex width="100vw" pl="3" pr="3" pt="3">
-        <Logo as="div" url="/" src={LogoAsset} altText="Rob Easthope" />
+        <Logo
+          as="div"
+          url="/"
+          src={LogoAsset}
+          altText="Rob Easthope"
+          landingPageStyling={landingPageStyling}
+        />
 
-        {mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen)}
+        {mobileNavLogo(
+          openMobileNav,
+          closeMobileNav,
+          mobileNavOpen,
+          landingPageStyling
+        )}
       </Flex>
 
       <MobileModal
@@ -111,19 +140,11 @@ const MobileNav = ({ landingPageStyling }) => {
         ariaHideApp={false}
       >
         <nav>
-          <Flex width="100%" pb="3">
-            <Logo as="span" url="/" src={LogoAsset} altText="Rob Easthope" />
-
-            <MobileNavBtn type="button" onClick={closeMobileNav}>
-              <IoMdClose />
-            </MobileNavBtn>
-          </Flex>
-
           <MobileNavList
             as="ul"
             pl="1em"
             pr="0"
-            pt="0"
+            pt={5}
             pb="48px"
             m="0"
             justifyContent="flex-start"
