@@ -99,7 +99,13 @@ const MobileNav = ({ landingPageStyling }) => {
   return (
     <HeaderWrapper as="header" landingPageStyling={landingPageStyling}>
       <Flex width="100vw" pl="3" pr="3" pt="3">
-        <Logo as="div" url="/" src={LogoAsset} altText="Rob Easthope" />
+        <Logo
+          as="div"
+          url="/"
+          src={LogoAsset}
+          altText="Rob Easthope"
+          landingPageStyling={landingPageStyling}
+        />
 
         {mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen)}
       </Flex>

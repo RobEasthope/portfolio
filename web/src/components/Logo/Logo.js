@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Box, Text } from 'rebass';
 import { Link } from 'gatsby';
@@ -16,10 +16,14 @@ import fontSizing from '../../utils/fontsizing';
 
 const LogoWrapper = styled(Box)`
   flex: 1;
-  padding: 1em;
-  @media (min-width: ${breakpoints.md}) {
-    padding: 0;
-  }
+  ${props =>
+    props.landingPageStyling &&
+    css`
+      padding: 1em;
+      @media (min-width: ${breakpoints.md}) {
+        padding: 0;
+      }
+    `}
 `;
 
 const SiteTitleText = styled(Text)`
@@ -29,8 +33,12 @@ const SiteTitleText = styled(Text)`
   font-size: ${fontSizing(18, 24)};
 `;
 
-const Logo = ({ as, url, src, altText }) => (
-  <LogoWrapper as={as} justifySelf="flex-start">
+const Logo = ({ as, url, src, altText, landingPageStyling }) => (
+  <LogoWrapper
+    as={as}
+    justifySelf="flex-start"
+    landingPageStyling={landingPageStyling}
+  >
     <Link to={url}>
       <SiteTitleText>Rob Easthope</SiteTitleText>
     </Link>
