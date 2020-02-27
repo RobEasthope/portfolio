@@ -65,12 +65,12 @@ const AboutSection = ({
         maxWidth="66em"
       >
         <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
-          <ProfileListTitle>History</ProfileListTitle>
+          {/* <ProfileListTitle>History</ProfileListTitle>
           <ProjectText pb="1em">
             Freelanced for five years at various agencies and clients since
             November 2015 to the present with three years experience prior to
             that.
-          </ProjectText>
+          </ProjectText> */}
           <ProfileList title="Agencies" list={employeers} />
         </Box>
 
