@@ -21,7 +21,12 @@ const MobileModal = styled(ReactModal)`
 
 const MobileNavBtn = styled(Button)`
   border: none;
-  padding: 1em;
+  padding-top: 0;
+  ${props =>
+    props.landingPageStyling &&
+    css`
+      padding: 1em;
+    `}
   background-color: transparent;
   color: ${colors.ink};
 
@@ -70,16 +75,29 @@ const MobileNavList = styled(Box)`
   }
 `;
 
-function mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen) {
+function mobileNavLogo(
+  openMobileNav,
+  closeMobileNav,
+  mobileNavOpen,
+  landingPageStyling
+) {
   if (mobileNavOpen) {
     return (
-      <MobileNavBtn type="button" onClick={closeMobileNav}>
+      <MobileNavBtn
+        type="button"
+        onClick={closeMobileNav}
+        landingPageStyling={landingPageStyling}
+      >
         <IoMdClose />
       </MobileNavBtn>
     );
   }
   return (
-    <MobileNavBtn type="button" onClick={openMobileNav}>
+    <MobileNavBtn
+      type="button"
+      onClick={openMobileNav}
+      landingPageStyling={landingPageStyling}
+    >
       <IoIosMenu />
     </MobileNavBtn>
   );
@@ -107,7 +125,12 @@ const MobileNav = ({ landingPageStyling }) => {
           landingPageStyling={landingPageStyling}
         />
 
-        {mobileNavLogo(openMobileNav, closeMobileNav, mobileNavOpen)}
+        {mobileNavLogo(
+          openMobileNav,
+          closeMobileNav,
+          mobileNavOpen,
+          landingPageStyling
+        )}
       </Flex>
 
       <MobileModal
