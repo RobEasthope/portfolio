@@ -27,7 +27,7 @@ const SiteTitleText = styled(Text)`
   color: ${colors.ink};
   text-decoration: none;
   font-size: ${fontSizing(18, 24)};
-  margin-top: 0.5em;
+  /* margin-top: 0.5em; */
 `;
 
 const Logo = ({ as, url, src, altText }) => (
