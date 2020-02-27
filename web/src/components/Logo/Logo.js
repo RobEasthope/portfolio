@@ -33,10 +33,10 @@ const SiteTitleText = styled(Text)`
 const Logo = ({ as, url, src, altText }) => (
   <LogoWrapper as={as} justifySelf="flex-start">
     <Link to={url}>
-      <Glyph src={src} alt={altText} />
-      <Box>
-        <SiteTitleText>Rob Easthope</SiteTitleText>
-      </Box>
+      {/* <Glyph src={src} alt={altText} /> */}
+      {/* <Box> */}
+      <SiteTitleText>Rob Easthope</SiteTitleText>
+      {/* </Box> */}
     </Link>
   </LogoWrapper>
 );
