@@ -117,19 +117,11 @@ const MobileNav = ({ landingPageStyling }) => {
         ariaHideApp={false}
       >
         <nav>
-          <Flex width="100%" pb="3">
-            <Logo as="span" url="/" src={LogoAsset} altText="Rob Easthope" />
-
-            <MobileNavBtn type="button" onClick={closeMobileNav}>
-              <IoMdClose />
-            </MobileNavBtn>
-          </Flex>
-
           <MobileNavList
             as="ul"
             pl="1em"
             pr="0"
-            pt="0"
+            pt={5}
             pb="48px"
             m="0"
             justifyContent="flex-start"
