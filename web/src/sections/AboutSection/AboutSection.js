@@ -25,51 +25,69 @@ const AboutSection = ({
     px={{ b: 3, md: 4 }}
     pt={{ b: 3, md: '3em' }}
     justifyContent="flex-end"
-    alignItems="stretch"
   >
-    {portrait && (
-      <Box width={1} maxWidth="300px" mr={4} mb={4}>
-        <Image fluid={portrait.asset.fluid} />
-      </Box>
-    )}
-    <TextWrapper
-      flexWrap="wrap"
-      flexDirection="row"
-      justifyContent={{ b: 'flex-start', md: 'flex-end' }}
-    >
-      {blurb && (
-        <Box width={1} pb={3}>
-          <ProjectText>
-            <BlockContent blocks={blurb} />
+    <Box width={1}>
+      <Flex
+        as="section"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="flex-end"
+      >
+        {portrait && (
+          <Box width={1} maxWidth="300px" mr={4} mb={4}>
+            <Image fluid={portrait.asset.fluid} />
+          </Box>
+        )}
+        <TextWrapper
+          flexWrap="wrap"
+          flexDirection="row"
+          justifyContent={{ b: 'flex-start', md: 'flex-end' }}
+          width={1}
+        >
+          {blurb && (
+            <Box width={1} pb={3}>
+              <ProjectText>
+                <BlockContent blocks={blurb} />
+              </ProjectText>
+            </Box>
+          )}
+        </TextWrapper>
+      </Flex>
+    </Box>
+
+    <Box>
+      <Flex
+        as="section"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="flex-end"
+        mx={-4}
+        maxWidth="66em"
+      >
+        <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
+          <ProfileListTitle>History</ProfileListTitle>
+          <ProjectText pb="1em">
+            Freelanced for five years at various agencies and clients since
+            November 2015 to the present with three years experience prior to
+            that.
           </ProjectText>
+          <ProfileList title="Agencies" list={employeers} />
         </Box>
-      )}
-    </TextWrapper>
 
-    <Flex flexWrap="wrap" mx={-4}>
-      <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
-        <ProfileListTitle>History</ProfileListTitle>
-        <ProjectText pb="1em">
-          Freelanced for five years at various agencies and clients since
-          November 2015 to the present with three years experience prior to
-          that.
-        </ProjectText>
-        <ProfileList title="Agencies" list={employeers} />
-      </Box>
+        {education && (
+          <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
+            <ProfileList title="Skills" list={skills} />
+            <UniversityList title="Education" list={education} />
+          </Box>
+        )}
 
-      {education && (
-        <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
-          <ProfileList title="Skills" list={skills} />
-          <UniversityList title="Education" list={education} />
-        </Box>
-      )}
-
-      {clients && (
-        <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
-          <ProfileList title="Clients" list={clients} />
-        </Box>
-      )}
-    </Flex>
+        {clients && (
+          <Box width={{ b: 1, md: 1 / 2, lg: 1 / 3 }} px={4} pb={3}>
+            <ProfileList title="Clients" list={clients} />
+          </Box>
+        )}
+      </Flex>
+    </Box>
   </Flex>
 );
 
