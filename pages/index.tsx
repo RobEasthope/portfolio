@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export const Home = (): JSX.Element => (
+export const Home: React.FC = () => (
   <div className="container">
     <Head>
       <title>Create Next App</title>
