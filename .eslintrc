@@ -48,6 +48,6 @@
     "react/react-in-jsx-scope": "off"
   },
   "parserOptions": {
-  "project": "./tsconfig.json"
+    "project": "./tsconfig.json"
   },
 }
