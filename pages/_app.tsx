@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 
-const App: React.FC =({ Component, pageProps }) => {
+import type { AppProps } from 'next/app'
+
+const App:React.FC =({ Component, pageProps }: AppProps) => {
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Component {...pageProps} />
 }
