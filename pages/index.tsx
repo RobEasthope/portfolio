@@ -16,14 +16,6 @@ export const Home = (): JSX.Element => (
         Get started by editing <code>pages/index.tsx</code>
       </p>
 
-      <button
-        onClick={() => {
-          window.alert('With typescript and Jest')
-        }}
-      >
-        Test Button
-      </button>
-
       <div className="grid">
         <a href="https://nextjs.org/docs" className="card">
           <h3>Documentation &rarr;</h3>
