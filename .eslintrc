@@ -45,6 +45,7 @@
       { "functions": false, "classes": true, "variables": true, "typedefs": true },
     ],
     "unicorn/prevent-abbreviations": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "parserOptions": {
   "project": "./tsconfig.json"
