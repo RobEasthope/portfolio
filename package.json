@@ -6,14 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --fix ./ >/dev/null 2>&1 || true",
-    "format-imports": "import-sort --write '**/*.{js,jsx,ts,tsx}'",
-    "format-package-json": "sort-package-json",
-    "format-prettier": "prettier --write '**/*.{css,gql,graphql,html,js,jsx,json,less,md,mdx,scss,ts,tsx,vue,yaml,yml}' '.editorconfig'",
-    "lint": "run-p lint-eslint lint-markdown",
-    "lint--watch": "onchange 'src/**/*' --initial --kill --delay 1000  -- npm run lint",
-    "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./",
-    "lint-markdown": "markdownlint --ignore coverage --ignore dist --ignore examples --ignore node_modules '**/*.md' '.**/**/*.md'"
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "test": "jest",
+    "test-all": "yarn lint && yarn type-check && yarn test"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.4",
