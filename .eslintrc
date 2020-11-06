@@ -47,6 +47,16 @@
     "unicorn/prevent-abbreviations": "off",
     "react/react-in-jsx-scope": "off"
   },
+  "overrides": [
+    {
+      "files": [
+        "pages/**/**.*"
+      ],
+      "rules": {
+        "import/no-default-export": "off",
+      }
+    }
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
