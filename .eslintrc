@@ -2,7 +2,7 @@
   "plugins": [
     "@typescript-eslint",
     "eslint-comments",
-    "jest",
+    // "jest",
     "promise",
     "unicorn",
   ],
@@ -10,7 +10,7 @@
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:eslint-comments/recommended",
-    "plugin:jest/recommended",
+    // "plugin:jest/recommended",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
     "prettier",
@@ -20,7 +20,7 @@
   "env": {
     "node": true,
     "browser": true,
-    "jest": true,
+    // "jest": true,
   },
   "rules": {
     "comma-dangle": [
@@ -45,5 +45,8 @@
       { "functions": false, "classes": true, "variables": true, "typedefs": true },
     ],
     "unicorn/prevent-abbreviations": "off",
+  },
+  "parserOptions": {
+  "project": "./tsconfig.json"
   },
 }
