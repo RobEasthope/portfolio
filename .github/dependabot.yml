@@ -24,7 +24,7 @@ updates:
       - dependency-name: "eslint-plugin-react-hooks"
       - dependency-name: "prettier"
   - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/apps/trq-next" # Location of package manifests
+    directory: "/apps/portfolio-next" # Location of package manifests
     schedule:
       interval: "weekly"
     ignore:
@@ -42,7 +42,7 @@ updates:
       - dependency-name: "eslint-plugin-react-hooks"
       - dependency-name: "prettier"
   - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/apps/trq-sanity" # Location of package manifests
+    directory: "/apps/portfolio-sanity" # Location of package manifests
     schedule:
       interval: "weekly"
     ignore:

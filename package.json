@@ -17,7 +17,7 @@
           ".next/**"
         ]
       },
-      "trq-next": {
+      "portfolio-next": {
         "dependsOn": [
           "^build",
           "NEXT_PUBLIC_SANITY_PROJECT_ID",
@@ -27,7 +27,7 @@
           "SANITY_STUDIO_PREVIEW_KEY"
         ]
       },
-      "trq-sanity": {
+      "portfolio-sanity": {
         "dependsOn": [
           "^build",
           "SANITY_PROJECT_ID",
@@ -55,22 +55,22 @@
   "scripts": {
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
-    "next": "npx turbo run dev --scope=trq-next --include-dependencies --no-deps`",
-    "next:build": "npx turbo run build --scope=trq-next --include-dependencies --no-deps`",
-    "sanity": "npx turbo run dev --scope=trq-sanity --include-dependencies --no-deps`",
-    "sanity:build": "npx turbo run build --scope=trq-sanity --include-dependencies --no-deps`",
+    "next": "npx turbo run dev --scope=portfolio-next --include-dependencies --no-deps`",
+    "next:build": "npx turbo run build --scope=portfolio-next --include-dependencies --no-deps`",
+    "sanity": "npx turbo run dev --scope=portfolio-sanity --include-dependencies --no-deps`",
+    "sanity:build": "npx turbo run build --scope=portfolio-sanity --include-dependencies --no-deps`",
     "lint": "turbo run lint",
-    "eslint": "cd ./packages/ui && yarn lint && cd ../../apps/trq-next && yarn lint && cd ../trq-sanity && yarn lint",
-    "eslint:fix": "cd ./packages/ui && yarn lint:fix && cd ../../apps/trq-next && yarn lint:fix && cd ../trq-sanity && yarn lint:fix",
-    "sanity-upgrade": "cd ./apps/trq-sanity && sanity upgrade",
-    "type-check": "cd ./packages/ui && yarn type-check && cd ../../apps/trq-next && yarn type-check",
+    "eslint": "cd ./packages/ui && yarn lint && cd ../../apps/portfolio-next && yarn lint && cd ../portfolio-sanity && yarn lint",
+    "eslint:fix": "cd ./packages/ui && yarn lint:fix && cd ../../apps/portfolio-next && yarn lint:fix && cd ../portfolio-sanity && yarn lint:fix",
+    "sanity-upgrade": "cd ./apps/portfolio-sanity && sanity upgrade",
+    "type-check": "cd ./packages/ui && yarn type-check && cd ../../apps/portfolio-next && yarn type-check",
     "types": "npx sanity-codegen",
     "test": "turbo run test",
-    "test:ci": "cd ./apps/trq-next && yarn test:ci",
-    "cypress": "cd ./apps/trq-next && yarn cypress",
-    "cypress:headless": "cd ./apps/trq-next && yarn cypress:headless",
-    "e2e": "cd ./apps/trq-next && yarn e2e",
-    "e2e:headless": "cd ./apps/trq-next && yarn e2e:headless",
+    "test:ci": "cd ./apps/portfolio-next && yarn test:ci",
+    "cypress": "cd ./apps/portfolio-next && yarn cypress",
+    "cypress:headless": "cd ./apps/portfolio-next && yarn cypress:headless",
+    "e2e": "cd ./apps/portfolio-next && yarn e2e",
+    "e2e:headless": "cd ./apps/portfolio-next && yarn e2e:headless",
     "prepare": "husky install"
   },
   "devDependencies": {

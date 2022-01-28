@@ -9,7 +9,7 @@ import {
   overlayDrafts,
   sanityClient,
 } from '@/UTILS/sanity-api/sanity.server';
-import { selectSanityQuery } from '@/TRQ/sanity-api/selectSanityQuery';
+import { selectSanityQuery } from '@/NEXT/sanity-api/selectSanityQuery';
 
 import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
