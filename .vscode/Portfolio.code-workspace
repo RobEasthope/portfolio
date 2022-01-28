@@ -30,7 +30,6 @@
       "node_modules/": true,
       "apps/": true,
       "packages/": true,
-      "storybook-static": true,
       ".next": true,
       "tsconfig.tsbuildinfo": true,
       "dist": true

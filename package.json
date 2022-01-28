@@ -14,8 +14,7 @@
         ],
         "outputs": [
           "dist/**",
-          ".next/**",
-          "storybook-static/**"
+          ".next/**"
         ]
       },
       "trq-next": {
@@ -26,13 +25,6 @@
           "NEXT_PUBLIC_SANITY_API_VERSION",
           "SANITY_API_TOKEN",
           "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "trq-storybook": {
-        "dependsOn": [
-          "^build",
-          "STORYBOOK_SANITY_PROJECT_ID",
-          "STORYBOOK_SANITY_DATASET"
         ]
       },
       "trq-sanity": {
@@ -67,8 +59,6 @@
     "next:build": "npx turbo run build --scope=trq-next --include-dependencies --no-deps`",
     "sanity": "npx turbo run dev --scope=trq-sanity --include-dependencies --no-deps`",
     "sanity:build": "npx turbo run build --scope=trq-sanity --include-dependencies --no-deps`",
-    "storybook": "npx turbo run dev --scope=trq-storybook --include-dependencies --no-deps`",
-    "storybook:build": "npx turbo run build --scope=trq-storybook --include-dependencies --no-deps`",
     "lint": "turbo run lint",
     "eslint": "cd ./packages/ui && yarn lint && cd ../../apps/trq-next && yarn lint && cd ../trq-sanity && yarn lint",
     "eslint:fix": "cd ./packages/ui && yarn lint:fix && cd ../../apps/trq-next && yarn lint:fix && cd ../trq-sanity && yarn lint:fix",

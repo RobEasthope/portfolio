@@ -4,15 +4,6 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'storybook',
-      title: 'Storybook',
-      type: 'note',
-      options: {
-        message:
-          '<a href="https://portfolio-storybook.vercel.app/?path=/story/sections-examplesection--vanilla">Storybook UI preview</a>',
-      },
-    },
-    {
       name: 'heading',
       title: 'Heading',
       type: 'string',

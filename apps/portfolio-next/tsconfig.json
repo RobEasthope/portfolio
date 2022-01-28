@@ -10,9 +10,6 @@
       ],
       "@/UTILS/*": [
         "../../packages/utils/*"
-      ],
-      "@/STORYBOOK/*": [
-        "../../apps/trq-storybook/.storybook/*"
       ]
     },
     "target": "es5",

@@ -4,8 +4,7 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!.sanity-studio/**',
-    '!.next/**',
-    '!.storybook/**',
+    '!.next/**'
   ],
   moduleNameMapper: {
     // Handle CSS imports (with CSS modules)

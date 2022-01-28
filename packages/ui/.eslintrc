@@ -52,7 +52,6 @@
     "/.vercel",
     "/dist",
     "/static",
-    "/storybook-static",
     "/.next",
     "/types/sanity-schema.d.ts"
   ],
