@@ -17,6 +17,10 @@
       "path": "../apps/portfolio-sanity"
     },
     {
+      "name": "Gatsby",
+      "path": "../apps/portfolio-gatsby"
+    },
+    {
       "name": "Utils",
       "path": "../packages/utils"
     },
