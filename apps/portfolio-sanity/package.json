@@ -63,7 +63,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RobEasthope/triquetra.git"
+    "url": "https://github.com/RobEasthope/portfolio.git"
   },
   "resolutions": {
     "**/three": "0.119.1"

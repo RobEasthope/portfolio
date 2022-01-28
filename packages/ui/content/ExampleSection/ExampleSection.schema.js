@@ -9,7 +9,7 @@ export default {
       type: 'note',
       options: {
         message:
-          '<a href="https://triquetra-storybook.vercel.app/?path=/story/sections-examplesection--vanilla">Storybook UI preview</a>',
+          '<a href="https://portfolio-storybook.vercel.app/?path=/story/sections-examplesection--vanilla">Storybook UI preview</a>',
       },
     },
     {

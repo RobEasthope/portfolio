@@ -28,7 +28,7 @@
   "settings": {
     "files.exclude": {
       "node_modules/": true,
-      "apps/": true,
+      // "apps/": true,
       "packages/": true,
       "storybook-static": true,
       ".next": true,

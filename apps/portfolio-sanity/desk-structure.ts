@@ -56,7 +56,7 @@ export const getDefaultDocumentNode = () => {
 export default () =>
   S.list()
     .id('__root__')
-    .title('Triquetra')
+    .title('Portfolio')
     .items([
       S.listItem()
         .title('Pages')
