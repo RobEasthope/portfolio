@@ -21,6 +21,10 @@
       "path": "../apps/portfolio-gatsby"
     },
     {
+      "name": "Old Sanity Schemas",
+      "path": "../packages/old-schemas"
+    },
+    {
       "name": "Utils",
       "path": "../packages/utils"
     },
