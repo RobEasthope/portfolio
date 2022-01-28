@@ -10,15 +10,11 @@
     },
     {
       "name": "Next",
-      "path": "../apps/trq-next"
-    },
-    {
-      "name": "Storybook",
-      "path": "../apps/trq-storybook"
+      "path": "../apps/portfolio-next"
     },
     {
       "name": "Sanity Studio",
-      "path": "../apps/trq-sanity"
+      "path": "../apps/portfolio-sanity"
     },
     {
       "name": "Utils",
