@@ -22,7 +22,7 @@
     },
     {
       "name": "Old Sanity Schemas",
-      "path": "../packages/old-schemas"
+      "path": "../packages/old-sanity-schemas"
     },
     {
       "name": "Utils",
