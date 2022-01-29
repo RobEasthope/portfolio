@@ -56,7 +56,7 @@ export default {
     prepare() {
       return {
         title: `CV`,
-      }
-    }
+      };
+    },
   },
 };

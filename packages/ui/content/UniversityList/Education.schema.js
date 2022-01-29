@@ -6,23 +6,23 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'url',
       title: 'URL',
       type: 'url',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'qualification',
       title: 'Qualification',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'when',
       title: 'When',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'logo',
@@ -30,7 +30,7 @@ export default {
       type: 'image',
       options: {
         hotspot: true,
-      }
+      },
     },
   ],
   preview: {

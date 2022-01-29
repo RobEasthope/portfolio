@@ -7,7 +7,7 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'url',

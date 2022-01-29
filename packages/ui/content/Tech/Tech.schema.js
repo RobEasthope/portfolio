@@ -7,13 +7,13 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'url',
       title: 'URL',
       type: 'url',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'logo',
