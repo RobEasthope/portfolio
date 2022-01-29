@@ -18,7 +18,7 @@ import ProjectDetailText from '../../components/ProjectDetailText/ProjectDetailT
 import MediaGallery from '../../components/MediaGallery/MediaGallery';
 
 export const query = graphql`
-  query($slug: String) {
+  query ($slug: String) {
     sanityProject(slug: { current: { eq: $slug } }) {
       title
       shortTitle
@@ -72,7 +72,7 @@ const ProjectTextWrapper = styled(Flex)`
   max-width: 900px;
 `;
 
-const Project = props => {
+const Project = (props) => {
   const { data, errors } = props;
 
   if (errors) {
@@ -174,7 +174,7 @@ const Project = props => {
           )}
 
           {project.gallery &&
-            project.gallery.map(image => (
+            project.gallery.map((image) => (
               <Box mb="4" key={image._key}>
                 <Image
                   fluid={image.imageAsset.asset.fluid}
