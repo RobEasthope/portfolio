@@ -20,8 +20,20 @@ import ExampleText from '../../packages/ui/base/formatted-text/ExampleFormattedT
 import Settings from '../../packages/ui/base/settings/Settings.schema';
 import GlobalMetadata from '../../packages/ui/base/settings/GlobalMetadata.schema';
 
-// Content
+// Data
+import tech from '../../packages/ui/content/Tech/schemas/Tech.schema';
+import gig from '../../packages/ui/content/Gig/schemas/Gig.schema';
+import project from '../../packages/ui/pages/Project/Project.schema';
+import organisation from '../../packages/ui/content/Organisation/schemas/Organisation.schema';
+import education from '../../packages/ui/content/EducationBlock/schemas/Education.schema';
+
+// Content UI
 import ExampleSection from '../../packages/ui/content/ExampleSection/ExampleSection.schema';
+import portfolio from '../../packages/ui/content/PortfolioBlock/PortfolioBlock.schema';
+import sandbox from '../../packages/ui/content/SandboxBlock/SandboxBlock.schema';
+import opensource from '../../packages/ui/content/OpenSource/schemas/Opensource.schema';
+import landing from '../../packages/ui/content/LandingBlock/LandingBlock.schema';
+import about from '../../packages/ui/content/AboutBlock/About.schema';
 
 // Pages
 import page from '../../packages/ui/pages/Page/Page.schema';
@@ -49,10 +61,23 @@ export default createSchema({
     Settings,
     GlobalMetadata,
 
-    // Content
+    // Data
+    tech,
+    gig,
+    organisation,
+    education,
+
+    // Content UI
     ExampleSection,
+    portfolio,
+    sandbox,
+    opensource,
+    landing,
+    about,
 
     // Pages
-    page
+    page,
+    project
+
   ]),
 })
