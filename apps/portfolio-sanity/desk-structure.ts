@@ -10,6 +10,18 @@ import {
 } from 'react-icons/ri';
 import { ImNewspaper } from 'react-icons/im';
 import { FaGlobeEurope } from 'react-icons/fa';
+import {
+  GoBook,
+  GoBookmark,
+  GoBriefcase,
+  GoCode,
+  GoNote,
+  GoPaintcan,
+  GoPerson,
+  GoRocket,
+  GoTerminal,
+} from 'react-icons/go';
+import { FaRegAddressCard, FaUniversity } from 'react-icons/fa';
 import resolvePreviewUrl from './utils/resolvePreviewUrl';
 import { METADATA } from './constants/METADATA';
 
@@ -58,6 +70,70 @@ export default () =>
     .id('__root__')
     .title('Portfolio')
     .items([
+      S.listItem()
+        .title('Projects')
+        .schemaType('project')
+        .icon(GoPaintcan)
+        .child(S.documentTypeList('project')),
+      S.listItem()
+        .title('About')
+        .icon(GoTerminal)
+        .child(
+          S.list()
+            .title('About')
+            .items([
+              S.listItem()
+                .title('Profile')
+                .child(
+                  S.editor()
+                    .id('about')
+                    .schemaType('about')
+                    .documentId('about')
+                )
+                .icon(GoPerson),
+              S.listItem()
+                .title('Gigs')
+                .icon(GoBriefcase)
+                .child(
+                  S.documentTypeList('gig').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Technologies')
+                .icon(GoCode)
+                .child(
+                  S.documentTypeList('tech').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Organisations')
+                .icon(FaRegAddressCard)
+                .child(
+                  S.documentTypeList('organisation').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Education')
+                .icon(FaUniversity)
+                .child(
+                  S.documentTypeList('education').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Contact details')
+                .child(
+                  S.editor()
+                    .id('details')
+                    .schemaType('details')
+                    .documentId('details')
+                )
+                .icon(FaRegAddressCard),
+            ])
+        ),
       S.listItem()
         .title('Pages')
         .icon(ImNewspaper)
