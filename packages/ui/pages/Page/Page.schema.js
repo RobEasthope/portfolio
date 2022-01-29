@@ -1,5 +1,5 @@
-import { SECTIONS_INDEX } from '../../content/SECTIONS_INDEX';
 import { headingUI } from '../../utils/sanity/headingUI';
+import exampleSection from '../../content/ExampleSection/ExampleSection.schema';
 
 export default {
   name: 'Page',
@@ -32,7 +32,7 @@ export default {
       name: 'rawSections',
       title: 'Page sections',
       type: 'array',
-      of: SECTIONS_INDEX,
+      of: [{ type: exampleSection.name }],
       options: { editModal: 'fullscreen' },
       validation: (Rule) =>
         Rule.required().min(1).error('At least one page section is required'),
