@@ -4,7 +4,7 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!.sanity-studio/**',
-    '!.next/**'
+    '!.next/**',
   ],
   moduleNameMapper: {
     // Handle CSS imports (with CSS modules)
