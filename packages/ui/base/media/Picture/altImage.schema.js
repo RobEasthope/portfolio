@@ -15,7 +15,7 @@ export default {
       name: 'altText',
       title: 'Alt text',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
   ],
 };

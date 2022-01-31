@@ -7,19 +7,19 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'shortTitle',
       title: 'Short title',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'slug',
@@ -29,13 +29,14 @@ export default {
         source: 'fullTitle',
         maxLength: 96,
       },
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
-      description: 'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
+      description:
+        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
     },
     {
       name: 'showreel',
@@ -64,7 +65,7 @@ export default {
       name: 'date',
       title: 'Date',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'projectUrlTitle',
@@ -94,7 +95,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'seoMetaData',

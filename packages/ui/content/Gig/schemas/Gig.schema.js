@@ -8,20 +8,21 @@ export default {
       title: 'Employer',
       type: 'reference',
       to: { type: 'organisation' },
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'jobTitle',
       title: 'Job title',
       type: 'string',
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
-      description: 'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
-      validation: Rule => Rule.required().warning('Required field'),
+      description:
+        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'projects',
@@ -36,7 +37,7 @@ export default {
       options: {
         dateFormat: 'DD-MMMM-YYYY',
       },
-      validation: Rule => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required().warning('Required field'),
     },
     {
       name: 'endDate',
@@ -46,22 +47,17 @@ export default {
         dateFormat: 'DD-MMMM-YYYY',
       },
     },
-    
   ],
   orderings: [
     {
       title: 'Start Date, New',
       name: 'startDateDesc',
-      by: [
-        { field: 'startDate', direction: 'desc' }
-      ]
+      by: [{ field: 'startDate', direction: 'desc' }],
     },
     {
       title: 'Start Date, Old',
       name: 'startDateAsc',
-      by: [
-        { field: 'startDate', direction: 'asc' }
-      ]
+      by: [{ field: 'startDate', direction: 'asc' }],
     },
   ],
   preview: {
@@ -72,13 +68,14 @@ export default {
       employerLogo: 'employer.logo',
     },
     prepare(selection) {
-      const { startDate, endDate, title, employerLogo } = selection
+      const { startDate, endDate, title, employerLogo } = selection;
       return {
-        title: title,
+        title,
         media: employerLogo,
-        subtitle: `${startDate.split(' -')} - ${endDate ? endDate.split(' -') : 'Present'}` // YYYY-MM-DD --> YYYY,
-      }
-    }
+        subtitle: `${startDate.split(' -')} - ${
+          endDate ? endDate.split(' -') : 'Present'
+        }`, // YYYY-MM-DD --> YYYY,
+      };
+    },
   },
-  
 };
