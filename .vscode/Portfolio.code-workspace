@@ -1,0 +1,56 @@
+{
+  "folders": [
+    {
+      "name": "Monorepo",
+      "path": "../"
+    },
+    {
+      "name": "UI",
+      "path": "../packages/ui"
+    },
+    {
+      "name": "Next",
+      "path": "../apps/portfolio-next"
+    },
+    {
+      "name": "Sanity Studio",
+      "path": "../apps/portfolio-sanity"
+    },
+    {
+      "name": "Gatsby",
+      "path": "../apps/portfolio-gatsby"
+    },
+    {
+      "name": "Old Sanity Schemas",
+      "path": "../packages/old-sanity-schemas"
+    },
+    {
+      "name": "Utils",
+      "path": "../packages/utils"
+    },
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules/": true,
+      "apps/": true,
+      "packages/": true,
+      ".next": true,
+      "tsconfig.tsbuildinfo": true,
+      "dist": true
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#9a4148",
+      "activityBar.activeBorder": "#152d13",
+      "activityBar.background": "#9a4148",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#152d13",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "titleBar.activeBackground": "#763237",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#76323799",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#763237"
+  }
+}

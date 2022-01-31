@@ -1,0 +1,61 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/packages/ui" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "@typescript-eslint/eslint-plugin"
+      - dependency-name: "@typescript-eslint/parser"
+      - dependency-name: "eslint"
+      - dependency-name: "eslint-config-airbnb"
+      - dependency-name: "eslint-config-airbnb-typescript"
+      - dependency-name: "eslint-config-prettier"
+      - dependency-name: "eslint-plugin-html"
+      - dependency-name: "eslint-plugin-import"
+      - dependency-name: "eslint-plugin-jsx-a11y"
+      - dependency-name: "eslint-plugin-prettier"
+      - dependency-name: "eslint-plugin-react"
+      - dependency-name: "eslint-plugin-react-hooks"
+      - dependency-name: "prettier"
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/apps/portfolio-next" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "@typescript-eslint/eslint-plugin"
+      - dependency-name: "@typescript-eslint/parser"
+      - dependency-name: "eslint"
+      - dependency-name: "eslint-config-airbnb"
+      - dependency-name: "eslint-config-airbnb-typescript"
+      - dependency-name: "eslint-config-prettier"
+      - dependency-name: "eslint-plugin-html"
+      - dependency-name: "eslint-plugin-import"
+      - dependency-name: "eslint-plugin-jsx-a11y"
+      - dependency-name: "eslint-plugin-prettier"
+      - dependency-name: "eslint-plugin-react"
+      - dependency-name: "eslint-plugin-react-hooks"
+      - dependency-name: "prettier"
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/apps/portfolio-sanity" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "@typescript-eslint/eslint-plugin"
+      - dependency-name: "@typescript-eslint/parser"
+      - dependency-name: "eslint"
+      - dependency-name: "eslint-config-airbnb"
+      - dependency-name: "eslint-config-airbnb-typescript"
+      - dependency-name: "eslint-config-prettier"
+      - dependency-name: "eslint-plugin-html"
+      - dependency-name: "eslint-plugin-import"
+      - dependency-name: "eslint-plugin-jsx-a11y"
+      - dependency-name: "eslint-plugin-prettier"
+      - dependency-name: "eslint-plugin-react"
+      - dependency-name: "eslint-plugin-react-hooks"
+      - dependency-name: "prettier"
