@@ -183,7 +183,7 @@ export default () =>
                     .documentId('Settings')
                 ),
               S.listItem()
-                .title('SEO & metadata')
+                .title('SEO & Metadata')
                 .icon(FaGlobeEurope)
                 .child(
                   S.document()
