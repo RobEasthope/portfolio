@@ -3,24 +3,16 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
 import { ReactNode } from 'react';
-import { DetailsProps } from '@/UI/content/Details/Details';
 import { ImageProps } from '@/UI/content/Image/Image';
 import { MuxVideoProps } from '@/UI/content/MuxVideo/MuxVideo';
-import { QuoteProps } from '@/UI/content/Quote/Quote';
-import { QuotesProps } from '@/UI/content/Quotes/Quotes';
 import { VimeoVideoProps } from '@/UI/content/VimeoVideo/VimeoVideo';
 import { YoutubeVideoProps } from '@/UI/content/YoutubeVideo/YoutubeVideo';
-import { Mapbox as MapboxProps } from '@/UI/types/sanity-schema';
 import { GalleryProps } from '@/UI/content/Gallery/Gallery';
 import { Text } from '@/UI/base/typography/Text/Text';
 
-const Details = dynamic(() => import('../../../content/Details/Details'));
 const Gallery = dynamic(() => import('../../../content/Gallery/Gallery'));
 const Image = dynamic(() => import('../../../content/Image/Image'));
-const Mapbox = dynamic(() => import('../../../content/Mapbox/Mapbox'));
 const MuxVideo = dynamic(() => import('../../../content/MuxVideo/MuxVideo'));
-const Quote = dynamic(() => import('../../../content/Quote/Quote'));
-const Quotes = dynamic(() => import('../../../content/Quotes/Quotes'));
 const VimeoVideo = dynamic(
   () => import('../../../content/VimeoVideo/VimeoVideo')
 );
@@ -97,19 +89,7 @@ const articeTextSerializer = {
   },
   types: {
     block: ArticleTextBlockRenderer,
-    Details: (props: { node: DetailsProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { heading, details, columns, _type } = props?.node;
 
-      return (
-        <Details
-          heading={heading}
-          details={details}
-          columns={columns}
-          _type={_type}
-        />
-      );
-    },
     Gallery: (props: { node: GalleryProps }) => {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       const { images, galleryCaption, columns, aspectRatio, _type } =
@@ -132,12 +112,6 @@ const articeTextSerializer = {
 
       return <Image image={image} maxWidth={maxWidth} _type={_type} />;
     },
-    Mapbox: (props: { node: MapboxProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { geopoint, _type } = props?.node;
-
-      return <Mapbox geopoint={geopoint} _type={_type} />;
-    },
     MuxVideo: (props: { node: MuxVideoProps }) => {
       // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
       const { muxVideo, caption, maxWidth, _type } = props?.node;
@@ -150,29 +124,6 @@ const articeTextSerializer = {
           _type={_type}
         />
       );
-    },
-    Quote: (props: { node: QuoteProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      const { quoteType, quote, quotee, photo, testimonial, _type } =
-        // eslint-disable-next-line react/destructuring-assignment
-        props?.node;
-
-      return (
-        <Quote
-          quoteType={quoteType}
-          quote={quote}
-          quotee={quotee}
-          photo={photo}
-          testimonial={testimonial}
-          _type={_type}
-        />
-      );
-    },
-    Quotes: (props: { node: QuotesProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { quotes, _type } = props?.node;
-
-      return <Quotes quotes={quotes} _type={_type} />;
     },
     VimeoVideo: (props: { node: VimeoVideoProps }) => {
       // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
