@@ -831,6 +831,21 @@ export type BlockContent = Array<
     }>
 >;
 
+export type ArticleText = Array<
+  | SanityKeyed<SanityBlock>
+  | SanityKeyed<Details>
+  | SanityKeyed<Gallery>
+  | SanityKeyed<Image>
+  | SanityKeyed<Mapbox>
+  | SanityKeyed<MuxVideo>
+  | SanityKeyed<Quote>
+  | SanityKeyed<Quotes>
+  | SanityKeyed<VimeoVideo>
+  | SanityKeyed<YoutubeVideo>
+>;
+
+export type BasicText = Array<SanityKeyed<SanityBlock>>;
+
 export type ExampleFormattedText = Array<SanityKeyed<SanityBlock>>;
 
 export type ExampleSection = {
@@ -1236,11 +1251,25 @@ type Email = any;
  * the definition was not actually found. Future versions of
  * sanity-codegen will let you type this explicity.
  */
-type Note = any;
+type Mapbox = any;
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but
  * the definition was not actually found. Future versions of
  * sanity-codegen will let you type this explicity.
  */
-type ArticleText = any;
+type Quote = any;
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type Quotes = any;
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type Note = any;
