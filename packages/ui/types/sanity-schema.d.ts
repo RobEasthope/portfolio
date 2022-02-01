@@ -833,13 +833,9 @@ export type BlockContent = Array<
 
 export type ArticleText = Array<
   | SanityKeyed<SanityBlock>
-  | SanityKeyed<Details>
   | SanityKeyed<Gallery>
   | SanityKeyed<Image>
-  | SanityKeyed<Mapbox>
   | SanityKeyed<MuxVideo>
-  | SanityKeyed<Quote>
-  | SanityKeyed<Quotes>
   | SanityKeyed<VimeoVideo>
   | SanityKeyed<YoutubeVideo>
 >;
@@ -1245,27 +1241,6 @@ export type Documents =
  * sanity-codegen will let you type this explicity.
  */
 type Email = any;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Mapbox = any;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Quote = any;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Quotes = any;
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but
