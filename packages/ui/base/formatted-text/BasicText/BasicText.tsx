@@ -5,36 +5,32 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
+import {
+  BlockRendererProps,
+  SerializerMarksProps,
+} from '@/UI/base/formatted-text/formattedTextProps';
 
 // TYPES
 export interface BasicTextProps {
   blocks: unknown;
-  className?: string;
-  as?: string;
 }
 
-const BasicTextBlockRenderer = (props) =>
-  BlockContent.defaultSerializers.types.block(props);
+const BasicTextBlockRenderer = ({ node, children }: BlockRendererProps) =>
+  BlockContent.defaultSerializers.types.block({ node, children });
 
-const basicTextSerializer = {
+const BasicTextSerializer = {
   marks: {
-    // eslint-disable-next-line react/prop-types
-    ExternalLink: ({ children, mark }) => (
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
+    ExternalLink: ({ children, mark }: SerializerMarksProps) => (
       <a href={mark.url} target="_blank" rel="noreferrer">
         {children}
       </a>
     ),
-    // eslint-disable-next-line react/prop-types
-    InternalLink: ({ children, mark }) => (
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    InternalLink: ({ children, mark }: SerializerMarksProps) => (
       <Link
         href={
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
           mark?.page?.slug?.current === 'root'
             ? '/'
-            : // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-member-access, react/prop-types
-              `/${mark?.page?.slug?.current}`
+            : `/${mark?.page?.slug?.current}`
         }
       >
         <a>{children}</a>
@@ -48,5 +44,5 @@ const basicTextSerializer = {
 
 // MARKUP
 export const BasicText = ({ blocks }: BasicTextProps) => (
-  <BlockContent blocks={blocks} serializers={basicTextSerializer} />
+  <BlockContent blocks={blocks} serializers={BasicTextSerializer} />
 );
