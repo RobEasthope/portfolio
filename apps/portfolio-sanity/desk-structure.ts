@@ -9,6 +9,7 @@ import {
   RiQuillPenLine,
   RiAccountCircleLine,
   RiSettings2Line,
+  RiShieldLine
 } from 'react-icons/ri';
 import { FaGlobeEurope } from 'react-icons/fa';
 import {
@@ -139,7 +140,7 @@ export default () =>
                 ),
               S.listItem()
                 .title('Organisations')
-                .icon(FaRegAddressCard)
+                .icon(RiShieldLine)
                 .child(
                   S.documentTypeList('organisation').defaultOrdering([
                     { field: 'name', direction: 'desc' },
