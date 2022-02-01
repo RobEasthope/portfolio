@@ -21,6 +21,7 @@ import blockContent from '../../packages/ui/base/formatted-text/ExampleFormatted
 import ExampleText from '../../packages/ui/base/formatted-text/ExampleFormattedText/ExampleFormattedText.schema';
 
 // Settings
+import details from '../../packages/ui/base/settings/Details.schema';
 import Settings from '../../packages/ui/base/settings/Settings.schema';
 import GlobalMetadata from '../../packages/ui/base/settings/GlobalMetadata.schema';
 
@@ -66,6 +67,7 @@ export default createSchema({
     ExampleText,
 
     // Settings
+    details,
     Settings,
     GlobalMetadata,
 
