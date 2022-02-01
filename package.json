@@ -59,7 +59,7 @@
     "next:build": "npx turbo run build --scope=portfolio-next --include-dependencies --no-deps",
     "sanity": "npx turbo run dev --scope=portfolio-sanity --include-dependencies --no-deps",
     "sanity:build": "npx turbo run build --scope=portfolio-sanity --include-dependencies --no-deps",
-    "lint": "turbo run lint",
+    "lint": "clear && turbo run lint",
     "eslint": "cd ./packages/ui && yarn lint && cd ../../apps/portfolio-next && yarn lint && cd ../portfolio-sanity && yarn lint",
     "eslint:fix": "cd ./packages/ui && yarn lint:fix && cd ../../apps/portfolio-next && yarn lint:fix && cd ../portfolio-sanity && yarn lint:fix",
     "sanity-upgrade": "cd ./apps/portfolio-sanity && sanity upgrade",
