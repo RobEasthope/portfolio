@@ -8,6 +8,7 @@ import {
   RiListSettingsLine,
   RiQuillPenLine,
   RiAccountCircleLine,
+  RiSettings2Line,
 } from 'react-icons/ri';
 import { FaGlobeEurope } from 'react-icons/fa';
 import {
@@ -174,7 +175,7 @@ export default () =>
             .items([
               S.listItem()
                 .title('App settings')
-                .icon(FaGlobeEurope)
+                .icon(RiSettings2Line)
                 .child(
                   S.document()
                     .schemaType('Settings')
