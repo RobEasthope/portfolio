@@ -13,12 +13,17 @@ import externalLinkWithTitle from '../../packages/ui/base/links/ExternalLink/Ext
 // Navigation
 import Header from '../../packages/ui/navigation/Header/Header.schema.js';
 
+// Media
+import altImage from '../../packages/ui/base/media/Picture/altImage.schema';
+
 // Formatted text
+import blockContent from '../../packages/ui/base/formatted-text/ExampleFormattedText/BlockContent.schema';
 import ExampleText from '../../packages/ui/base/formatted-text/ExampleFormattedText/ExampleFormattedText.schema';
 
 // Settings
 import Settings from '../../packages/ui/base/settings/Settings.schema';
 import GlobalMetadata from '../../packages/ui/base/settings/GlobalMetadata.schema';
+import seoMetaData from '../../packages/ui/base/settings/seoMetaData.schema';
 
 // Data
 import tech from '../../packages/ui/content/Tech/schemas/Tech.schema';
@@ -54,12 +59,17 @@ export default createSchema({
     // Navigation
     Header,
 
+    // Media
+    altImage,
+
     // Formatted text
+    blockContent,
     ExampleText,
 
     // Settings
     Settings,
     GlobalMetadata,
+    seoMetaData,
 
     // Data
     tech,
