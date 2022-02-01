@@ -35,9 +35,11 @@ export const LandingHero = ({
         <PaddedComponent as="section">
           <MaxWidth width="page">
             <ForegroundContentLayout>
-              <LogoWrapper>
-                <Picture asset={logo} mode="responsive" maxWidth={400} />
-              </LogoWrapper>
+              {logo && (
+                <LogoWrapper>
+                  <Picture asset={logo} mode="responsive" maxWidth={400} />
+                </LogoWrapper>
+              )}
               {heading && <Title as="h1">{heading}</Title>}
             </ForegroundContentLayout>
           </MaxWidth>

@@ -26,13 +26,14 @@ export const Gallery = ({
           <Grid columns={columns}>
             {images.map((card) => (
               <Figure key={card?._key}>
-                <Picture
-                  asset={card?.image}
-                  mode="responsive"
-                  maxWidth={800}
-                  aspectRatio={aspectRatio}
-                />
-
+                {card?.image && (
+                  <Picture
+                    asset={card?.image}
+                    mode="responsive"
+                    maxWidth={800}
+                    aspectRatio={aspectRatio}
+                  />
+                )}
                 {card?.image?.caption && (
                   <figcaption>{card?.image?.caption}</figcaption>
                 )}
