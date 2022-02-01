@@ -15299,6 +15299,15 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
+sanity-mux-player@^0.0.27:
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/sanity-mux-player/-/sanity-mux-player-0.0.27.tgz#2d6013ff9da54079928f9b80242ef11b5be41871"
+  integrity sha512-a07k+d08PQsim8pks9H2T1fGrh9iCZU5ZL7ZDvrKfh0CIUDebAmkkBJWYTRoatf4P0ihzbM2ps7XF5S4Gr9prw==
+  dependencies:
+    hls.js "^0.11.0"
+    lodash "^4.17.20"
+    prop-types "^15.6.0"
+
 sanity-pills@^1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/sanity-pills/-/sanity-pills-1.11.0.tgz#d102db89972125dc7eb95e63339208b16d14cc07"
@@ -16602,7 +16611,7 @@ three-render-objects@^1.26:
     kapsule "^1.13"
     polished "4"
 
-three@0.119.1, "three@>=0.118 <1":
+"three@>=0.118 <1":
   version "0.119.1"
   resolved "https://registry.yarnpkg.com/three/-/three-0.119.1.tgz#9d979a082c4cd9622af8e3498a8dfa026a619332"
   integrity sha512-GHyh/RiUfQ5VTiWIVRRTANYoXc1PFB1y+jDVRTb649nif1uX1F06PT1TKU3k2+F/MN4UJ3PWvQB53fY2OqKqKw==
