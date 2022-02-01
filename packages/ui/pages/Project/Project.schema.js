@@ -26,7 +26,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'fullTitle',
+        source: 'title',
         maxLength: 96,
       },
       validation: (Rule) => Rule.required().warning('Required field'),
