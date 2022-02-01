@@ -9,9 +9,13 @@ import {
   RiQuillPenLine,
   RiAccountCircleLine,
   RiSettings2Line,
-  RiShieldLine
+  RiShieldLine,
+  RiBriefcaseFill,
+  RiPhoneLine
 } from 'react-icons/ri';
 import { FaGlobeEurope } from 'react-icons/fa';
+import { CgProfile } from 'react-icons/cg';
+import { IoMdSchool } from 'react-icons/io';
 import {
   GoBriefcase,
   GoDatabase,
@@ -95,10 +99,10 @@ export default () =>
                     .schemaType('about')
                     .documentId('about')
                 )
-                .icon(GoPerson),
+                .icon(CgProfile),
               S.listItem()
                 .title('Gigs')
-                .icon(GoBriefcase)
+                .icon(RiBriefcaseFill)
                 .child(
                   S.documentTypeList('gig').defaultOrdering([
                     { field: 'name', direction: 'desc' },
@@ -106,7 +110,7 @@ export default () =>
                 ),
               S.listItem()
                 .title('Education')
-                .icon(FaUniversity)
+                .icon(IoMdSchool)
                 .child(
                   S.documentTypeList('education').defaultOrdering([
                     { field: 'name', direction: 'desc' },
@@ -114,13 +118,13 @@ export default () =>
                 ),
               S.listItem()
                 .title('Contact details')
+                .icon(RiPhoneLine)
                 .child(
                   S.editor()
                     .id('details')
                     .schemaType('details')
                     .documentId('details')
-                )
-                .icon(FaRegAddressCard),
+                ),
             ])
         ),
       S.listItem()
