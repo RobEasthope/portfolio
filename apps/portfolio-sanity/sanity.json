@@ -19,7 +19,8 @@
     "note-field",
     "@sanity/production-preview",
     "iframe-pane",
-    "social-preview"
+    "social-preview",
+    "mux-input"
   ],
   "env": {
     "development": {
