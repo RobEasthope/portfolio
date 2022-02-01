@@ -8,6 +8,7 @@ import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
 import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
+import { METADATA } from 'constants/METADATA';
 
 // Styles
 export const HeaderLayout = styled('div', {
@@ -58,7 +59,12 @@ export const Header = ({
         <StyledHomeLink>
           <Link href="/">
             <a>
-              <Picture asset={logo} mode="responsive" maxWidth={32} />
+              <Picture
+                asset={logo}
+                alt={METADATA?.TITLE || ''}
+                mode="responsive"
+                maxWidth={32}
+              />
             </a>
           </Link>
         </StyledHomeLink>

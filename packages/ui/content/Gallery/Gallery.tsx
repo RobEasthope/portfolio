@@ -29,6 +29,7 @@ export const Gallery = ({
                 {card?.image && (
                   <Picture
                     asset={card?.image}
+                    alt={card?.image?.caption || ''}
                     mode="responsive"
                     maxWidth={800}
                     aspectRatio={aspectRatio}

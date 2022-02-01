@@ -37,7 +37,12 @@ export const LandingHero = ({
             <ForegroundContentLayout>
               {logo && (
                 <LogoWrapper>
-                  <Picture asset={logo} mode="responsive" maxWidth={400} />
+                  <Picture
+                    asset={logo}
+                    alt={heading || ''}
+                    mode="responsive"
+                    maxWidth={400}
+                  />
                 </LogoWrapper>
               )}
               {heading && <Title as="h1">{heading}</Title>}
@@ -47,7 +52,12 @@ export const LandingHero = ({
       </ForegroundContent>
 
       {bkgImage && bkgMode === 'image' && (
-        <JumbotronBkgImage asset={bkgImage} mode="cover" maxWidth={2560} />
+        <JumbotronBkgImage
+          alt={heading || ''}
+          asset={bkgImage}
+          mode="cover"
+          maxWidth={2560}
+        />
       )}
       {muxVideo && bkgMode === 'video' && (
         <JumbotronBkgVideo
