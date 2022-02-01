@@ -83,6 +83,15 @@ export default () =>
         .icon(RiQuillPenLine)
         .schemaType('Page')
         .child(S.documentTypeList('Page').title('Pages')),
+      S.listItem()
+        .title('Landing section')
+        .child(
+          S.editor()
+            .id('landing')
+            .schemaType('landing')
+            .documentId('landing')
+        ),
+                // .icon(GoNote),
       S.divider(),
       S.listItem()
         .title('About')

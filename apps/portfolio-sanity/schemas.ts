@@ -18,6 +18,8 @@ import altImage from '../../packages/ui/base/media/Picture/altImage.schema';
 
 // Formatted text
 import blockContent from '../../packages/ui/base/formatted-text/ExampleFormattedText/BlockContent.schema';
+import ArticleText from '../../packages/ui/base/formatted-text/ArticleText/ArticleText.schema';
+import BasicText from '../../packages/ui/base/formatted-text/BasicText/BasicText.schema';
 import ExampleText from '../../packages/ui/base/formatted-text/ExampleFormattedText/ExampleFormattedText.schema';
 
 // Settings
@@ -33,12 +35,23 @@ import organisation from '../../packages/ui/content/Organisation/schemas/Organis
 import education from '../../packages/ui/content/EducationBlock/schemas/Education.schema';
 
 // Content UI
-import ExampleSection from '../../packages/ui/content/ExampleSection/ExampleSection.schema';
-import portfolio from '../../packages/ui/content/PortfolioBlock/PortfolioBlock.schema';
-import sandbox from '../../packages/ui/content/SandboxBlock/SandboxBlock.schema';
-import opensource from '../../packages/ui/content/OpenSource/schemas/Opensource.schema';
-import landing from '../../packages/ui/content/LandingBlock/LandingBlock.schema';
 import about from '../../packages/ui/content/AboutBlock/About.schema';
+import ExampleSection from '../../packages/ui/content/ExampleSection/ExampleSection.schema';
+import GalleryImage from '../../packages/ui/content/Gallery/schemas/GalleryImage.schema';
+import Gallery from '../../packages/ui/content/Gallery/Gallery.schema';
+import Image from '../../packages/ui/content/Image/Image.schema';
+import landing from '../../packages/ui/content/LandingBlock/LandingBlock.schema';
+import LandingHero from '../../packages/ui/content/LandingHero/LandingHero.schema';
+import MuxVideo from '../../packages/ui/content/MuxVideo/MuxVideo.schema';
+import portfolio from '../../packages/ui/content/PortfolioBlock/PortfolioBlock.schema';
+import opensource from '../../packages/ui/content/OpenSource/schemas/Opensource.schema';
+import sandbox from '../../packages/ui/content/SandboxBlock/SandboxBlock.schema';
+import Text from '../../packages/ui/content/Text/Text.schema';
+import VimeoVideo from '../../packages/ui/content/VimeoVideo/VimeoVideo.schema';
+import YoutubeVideo from '../../packages/ui/content/YoutubeVideo/YoutubeVideo.schema';
+
+
+
 
 // Pages
 import page from '../../packages/ui/pages/Page/Page.schema';
@@ -64,6 +77,8 @@ export default createSchema({
 
     // Formatted text
     blockContent,
+    ArticleText,
+    BasicText,
     ExampleText,
 
     // Settings
@@ -78,12 +93,20 @@ export default createSchema({
     education,
 
     // Content UI
-    ExampleSection,
-    portfolio,
-    sandbox,
-    opensource,
-    landing,
     about,
+    ExampleSection,
+    GalleryImage,
+    Gallery,
+    Image,
+    landing,
+    LandingHero,
+    MuxVideo,
+    portfolio,
+    opensource,
+    sandbox,
+    Text,
+    VimeoVideo,
+    YoutubeVideo,
 
     // Pages
     page,

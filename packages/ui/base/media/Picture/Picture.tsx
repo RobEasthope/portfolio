@@ -42,7 +42,7 @@ export interface ImageAssetProp {
 export type PictureProps = {
   asset: ImageAssetProp;
   maxWidth: number;
-  alt?: string;
+  alt: string;
   mode: 'responsive' | 'cover' | 'contain' | 'next';
   preview?: boolean;
   className?: string;

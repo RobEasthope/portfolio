@@ -32,7 +32,9 @@ export const ExampleSection = ({
       <MaxPageWidth>
         {heading && <Heading as="h1">{heading}</Heading>}
         {text && <ExampleFormattedText blocks={text} />}
-        {image && <Picture asset={image} mode="responsive" maxWidth={800} />}
+        {image && (
+          <Picture asset={image} alt="" mode="responsive" maxWidth={800} />
+        )}
       </MaxPageWidth>
     </PaddedComponent>
   );
