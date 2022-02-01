@@ -18,6 +18,8 @@ import altImage from '../../packages/ui/base/media/Picture/altImage.schema';
 
 // Formatted text
 import blockContent from '../../packages/ui/base/formatted-text/ExampleFormattedText/BlockContent.schema';
+import ArticleText from '../../packages/ui/base/formatted-text/ArticleText/ArticleText.schema';
+import BasicText from '../../packages/ui/base/formatted-text/BasicText/BasicText.schema';
 import ExampleText from '../../packages/ui/base/formatted-text/ExampleFormattedText/ExampleFormattedText.schema';
 
 // Settings
@@ -75,6 +77,8 @@ export default createSchema({
 
     // Formatted text
     blockContent,
+    ArticleText,
+    BasicText,
     ExampleText,
 
     // Settings
