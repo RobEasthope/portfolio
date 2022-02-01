@@ -1,14 +1,17 @@
-/* eslint-disable react/display-name */
+/* eslint-disable @typescript-eslint/naming-convention */
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
-import { ReactNode } from 'react';
 import { ImageProps } from '@/UI/content/Image/Image';
 import { MuxVideoProps } from '@/UI/content/MuxVideo/MuxVideo';
 import { VimeoVideoProps } from '@/UI/content/VimeoVideo/VimeoVideo';
 import { YoutubeVideoProps } from '@/UI/content/YoutubeVideo/YoutubeVideo';
 import { GalleryProps } from '@/UI/content/Gallery/Gallery';
 import { Text } from '@/UI/base/typography/Text/Text';
+import {
+  BlockRendererProps,
+  SerializerMarksProps,
+} from '@/UI/base/formatted-text/formattedTextProps';
 
 const Gallery = dynamic(() => import('../../../content/Gallery/Gallery'));
 const Image = dynamic(() => import('../../../content/Image/Image'));
@@ -26,13 +29,8 @@ export interface ArticleTextProps {
 }
 
 // MARKUP
-const ArticleTextBlockRenderer = (props: {
-  node: { style: string };
-  children: ReactNode;
-}) => {
-  // eslint-disable-next-line react/destructuring-assignment
-  const { style = 'normal' } = props?.node;
-  const { children } = props;
+const ArticleTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
+  const { style = 'normal' } = node;
 
   if (style === 'h2') {
     return (
@@ -59,28 +57,22 @@ const ArticleTextBlockRenderer = (props: {
 
   // Fall back to default handling
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  return BlockContent.defaultSerializers.types.block(props);
+  return BlockContent.defaultSerializers.types.block({ node, children });
 };
 
 const articleTextSerializer = {
   marks: {
-    // eslint-disable-next-line react/prop-types
-    ExternalLink: ({ children, mark }) => (
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
+    ExternalLink: ({ children, mark }: SerializerMarksProps) => (
       <a href={mark.url} target="_blank" rel="noreferrer">
         {children}
       </a>
     ),
-    // eslint-disable-next-line react/prop-types
-    InternalLink: ({ children, mark }) => (
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    InternalLink: ({ children, mark }: SerializerMarksProps) => (
       <Link
         href={
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
           mark?.page?.slug?.current === 'root'
             ? '/'
-            : // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-member-access, react/prop-types
-              `/${mark?.page?.slug?.current}`
+            : `/${mark?.page?.slug?.current}`
         }
       >
         <a>{children}</a>
@@ -90,11 +82,14 @@ const articleTextSerializer = {
   types: {
     block: ArticleTextBlockRenderer,
 
-    Gallery: (props: { node: GalleryProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      const { images, galleryCaption, columns, aspectRatio, _type } =
-        // eslint-disable-next-line react/destructuring-assignment
-        props?.node;
+    Gallery: ({ node }: { node: GalleryProps }) => {
+      const {
+        images,
+        galleryCaption,
+        columns,
+        aspectRatio,
+        _type,
+      }: GalleryProps = node;
 
       return (
         <Gallery
@@ -106,15 +101,13 @@ const articleTextSerializer = {
         />
       );
     },
-    Image: (props: { node: ImageProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { image, maxWidth, _type } = props?.node;
+    Image: ({ node }: { node: ImageProps }) => {
+      const { image, maxWidth, _type } = node;
 
       return <Image image={image} maxWidth={maxWidth} _type={_type} />;
     },
-    MuxVideo: (props: { node: MuxVideoProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { muxVideo, caption, maxWidth, _type } = props?.node;
+    MuxVideo: ({ node }: { node: MuxVideoProps }) => {
+      const { muxVideo, caption, maxWidth, _type } = node;
 
       return (
         <MuxVideo
@@ -125,9 +118,8 @@ const articleTextSerializer = {
         />
       );
     },
-    VimeoVideo: (props: { node: VimeoVideoProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { url, caption, maxWidth, _type } = props?.node;
+    VimeoVideo: ({ node }: { node: VimeoVideoProps }) => {
+      const { url, caption, maxWidth, _type } = node;
 
       return (
         <VimeoVideo
@@ -138,9 +130,8 @@ const articleTextSerializer = {
         />
       );
     },
-    YoutubeVideo: (props: { node: YoutubeVideoProps }) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention, react/destructuring-assignment
-      const { url, caption, maxWidth, _type } = props?.node;
+    YoutubeVideo: ({ node }: { node: YoutubeVideoProps }) => {
+      const { url, caption, maxWidth, _type } = node;
 
       return (
         <YoutubeVideo
