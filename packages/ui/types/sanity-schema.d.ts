@@ -831,7 +831,7 @@ export type BlockContent = Array<
     }>
 >;
 
-export type ArticleText = Array<
+export type ProjectText = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<Gallery>
   | SanityKeyed<Image>
@@ -1149,11 +1149,11 @@ export type Text = {
   storybook?: Note;
 
   /**
-   * Text — `ArticleText`
+   * Text — `ProjectText`
    *
    *
    */
-  text?: ArticleText;
+  text?: ProjectText;
 };
 
 export type VimeoVideo = {

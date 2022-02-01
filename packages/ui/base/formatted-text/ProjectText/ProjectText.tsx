@@ -24,12 +24,12 @@ const YoutubeVideo = dynamic(
 );
 
 // TYPES
-export interface ArticleTextProps {
+export interface ProjectTextProps {
   blocks: unknown;
 }
 
 // MARKUP
-const ArticleTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
+const ProjectTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
   const { style = 'normal' } = node;
 
   if (style === 'h2') {
@@ -60,7 +60,7 @@ const ArticleTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
   return BlockContent.defaultSerializers.types.block({ node, children });
 };
 
-const articleTextSerializer = {
+const projectTextSerializer = {
   marks: {
     ExternalLink: ({ children, mark }: SerializerMarksProps) => (
       <a href={mark.url} target="_blank" rel="noreferrer">
@@ -80,7 +80,7 @@ const articleTextSerializer = {
     ),
   },
   types: {
-    block: ArticleTextBlockRenderer,
+    block: ProjectTextBlockRenderer,
 
     Gallery: ({ node }: { node: GalleryProps }) => {
       const {
@@ -145,6 +145,6 @@ const articleTextSerializer = {
   },
 };
 
-export const ArticleText = ({ blocks }: ArticleTextProps) => (
-  <BlockContent blocks={blocks} serializers={articleTextSerializer} />
+export const ProjectText = ({ blocks }: ProjectTextProps) => (
+  <BlockContent blocks={blocks} serializers={projectTextSerializer} />
 );
