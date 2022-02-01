@@ -3,28 +3,22 @@ import Iframe from 'sanity-plugin-iframe-pane';
 import { toPlainText } from 'part:social-preview/utils';
 import SocialPreview from 'part:social-preview/component';
 
-
 import {
   RiCompasses2Line,
   RiListSettingsLine,
   RiQuillPenLine,
   RiAccountCircleLine,
 } from 'react-icons/ri';
-import { ImNewspaper } from 'react-icons/im';
 import { FaGlobeEurope } from 'react-icons/fa';
 import {
-  GoBook,
-  GoBookmark,
   GoBriefcase,
-  GoCode,
   GoDatabase,
-  GoNote,
   GoPaintcan,
   GoPerson,
-  GoRocket,
   GoTerminal,
 } from 'react-icons/go';
 import { FaRegAddressCard, FaUniversity } from 'react-icons/fa';
+
 import resolvePreviewUrl from './utils/resolvePreviewUrl';
 import { METADATA } from './constants/METADATA';
 
