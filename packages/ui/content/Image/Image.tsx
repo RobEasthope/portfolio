@@ -16,7 +16,12 @@ export const Image = ({ image, maxWidth }: ImageProps) => {
   return (
     <PaddedComponent as="section" content="media">
       <MaxWidth as="figure" width={maxWidth}>
-        <Picture asset={image} mode="responsive" maxWidth={4000} />
+        <Picture
+          asset={image}
+          alt={image?.caption || ''}
+          mode="responsive"
+          maxWidth={4000}
+        />
         {image?.caption && <Caption as="figcaption">{image?.caption}</Caption>}
       </MaxWidth>
     </PaddedComponent>
