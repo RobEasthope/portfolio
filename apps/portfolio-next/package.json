@@ -22,6 +22,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^1.0.1",
     "@stitches/react": "^1.2.6",
+    "@u-wave/react-vimeo": "^0.9.5",
     "lodash": "^4.17.21",
     "next": "^12.0.8",
     "next-sanity": "^0.4.0",
