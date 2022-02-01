@@ -62,7 +62,7 @@ const ArticleTextBlockRenderer = (props: {
   return BlockContent.defaultSerializers.types.block(props);
 };
 
-const articeTextSerializer = {
+const articleTextSerializer = {
   marks: {
     // eslint-disable-next-line react/prop-types
     ExternalLink: ({ children, mark }) => (
@@ -155,5 +155,5 @@ const articeTextSerializer = {
 };
 
 export const ArticleText = ({ blocks }: ArticleTextProps) => (
-  <BlockContent blocks={blocks} serializers={articeTextSerializer} />
+  <BlockContent blocks={blocks} serializers={articleTextSerializer} />
 );
