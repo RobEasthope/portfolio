@@ -5,14 +5,14 @@
 ### Build dev
 
 - Spin up all apps: `yarn dev`
-- Next (portfolio-next): `npx turbo run dev --scope=portfolio-next --include-dependencies --no-deps`
-- Sanity (portfolio-sanity): `npx turbo run dev --scope=portfolio-sanity --include-dependencies --no-deps`
-
-### Build commands
-
 - Build all apps: `yarn build`
-- Next (portfolio-next): `npx turbo run build --scope=portfolio-next --include-dependencies --no-deps`
-- Sanity (portfolio-sanity): `npx turbo run build --scope=portfolio-sanity --include-dependencies --no-deps`
+- Next (trq-next): `yarn next`
+- Sanity (trq-sanity): `yarn sanity`
+
+### Build commands for Vercel
+
+- Next (trq-next): `cd ../.. && npx turbo run build --scope=portfolio-next --include-dependencies --no-deps`
+- Sanity (trq-sanity): `cd ../.. && npx turbo run build --scope=portfolio-sanity --include-dependencies --no-deps`
 
 ## Ignore build deployment rules
 

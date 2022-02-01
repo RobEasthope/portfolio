@@ -3,25 +3,22 @@ import Iframe from 'sanity-plugin-iframe-pane';
 import { toPlainText } from 'part:social-preview/utils';
 import SocialPreview from 'part:social-preview/component';
 
-
 import {
   RiCompasses2Line,
   RiListSettingsLine,
+  RiQuillPenLine,
+  RiAccountCircleLine,
 } from 'react-icons/ri';
-import { ImNewspaper } from 'react-icons/im';
 import { FaGlobeEurope } from 'react-icons/fa';
 import {
-  GoBook,
-  GoBookmark,
   GoBriefcase,
-  GoCode,
-  GoNote,
+  GoDatabase,
   GoPaintcan,
   GoPerson,
-  GoRocket,
   GoTerminal,
 } from 'react-icons/go';
 import { FaRegAddressCard, FaUniversity } from 'react-icons/fa';
+
 import resolvePreviewUrl from './utils/resolvePreviewUrl';
 import { METADATA } from './constants/METADATA';
 
@@ -76,8 +73,14 @@ export default () =>
         .icon(GoPaintcan)
         .child(S.documentTypeList('project')),
       S.listItem()
+        .title('Pages')
+        .icon(RiQuillPenLine)
+        .schemaType('Page')
+        .child(S.documentTypeList('Page').title('Pages')),
+      S.divider(),
+      S.listItem()
         .title('About')
-        .icon(GoTerminal)
+        .icon(RiAccountCircleLine)
         .child(
           S.list()
             .title('About')
@@ -96,22 +99,6 @@ export default () =>
                 .icon(GoBriefcase)
                 .child(
                   S.documentTypeList('gig').defaultOrdering([
-                    { field: 'name', direction: 'desc' },
-                  ])
-                ),
-              S.listItem()
-                .title('Technologies')
-                .icon(GoCode)
-                .child(
-                  S.documentTypeList('tech').defaultOrdering([
-                    { field: 'name', direction: 'desc' },
-                  ])
-                ),
-              S.listItem()
-                .title('Organisations')
-                .icon(FaRegAddressCard)
-                .child(
-                  S.documentTypeList('organisation').defaultOrdering([
                     { field: 'name', direction: 'desc' },
                   ])
                 ),
@@ -135,10 +122,30 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title('Pages')
-        .icon(ImNewspaper)
-        .schemaType('Page')
-        .child(S.documentTypeList('Page').title('Pages')),
+        .title('Data')
+        .icon(GoDatabase)
+        .child(
+          S.list()
+            .title('Data')
+            .items([
+              S.listItem()
+                .title('Technologies')
+                .icon(GoTerminal)
+                .child(
+                  S.documentTypeList('tech').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+              S.listItem()
+                .title('Organisations')
+                .icon(FaRegAddressCard)
+                .child(
+                  S.documentTypeList('organisation').defaultOrdering([
+                    { field: 'name', direction: 'desc' },
+                  ])
+                ),
+            ])
+        ),
       S.divider(),
       S.listItem()
         .title('Navigation')
