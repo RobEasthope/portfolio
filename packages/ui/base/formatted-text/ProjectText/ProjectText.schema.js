@@ -1,5 +1,5 @@
 export default {
-  name: 'ArticleText',
+  name: 'ProjectText',
   title: 'Article text',
   type: 'array',
   of: [

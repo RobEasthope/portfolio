@@ -28,7 +28,7 @@ export default {
     {
       name: 'text',
       title: 'Text',
-      type: 'ArticleText',
+      type: 'ProjectText',
       validation: (Rule) => Rule.required().warning('Text: Text is missing'),
     },
   ],
