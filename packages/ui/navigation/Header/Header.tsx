@@ -8,7 +8,7 @@ import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
 import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
-import { METADATA } from 'constants/METADATA';
+import { METADATA } from '@/UI/constants/METADATA';
 
 // Styles
 export const HeaderLayout = styled('div', {
