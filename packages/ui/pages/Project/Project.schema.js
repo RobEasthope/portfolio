@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'shortTitle',
@@ -26,10 +26,10 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'fullTitle',
+        source: 'title',
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
