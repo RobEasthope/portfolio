@@ -23,7 +23,6 @@ import ExampleText from '../../packages/ui/base/formatted-text/ExampleFormattedT
 // Settings
 import Settings from '../../packages/ui/base/settings/Settings.schema';
 import GlobalMetadata from '../../packages/ui/base/settings/GlobalMetadata.schema';
-import seoMetaData from '../../packages/ui/base/settings/seoMetaData.schema';
 
 // Data
 import tech from '../../packages/ui/content/Tech/schemas/Tech.schema';
@@ -69,7 +68,6 @@ export default createSchema({
     // Settings
     Settings,
     GlobalMetadata,
-    seoMetaData,
 
     // Data
     tech,

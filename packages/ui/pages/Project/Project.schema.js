@@ -97,11 +97,6 @@ export default {
       },
       validation: (Rule) => Rule.required().warning('Required field'),
     },
-    {
-      name: 'seoMetaData',
-      title: 'SEO meta data',
-      type: 'seoMetaData',
-    },
   ],
 
   preview: {
