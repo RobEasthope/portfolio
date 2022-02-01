@@ -1,4 +1,4 @@
-export const getYoutubeIdfromUrl = (url: string): string => {
+export const getYoutubeIdfromUrl = (url: string): string | undefined => {
   const regExp =
     /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
   const match = regExp.exec(url);
