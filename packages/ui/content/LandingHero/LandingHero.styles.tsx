@@ -1,8 +1,8 @@
 import SanityMuxPlayer from 'sanity-mux-player';
 import { Picture } from '@/UI/base/media/Picture/Picture';
-import { Heading } from '@/UI/base/typography/Heading/Heading';
 import { styled } from '@/UI/styles/stitches.config';
 import { PictureWrapper } from '@/UI/base/layout/PictureWrapper';
+import { Heading } from '@/UI/base/typography/Heading/Heading';
 
 export const Wrapper = styled('div', {
   position: 'relative',
