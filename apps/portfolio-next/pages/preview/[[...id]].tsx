@@ -1,11 +1,12 @@
 import Custom404 from 'pages/404';
 
 import { Page, PageProps } from '@/UI/pages/Page/Page';
-import { previewAnyPageByIdQuery } from '@/UI/pages/Page/Page.queries';
 import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { getClient, overlayDrafts } from '@/UTILS/sanity-api/sanity.server';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
+import { groq } from 'next-sanity';
 
+// TYPES
 type PreviewPageBySlugProps = {
   data: {
     page: PageProps;
@@ -13,6 +14,7 @@ type PreviewPageBySlugProps = {
   };
 };
 
+// MARKUP
 export default function PageBySlug({ data }: PreviewPageBySlugProps) {
   if (data.page === null) {
     return <Custom404 />;
@@ -25,6 +27,25 @@ export default function PageBySlug({ data }: PreviewPageBySlugProps) {
   );
 }
 
+// QUERY
+const previewAnyPageByIdQuery = groq`
+  *[_type in ["Page"] && _id == $id]{
+    ...,
+    "sections": rawSections[]{
+      ...,
+      "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
+      "bkg": rawBkg->,
+      "cards": rawCards[]{
+        ...,
+        "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
+        "bkg": rawBkg->,
+      },
+      "muxVideo": rawMuxVideo.asset->,
+    }
+  }
+`;
+
+// SSR CALL
 export const getServerSideProps = async ({
   query,
   preview = false,
