@@ -53,7 +53,7 @@ export const getServerSideProps = async ({
   query: { id: string[]; key: string };
   preview: boolean;
 }) => {
-  // If preview key is invalid return blank props.data.page object so 404 UI kicks in
+  // If preview key is invalid return blank props.data.page object so 404 UI kicks in and ensure a form of security
   if (query?.key !== process.env.SANITY_STUDIO_PREVIEW_KEY) {
     return {
       props: {
@@ -62,10 +62,12 @@ export const getServerSideProps = async ({
     };
   }
 
+  // Fetch global data
   const globals: AppGlobalsProps = await getClient(preview).fetch(
     appGlobalsQuery
   );
 
+  // Fetch page data
   const page = overlayDrafts(
     await getClient(preview).fetch(previewAnyPageByIdQuery, {
       id: query?.id[0],
