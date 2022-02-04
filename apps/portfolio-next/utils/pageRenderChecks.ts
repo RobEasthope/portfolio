@@ -8,12 +8,13 @@ export const pageRenderChecks = (props: {
   };
   currentRoute: string;
 }): boolean => {
+  const page = props?.data?.page;
   const currentRoute: string = props?.currentRoute;
   const pageSlug: string = props?.data?.page?.slug?.current;
   const homePageSlug: string = props?.data?.globals?.settings.homePageSlug;
 
-  // No data
-  if (props?.data?.page === null) {
+  // No page data at all
+  if (page === null) {
     return false;
   }
 
