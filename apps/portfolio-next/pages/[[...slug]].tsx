@@ -61,15 +61,11 @@ export const getStaticPaths = async () => {
   for (const page of pages) {
     const slug = page?.slug?.current;
 
-    if (slug === homePageRoute.homePageSlug) {
+    if (slug !== homePageRoute.homePageSlug) {
       paths.push({
-        params: { slug: [] },
+        params: { slug: slug?.split('/').filter((p) => p) },
       });
     }
-
-    paths.push({
-      params: { slug: slug?.split('/').filter((p) => p) },
-    });
   }
 
   return {
