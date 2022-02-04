@@ -31,7 +31,7 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
 
-  if (!pageRenderChecks({ data, currentRoute: router.asPath })) {
+  if (!data.page) {
     return <Custom404 />;
   }
 
