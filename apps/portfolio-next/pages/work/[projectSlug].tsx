@@ -3,28 +3,32 @@ import { useRouter } from 'next/router';
 
 import { Page, PageProps } from '@/UI/pages/Page/Page';
 import { Loading } from '@/UI/base/app/Loading/Loading';
-import { pageSlugsQuery } from '@/UI/pages/Page/Page.queries';
 import {
   getClient,
   overlayDrafts,
   sanityClient,
 } from '@/UTILS/sanity-api/sanity.server';
-import { selectSanityQuery } from '@/NEXT/sanity-api/selectSanityQuery';
-
 import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
 import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
 import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
+import {
+  projectBySlugQuery,
+  projectSlugsQuery,
+} from '@/UI/pages/Project/Project.queries';
+import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
 
-type PageBySlugProps = {
+// TYPES
+type ProjectBySlugProps = {
   data: {
     page: PageProps;
     globals: AppGlobalsProps;
   };
 };
 
-export default function PageBySlug({ data }: PageBySlugProps) {
+// MARKUP
+export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
 
@@ -45,24 +49,18 @@ export default function PageBySlug({ data }: PageBySlugProps) {
   );
 }
 
+// SSG CALLS
 export const getStaticPaths = async () => {
   const paths = [];
 
-  const pages = (await sanityClient.fetch(pageSlugsQuery)) as [PageProps];
-  const homePageRoute: { homePageSlug: string } = await sanityClient.fetch(
-    `*[_type== 'Settings'][0]{
-      "homePageSlug": rawHomePageRef->slug.current
-    }`
-  );
+  const pages = (await sanityClient.fetch(projectSlugsQuery)) as [PageProps];
 
   for (const page of pages) {
     const slug = page?.slug?.current;
 
-    if (slug !== homePageRoute.homePageSlug) {
-      paths.push({
-        params: { slug: slug?.split('/').filter((p) => p) },
-      });
-    }
+    paths.push({
+      params: { slug: slug?.split('/').filter((p) => p) },
+    });
   }
 
   return {
@@ -78,26 +76,27 @@ export const getStaticProps = async ({
   params: { projectSlug: string[] };
   preview: boolean;
 }) => {
+  // Fetch global data
   const globals: {
     header: HeaderProps;
     globals: GlobalMetadata;
     settings: SettingsProps;
   } = await getClient(preview).fetch(appGlobalsQuery);
 
-  const { sanityQuery, queryParams } = selectSanityQuery(
-    params?.projectSlug || [],
-    globals?.settings?.homePageSlug
+  // Fetch project data
+  const project = overlayDrafts(
+    await getClient(preview).fetch(projectBySlugQuery, {
+      slug: createSlugFromQuery(params?.projectSlug),
+    })
   );
 
-  const page = overlayDrafts(
-    await getClient(preview).fetch(sanityQuery, queryParams)
-  );
-
+  // Page payload
   return {
     props: {
-      data: { page: (page[0] as PageProps) || null, globals },
+      data: { page: (project[0] as PageProps) || null, globals },
       preview,
     },
+    // ISR cache time
     revalidate: 60,
   };
 };
