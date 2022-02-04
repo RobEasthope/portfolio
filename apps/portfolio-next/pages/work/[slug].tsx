@@ -17,7 +17,6 @@ import {
   projectBySlugQuery,
   projectSlugsQuery,
 } from '@/UI/pages/Project/Project.queries';
-import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
 
 // TYPES
 type ProjectBySlugProps = {
@@ -31,8 +30,6 @@ type ProjectBySlugProps = {
 export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
-
-  console.log(router.asPath);
 
   if (!pageRenderChecks({ data, currentRoute: router.asPath })) {
     return <Custom404 />;
@@ -59,7 +56,7 @@ export const getStaticPaths = async () => {
     const slug = page?.slug?.current;
 
     paths.push({
-      params: { slug: slug?.split('/').filter((p) => p) },
+      params: { slug },
     });
   }
 
@@ -73,7 +70,7 @@ export const getStaticProps = async ({
   params,
   preview = false,
 }: {
-  params: { projectSlug: string[] };
+  params: { slug: string[] };
   preview: boolean;
 }) => {
   // Fetch global data
@@ -86,7 +83,7 @@ export const getStaticProps = async ({
   // Fetch project data
   const project = overlayDrafts(
     await getClient(preview).fetch(projectBySlugQuery, {
-      slug: createSlugFromQuery(params?.projectSlug),
+      slug: params?.slug,
     })
   );
 
