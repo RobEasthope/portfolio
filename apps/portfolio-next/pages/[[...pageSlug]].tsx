@@ -75,7 +75,7 @@ export const getStaticProps = async ({
   params,
   preview = false,
 }: {
-  params: { slug: string[] };
+  params: { pageSlug: string[] };
   preview: boolean;
 }) => {
   const globals: {
@@ -85,7 +85,7 @@ export const getStaticProps = async ({
   } = await getClient(preview).fetch(appGlobalsQuery);
 
   const { sanityQuery, queryParams } = selectSanityQuery(
-    params?.slug || [],
+    params?.pageSlug || [],
     globals?.settings?.homePageSlug
   );
 
