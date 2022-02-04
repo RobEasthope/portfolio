@@ -1,6 +1,6 @@
-import Custom404 from 'pages/404';
 import { useRouter } from 'next/router';
 
+import { Error404 } from '@/UI/pages/Error404/Error404';
 import { Page, PageProps } from '@/UI/pages/Page/Page';
 import { Loading } from '@/UI/base/app/Loading/Loading';
 import {
@@ -31,7 +31,7 @@ export default function PageBySlug({ data }: PageBySlugProps) {
   const { page, globals } = data;
 
   if (!pageRenderChecks({ data, currentRoute: router.asPath })) {
-    return <Custom404 />;
+    return <Error404 />;
   }
 
   return (

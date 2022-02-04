@@ -1,4 +1,3 @@
-import Custom404 from 'pages/404';
 import { useRouter } from 'next/router';
 
 import { Page, PageProps } from '@/UI/pages/Page/Page';
@@ -16,6 +15,7 @@ import {
   projectBySlugQuery,
   projectSlugsQuery,
 } from '@/UI/pages/Project/Project.queries';
+import { Error404 } from '@/UI/pages/Error404/Error404';
 
 // TYPES
 type ProjectBySlugProps = {
@@ -32,7 +32,7 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const { page, globals } = data;
 
   if (!data.page) {
-    return <Custom404 />;
+    return <Error404 />;
   }
 
   return (
