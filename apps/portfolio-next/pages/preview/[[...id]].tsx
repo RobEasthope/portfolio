@@ -75,6 +75,7 @@ export const getServerSideProps = async ({
   );
 
   return {
+    // Page payload
     props: {
       data: { page: (page[0] as PageProps) || null, globals },
     },
