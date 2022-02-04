@@ -17,6 +17,7 @@ import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
 import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
 
+// TYPES
 type PageBySlugProps = {
   data: {
     page: PageProps;
@@ -24,6 +25,7 @@ type PageBySlugProps = {
   };
 };
 
+// MARKUP
 export default function PageBySlug({ data }: PageBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
@@ -45,6 +47,7 @@ export default function PageBySlug({ data }: PageBySlugProps) {
   );
 }
 
+// SSG CALLS
 export const getStaticPaths = async () => {
   const paths = [];
 
@@ -78,26 +81,31 @@ export const getStaticProps = async ({
   params: { pageSlug: string[] };
   preview: boolean;
 }) => {
+  // Fetch global data
   const globals: {
     header: HeaderProps;
     globals: GlobalMetadata;
     settings: SettingsProps;
   } = await getClient(preview).fetch(appGlobalsQuery);
 
+  // Fetch page data
   const { sanityQuery, queryParams } = selectSanityQuery(
     params?.pageSlug || [],
     globals?.settings?.homePageSlug
   );
 
+  // Fetch page data
   const page = overlayDrafts(
     await getClient(preview).fetch(sanityQuery, queryParams)
   );
 
   return {
+    // Page payload
     props: {
       data: { page: (page[0] as PageProps) || null, globals },
       preview,
     },
+    // ISR cache time
     revalidate: 60,
   };
 };
