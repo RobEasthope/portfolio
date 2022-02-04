@@ -28,8 +28,7 @@ type PageBySlugProps = {
 export default function PageBySlug({ data }: PageBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
-
-  console.log(router.asPath);
+  const { page, globals } = data;
 
   if (!pageRenderChecks({ data, currentRoute: router.asPath })) {
     return <Custom404 />;
@@ -39,8 +38,8 @@ export default function PageBySlug({ data }: PageBySlugProps) {
     <>
       {isFallback && <Loading />}
 
-      {!isFallback && data?.page?._type === 'Page' && (
-        <Page page={data?.page} globals={data?.globals} />
+      {!isFallback && page?._type === 'Page' && (
+        <Page page={page} globals={globals} />
       )}
     </>
   );

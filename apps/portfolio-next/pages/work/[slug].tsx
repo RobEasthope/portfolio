@@ -30,6 +30,7 @@ type ProjectBySlugProps = {
 export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
+  const { page, globals } = data;
 
   if (!data.page) {
     return <Custom404 />;
@@ -39,8 +40,8 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
     <>
       {isFallback && <Loading />}
 
-      {!isFallback && data?.page?._type === 'Page' && (
-        <Page page={data?.page} globals={data?.globals} />
+      {!isFallback && page?._type === 'Page' && (
+        <Page page={page} globals={globals} />
       )}
     </>
   );
