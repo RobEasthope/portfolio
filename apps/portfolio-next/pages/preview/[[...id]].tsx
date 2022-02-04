@@ -4,7 +4,7 @@ import { Page, PageProps } from '@/UI/pages/Page/Page';
 import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { getClient, overlayDrafts } from '@/UTILS/sanity-api/sanity.server';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
-import { groq } from 'next-sanity';
+import { previewAnyPageByIdQuery } from '@/UI/pages/Preview/Preview.queries';
 
 // TYPES
 type PreviewPageBySlugProps = {
@@ -26,24 +26,6 @@ export default function PageBySlug({ data }: PreviewPageBySlugProps) {
     )
   );
 }
-
-// QUERY
-const previewAnyPageByIdQuery = groq`
-  *[_type in ["Page"] && _id == $id]{
-    ...,
-    "sections": rawSections[]{
-      ...,
-      "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
-      "bkg": rawBkg->,
-      "cards": rawCards[]{
-        ...,
-        "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
-        "bkg": rawBkg->,
-      },
-      "muxVideo": rawMuxVideo.asset->,
-    }
-  }
-`;
 
 // SSR CALL
 export const getServerSideProps = async ({

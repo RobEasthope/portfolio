@@ -14,8 +14,8 @@ import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
 import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
 import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
-import { groq } from 'next-sanity';
 import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
+import { pageBySlugQuery, pageSlugsQuery } from '@/UI/pages/Page/Page.queries';
 
 // TYPES
 type PageBySlugProps = {
