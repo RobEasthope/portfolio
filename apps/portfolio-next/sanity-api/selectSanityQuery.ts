@@ -1,4 +1,4 @@
-import { anyPageBySlugQuery } from '@/UI/pages/Page/Page.queries';
+import { pageBySlugQuery } from '@/UI/pages/Page/Page.queries';
 import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
 
 type SelectSanityQueryProps = {
@@ -12,13 +12,13 @@ export function selectSanityQuery(
 ): SelectSanityQueryProps {
   if (slugArray.length === 0) {
     return {
-      sanityQuery: anyPageBySlugQuery,
+      sanityQuery: pageBySlugQuery,
       queryParams: { slug: homePageSlug },
     };
   }
 
   return {
-    sanityQuery: anyPageBySlugQuery,
+    sanityQuery: pageBySlugQuery,
     queryParams: {
       slug: createSlugFromQuery(slugArray),
     },
