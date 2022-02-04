@@ -3,19 +3,19 @@ import { useRouter } from 'next/router';
 
 import { Page, PageProps } from '@/UI/pages/Page/Page';
 import { Loading } from '@/UI/base/app/Loading/Loading';
-import { pageSlugsQuery } from '@/UI/pages/Page/Page.queries';
 import {
   getClient,
   overlayDrafts,
   sanityClient,
 } from '@/UTILS/sanity-api/sanity.server';
-import { selectSanityQuery } from '@/NEXT/sanity-api/selectSanityQuery';
 
 import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
 import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
 import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
+import { groq } from 'next-sanity';
+import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
 
 // TYPES
 type PageBySlugProps = {
@@ -89,14 +89,14 @@ export const getStaticProps = async ({
   } = await getClient(preview).fetch(appGlobalsQuery);
 
   // Fetch page data
-  const { sanityQuery, queryParams } = selectSanityQuery(
-    params?.pageSlug || [],
-    globals?.settings?.homePageSlug
-  );
-
-  // Fetch page data
   const page = overlayDrafts(
-    await getClient(preview).fetch(sanityQuery, queryParams)
+    await getClient(preview).fetch(pageBySlugQuery, {
+      slug:
+        // If the router returns the site route pass in the home page slug. Other wise just pass in the page slug
+        params?.pageSlug?.length === 0
+          ? globals?.settings?.homePageSlug
+          : createSlugFromQuery(params?.pageSlug || []),
+    })
   );
 
   return {
