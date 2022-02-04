@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 
-import { Error404 } from '@/UI/pages/Error404/Error404';
 import { Page, PageProps } from '@/UI/pages/Page/Page';
 import { Loading } from '@/UI/base/app/Loading/Loading';
 import {
@@ -12,12 +11,14 @@ import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
 import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
-import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
-import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
-import { pageBySlugQuery, pageSlugsQuery } from '@/UI/pages/Page/Page.queries';
+import {
+  projectBySlugQuery,
+  projectSlugsQuery,
+} from '@/UI/pages/Project/Project.queries';
+import { Error404 } from '@/UI/pages/Error404/Error404';
 
 // TYPES
-type PageBySlugProps = {
+type ProjectBySlugProps = {
   data: {
     page: PageProps;
     globals: AppGlobalsProps;
@@ -25,12 +26,12 @@ type PageBySlugProps = {
 };
 
 // MARKUP
-export default function PageBySlug({ data }: PageBySlugProps) {
+export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
   const { page, globals } = data;
 
-  if (!pageRenderChecks({ data, currentRoute: router.asPath })) {
+  if (!data.page) {
     return <Error404 />;
   }
 
@@ -49,22 +50,14 @@ export default function PageBySlug({ data }: PageBySlugProps) {
 export const getStaticPaths = async () => {
   const paths = [];
 
-  const pages = (await sanityClient.fetch(pageSlugsQuery)) as [PageProps];
-
-  const homePageRoute: { homePageSlug: string } = await sanityClient.fetch(
-    `*[_type== 'Settings'][0]{
-      "homePageSlug": rawHomePageRef->slug.current
-    }`
-  );
+  const pages = (await sanityClient.fetch(projectSlugsQuery)) as [PageProps];
 
   for (const page of pages) {
     const slug = page?.slug?.current;
 
-    if (slug !== homePageRoute.homePageSlug) {
-      paths.push({
-        params: { slug: slug?.split('/').filter((p) => p) },
-      });
-    }
+    paths.push({
+      params: { slug },
+    });
   }
 
   return {
@@ -87,24 +80,17 @@ export const getStaticProps = async ({
     settings: SettingsProps;
   } = await getClient(preview).fetch(appGlobalsQuery);
 
-  // Pick out home page slug
-  const homePageSlug = globals?.settings?.homePageSlug;
-
-  // Fetch page data
-  const page = overlayDrafts(
-    await getClient(preview).fetch(pageBySlugQuery, {
-      slug:
-        // If the router returns the app root pass in the home page slug. Other wise just pass in the page slug
-        params?.slug?.length > 0
-          ? createSlugFromQuery(params?.slug)
-          : homePageSlug,
+  // Fetch project data
+  const project = overlayDrafts(
+    await getClient(preview).fetch(projectBySlugQuery, {
+      slug: params?.slug,
     })
   );
 
   // Page payload
   return {
     props: {
-      data: { page: (page[0] as PageProps) || null, globals },
+      data: { page: (project[0] as PageProps) || null, globals },
       preview,
     },
     // ISR cache time

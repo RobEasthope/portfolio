@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 
-export const pageBySlugQuery = groq`
-  *[_type in ["Page"] && slug.current == $slug]{
+export const previewAnyPageByIdQuery = groq`
+  *[_type in ["Page"] && _id == $id]{
      ...,
     "sections": rawSections[]{
       ...,
@@ -14,14 +14,5 @@ export const pageBySlugQuery = groq`
       },
       "muxVideo": rawMuxVideo.asset->,
     }
-  }
-`;
-
-// All page slugs
-export const pageSlugsQuery = groq`
-  *[_type == "Page" && defined(slug.current)]{
-    slug {
-      current
-    },
   }
 `;

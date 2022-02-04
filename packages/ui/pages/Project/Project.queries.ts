@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 
-export const pageBySlugQuery = groq`
-  *[_type in ["Page"] && slug.current == $slug]{
+export const projectBySlugQuery = groq`
+  *[_type in ["project"] && slug.current == $slug]{
      ...,
     "sections": rawSections[]{
       ...,
@@ -16,10 +16,9 @@ export const pageBySlugQuery = groq`
     }
   }
 `;
-
 // All page slugs
-export const pageSlugsQuery = groq`
-  *[_type == "Page" && defined(slug.current)]{
+export const projectSlugsQuery = groq`
+  *[_type == "project" && defined(slug.current)]{
     slug {
       current
     },

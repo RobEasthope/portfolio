@@ -8,21 +8,22 @@ export const pageRenderChecks = (props: {
   };
   currentRoute: string;
 }): boolean => {
+  const page = props?.data?.page;
   const currentRoute: string = props?.currentRoute;
   const pageSlug: string = props?.data?.page?.slug?.current;
   const homePageSlug: string = props?.data?.globals?.settings.homePageSlug;
 
-  // No data
-  if (props?.data?.page === null) {
+  // No page data at all
+  if (page === null) {
     return false;
   }
 
-  // Don't render homepage if we're no on the root path
+  // Don't render homepage if we're not at the root path
   if (currentRoute !== '/' && pageSlug === homePageSlug) {
     return false;
   }
 
-  // Root path and valid home page slug
+  // Render home page if the root path is active and valid home page slug is valid
   if (currentRoute === '/' && pageSlug === homePageSlug) {
     return true;
   }

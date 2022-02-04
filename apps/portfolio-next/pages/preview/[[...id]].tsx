@@ -1,11 +1,12 @@
 import Custom404 from 'pages/404';
 
 import { Page, PageProps } from '@/UI/pages/Page/Page';
-import { previewAnyPageByIdQuery } from '@/UI/pages/Page/Page.queries';
 import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { getClient, overlayDrafts } from '@/UTILS/sanity-api/sanity.server';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
+import { previewAnyPageByIdQuery } from '@/UI/pages/Preview/Preview.queries';
 
+// TYPES
 type PreviewPageBySlugProps = {
   data: {
     page: PageProps;
@@ -13,6 +14,7 @@ type PreviewPageBySlugProps = {
   };
 };
 
+// MARKUP
 export default function PageBySlug({ data }: PreviewPageBySlugProps) {
   if (data.page === null) {
     return <Custom404 />;
@@ -25,6 +27,7 @@ export default function PageBySlug({ data }: PreviewPageBySlugProps) {
   );
 }
 
+// SSR CALL
 export const getServerSideProps = async ({
   query,
   preview = false,
@@ -32,7 +35,7 @@ export const getServerSideProps = async ({
   query: { id: string[]; key: string };
   preview: boolean;
 }) => {
-  // If preview key is invalid return blank props.data.page object so 404 UI kicks in
+  // If preview key is invalid return blank props.data.page object so 404 UI kicks in and ensure a form of security
   if (query?.key !== process.env.SANITY_STUDIO_PREVIEW_KEY) {
     return {
       props: {
@@ -41,10 +44,12 @@ export const getServerSideProps = async ({
     };
   }
 
+  // Fetch global data
   const globals: AppGlobalsProps = await getClient(preview).fetch(
     appGlobalsQuery
   );
 
+  // Fetch page data
   const page = overlayDrafts(
     await getClient(preview).fetch(previewAnyPageByIdQuery, {
       id: query?.id[0],
@@ -52,6 +57,7 @@ export const getServerSideProps = async ({
   );
 
   return {
+    // Page payload
     props: {
       data: { page: (page[0] as PageProps) || null, globals },
     },
