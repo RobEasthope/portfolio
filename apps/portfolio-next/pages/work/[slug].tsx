@@ -12,7 +12,6 @@ import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
 import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
 import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
-import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
 import {
   projectBySlugQuery,
   projectSlugsQuery,
