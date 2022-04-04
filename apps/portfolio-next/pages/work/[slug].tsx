@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { Page, PageProps } from '@/UI/pages/Page/Page';
+import { Project, ProjectProps } from '@/UI/pages/Project/Project';
 import { Loading } from '@/UI/base/app/Loading/Loading';
 import {
   getClient,
@@ -20,7 +20,7 @@ import { Error404 } from '@/UI/pages/Error404/Error404';
 // TYPES
 type ProjectBySlugProps = {
   data: {
-    page: PageProps;
+    page: ProjectProps;
     globals: AppGlobalsProps;
   };
 };
@@ -39,8 +39,8 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
     <>
       {isFallback && <Loading />}
 
-      {!isFallback && page?._type === 'Page' && (
-        <Page page={page} globals={globals} />
+      {!isFallback && page?._type === 'project' && (
+        <Project page={page} globals={globals} />
       )}
     </>
   );
@@ -50,7 +50,7 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
 export const getStaticPaths = async () => {
   const paths = [];
 
-  const pages = (await sanityClient.fetch(projectSlugsQuery)) as [PageProps];
+  const pages = (await sanityClient.fetch(projectSlugsQuery)) as [ProjectProps];
 
   for (const page of pages) {
     const slug = page?.slug?.current;
@@ -90,7 +90,7 @@ export const getStaticProps = async ({
   // Page payload
   return {
     props: {
-      data: { page: (project[0] as PageProps) || null, globals },
+      data: { page: (project[0] as ProjectProps) || null, globals },
       preview,
     },
     // ISR cache time
