@@ -20,7 +20,7 @@ export const Gallery = ({
   }
 
   return (
-    <Box as="section">
+    <PaddedComponent as="section">
       <MaxWidth width={maxWidth}>
         {images && (
           <Grid columns={columns}>
@@ -44,7 +44,7 @@ export const Gallery = ({
         )}
         {galleryCaption && <GalleryCaption blocks={galleryCaption} />}
       </MaxWidth>
-    </Box>
+    </PaddedComponent>
   );
 };
 

@@ -53,7 +53,7 @@ export const Header = ({
   logo,
   navigation,
 }: Pick<HeaderProps, 'logo' | 'navigation'>) => (
-  <Box as="header">
+  <PaddedComponent as="header">
     <MaxPageWidth as="nav">
       <HeaderLayout as="div">
         <StyledHomeLink>
@@ -82,5 +82,5 @@ export const Header = ({
         <SmallNavigation navigation={navigation} />
       </HeaderLayout>
     </MaxPageWidth>
-  </Box>
+  </PaddedComponent>
 );

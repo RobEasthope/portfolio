@@ -14,7 +14,7 @@ export const Image = ({ image, maxWidth }: ImageProps) => {
   }
 
   return (
-    <Box as="section" content="media">
+    <PaddedComponent as="section" content="media">
       <MaxWidth as="figure" width={maxWidth}>
         <Picture
           asset={image}
@@ -24,7 +24,7 @@ export const Image = ({ image, maxWidth }: ImageProps) => {
         />
         {image?.caption && <Caption as="figcaption">{image?.caption}</Caption>}
       </MaxWidth>
-    </Box>
+    </PaddedComponent>
   );
 };
 

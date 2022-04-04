@@ -21,7 +21,7 @@ export const YoutubeVideo = ({
   }
 
   return (
-    <Box as="section" content="media">
+    <PaddedComponent as="section" content="media">
       <MaxWidth width={maxWidth}>
         <IFrameAspectRatio ratio={16 / 9}>
           <YouTube
@@ -31,7 +31,7 @@ export const YoutubeVideo = ({
         </IFrameAspectRatio>
         {caption && <Caption as="figcaption">{caption}</Caption>}
       </MaxWidth>
-    </Box>
+    </PaddedComponent>
   );
 };
 

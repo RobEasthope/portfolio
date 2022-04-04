@@ -18,12 +18,12 @@ export const VimeoVideo = ({
   }
 
   return (
-    <Box as="section" content="media">
+    <PaddedComponent as="section" content="media">
       <MaxWidth width={maxWidth}>
         <Vimeo video={url} responsive />
         {caption && <Caption as="figcaption">{caption}</Caption>}
       </MaxWidth>
-    </Box>
+    </PaddedComponent>
   );
 };
 
