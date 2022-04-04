@@ -54,7 +54,7 @@ export const getDefaultDocumentNode = () => {
           ) => ({
             title: metadataTitle || title,
             description: metadataDescription || '',
-            siteUrl: METADATA.SITE_URL || '',
+            siteUrl: process.env.SANITY_STUDIO_PREVIEW_SITE || '',
             ogImage: metadataImage,
             // Used by Google preview to render the full URL
             // Note that this is a string, not an object (slug { current: string })
