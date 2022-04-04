@@ -1,6 +1,6 @@
 import { Image as rawImageProps } from '@/UI/types/sanity-schema';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
+import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { Caption } from '@/UI/base/typography/Caption/Caption';
 

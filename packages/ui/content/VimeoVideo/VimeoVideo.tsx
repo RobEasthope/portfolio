@@ -1,7 +1,7 @@
 import Vimeo from '@u-wave/react-vimeo';
 import { VimeoVideo as rawVimeoVideoProps } from '@/UI/types/sanity-schema';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
+import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Caption } from '@/UI/base/typography/Caption/Caption';
 
 // TYPES

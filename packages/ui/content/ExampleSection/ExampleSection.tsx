@@ -1,10 +1,10 @@
 import { styled } from '@/UI/styles/stitches.config';
 import { ExampleFormattedText } from '@/UI/base/formatted-text/ExampleFormattedText/ExampleFormattedText';
-import { MaxPageWidth } from '@/UI/base/layout/MaxPageWidth/MaxPageWidth';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { ExampleSection as rawExampleSectionProps } from '@/UI/types/sanity-schema';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { TYPE_SCALE } from '@/UI/styles/constants/TYPE_SCALE';
+import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 
 // Styles
 export const Heading = styled('p', {
@@ -29,13 +29,13 @@ export const ExampleSection = ({
 
   return (
     <PaddedComponent as="section">
-      <MaxPageWidth>
+      <MaxWidth width="page">
         {heading && <Heading as="h1">{heading}</Heading>}
         {text && <ExampleFormattedText blocks={text} />}
         {image && (
           <Picture asset={image} alt="" mode="responsive" maxWidth={800} />
         )}
-      </MaxPageWidth>
+      </MaxWidth>
     </PaddedComponent>
   );
 };
