@@ -1,7 +1,7 @@
 import { styled } from '@/UI/styles/stitches.config';
+import { Box } from '@/UI/base/layout/Box/Box';
 
-export const Flex = styled('div', {
-  boxSizing: 'border-box',
+export const Flex = styled(Box, {
   display: 'flex',
 
   variants: {
