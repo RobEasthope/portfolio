@@ -1,4 +1,4 @@
-import { PageProps } from 'pages/Page/Page';
+import { PageProps } from '@/UI/pages/Page/Page';
 import { ReactNode } from 'react';
 
 export type SerializerMarksProps = {
