@@ -2,38 +2,38 @@
   "$schema": "https://turborepo.org/schema.json",
   "baseBranch": "origin/main",
   "pipeline": {
-      "build": {
-        "outputs": [
-          "dist/**",
-          ".next/**"
-        ]
-      },
-      "portfolio-next": {
-        "dependsOn": [
-          "^build",
-          "NEXT_PUBLIC_SANITY_PROJECT_ID",
-          "NEXT_PUBLIC_SANITY_PROJECT_DATASET",
-          "NEXT_PUBLIC_SANITY_API_VERSION",
-          "SANITY_API_TOKEN",
-          "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "portfolio-sanity": {
-        "dependsOn": [
-          "^build",
-          "SANITY_PROJECT_ID",
-          "SANITY_PROJECT_DATASET",
-          "SANITY_API_VERSION",
-          "SANITY_STUDIO_PREVIEW_SITE",
-          "SANITY_STUDIO_API_TOKEN",
-          "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "lint": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      }
+    "build": {
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
+    },
+    "portfolio-next": {
+      "dependsOn": [
+        "^build",
+        "NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "NEXT_PUBLIC_SANITY_PROJECT_DATASET",
+        "NEXT_PUBLIC_SANITY_API_VERSION",
+        "SANITY_API_TOKEN",
+        "SANITY_STUDIO_PREVIEW_KEY"
+      ]
+    },
+    "portfolio-sanity": {
+      "dependsOn": [
+        "^build",
+        "SANITY_PROJECT_ID",
+        "SANITY_PROJECT_DATASET",
+        "SANITY_API_VERSION",
+        "SANITY_STUDIO_PREVIEW_SITE",
+        "SANITY_STUDIO_API_TOKEN",
+        "SANITY_STUDIO_PREVIEW_KEY"
+      ]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
     }
+  }
 }
