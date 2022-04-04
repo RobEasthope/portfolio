@@ -6,9 +6,9 @@ import { METADATA } from '@/UI/constants/METADATA';
 import { sanityConfig } from '@/UTILS/sanity-api/sanity-config';
 
 type NextMetadataType = {
-  title: string;
-  description: string;
-  image: Page['metadataImage'];
+  title: string | undefined;
+  description: string | undefined;
+  image: Page['metadataImage'] | undefined;
   globalMetadata: GlobalMetadata;
 };
 
