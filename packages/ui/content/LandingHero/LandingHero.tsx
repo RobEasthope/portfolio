@@ -32,7 +32,7 @@ export const LandingHero = ({
   return (
     <Wrapper as="section">
       <ForegroundContent>
-        <PaddedComponent as="section">
+        <Box as="section">
           <MaxWidth width="page">
             <ForegroundContentLayout>
               {logo && (
@@ -48,7 +48,7 @@ export const LandingHero = ({
               {heading && <Title as="h1">{heading}</Title>}
             </ForegroundContentLayout>
           </MaxWidth>
-        </PaddedComponent>
+        </Box>
       </ForegroundContent>
 
       {bkgImage && bkgMode === 'image' && (

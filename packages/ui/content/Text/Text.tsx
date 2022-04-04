@@ -12,11 +12,11 @@ export const Text = ({ text }: TextProps) => {
   }
 
   return (
-    <PaddedComponent as="section">
+    <Box as="section">
       <MaxWidth width="page">
         {text && <BasicText blocks={text as unknown} />}
       </MaxWidth>
-    </PaddedComponent>
+    </Box>
   );
 };
 

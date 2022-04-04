@@ -20,7 +20,7 @@ export const MuxVideo = ({
   }
 
   return (
-    <PaddedComponent as="section" content="media">
+    <Box as="section" content="media">
       <MaxWidth width={maxWidth}>
         {muxVideo && (
           <SanityMuxPlayer
@@ -33,7 +33,7 @@ export const MuxVideo = ({
         )}
         {caption && <Caption as="figcaption">{caption}</Caption>}
       </MaxWidth>
-    </PaddedComponent>
+    </Box>
   );
 };
 
