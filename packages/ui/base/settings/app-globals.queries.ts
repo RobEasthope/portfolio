@@ -23,6 +23,6 @@ export const appGlobalsQuery = groq`
 `;
 
 export const homePageRouteQuery = groq`*[_type== 'Settings'][0]{
-      "homePageSlug": rawHomePageRef->slug.current
-    }
+    "homePageSlug": rawHomePageRef->slug.current
+  }
 `;
