@@ -8,22 +8,22 @@ import { Page as rawPageProps } from '@/UI/types/sanity-schema';
 import { ExampleSectionProps } from '@/UI/content/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 
-export interface PageProps extends rawPageProps {
+export interface ProjectProps extends rawPageProps {
   sections: [ExampleSectionProps];
 }
 
-export const Page = ({
+export const Project = ({
   page,
   globals,
 }: {
-  page: PageProps;
+  page: ProjectProps;
   globals: AppGlobalsProps;
 }) => {
   // Globals props
   const { header, metadata } = globals;
 
   // Page props
-  const { sections } = page;
+  const { title, sections } = page;
 
   return (
     <>
@@ -35,6 +35,7 @@ export const Page = ({
         )}
 
         <MainContentLayout as="main">
+          {title && <h1>{title}</h1>}
           {sections && <RenderSections sections={sections} />}
         </MainContentLayout>
 
