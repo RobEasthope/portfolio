@@ -5,53 +5,6 @@
     "apps/*",
     "packages/*"
   ],
-  "turbo": {
-    "baseBranch": "origin/main",
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "dist/**",
-          ".next/**"
-        ]
-      },
-      "portfolio-next": {
-        "dependsOn": [
-          "^build",
-          "NEXT_PUBLIC_SANITY_PROJECT_ID",
-          "NEXT_PUBLIC_SANITY_PROJECT_DATASET",
-          "NEXT_PUBLIC_SANITY_API_VERSION",
-          "SANITY_API_TOKEN",
-          "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "portfolio-sanity": {
-        "dependsOn": [
-          "^build",
-          "SANITY_PROJECT_ID",
-          "SANITY_PROJECT_DATASET",
-          "SANITY_API_VERSION",
-          "SANITY_STUDIO_PREVIEW_SITE",
-          "SANITY_STUDIO_API_TOKEN",
-          "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "test": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": []
-      },
-      "lint": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      }
-    }
-  },
   "scripts": {
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
@@ -95,5 +48,6 @@
   },
   "resolutions": {
     "**/three": "0.119.1"
-  }
+  },
+  "packageManager": "yarn@1.22.17"
 }
