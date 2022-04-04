@@ -1,4 +1,4 @@
-import { MaxWidth } from 'base/layout/MaxWidth/MaxWidth';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 
 export const Footer = () => (

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { styled } from '@/UI/styles/stitches.config';
-import { MaxWidth } from 'base/layout/MaxWidth/MaxWidth';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
