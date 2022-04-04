@@ -1,4 +1,4 @@
-import { MaxWidth } from '@/UI/base/layout/MaxWidth';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Text as rawTextProps } from '@/UI/types/sanity-schema';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { BasicText } from 'base/formatted-text/BasicText/BasicText';

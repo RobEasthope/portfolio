@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { styled } from '@/UI/styles/stitches.config';
-import { MaxPageWidth } from '@/UI/base/layout/MaxPageWidth/MaxPageWidth';
+import { MaxWidth } from 'base/layout/MaxWidth/MaxWidth';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
@@ -54,7 +54,7 @@ export const Header = ({
   navigation,
 }: Pick<HeaderProps, 'logo' | 'navigation'>) => (
   <PaddedComponent as="header">
-    <MaxPageWidth as="nav">
+    <MaxWidth as="nav">
       <HeaderLayout as="div">
         <StyledHomeLink>
           <Link href="/">
@@ -81,6 +81,6 @@ export const Header = ({
 
         <SmallNavigation navigation={navigation} />
       </HeaderLayout>
-    </MaxPageWidth>
+    </MaxWidth>
   </PaddedComponent>
 );

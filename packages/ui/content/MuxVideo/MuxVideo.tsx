@@ -1,5 +1,5 @@
 import SanityMuxPlayer from 'sanity-mux-player';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth';
+import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { MuxVideo as rawMuxVideoProps } from '@/UI/types/sanity-schema';
 import { Caption } from '@/UI/base/typography/Caption/Caption';
