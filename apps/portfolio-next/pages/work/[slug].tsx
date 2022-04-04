@@ -20,7 +20,7 @@ import { Error404 } from '@/UI/pages/Error404/Error404';
 // TYPES
 type ProjectBySlugProps = {
   data: {
-    page: ProjectProps;
+    project: ProjectProps;
     globals: AppGlobalsProps;
   };
 };
@@ -29,9 +29,9 @@ type ProjectBySlugProps = {
 export default function ProjectBySlug({ data }: ProjectBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
-  const { page, globals } = data;
+  const { project, globals } = data;
 
-  if (!data.page) {
+  if (!data.project) {
     return <Error404 />;
   }
 
@@ -39,8 +39,8 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
     <>
       {isFallback && <Loading />}
 
-      {!isFallback && page?._type === 'project' && (
-        <Project page={page} globals={globals} />
+      {!isFallback && project?._type === 'project' && (
+        <Project project={project} globals={globals} />
       )}
     </>
   );
@@ -52,8 +52,8 @@ export const getStaticPaths = async () => {
 
   const pages = (await sanityClient.fetch(projectSlugsQuery)) as [ProjectProps];
 
-  for (const page of pages) {
-    const slug = page?.slug?.current;
+  for (const project of pages) {
+    const slug = project?.slug?.current;
 
     paths.push({
       params: { slug },
@@ -90,7 +90,7 @@ export const getStaticProps = async ({
   // Page payload
   return {
     props: {
-      data: { page: (project[0] as ProjectProps) || null, globals },
+      data: { project: (project[0] as ProjectProps) || null, globals },
       preview,
     },
     // ISR cache time

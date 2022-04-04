@@ -4,30 +4,30 @@ import { FixedFooterLayout } from '@/UI/base/layout/FixedFooterLayout/FixedFoote
 import { MainContentLayout } from '@/UI/base/layout/MainContentLayout/MainContentLayout';
 import { NextMetadata } from '@/UI/base/app/Metadata/NextMetadata';
 import { RenderSections } from '@/UI/base/app/RenderSections/RenderSections';
-import { Page as rawPageProps } from '@/UI/types/sanity-schema';
+import { Project as rawProjectProps } from '@/UI/types/sanity-schema';
 import { ExampleSectionProps } from '@/UI/content/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 
-export interface ProjectProps extends rawPageProps {
+export interface ProjectProps extends rawProjectProps {
   sections: [ExampleSectionProps];
 }
 
 export const Project = ({
-  page,
+  project,
   globals,
 }: {
-  page: ProjectProps;
+  project: ProjectProps;
   globals: AppGlobalsProps;
 }) => {
   // Globals props
   const { header, metadata } = globals;
 
   // Page props
-  const { title, sections } = page;
+  const { title, sections } = project;
 
   return (
     <>
-      <NextMetadata page={page} globalMetadata={metadata} />
+      <NextMetadata page={project} globalMetadata={metadata} />
 
       <FixedFooterLayout>
         {header && (
