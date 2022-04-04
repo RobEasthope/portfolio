@@ -6,11 +6,18 @@ import { METADATA } from '@/UI/constants/METADATA';
 import { sanityConfig } from '@/UTILS/sanity-api/sanity-config';
 
 type NextMetadataType = {
-  page: Page;
+  title: string;
+  description: string;
+  image: Page['metadataImage'];
   globalMetadata: GlobalMetadata;
 };
 
-export const NextMetadata = ({ page, globalMetadata }: NextMetadataType) => {
+export const NextMetadata = ({
+  title,
+  description,
+  image,
+  globalMetadata,
+}: NextMetadataType) => {
   const imageBuilder = createImageUrlBuilder(sanityConfig);
   const urlForImage = (source: SanityImageSource) =>
     imageBuilder.image(source).auto('format').fit('max');
@@ -18,51 +25,36 @@ export const NextMetadata = ({ page, globalMetadata }: NextMetadataType) => {
   return (
     <Head>
       {/* Standard HTML */}
-      {page?.metadataTitle && (
+      {title && (
         <title>
-          {`${page?.metadataTitle} ${
-            globalMetadata?.globalTitleTemplate || ''
-          }` || METADATA.TITLE}
+          {`${title} ${globalMetadata?.globalTitleTemplate || ''}` ||
+            METADATA.TITLE}
         </title>
       )}
-      {page?.metadataDescription && (
-        <meta name="description" content={page?.metadataDescription} />
-      )}
+      {description && <meta name="description" content={description} />}
 
       {/* Opengraph */}
-      {page?.metadataTitle && (
+      {title && (
         <meta
           property="og:title"
-          content={`${page?.metadataTitle} ${
-            globalMetadata?.globalTitleTemplate || ''
-          }`}
+          content={`${title} ${globalMetadata?.globalTitleTemplate || ''}`}
         />
       )}
-      {page?.metadataDescription && (
-        <meta property="og:description" content={page?.metadataDescription} />
-      )}
-      {page?.metadataImage && (
+      {description && <meta property="og:description" content={description} />}
+      {image && (
         <meta
           property="og:image"
-          content={
-            urlForImage(page?.metadataImage).width(1200).height(630).url() || ''
-          }
+          content={urlForImage(image).width(1200).height(630).url() || ''}
         />
       )}
 
       {/* Twitter */}
-      {page?.metadataTitle && (
-        <meta name="twitter:title" content={page?.metadataTitle} />
-      )}
-      {page?.metadataDescription && (
-        <meta name="twitter:description" content={page?.metadataDescription} />
-      )}
-      {page?.metadataImage && (
+      {title && <meta name="twitter:title" content={title} />}
+      {description && <meta name="twitter:description" content={description} />}
+      {image && (
         <meta
           name="twitter:image"
-          content={
-            urlForImage(page?.metadataImage).width(1200).height(630).url() || ''
-          }
+          content={urlForImage(image).width(1200).height(630).url() || ''}
         />
       )}
     </Head>
