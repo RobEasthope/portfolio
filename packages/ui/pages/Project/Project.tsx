@@ -27,7 +27,12 @@ export const Project = ({
 
   return (
     <>
-      <NextMetadata page={project} globalMetadata={metadata} />
+      <NextMetadata
+        title={project?.title}
+        description={project?.description}
+        image={project?.thumbnailImage}
+        globalMetadata={metadata}
+      />
 
       <FixedFooterLayout>
         {header && (
