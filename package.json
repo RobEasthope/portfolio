@@ -5,53 +5,6 @@
     "apps/*",
     "packages/*"
   ],
-  "turbo": {
-    "baseBranch": "origin/main",
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "dist/**",
-          ".next/**"
-        ]
-      },
-      "portfolio-next": {
-        "dependsOn": [
-          "^build",
-          "NEXT_PUBLIC_SANITY_PROJECT_ID",
-          "NEXT_PUBLIC_SANITY_PROJECT_DATASET",
-          "NEXT_PUBLIC_SANITY_API_VERSION",
-          "SANITY_API_TOKEN",
-          "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "portfolio-sanity": {
-        "dependsOn": [
-          "^build",
-          "SANITY_PROJECT_ID",
-          "SANITY_PROJECT_DATASET",
-          "SANITY_API_VERSION",
-          "SANITY_STUDIO_PREVIEW_SITE",
-          "SANITY_STUDIO_API_TOKEN",
-          "SANITY_STUDIO_PREVIEW_KEY"
-        ]
-      },
-      "test": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": []
-      },
-      "lint": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      }
-    }
-  },
   "scripts": {
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
@@ -60,8 +13,7 @@
     "sanity": "npx turbo run dev --scope=portfolio-sanity --include-dependencies --no-deps",
     "sanity:build": "npx turbo run build --scope=portfolio-sanity --include-dependencies --no-deps",
     "lint": "clear && turbo run lint",
-    "eslint": "cd ./packages/ui && yarn lint && cd ../../apps/portfolio-next && yarn lint && cd ../portfolio-sanity && yarn lint",
-    "eslint:fix": "cd ./packages/ui && yarn lint:fix && cd ../../apps/portfolio-next && yarn lint:fix && cd ../portfolio-sanity && yarn lint:fix",
+    "lint:fix": "clear && turbo run lint:fix",
     "sanity-upgrade": "cd ./apps/portfolio-sanity && sanity upgrade",
     "type-check": "cd ./packages/ui && yarn type-check && cd ../../apps/portfolio-next && yarn type-check",
     "types": "npx sanity-codegen",
@@ -82,7 +34,7 @@
     "lerna": "^4.0.0",
     "prettier": "^2.5.1",
     "sanity-codegen": "^0.9.8",
-    "turbo": "^1.0.28",
+    "turbo": "^1.1.10",
     "typescript": "^4.5.4"
   },
   "dependencies": {
@@ -95,5 +47,6 @@
   },
   "resolutions": {
     "**/three": "0.119.1"
-  }
+  },
+  "packageManager": "yarn@1.22.17"
 }
