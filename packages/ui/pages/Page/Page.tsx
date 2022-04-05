@@ -20,7 +20,7 @@ export const Page = ({
   globals: AppGlobalsProps;
 }) => {
   // Globals props
-  const { header, metadata } = globals;
+  const { header, footer, metadata } = globals;
 
   // Page props
   const { sections } = page;
@@ -43,7 +43,10 @@ export const Page = ({
           {sections && <RenderSections sections={sections} />}
         </MainContentLayout>
 
-        <Footer />
+        <Footer
+          navigation={footer?.navigation}
+          copyrightText={footer?.copyrightText}
+        />
       </FixedFooterLayout>
     </>
   );
