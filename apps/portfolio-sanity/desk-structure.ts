@@ -177,6 +177,13 @@ export default () =>
                     .schemaType('Header')
                     .documentId('Header')
                 ),
+              S.listItem()
+                .title('Footer')
+                .child(
+                  S.document()
+                    .schemaType('Footer')
+                    .documentId('Footer')
+                ),
             ])
         ),
         S.divider(),
