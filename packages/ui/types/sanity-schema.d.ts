@@ -67,6 +67,31 @@ export interface Header extends SanityDocument {
 }
 
 /**
+ * Footer
+ *
+ *
+ */
+export interface Footer extends SanityDocument {
+  _type: "Footer";
+
+  /**
+   * Footer navigation — `array`
+   *
+   *
+   */
+  rawNavigation: Array<
+    SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
+  >;
+
+  /**
+   * Copyright text — `string`
+   *
+   *
+   */
+  copyrightText: string;
+}
+
+/**
  * Details
  *
  *
@@ -82,14 +107,14 @@ export interface Details extends SanityDocument {
   name?: string;
 
   /**
-   * Email address — `email`
+   * Email address — `url`
    *
    *
    */
-  email?: Email;
+  email?: string;
 
   /**
-   * Phone number — `string`
+   * Phone number — `url`
    *
    *
    */
@@ -1149,11 +1174,11 @@ export type Text = {
   storybook?: Note;
 
   /**
-   * Text — `ProjectText`
+   * Text — `BasicText`
    *
    *
    */
-  text?: ProjectText;
+  text?: BasicText;
 };
 
 export type VimeoVideo = {
@@ -1220,6 +1245,7 @@ export type YoutubeVideo = {
 
 export type Documents =
   | Header
+  | Footer
   | Details
   | Settings
   | GlobalMetadata
@@ -1234,13 +1260,6 @@ export type Documents =
   | Sandbox
   | Page
   | Project;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Email = any;
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but
