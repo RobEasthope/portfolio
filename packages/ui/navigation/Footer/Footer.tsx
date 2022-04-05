@@ -1,3 +1,5 @@
+import { Footer as rawFooterProps } from '@/UI/types/sanity-schema';
+import { styled } from '@/UI/styles/stitches.config';
 import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
@@ -5,8 +7,19 @@ import { Flex } from '@/UI/base/layout/Flex/Flex';
 import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
+import { Text } from '@/UI/base/typography/Text/Text';
 
-// Types
+// STYLES
+export const Navigation = styled(Flex, {
+  listStyle: 'none',
+  margin: 0,
+
+  '& li': {
+    display: 'inline-block',
+  },
+});
+
+// TYPES
 export interface FooterProps extends rawFooterProps {
   navigation?: [
     ExternalLinkWithTitleSchemaProps,
@@ -14,21 +27,37 @@ export interface FooterProps extends rawFooterProps {
   ];
 }
 
-// Markup
-export const Footer = ({ navigation }: Pick<FooterProps, 'navigation'>) => (
-  <PaddedComponent as="footer">
-    <MaxWidth width="page">
-      <Flex>
-        <Box as="nav">
-          {navigation &&
-            navigation?.length > 0 &&
-            navigation.map((nav) => (
-              <li key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </li>
-            ))}
-        </Box>
-      </Flex>
-    </MaxWidth>
-  </PaddedComponent>
-);
+// MARKUP
+export const Footer = ({
+  navigation,
+  copyrightText,
+}: Pick<FooterProps, 'navigation' | 'copyrightText'>) => {
+  const currentYear = new Date().getUTCFullYear();
+
+  return (
+    <PaddedComponent as="footer">
+      <MaxWidth width="page">
+        <Flex align="center" justify="between">
+          <Box as="nav">
+            <Navigation gap="3">
+              {navigation &&
+                navigation?.length > 0 &&
+                navigation.map((nav) => (
+                  <li key={nav?._key}>
+                    <SuperLink link={nav}>{nav.title}</SuperLink>
+                  </li>
+                ))}
+            </Navigation>
+          </Box>
+          <Box>
+            {copyrightText && (
+              <Text typeSize="standard">
+                {`© 2013-${currentYear} ${copyrightText}`}
+              </Text>
+            )}
+          </Box>
+        </Flex>
+      </MaxWidth>
+    </PaddedComponent>
+  );
+};
