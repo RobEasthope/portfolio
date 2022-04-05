@@ -45,11 +45,11 @@ export interface Header extends SanityDocument {
   _type: "Header";
 
   /**
-   * Header navigation — `array`
+   * Navigation (Left) — `array`
    *
    *
    */
-  rawNavigation: Array<
+  rawNavigationLeft: Array<
     SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
   >;
 
@@ -64,6 +64,15 @@ export interface Header extends SanityDocument {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+
+  /**
+   * Navigation (Right) — `array`
+   *
+   *
+   */
+  rawNavigationRight: Array<
+    SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
+  >;
 }
 
 /**

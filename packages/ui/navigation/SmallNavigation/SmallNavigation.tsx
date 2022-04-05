@@ -6,6 +6,7 @@ import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
+import { HeaderProps } from 'navigation/Header/Header';
 
 // Styles
 export const DialogContent = styled(DialogPrimative.Content, {
@@ -46,8 +47,9 @@ export interface SmallNavigationProps extends rawHeaderProps {
 
 // Markup
 export const SmallNavigation = ({
-  navigation,
-}: Pick<SmallNavigationProps, 'navigation'>) => (
+  navigationLeft,
+  navigationRight,
+}: Pick<HeaderProps, 'navigationLeft' | 'navigationRight'>) => (
   <DialogPrimative.Root>
     <OpenSmallNavigationButton>
       <RiMenuLine />
@@ -60,9 +62,18 @@ export const SmallNavigation = ({
 
       <nav>
         <ul>
-          {navigation &&
-            navigation?.length > 0 &&
-            navigation.map((nav) => (
+          {navigationLeft &&
+            navigationLeft?.length > 0 &&
+            navigationLeft.map((nav) => (
+              <li key={nav?._key} className="link">
+                <SuperLink className="" link={nav}>
+                  {nav.title}
+                </SuperLink>
+              </li>
+            ))}
+          {navigationRight &&
+            navigationRight?.length > 0 &&
+            navigationRight.map((nav) => (
               <li key={nav?._key} className="link">
                 <SuperLink className="" link={nav}>
                   {nav.title}
