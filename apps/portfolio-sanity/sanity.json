@@ -16,7 +16,6 @@
     "media",
     "graph-view",
     "asset-source-unsplash",
-    "note-field",
     "@sanity/production-preview",
     "iframe-pane",
     "social-preview",
