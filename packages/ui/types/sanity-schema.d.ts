@@ -915,13 +915,6 @@ export type ExampleSection = {
 export type GalleryImage = {
   _type: "GalleryImage";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Image — `image`
    *
    *
@@ -950,13 +943,6 @@ export type GalleryImage = {
 
 export type Gallery = {
   _type: "Gallery";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Images — `array`
    *
@@ -1003,13 +989,6 @@ export type Gallery = {
 export type Image = {
   _type: "Image";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Image — `image`
    *
    *
@@ -1052,13 +1031,6 @@ export type Image = {
 
 export type LandingHero = {
   _type: "LandingHero";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Foreground — `string`
    *
@@ -1136,13 +1108,6 @@ export type LandingHero = {
 export type MuxVideo = {
   _type: "MuxVideo";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Mux video — `mux.video`
    *
    *
@@ -1167,13 +1132,6 @@ export type MuxVideo = {
 export type Text = {
   _type: "Text";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Text — `BasicText`
    *
    *
@@ -1183,13 +1141,6 @@ export type Text = {
 
 export type VimeoVideo = {
   _type: "VimeoVideo";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Vimeo URL — `string`
    *
@@ -1214,13 +1165,6 @@ export type VimeoVideo = {
 
 export type YoutubeVideo = {
   _type: "YoutubeVideo";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Youtube URL — `string`
    *
@@ -1260,10 +1204,3 @@ export type Documents =
   | Sandbox
   | Page
   | Project;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Note = any;
