@@ -31,7 +31,7 @@ import GlobalMetadata from '../../packages/ui/base/settings/GlobalMetadata.schem
 // Data
 import tech from '../../packages/ui/content/Tech/schemas/Tech.schema';
 import gig from '../../packages/ui/content/Gig/schemas/Gig.schema';
-import project from '../../packages/ui/pages/Project/Project.schema';
+import project from '../../packages/ui/layouts/Project/Project.schema';
 import organisation from '../../packages/ui/content/Organisation/schemas/Organisation.schema';
 import education from '../../packages/ui/content/EducationBlock/schemas/Education.schema';
 
@@ -55,7 +55,7 @@ import YoutubeVideo from '../../packages/ui/content/YoutubeVideo/YoutubeVideo.sc
 
 
 // Pages
-import page from '../../packages/ui/pages/Page/Page.schema';
+import page from '../../packages/ui/layouts/Page/Page.schema';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
