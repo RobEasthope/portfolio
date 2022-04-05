@@ -36,7 +36,7 @@ export const Footer = ({
 
   return (
     <PaddedComponent as="footer">
-      <MaxWidth width="page">
+      <MaxWidth width="full">
         <Flex align="center" justify="between">
           <Box as="nav">
             <Navigation gap="3">

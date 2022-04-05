@@ -37,7 +37,11 @@ export const Project = ({
 
       <FixedFooterLayout>
         {header && (
-          <Header logo={header?.logo} navigation={header?.navigation} />
+          <Header
+            logo={header?.logo}
+            navigationLeft={header?.navigationLeft}
+            navigationRight={header?.navigationRight}
+          />
         )}
 
         <MainContentLayout as="main">
