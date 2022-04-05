@@ -42,7 +42,11 @@ export const LargeNavigation = styled('ul', {
 
 // Types
 export interface HeaderProps extends rawHeaderProps {
-  navigation?: [
+  navigationLeft?: [
+    ExternalLinkWithTitleSchemaProps,
+    InternalLinkWithTitleSchemaProps
+  ];
+  navigationRight?: [
     ExternalLinkWithTitleSchemaProps,
     InternalLinkWithTitleSchemaProps
   ];
@@ -51,11 +55,22 @@ export interface HeaderProps extends rawHeaderProps {
 // Markup
 export const Header = ({
   logo,
-  navigation,
-}: Pick<HeaderProps, 'logo' | 'navigation'>) => (
+  navigationLeft,
+  navigationRight,
+}: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
   <PaddedComponent as="header">
     <MaxWidth as="nav">
       <HeaderLayout as="div">
+        <LargeNavigation as="ul">
+          {navigationLeft &&
+            navigationLeft?.length > 0 &&
+            navigationLeft.map((nav) => (
+              <li key={nav?._key}>
+                <SuperLink link={nav}>{nav.title}</SuperLink>
+              </li>
+            ))}
+        </LargeNavigation>
+
         <StyledHomeLink>
           <Link href="/">
             <a>
@@ -70,16 +85,19 @@ export const Header = ({
         </StyledHomeLink>
 
         <LargeNavigation as="ul">
-          {navigation &&
-            navigation?.length > 0 &&
-            navigation.map((nav) => (
+          {navigationRight &&
+            navigationRight?.length > 0 &&
+            navigationRight.map((nav) => (
               <li key={nav?._key}>
                 <SuperLink link={nav}>{nav.title}</SuperLink>
               </li>
             ))}
         </LargeNavigation>
 
-        <SmallNavigation navigation={navigation} />
+        <SmallNavigation
+          navigationLeft={navigationLeft}
+          navigationRight={navigationRight}
+        />
       </HeaderLayout>
     </MaxWidth>
   </PaddedComponent>
