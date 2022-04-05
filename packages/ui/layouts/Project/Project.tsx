@@ -5,7 +5,7 @@ import { MainContentLayout } from '@/UI/base/layout/MainContentLayout/MainConten
 import { NextMetadata } from '@/UI/base/app/Metadata/NextMetadata';
 import { RenderSections } from '@/UI/base/app/RenderSections/RenderSections';
 import { Project as rawProjectProps } from '@/UI/types/sanity-schema';
-import { ExampleSectionProps } from '@/UI/content/ExampleSection/ExampleSection';
+import { ExampleSectionProps } from 'sections/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 import { Text } from '@/UI/base/typography/Text/Text';
 

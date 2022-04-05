@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
-import { ExampleSectionProps } from '@/UI/content/ExampleSection/ExampleSection';
+import { ExampleSectionProps } from 'sections/ExampleSection/ExampleSection';
 
 const ExampleSection = dynamic(
-  () => import('../../../content/ExampleSection/ExampleSection')
+  () => import('../../../sections/ExampleSection/ExampleSection')
 );
 
 export type RenderSectionsProps = {

@@ -2,25 +2,25 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
-import { ImageProps } from '@/UI/content/Image/Image';
-import { MuxVideoProps } from '@/UI/content/MuxVideo/MuxVideo';
-import { VimeoVideoProps } from '@/UI/content/VimeoVideo/VimeoVideo';
-import { YoutubeVideoProps } from '@/UI/content/YoutubeVideo/YoutubeVideo';
-import { GalleryProps } from '@/UI/content/Gallery/Gallery';
+import { ImageProps } from 'sections/Image/Image';
+import { MuxVideoProps } from 'sections/MuxVideo/MuxVideo';
+import { VimeoVideoProps } from 'sections/VimeoVideo/VimeoVideo';
+import { YoutubeVideoProps } from 'sections/YoutubeVideo/YoutubeVideo';
+import { GalleryProps } from 'sections/Gallery/Gallery';
 import { Text } from '@/UI/base/typography/Text/Text';
 import {
   BlockRendererProps,
   SerializerMarksProps,
 } from '@/UI/base/formatted-text/formattedTextProps';
 
-const Gallery = dynamic(() => import('../../../content/Gallery/Gallery'));
-const Image = dynamic(() => import('../../../content/Image/Image'));
-const MuxVideo = dynamic(() => import('../../../content/MuxVideo/MuxVideo'));
+const Gallery = dynamic(() => import('../../../sections/Gallery/Gallery'));
+const Image = dynamic(() => import('../../../sections/Image/Image'));
+const MuxVideo = dynamic(() => import('../../../sections/MuxVideo/MuxVideo'));
 const VimeoVideo = dynamic(
-  () => import('../../../content/VimeoVideo/VimeoVideo')
+  () => import('../../../sections/VimeoVideo/VimeoVideo')
 );
 const YoutubeVideo = dynamic(
-  () => import('../../../content/YoutubeVideo/YoutubeVideo')
+  () => import('../../../sections/YoutubeVideo/YoutubeVideo')
 );
 
 // TYPES
