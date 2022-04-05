@@ -1,5 +1,3 @@
-import React from 'react';
-import { SiStorybook } from 'react-icons/si';
 import { RiVideoLine } from 'react-icons/ri';
 import { MAX_CONTENT_OPTIONS } from '../../constants/MAX_CONTENT_OPTIONS';
 
@@ -9,23 +7,6 @@ export default {
   title: 'Mux video',
   icon: RiVideoLine,
   fields: [
-    {
-      name: 'storybook',
-      type: 'note',
-      options: {
-        icon: SiStorybook,
-        message: (
-          <a
-            href="https://free-flight-academy-storybook.vercel.app/?path=/story/blocks-mux-video--vanilla"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Preview in Storybook
-          </a>
-        ),
-        tone: 'brand',
-      },
-    },
     {
       name: 'rawMuxVideo',
       title: 'Mux video',

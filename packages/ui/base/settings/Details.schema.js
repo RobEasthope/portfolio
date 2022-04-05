@@ -11,12 +11,22 @@ export default {
     {
       name: 'email',
       title: 'Email address',
-      type: 'email',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['mailto'],
+        }),
     },
     {
       name: 'phoneNumber',
       title: 'Phone number',
-      type: 'string',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['tel'],
+        }),
     },
     {
       name: 'twitter',

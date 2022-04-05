@@ -13,6 +13,16 @@ export const appGlobalsQuery = groq`
         "to": internalUID->{slug},
       },
     },
+    "footer": *[_type== 'Footer'][0]{
+      copyrightText,
+      "navigation": rawNavigation[]{
+        _key,
+        _type,
+        title,
+        url,
+        "to": internalUID->{slug},
+      },
+    },
     "metadata": *[_type== 'globalMetadata'][0]{
       ...
     },

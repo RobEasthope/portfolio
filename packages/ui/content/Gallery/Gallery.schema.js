@@ -1,5 +1,3 @@
-import React from 'react';
-import { SiStorybook } from 'react-icons/si';
 import { RiGalleryLine } from 'react-icons/ri';
 import { ASPECT_RATIOS } from '../../constants/ASPECT_RATIOS';
 import { headingUI } from '../../utils/sanity/headingUI';
@@ -11,23 +9,6 @@ export default {
   title: 'Gallery',
   icon: RiGalleryLine,
   fields: [
-    {
-      name: 'storybook',
-      type: 'note',
-      options: {
-        icon: SiStorybook,
-        message: (
-          <a
-            href="https://free-flight-academy-storybook.vercel.app/?path=/story/navigation-header--vanilla"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Preview in Storybook
-          </a>
-        ),
-        tone: 'brand',
-      },
-    },
     {
       name: 'images',
       title: 'Images',

@@ -3453,7 +3453,7 @@
     react-popper "^2.2.5"
     react-refractor "^2.1.5"
 
-"@sanity/ui@^0.36.12", "@sanity/ui@^0.36.9":
+"@sanity/ui@^0.36.12":
   version "0.36.17"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-0.36.17.tgz#2c7674e0d28da0bc2daa605c6dc2b194e5eb23d5"
   integrity sha512-5U2NPxjCsxmzv3p58wMczfwIaJVa3UCjNGs7CCK2RoLo0G0nyT+swMBLRmXiDA3WnCt/o5oaYYqesfL8Rgkchg==
@@ -15568,14 +15568,6 @@ sanity-plugin-mux-input@^1.1.0:
     prop-types "^15.7.2"
     react-icons "^4.3.1"
     rxjs "^6.5.3"
-
-sanity-plugin-note-field@^1.1.1:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/sanity-plugin-note-field/-/sanity-plugin-note-field-1.1.3.tgz#1ff51b5579ca45ab36878c52f7b9ddc8d6b4961e"
-  integrity sha512-7LhzIMtl/NrsQlrweCNHmCeDDfp2oyo6o5g8lr4QJOA6zadZ/3BQZZUWwNWaThYbs8EC+Gfm/ar02e2B8xXZPw==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    "@sanity/ui" "^0.36.9"
 
 sanity-plugin-social-preview@^0.1.5:
   version "0.1.5"

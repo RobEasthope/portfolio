@@ -67,6 +67,31 @@ export interface Header extends SanityDocument {
 }
 
 /**
+ * Footer
+ *
+ *
+ */
+export interface Footer extends SanityDocument {
+  _type: "Footer";
+
+  /**
+   * Footer navigation — `array`
+   *
+   *
+   */
+  rawNavigation: Array<
+    SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
+  >;
+
+  /**
+   * Copyright text — `string`
+   *
+   *
+   */
+  copyrightText: string;
+}
+
+/**
  * Details
  *
  *
@@ -82,14 +107,14 @@ export interface Details extends SanityDocument {
   name?: string;
 
   /**
-   * Email address — `email`
+   * Email address — `url`
    *
    *
    */
-  email?: Email;
+  email?: string;
 
   /**
-   * Phone number — `string`
+   * Phone number — `url`
    *
    *
    */
@@ -890,13 +915,6 @@ export type ExampleSection = {
 export type GalleryImage = {
   _type: "GalleryImage";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Image — `image`
    *
    *
@@ -925,13 +943,6 @@ export type GalleryImage = {
 
 export type Gallery = {
   _type: "Gallery";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Images — `array`
    *
@@ -978,13 +989,6 @@ export type Gallery = {
 export type Image = {
   _type: "Image";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Image — `image`
    *
    *
@@ -1027,13 +1031,6 @@ export type Image = {
 
 export type LandingHero = {
   _type: "LandingHero";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Foreground — `string`
    *
@@ -1111,13 +1108,6 @@ export type LandingHero = {
 export type MuxVideo = {
   _type: "MuxVideo";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Mux video — `mux.video`
    *
    *
@@ -1142,29 +1132,15 @@ export type MuxVideo = {
 export type Text = {
   _type: "Text";
   /**
-   * storybook — `note`
+   * Text — `BasicText`
    *
    *
    */
-  storybook?: Note;
-
-  /**
-   * Text — `ProjectText`
-   *
-   *
-   */
-  text?: ProjectText;
+  text?: BasicText;
 };
 
 export type VimeoVideo = {
   _type: "VimeoVideo";
-  /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
   /**
    * Vimeo URL — `string`
    *
@@ -1190,13 +1166,6 @@ export type VimeoVideo = {
 export type YoutubeVideo = {
   _type: "YoutubeVideo";
   /**
-   * storybook — `note`
-   *
-   *
-   */
-  storybook?: Note;
-
-  /**
    * Youtube URL — `string`
    *
    *
@@ -1220,6 +1189,7 @@ export type YoutubeVideo = {
 
 export type Documents =
   | Header
+  | Footer
   | Details
   | Settings
   | GlobalMetadata
@@ -1234,17 +1204,3 @@ export type Documents =
   | Sandbox
   | Page
   | Project;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Email = any;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Note = any;
