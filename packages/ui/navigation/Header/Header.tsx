@@ -59,7 +59,7 @@ export const Header = ({
   navigationRight,
 }: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
   <PaddedComponent as="header">
-    <MaxWidth as="nav">
+    <MaxWidth as="nav" width="full">
       <HeaderLayout as="div">
         <LargeNavigation as="ul">
           {navigationLeft &&
