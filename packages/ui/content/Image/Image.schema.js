@@ -1,5 +1,3 @@
-import React from 'react';
-import { SiStorybook } from 'react-icons/si';
 import { RiImage2Line } from 'react-icons/ri';
 import { ASPECT_RATIOS } from '../../constants/ASPECT_RATIOS';
 import { MAX_CONTENT_OPTIONS } from '../../constants/MAX_CONTENT_OPTIONS';
@@ -10,34 +8,6 @@ export default {
   title: 'Image',
   icon: RiImage2Line,
   fields: [
-    {
-      name: 'storybook',
-      type: 'note',
-      options: {
-        icon: SiStorybook,
-        message: (
-          <>
-            Preview:{' '}
-            <a
-              href="https://free-flight-academy-storybook.vercel.app/?path=/story/blocks-image--with-caption"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              With caption
-            </a>{' '}
-            |{' '}
-            <a
-              href="https://free-flight-academy-storybook.vercel.app/?path=/story/blocks-image--without-caption"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Without caption
-            </a>
-          </>
-        ),
-        tone: 'brand',
-      },
-    },
     {
       name: 'image',
       title: 'Image',

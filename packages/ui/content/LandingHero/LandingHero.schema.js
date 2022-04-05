@@ -1,5 +1,3 @@
-import React from 'react';
-import { SiStorybook } from 'react-icons/si';
 import { BiHeading } from 'react-icons/bi';
 import { headingUI } from '../../utils/sanity/headingUI';
 
@@ -9,34 +7,6 @@ export default {
   title: 'Landing hero',
   icon: BiHeading,
   fields: [
-    {
-      name: 'storybook',
-      type: 'note',
-      options: {
-        icon: SiStorybook,
-        message: (
-          <>
-            Preview:{' '}
-            <a
-              href="https://free-flight-academy-storybook.vercel.app/?path=/story/blocks-landing-hero--background-image"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Background image
-            </a>{' '}
-            |{' '}
-            <a
-              href="https://free-flight-academy-storybook.vercel.app/?path=/story/blocks-landing-hero--background-video"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Background video
-            </a>
-          </>
-        ),
-        tone: 'brand',
-      },
-    },
     headingUI('Foreground'),
     {
       name: 'logo',
