@@ -12,6 +12,7 @@ import externalLinkWithTitle from '../../packages/ui/base/links/ExternalLink/Ext
 
 // Navigation
 import Header from '../../packages/ui/navigation/Header/Header.schema.js';
+import Footer from '../../packages/ui/navigation/Footer/Footer.schema.js';
 
 // Media
 import altImage from '../../packages/ui/base/media/Picture/altImage.schema';
@@ -71,6 +72,7 @@ export default createSchema({
 
     // Navigation
     Header,
+    Footer,
 
     // Media
     altImage,
