@@ -7,6 +7,7 @@ import { RenderSections } from '@/UI/base/app/RenderSections/RenderSections';
 import { Project as rawProjectProps } from '@/UI/types/sanity-schema';
 import { ExampleSectionProps } from '@/UI/content/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
+import { Text } from '@/UI/base/typography/Text/Text';
 
 export interface ProjectProps extends rawProjectProps {
   sections: [ExampleSectionProps];
@@ -23,7 +24,7 @@ export const Project = ({
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { title, sections } = project;
+  const { title, description, sections } = project;
 
   return (
     <>
@@ -40,7 +41,8 @@ export const Project = ({
         )}
 
         <MainContentLayout as="main">
-          {title && <h1>{title}</h1>}
+          {description && <Text>{description}</Text>}
+          {title && <Text>{title}</Text>}
           {sections && <RenderSections sections={sections} />}
         </MainContentLayout>
 
