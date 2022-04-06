@@ -42,6 +42,7 @@ export const LargeNavigation = styled(Box, {
   visibility: 'hidden',
   listStyle: 'none',
   width: '50%',
+  marginY: 0,
 
   '@media (min-width: 800px)': {
     display: 'flex',
