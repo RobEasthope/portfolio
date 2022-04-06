@@ -11,7 +11,6 @@ import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
 import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
-import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
 
 // Styles
 export const HeaderLayout = styled('div', {
