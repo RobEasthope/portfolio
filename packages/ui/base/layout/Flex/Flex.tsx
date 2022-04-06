@@ -1,4 +1,5 @@
 import { styled } from '@/UI/styles/stitches.config';
+import { SPACING } from '@/UI/constants/SPACING';
 import { Box } from '@/UI/base/layout/Box/Box';
 
 export const Flex = styled(Box, {
@@ -62,33 +63,15 @@ export const Flex = styled(Box, {
       },
     },
     gap: {
-      1: {
-        gap: '$1',
-      },
-      2: {
-        gap: '$2',
-      },
-      3: {
-        gap: '$3',
-      },
-      4: {
-        gap: '$4',
-      },
-      5: {
-        gap: '$5',
-      },
-      6: {
-        gap: '$6',
-      },
-      7: {
-        gap: '$7',
-      },
-      8: {
-        gap: '$8',
-      },
-      9: {
-        gap: '$9',
-      },
+      quarter: { gap: `calc(${SPACING.VR_BASE} / 4)` },
+      third: { gap: `calc(${SPACING.VR_BASE} / 3)` },
+      twoThirds: { gap: `calc(${SPACING.VR_BASE} * 0.666)` },
+      half: { gap: `calc(${SPACING.VR_BASE} / 2)` },
+      x1: { gap: SPACING.VR_BASE },
+      x2: { gap: `calc(${SPACING.VR_BASE} * 2)` },
+      x3: { gap: `calc(${SPACING.VR_BASE} * 3)` },
+      x4: { gap: `calc(${SPACING.VR_BASE} * 4)` },
+      x5: { gap: `calc(${SPACING.VR_BASE} * 5)` },
     },
   },
   defaultVariants: {

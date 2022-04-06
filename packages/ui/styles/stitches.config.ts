@@ -6,6 +6,7 @@ import { type } from '@/UI/styles/utils/type';
 import { fullType } from '@/UI/styles/utils/fullType';
 import { size } from '@/UI/styles/utils/size';
 import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
+import { SPACING } from '@/UI/constants/SPACING';
 
 export const { css, styled, globalCss, getCssText } = createStitches({
   theme: {
@@ -28,28 +29,18 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       purple600: 'hsl(252,80%,53%)',
     },
     space: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-      4: '20px',
-      5: '25px',
-      6: '35px',
+      ...SPACING,
     },
-    sizes: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-      4: '20px',
-      5: '25px',
-      6: '35px',
-    },
+    sizes: {},
     fontSizes: {
-      1: '12px',
-      2: '13px',
-      3: '15px',
-      4: '17px',
-      5: '19px',
-      6: '21px',
+      jumbotron: '4.209rem',
+      xxLarge: '3.157rem',
+      xLarge: '2.369rem',
+      large: '1.777rem',
+      medium: '1.333rem',
+      base: '1rem',
+      small: '0.9rem',
+      tiny: '0.75rem',
     },
     fonts: {
       system: 'system-ui',

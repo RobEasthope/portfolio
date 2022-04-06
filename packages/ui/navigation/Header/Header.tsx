@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { styled } from '@/UI/styles/stitches.config';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
@@ -10,7 +9,7 @@ import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/I
 import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
-import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
+import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 
 // Styles
 export const HeaderLayout = styled('div', {
@@ -26,15 +25,9 @@ export const StyledHomeLink = styled('span', {
   width: '32px',
   height: '32px',
 });
+
 export const Logo = styled(Picture, {
   width: '32px',
-});
-
-export const Spacer = styled(Box, {
-  display: 'flex',
-  width: '100%',
-  height: '1em',
-  flexGrow: 5,
 });
 
 export const LargeNavigation = styled(Box, {
@@ -47,13 +40,14 @@ export const LargeNavigation = styled(Box, {
   '@media (min-width: 800px)': {
     display: 'flex',
     visibility: 'visible',
-    gap: '1em',
+    gap: '$half',
   },
 
   '& li': {
     display: 'inline-block',
   },
 });
+
 export const LeftNavigation = styled(LargeNavigation, {});
 
 export const RightNavigation = styled(LargeNavigation, {
@@ -80,51 +74,53 @@ export const Header = ({
   navigationLeft,
   navigationRight,
 }: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
-  <PaddedComponent as="header">
-    <MaxWidth as="nav" width="full">
-      <HeaderLayout as="div">
-        <LeftNavigation as="ul">
-          {navigationLeft &&
-            navigationLeft?.length > 0 &&
-            navigationLeft.map((nav) => (
-              <li key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </li>
-            ))}
-        </LeftNavigation>
+  <PaddedComponent as="header" content="nav">
+    <Spacer height="half" />
 
-        <Spacer />
+    <HeaderLayout as="nav">
+      <LeftNavigation as="ul">
+        {navigationLeft &&
+          navigationLeft?.length > 0 &&
+          navigationLeft.map((nav) => (
+            <li key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </li>
+          ))}
+      </LeftNavigation>
 
-        <StyledHomeLink>
-          <Link href="/">
-            <a>
-              <Logo
-                asset={logo}
-                alt={METADATA?.TITLE || ''}
-                mode="responsive"
-                maxWidth={32}
-              />
-            </a>
-          </Link>
-        </StyledHomeLink>
+      <Spacer />
 
-        <Spacer />
+      <StyledHomeLink>
+        <Link href="/">
+          <a>
+            <Logo
+              asset={logo}
+              alt={METADATA?.TITLE || ''}
+              mode="responsive"
+              maxWidth={32}
+            />
+          </a>
+        </Link>
+      </StyledHomeLink>
 
-        <RightNavigation as="ul">
-          {navigationRight &&
-            navigationRight?.length > 0 &&
-            navigationRight.map((nav) => (
-              <li key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </li>
-            ))}
-        </RightNavigation>
+      <Spacer />
 
-        <SmallNavigation
-          navigationLeft={navigationLeft}
-          navigationRight={navigationRight}
-        />
-      </HeaderLayout>
-    </MaxWidth>
+      <RightNavigation as="ul">
+        {navigationRight &&
+          navigationRight?.length > 0 &&
+          navigationRight.map((nav) => (
+            <li key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </li>
+          ))}
+      </RightNavigation>
+
+      <SmallNavigation
+        navigationLeft={navigationLeft}
+        navigationRight={navigationRight}
+      />
+    </HeaderLayout>
+
+    <Spacer height="half" />
   </PaddedComponent>
 );

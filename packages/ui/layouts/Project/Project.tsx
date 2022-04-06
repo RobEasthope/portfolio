@@ -17,6 +17,7 @@ import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 
 import { styled } from '@/UI/styles/stitches.config';
+import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 
 export const ProjectLogo = styled(Picture, {
   borderRadius: '50%',
@@ -76,25 +77,35 @@ export const Project = ({
         )}
 
         <MainContentLayout as="main">
+          <Spacer height="x1" />
           <MaxWidth width="small">
             <TextAlign align="centre">
               {thumbnailImage && (
-                <Flex justify="center">
-                  <ProjectLogo
-                    asset={thumbnailImage}
-                    alt={title || ''}
-                    mode="responsive"
-                    maxWidth={200}
-                  />
-                </Flex>
+                <>
+                  <Flex justify="center">
+                    <ProjectLogo
+                      asset={thumbnailImage}
+                      alt={title || ''}
+                      mode="responsive"
+                      maxWidth={200}
+                    />
+                  </Flex>
+                  <Spacer height="x1" />
+                </>
               )}
 
+              {title && <Text typeSize="large">{title}</Text>}
+              <Spacer height="half" />
+
               {description && <Text>{description}</Text>}
-              {title && <Text>{title}</Text>}
-              <Flex gap={3} justify="center">
+              <Spacer height="x1" />
+
+              <Flex justify="center" gap="half">
                 {clientOrg && <Text>{clientOrg?.name}</Text>}
                 {agencyOrg && <Text>{agencyOrg?.name}</Text>}
               </Flex>
+
+              <Spacer height="x2" />
             </TextAlign>
 
             {projectText && <ProjectText blocks={projectText as unknown} />}
@@ -110,7 +121,11 @@ export const Project = ({
                   <a href={repoUrl}>{repoUrl}</a>
                 </Text>
               )}
-              {date && <Text>{date}</Text>}
+              {date && (
+                <>
+                  <Spacer height="x1" /> <Text>{date}</Text>
+                </>
+              )}
             </TextAlign>
           </MaxWidth>
         </MainContentLayout>
