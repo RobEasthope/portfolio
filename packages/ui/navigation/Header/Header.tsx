@@ -40,7 +40,7 @@ export const LargeNavigation = styled(Box, {
   '@media (min-width: 800px)': {
     display: 'flex',
     visibility: 'visible',
-    gap: '1em',
+    gap: '$half',
   },
 
   '& li': {
