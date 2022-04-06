@@ -9,4 +9,5 @@ export const SPACING = {
   x3: `calc($VR_BASE * 3)`,
   x4: `calc($VR_BASE * 4)`,
   x5: `calc($VR_BASE * 5)`,
+  x6: `calc($VR_BASE * 6)`,
 };
