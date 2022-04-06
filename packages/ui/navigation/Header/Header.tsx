@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { styled } from '@/UI/styles/stitches.config';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
@@ -75,55 +74,53 @@ export const Header = ({
   navigationLeft,
   navigationRight,
 }: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
-  <PaddedComponent as="header">
-    <MaxWidth as="nav" width="full">
-      <Spacer height="half" />
+  <PaddedComponent as="header" content="nav">
+    <Spacer height="half" />
 
-      <HeaderLayout as="div">
-        <LeftNavigation as="ul">
-          {navigationLeft &&
-            navigationLeft?.length > 0 &&
-            navigationLeft.map((nav) => (
-              <li key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </li>
-            ))}
-        </LeftNavigation>
+    <HeaderLayout as="nav">
+      <LeftNavigation as="ul">
+        {navigationLeft &&
+          navigationLeft?.length > 0 &&
+          navigationLeft.map((nav) => (
+            <li key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </li>
+          ))}
+      </LeftNavigation>
 
-        <Spacer />
+      <Spacer />
 
-        <StyledHomeLink>
-          <Link href="/">
-            <a>
-              <Logo
-                asset={logo}
-                alt={METADATA?.TITLE || ''}
-                mode="responsive"
-                maxWidth={32}
-              />
-            </a>
-          </Link>
-        </StyledHomeLink>
+      <StyledHomeLink>
+        <Link href="/">
+          <a>
+            <Logo
+              asset={logo}
+              alt={METADATA?.TITLE || ''}
+              mode="responsive"
+              maxWidth={32}
+            />
+          </a>
+        </Link>
+      </StyledHomeLink>
 
-        <Spacer />
+      <Spacer />
 
-        <RightNavigation as="ul">
-          {navigationRight &&
-            navigationRight?.length > 0 &&
-            navigationRight.map((nav) => (
-              <li key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </li>
-            ))}
-        </RightNavigation>
+      <RightNavigation as="ul">
+        {navigationRight &&
+          navigationRight?.length > 0 &&
+          navigationRight.map((nav) => (
+            <li key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </li>
+          ))}
+      </RightNavigation>
 
-        <SmallNavigation
-          navigationLeft={navigationLeft}
-          navigationRight={navigationRight}
-        />
-      </HeaderLayout>
+      <SmallNavigation
+        navigationLeft={navigationLeft}
+        navigationRight={navigationRight}
+      />
+    </HeaderLayout>
 
-      <Spacer height="half" />
-    </MaxWidth>
+    <Spacer height="half" />
   </PaddedComponent>
 );

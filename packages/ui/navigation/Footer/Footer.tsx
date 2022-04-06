@@ -36,33 +36,31 @@ export const Footer = ({
   const currentYear = new Date().getUTCFullYear();
 
   return (
-    <PaddedComponent as="footer">
-      <MaxWidth width="full">
-        <Spacer height="half" />
+    <PaddedComponent as="footer" content="nav">
+      <Spacer height="half" />
 
-        <Flex align="center" justify="between">
-          <Box as="nav">
-            <Navigation gap="3">
-              {navigation &&
-                navigation?.length > 0 &&
-                navigation.map((nav) => (
-                  <li key={nav?._key}>
-                    <SuperLink link={nav}>{nav.title}</SuperLink>
-                  </li>
-                ))}
-            </Navigation>
-          </Box>
-          <Box>
-            {copyrightText && (
-              <Text typeSize="standard">
-                {`© 2013-${currentYear} ${copyrightText}`}
-              </Text>
-            )}
-          </Box>
-        </Flex>
+      <Flex align="center" justify="between">
+        <Box as="nav">
+          <Navigation gap="3">
+            {navigation &&
+              navigation?.length > 0 &&
+              navigation.map((nav) => (
+                <li key={nav?._key}>
+                  <SuperLink link={nav}>{nav.title}</SuperLink>
+                </li>
+              ))}
+          </Navigation>
+        </Box>
+        <Box>
+          {copyrightText && (
+            <Text typeSize="standard">
+              {`© 2013-${currentYear} ${copyrightText}`}
+            </Text>
+          )}
+        </Box>
+      </Flex>
 
-        <Spacer height="half" />
-      </MaxWidth>
+      <Spacer height="half" />
     </PaddedComponent>
   );
 };
