@@ -29,15 +29,7 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       purple600: 'hsl(252,80%,53%)',
     },
     space: {
-      quarter: `calc(${SPACING.VR_BASE} / 4)`,
-      third: `calc(${SPACING.VR_BASE} / 3)`,
-      twoThirds: `calc(${SPACING.VR_BASE} * 0.666)`,
-      half: `calc(${SPACING.VR_BASE} / 2)`,
-      x1: SPACING.VR_BASE,
-      x2: `calc(${SPACING.VR_BASE} * 2)`,
-      x3: `calc(${SPACING.VR_BASE} * 3)`,
-      x4: `calc(${SPACING.VR_BASE} * 4)`,
-      x5: `calc(${SPACING.VR_BASE} * 5)`,
+      ...SPACING,
     },
     sizes: {
       1: '5px',
