@@ -704,6 +704,13 @@ export interface Project extends SanityDocument {
   body?: BlockContent;
 
   /**
+   * Text — `ProjectText`
+   *
+   * I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling
+   */
+  projectText?: ProjectText;
+
+  /**
    * Showreel — `mux.video`
    *
    *

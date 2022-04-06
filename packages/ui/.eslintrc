@@ -9,6 +9,7 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "warn",
     "import/no-extraneous-dependencies": "off",
+    "@next/next/no-html-link-for-pages": "off",
     // 🚨 Could cause issues with Turborepo 🚨
     "import/no-cycle": "off"
   },

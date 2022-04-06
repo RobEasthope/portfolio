@@ -6,7 +6,7 @@ import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
-import { HeaderProps } from 'navigation/Header/Header';
+import { HeaderProps } from '@/UI/navigation/Header/Header';
 
 // Styles
 export const DialogContent = styled(DialogPrimative.Content, {

@@ -1,5 +1,5 @@
 import { headingUI } from '../../utils/sanity/headingUI';
-import exampleSection from '../../content/ExampleSection/ExampleSection.schema';
+import exampleSection from '../../sections/ExampleSection/ExampleSection.schema';
 
 export default {
   name: 'Page',
