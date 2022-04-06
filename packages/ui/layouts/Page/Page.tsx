@@ -7,9 +7,11 @@ import { RenderSections } from '@/UI/utils/RenderSections/RenderSections';
 import { Page as rawPageProps } from '@/UI/types/sanity-schema';
 import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
+import { ProjectProps } from '@/UI/layouts/Project/Project';
 
 export interface PageProps extends rawPageProps {
   sections: [ExampleSectionProps];
+  projects: ProjectProps[];
 }
 
 export const Page = ({
@@ -23,7 +25,7 @@ export const Page = ({
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { sections } = page;
+  const { sections, projects } = page;
 
   return (
     <>
@@ -44,7 +46,9 @@ export const Page = ({
         )}
 
         <MainContentLayout as="main">
-          {sections && <RenderSections sections={sections} />}
+          {sections && (
+            <RenderSections sections={sections} projects={projects} />
+          )}
         </MainContentLayout>
 
         <Footer

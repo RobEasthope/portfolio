@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 
 export const projectBySlugQuery = groq`
-  *[_type in ["project"] && slug.current == $slug]{
+  *[_type in ["project"] && pageSlug.current == $slug]{
     ...,
     "clientOrg": client->{name, url},
     "agencyOrg": agency->{name, url},
