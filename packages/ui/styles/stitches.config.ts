@@ -57,19 +57,19 @@ export const { css, styled, globalCss, getCssText } = createStitches({
   },
   utils: {
     include: mixins(),
-    marginX: (value: string) => ({
+    marginX: (value: string | number) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    marginY: (value: string) => ({
+    marginY: (value: string | number) => ({
       marginTop: value,
       marginBottom: value,
     }),
-    paddingX: (value: string) => ({
+    paddingX: (value: string | number) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    paddingY: (value: string) => ({
+    paddingY: (value: string | number) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
