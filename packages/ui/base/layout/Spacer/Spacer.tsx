@@ -2,7 +2,7 @@ import { SPACING } from '@/UI/constants/SPACING';
 import { styled } from '@/UI/styles/stitches.config';
 import { Box } from '@/UI/base/layout/Box/Box';
 
-export const SPACER = styled(Box, {
+export const Spacer = styled(Box, {
   width: '100%',
 
   variants: {
