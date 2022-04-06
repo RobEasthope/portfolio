@@ -77,7 +77,7 @@ export const Header = ({
   <PaddedComponent as="header" content="nav">
     <Spacer height="half" />
 
-    <HeaderLayout as="nav">
+    <HeaderLayout as="nav" css={{ height: '$x2' }}>
       <LeftNavigation as="ul">
         {navigationLeft &&
           navigationLeft?.length > 0 &&
