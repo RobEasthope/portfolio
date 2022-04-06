@@ -10,7 +10,7 @@ import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/I
 import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
-import { TextAlign } from 'base/layout/TextAlign/TextAlign';
+import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
 
 // Styles
 export const HeaderLayout = styled('div', {

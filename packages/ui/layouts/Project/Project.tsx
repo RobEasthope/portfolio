@@ -7,7 +7,7 @@ import {
   Organisation,
   Project as rawProjectProps,
 } from '@/UI/types/sanity-schema';
-import { ExampleSectionProps } from 'sections/ExampleSection/ExampleSection';
+import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 import { Text } from '@/UI/base/typography/Text/Text';
 import { ProjectText } from '@/UI/base/formatted-text/ProjectText/ProjectText';

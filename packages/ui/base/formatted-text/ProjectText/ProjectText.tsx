@@ -2,11 +2,11 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
-import { ImageProps } from 'sections/Image/Image';
-import { MuxVideoProps } from 'sections/MuxVideo/MuxVideo';
-import { VimeoVideoProps } from 'sections/VimeoVideo/VimeoVideo';
-import { YoutubeVideoProps } from 'sections/YoutubeVideo/YoutubeVideo';
-import { GalleryProps } from 'sections/Gallery/Gallery';
+import { ImageProps } from '@/UI/sections/Image/Image';
+import { MuxVideoProps } from '@/UI/sections/MuxVideo/MuxVideo';
+import { VimeoVideoProps } from '@/UI/sections/VimeoVideo/VimeoVideo';
+import { YoutubeVideoProps } from '@/UI/sections/YoutubeVideo/YoutubeVideo';
+import { GalleryProps } from '@/UI/sections/Gallery/Gallery';
 import { Text } from '@/UI/base/typography/Text/Text';
 import {
   BlockRendererProps,
