@@ -28,7 +28,7 @@ export const Page = ({
   return (
     <>
       <NextMetadata
-        title={page?.title}
+        title={page?.metadataTitle}
         description={page?.metadataDescription}
         image={page?.metadataImage}
         globalMetadata={metadata}
