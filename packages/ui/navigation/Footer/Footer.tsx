@@ -12,8 +12,10 @@ import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 
 // STYLES
 export const Navigation = styled(Flex, {
-  listStyle: 'none',
-  margin: 0,
+  '& ul': {
+    listStyle: 'none',
+    margin: 0,
+  },
 
   '& li': {
     display: 'inline-block',
@@ -40,8 +42,8 @@ export const Footer = ({
       <Spacer height="half" />
 
       <Flex align="center" justify="between">
-        <Box as="nav">
-          <Navigation gap="3">
+        <Navigation as="nav">
+          <Flex as="ul" gap="half">
             {navigation &&
               navigation?.length > 0 &&
               navigation.map((nav) => (
@@ -49,11 +51,11 @@ export const Footer = ({
                   <SuperLink link={nav}>{nav.title}</SuperLink>
                 </li>
               ))}
-          </Navigation>
-        </Box>
+          </Flex>
+        </Navigation>
         <Box>
           {copyrightText && (
-            <Text typeSize="standard">
+            <Text typeSize="small">
               {`© 2013-${currentYear} ${copyrightText}`}
             </Text>
           )}
