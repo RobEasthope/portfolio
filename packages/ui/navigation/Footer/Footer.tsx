@@ -1,6 +1,5 @@
 import { Footer as rawFooterProps } from '@/UI/types/sanity-schema';
 import { styled } from '@/UI/styles/stitches.config';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
 import { Flex } from '@/UI/base/layout/Flex/Flex';
