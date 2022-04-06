@@ -48,6 +48,7 @@ export const LargeNavigation = styled(Box, {
     display: 'inline-block',
   },
 });
+
 export const LeftNavigation = styled(LargeNavigation, {});
 
 export const RightNavigation = styled(LargeNavigation, {
@@ -76,6 +77,8 @@ export const Header = ({
 }: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
   <PaddedComponent as="header">
     <MaxWidth as="nav" width="full">
+      <Spacer height="half" />
+
       <HeaderLayout as="div">
         <LeftNavigation as="ul">
           {navigationLeft &&
@@ -119,6 +122,8 @@ export const Header = ({
           navigationRight={navigationRight}
         />
       </HeaderLayout>
+
+      <Spacer height="half" />
     </MaxWidth>
   </PaddedComponent>
 );
