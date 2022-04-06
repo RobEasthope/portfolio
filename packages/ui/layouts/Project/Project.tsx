@@ -14,11 +14,23 @@ import { ProjectText } from '@/UI/base/formatted-text/ProjectText/ProjectText';
 import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Flex } from '@/UI/base/layout/Flex/Flex';
 import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
+import { Picture } from '@/UI/base/media/Picture/Picture';
+
+import { styled } from '@/UI/styles/stitches.config';
+
+export const ProjectLogo = styled(Picture, {
+  borderRadius: '50%',
+  width: '100px',
+
+  '& img': {
+    borderRadius: '50%',
+  },
+});
 
 export interface ProjectProps extends rawProjectProps {
   sections: [ExampleSectionProps];
-  client: Organisation;
-  agency: Organisation;
+  clientOrg: Organisation;
+  agencyOrg: Organisation;
 }
 
 export const Project = ({
@@ -35,13 +47,14 @@ export const Project = ({
   const {
     title,
     description,
-    client,
-    agency,
+    clientOrg,
+    agencyOrg,
     projectText,
     projectUrlTitle,
     projectUrl,
     repoUrl,
     date,
+    thumbnailImage,
   } = project;
 
   return (
@@ -65,11 +78,22 @@ export const Project = ({
         <MainContentLayout as="main">
           <MaxWidth width="small">
             <TextAlign align="centre">
+              {thumbnailImage && (
+                <Flex justify="center">
+                  <ProjectLogo
+                    asset={thumbnailImage}
+                    alt={title || ''}
+                    mode="responsive"
+                    maxWidth={200}
+                  />
+                </Flex>
+              )}
+
               {description && <Text>{description}</Text>}
               {title && <Text>{title}</Text>}
               <Flex gap={3} justify="center">
-                {client && <Text>{client?.name}</Text>}
-                {agency && <Text>{agency?.name}</Text>}
+                {clientOrg && <Text>{clientOrg?.name}</Text>}
+                {agencyOrg && <Text>{agencyOrg?.name}</Text>}
               </Flex>
             </TextAlign>
 
