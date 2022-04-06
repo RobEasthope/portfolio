@@ -40,7 +40,7 @@ export const Footer = ({
     <PaddedComponent as="footer" content="nav">
       <Spacer height="half" />
 
-      <Flex align="center" justify="between">
+      <Flex align="center" justify="between" css={{ height: '$x2' }}>
         <Navigation as="nav">
           <Flex as="ul" gap="half">
             {navigation &&
