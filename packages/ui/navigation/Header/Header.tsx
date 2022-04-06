@@ -32,11 +32,12 @@ export const Logo = styled(Picture, {
   width: '32px',
 });
 
-export const LargeNavigation = styled('ul', {
+export const LargeNavigation = styled(Box, {
   display: 'none',
   visibility: 'hidden',
   listStyle: 'none',
   width: '50%',
+  marginY: 0,
 
   '@media (min-width: 800px)': {
     display: 'flex',
@@ -46,6 +47,13 @@ export const LargeNavigation = styled('ul', {
 
   '& li': {
     display: 'inline-block',
+  },
+});
+export const LeftNavigation = styled(LargeNavigation, {});
+
+export const RightNavigation = styled(LargeNavigation, {
+  '@media (min-width: 800px)': {
+    justifyContent: 'flex-end',
   },
 });
 
@@ -70,7 +78,7 @@ export const Header = ({
   <PaddedComponent as="header">
     <MaxWidth as="nav" width="full">
       <HeaderLayout as="div">
-        <LargeNavigation as="ul">
+        <LeftNavigation as="ul">
           {navigationLeft &&
             navigationLeft?.length > 0 &&
             navigationLeft.map((nav) => (
@@ -78,7 +86,7 @@ export const Header = ({
                 <SuperLink link={nav}>{nav.title}</SuperLink>
               </li>
             ))}
-        </LargeNavigation>
+        </LeftNavigation>
 
         <Spacer />
 
@@ -97,7 +105,7 @@ export const Header = ({
 
         <Spacer />
 
-        <LargeNavigation as="ul">
+        <RightNavigation as="ul">
           {navigationRight &&
             navigationRight?.length > 0 &&
             navigationRight.map((nav) => (
@@ -105,7 +113,7 @@ export const Header = ({
                 <SuperLink link={nav}>{nav.title}</SuperLink>
               </li>
             ))}
-        </LargeNavigation>
+        </RightNavigation>
 
         <SmallNavigation
           navigationLeft={navigationLeft}
