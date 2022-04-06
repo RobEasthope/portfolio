@@ -1,16 +1,47 @@
 import { LandingHero as rawLandingHeroProps } from '@/UI/types/sanity-schema';
 import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
+import { Text } from '@/UI/base/typography/Text/Text';
+import SanityMuxPlayer from 'sanity-mux-player';
 import { Picture } from '@/UI/base/media/Picture/Picture';
-import {
-  Wrapper,
-  ForegroundContent,
-  ForegroundContentLayout,
-  JumbotronBkgImage,
-  JumbotronBkgVideo,
-  LogoWrapper,
-  Title,
-} from './LandingHero.styles';
+import { styled } from '@/UI/styles/stitches.config';
+
+// STYLES
+export const Wrapper = styled('div', {
+  position: 'relative',
+  maxHeight: '100vh',
+});
+
+export const ForegroundContent = styled('div', {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  zIndex: 1,
+  color: 'white',
+});
+
+export const ForegroundContentLayout = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  // alignItems: 'center',
+});
+
+export const JumbotronBkgImage = styled(Picture, {
+  width: '100vw',
+  height: '100vh',
+});
+
+export const JumbotronBkgVideo = styled(SanityMuxPlayer, {
+  width: '100vw !important',
+  height: '100vh !important',
+
+  '& video': {
+    height: '100vh',
+    objectFit: 'cover',
+    objectPosition: 'center center',
+  },
+});
 
 // TYPES
 export interface LandingHeroProps extends rawLandingHeroProps {
@@ -20,7 +51,7 @@ export interface LandingHeroProps extends rawLandingHeroProps {
 // MARKUP
 export const LandingHero = ({
   heading,
-  logo,
+  subheading,
   bkgMode,
   bkgImage,
   muxVideo,
@@ -35,17 +66,8 @@ export const LandingHero = ({
         <PaddedComponent as="section">
           <MaxWidth width="page">
             <ForegroundContentLayout>
-              {logo && (
-                <LogoWrapper>
-                  <Picture
-                    asset={logo}
-                    alt={heading || ''}
-                    mode="responsive"
-                    maxWidth={400}
-                  />
-                </LogoWrapper>
-              )}
-              {heading && <Title as="h1">{heading}</Title>}
+              {heading && <Text as="h1">{heading}</Text>}
+              {subheading && <Text as="h1">{subheading}</Text>}
             </ForegroundContentLayout>
           </MaxWidth>
         </PaddedComponent>

@@ -9,13 +9,13 @@ export default {
   fields: [
     headingUI('Foreground'),
     {
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
-    },
-    {
       name: 'heading',
       title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'subheading',
+      title: 'Subheading',
       type: 'string',
     },
     headingUI('Background'),
@@ -50,7 +50,7 @@ export default {
       hidden: ({ parent }) => parent?.bkgMode !== 'image',
     },
     {
-      name: 'rawBackgroundVideo',
+      name: 'rawMuxVideo',
       title: 'Background video',
       type: 'mux.video',
       hidden: ({ parent }) => parent?.bkgMode !== 'video',

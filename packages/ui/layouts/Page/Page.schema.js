@@ -1,5 +1,12 @@
 import { headingUI } from '../../utils/sanity/headingUI';
 import exampleSection from '../../sections/ExampleSection/ExampleSection.schema';
+import Gallery from '../../sections/Gallery/Gallery.schema';
+import Image from '../../sections/Image/Image.schema';
+import LandingHero from '../../sections/LandingHero/LandingHero.schema';
+import Text from '../../sections/Text/Text.schema';
+import ProjectIndex from '../../sections/ProjectIndex/ProjectIndex.schema';
+import YoutubeVideo from '../../sections/YoutubeVideo/YoutubeVideo.schema';
+import VimeoVideo from '../../sections/VimeoVideo/VimeoVideo.schema';
 
 export default {
   name: 'Page',
@@ -32,7 +39,16 @@ export default {
       name: 'rawSections',
       title: 'Page sections',
       type: 'array',
-      of: [{ type: exampleSection.name }],
+      of: [
+        { type: exampleSection.name },
+        { type: Gallery.name },
+        { type: Image.name },
+        { type: LandingHero.name },
+        { type: ProjectIndex.name },
+        { type: Text.name },
+        { type: VimeoVideo.name },
+        { type: YoutubeVideo.name },
+      ],
       options: { editModal: 'fullscreen' },
       validation: (Rule) =>
         Rule.required().min(1).error('At least one page section is required'),

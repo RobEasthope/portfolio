@@ -45,14 +45,12 @@ import landing from '../../packages/ui/sections/LandingBlock/LandingBlock.schema
 import LandingHero from '../../packages/ui/sections/LandingHero/LandingHero.schema';
 import MuxVideo from '../../packages/ui/sections/MuxVideo/MuxVideo.schema';
 import portfolio from '../../packages/ui/sections/PortfolioBlock/PortfolioBlock.schema';
+import ProjectIndex from '../../packages/ui/sections/ProjectIndex/ProjectIndex.schema';
 import opensource from '../../packages/ui/sections/OpenSource/schemas/Opensource.schema';
 import sandbox from '../../packages/ui/sections/SandboxBlock/SandboxBlock.schema';
 import Text from '../../packages/ui/sections/Text/Text.schema';
 import VimeoVideo from '../../packages/ui/sections/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '../../packages/ui/sections/YoutubeVideo/YoutubeVideo.schema';
-
-
-
 
 // Pages
 import page from '../../packages/ui/layouts/Page/Page.schema';
@@ -104,6 +102,7 @@ export default createSchema({
     LandingHero,
     MuxVideo,
     portfolio,
+    ProjectIndex,
     opensource,
     sandbox,
     Text,

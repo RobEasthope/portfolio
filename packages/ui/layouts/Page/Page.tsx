@@ -3,7 +3,7 @@ import { Header } from '@/UI/navigation/Header/Header';
 import { FixedFooterLayout } from '@/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
 import { MainContentLayout } from '@/UI/base/layout/MainContentLayout/MainContentLayout';
 import { NextMetadata } from '@/UI/base/app/Metadata/NextMetadata';
-import { RenderSections } from '@/UI/base/app/RenderSections/RenderSections';
+import { RenderSections } from '@/UI/utils/RenderSections/RenderSections';
 import { Page as rawPageProps } from '@/UI/types/sanity-schema';
 import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
@@ -28,7 +28,7 @@ export const Page = ({
   return (
     <>
       <NextMetadata
-        title={page?.title}
+        title={page?.metadataTitle}
         description={page?.metadataDescription}
         image={page?.metadataImage}
         globalMetadata={metadata}
