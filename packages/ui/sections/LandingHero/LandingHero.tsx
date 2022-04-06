@@ -5,8 +5,12 @@ import { Text } from '@/UI/base/typography/Text/Text';
 import SanityMuxPlayer from 'sanity-mux-player';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { styled } from '@/UI/styles/stitches.config';
+import { SPACING } from '@/UI/constants/SPACING';
 
 // STYLES
+
+const heroHeight = `calc(100vh - ${SPACING.x6})`;
+
 export const Wrapper = styled('div', {
   position: 'relative',
   maxHeight: '100vh',
@@ -29,15 +33,15 @@ export const ForegroundContentLayout = styled('div', {
 
 export const JumbotronBkgImage = styled(Picture, {
   width: '100vw',
-  height: '100vh',
+  height: heroHeight,
 });
 
 export const JumbotronBkgVideo = styled(SanityMuxPlayer, {
   width: '100vw !important',
-  height: '100vh !important',
+  height: heroHeight,
 
   '& video': {
-    height: '100vh',
+    height: heroHeight,
     objectFit: 'cover',
     objectPosition: 'center center',
   },
