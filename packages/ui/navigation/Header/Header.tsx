@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
 import { styled } from '@/UI/styles/stitches.config';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
@@ -9,12 +8,15 @@ import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/E
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
+import { Box } from '@/UI/base/layout/Box/Box';
+import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 
 // Styles
 export const HeaderLayout = styled('div', {
   display: 'flex',
+  flex: '1 0 auto',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
 });
 
 export const StyledHomeLink = styled('span', {
@@ -24,15 +26,21 @@ export const StyledHomeLink = styled('span', {
   height: '32px',
 });
 
-export const LargeNavigation = styled('ul', {
+export const Logo = styled(Picture, {
+  width: '32px',
+});
+
+export const LargeNavigation = styled(Box, {
   display: 'none',
   visibility: 'hidden',
   listStyle: 'none',
+  width: '50%',
+  marginY: 0,
 
   '@media (min-width: 800px)': {
     display: 'flex',
     visibility: 'visible',
-    gap: '1em',
+    gap: '$half',
   },
 
   '& li': {
@@ -40,9 +48,21 @@ export const LargeNavigation = styled('ul', {
   },
 });
 
+export const LeftNavigation = styled(LargeNavigation, {});
+
+export const RightNavigation = styled(LargeNavigation, {
+  '@media (min-width: 800px)': {
+    justifyContent: 'flex-end',
+  },
+});
+
 // Types
 export interface HeaderProps extends rawHeaderProps {
-  navigation?: [
+  navigationLeft?: [
+    ExternalLinkWithTitleSchemaProps,
+    InternalLinkWithTitleSchemaProps
+  ];
+  navigationRight?: [
     ExternalLinkWithTitleSchemaProps,
     InternalLinkWithTitleSchemaProps
   ];
@@ -51,36 +71,56 @@ export interface HeaderProps extends rawHeaderProps {
 // Markup
 export const Header = ({
   logo,
-  navigation,
-}: Pick<HeaderProps, 'logo' | 'navigation'>) => (
-  <PaddedComponent as="header">
-    <MaxWidth as="nav">
-      <HeaderLayout as="div">
-        <StyledHomeLink>
-          <Link href="/">
-            <a>
-              <Picture
-                asset={logo}
-                alt={METADATA?.TITLE || ''}
-                mode="responsive"
-                maxWidth={32}
-              />
-            </a>
-          </Link>
-        </StyledHomeLink>
+  navigationLeft,
+  navigationRight,
+}: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
+  <PaddedComponent as="header" content="nav">
+    <Spacer height="half" />
 
-        <LargeNavigation as="ul">
-          {navigation &&
-            navigation?.length > 0 &&
-            navigation.map((nav) => (
-              <li key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </li>
-            ))}
-        </LargeNavigation>
+    <HeaderLayout as="nav">
+      <LeftNavigation as="ul">
+        {navigationLeft &&
+          navigationLeft?.length > 0 &&
+          navigationLeft.map((nav) => (
+            <li key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </li>
+          ))}
+      </LeftNavigation>
 
-        <SmallNavigation navigation={navigation} />
-      </HeaderLayout>
-    </MaxWidth>
+      <Spacer />
+
+      <StyledHomeLink>
+        <Link href="/">
+          <a>
+            <Logo
+              asset={logo}
+              alt={METADATA?.TITLE || ''}
+              mode="responsive"
+              maxWidth={32}
+            />
+          </a>
+        </Link>
+      </StyledHomeLink>
+
+      <Spacer />
+
+      <RightNavigation as="ul">
+        {navigationRight &&
+          navigationRight?.length > 0 &&
+          navigationRight.map((nav) => (
+            <li key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </li>
+          ))}
+      </RightNavigation>
+
+      <SmallNavigation
+        navigationLeft={navigationLeft}
+        navigationRight={navigationRight}
+      />
+    </HeaderLayout>
+
+    <Spacer height="half" />
   </PaddedComponent>
 );

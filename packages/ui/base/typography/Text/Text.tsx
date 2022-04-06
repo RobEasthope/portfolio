@@ -2,6 +2,8 @@ import { SPACING } from '@/UI/constants/SPACING';
 import { styled } from '@/UI/styles/stitches.config';
 
 export const Text = styled('div', {
+  marginY: 0,
+
   variants: {
     typeSize: {
       // VR_BASE: 1.75rem (1rem * 1.75)

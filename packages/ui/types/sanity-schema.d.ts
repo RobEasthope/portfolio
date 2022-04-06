@@ -45,11 +45,11 @@ export interface Header extends SanityDocument {
   _type: "Header";
 
   /**
-   * Header navigation — `array`
+   * Navigation (Left) — `array`
    *
    *
    */
-  rawNavigation: Array<
+  rawNavigationLeft: Array<
     SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
   >;
 
@@ -64,6 +64,15 @@ export interface Header extends SanityDocument {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+
+  /**
+   * Navigation (Right) — `array`
+   *
+   *
+   */
+  rawNavigationRight: Array<
+    SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
+  >;
 }
 
 /**
@@ -529,6 +538,29 @@ export interface Portfolio extends SanityDocument {
 }
 
 /**
+ * Project index
+ *
+ *
+ */
+export interface ProjectIndex extends SanityDocument {
+  _type: "ProjectIndex";
+
+  /**
+   * Portfolio section title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Index — `array`
+   *
+   *
+   */
+  index?: Array<SanityKeyedReference<Project>>;
+}
+
+/**
  * Open source projects
  *
  *
@@ -615,7 +647,16 @@ export interface Page extends SanityDocument {
    *
    *
    */
-  rawSections?: Array<SanityKeyed<ExampleSection>>;
+  rawSections?: Array<
+    | SanityKeyed<ExampleSection>
+    | SanityKeyed<Gallery>
+    | SanityKeyed<Image>
+    | SanityKeyed<LandingHero>
+    | SanityKeyed<ProjectIndex>
+    | SanityKeyed<Text>
+    | SanityKeyed<VimeoVideo>
+    | SanityKeyed<YoutubeVideo>
+  >;
 
   /**
    * Page metadata — `string`
@@ -693,6 +734,13 @@ export interface Project extends SanityDocument {
    * I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling
    */
   body?: BlockContent;
+
+  /**
+   * Text — `ProjectText`
+   *
+   * I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling
+   */
+  projectText?: ProjectText;
 
   /**
    * Showreel — `mux.video`
@@ -1039,23 +1087,18 @@ export type LandingHero = {
   headingforeground?: string;
 
   /**
-   * Logo — `image`
-   *
-   *
-   */
-  logo?: {
-    _type: "image";
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
-
-  /**
    * Heading — `string`
    *
    *
    */
   heading?: string;
+
+  /**
+   * Subheading — `string`
+   *
+   *
+   */
+  subheading?: string;
 
   /**
    * Background — `string`
@@ -1200,6 +1243,7 @@ export type Documents =
   | About
   | Landing
   | Portfolio
+  | ProjectIndex
   | Opensource
   | Sandbox
   | Page

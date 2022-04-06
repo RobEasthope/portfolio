@@ -2,7 +2,9 @@ import { groq } from 'next-sanity';
 
 export const projectBySlugQuery = groq`
   *[_type in ["project"] && slug.current == $slug]{
-     ...,
+    ...,
+    "clientOrg": client->{name, url},
+    "agencyOrg": agency->{name, url},
     "sections": rawSections[]{
       ...,
       "link": rawLink[0]{..., "to": {...internalUID->{...},  }},

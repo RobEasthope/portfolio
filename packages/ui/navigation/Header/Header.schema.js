@@ -4,8 +4,8 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'rawNavigation',
-      title: 'Header navigation',
+      name: 'rawNavigationLeft',
+      title: 'Navigation (Left)',
       type: 'array',
       of: [
         { type: 'InternalLinkWithTitle' },
@@ -21,6 +21,18 @@ export default {
       type: 'image',
       codegen: { required: true },
       validation: (Rule) => Rule.required().error('Logo is missing'),
+    },
+    {
+      name: 'rawNavigationRight',
+      title: 'Navigation (Right)',
+      type: 'array',
+      of: [
+        { type: 'InternalLinkWithTitle' },
+        { type: 'ExternalLinkWithTitle' },
+      ],
+      codegen: { required: true },
+      validation: (Rule) =>
+        Rule.required().error('No navigation links have been added'),
     },
   ],
   preview: {

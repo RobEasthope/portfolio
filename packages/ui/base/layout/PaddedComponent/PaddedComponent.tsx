@@ -1,11 +1,13 @@
 import { styled } from '@/UI/styles/stitches.config';
+import { Box } from '@/UI/base/layout/Box/Box';
 
-export const PaddedComponent = styled('div', {
+export const PaddedComponent = styled(Box, {
   width: '100%',
 
   variants: {
     content: {
       text: { paddingLeft: '$half', paddingRight: '$half' },
+      nav: { paddingLeft: '$x1', paddingRight: '$x1' },
       media: {
         position: 'relative',
         left: '50%',

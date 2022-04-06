@@ -7,7 +7,7 @@ import { TYPE_SCALE } from '@/UI/styles/constants/TYPE_SCALE';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 
 // Styles
-export const Heading = styled('p', {
+export const Text = styled('p', {
   type: { fontSize: TYPE_SCALE.STANDARD },
   fontWeight: 'bold',
 });
@@ -30,7 +30,7 @@ export const ExampleSection = ({
   return (
     <PaddedComponent as="section">
       <MaxWidth width="page">
-        {heading && <Heading as="h1">{heading}</Heading>}
+        {heading && <Text as="h1">{heading}</Text>}
         {text && <ExampleFormattedText blocks={text} />}
         {image && (
           <Picture asset={image} alt="" mode="responsive" maxWidth={800} />

@@ -3,44 +3,47 @@ import { Header } from '@/UI/navigation/Header/Header';
 import { FixedFooterLayout } from '@/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
 import { MainContentLayout } from '@/UI/base/layout/MainContentLayout/MainContentLayout';
 import { NextMetadata } from '@/UI/base/app/Metadata/NextMetadata';
-import { RenderSections } from '@/UI/base/app/RenderSections/RenderSections';
-import { Project as rawProjectProps } from '@/UI/types/sanity-schema';
-import { ExampleSectionProps } from '@/UI/content/ExampleSection/ExampleSection';
+import { RenderSections } from '@/UI/utils/RenderSections/RenderSections';
+import { Page as rawPageProps } from '@/UI/types/sanity-schema';
+import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 
-export interface ProjectProps extends rawProjectProps {
+export interface PageProps extends rawPageProps {
   sections: [ExampleSectionProps];
 }
 
-export const Project = ({
-  project,
+export const Page = ({
+  page,
   globals,
 }: {
-  project: ProjectProps;
+  page: PageProps;
   globals: AppGlobalsProps;
 }) => {
   // Globals props
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { title, sections } = project;
+  const { sections } = page;
 
   return (
     <>
       <NextMetadata
-        title={project?.title}
-        description={project?.description}
-        image={project?.thumbnailImage}
+        title={page?.metadataTitle}
+        description={page?.metadataDescription}
+        image={page?.metadataImage}
         globalMetadata={metadata}
       />
 
       <FixedFooterLayout>
         {header && (
-          <Header logo={header?.logo} navigation={header?.navigation} />
+          <Header
+            logo={header?.logo}
+            navigationLeft={header?.navigationLeft}
+            navigationRight={header?.navigationRight}
+          />
         )}
 
         <MainContentLayout as="main">
-          {title && <h1>{title}</h1>}
           {sections && <RenderSections sections={sections} />}
         </MainContentLayout>
 

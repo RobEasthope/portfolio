@@ -5,7 +5,14 @@ export const appGlobalsQuery = groq`
   {
     "header": *[_type== 'Header'][0]{
       logo,
-      "navigation": rawNavigation[]{
+      "navigationLeft": rawNavigationLeft[]{
+        _key,
+        _type,
+        title,
+        url,
+        "to": internalUID->{slug},
+      },
+      "navigationRight": rawNavigationRight[]{
         _key,
         _type,
         title,

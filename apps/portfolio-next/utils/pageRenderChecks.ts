@@ -1,4 +1,4 @@
-import { PageProps } from '@/UI/pages/Page/Page';
+import { PageProps } from '@/UI/layouts/Page/Page';
 import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 
 export const pageRenderChecks = (props: {
