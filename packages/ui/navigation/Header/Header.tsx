@@ -10,6 +10,7 @@ import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/I
 import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
+import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
 
 // Styles
@@ -26,15 +27,9 @@ export const StyledHomeLink = styled('span', {
   width: '32px',
   height: '32px',
 });
+
 export const Logo = styled(Picture, {
   width: '32px',
-});
-
-export const Spacer = styled(Box, {
-  display: 'flex',
-  width: '100%',
-  height: '1em',
-  flexGrow: 5,
 });
 
 export const LargeNavigation = styled('ul', {
