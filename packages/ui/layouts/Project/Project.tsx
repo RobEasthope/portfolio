@@ -94,9 +94,10 @@ export const Project = ({
                 </>
               )}
 
-              {description && <Text>{description}</Text>}
-              <Spacer height="x1" />
               {title && <Text typeSize="large">{title}</Text>}
+              <Spacer height="half" />
+
+              {description && <Text>{description}</Text>}
               <Spacer height="x1" />
 
               <Flex justify="center" gap="half">
