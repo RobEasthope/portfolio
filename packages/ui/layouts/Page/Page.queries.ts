@@ -2,7 +2,12 @@ import { groq } from 'next-sanity';
 
 export const pageBySlugQuery = groq`
   *[_type in ["Page"] && slug.current == $slug]{
-     ...,
+    ...,
+    "projects": *[_type == "project" && !(_id in path('drafts.**')) ]{
+      title,
+      slug,
+      thumbnailImage
+    },
     "sections": rawSections[]{
       ...,
       "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
@@ -12,11 +17,7 @@ export const pageBySlugQuery = groq`
         "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
         "bkg": rawBkg->,
       },
-      "projects": *[_type == "project" && !(_id in path('drafts.**')) ]{
-        title,
-        slug,
-        thumbnailImage
-      },
+
       "muxVideo": rawMuxVideo.asset->,
     }
   }

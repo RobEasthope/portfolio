@@ -9,6 +9,7 @@ import { ProjectIndexProps } from '@/UI/sections/ProjectIndex/ProjectIndex';
 import { VimeoVideoProps } from '@/UI/sections/VimeoVideo/VimeoVideo';
 import { YoutubeVideoProps } from '@/UI/sections/YoutubeVideo/YoutubeVideo';
 import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
+import { ProjectProps } from 'layouts/Project/Project';
 
 // Dynamic component imports
 const ExampleSection = dynamic(
@@ -31,9 +32,10 @@ const YoutubeVideo = dynamic(
 
 export type RenderSectionsProps = {
   sections: Record<'_type' | '_key' | string, any>[];
+  projects: ProjectProps[];
 };
 
-export const RenderSections = ({ sections }: RenderSectionsProps) => {
+export const RenderSections = ({ sections, projects }: RenderSectionsProps) => {
   if (!sections) {
     return <div>Missing sections</div>;
   }
@@ -85,6 +87,7 @@ export const RenderSections = ({ sections }: RenderSectionsProps) => {
               <ProjectIndex
                 {...(section as ProjectIndexProps)}
                 key={`render-sections-${section._key as string}`}
+                projects={projects}
               />
             );
           case 'Text':
