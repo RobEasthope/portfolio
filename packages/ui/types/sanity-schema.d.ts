@@ -538,6 +538,29 @@ export interface Portfolio extends SanityDocument {
 }
 
 /**
+ * Project index
+ *
+ *
+ */
+export interface ProjectIndex extends SanityDocument {
+  _type: "ProjectIndex";
+
+  /**
+   * Portfolio section title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Index — `array`
+   *
+   *
+   */
+  index?: Array<SanityKeyedReference<Project>>;
+}
+
+/**
  * Open source projects
  *
  *
@@ -624,7 +647,16 @@ export interface Page extends SanityDocument {
    *
    *
    */
-  rawSections?: Array<SanityKeyed<ExampleSection>>;
+  rawSections?: Array<
+    | SanityKeyed<ExampleSection>
+    | SanityKeyed<Gallery>
+    | SanityKeyed<Image>
+    | SanityKeyed<LandingHero>
+    | SanityKeyed<ProjectIndex>
+    | SanityKeyed<Text>
+    | SanityKeyed<VimeoVideo>
+    | SanityKeyed<YoutubeVideo>
+  >;
 
   /**
    * Page metadata — `string`
@@ -1055,23 +1087,18 @@ export type LandingHero = {
   headingforeground?: string;
 
   /**
-   * Logo — `image`
-   *
-   *
-   */
-  logo?: {
-    _type: "image";
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
-
-  /**
    * Heading — `string`
    *
    *
    */
   heading?: string;
+
+  /**
+   * Subheading — `string`
+   *
+   *
+   */
+  subheading?: string;
 
   /**
    * Background — `string`
@@ -1216,6 +1243,7 @@ export type Documents =
   | About
   | Landing
   | Portfolio
+  | ProjectIndex
   | Opensource
   | Sandbox
   | Page
