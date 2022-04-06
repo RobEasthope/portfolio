@@ -9,13 +9,13 @@ export default {
   fields: [
     headingUI('Foreground'),
     {
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
-    },
-    {
       name: 'heading',
       title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'subheading',
+      title: 'Subheading',
       type: 'string',
     },
     headingUI('Background'),
