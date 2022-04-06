@@ -6,6 +6,7 @@ import { type } from '@/UI/styles/utils/type';
 import { fullType } from '@/UI/styles/utils/fullType';
 import { size } from '@/UI/styles/utils/size';
 import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
+import { SPACING } from '@/UI/constants/SPACING';
 
 export const { css, styled, globalCss, getCssText } = createStitches({
   theme: {
@@ -28,12 +29,15 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       purple600: 'hsl(252,80%,53%)',
     },
     space: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-      4: '20px',
-      5: '25px',
-      6: '35px',
+      quarter: `calc(${SPACING.VR_BASE} / 4)`,
+      third: `calc(${SPACING.VR_BASE} / 3)`,
+      twoThirds: `calc(${SPACING.VR_BASE} * 0.666)`,
+      half: `calc(${SPACING.VR_BASE} / 2)`,
+      x1: SPACING.VR_BASE,
+      x2: `calc(${SPACING.VR_BASE} * 2)`,
+      x3: `calc(${SPACING.VR_BASE} * 3)`,
+      x4: `calc(${SPACING.VR_BASE} * 4)`,
+      x5: `calc(${SPACING.VR_BASE} * 5)`,
     },
     sizes: {
       1: '5px',
