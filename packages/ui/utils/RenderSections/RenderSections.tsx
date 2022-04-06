@@ -9,7 +9,7 @@ import { ProjectIndexProps } from '@/UI/sections/ProjectIndex/ProjectIndex';
 import { VimeoVideoProps } from '@/UI/sections/VimeoVideo/VimeoVideo';
 import { YoutubeVideoProps } from '@/UI/sections/YoutubeVideo/YoutubeVideo';
 import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
-import { ProjectProps } from 'layouts/Project/Project';
+import { ProjectProps } from '@/UI/layouts/Project/Project';
 
 // Dynamic component imports
 const ExampleSection = dynamic(
