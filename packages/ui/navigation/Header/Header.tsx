@@ -9,12 +9,15 @@ import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/E
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
+import { Box } from '@/UI/base/layout/Box/Box';
+import { TextAlign } from 'base/layout/TextAlign/TextAlign';
 
 // Styles
 export const HeaderLayout = styled('div', {
   display: 'flex',
+  flex: '1 0 auto',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
 });
 
 export const StyledHomeLink = styled('span', {
@@ -23,11 +26,22 @@ export const StyledHomeLink = styled('span', {
   width: '32px',
   height: '32px',
 });
+export const Logo = styled(Picture, {
+  width: '32px',
+});
+
+export const Spacer = styled(Box, {
+  display: 'flex',
+  width: '100%',
+  height: '1em',
+  flexGrow: 5,
+});
 
 export const LargeNavigation = styled('ul', {
   display: 'none',
   visibility: 'hidden',
   listStyle: 'none',
+  width: '50%',
 
   '@media (min-width: 800px)': {
     display: 'flex',
@@ -71,10 +85,12 @@ export const Header = ({
             ))}
         </LargeNavigation>
 
+        <Spacer />
+
         <StyledHomeLink>
           <Link href="/">
             <a>
-              <Picture
+              <Logo
                 asset={logo}
                 alt={METADATA?.TITLE || ''}
                 mode="responsive"
@@ -83,6 +99,8 @@ export const Header = ({
             </a>
           </Link>
         </StyledHomeLink>
+
+        <Spacer />
 
         <LargeNavigation as="ul">
           {navigationRight &&
