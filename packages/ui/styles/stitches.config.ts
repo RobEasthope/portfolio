@@ -31,7 +31,9 @@ export const { css, styled, globalCss, getCssText } = createStitches({
     space: {
       ...SPACING,
     },
-    sizes: {},
+    sizes: {
+      ...SPACING,
+    },
     fontSizes: {
       jumbotron: '4.209rem',
       xxLarge: '3.157rem',
