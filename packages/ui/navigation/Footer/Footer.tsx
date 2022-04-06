@@ -8,6 +8,7 @@ import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/E
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { Text } from '@/UI/base/typography/Text/Text';
+import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 
 // STYLES
 export const Navigation = styled(Flex, {
@@ -37,6 +38,8 @@ export const Footer = ({
   return (
     <PaddedComponent as="footer">
       <MaxWidth width="full">
+        <Spacer height="half" />
+
         <Flex align="center" justify="between">
           <Box as="nav">
             <Navigation gap="3">
@@ -57,6 +60,8 @@ export const Footer = ({
             )}
           </Box>
         </Flex>
+
+        <Spacer height="half" />
       </MaxWidth>
     </PaddedComponent>
   );
