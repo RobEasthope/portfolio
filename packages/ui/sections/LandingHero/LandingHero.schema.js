@@ -50,7 +50,7 @@ export default {
       hidden: ({ parent }) => parent?.bkgMode !== 'image',
     },
     {
-      name: 'rawBackgroundVideo',
+      name: 'rawMuxVideo',
       title: 'Background video',
       type: 'mux.video',
       hidden: ({ parent }) => parent?.bkgMode !== 'video',
