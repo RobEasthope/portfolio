@@ -14,7 +14,10 @@ import { HeaderProps } from '@/UI/navigation/Header/Header';
 import { GlobalMetadata } from '@/UI/types/sanity-schema';
 import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
 import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
-import { pageBySlugQuery, pageSlugsQuery } from '@/UI/layouts/Page/Page.queries';
+import {
+  pageBySlugQuery,
+  pageSlugsQuery,
+} from '@/UI/layouts/Page/Page.queries';
 
 // TYPES
 type PageBySlugProps = {
