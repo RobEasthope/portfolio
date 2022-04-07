@@ -13,6 +13,13 @@ export const Index = styled(Box, {
   paddingX: 0,
 });
 
+export const ProjectTitle = styled(Text, {
+  '& a': {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+});
+
 // TYPES
 export interface ProjectIndexProps extends rawProjectIndexProps {
   projects: ProjectProps[];
@@ -27,11 +34,11 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
           {projects?.map((project) => (
             <li key={project?._id}>
               {project?.slug && (
-                <Text>
+                <ProjectTitle>
                   <Link href={project?.slug?.current}>
                     <a>{project.title}</a>
                   </Link>
-                </Text>
+                </ProjectTitle>
               )}
             </li>
           ))}
