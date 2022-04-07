@@ -3,7 +3,7 @@ import { groq } from 'next-sanity';
 export const pageBySlugQuery = groq`
   *[_type in ["Page"] && slug.current == $slug]{
     ...,
-    "projects": *[_type == "project" && !(_id in path('drafts.**')) ]{
+    "projects": *[_type == "project" && !(_id in path('drafts.**'))]  | order(startDate desc){
       title,
       slug,
       thumbnailImage
