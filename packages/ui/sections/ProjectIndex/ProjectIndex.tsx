@@ -20,10 +20,13 @@ export const Index = styled(Flex, {
 export const Thumbnail = styled(Picture, {
   borderRadius: '50%',
   width: '48px',
+  height: '48px',
   marginRight: '$half',
 
   '& img': {
     borderRadius: '50%',
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
 });
 
