@@ -9,7 +9,7 @@ import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/I
 import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
-import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
+import { Spacer } from '@/UI/sections/Spacer/Spacer';
 
 // Styles
 export const HeaderLayout = styled('div', {
