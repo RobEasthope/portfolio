@@ -1,3 +1,6 @@
+import * as dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+
 export default {
   name: 'gig',
   title: 'Gig',
@@ -67,13 +70,17 @@ export default {
       endDate: 'endDate',
       employerLogo: 'employer.logo',
     },
-    prepare(selection) {
-      const { startDate, endDate, title, employerLogo } = selection;
+    prepare({ startDate, endDate, title, employerLogo }) {
+      dayjs.extend(advancedFormat);
+
+      const formattedStartDate = dayjs.default(startDate).format('MMM Do YYYY');
+      const formattedEndDate = dayjs.default(endDate).format('MMM Do YYYY');
+
       return {
         title,
         media: employerLogo,
-        subtitle: `${startDate.split(' -')} - ${
-          endDate ? endDate.split(' -') : 'Present'
+        subtitle: `${formattedStartDate} - ${
+          endDate ? formattedEndDate : 'Present'
         }`, // YYYY-MM-DD --> YYYY,
       };
     },
