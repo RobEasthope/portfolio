@@ -653,6 +653,7 @@ export interface Page extends SanityDocument {
     | SanityKeyed<Image>
     | SanityKeyed<LandingHero>
     | SanityKeyed<ProjectIndex>
+    | SanityKeyed<Spacer>
     | SanityKeyed<Text>
     | SanityKeyed<VimeoVideo>
     | SanityKeyed<YoutubeVideo>
@@ -726,6 +727,13 @@ export interface Project extends SanityDocument {
    *
    *
    */
+  pageSlug?: { _type: "pageSlug"; current: string };
+
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
   slug?: { _type: "slug"; current: string };
 
   /**
@@ -771,11 +779,25 @@ export interface Project extends SanityDocument {
   agency?: SanityReference<Organisation>;
 
   /**
-   * Date — `string`
+   * Date (Written form) — `string`
    *
    *
    */
   date?: string;
+
+  /**
+   * Start date — `date`
+   *
+   *
+   */
+  startDate?: string;
+
+  /**
+   * End date — `date`
+   *
+   *
+   */
+  endDate?: string;
 
   /**
    * Project url title — `string`
@@ -1138,7 +1160,7 @@ export type LandingHero = {
    *
    *
    */
-  rawBackgroundVideo?: MuxVideo;
+  rawMuxVideo?: MuxVideo;
 
   /**
    * Background caption — `text`
@@ -1170,6 +1192,25 @@ export type MuxVideo = {
    * Defaults to large
    */
   maxWidth?: "small" | "medium" | "large" | "full";
+};
+
+export type Spacer = {
+  _type: "Spacer";
+  /**
+   * Height — `string`
+   *
+   * Defaults to single
+   */
+  height?:
+    | "quarter"
+    | "third"
+    | "half"
+    | "twoThirds"
+    | "x1"
+    | "x2"
+    | "x3"
+    | "x4"
+    | "x5";
 };
 
 export type Text = {
