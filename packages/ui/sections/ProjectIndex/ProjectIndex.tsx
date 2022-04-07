@@ -18,15 +18,16 @@ export const Index = styled(Flex, {
 });
 
 export const Thumbnail = styled(Picture, {
-  borderRadius: '50%',
+  borderRadius: '$circle',
   width: '48px',
   height: '48px',
   marginRight: '$half',
+  flexShrink: 0,
 
   '& img': {
-    borderRadius: '50%',
-    maxWidth: '100%',
-    maxHeight: '100%',
+    borderRadius: '$circle',
+    width: '100%',
+    height: '100%',
   },
 });
 
@@ -70,6 +71,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
                         alt={project?.title || ''}
                         mode="responsive"
                         maxWidth={48}
+                        aspectRatio={1}
                       />
                     )}
 

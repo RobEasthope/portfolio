@@ -20,11 +20,13 @@ import { styled } from '@/UI/styles/stitches.config';
 import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
 
 export const ProjectLogo = styled(Picture, {
-  borderRadius: '50%',
+  borderRadius: '$circle',
   width: '100px',
 
   '& img': {
-    borderRadius: '50%',
+    borderRadius: '$circle',
+    width: '100%',
+    height: '100%',
   },
 });
 
@@ -88,6 +90,7 @@ export const Project = ({
                       alt={title || ''}
                       mode="responsive"
                       maxWidth={200}
+                      aspectRatio={1}
                     />
                   </Flex>
                   <Spacer height="x1" />
