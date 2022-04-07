@@ -1,5 +1,6 @@
 import { styled } from '@/UI/styles/stitches.config';
 import { Box } from '@/UI/base/layout/Box/Box';
+import { SPACING } from '@/UI/constants/SPACING';
 
 export const Grid = styled(Box, {
   display: 'grid',
@@ -66,93 +67,42 @@ export const Grid = styled(Box, {
       4: {
         gridTemplateColumns: 'repeat(4, 1fr)',
       },
+      5: {
+        gridTemplateColumns: 'repeat(5, 1fr)',
+      },
     },
     gap: {
-      1: {
-        gap: '$1',
-      },
-      2: {
-        gap: '$2',
-      },
-      3: {
-        gap: '$3',
-      },
-      4: {
-        gap: '$4',
-      },
-      5: {
-        gap: '$5',
-      },
-      6: {
-        gap: '$6',
-      },
-      7: {
-        gap: '$7',
-      },
-      8: {
-        gap: '$8',
-      },
-      9: {
-        gap: '$9',
-      },
+      quarter: { gap: `calc(${SPACING.VR_BASE} / 4)` },
+      third: { gap: `calc(${SPACING.VR_BASE} / 3)` },
+      twoThirds: { gap: `calc(${SPACING.VR_BASE} * 0.666)` },
+      half: { gap: `calc(${SPACING.VR_BASE} / 2)` },
+      x1: { gap: SPACING.VR_BASE },
+      x2: { gap: `calc(${SPACING.VR_BASE} * 2)` },
+      x3: { gap: `calc(${SPACING.VR_BASE} * 3)` },
+      x4: { gap: `calc(${SPACING.VR_BASE} * 4)` },
+      x5: { gap: `calc(${SPACING.VR_BASE} * 5)` },
     },
     gapX: {
-      1: {
-        columnGap: '$1',
-      },
-      2: {
-        columnGap: '$2',
-      },
-      3: {
-        columnGap: '$3',
-      },
-      4: {
-        columnGap: '$4',
-      },
-      5: {
-        columnGap: '$5',
-      },
-      6: {
-        columnGap: '$6',
-      },
-      7: {
-        columnGap: '$7',
-      },
-      8: {
-        columnGap: '$8',
-      },
-      9: {
-        columnGap: '$9',
-      },
+      quarter: { gap: `calc(${SPACING.VR_BASE} / 4)` },
+      third: { gap: `calc(${SPACING.VR_BASE} / 3)` },
+      twoThirds: { gap: `calc(${SPACING.VR_BASE} * 0.666)` },
+      half: { gap: `calc(${SPACING.VR_BASE} / 2)` },
+      x1: { gap: SPACING.VR_BASE },
+      x2: { gap: `calc(${SPACING.VR_BASE} * 2)` },
+      x3: { gap: `calc(${SPACING.VR_BASE} * 3)` },
+      x4: { gap: `calc(${SPACING.VR_BASE} * 4)` },
+      x5: { gap: `calc(${SPACING.VR_BASE} * 5)` },
     },
     gapY: {
-      1: {
-        rowGap: '$1',
-      },
-      2: {
-        rowGap: '$2',
-      },
-      3: {
-        rowGap: '$3',
-      },
-      4: {
-        rowGap: '$4',
-      },
-      5: {
-        rowGap: '$5',
-      },
-      6: {
-        rowGap: '$6',
-      },
-      7: {
-        rowGap: '$7',
-      },
-      8: {
-        rowGap: '$8',
-      },
-      9: {
-        rowGap: '$9',
-      },
+      quarter: { gap: `calc(${SPACING.VR_BASE} / 4)` },
+      third: { gap: `calc(${SPACING.VR_BASE} / 3)` },
+      twoThirds: { gap: `calc(${SPACING.VR_BASE} * 0.666)` },
+      half: { gap: `calc(${SPACING.VR_BASE} / 2)` },
+      x1: { gap: SPACING.VR_BASE },
+      x2: { gap: `calc(${SPACING.VR_BASE} * 2)` },
+      x3: { gap: `calc(${SPACING.VR_BASE} * 3)` },
+      x4: { gap: `calc(${SPACING.VR_BASE} * 4)` },
+      x5: { gap: `calc(${SPACING.VR_BASE} * 5)` },
     },
   },
 });
