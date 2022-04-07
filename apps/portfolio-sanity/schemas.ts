@@ -48,6 +48,7 @@ import portfolio from '../../packages/ui/sections/PortfolioBlock/PortfolioBlock.
 import ProjectIndex from '../../packages/ui/sections/ProjectIndex/ProjectIndex.schema';
 import opensource from '../../packages/ui/sections/OpenSource/schemas/Opensource.schema';
 import sandbox from '../../packages/ui/sections/SandboxBlock/SandboxBlock.schema';
+import Spacer from '../../packages/ui/sections/Spacer/Spacer.schema';
 import Text from '../../packages/ui/sections/Text/Text.schema';
 import VimeoVideo from '../../packages/ui/sections/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '../../packages/ui/sections/YoutubeVideo/YoutubeVideo.schema';
@@ -105,6 +106,7 @@ export default createSchema({
     ProjectIndex,
     opensource,
     sandbox,
+    Spacer,
     Text,
     VimeoVideo,
     YoutubeVideo,

@@ -7,7 +7,7 @@ import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/E
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { Text } from '@/UI/base/typography/Text/Text';
-import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
+import { Spacer } from '@/UI/sections/Spacer/Spacer';
 
 // STYLES
 export const Navigation = styled(Flex, {

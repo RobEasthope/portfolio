@@ -17,7 +17,7 @@ import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 
 import { styled } from '@/UI/styles/stitches.config';
-import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
+import { Spacer } from '@/UI/sections/Spacer/Spacer';
 
 export const ProjectLogo = styled(Picture, {
   borderRadius: '$circle',

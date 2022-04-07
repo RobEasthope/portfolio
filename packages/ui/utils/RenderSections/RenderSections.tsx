@@ -4,8 +4,9 @@ import { GalleryProps } from '@/UI/sections/Gallery/Gallery';
 import { ImageProps } from '@/UI/sections/Image/Image';
 import { LandingHeroProps } from '@/UI/sections/LandingHero/LandingHero';
 import { MuxVideoProps } from '@/UI/sections/MuxVideo/MuxVideo';
-import { TextProps } from '@/UI/sections/Text/Text';
 import { ProjectIndexProps } from '@/UI/sections/ProjectIndex/ProjectIndex';
+import { SpacerProps } from '@/UI/sections/Spacer/Spacer';
+import { TextProps } from '@/UI/sections/Text/Text';
 import { VimeoVideoProps } from '@/UI/sections/VimeoVideo/VimeoVideo';
 import { YoutubeVideoProps } from '@/UI/sections/YoutubeVideo/YoutubeVideo';
 import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
@@ -24,6 +25,7 @@ const MuxVideo = dynamic(() => import('@/UI/sections/MuxVideo/MuxVideo'));
 const ProjectIndex = dynamic(
   () => import('@/UI/sections/ProjectIndex/ProjectIndex')
 );
+const Spacer = dynamic(() => import('@/UI/sections/Spacer/Spacer'));
 const Text = dynamic(() => import('@/UI/sections/Text/Text'));
 const VimeoVideo = dynamic(() => import('@/UI/sections/VimeoVideo/VimeoVideo'));
 const YoutubeVideo = dynamic(
@@ -88,6 +90,13 @@ export const RenderSections = ({ sections, projects }: RenderSectionsProps) => {
                 {...(section as ProjectIndexProps)}
                 key={`render-sections-${section._key as string}`}
                 projects={projects}
+              />
+            );
+          case 'Spacer':
+            return (
+              <Spacer
+                {...(section as SpacerProps)}
+                key={`render-sections-${section._key as string}`}
               />
             );
           case 'Text':
