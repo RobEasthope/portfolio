@@ -88,13 +88,18 @@ export default {
       name: 'startDate',
       title: 'Start date',
       type: 'date',
+      options: {
+        dateFormat: 'DD-MMMM-YYYY',
+      },
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'endDate',
       title: 'End date',
       type: 'date',
-      validation: (Rule) => Rule.required(),
+      options: {
+        dateFormat: 'DD-MMMM-YYYY',
+      },
     },
     {
       name: 'projectUrlTitle',
