@@ -77,9 +77,21 @@ export default {
     },
     {
       name: 'date',
-      title: 'Date',
+      title: 'Date (Written form)',
       type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'startDate',
+      title: 'Start date',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'endDate',
+      title: 'End date',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'projectUrlTitle',
