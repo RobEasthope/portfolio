@@ -23,6 +23,9 @@ export const MaxWidth = styled('div', {
       large: {
         maxWidth: MAX_WIDTH.LARGE,
       },
+      xLarge: {
+        maxWidth: MAX_WIDTH.XLARGE,
+      },
       full: {
         position: 'relative',
         left: '50%',
