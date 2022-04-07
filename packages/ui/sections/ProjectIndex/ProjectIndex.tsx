@@ -22,7 +22,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
   <Box>
     <MaxWidth width="page">
       {projects?.length > 0 && (
-        <Index>
+        <Index as="ul">
           {projects?.map((project) => (
             <li key={project?._id}>
               {project?.slug && (
