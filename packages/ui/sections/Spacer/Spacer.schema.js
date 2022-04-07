@@ -13,6 +13,7 @@ export default {
       options: {
         list: SPACER_OPTIONS,
       },
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
