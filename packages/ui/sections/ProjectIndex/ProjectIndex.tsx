@@ -9,6 +9,7 @@ import { ProjectProps } from '@/UI/layouts/Project/Project';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { styled } from '@/UI/styles/stitches.config';
 import { createGroups } from '@/UI/utils/createGroups';
+import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 
 // STYLES
 export const Index = styled(Grid, {
@@ -51,45 +52,41 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   });
 
   return (
-    <Box>
-      <MaxWidth width="full">
+    <MaxWidth width="xLarge">
+      <PaddedComponent content="nav">
         {splitProjects?.length > 0 && (
-          <Index columns={4}>
-            {splitProjects?.map((grouping) => (
-              <Box as="ul">
-                {grouping.map((project) => (
-                  <Flex
-                    as="li"
-                    key={project?._id}
-                    align="center"
-                    css={{ marginY: '$twoThirds' }}
-                    direction="row"
-                  >
-                    {project?.thumbnailImage && (
-                      <Thumbnail
-                        asset={project?.thumbnailImage}
-                        alt={project?.title || ''}
-                        mode="responsive"
-                        maxWidth={48}
-                        aspectRatio={1}
-                      />
-                    )}
+          <Index columns={4} gap="x1">
+            {projects.map((project) => (
+              <Flex
+                as="li"
+                key={project?._id}
+                align="center"
+                css={{ marginY: '$twoThirds' }}
+                direction="row"
+              >
+                {project?.thumbnailImage && (
+                  <Thumbnail
+                    asset={project?.thumbnailImage}
+                    alt={project?.title || ''}
+                    mode="responsive"
+                    maxWidth={48}
+                    aspectRatio={1}
+                  />
+                )}
 
-                    {project?.slug && (
-                      <ProjectTitle>
-                        <Link href={project?.slug?.current}>
-                          <a>{project?.title}</a>
-                        </Link>
-                      </ProjectTitle>
-                    )}
-                  </Flex>
-                ))}
-              </Box>
+                {project?.slug && (
+                  <ProjectTitle>
+                    <Link href={project?.slug?.current}>
+                      <a>{project?.title}</a>
+                    </Link>
+                  </ProjectTitle>
+                )}
+              </Flex>
             ))}
           </Index>
         )}
-      </MaxWidth>
-    </Box>
+      </PaddedComponent>
+    </MaxWidth>
   );
 };
 
