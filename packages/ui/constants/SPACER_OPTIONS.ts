@@ -1,8 +1,8 @@
 export const SPACER_OPTIONS = [
-  { title: 'Small', value: 'quarter' },
-  { title: 'Medium', value: 'third' },
+  { title: 'Quarter', value: 'quarter' },
+  { title: 'Third', value: 'third' },
   { title: 'Half', value: 'half' },
-  { title: 'Two thirds', value: 'twoThirds' },
+  { title: 'Two thirds/REM x-height', value: 'twoThirds' },
   { title: 'Single/x1', value: 'x1' },
   { title: 'Double/x2', value: 'x2' },
   { title: 'Triple/x3', value: 'x3' },
