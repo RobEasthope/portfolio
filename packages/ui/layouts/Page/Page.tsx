@@ -2,7 +2,7 @@ import { Footer } from '@/UI/navigation/Footer/Footer';
 import { Header } from '@/UI/navigation/Header/Header';
 import { FixedFooterLayout } from '@/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
 import { MainContentLayout } from '@/UI/base/layout/MainContentLayout/MainContentLayout';
-import { Spacer } from '@/UI/base/layout/Spacer/Spacer';
+import { Spacer } from '@/UI/sections/Spacer/Spacer';
 import { NextMetadata } from '@/UI/base/app/Metadata/NextMetadata';
 import { RenderSections } from '@/UI/utils/RenderSections/RenderSections';
 import { Page as rawPageProps } from '@/UI/types/sanity-schema';
