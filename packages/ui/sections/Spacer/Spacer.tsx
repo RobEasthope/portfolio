@@ -23,7 +23,7 @@ const StyledSpacer = styled(Box, {
 });
 
 // TYPES
-export type SpacerProps = rawSpacerProps;
+export type SpacerProps = Pick<rawSpacerProps, 'height'>;
 
 // MARKUP
 export const Spacer = ({ height }: SpacerProps) => (
