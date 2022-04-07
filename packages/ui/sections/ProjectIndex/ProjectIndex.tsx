@@ -9,7 +9,6 @@ import { styled } from '@/UI/styles/stitches.config';
 // STYLES
 export const Index = styled(Box, {
   listStyle: 'none',
-  width: '50%',
   marginY: 0,
 });
 
