@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
 import { Flex } from '@/UI/base/layout/Flex/Flex';
 import { Grid } from '@/UI/base/layout/Grid/Grid';
-import { Box } from '@/UI/base/layout/Box/Box';
 import { Text } from '@/UI/base/typography/Text/Text';
 import { ProjectProps } from '@/UI/layouts/Project/Project';
 import { Picture } from '@/UI/base/media/Picture/Picture';
@@ -22,7 +21,7 @@ export const Thumbnail = styled(Picture, {
   borderRadius: '$circle',
   width: '48px',
   height: '48px',
-  marginRight: '$half',
+  marginRight: '$twoThirds',
   flexShrink: 0,
 
   '& img': {
