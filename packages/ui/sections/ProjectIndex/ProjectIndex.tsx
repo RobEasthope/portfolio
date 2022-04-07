@@ -15,13 +15,9 @@ export const Index = styled(Box, {
   paddingX: 0,
 });
 
-export const Card = styled(Flex, {
-  marginY: '$half',
-});
-
 export const Thumbnail = styled(Picture, {
   borderRadius: '50%',
-  width: '40px',
+  width: '48px',
   marginRight: '$half',
 
   '& img': {
@@ -48,13 +44,18 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
       {projects?.length > 0 && (
         <Index as="ul">
           {projects?.map((project) => (
-            <Card as="li" key={project?._id} align="center">
+            <Flex
+              as="li"
+              key={project?._id}
+              align="center"
+              css={{ marginY: '$twoThirds' }}
+            >
               {project?.thumbnailImage && (
                 <Thumbnail
                   asset={project?.thumbnailImage}
                   alt={project?.title || ''}
                   mode="responsive"
-                  maxWidth={200}
+                  maxWidth={48}
                 />
               )}
 
@@ -65,7 +66,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
                   </Link>
                 </ProjectTitle>
               )}
-            </Card>
+            </Flex>
           ))}
         </Index>
       )}
