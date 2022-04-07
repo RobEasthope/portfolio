@@ -7,6 +7,7 @@ import { fullType } from '@/UI/styles/utils/fullType';
 import { size } from '@/UI/styles/utils/size';
 import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
 import { SPACING } from '@/UI/constants/SPACING';
+import { RADII } from './constants/RADII';
 
 export const { css, styled, globalCss, getCssText } = createStitches({
   theme: {
@@ -46,6 +47,9 @@ export const { css, styled, globalCss, getCssText } = createStitches({
     },
     fonts: {
       system: 'system-ui',
+    },
+    radii: {
+      ...RADII,
     },
   },
   utils: {

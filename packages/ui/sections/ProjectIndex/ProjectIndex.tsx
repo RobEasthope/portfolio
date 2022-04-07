@@ -11,22 +11,23 @@ import { styled } from '@/UI/styles/stitches.config';
 import { createGroups } from '@/UI/utils/createGroups';
 
 // STYLES
-export const Index = styled(Flex, {
+export const Index = styled(Grid, {
   listStyle: 'none',
   marginY: 0,
   paddingX: 0,
 });
 
 export const Thumbnail = styled(Picture, {
-  borderRadius: '50%',
+  borderRadius: '$circle',
   width: '48px',
   height: '48px',
   marginRight: '$half',
+  flexShrink: 0,
 
   '& img': {
-    borderRadius: '50%',
-    maxWidth: '100%',
-    maxHeight: '100%',
+    borderRadius: '$circle',
+    width: '100%',
+    height: '100%',
   },
 });
 
@@ -46,16 +47,16 @@ export interface ProjectIndexProps extends rawProjectIndexProps {
 export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   const splitProjects: [ProjectProps[]] = createGroups({
     arr: projects,
-    numGroups: 3,
+    numGroups: 4,
   });
 
   return (
     <Box>
-      <MaxWidth width="page">
+      <MaxWidth width="full">
         {splitProjects?.length > 0 && (
-          <Index as="ul">
+          <Index columns={4}>
             {splitProjects?.map((grouping) => (
-              <Box as="ul" css={{ width: 'calc(100% / 3)' }}>
+              <Box as="ul">
                 {grouping.map((project) => (
                   <Flex
                     as="li"
@@ -70,6 +71,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
                         alt={project?.title || ''}
                         mode="responsive"
                         maxWidth={48}
+                        aspectRatio={1}
                       />
                     )}
 

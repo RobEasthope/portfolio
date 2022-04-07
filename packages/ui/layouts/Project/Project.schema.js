@@ -1,3 +1,6 @@
+import * as dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+
 export default {
   name: 'project',
   title: 'Project',
@@ -77,9 +80,26 @@ export default {
     },
     {
       name: 'date',
-      title: 'Date',
+      title: 'Date (Written form)',
       type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'startDate',
+      title: 'Start date',
+      type: 'date',
+      options: {
+        dateFormat: 'DD-MMMM-YYYY',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'endDate',
+      title: 'End date',
+      type: 'date',
+      options: {
+        dateFormat: 'DD-MMMM-YYYY',
+      },
     },
     {
       name: 'projectUrlTitle',
@@ -112,12 +132,45 @@ export default {
       validation: (Rule) => Rule.required().warning('Required field'),
     },
   ],
-
+  orderings: [
+    {
+      title: 'Start Date, New',
+      name: 'startDateDesc',
+      by: [{ field: 'startDate', direction: 'desc' }],
+    },
+    {
+      title: 'Start Date, Old',
+      name: 'startDateAsc',
+      by: [{ field: 'startDate', direction: 'asc' }],
+    },
+  ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'client.name',
-      media: 'thumbnailImage',
+      clientName: 'client.name',
+      thumbnailImage: 'thumbnailImage',
+      startDate: 'startDate',
+      endDate: 'endDate',
+    },
+    prepare({
+      startDate = null,
+      endDate = null,
+      title,
+      clientName,
+      thumbnailImage,
+    }) {
+      dayjs.extend(advancedFormat);
+
+      const formattedStartDate = dayjs.default(startDate).format('MMM Do YYYY');
+      const formattedEndDate = dayjs.default(endDate).format('MMM Do YYYY');
+
+      return {
+        title,
+        media: thumbnailImage,
+        subtitle: `${formattedStartDate || 'Date missing'} - ${
+          endDate ? formattedEndDate : 'Present'
+        }`,
+      };
     },
   },
 };
