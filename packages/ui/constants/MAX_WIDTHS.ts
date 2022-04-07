@@ -4,6 +4,7 @@ export const MAX_WIDTH = {
   SMALL: '640px',
   MEDIUM: '1000px',
   LARGE: '1200px',
+  XLARGE: '1600px',
   FULL: '100vw',
   TEXT: '36rem',
 };
