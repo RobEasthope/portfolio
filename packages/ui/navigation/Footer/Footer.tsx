@@ -54,12 +54,12 @@ export const Footer = ({
           </Flex>
         </Navigation>
         <Box>
-          {copyrightText && (
+          {
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            <Text typeSize="small">{`© ${romanize(
-              currentYear
-            )} ${copyrightText}`}</Text>
-          )}
+            <Text typeSize="small">{`© ${romanize(currentYear)} ${
+              copyrightText || ''
+            }`}</Text>
+          }
         </Box>
       </Flex>
 
