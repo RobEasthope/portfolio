@@ -77,17 +77,24 @@ export const LandingHero = ({
                   as="h1"
                   typeSize="medium"
                   typeWeight="bold"
-                  css={{ color: 'white' }}
+                  css={{
+                    fontFamily: '$sansSerif',
+                    color: 'white',
+                  }}
                 >
                   {heading}
                 </Text>
               )}
-              <Spacer height="third" />
+              <Spacer height="quarter" />
               {subheading && (
                 <Text
                   as="h2"
                   typeSize="standard"
-                  css={{ color: 'white', textTransform: 'uppercase' }}
+                  css={{
+                    fontFamily: '$sansSerif',
+                    color: 'white',
+                    letterSpacing: '0.025em',
+                  }}
                 >
                   {subheading}
                 </Text>
