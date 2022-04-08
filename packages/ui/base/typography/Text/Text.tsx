@@ -117,7 +117,7 @@ export const Text = styled('div', {
         lineHeight: SPACING.VR_BASE,
       },
     },
-    typeface: {
+    typeFace: {
       sansSerif: {
         fontFamily: '$sansSerif',
       },
@@ -136,7 +136,7 @@ export const Text = styled('div', {
     },
   },
   defaultVariants: {
-    typeface: 'sansSerif',
+    typeFace: 'serif',
     typeSize: 'standard',
     typeWeight: 'regular',
   },
