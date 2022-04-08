@@ -17,6 +17,7 @@ export const { css, styled, globalCss, getCssText } = createStitches({
 
       text: 'rgb(36, 36, 36)',
       highlight: 'rgb(255, 153, 51)',
+      contentBkg: 'rgb(248, 247, 243)',
 
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',
