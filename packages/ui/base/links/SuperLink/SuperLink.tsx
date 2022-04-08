@@ -9,7 +9,7 @@ import {
   InternalLinkWithTitleSchemaProps,
 } from '@/UI/base/links/InternalLink/InternalLink';
 
-type SuperLinkProp = {
+export type SuperLinkProps = {
   link:
     | ExternalLinkSchemaProps
     | InternalLinkSchemaProps
@@ -25,7 +25,7 @@ export const SuperLink = ({
   className,
   children,
   onClick,
-}: SuperLinkProp) => {
+}: SuperLinkProps) => {
   switch (link._type) {
     case 'InternalLinkWithTitle':
       return (
