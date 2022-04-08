@@ -10,6 +10,7 @@ import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
 import { Spacer } from '@/UI/sections/Spacer/Spacer';
+import { Text } from '@/UI/base/typography/Text/Text';
 
 // Styles
 export const HeaderLayout = styled('div', {
@@ -28,6 +29,13 @@ export const StyledHomeLink = styled('span', {
 
 export const Logo = styled(Picture, {
   width: '32px',
+});
+
+export const NavLink = styled(Text, {
+  '& a': {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
 });
 
 export const LargeNavigation = styled(Box, {
@@ -83,7 +91,9 @@ export const Header = ({
           navigationLeft?.length > 0 &&
           navigationLeft.map((nav) => (
             <li key={nav?._key}>
-              <SuperLink link={nav}>{nav.title}</SuperLink>
+              <NavLink>
+                <SuperLink link={nav}>{nav.title}</SuperLink>
+              </NavLink>
             </li>
           ))}
       </LeftNavigation>
@@ -110,7 +120,9 @@ export const Header = ({
           navigationRight?.length > 0 &&
           navigationRight.map((nav) => (
             <li key={nav?._key}>
-              <SuperLink link={nav}>{nav.title}</SuperLink>
+              <NavLink>
+                <SuperLink link={nav}>{nav.title}</SuperLink>
+              </NavLink>
             </li>
           ))}
       </RightNavigation>

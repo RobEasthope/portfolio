@@ -22,6 +22,13 @@ export const Navigation = styled(Flex, {
   },
 });
 
+export const NavLink = styled(Text, {
+  '& a': {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+});
+
 // TYPES
 export interface FooterProps extends rawFooterProps {
   navigation?: [
@@ -48,9 +55,9 @@ export const Footer = ({
               navigation?.length > 0 &&
               navigation.map((nav) => (
                 <li key={nav?._key}>
-                  <Text>
+                  <NavLink>
                     <SuperLink link={nav}>{nav.title}</SuperLink>
-                  </Text>
+                  </NavLink>
                 </li>
               ))}
           </Flex>
