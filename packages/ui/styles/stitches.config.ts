@@ -42,6 +42,7 @@ export const { css, styled, globalCss, getCssText } = createStitches({
     fonts: {
       system: 'system-ui',
       serif: 'linotype-sabon, sans-serif',
+      sansSerif: 'adelle-sans, sans-serif',
     },
     radii: {
       ...RADII,
