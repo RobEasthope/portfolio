@@ -129,13 +129,9 @@ export const Text = styled('div', {
       regular: {
         fontWeight: 400,
       },
-      medium: {
-        fontWeight: 500,
-        letterSpacing: '0.0.25em',
-      },
-      xBold: {
-        fontWeight: 800,
-        letterSpacing: '0.0.25em',
+      bold: {
+        fontWeight: 'bold',
+        letterSpacing: '0.025em',
       },
     },
   },
