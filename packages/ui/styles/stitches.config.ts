@@ -35,16 +35,7 @@ export const { css, styled, globalCss, getCssText } = createStitches({
     sizes: {
       ...SPACING,
     },
-    fontSizes: {
-      jumbotron: '4.209rem',
-      xxLarge: '3.157rem',
-      xLarge: '2.369rem',
-      large: '1.777rem',
-      medium: '1.333rem',
-      base: '1rem',
-      small: '0.9rem',
-      tiny: '0.75rem',
-    },
+    fontSizes: {},
     fonts: {
       system: 'system-ui',
       serif: 'linotype-sabon, sans-serif',
