@@ -35,14 +35,14 @@ const ProjectTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
 
   if (style === 'h2') {
     return (
-      <Text as="h2" typeSize="xLarge" typeface="serif" typeWeight="medium">
+      <Text as="h2" typeSize="xLarge" typeface="serif" typeWeight="bold">
         {children}
       </Text>
     );
   }
   if (style === 'h3') {
     return (
-      <Text as="h3" typeSize="large" typeface="serif" typeWeight="medium">
+      <Text as="h3" typeSize="large" typeface="serif" typeWeight="bold">
         {children}
       </Text>
     );
@@ -50,7 +50,7 @@ const ProjectTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
 
   if (style === 'h4') {
     return (
-      <Text as="h4" typeSize="medium" typeface="serif" typeWeight="medium">
+      <Text as="h4" typeSize="medium" typeface="serif" typeWeight="bold">
         {children}
       </Text>
     );
