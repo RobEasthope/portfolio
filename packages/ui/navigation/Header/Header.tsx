@@ -83,11 +83,9 @@ export const Header = ({
         {navigationLeft &&
           navigationLeft?.length > 0 &&
           navigationLeft.map((nav) => (
-            <li key={nav?._key}>
-              <NavLink>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </NavLink>
-            </li>
+            <NavLink as="li" key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </NavLink>
           ))}
       </LeftNavigation>
 
@@ -112,11 +110,9 @@ export const Header = ({
         {navigationRight &&
           navigationRight?.length > 0 &&
           navigationRight.map((nav) => (
-            <li key={nav?._key}>
-              <NavLink>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </NavLink>
-            </li>
+            <NavLink as="li" key={nav?._key}>
+              <SuperLink link={nav}>{nav.title}</SuperLink>
+            </NavLink>
           ))}
       </RightNavigation>
 

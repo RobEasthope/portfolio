@@ -48,11 +48,9 @@ export const Footer = ({
             {navigation &&
               navigation?.length > 0 &&
               navigation.map((nav) => (
-                <li key={nav?._key}>
-                  <NavLink>
-                    <SuperLink link={nav}>{nav.title}</SuperLink>
-                  </NavLink>
-                </li>
+                <NavLink as="li" key={nav?._key}>
+                  <SuperLink link={nav}>{nav.title}</SuperLink>
+                </NavLink>
               ))}
           </Flex>
         </Navigation>
