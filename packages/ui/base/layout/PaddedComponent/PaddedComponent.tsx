@@ -7,7 +7,7 @@ export const PaddedComponent = styled(Box, {
   variants: {
     content: {
       text: { paddingLeft: '$half', paddingRight: '$half' },
-      nav: { paddingLeft: '$x1', paddingRight: '$x1' },
+      nav: { paddingX: '$x2' },
       media: {
         position: 'relative',
         left: '50%',
