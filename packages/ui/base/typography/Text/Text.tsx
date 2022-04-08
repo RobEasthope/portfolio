@@ -127,10 +127,10 @@ export const Text = styled('div', {
     },
     typeWeight: {
       regular: {
-        fontWeight: 400,
+        fontWeight: '400',
       },
       bold: {
-        fontWeight: 'bold',
+        fontWeight: '700',
         letterSpacing: '0.025em',
       },
     },
