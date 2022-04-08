@@ -14,6 +14,7 @@ const heroHeight = `calc(100vh - ${SPACING.x6})`;
 export const Wrapper = styled('div', {
   position: 'relative',
   maxHeight: '100vh',
+  marginX: '$x2',
 });
 
 export const ForegroundContent = styled('div', {
@@ -32,12 +33,12 @@ export const ForegroundContentLayout = styled('div', {
 });
 
 export const JumbotronBkgImage = styled(Picture, {
-  width: '100vw',
+  width: '100%',
   height: heroHeight,
 });
 
 export const JumbotronBkgVideo = styled(SanityMuxPlayer, {
-  width: '100vw !important',
+  width: '100% !important',
   height: heroHeight,
 
   '& video': {
