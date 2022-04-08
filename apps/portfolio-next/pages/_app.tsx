@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { ReactNode } from 'react';
 import { globalStyles } from '@/UI/styles/globalStyles';
@@ -13,6 +14,9 @@ import 'sanitize.css/reduce-motion.css';
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
   return (
     <>
+      <Head>
+        <link rel="stylesheet" href="https://use.typekit.net/jpv8zzo.css" />
+      </Head>
       {globalStyles()}
       <Component {...pageProps} />
     </>
