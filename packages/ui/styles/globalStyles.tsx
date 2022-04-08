@@ -3,10 +3,6 @@ import { TYPE_SCALE } from '@/UI/styles/constants/TYPE_SCALE';
 import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
 
 export const globalStyles = globalCss({
-  '*': {
-    fontFamily: '$serif',
-  },
-
   html: {
     // Minimum font fontSize
     fontSize: `${TYPE_SCALE.STANDARD.MIN}px`,
