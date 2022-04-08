@@ -21,7 +21,7 @@ import { Spacer } from '@/UI/sections/Spacer/Spacer';
 
 export const ProjectLogo = styled(Picture, {
   borderRadius: '$circle',
-  width: '100px',
+  xySize: '100px',
 
   '& img': {
     borderRadius: '$circle',
