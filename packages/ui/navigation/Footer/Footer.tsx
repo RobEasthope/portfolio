@@ -48,7 +48,9 @@ export const Footer = ({
               navigation?.length > 0 &&
               navigation.map((nav) => (
                 <li key={nav?._key}>
-                  <SuperLink link={nav}>{nav.title}</SuperLink>
+                  <Text>
+                    <SuperLink link={nav}>{nav.title}</SuperLink>
+                  </Text>
                 </li>
               ))}
           </Flex>
@@ -56,9 +58,7 @@ export const Footer = ({
         <Box>
           {
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            <Text typeSize="small">{`© ${romanize(currentYear)} ${
-              copyrightText || ''
-            }`}</Text>
+            <Text>{`© ${romanize(currentYear)} ${copyrightText || ''}`}</Text>
           }
         </Box>
       </Flex>
