@@ -44,7 +44,7 @@ export const Footer = ({
 
       <Flex align="center" justify="between" css={{ height: '$x2' }}>
         <Navigation as="nav">
-          <Flex as="ul" gap="half">
+          <Flex as="ul" gap="x1">
             {navigation &&
               navigation?.length > 0 &&
               navigation.map((nav) => (
