@@ -12,6 +12,7 @@ import {
   BlockRendererProps,
   SerializerMarksProps,
 } from '@/UI/base/formatted-text/formattedTextProps';
+import { Prose } from '@/UI/base/typography/Prose/Prose';
 
 const Gallery = dynamic(() => import('../../../sections/Gallery/Gallery'));
 const Image = dynamic(() => import('../../../sections/Image/Image'));
@@ -146,5 +147,7 @@ const projectTextSerializer = {
 };
 
 export const ProjectText = ({ blocks }: ProjectTextProps) => (
-  <BlockContent blocks={blocks} serializers={projectTextSerializer} />
+  <Prose>
+    <BlockContent blocks={blocks} serializers={projectTextSerializer} />
+  </Prose>
 );
