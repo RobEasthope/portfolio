@@ -57,14 +57,18 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
           <Index columns={4} gapX="x2" gapY="x1">
             {projects.map((project) => (
               <Flex as="li" key={project?._id} align="center" direction="row">
-                {project?.thumbnailImage && (
-                  <Thumbnail
-                    asset={project?.thumbnailImage}
-                    alt={project?.title || ''}
-                    mode="responsive"
-                    maxWidth={48}
-                    aspectRatio={1}
-                  />
+                {project?.thumbnailImage && project?.slug && (
+                  <Link href={project?.slug?.current}>
+                    <a>
+                      <Thumbnail
+                        asset={project?.thumbnailImage}
+                        alt={project?.title || ''}
+                        mode="responsive"
+                        maxWidth={48}
+                        aspectRatio={1}
+                      />
+                    </a>
+                  </Link>
                 )}
 
                 {project?.slug && (
