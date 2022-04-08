@@ -19,8 +19,6 @@ export default {
       name: 'copyrightText',
       title: 'Copyright text',
       type: 'string',
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
