@@ -4,6 +4,8 @@ import { TYPE_SCALE } from '@/UI/styles/constants/TYPE_SCALE';
 import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
 
 export const Text = styled('div', {
+  color: '$text',
+
   marginY: 0,
 
   variants: {
