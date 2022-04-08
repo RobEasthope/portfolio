@@ -7,6 +7,7 @@ import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/E
 import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { Text } from '@/UI/base/typography/Text/Text';
+import { NavLink } from '@/UI/base/typography/NavLink/NavLink';
 import { Spacer } from '@/UI/sections/Spacer/Spacer';
 import { romanize } from '@/UI/utils/romanize';
 
@@ -19,13 +20,6 @@ export const Navigation = styled(Flex, {
 
   '& li': {
     display: 'inline-block',
-  },
-});
-
-export const NavLink = styled(Text, {
-  '& a': {
-    color: 'inherit',
-    textDecoration: 'none',
   },
 });
 

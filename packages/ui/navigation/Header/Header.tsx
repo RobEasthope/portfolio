@@ -10,7 +10,7 @@ import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
 import { Spacer } from '@/UI/sections/Spacer/Spacer';
-import { Text } from '@/UI/base/typography/Text/Text';
+import { NavLink } from '@/UI/base/typography/NavLink/NavLink';
 
 // Styles
 export const HeaderLayout = styled('div', {
@@ -29,13 +29,6 @@ export const StyledHomeLink = styled('span', {
 
 export const Logo = styled(Picture, {
   width: '32px',
-});
-
-export const NavLink = styled(Text, {
-  '& a': {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
 });
 
 export const LargeNavigation = styled(Box, {
