@@ -6,7 +6,7 @@ import SanityMuxPlayer from 'sanity-mux-player';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { styled } from '@/UI/styles/stitches.config';
 import { SPACING } from '@/UI/constants/SPACING';
-import Spacer from '@/UI/sections/Spacer/Spacer';
+import { Spacer } from '@/UI/sections/Spacer/Spacer';
 
 // STYLES
 
