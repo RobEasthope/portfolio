@@ -45,7 +45,7 @@ export const Page = ({
           />
         )}
 
-        <MainContentLayout as="main">
+        <MainContentLayout as="main" css={{ backgroundColor: '$contentBkg' }}>
           {sections && (
             <RenderSections sections={sections} projects={projects} />
           )}

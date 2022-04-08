@@ -15,7 +15,8 @@ const heroHeight = `calc(100vh - ${SPACING.x6})`;
 export const Wrapper = styled('div', {
   position: 'relative',
   maxHeight: '100vh',
-  marginX: '$x2',
+  paddingX: '$x2',
+  backgroundColor: 'white',
 });
 
 export const ForegroundContent = styled('div', {
@@ -30,7 +31,8 @@ export const ForegroundContent = styled('div', {
 export const ForegroundContentLayout = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  width: 'calc(((100vw - $x4) / 3) * 2)',
+  justifyItems: 'center',
+  textAlign: 'center',
 });
 
 export const JumbotronBkgImage = styled(Picture, {
@@ -75,25 +77,24 @@ export const LandingHero = ({
               {heading && (
                 <Text
                   as="h1"
-                  typeSize="medium"
+                  typeSize="jumbotron"
                   typeWeight="bold"
                   css={{
-                    fontFamily: '$sansSerif',
                     color: 'white',
                   }}
                 >
                   {heading}
                 </Text>
               )}
-              <Spacer height="quarter" />
+              <Spacer height="half" />
               {subheading && (
                 <Text
                   as="h2"
-                  typeSize="standard"
+                  typeSize="medium"
                   css={{
-                    fontFamily: '$sansSerif',
                     color: 'white',
                     letterSpacing: '0.025em',
+                    fontStyle: 'italic',
                   }}
                 >
                   {subheading}

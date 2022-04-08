@@ -67,6 +67,10 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       paddingTop: value,
       paddingBottom: value,
     }),
+    xySize: (value: string | number) => ({
+      width: value,
+      height: value,
+    }),
     type: ({ fontSize }: TypeProps) =>
       type({
         fontSize,

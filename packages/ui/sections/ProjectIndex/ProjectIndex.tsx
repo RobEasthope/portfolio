@@ -19,8 +19,7 @@ export const Index = styled(Grid, {
 
 export const Thumbnail = styled(Picture, {
   borderRadius: '$circle',
-  width: '48px',
-  height: '48px',
+  xySize: '48px',
   marginRight: '$twoThirds',
   flexShrink: 0,
 
