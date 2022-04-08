@@ -9,6 +9,7 @@ import {
   BlockRendererProps,
   SerializerMarksProps,
 } from '@/UI/base/formatted-text/formattedTextProps';
+import { Prose } from '@/UI/base/typography/Prose/Prose';
 
 // TYPES
 export interface BasicTextProps {
@@ -44,5 +45,7 @@ const BasicTextSerializer = {
 
 // MARKUP
 export const BasicText = ({ blocks }: BasicTextProps) => (
-  <BlockContent blocks={blocks} serializers={BasicTextSerializer} />
+  <Prose>
+    <BlockContent blocks={blocks} serializers={BasicTextSerializer} />
+  </Prose>
 );

@@ -6,6 +6,7 @@ import SanityMuxPlayer from 'sanity-mux-player';
 import { Picture } from '@/UI/base/media/Picture/Picture';
 import { styled } from '@/UI/styles/stitches.config';
 import { SPACING } from '@/UI/constants/SPACING';
+import { Spacer } from '@/UI/sections/Spacer/Spacer';
 
 // STYLES
 
@@ -29,7 +30,7 @@ export const ForegroundContent = styled('div', {
 export const ForegroundContentLayout = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  // alignItems: 'center',
+  width: 'calc(((100vw - $x4) / 3) * 2)',
 });
 
 export const JumbotronBkgImage = styled(Picture, {
@@ -71,8 +72,33 @@ export const LandingHero = ({
         <PaddedComponent as="section">
           <MaxWidth width="page">
             <ForegroundContentLayout>
-              {heading && <Text as="h1">{heading}</Text>}
-              {subheading && <Text as="h1">{subheading}</Text>}
+              {heading && (
+                <Text
+                  as="h1"
+                  typeSize="medium"
+                  typeWeight="bold"
+                  css={{
+                    fontFamily: '$sansSerif',
+                    color: 'white',
+                  }}
+                >
+                  {heading}
+                </Text>
+              )}
+              <Spacer height="quarter" />
+              {subheading && (
+                <Text
+                  as="h2"
+                  typeSize="standard"
+                  css={{
+                    fontFamily: '$sansSerif',
+                    color: 'white',
+                    letterSpacing: '0.025em',
+                  }}
+                >
+                  {subheading}
+                </Text>
+              )}
             </ForegroundContentLayout>
           </MaxWidth>
         </PaddedComponent>

@@ -10,6 +10,7 @@ import { METADATA } from '@/UI/constants/METADATA';
 import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '@/UI/base/layout/Box/Box';
 import { Spacer } from '@/UI/sections/Spacer/Spacer';
+import { NavLink } from '@/UI/base/typography/NavLink/NavLink';
 
 // Styles
 export const HeaderLayout = styled('div', {
@@ -82,9 +83,9 @@ export const Header = ({
         {navigationLeft &&
           navigationLeft?.length > 0 &&
           navigationLeft.map((nav) => (
-            <li key={nav?._key}>
+            <NavLink as="li" key={nav?._key}>
               <SuperLink link={nav}>{nav.title}</SuperLink>
-            </li>
+            </NavLink>
           ))}
       </LeftNavigation>
 
@@ -109,9 +110,9 @@ export const Header = ({
         {navigationRight &&
           navigationRight?.length > 0 &&
           navigationRight.map((nav) => (
-            <li key={nav?._key}>
+            <NavLink as="li" key={nav?._key}>
               <SuperLink link={nav}>{nav.title}</SuperLink>
-            </li>
+            </NavLink>
           ))}
       </RightNavigation>
 
