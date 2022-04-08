@@ -9,6 +9,8 @@ export const Prose = styled('div', {
   flexWrap: 'wrap',
   marginX: 'auto',
 
+  fontFamily: '$serif',
+
   // Minimum font fontSize
   fontSize: `${TYPE_SCALE.STANDARD.MIN}px`,
 
