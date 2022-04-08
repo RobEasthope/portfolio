@@ -15,7 +15,8 @@ const heroHeight = `calc(100vh - ${SPACING.x6})`;
 export const Wrapper = styled('div', {
   position: 'relative',
   maxHeight: '100vh',
-  marginX: '$x2',
+  paddingX: '$x2',
+  backgroundColor: 'white',
 });
 
 export const ForegroundContent = styled('div', {
