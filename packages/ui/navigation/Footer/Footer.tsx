@@ -8,6 +8,7 @@ import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/I
 import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
 import { Text } from '@/UI/base/typography/Text/Text';
 import { Spacer } from '@/UI/sections/Spacer/Spacer';
+import { romanize } from '@/UI/utils/romanize';
 
 // STYLES
 export const Navigation = styled(Flex, {
@@ -55,7 +56,7 @@ export const Footer = ({
         <Box>
           {copyrightText && (
             <Text typeSize="small">
-              {`© 2013-${currentYear} ${copyrightText}`}
+              {`© 2013-${romanize(currentYear)} ${copyrightText}`}
             </Text>
           )}
         </Box>
