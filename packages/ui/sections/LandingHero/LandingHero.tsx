@@ -77,7 +77,7 @@ export const LandingHero = ({
                 <Text
                   as="h1"
                   typeSize="jumbotron"
-                  typeWeight="bold"
+                  // typeWeight="bold"
                   css={{
                     color: 'white',
                   }}
