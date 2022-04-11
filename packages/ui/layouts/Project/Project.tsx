@@ -78,7 +78,7 @@ export const Project = ({
           />
         )}
 
-        <MainContentLayout as="main" css={{ backgroundColor: '$contentBkg' }}>
+        <MainContentLayout as="main">
           <Spacer height="x2" />
           <MaxWidth width="small">
             <TextAlign align="centre">
