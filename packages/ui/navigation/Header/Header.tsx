@@ -18,6 +18,8 @@ export const HeaderLayout = styled('div', {
   flex: '1 0 auto',
   alignItems: 'center',
   justifyContent: 'center',
+  borderBottom: '1px solid rgba(46,46,46,0.1)',
+  height: '$x3',
 });
 
 export const StyledHomeLink = styled('span', {
@@ -75,10 +77,12 @@ export const Header = ({
   navigationLeft,
   navigationRight,
 }: Pick<HeaderProps, 'logo' | 'navigationLeft' | 'navigationRight'>) => (
-  <PaddedComponent as="header" content="nav">
-    <Spacer height="half" />
-
-    <HeaderLayout as="nav" css={{ height: '$x2' }}>
+  <PaddedComponent
+    as="header"
+    content="nav"
+    css={{ position: 'fixed', backgroundColor: 'white', zIndex: 1 }}
+  >
+    <HeaderLayout as="nav">
       <LeftNavigation as="ul">
         {navigationLeft &&
           navigationLeft?.length > 0 &&
@@ -121,7 +125,5 @@ export const Header = ({
         navigationRight={navigationRight}
       />
     </HeaderLayout>
-
-    <Spacer height="half" />
   </PaddedComponent>
 );
