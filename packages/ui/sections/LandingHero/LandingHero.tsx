@@ -15,7 +15,6 @@ const heroHeight = `calc(100vh - ${SPACING.x6})`;
 export const Wrapper = styled('div', {
   position: 'relative',
   maxHeight: '100vh',
-  paddingX: '$x2',
   backgroundColor: 'white',
 });
 
@@ -78,7 +77,7 @@ export const LandingHero = ({
                 <Text
                   as="h1"
                   typeSize="jumbotron"
-                  typeWeight="bold"
+                  // typeWeight="bold"
                   css={{
                     color: 'white',
                   }}

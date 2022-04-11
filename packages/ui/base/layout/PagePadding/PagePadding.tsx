@@ -1,7 +1,7 @@
 import { styled } from '@/UI/styles/stitches.config';
+import { Box } from '@/UI/base/layout/Box/Box';
 
-export const MainContentLayout = styled('div', {
-  flex: 1,
+export const PagePadding = styled(Box, {
   marginX: '$x2',
   marginTop: '$x3',
 });
