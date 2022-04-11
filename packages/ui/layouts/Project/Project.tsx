@@ -12,6 +12,7 @@ import { AppGlobalsProps } from '@/UI/base/settings/Globals';
 import { Text } from '@/UI/base/typography/Text/Text';
 import { ProjectText } from '@/UI/base/formatted-text/ProjectText/ProjectText';
 import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
+import { Box } from '@/UI/base/layout/Box/Box';
 import { Flex } from '@/UI/base/layout/Flex/Flex';
 import { TextAlign } from '@/UI/base/layout/TextAlign/TextAlign';
 import { Picture } from '@/UI/base/media/Picture/Picture';
@@ -103,9 +104,23 @@ export const Project = ({
               {description && <Text>{description}</Text>}
               <Spacer height="x1" />
 
-              <Flex justify="center" gap="half">
-                {clientOrg && <Text>{clientOrg?.name}</Text>}
-                {agencyOrg && <Text>{agencyOrg?.name}</Text>}
+              <Flex justify="center" gap="x1">
+                {clientOrg && (
+                  <Text>
+                    <Box as="span" css={{ fontStyle: 'italic' }}>
+                      Client:{' '}
+                    </Box>
+                    {clientOrg?.name}
+                  </Text>
+                )}
+                {agencyOrg && (
+                  <Text>
+                    <Box as="span" css={{ fontStyle: 'italic' }}>
+                      Agency:{' '}
+                    </Box>
+                    {agencyOrg?.name}
+                  </Text>
+                )}
               </Flex>
 
               <Spacer height="x2" />
