@@ -37,7 +37,7 @@ export const LargeNavigation = styled(Box, {
   display: 'none',
   visibility: 'hidden',
   listStyle: 'none',
-  width: '50%',
+  width: '16em',
   marginY: 0,
 
   '@media (min-width: 800px)': {
