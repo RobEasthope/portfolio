@@ -1,10 +1,10 @@
-import { styled } from '@/UI/styles/stitches.config';
-import { ExampleFormattedText } from '@/UI/base/formatted-text/ExampleFormattedText/ExampleFormattedText';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
-import { ExampleSection as rawExampleSectionProps } from '@/UI/types/sanity-schema';
-import { Picture } from '@/UI/base/media/Picture/Picture';
-import { TYPE_SCALE } from '@/UI/styles/constants/TYPE_SCALE';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
+import { styled } from '~/UI/styles/stitches.config';
+import { ExampleFormattedText } from '~/UI/base/formatted-text/ExampleFormattedText/ExampleFormattedText';
+import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
+import { ExampleSection as rawExampleSectionProps } from '~/UI/types/sanity-schema';
+import { Picture } from '~/UI/base/media/Picture/Picture';
+import { TYPE_SCALE } from '~/UI/styles/constants/TYPE_SCALE';
+import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
 
 // Styles
 export const Text = styled('p', {

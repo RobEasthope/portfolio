@@ -2,12 +2,12 @@ import {
   ExternalLink,
   ExternalLinkSchemaProps,
   ExternalLinkWithTitleSchemaProps,
-} from '@/UI/base/links/ExternalLink/ExternalLink';
+} from '~/UI/base/links/ExternalLink/ExternalLink';
 import {
   InternalLink,
   InternalLinkSchemaProps,
   InternalLinkWithTitleSchemaProps,
-} from '@/UI/base/links/InternalLink/InternalLink';
+} from '~/UI/base/links/InternalLink/InternalLink';
 
 export type SuperLinkProps = {
   link:

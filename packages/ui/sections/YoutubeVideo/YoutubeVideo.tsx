@@ -1,11 +1,11 @@
 import YouTube from 'react-youtube';
-import { YoutubeVideo as rawYoutubeVideoProps } from '@/UI/types/sanity-schema';
+import { YoutubeVideo as rawYoutubeVideoProps } from '~/UI/types/sanity-schema';
 
-import { getYoutubeIdfromUrl } from '@/UI/utils/getYoutubeIdfromUrl';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
-import { IFrameAspectRatio } from '@/UI/base/layout/IFrameAspectRatio/IFrameAspectRatio';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
-import { Caption } from '@/UI/base/typography/Caption/Caption';
+import { getYoutubeIdfromUrl } from '~/UI/utils/getYoutubeIdfromUrl';
+import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
+import { IFrameAspectRatio } from '~/UI/base/layout/IFrameAspectRatio/IFrameAspectRatio';
+import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
+import { Caption } from '~/UI/base/typography/Caption/Caption';
 
 // TYPES
 export type YoutubeVideoProps = rawYoutubeVideoProps;

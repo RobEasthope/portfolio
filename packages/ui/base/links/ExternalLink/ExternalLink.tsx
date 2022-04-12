@@ -1,4 +1,4 @@
-import { Page } from '@/UI/types/sanity-schema';
+import { Page } from '~/UI/types/sanity-schema';
 
 // Schema props
 export type ExternalLinkWithTitleSchemaProps = {

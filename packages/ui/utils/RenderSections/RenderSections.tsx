@@ -1,35 +1,35 @@
 import dynamic from 'next/dynamic';
 // Type imports
-import { GalleryProps } from '@/UI/sections/Gallery/Gallery';
-import { ImageProps } from '@/UI/sections/Image/Image';
-import { LandingHeroProps } from '@/UI/sections/LandingHero/LandingHero';
-import { MuxVideoProps } from '@/UI/sections/MuxVideo/MuxVideo';
-import { ProjectIndexProps } from '@/UI/sections/ProjectIndex/ProjectIndex';
-import { SpacerProps } from '@/UI/sections/Spacer/Spacer';
-import { TextProps } from '@/UI/sections/Text/Text';
-import { VimeoVideoProps } from '@/UI/sections/VimeoVideo/VimeoVideo';
-import { YoutubeVideoProps } from '@/UI/sections/YoutubeVideo/YoutubeVideo';
-import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
-import { ProjectProps } from '@/UI/layouts/Project/Project';
+import { GalleryProps } from '~/UI/sections/Gallery/Gallery';
+import { ImageProps } from '~/UI/sections/Image/Image';
+import { LandingHeroProps } from '~/UI/sections/LandingHero/LandingHero';
+import { MuxVideoProps } from '~/UI/sections/MuxVideo/MuxVideo';
+import { ProjectIndexProps } from '~/UI/sections/ProjectIndex/ProjectIndex';
+import { SpacerProps } from '~/UI/sections/Spacer/Spacer';
+import { TextProps } from '~/UI/sections/Text/Text';
+import { VimeoVideoProps } from '~/UI/sections/VimeoVideo/VimeoVideo';
+import { YoutubeVideoProps } from '~/UI/sections/YoutubeVideo/YoutubeVideo';
+import { ExampleSectionProps } from '~/UI/sections/ExampleSection/ExampleSection';
+import { ProjectProps } from '~/UI/layouts/Project/Project';
 
 // Dynamic component imports
 const ExampleSection = dynamic(
   () => import('../../sections/ExampleSection/ExampleSection')
 );
-const Gallery = dynamic(() => import('@/UI/sections/Gallery/Gallery'));
-const Image = dynamic(() => import('@/UI/sections/Image/Image'));
+const Gallery = dynamic(() => import('~/UI/sections/Gallery/Gallery'));
+const Image = dynamic(() => import('~/UI/sections/Image/Image'));
 const LandingHero = dynamic(
-  () => import('@/UI/sections/LandingHero/LandingHero')
+  () => import('~/UI/sections/LandingHero/LandingHero')
 );
-const MuxVideo = dynamic(() => import('@/UI/sections/MuxVideo/MuxVideo'));
+const MuxVideo = dynamic(() => import('~/UI/sections/MuxVideo/MuxVideo'));
 const ProjectIndex = dynamic(
-  () => import('@/UI/sections/ProjectIndex/ProjectIndex')
+  () => import('~/UI/sections/ProjectIndex/ProjectIndex')
 );
-const Spacer = dynamic(() => import('@/UI/sections/Spacer/Spacer'));
-const Text = dynamic(() => import('@/UI/sections/Text/Text'));
-const VimeoVideo = dynamic(() => import('@/UI/sections/VimeoVideo/VimeoVideo'));
+const Spacer = dynamic(() => import('~/UI/sections/Spacer/Spacer'));
+const Text = dynamic(() => import('~/UI/sections/Text/Text'));
+const VimeoVideo = dynamic(() => import('~/UI/sections/VimeoVideo/VimeoVideo'));
 const YoutubeVideo = dynamic(
-  () => import('@/UI/sections/YoutubeVideo/YoutubeVideo')
+  () => import('~/UI/sections/YoutubeVideo/YoutubeVideo')
 );
 
 export type RenderSectionsProps = {

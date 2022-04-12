@@ -1,7 +1,7 @@
-import { Spacer as rawSpacerProps } from '@/UI/types/sanity-schema';
-import { SPACING } from '@/UI/constants/SPACING';
-import { styled } from '@/UI/styles/stitches.config';
-import { Box } from '@/UI/base/layout/Box/Box';
+import { Spacer as rawSpacerProps } from '~/UI/types/sanity-schema';
+import { SPACING } from '~/UI/constants/SPACING';
+import { styled } from '~/UI/styles/stitches.config';
+import { Box } from '~/UI/base/layout/Box/Box';
 
 // STYLES
 const StyledSpacer = styled(Box, {

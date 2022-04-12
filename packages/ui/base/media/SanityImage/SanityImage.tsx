@@ -4,11 +4,11 @@ import {
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from '@/UI/types/sanity-schema';
-import { sanityConfig } from '@/UTILS/sanity-api/sanity-config';
-import { BlurrableImage } from '@/UI/base/media/SanityImage/components/BlurrableImage/BlurrableImage';
-import { HighResImage } from '@/UI/base/media/SanityImage/components/HighResImage/HighResImage';
-import { VectorImage } from '@/UI/base/media/SanityImage/components/VectorImage/VectorImage';
+} from '~/UI/types/sanity-schema';
+import { sanityConfig } from '~/UTILS/sanity-api/sanity-config';
+import { BlurrableImage } from '~/UI/base/media/SanityImage/components/BlurrableImage/BlurrableImage';
+import { HighResImage } from '~/UI/base/media/SanityImage/components/HighResImage/HighResImage';
+import { VectorImage } from '~/UI/base/media/SanityImage/components/VectorImage/VectorImage';
 import { Wrapper } from './SanityImage.styles';
 
 // TYPES

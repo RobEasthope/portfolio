@@ -2,13 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/NEXT/*": [
+      "~/NEXT/*": [
         "../../apps/portfolio-next/*"
       ],
-      "@/UI/*": [
+      "~/UI/*": [
         "../../packages/ui/*"
       ],
-      "@/UTILS/*": [
+      "~/UTILS/*": [
         "../../packages/utils/*"
       ]
     },
