@@ -1,12 +1,12 @@
 import { RiMenuLine } from 'react-icons/ri';
 import * as DialogPrimative from '@radix-ui/react-dialog';
-import { styled } from '@/UI/styles/stitches.config';
-import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
+import { styled } from '~/UI/styles/stitches.config';
+import { Header as rawHeaderProps } from '~/UI/types/sanity-schema';
 
-import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
-import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
-import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
-import { HeaderProps } from '@/UI/navigation/Header/Header';
+import { SuperLink } from '~/UI/base/links/SuperLink/SuperLink';
+import { InternalLinkWithTitleSchemaProps } from '~/UI/base/links/InternalLink/InternalLink';
+import { ExternalLinkWithTitleSchemaProps } from '~/UI/base/links/ExternalLink/ExternalLink';
+import { HeaderProps } from '~/UI/navigation/Header/Header';
 
 // Styles
 export const DialogContent = styled(DialogPrimative.Content, {

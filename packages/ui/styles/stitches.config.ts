@@ -1,13 +1,13 @@
 import { createStitches } from '@stitches/react';
 import { mixins } from 'stitches-mixins';
 
-import { SizeProps, TypeProps, FullTypeProps } from '@/UI/types/utils';
-import { type } from '@/UI/styles/utils/type';
-import { fullType } from '@/UI/styles/utils/fullType';
-import { size } from '@/UI/styles/utils/size';
-import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
-import { SPACING } from '@/UI/constants/SPACING';
-import { RADII } from '@/UI/styles/constants/RADII';
+import { SizeProps, TypeProps, FullTypeProps } from '~/UI/types/utils';
+import { type } from '~/UI/styles/utils/type';
+import { fullType } from '~/UI/styles/utils/fullType';
+import { size } from '~/UI/styles/utils/size';
+import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
+import { SPACING } from '~/UI/constants/SPACING';
+import { RADII } from '~/UI/styles/constants/RADII';
 
 export const { css, styled, globalCss, getCssText } = createStitches({
   theme: {

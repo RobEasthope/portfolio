@@ -1,21 +1,21 @@
 import { useRouter } from 'next/router';
 
-import { Project, ProjectProps } from '@/UI/layouts/Project/Project';
-import { Loading } from '@/UI/base/app/Loading/Loading';
+import { Project, ProjectProps } from '~/UI/layouts/Project/Project';
+import { Loading } from '~/UI/base/app/Loading/Loading';
 import {
   getClient,
   overlayDrafts,
   sanityClient,
-} from '@/UTILS/sanity-api/sanity.server';
-import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
-import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
-import { HeaderProps } from '@/UI/navigation/Header/Header';
-import { GlobalMetadata } from '@/UI/types/sanity-schema';
+} from '~/UTILS/sanity-api/sanity.server';
+import { appGlobalsQuery } from '~/UI/base/settings/app-globals.queries';
+import { AppGlobalsProps, SettingsProps } from '~/UI/base/settings/Globals';
+import { HeaderProps } from '~/UI/navigation/Header/Header';
+import { GlobalMetadata } from '~/UI/types/sanity-schema';
 import {
   projectBySlugQuery,
   projectSlugsQuery,
-} from '@/UI/layouts/Project/Project.queries';
-import { Error404 } from '@/UI/layouts/Error404/Error404';
+} from '~/UI/layouts/Project/Project.queries';
+import { Error404 } from '~/UI/layouts/Error404/Error404';
 
 // TYPES
 type ProjectBySlugProps = {

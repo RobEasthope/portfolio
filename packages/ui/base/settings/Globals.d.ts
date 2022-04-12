@@ -1,6 +1,6 @@
-import { GlobalMetadata, Settings } from '@/UI/types/sanity-schema';
-import { HeaderProps } from '@/UI/navigation/Header/Header';
-import { FooterProps } from '@/UI/navigation/Footer/Footer';
+import { GlobalMetadata, Settings } from '~/UI/types/sanity-schema';
+import { HeaderProps } from '~/UI/navigation/Header/Header';
+import { FooterProps } from '~/UI/navigation/Footer/Footer';
 
 export interface SettingsProps extends Settings {
   homePageSlug: string;

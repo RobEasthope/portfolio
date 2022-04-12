@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { ReactNode } from 'react';
-import { globalStyles } from '@/UI/styles/globalStyles';
+import { globalStyles } from '~/UI/styles/globalStyles';
 
 // Sanitize CSS
 import 'sanitize.css';

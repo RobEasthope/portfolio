@@ -1,14 +1,14 @@
-import { ProjectIndex as rawProjectIndexProps } from '@/UI/types/sanity-schema';
+import { ProjectIndex as rawProjectIndexProps } from '~/UI/types/sanity-schema';
 import Link from 'next/link';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
-import { Flex } from '@/UI/base/layout/Flex/Flex';
-import { Grid } from '@/UI/base/layout/Grid/Grid';
-import { ProjectProps } from '@/UI/layouts/Project/Project';
-import { Picture } from '@/UI/base/media/Picture/Picture';
-import { styled } from '@/UI/styles/stitches.config';
-import { createGroups } from '@/UI/utils/createGroups';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
-import { NavLink } from '@/UI/base/typography/NavLink/NavLink';
+import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
+import { Flex } from '~/UI/base/layout/Flex/Flex';
+import { Grid } from '~/UI/base/layout/Grid/Grid';
+import { ProjectProps } from '~/UI/layouts/Project/Project';
+import { Picture } from '~/UI/base/media/Picture/Picture';
+import { styled } from '~/UI/styles/stitches.config';
+import { createGroups } from '~/UI/utils/createGroups';
+import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
+import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
 // STYLES
 export const Index = styled(Grid, {

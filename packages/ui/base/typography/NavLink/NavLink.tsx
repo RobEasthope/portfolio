@@ -1,5 +1,5 @@
-import { styled } from '@/UI/styles/stitches.config';
-import { Text } from '@/UI/base/typography/Text/Text';
+import { styled } from '~/UI/styles/stitches.config';
+import { Text } from '~/UI/base/typography/Text/Text';
 
 export const NavLink = styled(Text, {
   '& a': {

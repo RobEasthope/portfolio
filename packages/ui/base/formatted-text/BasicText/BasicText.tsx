@@ -8,8 +8,8 @@ import BlockContent from '@sanity/block-content-to-react';
 import {
   BlockRendererProps,
   SerializerMarksProps,
-} from '@/UI/base/formatted-text/formattedTextProps';
-import { Prose } from '@/UI/base/typography/Prose/Prose';
+} from '~/UI/base/formatted-text/formattedTextProps';
+import { Prose } from '~/UI/base/typography/Prose/Prose';
 
 // TYPES
 export interface BasicTextProps {

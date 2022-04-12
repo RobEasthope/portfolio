@@ -1,6 +1,6 @@
-import { styled } from '@/UI/styles/stitches.config';
-import { SPACING } from '@/UI/constants/SPACING';
-import { Box } from '@/UI/base/layout/Box/Box';
+import { styled } from '~/UI/styles/stitches.config';
+import { SPACING } from '~/UI/constants/SPACING';
+import { Box } from '~/UI/base/layout/Box/Box';
 
 export const Flex = styled(Box, {
   display: 'flex',

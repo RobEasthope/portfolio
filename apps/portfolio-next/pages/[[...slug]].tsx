@@ -1,23 +1,23 @@
 import { useRouter } from 'next/router';
 
-import { Error404 } from '@/UI/layouts/Error404/Error404';
-import { Page, PageProps } from '@/UI/layouts/Page/Page';
-import { Loading } from '@/UI/base/app/Loading/Loading';
+import { Error404 } from '~/UI/layouts/Error404/Error404';
+import { Page, PageProps } from '~/UI/layouts/Page/Page';
+import { Loading } from '~/UI/base/app/Loading/Loading';
 import {
   getClient,
   overlayDrafts,
   sanityClient,
-} from '@/UTILS/sanity-api/sanity.server';
-import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
-import { AppGlobalsProps, SettingsProps } from '@/UI/base/settings/Globals';
-import { HeaderProps } from '@/UI/navigation/Header/Header';
-import { GlobalMetadata } from '@/UI/types/sanity-schema';
-import { pageRenderChecks } from '@/NEXT/utils/pageRenderChecks';
-import { createSlugFromQuery } from '@/UTILS/sanity-api/createSlugFromQuery';
+} from '~/UTILS/sanity-api/sanity.server';
+import { appGlobalsQuery } from '~/UI/base/settings/app-globals.queries';
+import { AppGlobalsProps, SettingsProps } from '~/UI/base/settings/Globals';
+import { HeaderProps } from '~/UI/navigation/Header/Header';
+import { GlobalMetadata } from '~/UI/types/sanity-schema';
+import { pageRenderChecks } from '~/NEXT/utils/pageRenderChecks';
+import { createSlugFromQuery } from '~/UTILS/sanity-api/createSlugFromQuery';
 import {
   pageBySlugQuery,
   pageSlugsQuery,
-} from '@/UI/layouts/Page/Page.queries';
+} from '~/UI/layouts/Page/Page.queries';
 
 // TYPES
 type PageBySlugProps = {

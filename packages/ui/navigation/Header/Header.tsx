@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import { Header as rawHeaderProps } from '@/UI/types/sanity-schema';
-import { styled } from '@/UI/styles/stitches.config';
-import { Picture } from '@/UI/base/media/Picture/Picture';
-import { SuperLink } from '@/UI/base/links/SuperLink/SuperLink';
-import { SmallNavigation } from '@/UI/navigation/SmallNavigation/SmallNavigation';
-import { ExternalLinkWithTitleSchemaProps } from '@/UI/base/links/ExternalLink/ExternalLink';
-import { InternalLinkWithTitleSchemaProps } from '@/UI/base/links/InternalLink/InternalLink';
-import { METADATA } from '@/UI/constants/METADATA';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
-import { Box } from '@/UI/base/layout/Box/Box';
-import { Spacer } from '@/UI/sections/Spacer/Spacer';
-import { NavLink } from '@/UI/base/typography/NavLink/NavLink';
+import { Header as rawHeaderProps } from '~/UI/types/sanity-schema';
+import { styled } from '~/UI/styles/stitches.config';
+import { Picture } from '~/UI/base/media/Picture/Picture';
+import { SuperLink } from '~/UI/base/links/SuperLink/SuperLink';
+import { SmallNavigation } from '~/UI/navigation/SmallNavigation/SmallNavigation';
+import { ExternalLinkWithTitleSchemaProps } from '~/UI/base/links/ExternalLink/ExternalLink';
+import { InternalLinkWithTitleSchemaProps } from '~/UI/base/links/InternalLink/InternalLink';
+import { METADATA } from '~/UI/constants/METADATA';
+import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
+import { Box } from '~/UI/base/layout/Box/Box';
+import { Spacer } from '~/UI/sections/Spacer/Spacer';
+import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
 // Styles
 export const HeaderLayout = styled('div', {

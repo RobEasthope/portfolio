@@ -1,5 +1,5 @@
-import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
-import { styled } from '@/UI/styles/stitches.config';
+import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
+import { styled } from '~/UI/styles/stitches.config';
 
 export const MaxWidth = styled('div', {
   width: '100%',

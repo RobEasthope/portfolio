@@ -1,7 +1,7 @@
-import { SPACING } from '@/UI/constants/SPACING';
-import { styled } from '@/UI/styles/stitches.config';
-import { TYPE_SCALE } from '@/UI/styles/constants/TYPE_SCALE';
-import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
+import { SPACING } from '~/UI/constants/SPACING';
+import { styled } from '~/UI/styles/stitches.config';
+import { TYPE_SCALE } from '~/UI/styles/constants/TYPE_SCALE';
+import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
 
 export const Text = styled('div', {
   color: '$text',
