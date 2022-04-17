@@ -10,7 +10,7 @@ import { Spacer } from '~/UI/sections/Spacer/Spacer';
 
 // STYLES
 
-const heroHeight = `calc(100vh - ${SPACING.x6})`;
+const heroHeight = `calc(100vh - ${SPACING.x5})`;
 
 export const Wrapper = styled('div', {
   position: 'relative',
