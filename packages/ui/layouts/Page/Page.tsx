@@ -41,7 +41,7 @@ export const Page = ({
           <Header
             logo={header?.logo}
             navigationLeft={header?.navigationLeft}
-            navigationRight={footer?.navigation}
+            navigationRight={header?.navigationRight}
           />
         )}
 
