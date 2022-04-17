@@ -1,7 +1,7 @@
 import { Footer } from '~/UI/navigation/Footer/Footer';
 import { Header } from '~/UI/navigation/Header/Header';
-import { FixedFooterLayout } from '~/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
-import { MainContentLayout } from '~/UI/base/layout/MainContentLayout/MainContentLayout';
+import { FixedFooterLayout } from '~/UI/base/structure/FixedFooterLayout/FixedFooterLayout';
+import { MainContentLayout } from '~/UI/base/structure/MainContentLayout/MainContentLayout';
 import { NextMetadata } from '~/UI/base/app/Metadata/NextMetadata';
 import {
   Organisation,
@@ -11,10 +11,10 @@ import { ExampleSectionProps } from '~/UI/sections/ExampleSection/ExampleSection
 import { AppGlobalsProps } from '~/UI/base/settings/Globals';
 import { Text } from '~/UI/base/typography/Text/Text';
 import { ProjectText } from '~/UI/base/formatted-text/ProjectText/ProjectText';
-import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
-import { Box } from '~/UI/base/layout/Box/Box';
-import { Flex } from '~/UI/base/layout/Flex/Flex';
-import { TextAlign } from '~/UI/base/layout/TextAlign/TextAlign';
+import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
+import { Box } from '~/UI/base/structure/Box/Box';
+import { Flex } from '~/UI/base/structure/Flex/Flex';
+import { TextAlign } from '~/UI/base/structure/TextAlign/TextAlign';
 import { Picture } from '~/UI/base/media/Picture/Picture';
 
 import { styled } from '~/UI/styles/stitches.config';
