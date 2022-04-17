@@ -19,6 +19,7 @@ import { Picture } from '~/UI/base/media/Picture/Picture';
 
 import { styled } from '~/UI/styles/stitches.config';
 import { Spacer } from '~/UI/sections/Spacer/Spacer';
+import { ExternalLink } from '~/UI/base/links/ExternalLink/ExternalLink';
 
 export const ProjectLogo = styled(Picture, {
   borderRadius: '$circle',
@@ -110,7 +111,7 @@ export const Project = ({
                     <Box as="span" css={{ fontStyle: 'italic' }}>
                       Client:{' '}
                     </Box>
-                    {clientOrg?.name}
+                    <ExternalLink>{clientOrg?.name}</ExternalLink>
                   </Text>
                 )}
                 {agencyOrg && (
@@ -118,7 +119,9 @@ export const Project = ({
                     <Box as="span" css={{ fontStyle: 'italic' }}>
                       Agency:{' '}
                     </Box>
-                    {agencyOrg?.name}
+                    <ExternalLink href={agencyOrg?.url}>
+                      {agencyOrg?.name}
+                    </ExternalLink>
                   </Text>
                 )}
               </Flex>
@@ -131,12 +134,14 @@ export const Project = ({
             <TextAlign align="centre">
               {projectUrl && (
                 <Text>
-                  <a href={projectUrl}>{projectUrlTitle || projectUrl}</a>
+                  <ExternalLink href={projectUrl}>
+                    {projectUrlTitle || projectUrl}
+                  </ExternalLink>
                 </Text>
               )}
               {repoUrl && (
                 <Text>
-                  <a href={repoUrl}>{repoUrl}</a>
+                  <ExternalLink href={repoUrl}>{repoUrl}</ExternalLink>
                 </Text>
               )}
               {date && (
