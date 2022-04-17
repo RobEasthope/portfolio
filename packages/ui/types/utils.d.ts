@@ -152,4 +152,24 @@ export type SizeReturnProps =
       '@pageMinWidth': { gap: string };
       '@pageMaxWidth': { gap: string };
     }
+  | {
+      width: string;
+      '@pageMinWidth': { width: string };
+      '@pageMaxWidth': { width: string };
+    }
+  | {
+      minWidth: string;
+      '@pageMinWidth': { minWidth: string };
+      '@pageMaxWidth': { minWidth: string };
+    }
+  | {
+      height: string;
+      '@pageMinWidth': { height: string };
+      '@pageMaxWidth': { height: string };
+    }
+  | {
+      minHeight: string;
+      '@pageMinWidth': { minHeight: string };
+      '@pageMaxWidth': { minHeight: string };
+    }
   | Record<string, unknown>;
