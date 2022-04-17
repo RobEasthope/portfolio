@@ -27,7 +27,7 @@ export const Page = ({
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { sections, projects } = page;
+  const { sections, projects, slug } = page;
 
   return (
     <>
