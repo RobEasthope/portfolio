@@ -85,70 +85,66 @@ export const Project = ({
           <MaxWidth width="text">
             <TextAlign align="centre">
               {thumbnailImage && (
-                <>
-                  <Flex justify="center">
-                    <ProjectLogo
-                      asset={thumbnailImage}
-                      alt={title || ''}
-                      mode="responsive"
-                      maxWidth={200}
-                      aspectRatio={1}
-                    />
-                  </Flex>
-                  <Spacer height="x1" />
-                </>
+                <Flex justify="center" css={{ marginBottom: '$x1' }}>
+                  <ProjectLogo
+                    asset={thumbnailImage}
+                    alt={title || ''}
+                    mode="responsive"
+                    maxWidth={200}
+                    aspectRatio={1}
+                  />
+                </Flex>
               )}
 
-              {title && <Text typeSize="large">{title}</Text>}
-              <Spacer height="half" />
+              {title && (
+                <Text typeSize="large" css={{ marginBottom: '$x1' }}>
+                  {title}
+                </Text>
+              )}
 
               {description && <Text>{description}</Text>}
               <Spacer height="x1" />
 
-              <Flex justify="center" gap="x1">
-                {clientOrg && (
-                  <Text>
-                    <Box as="span" css={{ fontStyle: 'italic' }}>
-                      Client:{' '}
-                    </Box>
-                    <ExternalLink>{clientOrg?.name}</ExternalLink>
-                  </Text>
-                )}
-                {agencyOrg && (
-                  <Text>
-                    <Box as="span" css={{ fontStyle: 'italic' }}>
-                      Agency:{' '}
-                    </Box>
-                    <ExternalLink href={agencyOrg?.url}>
-                      {agencyOrg?.name}
-                    </ExternalLink>
-                  </Text>
-                )}
-              </Flex>
-
-              <Spacer height="x2" />
+              {(clientOrg || agencyOrg) && (
+                <Flex justify="center" gap="x1" css={{ marginBottom: '$x1' }}>
+                  {clientOrg && (
+                    <Text>
+                      <Box as="span" css={{ fontStyle: 'italic' }}>
+                        Client:{' '}
+                      </Box>
+                      <ExternalLink>{clientOrg?.name}</ExternalLink>
+                    </Text>
+                  )}
+                  {agencyOrg && (
+                    <Text>
+                      <Box as="span" css={{ fontStyle: 'italic' }}>
+                        Agency:{' '}
+                      </Box>
+                      <ExternalLink href={agencyOrg?.url}>
+                        {agencyOrg?.name}
+                      </ExternalLink>
+                    </Text>
+                  )}
+                </Flex>
+              )}
             </TextAlign>
 
             {projectText && <ProjectText blocks={projectText as unknown} />}
 
             <TextAlign align="centre">
               {projectUrl && (
-                <Text>
+                <Text css={{ marginTop: '$x1' }}>
                   <ExternalLink href={projectUrl}>
                     {projectUrlTitle || projectUrl}
                   </ExternalLink>
                 </Text>
               )}
               {repoUrl && (
-                <Text>
+                <Text css={{ marginTop: '$x1' }}>
                   <ExternalLink href={repoUrl}>{repoUrl}</ExternalLink>
                 </Text>
               )}
-              {date && (
-                <>
-                  <Spacer height="x1" /> <Text>{date}</Text>
-                </>
-              )}
+              {date && <Text css={{ marginTop: '$x1' }}>{date}</Text>}
             </TextAlign>
             <Spacer height="x2" />
           </MaxWidth>
