@@ -9,18 +9,11 @@ import { InternalLinkWithTitleSchemaProps } from '~/UI/base/links/InternalLink/I
 import { METADATA } from '~/UI/constants/METADATA';
 import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
 import { Box } from '~/UI/base/layout/Box/Box';
+import { Flex } from '~/UI/base/layout/Flex/Flex';
 import { Spacer } from '~/UI/sections/Spacer/Spacer';
 import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
 // Styles
-export const HeaderLayout = styled('div', {
-  display: 'flex',
-  flex: '1 0 auto',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: '$x3',
-});
-
 export const StyledHomeLink = styled('span', {
   position: 'relative',
   display: 'inline-block',
@@ -81,7 +74,7 @@ export const Header = ({
     content="nav"
     css={{ position: 'fixed', backgroundColor: 'white', zIndex: 1 }}
   >
-    <HeaderLayout as="nav">
+    <Flex as="nav" align="center" justify="center" css={{ height: '$x3' }}>
       <LeftNavigation as="ul">
         {navigationLeft &&
           navigationLeft?.length > 0 &&
@@ -123,6 +116,6 @@ export const Header = ({
         navigationLeft={navigationLeft}
         navigationRight={navigationRight}
       />
-    </HeaderLayout>
+    </Flex>
   </PaddedComponent>
 );
