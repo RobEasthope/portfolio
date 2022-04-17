@@ -68,7 +68,9 @@ export type SizeProps = {
     | 'paddingLeft'
     | 'paddingX'
     | 'paddingY'
-    | 'gap';
+    | 'gap'
+    | 'width'
+    | 'minWidth';
 
   // sizes
   min: number;
