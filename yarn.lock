@@ -3290,16 +3290,7 @@
   resolved "https://registry.npmjs.org/@sanity/production-preview/-/production-preview-2.29.3.tgz#6494ba268f31d934f4cb4a7b6dc15b6d7f616ea4"
   integrity sha512-qqCKdAGejxJ1HHElaJOan2EUx2YbHdmFp5UbvOJ1dZy1bPYl5Qrsh0ijqD800w/qo/M7MMt63dRbkftmIUozEA==
 
-"@sanity/react-hooks@2.29.3":
-  version "2.29.3"
-  resolved "https://registry.npmjs.org/@sanity/react-hooks/-/react-hooks-2.29.3.tgz#052d7e50d80da3190cf78e63bf53ff42560cf7fd"
-  integrity sha512-Pvf2YrvVehG5bv2ItssRV2YWkR8rrXnf07N9UpWtGAd5atzVednatr1VP84pCwedc3QX1ax2/2145zodGhv69w==
-  dependencies:
-    "@sanity/types" "2.29.3"
-    react-rx "^1.0.0-beta.6"
-    rxjs "^6.5.3"
-
-"@sanity/react-hooks@^2.29.3":
+"@sanity/react-hooks@2.29.3", "@sanity/react-hooks@^2.29.3":
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/@sanity/react-hooks/-/react-hooks-2.29.3.tgz#052d7e50d80da3190cf78e63bf53ff42560cf7fd"
   integrity sha512-Pvf2YrvVehG5bv2ItssRV2YWkR8rrXnf07N9UpWtGAd5atzVednatr1VP84pCwedc3QX1ax2/2145zodGhv69w==
@@ -14316,7 +14307,7 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
-raf@^3.4.1:
+raf@^3.3.0, raf@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
   integrity sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==
@@ -14450,6 +14441,15 @@ react-force-graph@^1.37.0:
     force-graph "^1.42"
     prop-types "^15.7"
     react-kapsule "^2.2"
+
+react-headroom@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-headroom/-/react-headroom-3.2.0.tgz#ff14d01343b850d02bf30624bfa2c7ed60c75558"
+  integrity sha512-8rbXBKN187DnPg8lyJa5IKZx9rA1DbkvO4X0F6A6lSGr54fr7CHphF84fxwlPbX93Uqs9daFt9q0j3fhC7RTEg==
+  dependencies:
+    prop-types "^15.5.8"
+    raf "^3.3.0"
+    shallowequal "^1.1.0"
 
 react-hook-form@6.15.1:
   version "6.15.1"
@@ -16718,7 +16718,7 @@ three-render-objects@^1.26:
     kapsule "^1.13"
     polished "4"
 
-three@0.119.1, "three@>=0.118 <1":
+"three@>=0.118 <1":
   version "0.119.1"
   resolved "https://registry.yarnpkg.com/three/-/three-0.119.1.tgz#9d979a082c4cd9622af8e3498a8dfa026a619332"
   integrity sha512-GHyh/RiUfQ5VTiWIVRRTANYoXc1PFB1y+jDVRTb649nif1uX1F06PT1TKU3k2+F/MN4UJ3PWvQB53fY2OqKqKw==
