@@ -52,7 +52,11 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   return (
     <MaxWidth width="xLarge">
       {splitProjects?.length > 0 && (
-        <Index columns={4} gapX="x2" gapY="x1">
+        <Index
+          columns={{ '@initial': 1, '@small': 2, '@large': 3, '@xLarge': 4 }}
+          gapX="x2"
+          gapY="x1"
+        >
           {projects.map((project) => (
             <Flex as="li" key={project?._id} align="center" direction="row">
               {project?.thumbnailImage && project?.slug && (
