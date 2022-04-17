@@ -72,7 +72,9 @@ export type SizeProps = {
     | 'width'
     | 'minWidth'
     | 'height'
-    | 'minHeight';
+    | 'minHeight'
+    | 'xySize'
+    | 'minXySize';
 
   // sizes
   min: number;
@@ -171,5 +173,10 @@ export type SizeReturnProps =
       minHeight: string;
       '@pageMinWidth': { minHeight: string };
       '@pageMaxWidth': { minHeight: string };
+    }
+  | {
+      xySize: string;
+      '@pageMinWidth': { xySize: string };
+      '@pageMaxWidth': { xySize: string };
     }
   | Record<string, unknown>;
