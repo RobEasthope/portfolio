@@ -70,7 +70,12 @@ export const Header = ({
 
         <Spacer />
 
-        <Box css={{ size: { selector: 'minWidth', min: 32, max: 40 } }}>
+        <Box
+          css={{
+            display: 'inline-block',
+            size: { width: '100%', selector: 'minWidth', min: 32, max: 40 },
+          }}
+        >
           <Link href="/">
             <a>
               <Picture
