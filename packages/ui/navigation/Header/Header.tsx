@@ -15,17 +15,6 @@ import { Spacer } from '~/UI/sections/Spacer/Spacer';
 import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
 // Styles
-export const StyledHomeLink = styled('span', {
-  position: 'relative',
-  display: 'inline-block',
-  width: '32px',
-  height: '32px',
-});
-
-export const Logo = styled(Picture, {
-  width: '32px',
-});
-
 export const LargeNavigation = styled(Box, {
   display: 'flex',
   gap: '$x1',
@@ -81,18 +70,19 @@ export const Header = ({
 
         <Spacer />
 
-        <StyledHomeLink>
+        <Box css={{ size: { selector: 'minWidth', min: 32, max: 40 } }}>
           <Link href="/">
             <a>
-              <Logo
+              <Picture
                 asset={logo}
                 alt={METADATA?.TITLE || ''}
                 mode="responsive"
-                maxWidth={32}
+                aspectRatio={1}
+                maxWidth={40}
               />
             </a>
           </Link>
-        </StyledHomeLink>
+        </Box>
 
         <Spacer />
 
