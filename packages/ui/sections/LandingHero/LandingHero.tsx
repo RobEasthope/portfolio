@@ -79,7 +79,8 @@ export const LandingHero = ({
                   typeSize="jumbotron"
                   // typeWeight="bold"
                   css={{
-                    color: 'white',
+                    color: '$highlight',
+                    opacity: 0.8,
                   }}
                 >
                   {heading}
