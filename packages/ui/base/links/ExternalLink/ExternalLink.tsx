@@ -32,14 +32,20 @@ export const ExternalLink = ({
   onClick,
   children,
   className,
-}: ExternalLinkProps) => (
-  <a
-    href={link?.url || href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={className}
-    onClick={onClick}
-  >
-    {children || null}
-  </a>
-);
+}: ExternalLinkProps) => {
+  if (!link?.url && !href) {
+    return <span>{children || null}</span>;
+  }
+
+  return (
+    <a
+      href={link?.url || href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      onClick={onClick}
+    >
+      {children || null}
+    </a>
+  );
+};
