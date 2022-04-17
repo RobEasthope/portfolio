@@ -70,7 +70,9 @@ export type SizeProps = {
     | 'paddingY'
     | 'gap'
     | 'width'
-    | 'minWidth';
+    | 'minWidth'
+    | 'height'
+    | 'minHeight';
 
   // sizes
   min: number;

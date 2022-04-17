@@ -243,6 +243,38 @@ export const size = ({ selector, min, max }: SizeProps): SizeReturnProps => {
         },
       };
 
+    case 'height':
+      return {
+        // Minimum size
+        height: `${min}px`,
+
+        // Dynamic size
+        '@pageMinWidth': {
+          height: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
+        },
+
+        // Maximum size
+        '@pageMaxWidth': {
+          height: `${max}px`,
+        },
+      };
+
+    case 'minHeight':
+      return {
+        // Minimum size
+        minHeight: `${min}px`,
+
+        // Dynamic size
+        '@pageMinWidth': {
+          minHeight: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
+        },
+
+        // Maximum size
+        '@pageMaxWidth': {
+          minHeight: `${max}px`,
+        },
+      };
+
     default:
       return {};
   }
