@@ -27,17 +27,11 @@ export const Logo = styled(Picture, {
 });
 
 export const LargeNavigation = styled(Box, {
-  display: 'none',
-  visibility: 'hidden',
+  display: 'flex',
+  gap: '$half',
   listStyle: 'none',
   width: '50%',
   marginY: 0,
-
-  '@media (min-width: 800px)': {
-    display: 'flex',
-    visibility: 'visible',
-    gap: '$half',
-  },
 
   '& li': {
     display: 'inline-block',
@@ -47,9 +41,7 @@ export const LargeNavigation = styled(Box, {
 export const LeftNavigation = styled(LargeNavigation, {});
 
 export const RightNavigation = styled(LargeNavigation, {
-  '@media (min-width: 800px)': {
-    justifyContent: 'flex-end',
-  },
+  justifyContent: 'flex-end',
 });
 
 // Types
@@ -113,11 +105,6 @@ export const Header = ({
               </NavLink>
             ))}
         </RightNavigation>
-
-        <SmallNavigation
-          navigationLeft={navigationLeft}
-          navigationRight={navigationRight}
-        />
       </Flex>
     </PaddedComponent>
   </Headroom>

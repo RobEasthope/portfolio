@@ -7,7 +7,7 @@ export const Figure = styled('figure', {
 
 export const Grid = styled('div', {
   display: 'grid',
-  gap: '16px',
+  gap: '$x1',
 
   variants: {
     columns: {

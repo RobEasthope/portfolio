@@ -6,8 +6,8 @@ export const PaddedComponent = styled(Box, {
 
   variants: {
     content: {
-      text: { paddingLeft: '$half', paddingRight: '$half' },
-      nav: { paddingX: '$x2' },
+      text: { size: { selector: 'paddingX', min: 12, max: 48 } },
+      nav: { size: { selector: 'paddingX', min: 12, max: 48 } },
       media: {
         position: 'relative',
         left: '50%',
@@ -17,7 +17,7 @@ export const PaddedComponent = styled(Box, {
         maxWidth: '100vw',
 
         '@small': {
-          paddingX: '$half',
+          size: { selector: 'paddingX', min: 12, max: 48 },
           left: 'initial',
           right: 'initial',
           marginX: 'auto',
