@@ -18,7 +18,6 @@ export const HeaderLayout = styled('div', {
   flex: '1 0 auto',
   alignItems: 'center',
   justifyContent: 'center',
-  borderBottom: '1px solid rgba(46,46,46,0.1)',
   height: '$x3',
 });
 

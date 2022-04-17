@@ -40,11 +40,7 @@ export const Footer = ({
 
   return (
     <PaddedComponent as="footer" content="nav">
-      <Flex
-        align="center"
-        justify="between"
-        css={{ height: '$x3', borderTop: '1px solid rgba(46,46,46,0.1)' }}
-      >
+      <Flex align="center" justify="between" css={{ height: '$x3' }}>
         <Navigation as="nav">
           <Flex as="ul" gap="x1">
             {navigation &&
