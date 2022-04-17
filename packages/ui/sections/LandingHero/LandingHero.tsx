@@ -18,22 +18,6 @@ export const Wrapper = styled('div', {
   backgroundColor: 'white',
 });
 
-export const ForegroundContent = styled('div', {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  zIndex: 1,
-  color: 'white',
-});
-
-export const ForegroundContentLayout = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyItems: 'center',
-  textAlign: 'center',
-});
-
 export const JumbotronBkgImage = styled(Picture, {
   width: '100%',
   height: heroHeight,
@@ -58,7 +42,6 @@ export interface LandingHeroProps extends rawLandingHeroProps {
 // MARKUP
 export const LandingHero = ({
   heading,
-  subheading,
   bkgMode,
   bkgImage,
   muxVideo,
@@ -69,43 +52,6 @@ export const LandingHero = ({
 
   return (
     <Wrapper as="section">
-      <ForegroundContent>
-        <PaddedComponent as="section">
-          <MaxWidth width="page">
-            <ForegroundContentLayout>
-              {heading && (
-                <Text
-                  as="h1"
-                  typeSize="jumbotron"
-                  // typeWeight="bold"
-                  css={{
-                    color: '$highlight',
-                    opacity: 0.8,
-                  }}
-                >
-                  {heading}
-                </Text>
-              )}
-              <Spacer height="half" />
-              {subheading && (
-                <Text
-                  as="h2"
-                  typeSize="medium"
-                  css={{
-                    color: 'white',
-                    opacity: 0.8,
-                    letterSpacing: '0.025em',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  {subheading}
-                </Text>
-              )}
-            </ForegroundContentLayout>
-          </MaxWidth>
-        </PaddedComponent>
-      </ForegroundContent>
-
       {bkgImage && bkgMode === 'image' && (
         <JumbotronBkgImage
           alt={heading || ''}
