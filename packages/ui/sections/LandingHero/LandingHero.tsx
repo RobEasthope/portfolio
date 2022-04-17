@@ -93,6 +93,7 @@ export const LandingHero = ({
                   typeSize="medium"
                   css={{
                     color: 'white',
+                    opacity: 0.8,
                     letterSpacing: '0.025em',
                     fontStyle: 'italic',
                   }}
