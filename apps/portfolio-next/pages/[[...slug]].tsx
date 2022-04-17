@@ -108,7 +108,11 @@ export const getStaticProps = async ({
   // Page payload
   return {
     props: {
-      data: { page: (page[0] as PageProps) || null, globals, homePageSlug: homePageSlug },
+      data: {
+        page: (page[0] as PageProps) || null,
+        globals,
+        homePageSlug,
+      },
       preview,
     },
     // ISR cache time
