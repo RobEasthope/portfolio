@@ -1,5 +1,5 @@
 import { styled } from '~/UI/styles/stitches.config';
-import { Box } from '~/UI/base/layout/Box/Box';
+import { Box } from '~/UI/base/structure/Box/Box';
 import { SPACING } from '~/UI/constants/SPACING';
 
 export const Grid = styled(Box, {

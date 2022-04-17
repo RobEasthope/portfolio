@@ -1,6 +1,6 @@
 import { LandingHero as rawLandingHeroProps } from '~/UI/types/sanity-schema';
-import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
-import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
+import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
+import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { Text } from '~/UI/base/typography/Text/Text';
 import SanityMuxPlayer from 'sanity-mux-player';
 import { Picture } from '~/UI/base/media/Picture/Picture';
@@ -79,7 +79,8 @@ export const LandingHero = ({
                   typeSize="jumbotron"
                   // typeWeight="bold"
                   css={{
-                    color: 'white',
+                    color: '$highlight',
+                    opacity: 0.8,
                   }}
                 >
                   {heading}
@@ -92,6 +93,7 @@ export const LandingHero = ({
                   typeSize="medium"
                   css={{
                     color: 'white',
+                    opacity: 0.8,
                     letterSpacing: '0.025em',
                     fontStyle: 'italic',
                   }}
