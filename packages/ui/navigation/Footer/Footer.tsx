@@ -33,7 +33,7 @@ export const Footer = ({
         <Box>
           {
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            <Text typeSize="tiny">{`© ${romanize(currentYear)} ${
+            <Text typeSize="small">{`© ${romanize(currentYear)} ${
               copyrightText || ''
             }`}</Text>
           }
