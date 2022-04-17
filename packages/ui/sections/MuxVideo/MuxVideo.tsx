@@ -8,6 +8,7 @@ import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
 // TYPES
 export interface MuxVideoProps extends rawMuxVideoProps {
   muxVideo: Record<string, unknown>;
+  breakout?: boolean;
 }
 
 // MARKUP
@@ -15,6 +16,7 @@ export const MuxVideo = ({
   muxVideo,
   caption,
   maxWidth = 'medium',
+  breakout,
 }: MuxVideoProps) => {
   if (!muxVideo) {
     return null;
@@ -22,7 +24,7 @@ export const MuxVideo = ({
 
   return (
     <PaddedComponent as="section" content="media">
-      <Breakout>
+      <Breakout active={breakout}>
         <MaxWidth width={maxWidth}>
           {muxVideo && (
             <SanityMuxPlayer

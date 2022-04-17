@@ -6,13 +6,16 @@ import { Caption } from '~/UI/base/typography/Caption/Caption';
 import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
 
 // TYPES
-export type VimeoVideoProps = rawVimeoVideoProps;
+export interface VimeoVideoProps extends rawVimeoVideoProps {
+  breakout?: boolean;
+}
 
 // MARKUP
 export const VimeoVideo = ({
   url,
   caption,
   maxWidth = 'medium',
+  breakout,
 }: VimeoVideoProps) => {
   if (!url) {
     return null;
@@ -20,7 +23,7 @@ export const VimeoVideo = ({
 
   return (
     <PaddedComponent as="section" content="media">
-      <Breakout>
+      <Breakout active={breakout}>
         <MaxWidth width={maxWidth}>
           <Vimeo video={url} responsive />
           {caption && <Caption as="figcaption">{caption}</Caption>}

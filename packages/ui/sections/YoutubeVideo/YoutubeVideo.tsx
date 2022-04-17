@@ -9,13 +9,16 @@ import { Caption } from '~/UI/base/typography/Caption/Caption';
 import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
 
 // TYPES
-export type YoutubeVideoProps = rawYoutubeVideoProps;
+export interface YoutubeVideoProps extends rawYoutubeVideoProps {
+  breakout?: boolean;
+}
 
 // MARKUP
 export const YoutubeVideo = ({
   url,
   caption,
   maxWidth = 'medium',
+  breakout,
 }: YoutubeVideoProps) => {
   if (!url) {
     return null;
@@ -23,7 +26,7 @@ export const YoutubeVideo = ({
 
   return (
     <PaddedComponent as="section" content="media">
-      <Breakout>
+      <Breakout active={breakout}>
         <MaxWidth width={maxWidth}>
           <IFrameAspectRatio ratio={16 / 9}>
             <YouTube
