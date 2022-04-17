@@ -51,37 +51,39 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
 
   return (
     <MaxWidth width="xLarge">
-      <PaddedComponent content="nav">
-        {splitProjects?.length > 0 && (
-          <Index columns={4} gapX="x2" gapY="x1">
-            {projects.map((project) => (
-              <Flex as="li" key={project?._id} align="center" direction="row">
-                {project?.thumbnailImage && project?.slug && (
-                  <Link href={project?.slug?.current}>
-                    <a>
-                      <Thumbnail
-                        asset={project?.thumbnailImage}
-                        alt={project?.title || ''}
-                        mode="responsive"
-                        maxWidth={48}
-                        aspectRatio={1}
-                      />
-                    </a>
-                  </Link>
-                )}
+      {splitProjects?.length > 0 && (
+        <Index
+          columns={{ '@initial': 1, '@small': 2, '@large': 3, '@xLarge': 4 }}
+          gapX="x2"
+          gapY="x1"
+        >
+          {projects.map((project) => (
+            <Flex as="li" key={project?._id} align="center" direction="row">
+              {project?.thumbnailImage && project?.slug && (
+                <Link href={project?.slug?.current}>
+                  <a>
+                    <Thumbnail
+                      asset={project?.thumbnailImage}
+                      alt={project?.title || ''}
+                      mode="responsive"
+                      maxWidth={48}
+                      aspectRatio={1}
+                    />
+                  </a>
+                </Link>
+              )}
 
-                {project?.slug && (
-                  <ProjectTitle>
-                    <Link href={project?.slug?.current}>
-                      <a>{project?.title}</a>
-                    </Link>
-                  </ProjectTitle>
-                )}
-              </Flex>
-            ))}
-          </Index>
-        )}
-      </PaddedComponent>
+              {project?.slug && (
+                <ProjectTitle>
+                  <Link href={project?.slug?.current}>
+                    <a>{project?.title}</a>
+                  </Link>
+                </ProjectTitle>
+              )}
+            </Flex>
+          ))}
+        </Index>
+      )}
     </MaxWidth>
   );
 };
