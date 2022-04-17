@@ -24,7 +24,7 @@ export const Gallery = ({
   }
 
   return (
-    <PaddedComponent as="section">
+    <PaddedComponent as="section" content="media">
       <Breakout active={breakout}>
         <MaxWidth width={maxWidth}>
           {images && (
