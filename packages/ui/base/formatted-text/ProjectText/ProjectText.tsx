@@ -89,6 +89,7 @@ const projectTextSerializer = {
         galleryCaption,
         columns,
         aspectRatio,
+        maxWidth,
         _type,
       }: GalleryProps = node;
 
@@ -98,6 +99,7 @@ const projectTextSerializer = {
           galleryCaption={galleryCaption}
           columns={columns}
           aspectRatio={aspectRatio}
+          maxWidth={maxWidth}
           _type={_type}
         />
       );
