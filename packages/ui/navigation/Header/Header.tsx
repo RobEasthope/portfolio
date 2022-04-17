@@ -8,9 +8,9 @@ import { SmallNavigation } from '~/UI/navigation/SmallNavigation/SmallNavigation
 import { ExternalLinkWithTitleSchemaProps } from '~/UI/base/links/ExternalLink/ExternalLink';
 import { InternalLinkWithTitleSchemaProps } from '~/UI/base/links/InternalLink/InternalLink';
 import { METADATA } from '~/UI/constants/METADATA';
-import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
-import { Box } from '~/UI/base/layout/Box/Box';
-import { Flex } from '~/UI/base/layout/Flex/Flex';
+import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
+import { Box } from '~/UI/base/structure/Box/Box';
+import { Flex } from '~/UI/base/structure/Flex/Flex';
 import { Spacer } from '~/UI/sections/Spacer/Spacer';
 import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
