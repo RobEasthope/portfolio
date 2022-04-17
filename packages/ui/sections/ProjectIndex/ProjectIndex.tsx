@@ -1,13 +1,13 @@
 import { ProjectIndex as rawProjectIndexProps } from '~/UI/types/sanity-schema';
 import Link from 'next/link';
-import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
-import { Flex } from '~/UI/base/layout/Flex/Flex';
-import { Grid } from '~/UI/base/layout/Grid/Grid';
+import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
+import { Flex } from '~/UI/base/structure/Flex/Flex';
+import { Grid } from '~/UI/base/structure/Grid/Grid';
 import { ProjectProps } from '~/UI/layouts/Project/Project';
 import { Picture } from '~/UI/base/media/Picture/Picture';
 import { styled } from '~/UI/styles/stitches.config';
 import { createGroups } from '~/UI/utils/createGroups';
-import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
+import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
 // STYLES

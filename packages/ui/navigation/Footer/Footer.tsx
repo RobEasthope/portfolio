@@ -1,8 +1,8 @@
 import { Footer as rawFooterProps } from '~/UI/types/sanity-schema';
 import { styled } from '~/UI/styles/stitches.config';
-import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
-import { Box } from '~/UI/base/layout/Box/Box';
-import { Flex } from '~/UI/base/layout/Flex/Flex';
+import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
+import { Box } from '~/UI/base/structure/Box/Box';
+import { Flex } from '~/UI/base/structure/Flex/Flex';
 import { ExternalLinkWithTitleSchemaProps } from '~/UI/base/links/ExternalLink/ExternalLink';
 import { InternalLinkWithTitleSchemaProps } from '~/UI/base/links/InternalLink/InternalLink';
 import { SuperLink } from '~/UI/base/links/SuperLink/SuperLink';
