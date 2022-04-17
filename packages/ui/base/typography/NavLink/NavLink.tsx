@@ -5,7 +5,7 @@ export const NavLink = styled(Text, {
   '& a': {
     color: 'inherit',
     textDecoration: 'none',
-    transition: 'color 0.2s ease-in-out',
+    transition: 'color 0.4s ease-in-out',
   },
 
   '&:hover': {
