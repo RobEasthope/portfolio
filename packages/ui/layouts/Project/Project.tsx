@@ -76,7 +76,7 @@ export const Project = ({
           <Header
             logo={header?.logo}
             navigationLeft={header?.navigationLeft}
-            navigationRight={header?.navigationRight}
+            navigationRight={footer?.navigation}
           />
         )}
 
@@ -150,10 +150,7 @@ export const Project = ({
           </MaxWidth>
         </MainContentLayout>
 
-        <Footer
-          navigation={footer?.navigation}
-          copyrightText={footer?.copyrightText}
-        />
+        {/* <Footer copyrightText={footer?.copyrightText} /> */}
       </FixedFooterLayout>
     </>
   );

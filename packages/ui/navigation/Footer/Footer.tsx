@@ -29,7 +29,7 @@ export const Footer = ({
 
   return (
     <PaddedComponent as="footer" content="nav">
-      <Flex align="center" justify="center" css={{ height: '$x2' }}>
+      <Flex align="center" justify="center" css={{ height: '$x3' }}>
         <Box>
           {
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
