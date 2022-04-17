@@ -17,15 +17,17 @@ export interface PageProps extends rawPageProps {
 export const Page = ({
   page,
   globals,
+  homePageSlug,
 }: {
   page: PageProps;
   globals: AppGlobalsProps;
+  homePageSlug?: string;
 }) => {
   // Globals props
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { sections, projects } = page;
+  const { sections, projects, slug } = page;
 
   return (
     <>
@@ -51,10 +53,9 @@ export const Page = ({
           )}
         </MainContentLayout>
 
-        <Footer
-          navigation={footer?.navigation}
-          copyrightText={footer?.copyrightText}
-        />
+        {slug?.current !== homePageSlug && (
+          <Footer copyrightText={footer?.copyrightText} />
+        )}
       </FixedFooterLayout>
     </>
   );

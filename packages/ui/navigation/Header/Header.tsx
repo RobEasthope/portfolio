@@ -28,7 +28,7 @@ export const Logo = styled(Picture, {
 
 export const LargeNavigation = styled(Box, {
   display: 'flex',
-  gap: '$half',
+  gap: '$x1',
   listStyle: 'none',
   width: '50%',
   marginY: 0,

@@ -150,10 +150,7 @@ export const Project = ({
           </MaxWidth>
         </MainContentLayout>
 
-        <Footer
-          navigation={footer?.navigation}
-          copyrightText={footer?.copyrightText}
-        />
+        <Footer copyrightText={footer?.copyrightText} />
       </FixedFooterLayout>
     </>
   );
