@@ -6,5 +6,5 @@ export const MAX_WIDTH = {
   LARGE: '1200px',
   XLARGE: '1600px',
   FULL: '100vw',
-  TEXT: '36rem',
+  TEXT: '32rem',
 };
