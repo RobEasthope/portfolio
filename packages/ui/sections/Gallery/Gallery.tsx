@@ -1,4 +1,5 @@
 import { Gallery as rawGalleryProps } from '~/UI/types/sanity-schema';
+import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
 import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
 import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { Picture } from '~/UI/base/media/Picture/Picture';
@@ -21,7 +22,7 @@ export const Gallery = ({
 
   return (
     <PaddedComponent as="section">
-      <MaxWidth width="full">
+      <Breakout>
         <MaxWidth width={maxWidth}>
           {images && (
             <Grid columns={columns}>
@@ -45,7 +46,7 @@ export const Gallery = ({
           )}
           {galleryCaption && <GalleryCaption blocks={galleryCaption} />}
         </MaxWidth>
-      </MaxWidth>
+      </Breakout>
     </PaddedComponent>
   );
 };
