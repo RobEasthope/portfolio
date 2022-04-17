@@ -3,6 +3,7 @@ import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
 import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { Picture } from '~/UI/base/media/Picture/Picture';
 import { Caption } from '~/UI/base/typography/Caption/Caption';
+import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
 
 // TYPES
 export type ImageProps = rawImageProps;
@@ -15,15 +16,19 @@ export const Image = ({ image, maxWidth }: ImageProps) => {
 
   return (
     <PaddedComponent as="section" content="media">
-      <MaxWidth as="figure" width={maxWidth}>
-        <Picture
-          asset={image}
-          alt={image?.caption || ''}
-          mode="responsive"
-          maxWidth={4000}
-        />
-        {image?.caption && <Caption as="figcaption">{image?.caption}</Caption>}
-      </MaxWidth>
+      <Breakout>
+        <MaxWidth as="figure" width={maxWidth}>
+          <Picture
+            asset={image}
+            alt={image?.caption || ''}
+            mode="responsive"
+            maxWidth={4000}
+          />
+          {image?.caption && (
+            <Caption as="figcaption">{image?.caption}</Caption>
+          )}
+        </MaxWidth>
+      </Breakout>
     </PaddedComponent>
   );
 };
