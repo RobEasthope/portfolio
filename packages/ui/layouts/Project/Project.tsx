@@ -81,7 +81,7 @@ export const Project = ({
 
         <MainContentLayout as="main">
           <Spacer height="x2" />
-          <MaxWidth width="small">
+          <MaxWidth width="text">
             <TextAlign align="centre">
               {thumbnailImage && (
                 <>
