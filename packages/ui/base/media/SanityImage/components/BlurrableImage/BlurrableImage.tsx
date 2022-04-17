@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useSSRLayoutEffect } from '@/UI/utils/useSSRLayoutEffect';
-import { BlurredImage } from '@/UI/base/media/SanityImage/components/BlurredImage/BlurredImage';
+import { useSSRLayoutEffect } from '~/UI/utils/useSSRLayoutEffect';
+import { BlurredImage } from '~/UI/base/media/SanityImage/components/BlurredImage/BlurredImage';
 
 // TYPES
 type BlurrableImageProps = {

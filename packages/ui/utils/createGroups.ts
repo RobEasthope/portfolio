@@ -1,4 +1,4 @@
-import { ProjectProps } from '@/UI/layouts/Project/Project';
+import { ProjectProps } from '~/UI/layouts/Project/Project';
 
 type CreateGroupsProps = {
   arr: ProjectProps[];

@@ -1,4 +1,4 @@
-import { styled } from '@/UI/styles/stitches.config';
+import { styled } from '~/UI/styles/stitches.config';
 
 // STYLES
 export const BlurredImage = styled('img', {

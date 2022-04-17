@@ -1,4 +1,4 @@
-import { styled } from '@/UI/styles/stitches.config';
+import { styled } from '~/UI/styles/stitches.config';
 
 export const Wrapper = styled('div', {
   position: 'relative',

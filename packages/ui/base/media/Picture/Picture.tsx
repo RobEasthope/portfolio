@@ -6,10 +6,10 @@ import {
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from '@/UI/types/sanity-schema';
-import { getClient } from '@/UTILS/sanity-api/sanity.server';
-import { styled } from '@/UI/styles/stitches.config';
-import { SanityImage } from '@/UI/base/media/SanityImage/SanityImage';
+} from '~/UI/types/sanity-schema';
+import { getClient } from '~/UTILS/sanity-api/sanity.server';
+import { styled } from '~/UI/styles/stitches.config';
+import { SanityImage } from '~/UI/base/media/SanityImage/SanityImage';
 
 // STYLES
 export const ResponsiveImageWrapper = styled('div', {

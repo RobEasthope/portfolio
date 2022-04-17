@@ -1,12 +1,12 @@
-import { LandingHero as rawLandingHeroProps } from '@/UI/types/sanity-schema';
-import { MaxWidth } from '@/UI/base/layout/MaxWidth/MaxWidth';
-import { PaddedComponent } from '@/UI/base/layout/PaddedComponent/PaddedComponent';
-import { Text } from '@/UI/base/typography/Text/Text';
+import { LandingHero as rawLandingHeroProps } from '~/UI/types/sanity-schema';
+import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
+import { PaddedComponent } from '~/UI/base/layout/PaddedComponent/PaddedComponent';
+import { Text } from '~/UI/base/typography/Text/Text';
 import SanityMuxPlayer from 'sanity-mux-player';
-import { Picture } from '@/UI/base/media/Picture/Picture';
-import { styled } from '@/UI/styles/stitches.config';
-import { SPACING } from '@/UI/constants/SPACING';
-import { Spacer } from '@/UI/sections/Spacer/Spacer';
+import { Picture } from '~/UI/base/media/Picture/Picture';
+import { styled } from '~/UI/styles/stitches.config';
+import { SPACING } from '~/UI/constants/SPACING';
+import { Spacer } from '~/UI/sections/Spacer/Spacer';
 
 // STYLES
 
@@ -15,7 +15,6 @@ const heroHeight = `calc(100vh - ${SPACING.x6})`;
 export const Wrapper = styled('div', {
   position: 'relative',
   maxHeight: '100vh',
-  paddingX: '$x2',
   backgroundColor: 'white',
 });
 
@@ -78,7 +77,7 @@ export const LandingHero = ({
                 <Text
                   as="h1"
                   typeSize="jumbotron"
-                  typeWeight="bold"
+                  // typeWeight="bold"
                   css={{
                     color: 'white',
                   }}

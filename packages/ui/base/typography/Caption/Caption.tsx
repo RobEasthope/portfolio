@@ -1,5 +1,5 @@
-import { SPACING } from '@/UI/constants/SPACING';
-import { styled } from '@/UI/styles/stitches.config';
+import { SPACING } from '~/UI/constants/SPACING';
+import { styled } from '~/UI/styles/stitches.config';
 
 export const Caption = styled('figcaption', {
   fontSize: '$small',

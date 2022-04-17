@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SanityReference, Page } from '@/UI/types/sanity-schema';
+import { SanityReference, Page } from '~/UI/types/sanity-schema';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {

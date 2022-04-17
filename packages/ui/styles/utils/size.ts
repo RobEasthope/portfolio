@@ -1,5 +1,5 @@
-import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
-import { SizeProps, SizeReturnProps } from '@/UI/types/utils';
+import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
+import { SizeProps, SizeReturnProps } from '~/UI/types/utils';
 
 export const size = ({ selector, min, max }: SizeProps): SizeReturnProps => {
   switch (selector) {

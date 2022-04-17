@@ -1,5 +1,5 @@
-import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
-import { FullTypeProps } from '@/UI/types/utils';
+import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
+import { FullTypeProps } from '~/UI/types/utils';
 
 export const fullType = ({
   fontSize,

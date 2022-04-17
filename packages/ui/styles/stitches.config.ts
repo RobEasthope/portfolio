@@ -1,13 +1,13 @@
 import { createStitches } from '@stitches/react';
 import { mixins } from 'stitches-mixins';
 
-import { SizeProps, TypeProps, FullTypeProps } from '@/UI/types/utils';
-import { type } from '@/UI/styles/utils/type';
-import { fullType } from '@/UI/styles/utils/fullType';
-import { size } from '@/UI/styles/utils/size';
-import { MAX_WIDTH } from '@/UI/constants/MAX_WIDTHS';
-import { SPACING } from '@/UI/constants/SPACING';
-import { RADII } from '@/UI/styles/constants/RADII';
+import { SizeProps, TypeProps, FullTypeProps } from '~/UI/types/utils';
+import { type } from '~/UI/styles/utils/type';
+import { fullType } from '~/UI/styles/utils/fullType';
+import { size } from '~/UI/styles/utils/size';
+import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
+import { SPACING } from '~/UI/constants/SPACING';
+import { RADII } from '~/UI/styles/constants/RADII';
 
 export const { css, styled, globalCss, getCssText } = createStitches({
   theme: {
@@ -15,9 +15,8 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
 
-      text: 'rgb(36, 36, 36)',
+      text: 'rgb(21, 23, 24)',
       highlight: 'rgb(255, 153, 51)',
-      contentBkg: 'rgb(248, 247, 243)',
 
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',

@@ -1,5 +1,5 @@
-import { BasicText } from '@/UI/base/formatted-text/BasicText/BasicText';
-import { styled } from '@/UI/styles/stitches.config';
+import { BasicText } from '~/UI/base/formatted-text/BasicText/BasicText';
+import { styled } from '~/UI/styles/stitches.config';
 
 export const Figure = styled('figure', {
   margin: 0,

@@ -1,10 +1,10 @@
 import Custom404 from 'pages/404';
 
-import { Page, PageProps } from '@/UI/layouts/Page/Page';
-import { appGlobalsQuery } from '@/UI/base/settings/app-globals.queries';
-import { getClient, overlayDrafts } from '@/UTILS/sanity-api/sanity.server';
-import { AppGlobalsProps } from '@/UI/base/settings/Globals';
-import { previewAnyPageByIdQuery } from '@/UI/layouts/Preview/Preview.queries';
+import { Page, PageProps } from '~/UI/layouts/Page/Page';
+import { appGlobalsQuery } from '~/UI/base/settings/app-globals.queries';
+import { getClient, overlayDrafts } from '~/UTILS/sanity-api/sanity.server';
+import { AppGlobalsProps } from '~/UI/base/settings/Globals';
+import { previewAnyPageByIdQuery } from '~/UI/layouts/Preview/Preview.queries';
 
 // TYPES
 type PreviewPageBySlugProps = {

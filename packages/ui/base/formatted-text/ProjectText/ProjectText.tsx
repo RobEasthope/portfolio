@@ -2,17 +2,17 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
-import { ImageProps } from '@/UI/sections/Image/Image';
-import { MuxVideoProps } from '@/UI/sections/MuxVideo/MuxVideo';
-import { VimeoVideoProps } from '@/UI/sections/VimeoVideo/VimeoVideo';
-import { YoutubeVideoProps } from '@/UI/sections/YoutubeVideo/YoutubeVideo';
-import { GalleryProps } from '@/UI/sections/Gallery/Gallery';
-import { Text } from '@/UI/base/typography/Text/Text';
+import { ImageProps } from '~/UI/sections/Image/Image';
+import { MuxVideoProps } from '~/UI/sections/MuxVideo/MuxVideo';
+import { VimeoVideoProps } from '~/UI/sections/VimeoVideo/VimeoVideo';
+import { YoutubeVideoProps } from '~/UI/sections/YoutubeVideo/YoutubeVideo';
+import { GalleryProps } from '~/UI/sections/Gallery/Gallery';
+import { Text } from '~/UI/base/typography/Text/Text';
 import {
   BlockRendererProps,
   SerializerMarksProps,
-} from '@/UI/base/formatted-text/formattedTextProps';
-import { Prose } from '@/UI/base/typography/Prose/Prose';
+} from '~/UI/base/formatted-text/formattedTextProps';
+import { Prose } from '~/UI/base/typography/Prose/Prose';
 
 const Gallery = dynamic(() => import('../../../sections/Gallery/Gallery'));
 const Image = dynamic(() => import('../../../sections/Image/Image'));

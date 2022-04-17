@@ -1,13 +1,13 @@
-import { Footer } from '@/UI/navigation/Footer/Footer';
-import { Header } from '@/UI/navigation/Header/Header';
-import { FixedFooterLayout } from '@/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
-import { MainContentLayout } from '@/UI/base/layout/MainContentLayout/MainContentLayout';
-import { NextMetadata } from '@/UI/base/app/Metadata/NextMetadata';
-import { RenderSections } from '@/UI/utils/RenderSections/RenderSections';
-import { Page as rawPageProps } from '@/UI/types/sanity-schema';
-import { ExampleSectionProps } from '@/UI/sections/ExampleSection/ExampleSection';
-import { AppGlobalsProps } from '@/UI/base/settings/Globals';
-import { ProjectProps } from '@/UI/layouts/Project/Project';
+import { Footer } from '~/UI/navigation/Footer/Footer';
+import { Header } from '~/UI/navigation/Header/Header';
+import { FixedFooterLayout } from '~/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
+import { MainContentLayout } from '~/UI/base/layout/MainContentLayout/MainContentLayout';
+import { NextMetadata } from '~/UI/base/app/Metadata/NextMetadata';
+import { RenderSections } from '~/UI/utils/RenderSections/RenderSections';
+import { Page as rawPageProps } from '~/UI/types/sanity-schema';
+import { ExampleSectionProps } from '~/UI/sections/ExampleSection/ExampleSection';
+import { AppGlobalsProps } from '~/UI/base/settings/Globals';
+import { ProjectProps } from '~/UI/layouts/Project/Project';
 
 export interface PageProps extends rawPageProps {
   sections: [ExampleSectionProps];
@@ -45,7 +45,7 @@ export const Page = ({
           />
         )}
 
-        <MainContentLayout as="main" css={{ backgroundColor: '$contentBkg' }}>
+        <MainContentLayout as="main">
           {sections && (
             <RenderSections sections={sections} projects={projects} />
           )}
