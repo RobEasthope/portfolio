@@ -36,18 +36,15 @@ import organisation from '../../packages/ui/sections/Organisation/schemas/Organi
 import education from '../../packages/ui/sections/EducationBlock/schemas/Education.schema';
 
 // Content UI
-import about from '../../packages/ui/sections/AboutBlock/About.schema';
 import ExampleSection from '../../packages/ui/sections/ExampleSection/ExampleSection.schema';
 import GalleryImage from '../../packages/ui/sections/Gallery/schemas/GalleryImage.schema';
 import Gallery from '../../packages/ui/sections/Gallery/Gallery.schema';
 import Image from '../../packages/ui/sections/Image/Image.schema';
-import landing from '../../packages/ui/sections/LandingBlock/LandingBlock.schema';
+
 import LandingHero from '../../packages/ui/sections/LandingHero/LandingHero.schema';
 import MuxVideo from '../../packages/ui/sections/MuxVideo/MuxVideo.schema';
-import portfolio from '../../packages/ui/sections/PortfolioBlock/PortfolioBlock.schema';
 import ProjectIndex from '../../packages/ui/sections/ProjectIndex/ProjectIndex.schema';
-import opensource from '../../packages/ui/sections/OpenSource/schemas/Opensource.schema';
-import sandbox from '../../packages/ui/sections/SandboxBlock/SandboxBlock.schema';
+
 import Spacer from '../../packages/ui/sections/Spacer/Spacer.schema';
 import Text from '../../packages/ui/sections/Text/Text.schema';
 import VimeoVideo from '../../packages/ui/sections/VimeoVideo/VimeoVideo.schema';
@@ -94,18 +91,13 @@ export default createSchema({
     education,
 
     // Content UI
-    about,
     ExampleSection,
     GalleryImage,
     Gallery,
     Image,
-    landing,
     LandingHero,
     MuxVideo,
-    portfolio,
     ProjectIndex,
-    opensource,
-    sandbox,
     Spacer,
     Text,
     VimeoVideo,
