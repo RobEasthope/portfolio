@@ -44,7 +44,12 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
         gapY="x1"
       >
         {projects.map((project, i) => (
-          <Flex as="li" key={project?._id} align="center" direction="row">
+          <Flex
+            as="li"
+            key={`${project?._id}-${i}`}
+            align="center"
+            direction="row"
+          >
             {project?.thumbnailImage && project?.slug && (
               <Link href={project?.slug?.current}>
                 <a>
