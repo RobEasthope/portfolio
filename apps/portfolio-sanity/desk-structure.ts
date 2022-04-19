@@ -83,15 +83,6 @@ export default () =>
         .icon(RiQuillPenLine)
         .schemaType('Page')
         .child(S.documentTypeList('Page').title('Pages')),
-      S.listItem()
-        .title('Landing section')
-        .child(
-          S.editor()
-            .id('landing')
-            .schemaType('landing')
-            .documentId('landing')
-        ),
-                // .icon(GoNote),
       S.divider(),
       S.listItem()
         .title('About')
@@ -100,15 +91,6 @@ export default () =>
           S.list()
             .title('About')
             .items([
-              S.listItem()
-                .title('Profile')
-                .child(
-                  S.editor()
-                    .id('about')
-                    .schemaType('about')
-                    .documentId('about')
-                )
-                .icon(CgProfile),
               S.listItem()
                 .title('Gigs')
                 .icon(RiBriefcaseFill)
