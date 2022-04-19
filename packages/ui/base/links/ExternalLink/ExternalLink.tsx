@@ -20,7 +20,7 @@ export type ExternalLinkSchemaProps = {
 
 // Component props
 export type ExternalLinkProps = {
-  href?: string;
+  href: string;
   className?: string;
   children: any;
   onClick?: VoidFunction;
