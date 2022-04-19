@@ -7,7 +7,6 @@ import { ProjectProps } from '~/UI/layouts/Project/Project';
 import { Picture } from '~/UI/base/media/Picture/Picture';
 import { styled } from '~/UI/styles/stitches.config';
 import { createGroups } from '~/UI/utils/createGroups';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { Text } from '~/UI/base/typography/Text/Text';
 import { InternalLink } from '~/UI/base/links/InternalLink/InternalLink';
 
