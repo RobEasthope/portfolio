@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SanityReference, Page } from '~/UI/types/sanity-schema';
+import { Anchor } from '~/UI/base/typography/Anchor/Anchor';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
@@ -35,8 +36,9 @@ export const InternalLink = ({
     href={
       link?.to?.slug?.current === 'root' ? '/' : `/${link?.to?.slug?.current}`
     }
+    passHref
   >
-    <a
+    <Anchor
       className={className}
       onClick={onClick}
       onKeyDown={onClick}
@@ -44,6 +46,6 @@ export const InternalLink = ({
       tabIndex={0}
     >
       {children || null}
-    </a>
+    </Anchor>
   </Link>
 );
