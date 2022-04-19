@@ -6,7 +6,6 @@ import { Grid } from '~/UI/base/structure/Grid/Grid';
 import { ProjectProps } from '~/UI/layouts/Project/Project';
 import { Picture } from '~/UI/base/media/Picture/Picture';
 import { styled } from '~/UI/styles/stitches.config';
-import { createGroups } from '~/UI/utils/createGroups';
 import { Text } from '~/UI/base/typography/Text/Text';
 import { InternalLink } from '~/UI/base/links/InternalLink/InternalLink';
 
@@ -36,49 +35,47 @@ export interface ProjectIndexProps extends rawProjectIndexProps {
 }
 
 // MARKUP
-export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
-  const splitProjects: [ProjectProps[]] = createGroups({
-    arr: projects,
-    numGroups: 4,
-  });
+export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
+  <MaxWidth width="xLarge">
+    {projects?.length > 0 && (
+      <Index
+        columns={{ '@initial': 1, '@small': 2, '@large': 3, '@xLarge': 4 }}
+        gapX="x2"
+        gapY="x1"
+      >
+        {projects.map((project, i) => (
+          <Flex
+            as="li"
+            key={`${project?._id}-${i}`}
+            align="center"
+            direction="row"
+          >
+            {project?.thumbnailImage && project?.slug && (
+              <Link href={project?.slug?.current}>
+                <a>
+                  <Thumbnail
+                    asset={project?.thumbnailImage}
+                    alt={project?.title || ''}
+                    mode="responsive"
+                    maxWidth={48}
+                    aspectRatio={1}
+                  />
+                </a>
+              </Link>
+            )}
 
-  return (
-    <MaxWidth width="xLarge">
-      {splitProjects?.length > 0 && (
-        <Index
-          columns={{ '@initial': 1, '@small': 2, '@large': 3, '@xLarge': 4 }}
-          gapX="x2"
-          gapY="x1"
-        >
-          {projects.map((project) => (
-            <Flex as="li" key={project?._id} align="center" direction="row">
-              {project?.thumbnailImage && project?.slug && (
-                <Link href={project?.slug?.current}>
-                  <a>
-                    <Thumbnail
-                      asset={project?.thumbnailImage}
-                      alt={project?.title || ''}
-                      mode="responsive"
-                      maxWidth={48}
-                      aspectRatio={1}
-                    />
-                  </a>
-                </Link>
-              )}
-
-              {project?.slug && (
-                <Text>
-                  <InternalLink href={project?.slug?.current}>
-                    {project?.title}
-                  </InternalLink>
-                </Text>
-              )}
-            </Flex>
-          ))}
-        </Index>
-      )}
-    </MaxWidth>
-  );
-};
+            {project?.slug && (
+              <Text>
+                <InternalLink href={project?.slug?.current}>
+                  {project?.title}
+                </InternalLink>
+              </Text>
+            )}
+          </Flex>
+        ))}
+      </Index>
+    )}
+  </MaxWidth>
+);
 
 export default ProjectIndex;
