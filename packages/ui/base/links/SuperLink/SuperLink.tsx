@@ -30,7 +30,7 @@ export const SuperLink = ({
     case 'InternalLinkWithTitle':
       return (
         <InternalLink
-          link={link?.to?.slug?.current}
+          href={link?.to?.slug?.current}
           className={className}
           onClick={onClick}
         >
@@ -40,7 +40,7 @@ export const SuperLink = ({
 
     case 'ExternalLinkWithTitle':
       return (
-        <ExternalLink link={link?.url} className={className} onClick={onClick}>
+        <ExternalLink href={link?.url} className={className} onClick={onClick}>
           {children}
         </ExternalLink>
       );
