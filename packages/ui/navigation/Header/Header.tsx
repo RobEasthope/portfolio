@@ -12,7 +12,7 @@ import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedCompo
 import { Box } from '~/UI/base/structure/Box/Box';
 import { Flex } from '~/UI/base/structure/Flex/Flex';
 import { Spacer } from '~/UI/sections/Spacer/Spacer';
-import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
+import { Text } from '~/UI/base/typography/Text/Text';
 
 // Styles
 export const LargeNavigation = styled(Box, {
@@ -68,9 +68,9 @@ export const Header = ({
             {navigationLeft &&
               navigationLeft?.length > 0 &&
               navigationLeft.map((nav) => (
-                <NavLink as="li" key={nav?._key}>
+                <Text as="li" key={nav?._key}>
                   <SuperLink link={nav}>{nav.title}</SuperLink>
-                </NavLink>
+                </Text>
               ))}
           </LeftNavigation>
         </Box>
@@ -103,9 +103,9 @@ export const Header = ({
             {navigationRight &&
               navigationRight?.length > 0 &&
               navigationRight.map((nav) => (
-                <NavLink as="li" key={nav?._key}>
+                <Text as="li" key={nav?._key}>
                   <SuperLink link={nav}>{nav.title}</SuperLink>
-                </NavLink>
+                </Text>
               ))}
           </RightNavigation>
         </Box>
