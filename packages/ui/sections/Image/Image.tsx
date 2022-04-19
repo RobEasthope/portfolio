@@ -15,7 +15,7 @@ export const Image = ({ image, maxWidth }: ImageProps) => {
   }
 
   return (
-    <PaddedComponent as="section" content="media" css={{ marginY: '$x2' }}>
+    <PaddedComponent as="section" content="media">
       <Breakout>
         <MaxWidth as="figure" width={maxWidth}>
           <Picture
