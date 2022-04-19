@@ -9,6 +9,7 @@ import { styled } from '~/UI/styles/stitches.config';
 import { createGroups } from '~/UI/utils/createGroups';
 import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { Text } from '~/UI/base/typography/Text/Text';
+import { Anchor } from '~/UI/base/typography/Anchor/Anchor';
 
 // STYLES
 export const Index = styled(Grid, {
@@ -68,8 +69,8 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
 
               {project?.slug && (
                 <Text>
-                  <Link href={project?.slug?.current}>
-                    <a>{project?.title}</a>
+                  <Link href={project?.slug?.current} passHref>
+                    <Anchor>{project?.title}</Anchor>
                   </Link>
                 </Text>
               )}
