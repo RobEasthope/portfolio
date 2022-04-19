@@ -20,7 +20,7 @@ export type InternalLinkSchemaProps = {
 
 // Component props
 export type InternalLinkProps = {
-  link: InternalLinkWithTitleSchemaProps | InternalLinkSchemaProps;
+  link: string;
   className?: string;
   children: any;
   onClick?: VoidFunction;
@@ -32,12 +32,7 @@ export const InternalLink = ({
   children,
   className,
 }: InternalLinkProps) => (
-  <Link
-    href={
-      link?.to?.slug?.current === 'root' ? '/' : `/${link?.to?.slug?.current}`
-    }
-    passHref
-  >
+  <Link href={link === 'home' ? '/' : `/${link}`} passHref>
     <Anchor
       className={className}
       onClick={onClick}
