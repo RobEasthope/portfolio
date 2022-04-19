@@ -21,7 +21,7 @@ export const Gallery = ({
   }
 
   return (
-    <PaddedComponent as="section" content="media">
+    <PaddedComponent as="section" content="media" css={{ paddingY: '$x1' }}>
       <Breakout>
         <MaxWidth width={maxWidth}>
           {images && (
