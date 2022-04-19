@@ -89,6 +89,7 @@ const projectTextSerializer = {
         galleryCaption,
         columns,
         aspectRatio,
+        maxWidth,
         _type,
       }: GalleryProps = node;
 
@@ -98,6 +99,8 @@ const projectTextSerializer = {
           galleryCaption={galleryCaption}
           columns={columns}
           aspectRatio={aspectRatio}
+          maxWidth={maxWidth}
+          breakout={maxWidth && true}
           _type={_type}
         />
       );
@@ -115,6 +118,7 @@ const projectTextSerializer = {
           muxVideo={muxVideo}
           caption={caption}
           maxWidth={maxWidth}
+          breakout={maxWidth && true}
           _type={_type}
         />
       );
@@ -127,6 +131,7 @@ const projectTextSerializer = {
           url={url}
           caption={caption}
           maxWidth={maxWidth}
+          breakout={maxWidth && true}
           _type={_type}
         />
       );
@@ -139,6 +144,7 @@ const projectTextSerializer = {
           url={url}
           caption={caption}
           maxWidth={maxWidth}
+          breakout={maxWidth && true}
           _type={_type}
         />
       );

@@ -1,7 +1,7 @@
 import { Footer } from '~/UI/navigation/Footer/Footer';
 import { Header } from '~/UI/navigation/Header/Header';
-import { FixedFooterLayout } from '~/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
-import { MainContentLayout } from '~/UI/base/layout/MainContentLayout/MainContentLayout';
+import { FixedFooterLayout } from '~/UI/base/structure/FixedFooterLayout/FixedFooterLayout';
+import { MainContentLayout } from '~/UI/base/structure/MainContentLayout/MainContentLayout';
 import { NextMetadata } from '~/UI/base/app/Metadata/NextMetadata';
 import { RenderSections } from '~/UI/utils/RenderSections/RenderSections';
 import { Page as rawPageProps } from '~/UI/types/sanity-schema';
@@ -17,15 +17,17 @@ export interface PageProps extends rawPageProps {
 export const Page = ({
   page,
   globals,
+  homePageSlug,
 }: {
   page: PageProps;
   globals: AppGlobalsProps;
+  homePageSlug?: string;
 }) => {
   // Globals props
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { sections, projects } = page;
+  const { sections, projects, slug } = page;
 
   return (
     <>
@@ -51,10 +53,9 @@ export const Page = ({
           )}
         </MainContentLayout>
 
-        <Footer
-          navigation={footer?.navigation}
-          copyrightText={footer?.copyrightText}
-        />
+        {slug?.current !== homePageSlug && (
+          <Footer copyrightText={footer?.copyrightText} />
+        )}
       </FixedFooterLayout>
     </>
   );

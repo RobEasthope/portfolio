@@ -68,7 +68,13 @@ export type SizeProps = {
     | 'paddingLeft'
     | 'paddingX'
     | 'paddingY'
-    | 'gap';
+    | 'gap'
+    | 'width'
+    | 'minWidth'
+    | 'height'
+    | 'minHeight'
+    | 'xySize'
+    | 'minXySize';
 
   // sizes
   min: number;
@@ -147,5 +153,30 @@ export type SizeReturnProps =
       gap: string;
       '@pageMinWidth': { gap: string };
       '@pageMaxWidth': { gap: string };
+    }
+  | {
+      width: string;
+      '@pageMinWidth': { width: string };
+      '@pageMaxWidth': { width: string };
+    }
+  | {
+      minWidth: string;
+      '@pageMinWidth': { minWidth: string };
+      '@pageMaxWidth': { minWidth: string };
+    }
+  | {
+      height: string;
+      '@pageMinWidth': { height: string };
+      '@pageMaxWidth': { height: string };
+    }
+  | {
+      minHeight: string;
+      '@pageMinWidth': { minHeight: string };
+      '@pageMaxWidth': { minHeight: string };
+    }
+  | {
+      xySize: string;
+      '@pageMinWidth': { xySize: string };
+      '@pageMaxWidth': { xySize: string };
     }
   | Record<string, unknown>;

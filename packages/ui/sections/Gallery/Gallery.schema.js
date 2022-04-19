@@ -62,10 +62,11 @@ export default {
       name: 'maxWidth',
       title: 'Max width',
       type: 'string',
-      description: 'Defaults to large',
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

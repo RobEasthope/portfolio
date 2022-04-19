@@ -24,6 +24,7 @@ type PageBySlugProps = {
   data: {
     page: PageProps;
     globals: AppGlobalsProps;
+    homePageSlug: string;
   };
 };
 
@@ -31,7 +32,7 @@ type PageBySlugProps = {
 export default function PageBySlug({ data }: PageBySlugProps) {
   const router = useRouter();
   const { isFallback } = router;
-  const { page, globals } = data;
+  const { page, globals, homePageSlug } = data;
 
   if (!pageRenderChecks({ data, currentRoute: router.asPath })) {
     return <Error404 />;
@@ -42,7 +43,7 @@ export default function PageBySlug({ data }: PageBySlugProps) {
       {isFallback && <Loading />}
 
       {!isFallback && page?._type === 'Page' && (
-        <Page page={page} globals={globals} />
+        <Page page={page} globals={globals} homePageSlug={homePageSlug} />
       )}
     </>
   );
@@ -107,7 +108,11 @@ export const getStaticProps = async ({
   // Page payload
   return {
     props: {
-      data: { page: (page[0] as PageProps) || null, globals },
+      data: {
+        page: (page[0] as PageProps) || null,
+        globals,
+        homePageSlug,
+      },
       preview,
     },
     // ISR cache time

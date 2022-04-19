@@ -17,7 +17,6 @@ export const pageBySlugQuery = groq`
         "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
         "bkg": rawBkg->,
       },
-
       "muxVideo": rawMuxVideo.asset->,
     }
   }

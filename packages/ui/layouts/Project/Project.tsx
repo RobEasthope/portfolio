@@ -1,7 +1,7 @@
 import { Footer } from '~/UI/navigation/Footer/Footer';
 import { Header } from '~/UI/navigation/Header/Header';
-import { FixedFooterLayout } from '~/UI/base/layout/FixedFooterLayout/FixedFooterLayout';
-import { MainContentLayout } from '~/UI/base/layout/MainContentLayout/MainContentLayout';
+import { FixedFooterLayout } from '~/UI/base/structure/FixedFooterLayout/FixedFooterLayout';
+import { MainContentLayout } from '~/UI/base/structure/MainContentLayout/MainContentLayout';
 import { NextMetadata } from '~/UI/base/app/Metadata/NextMetadata';
 import {
   Organisation,
@@ -11,14 +11,15 @@ import { ExampleSectionProps } from '~/UI/sections/ExampleSection/ExampleSection
 import { AppGlobalsProps } from '~/UI/base/settings/Globals';
 import { Text } from '~/UI/base/typography/Text/Text';
 import { ProjectText } from '~/UI/base/formatted-text/ProjectText/ProjectText';
-import { MaxWidth } from '~/UI/base/layout/MaxWidth/MaxWidth';
-import { Box } from '~/UI/base/layout/Box/Box';
-import { Flex } from '~/UI/base/layout/Flex/Flex';
-import { TextAlign } from '~/UI/base/layout/TextAlign/TextAlign';
+import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
+import { Box } from '~/UI/base/structure/Box/Box';
+import { Flex } from '~/UI/base/structure/Flex/Flex';
+import { TextAlign } from '~/UI/base/structure/TextAlign/TextAlign';
 import { Picture } from '~/UI/base/media/Picture/Picture';
 
 import { styled } from '~/UI/styles/stitches.config';
 import { Spacer } from '~/UI/sections/Spacer/Spacer';
+import { ExternalLink } from '~/UI/base/links/ExternalLink/ExternalLink';
 
 export const ProjectLogo = styled(Picture, {
   borderRadius: '$circle',
@@ -81,78 +82,75 @@ export const Project = ({
 
         <MainContentLayout as="main">
           <Spacer height="x2" />
-          <MaxWidth width="small">
+          <MaxWidth width="text">
             <TextAlign align="centre">
               {thumbnailImage && (
-                <>
-                  <Flex justify="center">
-                    <ProjectLogo
-                      asset={thumbnailImage}
-                      alt={title || ''}
-                      mode="responsive"
-                      maxWidth={200}
-                      aspectRatio={1}
-                    />
-                  </Flex>
-                  <Spacer height="x1" />
-                </>
+                <Flex justify="center" css={{ marginBottom: '$x1' }}>
+                  <ProjectLogo
+                    asset={thumbnailImage}
+                    alt={title || ''}
+                    mode="responsive"
+                    maxWidth={200}
+                    aspectRatio={1}
+                  />
+                </Flex>
               )}
 
-              {title && <Text typeSize="large">{title}</Text>}
-              <Spacer height="half" />
+              {title && (
+                <Text typeSize="large" css={{ marginBottom: '$x1' }}>
+                  {title}
+                </Text>
+              )}
 
               {description && <Text>{description}</Text>}
               <Spacer height="x1" />
 
-              <Flex justify="center" gap="x1">
-                {clientOrg && (
-                  <Text>
-                    <Box as="span" css={{ fontStyle: 'italic' }}>
-                      Client:{' '}
-                    </Box>
-                    {clientOrg?.name}
-                  </Text>
-                )}
-                {agencyOrg && (
-                  <Text>
-                    <Box as="span" css={{ fontStyle: 'italic' }}>
-                      Agency:{' '}
-                    </Box>
-                    {agencyOrg?.name}
-                  </Text>
-                )}
-              </Flex>
-
-              <Spacer height="x2" />
+              {(clientOrg || agencyOrg) && (
+                <Flex justify="center" gap="x1" css={{ marginBottom: '$x1' }}>
+                  {clientOrg && (
+                    <Text>
+                      <Box as="span" css={{ fontStyle: 'italic' }}>
+                        Client:{' '}
+                      </Box>
+                      <ExternalLink>{clientOrg?.name}</ExternalLink>
+                    </Text>
+                  )}
+                  {agencyOrg && (
+                    <Text>
+                      <Box as="span" css={{ fontStyle: 'italic' }}>
+                        Agency:{' '}
+                      </Box>
+                      <ExternalLink href={agencyOrg?.url}>
+                        {agencyOrg?.name}
+                      </ExternalLink>
+                    </Text>
+                  )}
+                </Flex>
+              )}
             </TextAlign>
 
             {projectText && <ProjectText blocks={projectText as unknown} />}
 
             <TextAlign align="centre">
               {projectUrl && (
-                <Text>
-                  <a href={projectUrl}>{projectUrlTitle || projectUrl}</a>
+                <Text css={{ marginTop: '$x1' }}>
+                  <ExternalLink href={projectUrl}>
+                    {projectUrlTitle || projectUrl}
+                  </ExternalLink>
                 </Text>
               )}
               {repoUrl && (
-                <Text>
-                  <a href={repoUrl}>{repoUrl}</a>
+                <Text css={{ marginTop: '$x1' }}>
+                  <ExternalLink href={repoUrl}>{repoUrl}</ExternalLink>
                 </Text>
               )}
-              {date && (
-                <>
-                  <Spacer height="x1" /> <Text>{date}</Text>
-                </>
-              )}
+              {date && <Text css={{ marginTop: '$x1' }}>{date}</Text>}
             </TextAlign>
             <Spacer height="x2" />
           </MaxWidth>
         </MainContentLayout>
 
-        <Footer
-          navigation={footer?.navigation}
-          copyrightText={footer?.copyrightText}
-        />
+        <Footer copyrightText={footer?.copyrightText} />
       </FixedFooterLayout>
     </>
   );

@@ -1,13 +1,13 @@
 import { styled } from '~/UI/styles/stitches.config';
-import { Box } from '~/UI/base/layout/Box/Box';
+import { Box } from '~/UI/base/structure/Box/Box';
 
 export const PaddedComponent = styled(Box, {
   width: '100%',
 
   variants: {
     content: {
-      text: { paddingLeft: '$half', paddingRight: '$half' },
-      nav: { paddingX: '$x2' },
+      text: { size: { selector: 'paddingX', min: 12, max: 48 } },
+      nav: { size: { selector: 'paddingX', min: 12, max: 48 } },
       media: {
         position: 'relative',
         left: '50%',
@@ -17,7 +17,7 @@ export const PaddedComponent = styled(Box, {
         maxWidth: '100vw',
 
         '@small': {
-          paddingX: '$half',
+          size: { selector: 'paddingX', min: 12, max: 48 },
           left: 'initial',
           right: 'initial',
           marginX: 'auto',
