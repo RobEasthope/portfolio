@@ -13,6 +13,7 @@ export const PaddedComponent = styled(Box, {
         left: '50%',
         right: '50',
         marginX: '-50vw',
+        marginY: '$x2',
         width: '100vw',
         maxWidth: '100vw',
 
