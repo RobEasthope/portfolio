@@ -112,7 +112,9 @@ export const Project = ({
                       <Box as="span" css={{ fontStyle: 'italic' }}>
                         Client:{' '}
                       </Box>
-                      <ExternalLink>{clientOrg?.name}</ExternalLink>
+                      <ExternalLink href={clientOrg?.url}>
+                        {clientOrg?.name}
+                      </ExternalLink>
                     </Text>
                   )}
                   {agencyOrg && (
