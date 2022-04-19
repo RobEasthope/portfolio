@@ -51,6 +51,8 @@ export default {
       type: 'ProjectText',
       description:
         'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'showreel',
