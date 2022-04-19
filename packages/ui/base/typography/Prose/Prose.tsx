@@ -43,6 +43,11 @@ export const Prose = styled('div', {
   // Links
   '& a': {
     color: 'inherit',
+    transition: 'color 0.4s ease-in-out',
+
+    '&:hover': {
+      color: '$highlight',
+    },
   },
 
   '> strong': {
