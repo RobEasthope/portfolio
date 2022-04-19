@@ -97,7 +97,7 @@ export interface Footer extends SanityDocument {
    *
    *
    */
-  copyrightText: string;
+  copyrightText?: string;
 }
 
 /**
@@ -748,7 +748,7 @@ export interface Project extends SanityDocument {
    *
    * I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling
    */
-  projectText?: ProjectText;
+  projectText: ProjectText;
 
   /**
    * Showreel — `mux.video`
@@ -1051,9 +1051,9 @@ export type Gallery = {
   /**
    * Max width — `string`
    *
-   * Defaults to large
+   *
    */
-  maxWidth?: "small" | "medium" | "large" | "full";
+  maxWidth: "small" | "medium" | "large" | "full";
 };
 
 export type Image = {
