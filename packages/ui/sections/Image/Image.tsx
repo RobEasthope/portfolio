@@ -6,19 +6,17 @@ import { Caption } from '~/UI/base/typography/Caption/Caption';
 import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
 
 // TYPES
-export interface ImageProps extends rawImageProps {
-  breakout?: boolean;
-}
+export type ImageProps = rawImageProps;
 
 // MARKUP
-export const Image = ({ image, maxWidth, breakout }: ImageProps) => {
+export const Image = ({ image, maxWidth }: ImageProps) => {
   if (!image) {
     return null;
   }
 
   return (
     <PaddedComponent as="section" content="media">
-      <Breakout active={breakout}>
+      <Breakout>
         <MaxWidth as="figure" width={maxWidth}>
           <Picture
             asset={image}
