@@ -1,6 +1,3 @@
-import * as dayjs from 'dayjs';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
-
 export default {
   name: 'project',
   title: 'Project',
@@ -150,22 +147,8 @@ export default {
       clientName: 'client.name',
       agencyName: 'agency.name',
       thumbnailImage: 'thumbnailImage',
-      startDate: 'startDate',
-      endDate: 'endDate',
     },
-    prepare({
-      startDate = null,
-      endDate = null,
-      title,
-      clientName = null,
-      agencyName = null,
-      thumbnailImage,
-    }) {
-      dayjs.extend(advancedFormat);
-
-      const formattedStartDate = dayjs.default(startDate).format('MMM Do YYYY');
-      const formattedEndDate = dayjs.default(endDate).format('MMM Do YYYY');
-
+    prepare({ title, clientName = null, agencyName = null, thumbnailImage }) {
       return {
         title,
         media: thumbnailImage,
