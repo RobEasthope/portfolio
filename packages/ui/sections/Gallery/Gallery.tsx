@@ -6,9 +6,7 @@ import { Picture } from '~/UI/base/media/Picture/Picture';
 import { Figure, GalleryCaption, Grid } from './Gallery.styles';
 
 // TYPES
-export interface GalleryProps extends rawGalleryProps {
-  breakout?: boolean;
-}
+export type GalleryProps = rawGalleryProps;
 
 // MARKUP
 export const Gallery = ({
@@ -17,7 +15,6 @@ export const Gallery = ({
   columns,
   aspectRatio = 1 / 1,
   maxWidth = 'medium',
-  breakout,
 }: GalleryProps) => {
   if (!images) {
     return null;
@@ -25,7 +22,7 @@ export const Gallery = ({
 
   return (
     <PaddedComponent as="section" content="media">
-      <Breakout active={breakout}>
+      <Breakout>
         <MaxWidth width={maxWidth}>
           {images && (
             <Grid columns={columns}>
