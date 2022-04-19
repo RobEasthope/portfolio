@@ -20,6 +20,7 @@ import { Picture } from '~/UI/base/media/Picture/Picture';
 import { styled } from '~/UI/styles/stitches.config';
 import { Spacer } from '~/UI/sections/Spacer/Spacer';
 import { ExternalLink } from '~/UI/base/links/ExternalLink/ExternalLink';
+import { BsDot } from 'react-icons/bs';
 
 export const ProjectLogo = styled(Picture, {
   borderRadius: '$circle',
@@ -82,8 +83,9 @@ export const Project = ({
 
         <MainContentLayout as="main">
           <Spacer height="x2" />
+
           <MaxWidth width="text">
-            <TextAlign align="centre">
+            <TextAlign align="centre" css={{ marginBottom: '$x1' }}>
               {thumbnailImage && (
                 <Flex justify="center" css={{ marginBottom: '$x1' }}>
                   <ProjectLogo
@@ -102,11 +104,12 @@ export const Project = ({
                 </Text>
               )}
 
-              {description && <Text>{description}</Text>}
-              <Spacer height="x1" />
+              {description && (
+                <Text css={{ marginBottom: '$x1' }}>{description}</Text>
+              )}
 
               {(clientOrg || agencyOrg) && (
-                <Flex justify="center" gap="x1" css={{ marginBottom: '$x1' }}>
+                <Flex justify="center" gap="x1">
                   {clientOrg && (
                     <Text>
                       <Box as="span" css={{ fontStyle: 'italic' }}>
@@ -129,6 +132,8 @@ export const Project = ({
                   )}
                 </Flex>
               )}
+              <Spacer height="x1" />
+              <BsDot />
             </TextAlign>
 
             {projectText && <ProjectText blocks={projectText as unknown} />}
