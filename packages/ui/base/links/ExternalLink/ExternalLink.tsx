@@ -19,7 +19,8 @@ export type ExternalLinkSchemaProps = {
 
 // Component props
 export type ExternalLinkProps = {
-  link: ExternalLinkWithTitleSchemaProps | ExternalLinkSchemaProps;
+  link?: ExternalLinkWithTitleSchemaProps | ExternalLinkSchemaProps;
+  href?: string;
   className?: string;
   children: any;
   onClick?: VoidFunction;
@@ -27,17 +28,24 @@ export type ExternalLinkProps = {
 
 export const ExternalLink = ({
   link,
+  href,
   onClick,
   children,
   className,
-}: ExternalLinkProps) => (
-  <a
-    href={link.url}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={className}
-    onClick={onClick}
-  >
-    {children || null}
-  </a>
-);
+}: ExternalLinkProps) => {
+  if (!link?.url && !href) {
+    return <span>{children || null}</span>;
+  }
+
+  return (
+    <a
+      href={link?.url || href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      onClick={onClick}
+    >
+      {children || null}
+    </a>
+  );
+};

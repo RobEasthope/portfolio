@@ -15,29 +15,12 @@ import { Spacer } from '~/UI/sections/Spacer/Spacer';
 import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
 
 // Styles
-export const StyledHomeLink = styled('span', {
-  position: 'relative',
-  display: 'inline-block',
-  width: '32px',
-  height: '32px',
-});
-
-export const Logo = styled(Picture, {
-  width: '32px',
-});
-
 export const LargeNavigation = styled(Box, {
-  display: 'none',
-  visibility: 'hidden',
+  display: 'flex',
+  gap: '$x1',
   listStyle: 'none',
-  width: '50%',
+  width: '12em',
   marginY: 0,
-
-  '@media (min-width: 800px)': {
-    display: 'flex',
-    visibility: 'visible',
-    gap: '$half',
-  },
 
   '& li': {
     display: 'inline-block',
@@ -47,9 +30,7 @@ export const LargeNavigation = styled(Box, {
 export const LeftNavigation = styled(LargeNavigation, {});
 
 export const RightNavigation = styled(LargeNavigation, {
-  '@media (min-width: 800px)': {
-    justifyContent: 'flex-end',
-  },
+  justifyContent: 'flex-end',
 });
 
 // Types
@@ -76,48 +57,58 @@ export const Header = ({
       content="nav"
       css={{ backgroundColor: 'white', zIndex: 1 }}
     >
-      <Flex as="nav" align="center" justify="center" css={{ height: '$x3' }}>
-        <LeftNavigation as="ul">
-          {navigationLeft &&
-            navigationLeft?.length > 0 &&
-            navigationLeft.map((nav) => (
-              <NavLink as="li" key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </NavLink>
-            ))}
-        </LeftNavigation>
+      <Flex
+        as="nav"
+        align="center"
+        justify="center"
+        css={{ flex: '0 1 auto', height: '$x3' }}
+      >
+        <Box>
+          <LeftNavigation as="ul">
+            {navigationLeft &&
+              navigationLeft?.length > 0 &&
+              navigationLeft.map((nav) => (
+                <NavLink as="li" key={nav?._key}>
+                  <SuperLink link={nav}>{nav.title}</SuperLink>
+                </NavLink>
+              ))}
+          </LeftNavigation>
+        </Box>
 
         <Spacer />
 
-        <StyledHomeLink>
+        <Box
+          css={{
+            display: 'inline-block',
+            size: { selector: 'minXySize', min: 32, max: 40 },
+          }}
+        >
           <Link href="/">
             <a>
-              <Logo
+              <Picture
                 asset={logo}
                 alt={METADATA?.TITLE || ''}
                 mode="responsive"
-                maxWidth={32}
+                aspectRatio={1}
+                maxWidth={40}
               />
             </a>
           </Link>
-        </StyledHomeLink>
+        </Box>
 
         <Spacer />
 
-        <RightNavigation as="ul">
-          {navigationRight &&
-            navigationRight?.length > 0 &&
-            navigationRight.map((nav) => (
-              <NavLink as="li" key={nav?._key}>
-                <SuperLink link={nav}>{nav.title}</SuperLink>
-              </NavLink>
-            ))}
-        </RightNavigation>
-
-        <SmallNavigation
-          navigationLeft={navigationLeft}
-          navigationRight={navigationRight}
-        />
+        <Box>
+          <RightNavigation as="ul">
+            {navigationRight &&
+              navigationRight?.length > 0 &&
+              navigationRight.map((nav) => (
+                <NavLink as="li" key={nav?._key}>
+                  <SuperLink link={nav}>{nav.title}</SuperLink>
+                </NavLink>
+              ))}
+          </RightNavigation>
+        </Box>
       </Flex>
     </PaddedComponent>
   </Headroom>
