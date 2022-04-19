@@ -141,6 +141,8 @@ export const Project = ({
 
             {(projectUrl || repoUrl || date) && (
               <TextAlign align="centre" css={{ marginTop: '$x1' }}>
+                <BsDot />
+
                 {projectUrl && (
                   <Text css={{ marginTop: '$x1' }}>
                     <ExternalLink href={projectUrl}>
