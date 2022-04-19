@@ -1,4 +1,5 @@
 import { Page } from '~/UI/types/sanity-schema';
+import { Anchor } from '~/UI/base/typography/Anchor/Anchor';
 
 // Schema props
 export type ExternalLinkWithTitleSchemaProps = {
@@ -38,7 +39,7 @@ export const ExternalLink = ({
   }
 
   return (
-    <a
+    <Anchor
       href={link?.url || href}
       target="_blank"
       rel="noopener noreferrer"
@@ -46,6 +47,6 @@ export const ExternalLink = ({
       onClick={onClick}
     >
       {children || null}
-    </a>
+    </Anchor>
   );
 };

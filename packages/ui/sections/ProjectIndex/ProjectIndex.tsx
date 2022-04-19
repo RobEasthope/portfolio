@@ -8,7 +8,7 @@ import { Picture } from '~/UI/base/media/Picture/Picture';
 import { styled } from '~/UI/styles/stitches.config';
 import { createGroups } from '~/UI/utils/createGroups';
 import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
-import { NavLink } from '~/UI/base/typography/NavLink/NavLink';
+import { Text } from '~/UI/base/typography/Text/Text';
 
 // STYLES
 export const Index = styled(Grid, {
@@ -27,13 +27,6 @@ export const Thumbnail = styled(Picture, {
     borderRadius: '$circle',
     width: '100%',
     height: '100%',
-  },
-});
-
-export const ProjectTitle = styled(NavLink, {
-  '& a': {
-    color: 'inherit',
-    textDecoration: 'none',
   },
 });
 
@@ -74,11 +67,11 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
               )}
 
               {project?.slug && (
-                <ProjectTitle>
+                <Text>
                   <Link href={project?.slug?.current}>
                     <a>{project?.title}</a>
                   </Link>
-                </ProjectTitle>
+                </Text>
               )}
             </Flex>
           ))}
