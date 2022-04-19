@@ -148,6 +148,7 @@ export default {
     select: {
       title: 'title',
       clientName: 'client.name',
+      agencyName: 'agency.name',
       thumbnailImage: 'thumbnailImage',
       startDate: 'startDate',
       endDate: 'endDate',
@@ -156,7 +157,8 @@ export default {
       startDate = null,
       endDate = null,
       title,
-      clientName,
+      clientName = null,
+      agencyName = null,
       thumbnailImage,
     }) {
       dayjs.extend(advancedFormat);
@@ -167,9 +169,11 @@ export default {
       return {
         title,
         media: thumbnailImage,
-        subtitle: `${formattedStartDate || 'Date missing'} - ${
-          endDate ? formattedEndDate : 'Present'
-        }`,
+        subtitle:
+          (clientName !== null || agencyName !== null) &&
+          `${clientName !== null ? clientName : ''}${
+            clientName !== null && agencyName !== null ? ` / ` : ''
+          }${agencyName !== null ? agencyName : ''}`,
       };
     },
   },
