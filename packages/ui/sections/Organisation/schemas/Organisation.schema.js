@@ -22,7 +22,16 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'hiddenOrg',
+      title: 'Hide organisation',
+      descript: 'Hides organisation on frontend',
+      type: 'boolean',
+    },
   ],
+  initialValue: {
+    hiddenOrg: false,
+  },
   preview: {
     select: {
       title: 'name',
