@@ -20,27 +20,25 @@ export type ExternalLinkSchemaProps = {
 
 // Component props
 export type ExternalLinkProps = {
-  link?: ExternalLinkWithTitleSchemaProps | ExternalLinkSchemaProps;
-  href?: string;
+  href: string | null;
   className?: string;
   children: any;
   onClick?: VoidFunction;
 };
 
 export const ExternalLink = ({
-  link,
   href,
   onClick,
   children,
   className,
 }: ExternalLinkProps) => {
-  if (!link?.url && !href) {
+  if (!href) {
     return <span>{children || null}</span>;
   }
 
   return (
     <Anchor
-      href={link?.url || href}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={className}
