@@ -133,26 +133,29 @@ export const Project = ({
                 </Flex>
               )}
               <Spacer height="x1" />
+
               <BsDot />
             </TextAlign>
 
             {projectText && <ProjectText blocks={projectText as unknown} />}
 
-            <TextAlign align="centre">
-              {projectUrl && (
-                <Text css={{ marginTop: '$x1' }}>
-                  <ExternalLink href={projectUrl}>
-                    {projectUrlTitle || projectUrl}
-                  </ExternalLink>
-                </Text>
-              )}
-              {repoUrl && (
-                <Text css={{ marginTop: '$x1' }}>
-                  <ExternalLink href={repoUrl}>{repoUrl}</ExternalLink>
-                </Text>
-              )}
-              {date && <Text css={{ marginTop: '$x1' }}>{date}</Text>}
-            </TextAlign>
+            {(projectUrl || repoUrl || date) && (
+              <TextAlign align="centre" css={{ marginTop: '$x1' }}>
+                {projectUrl && (
+                  <Text css={{ marginTop: '$x1' }}>
+                    <ExternalLink href={projectUrl}>
+                      {projectUrlTitle || projectUrl}
+                    </ExternalLink>
+                  </Text>
+                )}
+                {repoUrl && (
+                  <Text css={{ marginTop: '$x1' }}>
+                    <ExternalLink href={repoUrl}>{repoUrl}</ExternalLink>
+                  </Text>
+                )}
+                {date && <Text css={{ marginTop: '$x1' }}>{date}</Text>}
+              </TextAlign>
+            )}
             <Spacer height="x2" />
           </MaxWidth>
         </MainContentLayout>
