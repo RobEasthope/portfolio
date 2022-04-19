@@ -33,6 +33,10 @@ export const ProjectLogo = styled(Picture, {
   },
 });
 
+export const Dot = styled(BsDot, {
+  height: '$x1',
+});
+
 export interface ProjectProps extends rawProjectProps {
   sections: [ExampleSectionProps];
   clientOrg: Organisation;
@@ -134,14 +138,14 @@ export const Project = ({
               )}
               <Spacer height="x1" />
 
-              <BsDot />
+              <Dot />
             </TextAlign>
 
             {projectText && <ProjectText blocks={projectText as unknown} />}
 
             {(projectUrl || repoUrl || date) && (
               <TextAlign align="centre" css={{ marginTop: '$x1' }}>
-                <BsDot />
+                <Dot />
 
                 {projectUrl && (
                   <Text css={{ marginTop: '$x1' }}>
