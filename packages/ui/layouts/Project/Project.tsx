@@ -112,7 +112,7 @@ export const Project = ({
                       <Box as="span" css={{ fontStyle: 'italic' }}>
                         Client:{' '}
                       </Box>
-                      <ExternalLink href={clientOrg?.url}>
+                      <ExternalLink href={clientOrg?.url || null}>
                         {clientOrg?.name}
                       </ExternalLink>
                     </Text>
@@ -122,7 +122,7 @@ export const Project = ({
                       <Box as="span" css={{ fontStyle: 'italic' }}>
                         Agency:{' '}
                       </Box>
-                      <ExternalLink href={agencyOrg?.url}>
+                      <ExternalLink href={agencyOrg?.url || null}>
                         {agencyOrg?.name}
                       </ExternalLink>
                     </Text>
