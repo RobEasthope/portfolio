@@ -1,19 +1,25 @@
 import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { PageTitle as rawTextProps } from '~/UI/types/sanity-schema';
+import { PageTitle as rawPageTitleProps } from '~/UI/types/sanity-schema';
 import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
 import { Text } from '~/UI/base/typography/Text/Text';
 
 // TYPES
-export type PageTitleProps = rawTextProps;
+export interface PageTitleProps extends rawPageTitleProps {
+  pageTitle: string;
+}
 
-export const PageTitle = ({ title }: PageTitleProps) => {
-  if (!title) {
+export const PageTitle = ({ pageTitle, customPageTitle }: PageTitleProps) => {
+  if (!pageTitle && !customPageTitle) {
     return null;
   }
 
   return (
     <PaddedComponent as="section">
-      <MaxWidth width="page">{title && <Text>{title}</Text>}</MaxWidth>
+      <MaxWidth width="page">
+        {(pageTitle || customPageTitle) && (
+          <Text typeSize="medium">{customPageTitle || pageTitle}</Text>
+        )}
+      </MaxWidth>
     </PaddedComponent>
   );
 };
