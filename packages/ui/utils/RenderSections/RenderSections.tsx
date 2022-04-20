@@ -4,6 +4,7 @@ import { GalleryProps } from '~/UI/sections/Gallery/Gallery';
 import { ImageProps } from '~/UI/sections/Image/Image';
 import { LandingHeroProps } from '~/UI/sections/LandingHero/LandingHero';
 import { MuxVideoProps } from '~/UI/sections/MuxVideo/MuxVideo';
+import { PageTitleProps } from '~/UI/sections/PageTitle/PageTitle';
 import { ProjectIndexProps } from '~/UI/sections/ProjectIndex/ProjectIndex';
 import { SpacerProps } from '~/UI/sections/Spacer/Spacer';
 import { TextProps } from '~/UI/sections/Text/Text';
@@ -22,6 +23,7 @@ const LandingHero = dynamic(
   () => import('~/UI/sections/LandingHero/LandingHero')
 );
 const MuxVideo = dynamic(() => import('~/UI/sections/MuxVideo/MuxVideo'));
+const PageTitle = dynamic(() => import('~/UI/sections/PageTitle/PageTitle'));
 const ProjectIndex = dynamic(
   () => import('~/UI/sections/ProjectIndex/ProjectIndex')
 );
@@ -35,9 +37,14 @@ const YoutubeVideo = dynamic(
 export type RenderSectionsProps = {
   sections: Record<'_type' | '_key' | string, any>[];
   projects: ProjectProps[];
+  pageTitle?: string;
 };
 
-export const RenderSections = ({ sections, projects }: RenderSectionsProps) => {
+export const RenderSections = ({
+  sections,
+  projects,
+  pageTitle,
+}: RenderSectionsProps) => {
   if (!sections) {
     return <div>Missing sections</div>;
   }
@@ -82,6 +89,14 @@ export const RenderSections = ({ sections, projects }: RenderSectionsProps) => {
               <MuxVideo
                 {...(section as MuxVideoProps)}
                 key={`render-sections-${section._key as string}`}
+              />
+            );
+          case 'PageTitle':
+            return (
+              <PageTitle
+                {...(section as PageTitleProps)}
+                key={`render-sections-${section._key as string}`}
+                pageTitle={pageTitle}
               />
             );
           case 'ProjectIndex':
