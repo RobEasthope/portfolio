@@ -20,6 +20,9 @@ export default {
       type: 'string',
     },
   ],
+  initialValue: {
+    usePageTitle: true,
+  },
   preview: {
     select: {
       customPageTitle: 'customPageTitle',
