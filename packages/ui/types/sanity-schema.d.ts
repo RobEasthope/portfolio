@@ -1029,9 +1029,16 @@ export type MuxVideo = {
 export type PageTitle = {
   _type: "PageTitle";
   /**
-   * Custom pagetitle — `string`
+   * Use page title? — `boolean`
    *
    *
+   */
+  usePageTitle?: boolean;
+
+  /**
+   * Custom page title — `string`
+   *
+   * Optional
    */
   customPageTitle?: string;
 };
