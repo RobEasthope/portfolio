@@ -14,7 +14,7 @@ export const PageTitle = ({ pageTitle, customPageTitle }: PageTitleProps) => {
   }
 
   return (
-    <PaddedComponent as="section">
+    <PaddedComponent as="section" content="text">
       <MaxWidth width="page">
         {(pageTitle || customPageTitle) && (
           <Text typeSize="medium">{customPageTitle || pageTitle}</Text>
