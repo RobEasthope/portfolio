@@ -20,7 +20,11 @@ export interface PageTitleProps extends rawPageTitleProps {
   pageTitle: string;
 }
 
-export const PageTitle = ({ pageTitle, customPageTitle }: PageTitleProps) => {
+export const PageTitle = ({
+  usePageTitle,
+  pageTitle,
+  customPageTitle,
+}: PageTitleProps) => {
   if (!pageTitle && !customPageTitle) {
     return null;
   }
@@ -30,7 +34,9 @@ export const PageTitle = ({ pageTitle, customPageTitle }: PageTitleProps) => {
       <MaxWidth width="page">
         {(pageTitle || customPageTitle) && (
           <TextAlign align="centre">
-            <Text typeSize="medium">{customPageTitle || pageTitle}</Text>
+            <Text typeSize="medium">
+              {usePageTitle ? pageTitle : customPageTitle}
+            </Text>
 
             <Spacer height="x1" />
             <Break />
