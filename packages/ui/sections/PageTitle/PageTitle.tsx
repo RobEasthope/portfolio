@@ -12,7 +12,7 @@ export const Break = styled('span', {
   width: '$x2',
   height: '2px',
   marginX: 'auto',
-  backgroundColor: 'RGBA(250, 145, 46, 1)',
+  backgroundColor: '$darkSaffron',
 });
 
 // TYPES
