@@ -34,9 +34,11 @@ export const PageTitle = ({
       <MaxWidth width="page">
         {(pageTitle || customPageTitle) && (
           <TextAlign align="centre">
-            <Text typeSize="medium">
-              {usePageTitle ? pageTitle : customPageTitle}
-            </Text>
+            {usePageTitle ? (
+              <Text typeSize="medium">{pageTitle}</Text>
+            ) : (
+              <Text typeSize="medium">{customPageTitle}</Text>
+            )}
 
             <Spacer height="x1" />
             <Break />
