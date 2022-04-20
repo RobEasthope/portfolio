@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       name: 'customPageTitle',
-      title: 'Custom pagetitle',
+      title: 'Custom page title',
       type: 'string',
     },
   ],
