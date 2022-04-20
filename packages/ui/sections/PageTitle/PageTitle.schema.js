@@ -14,9 +14,12 @@ export default {
     },
   ],
   preview: {
-    prepare() {
+    select: {
+      customPageTitle: 'customPageTitle',
+    },
+    prepare({ customPageTitle }) {
       return {
-        title: 'customPageTitle' || 'Page Title',
+        title: customPageTitle || 'Page title',
       };
     },
   },
