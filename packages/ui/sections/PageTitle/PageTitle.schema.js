@@ -7,6 +7,11 @@ export default {
   icon: BiText,
   fields: [
     {
+      name: 'usePageTitle',
+      title: 'Use page title?',
+      type: 'boolean',
+    },
+    {
       name: 'customPageTitle',
       title: 'Custom page title',
       description: 'Optional',
