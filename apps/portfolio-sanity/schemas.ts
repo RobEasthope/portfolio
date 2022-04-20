@@ -43,8 +43,8 @@ import Image from '../../packages/ui/sections/Image/Image.schema';
 
 import LandingHero from '../../packages/ui/sections/LandingHero/LandingHero.schema';
 import MuxVideo from '../../packages/ui/sections/MuxVideo/MuxVideo.schema';
+import PageTitle from '../../packages/ui/sections/PageTitle/PageTitle.schema';
 import ProjectIndex from '../../packages/ui/sections/ProjectIndex/ProjectIndex.schema';
-
 import Spacer from '../../packages/ui/sections/Spacer/Spacer.schema';
 import Text from '../../packages/ui/sections/Text/Text.schema';
 import VimeoVideo from '../../packages/ui/sections/VimeoVideo/VimeoVideo.schema';
@@ -97,6 +97,7 @@ export default createSchema({
     Image,
     LandingHero,
     MuxVideo,
+    PageTitle,
     ProjectIndex,
     Spacer,
     Text,
