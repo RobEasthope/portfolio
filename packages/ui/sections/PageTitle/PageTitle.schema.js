@@ -10,6 +10,8 @@ export default {
       name: 'usePageTitle',
       title: 'Use page title?',
       type: 'boolean',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'customPageTitle',
