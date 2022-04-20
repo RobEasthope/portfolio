@@ -9,6 +9,7 @@ export default {
     {
       name: 'customPageTitle',
       title: 'Custom page title',
+      description: 'Optional',
       type: 'string',
     },
   ],
