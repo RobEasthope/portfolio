@@ -37,7 +37,7 @@ const YoutubeVideo = dynamic(
 export type RenderSectionsProps = {
   sections: Record<'_type' | '_key' | string, any>[];
   projects: ProjectProps[];
-  pageTitle?: string;
+  pageTitle: string;
 };
 
 export const RenderSections = ({
