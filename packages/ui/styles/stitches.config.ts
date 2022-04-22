@@ -16,7 +16,8 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       loContrast: 'white',
 
       text: 'rgb(21, 23, 24)',
-      saffron: 'rgb(255, 153, 51)',
+      saffron: 'rgba(255, 153, 51, 1)',
+      darkSaffron: 'rgba(250, 145, 46, 1)',
       imperialRed: 'rgb(170, 0, 0)',
       highlight: '$saffron',
 

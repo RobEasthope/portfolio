@@ -49,7 +49,11 @@ export const Page = ({
 
         <MainContentLayout as="main">
           {sections && (
-            <RenderSections sections={sections} projects={projects} />
+            <RenderSections
+              sections={sections}
+              projects={projects}
+              pageTitle={page?.title}
+            />
           )}
         </MainContentLayout>
 

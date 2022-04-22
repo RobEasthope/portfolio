@@ -356,6 +356,13 @@ export interface Organisation extends SanityDocument {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+
+  /**
+   * Hide organisation — `boolean`
+   *
+   *
+   */
+  hiddenOrg?: boolean;
 }
 
 /**
@@ -408,136 +415,6 @@ export interface Education extends SanityDocument {
 }
 
 /**
- * About
- *
- *
- */
-export interface About extends SanityDocument {
-  _type: "about";
-
-  /**
-   * About section title — `string`
-   *
-   *
-   */
-  title?: string;
-
-  /**
-   * Profile — `blockContent`
-   *
-   *
-   */
-  profile?: BlockContent;
-
-  /**
-   * Portrait — `image`
-   *
-   *
-   */
-  portrait?: {
-    _type: "image";
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
-
-  /**
-   * Employeers — `array`
-   *
-   *
-   */
-  employeers?: Array<SanityKeyedReference<Organisation>>;
-
-  /**
-   * Skills — `array`
-   *
-   *
-   */
-  skills?: Array<SanityKeyedReference<Tech>>;
-
-  /**
-   * Open source projects — `array`
-   *
-   *
-   */
-  opensource?: Array<SanityKeyedReference<Opensource>>;
-
-  /**
-   * Education — `array`
-   *
-   *
-   */
-  education?: Array<SanityKeyedReference<Education>>;
-
-  /**
-   * Clients — `array`
-   *
-   *
-   */
-  clients?: Array<SanityKeyedReference<Organisation>>;
-}
-
-/**
- * Landing
- *
- *
- */
-export interface Landing extends SanityDocument {
-  _type: "landing";
-
-  /**
-   * Tagline — `string`
-   *
-   *
-   */
-  tagline?: string;
-
-  /**
-   * Background image — `altImage`
-   *
-   *
-   */
-  image?: AltImage;
-
-  /**
-   * Landing video — `mux.video`
-   *
-   *
-   */
-  video?: MuxVideo;
-
-  /**
-   * Caption — `string`
-   *
-   *
-   */
-  caption?: string;
-}
-
-/**
- * Portfolio
- *
- *
- */
-export interface Portfolio extends SanityDocument {
-  _type: "portfolio";
-
-  /**
-   * Portfolio section title — `string`
-   *
-   *
-   */
-  title?: string;
-
-  /**
-   * Portfolio index — `array`
-   *
-   *
-   */
-  portfolioIndex?: Array<SanityKeyedReference<Project>>;
-}
-
-/**
  * Project index
  *
  *
@@ -558,52 +435,6 @@ export interface ProjectIndex extends SanityDocument {
    *
    */
   index?: Array<SanityKeyedReference<Project>>;
-}
-
-/**
- * Open source projects
- *
- *
- */
-export interface Opensource extends SanityDocument {
-  _type: "opensource";
-
-  /**
-   * Open source title — `string`
-   *
-   *
-   */
-  title?: string;
-
-  /**
-   * Open source projects — `array`
-   *
-   *
-   */
-  opensourceIndex?: Array<SanityKeyedReference<Project>>;
-}
-
-/**
- * Sandbox
- *
- *
- */
-export interface Sandbox extends SanityDocument {
-  _type: "sandbox";
-
-  /**
-   * Sandbox section title — `string`
-   *
-   *
-   */
-  title?: string;
-
-  /**
-   * Sandbox index — `array`
-   *
-   *
-   */
-  sandboxIndex?: Array<SanityKeyedReference<Project>>;
 }
 
 /**
@@ -652,6 +483,7 @@ export interface Page extends SanityDocument {
     | SanityKeyed<Gallery>
     | SanityKeyed<Image>
     | SanityKeyed<LandingHero>
+    | SanityKeyed<PageTitle>
     | SanityKeyed<ProjectIndex>
     | SanityKeyed<Spacer>
     | SanityKeyed<Text>
@@ -1194,6 +1026,23 @@ export type MuxVideo = {
   maxWidth?: "small" | "medium" | "large" | "full";
 };
 
+export type PageTitle = {
+  _type: "PageTitle";
+  /**
+   * Use page title? — `boolean`
+   *
+   *
+   */
+  usePageTitle?: boolean;
+
+  /**
+   * Custom page title — `string`
+   *
+   * Optional
+   */
+  customPageTitle?: string;
+};
+
 export type Spacer = {
   _type: "Spacer";
   /**
@@ -1281,11 +1130,6 @@ export type Documents =
   | Gig
   | Organisation
   | Education
-  | About
-  | Landing
-  | Portfolio
   | ProjectIndex
-  | Opensource
-  | Sandbox
   | Page
   | Project;

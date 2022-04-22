@@ -5,6 +5,7 @@ import Image from '../../sections/Image/Image.schema';
 import LandingHero from '../../sections/LandingHero/LandingHero.schema';
 import Spacer from '../../sections/Spacer/Spacer.schema';
 import Text from '../../sections/Text/Text.schema';
+import PageTitle from '../../sections/PageTitle/PageTitle.schema';
 import ProjectIndex from '../../sections/ProjectIndex/ProjectIndex.schema';
 import YoutubeVideo from '../../sections/YoutubeVideo/YoutubeVideo.schema';
 import VimeoVideo from '../../sections/VimeoVideo/VimeoVideo.schema';
@@ -45,6 +46,7 @@ export default {
         { type: Gallery.name },
         { type: Image.name },
         { type: LandingHero.name },
+        { type: PageTitle.name },
         { type: ProjectIndex.name },
         { type: Spacer.name },
         { type: Text.name },
