@@ -26,7 +26,7 @@ export default {
     },
     {
       name: 'pageSlug',
-      title: 'Slug',
+      title: 'Project slug',
       type: 'slug',
       options: {
         source: 'title',
