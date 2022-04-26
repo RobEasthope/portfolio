@@ -26,7 +26,7 @@ export default {
     },
     {
       name: 'pageSlug',
-      title: 'Slug',
+      title: 'Project slug',
       type: 'slug',
       options: {
         source: 'title',
@@ -39,7 +39,6 @@ export default {
       title: 'Slug',
       type: 'slug',
       readOnly: true,
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
