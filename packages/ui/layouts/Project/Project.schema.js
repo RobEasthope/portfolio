@@ -39,7 +39,6 @@ export default {
       title: 'Slug',
       type: 'slug',
       readOnly: true,
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
