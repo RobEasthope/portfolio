@@ -27,7 +27,7 @@ export default defineType({
       title: "Page sections",
       type: "array",
       of: [
-        { type: "exampleSection" },
+        { type: "ExampleSection" },
         { type: "Gallery" },
         { type: "Image" },
         { type: "LandingHero" },
