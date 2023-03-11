@@ -14,7 +14,8 @@
     ],
     "quotes": [1, "double"],
     "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/no-unused-prop-types": "warn"
   },
   "overrides": [
     {
