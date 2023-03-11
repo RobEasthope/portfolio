@@ -5,29 +5,29 @@ export default defineType({
   title: "Header",
   type: "document",
   fields: [
-    {
+    defineField({
       name: "rawNavigationLeft",
       title: "Navigation (Left)",
       type: "array",
       of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
       codegen: { required: true },
       validation: (Rule) => Rule.required().error("No navigation links have been added"),
-    },
-    {
+    }),
+    defineField({
       name: "logo",
       title: "Logo",
       type: "image",
       codegen: { required: true },
       validation: (Rule) => Rule.required().error("Logo is missing"),
-    },
-    {
+    }),
+    defineField({
       name: "rawNavigationRight",
       title: "Navigation (Right)",
       type: "array",
       of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
       codegen: { required: true },
       validation: (Rule) => Rule.required().error("No navigation links have been added"),
-    },
+    }),
   ],
   preview: {
     prepare() {

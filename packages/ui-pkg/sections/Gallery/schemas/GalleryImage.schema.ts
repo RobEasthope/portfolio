@@ -7,7 +7,7 @@ export default defineType({
   title: "Image",
   icon: RiImage2Line,
   fields: [
-    {
+    defineField({
       name: "image",
       title: "Image",
       type: "image",
@@ -15,22 +15,22 @@ export default defineType({
         hotspot: true,
       },
       fields: [
-        {
+        defineField({
           name: "caption",
           type: "string",
           title: "Caption",
           options: {
             isHighlighted: true,
           },
-        },
-        {
+        }),
+        defineField({
           name: "attribution",
           type: "string",
           title: "Attribution",
-        },
+        }),
       ],
       validation: (Rule) => Rule.required().warning("Image: Image is missing"),
-    },
+    }),
   ],
   preview: {
     select: {

@@ -9,7 +9,7 @@ export default defineType({
   title: "Image",
   icon: RiImage2Line,
   fields: [
-    {
+    defineField({
       name: "image",
       title: "Image",
       type: "image",
@@ -17,23 +17,23 @@ export default defineType({
         hotspot: true,
       },
       fields: [
-        {
+        defineField({
           name: "caption",
           type: "string",
           title: "Caption",
           options: {
             isHighlighted: true,
           },
-        },
-        {
+        }),
+        defineField({
           name: "attribution",
           type: "string",
           title: "Attribution",
-        },
+        }),
       ],
       validation: (Rule) => Rule.required().warning("Image: Image is missing"),
-    },
-    {
+    }),
+    defineField({
       name: "aspectRatio",
       title: "Image aspect ratio",
       type: "number",
@@ -42,8 +42,8 @@ export default defineType({
         list: ASPECT_RATIOS,
         layout: "radio",
       },
-    },
-    {
+    }),
+    defineField({
       name: "maxWidth",
       title: "Max width",
       type: "string",
@@ -51,7 +51,7 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
-    },
+    }),
   ],
   preview: {
     select: {

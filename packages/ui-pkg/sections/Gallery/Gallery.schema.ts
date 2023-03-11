@@ -10,7 +10,7 @@ export default defineType({
   title: "Gallery",
   icon: RiGalleryLine,
   fields: [
-    {
+    defineField({
       name: "images",
       title: "Images",
       type: "array",
@@ -18,14 +18,14 @@ export default defineType({
       codegen: { required: true },
       validation: (Rule) =>
         Rule.required().warning("Gallery: No images have been added to the gallery"),
-    },
-    {
+    }),
+    defineField({
       name: "galleryCaption",
       title: "Gallery caption",
       type: "text",
-    },
+    }),
     headingUI("Gallery layout"),
-    {
+    defineField({
       name: "columns",
       title: "Number of columns",
       type: "string",
@@ -42,8 +42,8 @@ export default defineType({
       codegen: { required: true },
       validation: (Rule) =>
         Rule.required().error("Gallery: Please select the desired number of columns"),
-    },
-    {
+    }),
+    defineField({
       name: "aspectRatio",
       title: "Gallery aspect ratio",
       type: "number",
@@ -54,8 +54,8 @@ export default defineType({
       codegen: { required: true },
       validation: (Rule) =>
         Rule.required().error("Gallery: Please select an aspect ratio"),
-    },
-    {
+    }),
+    defineField({
       name: "maxWidth",
       title: "Max width",
       type: "string",
@@ -64,7 +64,7 @@ export default defineType({
       },
       codegen: { required: true },
       validation: (Rule) => Rule.required(),
-    },
+    }),
   ],
   preview: {
     select: {

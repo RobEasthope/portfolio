@@ -7,12 +7,12 @@ export default defineType({
   title: "Text",
   icon: BiText,
   fields: [
-    {
+    defineField({
       name: "text",
       title: "Text",
       type: "BasicText",
       validation: (Rule) => Rule.required().warning("Text: Text is missing"),
-    },
+    }),
   ],
   preview: {
     prepare() {

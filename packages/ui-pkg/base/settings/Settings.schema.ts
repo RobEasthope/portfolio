@@ -6,7 +6,7 @@ export default defineType({
   type: "document",
   title: "Site settings",
   fields: [
-    {
+    defineField({
       name: "rawHomePageRef",
       title: "Home page",
       type: "reference",
@@ -14,7 +14,7 @@ export default defineType({
       description: "Select home page (Critical requirement)",
       codegen: { required: true },
       validation: (Rule) => Rule.required(),
-    },
+    }),
   ],
   preview: {
     prepare() {

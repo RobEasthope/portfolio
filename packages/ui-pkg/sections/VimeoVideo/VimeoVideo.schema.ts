@@ -8,17 +8,17 @@ export default defineType({
   title: "Vimeo video",
   icon: RiVimeoFill,
   fields: [
-    {
+    defineField({
       name: "url",
       title: "Vimeo URL",
       type: "string",
-    },
-    {
+    }),
+    defineField({
       name: "caption",
       title: "Caption",
       type: "string",
-    },
-    {
+    }),
+    defineField({
       name: "maxWidth",
       title: "Max width",
       type: "string",
@@ -26,7 +26,7 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
-    },
+    }),
   ],
   preview: {
     select: {

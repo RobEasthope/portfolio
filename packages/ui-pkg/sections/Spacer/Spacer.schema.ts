@@ -6,7 +6,7 @@ export default defineType({
   name: "Spacer",
   title: "Spacer",
   fields: [
-    {
+    defineField({
       name: "height",
       title: "Height",
       type: "string",
@@ -15,7 +15,7 @@ export default defineType({
         list: SPACER_OPTIONS,
       },
       validation: (Rule) => Rule.required(),
-    },
+    }),
   ],
   preview: {
     select: {

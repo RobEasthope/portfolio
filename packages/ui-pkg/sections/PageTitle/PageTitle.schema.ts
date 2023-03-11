@@ -7,19 +7,19 @@ export default defineType({
   title: "PageTitle",
   icon: BiText,
   fields: [
-    {
+    defineField({
       name: "usePageTitle",
       title: "Use page title?",
       type: "boolean",
       codegen: { required: true },
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "customPageTitle",
       title: "Custom page title",
       type: "string",
       hidden: ({ parent }) => parent?.usePageTitle === true,
-    },
+    }),
   ],
   initialValue: {
     usePageTitle: true,

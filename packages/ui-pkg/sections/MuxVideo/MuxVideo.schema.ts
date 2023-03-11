@@ -8,18 +8,18 @@ export default defineType({
   title: "Mux video",
   icon: RiVideoLine,
   fields: [
-    {
+    defineField({
       name: "rawMuxVideo",
       title: "Mux video",
       type: "mux.video",
       validation: (Rule) => Rule.required().error("Mux video: Video is missing"),
-    },
-    {
+    }),
+    defineField({
       name: "caption",
       title: "Caption",
       type: "string",
-    },
-    {
+    }),
+    defineField({
       name: "maxWidth",
       title: "Max width",
       type: "string",
@@ -27,7 +27,7 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
-    },
+    }),
   ],
   preview: {
     select: {},

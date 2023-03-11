@@ -5,17 +5,17 @@ export default defineType({
   title: "Project index",
   type: "document",
   fields: [
-    {
+    defineField({
       name: "title",
       title: "Portfolio section title",
       type: "string",
-    },
-    {
+    }),
+    defineField({
       name: "index",
       title: "Index",
       type: "array",
       of: [{ type: "reference", to: { type: "project" } }],
-    },
+    }),
   ],
   preview: {
     select: {

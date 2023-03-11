@@ -7,34 +7,34 @@ export default defineType({
   title: "Gig",
   type: "document",
   fields: [
-    {
+    defineField({
       name: "employer",
       title: "Employer",
       type: "reference",
       to: { type: "organisation" },
       validation: (Rule) => Rule.required().warning("Required field"),
-    },
-    {
+    }),
+    defineField({
       name: "jobTitle",
       title: "Job title",
       type: "string",
       validation: (Rule) => Rule.required().warning("Required field"),
-    },
-    {
+    }),
+    defineField({
       name: "description",
       title: "Description",
       type: "blockContent",
       description:
         "I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling",
       validation: (Rule) => Rule.required().warning("Required field"),
-    },
-    {
+    }),
+    defineField({
       name: "projects",
       title: "Related projects",
       type: "array",
       of: [{ type: "reference", to: { type: "project" } }],
-    },
-    {
+    }),
+    defineField({
       name: "startDate",
       title: "Start date",
       type: "date",
@@ -42,15 +42,15 @@ export default defineType({
         dateFormat: "DD-MMMM-YYYY",
       },
       validation: (Rule) => Rule.required().warning("Required field"),
-    },
-    {
+    }),
+    defineField({
       name: "endDate",
       title: "End date",
       type: "date",
       options: {
         dateFormat: "DD-MMMM-YYYY",
       },
-    },
+    }),
   ],
   orderings: [
     {
