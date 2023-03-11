@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineField, defineType } from "sanity";
 import { BiHeading } from "react-icons/bi";
 import { headingUI } from "../../utils/sanity/headingUI";
 

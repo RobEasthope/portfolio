@@ -1,3 +1,4 @@
+import { defineField, defineType } from "sanity";
 import { RiImage2Line } from "react-icons/ri";
 import { ASPECT_RATIOS } from "../../constants/ASPECT_RATIOS";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";

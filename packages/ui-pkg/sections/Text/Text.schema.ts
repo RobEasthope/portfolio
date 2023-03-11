@@ -1,3 +1,4 @@
+import { defineField, defineType } from "sanity";
 import { BiText } from "react-icons/bi";
 
 export default defineType({

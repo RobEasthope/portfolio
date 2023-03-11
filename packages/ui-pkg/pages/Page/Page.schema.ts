@@ -1,3 +1,4 @@
+import { defineField, defineType } from "sanity";
 import { headingUI } from "../../utils/sanity/headingUI";
 import exampleSection from "../../sections/ExampleSection/ExampleSection.schema";
 import Gallery from "../../sections/Gallery/Gallery.schema";

@@ -1,3 +1,4 @@
+import { defineField, defineType } from "sanity";
 import { SPACER_OPTIONS } from "../../constants/SPACER_OPTIONS";
 
 export default defineType({

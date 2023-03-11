@@ -1,3 +1,4 @@
+import { defineField, defineType } from "sanity";
 import { RiYoutubeFill } from "react-icons/ri";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 

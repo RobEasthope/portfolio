@@ -1,3 +1,5 @@
+import { defineField, defineType } from "sanity";
+
 export default defineType({
   name: "organisation",
   title: "Organisation",

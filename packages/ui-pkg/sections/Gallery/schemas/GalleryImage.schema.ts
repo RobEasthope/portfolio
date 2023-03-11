@@ -1,3 +1,4 @@
+import { defineField, defineType } from "sanity";
 import { RiImage2Line } from "react-icons/ri";
 
 export default defineType({
