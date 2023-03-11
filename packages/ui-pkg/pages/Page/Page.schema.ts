@@ -1,5 +1,4 @@
 import { defineField, defineType } from "sanity";
-import { headingUI } from "../../utils/sanity/headingUI";
 import exampleSection from "../../sections/ExampleSection/ExampleSection.schema";
 import Gallery from "../../sections/Gallery/Gallery.schema";
 import Image from "../../sections/Image/Image.schema";
@@ -16,7 +15,6 @@ export default defineType({
   title: "Page",
   type: "document",
   fields: [
-    headingUI("Page details"),
     defineField({
       name: "title",
       title: "Page title",
@@ -34,7 +32,6 @@ export default defineType({
       description: "Set the page URL",
       validation: (Rule) => Rule.required(),
     }),
-    headingUI("Page content"),
     defineField({
       name: "rawSections",
       title: "Page sections",
@@ -55,7 +52,6 @@ export default defineType({
       validation: (Rule) =>
         Rule.required().min(1).error("At least one page section is required"),
     }),
-    headingUI("Page metadata"),
     defineField({
       name: "metadataTitle",
       title: "Metadata title",

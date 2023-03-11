@@ -1,6 +1,5 @@
-import { defineField, defineType, defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity";
 import { BiHeading } from "react-icons/bi";
-import { headingUI } from "../../utils/sanity/headingUI";
 
 export default defineType({
   type: "object",
@@ -8,7 +7,6 @@ export default defineType({
   title: "Landing hero",
   icon: BiHeading,
   fields: [
-    headingUI("Foreground"),
     defineField({
       name: "heading",
       title: "Heading",
@@ -19,7 +17,6 @@ export default defineType({
       title: "Subheading",
       type: "string",
     }),
-    headingUI("Background"),
     defineField({
       name: "bkgMode",
       title: "Background mode",

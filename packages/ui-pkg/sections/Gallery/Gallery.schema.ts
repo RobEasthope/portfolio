@@ -1,7 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { RiGalleryLine } from "react-icons/ri";
 import { ASPECT_RATIOS } from "../../constants/ASPECT_RATIOS";
-import { headingUI } from "../../utils/sanity/headingUI";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
 export default defineType({
@@ -23,7 +22,6 @@ export default defineType({
       title: "Gallery caption",
       type: "text",
     }),
-    headingUI("Gallery layout"),
     defineField({
       name: "columns",
       title: "Number of columns",
