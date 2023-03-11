@@ -1,9 +1,9 @@
-import { Image as rawImageProps } from "ui-pkg/types/sanity-schema";
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Picture } from "ui-pkg/base/media/Picture/Picture";
-import { Caption } from "ui-pkg/base/typography/Caption/Caption";
-import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
+import { Image as rawImageProps } from 'ui-pkg/types/sanity-schema';
+import { MaxWidth } from 'ui-pkg/base/structure/MaxWidth/MaxWidth';
+import { PaddedComponent } from 'ui-pkg/base/structure/PaddedComponent/PaddedComponent';
+import { Picture } from 'ui-pkg/base/media/Picture/Picture';
+import { Caption } from 'ui-pkg/base/typography/Caption/Caption';
+import { Breakout } from 'ui-pkg/base/structure/Breakout/Breakout';
 
 // TYPES
 export type ImageProps = rawImageProps;
@@ -20,11 +20,13 @@ export const Image = ({ image, maxWidth }: ImageProps) => {
         <MaxWidth as="figure" width={maxWidth}>
           <Picture
             asset={image}
-            alt={image?.caption || ""}
+            alt={image?.caption || ''}
             mode="responsive"
             maxWidth={4000}
           />
-          {image?.caption && <Caption as="figcaption">{image?.caption}</Caption>}
+          {image?.caption && (
+            <Caption as="figcaption">{image?.caption}</Caption>
+          )}
         </MaxWidth>
       </Breakout>
     </PaddedComponent>

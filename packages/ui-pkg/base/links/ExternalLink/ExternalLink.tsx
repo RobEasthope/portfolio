@@ -1,9 +1,9 @@
-import { Page } from "ui-pkg/types/sanity-schema";
-import { Anchor } from "ui-pkg/base/typography/Anchor/Anchor";
+import { Page } from 'ui-pkg/types/sanity-schema';
+import { Anchor } from 'ui-pkg/base/typography/Anchor/Anchor';
 
 // Schema props
 export type ExternalLinkWithTitleSchemaProps = {
-  _type: "ExternalLinkWithTitle";
+  _type: 'ExternalLinkWithTitle';
   _key: string;
   title: string;
   to?: Page;
@@ -11,7 +11,7 @@ export type ExternalLinkWithTitleSchemaProps = {
 };
 
 export type ExternalLinkSchemaProps = {
-  _type: "ExternalLinkSansTitle";
+  _type: 'ExternalLinkSansTitle';
   _key: string;
   newTab: boolean;
   to?: Page;

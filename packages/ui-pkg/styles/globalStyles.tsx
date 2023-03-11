@@ -1,6 +1,6 @@
-import { globalCss } from "ui-pkg/styles/stitches.config";
-import { TYPE_SCALE } from "ui-pkg/styles/constants/TYPE_SCALE";
-import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
+import { globalCss } from 'ui-pkg/styles/stitches.config';
+import { TYPE_SCALE } from 'ui-pkg/styles/constants/TYPE_SCALE';
+import { MAX_WIDTH } from 'ui-pkg/constants/MAX_WIDTHS';
 
 export const globalStyles = globalCss({
   html: {
@@ -8,12 +8,12 @@ export const globalStyles = globalCss({
     fontSize: `${TYPE_SCALE.STANDARD.MIN}px`,
 
     // Dynamic font fontSize
-    "@pageMinWidth": {
+    '@pageMinWidth': {
       fontSize: `calc(${TYPE_SCALE.STANDARD.MIN}px + (${TYPE_SCALE.STANDARD.MAX} - ${TYPE_SCALE.STANDARD.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
     },
 
     // Maximum font fontSize
-    "@pageMaxWidth": {
+    '@pageMaxWidth': {
       fontSize: `${TYPE_SCALE.STANDARD.MAX}px`,
     },
   },

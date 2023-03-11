@@ -1,19 +1,19 @@
-import { createImageUrlBuilder } from "next-sanity";
+import { createImageUrlBuilder } from 'next-sanity';
 import {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "ui-pkg/types/sanity-schema";
-import { sanityConfig } from "apis-pkg/sanity-api/sanity-config";
-import { BlurrableImage } from "ui-pkg/base/media/SanityImage/components/BlurrableImage/BlurrableImage";
-import { HighResImage } from "ui-pkg/base/media/SanityImage/components/HighResImage/HighResImage";
-import { VectorImage } from "ui-pkg/base/media/SanityImage/components/VectorImage/VectorImage";
-import { Wrapper } from "./SanityImage.styles";
+} from 'ui-pkg/types/sanity-schema';
+import { sanityConfig } from 'apis-pkg/sanity-api/sanity-config';
+import { BlurrableImage } from 'ui-pkg/base/media/SanityImage/components/BlurrableImage/BlurrableImage';
+import { HighResImage } from 'ui-pkg/base/media/SanityImage/components/HighResImage/HighResImage';
+import { VectorImage } from 'ui-pkg/base/media/SanityImage/components/VectorImage/VectorImage';
+import { Wrapper } from './SanityImage.styles';
 
 // TYPES
 export interface ImageAssetProp {
-  _type: "image";
+  _type: 'image';
   asset: SanityReference<SanityImageAsset>;
   crop?: SanityImageCrop;
   hotspot?: SanityImageHotspot;
@@ -22,7 +22,7 @@ export interface ImageAssetProp {
 export type SanityImageProps = {
   asset: ImageAssetProp;
   maxWidth: number;
-  mode: "responsive" | "cover" | "contain" | "next";
+  mode: 'responsive' | 'cover' | 'contain' | 'next';
   alt?: string;
   aspectRatio?: number;
 };
@@ -46,8 +46,8 @@ export const SanityImage = ({
   // Render a basic img element if the asset is an svg
   const assetRef = asset?.asset?._ref;
 
-  if (assetRef.slice(-4) === "-svg") {
-    return <VectorImage asset={asset || ""} alt={alt || ""} />;
+  if (assetRef.slice(-4) === '-svg') {
+    return <VectorImage asset={asset || ''} alt={alt || ''} />;
   }
 
   // BITMAPS
@@ -63,14 +63,14 @@ export const SanityImage = ({
       // Generate url and push to array
       return imageBuilder
         .image(asset)
-        .auto("format")
+        .auto('format')
         .width(100)
         .blur(BLURRING)
         .url() as string;
     }
     return imageBuilder
       .image(asset)
-      .auto("format")
+      .auto('format')
       .width(100)
       .height(Math.floor(100 / aspectRatio))
       .blur(BLURRING)
@@ -100,8 +100,8 @@ export const SanityImage = ({
         // Generate url
         const url = imageBuilder
           .image(asset)
-          .auto("format")
-          .fit("crop")
+          .auto('format')
+          .fit('crop')
           .width(size)
           .url() as string;
 
@@ -111,8 +111,8 @@ export const SanityImage = ({
         // Generate url
         const url = imageBuilder
           .image(asset)
-          .auto("format")
-          .fit("crop")
+          .auto('format')
+          .fit('crop')
           .width(size)
           .height(Math.floor(size / aspectRatio))
           .url() as string;
@@ -132,7 +132,11 @@ export const SanityImage = ({
     <Wrapper mode={mode}>
       <BlurrableImage
         img={
-          <HighResImage sizes={srcSetSizes()} srcSet={srcSetAssets()} loading="lazy" />
+          <HighResImage
+            sizes={srcSetSizes()}
+            srcSet={srcSetAssets()}
+            loading="lazy"
+          />
         }
         blurredAssetUrl={blurredImageAsset()}
         alt={alt}

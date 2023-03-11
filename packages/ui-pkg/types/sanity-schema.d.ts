@@ -555,7 +555,7 @@ export interface Project extends SanityDocument {
   description?: string;
 
   /**
-   * Slug — `slug`
+   * Project slug — `slug`
    *
    *
    */
@@ -1033,12 +1033,12 @@ export type PageTitle = {
    *
    *
    */
-  usePageTitle?: boolean;
+  usePageTitle: boolean;
 
   /**
    * Custom page title — `string`
    *
-   * Optional
+   *
    */
   customPageTitle?: string;
 };

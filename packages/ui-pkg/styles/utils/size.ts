@@ -1,297 +1,297 @@
-import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
-import { SizeProps, SizeReturnProps } from "ui-pkg/types/utils";
+import { MAX_WIDTH } from 'ui-pkg/constants/MAX_WIDTHS';
+import { SizeProps, SizeReturnProps } from 'ui-pkg/types/utils';
 
 export const size = ({ selector, min, max }: SizeProps): SizeReturnProps => {
   switch (selector) {
-    case "marginTop":
+    case 'marginTop':
       return {
         // Minimum size
         marginTop: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           marginTop: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           marginTop: `${max}px`,
         },
       };
 
-    case "marginRight":
+    case 'marginRight':
       return {
         // Minimum size
         marginRight: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           marginRight: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           marginRight: `${max}px`,
         },
       };
 
-    case "marginBottom":
+    case 'marginBottom':
       return {
         // Minimum size
         marginBottom: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           marginBottom: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           marginBottom: `${max}px`,
         },
       };
 
-    case "marginLeft":
+    case 'marginLeft':
       return {
         // Minimum size
         marginLeft: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           marginLeft: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           marginLeft: `${max}px`,
         },
       };
 
-    case "marginX":
+    case 'marginX':
       return {
         // Minimum size
         marginX: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           marginX: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           marginX: `${max}px`,
         },
       };
 
-    case "marginY":
+    case 'marginY':
       return {
         // Minimum size
         marginY: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           marginY: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           marginY: `${max}px`,
         },
       };
 
-    case "paddingTop":
+    case 'paddingTop':
       return {
         // Minimum size
         paddingTop: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           paddingTop: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           paddingTop: `${max}px`,
         },
       };
 
-    case "paddingRight":
+    case 'paddingRight':
       return {
         // Minimum size
         paddingRight: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           paddingRight: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           paddingRight: `${max}px`,
         },
       };
 
-    case "paddingBottom":
+    case 'paddingBottom':
       return {
         // Minimum size
         paddingBottom: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           paddingBottom: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           paddingBottom: `${max}px`,
         },
       };
 
-    case "paddingLeft":
+    case 'paddingLeft':
       return {
         // Minimum size
         paddingLeft: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           paddingLeft: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           paddingLeft: `${max}px`,
         },
       };
 
-    case "paddingX":
+    case 'paddingX':
       return {
         // Minimum size
         paddingX: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           paddingX: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           paddingX: `${max}px`,
         },
       };
 
-    case "paddingY":
+    case 'paddingY':
       return {
         // Minimum size
         paddingY: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           paddingY: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           paddingY: `${max}px`,
         },
       };
 
-    case "gap":
+    case 'gap':
       return {
         // Minimum size
         gap: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           gap: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           gap: `${max}px`,
         },
       };
 
-    case "width":
+    case 'width':
       return {
         // Minimum size
         width: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           width: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           width: `${max}px`,
         },
       };
 
-    case "minWidth":
+    case 'minWidth':
       return {
         // Minimum size
         minWidth: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           minWidth: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           minWidth: `${max}px`,
         },
       };
 
-    case "height":
+    case 'height':
       return {
         // Minimum size
         height: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           height: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           height: `${max}px`,
         },
       };
 
-    case "minHeight":
+    case 'minHeight':
       return {
         // Minimum size
         minHeight: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           minHeight: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           minHeight: `${max}px`,
         },
       };
 
-    case "xySize":
+    case 'xySize':
       return {
         // Minimum size
         xySize: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           xySize: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           xySize: `${max}px`,
         },
       };
 
-    case "minXySize":
+    case 'minXySize':
       return {
         // Minimum size
         xySize: `${min}px`,
@@ -299,14 +299,14 @@ export const size = ({ selector, min, max }: SizeProps): SizeReturnProps => {
         minHeight: `${min}px`,
 
         // Dynamic size
-        "@pageMinWidth": {
+        '@pageMinWidth': {
           xySize: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
           minWidth: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
           minHeight: `calc(${min}px + (${max} - ${min}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum size
-        "@pageMaxWidth": {
+        '@pageMaxWidth': {
           xySize: `${max}px`,
           minWidth: `${max}px`,
           minHeight: `${max}px`,
