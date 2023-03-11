@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "Footer",
   title: "Footer",
   type: "document",
@@ -24,4 +24,4 @@ export default {
       };
     },
   },
-};
+});

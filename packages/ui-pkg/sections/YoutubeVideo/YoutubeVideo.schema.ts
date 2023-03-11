@@ -1,7 +1,7 @@
 import { RiYoutubeFill } from "react-icons/ri";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
-export default {
+export default defineType({
   type: "object",
   name: "YoutubeVideo",
   title: "YouTube video",
@@ -38,4 +38,4 @@ export default {
       };
     },
   },
-};
+});

@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "ProjectText",
   title: "Article text",
   type: "array",
@@ -26,4 +26,4 @@ export default {
     { type: "VimeoVideo" },
     { type: "YoutubeVideo" },
   ],
-};
+});

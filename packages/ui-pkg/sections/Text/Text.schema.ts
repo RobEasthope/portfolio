@@ -1,6 +1,6 @@
 import { BiText } from "react-icons/bi";
 
-export default {
+export default defineType({
   type: "object",
   name: "Text",
   title: "Text",
@@ -20,4 +20,4 @@ export default {
       };
     },
   },
-};
+});

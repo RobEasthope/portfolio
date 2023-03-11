@@ -1,6 +1,6 @@
 import { SPACER_OPTIONS } from "../../constants/SPACER_OPTIONS";
 
-export default {
+export default defineType({
   type: "object",
   name: "Spacer",
   title: "Spacer",
@@ -27,4 +27,4 @@ export default {
       };
     },
   },
-};
+});

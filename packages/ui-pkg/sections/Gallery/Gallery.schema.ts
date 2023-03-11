@@ -3,7 +3,7 @@ import { ASPECT_RATIOS } from "../../constants/ASPECT_RATIOS";
 import { headingUI } from "../../utils/sanity/headingUI";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
-export default {
+export default defineType({
   type: "object",
   name: "Gallery",
   title: "Gallery",
@@ -76,4 +76,4 @@ export default {
       };
     },
   },
-};
+});

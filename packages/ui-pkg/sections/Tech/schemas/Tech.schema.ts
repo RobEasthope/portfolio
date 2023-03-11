@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "tech",
   title: "Tech",
   type: "document",
@@ -30,4 +30,4 @@ export default {
       media: "logo",
     },
   },
-};
+});

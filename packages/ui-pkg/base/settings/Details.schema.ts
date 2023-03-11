@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "details",
   title: "Details",
   type: "document",
@@ -55,4 +55,4 @@ export default {
       title: "title",
     },
   },
-};
+});

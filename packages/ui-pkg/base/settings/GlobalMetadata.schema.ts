@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "GlobalMetadata",
   type: "document",
   title: "Global SEO metadata",
@@ -65,4 +65,4 @@ export default {
       };
     },
   },
-};
+});

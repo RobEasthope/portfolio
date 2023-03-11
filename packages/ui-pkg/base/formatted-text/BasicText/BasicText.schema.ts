@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "BasicText",
   title: "Basic text",
   type: "array",
@@ -15,4 +15,4 @@ export default {
       },
     },
   ],
-};
+});

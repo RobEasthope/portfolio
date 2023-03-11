@@ -1,7 +1,7 @@
 import { RiVideoLine } from "react-icons/ri";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
-export default {
+export default defineType({
   type: "object",
   name: "MuxVideo",
   title: "Mux video",
@@ -36,4 +36,4 @@ export default {
       };
     },
   },
-};
+});

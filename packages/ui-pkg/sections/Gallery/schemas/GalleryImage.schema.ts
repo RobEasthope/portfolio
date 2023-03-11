@@ -1,6 +1,6 @@
 import { RiImage2Line } from "react-icons/ri";
 
-export default {
+export default defineType({
   type: "object",
   name: "GalleryImage",
   title: "Image",

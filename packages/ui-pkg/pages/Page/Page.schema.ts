@@ -10,7 +10,7 @@ import ProjectIndex from "../../sections/ProjectIndex/ProjectIndex.schema";
 import YoutubeVideo from "../../sections/YoutubeVideo/YoutubeVideo.schema";
 import VimeoVideo from "../../sections/VimeoVideo/VimeoVideo.schema";
 
-export default {
+export default defineType({
   name: "Page",
   title: "Page",
   type: "document",
@@ -102,4 +102,4 @@ export default {
       };
     },
   },
-};
+});

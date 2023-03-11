@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "organisation",
   title: "Organisation",
   type: "document",
@@ -38,4 +38,4 @@ export default {
       media: "logo",
     },
   },
-};
+});

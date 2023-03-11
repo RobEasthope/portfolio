@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "ProjectIndex",
   title: "Project index",
   type: "document",
@@ -21,4 +21,4 @@ export default {
       subtitle: "description",
     },
   },
-};
+});

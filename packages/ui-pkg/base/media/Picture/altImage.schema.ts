@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "altImage",
   title: "Image",
   type: "object",
@@ -18,4 +18,4 @@ export default {
       validation: (Rule) => Rule.required().warning("Required field"),
     },
   ],
-};
+});

@@ -1,4 +1,4 @@
-export default {
+export default defineType({
   name: "ExampleSection",
   title: "Example",
   type: "object",
@@ -53,4 +53,4 @@ export default {
       };
     },
   },
-};
+});

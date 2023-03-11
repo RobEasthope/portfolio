@@ -1,7 +1,7 @@
 import * as dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 
-export default {
+export default defineType({
   name: "project",
   title: "Project",
   type: "document",
@@ -168,4 +168,4 @@ export default {
       };
     },
   },
-};
+});
