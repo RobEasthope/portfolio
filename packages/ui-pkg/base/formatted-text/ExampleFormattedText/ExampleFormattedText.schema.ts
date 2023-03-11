@@ -1,11 +1,11 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 
 export default defineType({
   name: "ExampleFormattedText",
   title: "Example text",
   type: "array",
   of: [
-    {
+    defineArrayMember({
       type: "block",
       styles: [
         { title: "Normal", value: "normal" },
@@ -21,6 +21,6 @@ export default defineType({
         ],
         annotations: [{ type: "InternalLink" }, { type: "ExternalLink" }],
       },
-    },
+    }),
   ],
 });

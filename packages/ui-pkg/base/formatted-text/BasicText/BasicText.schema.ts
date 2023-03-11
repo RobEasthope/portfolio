@@ -1,11 +1,11 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 
 export default defineType({
   name: "BasicText",
   title: "Basic text",
   type: "array",
   of: [
-    {
+    defineArrayMember({
       type: "block",
       styles: [],
       marks: {
@@ -15,6 +15,6 @@ export default defineType({
         ],
         annotations: [{ type: "InternalLink" }, { type: "ExternalLink" }],
       },
-    },
+    }),
   ],
 });

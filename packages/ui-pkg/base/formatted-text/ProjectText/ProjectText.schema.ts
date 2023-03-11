@@ -1,11 +1,11 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 
 export default defineType({
   name: "ProjectText",
   title: "Article text",
   type: "array",
   of: [
-    {
+    defineArrayMember({
       type: "block",
       styles: [
         { title: "Normal", value: "normal" },
@@ -21,11 +21,11 @@ export default defineType({
         ],
         annotations: [{ type: "InternalLink" }, { type: "ExternalLink" }],
       },
-    },
-    { type: "Gallery" },
-    { type: "Image" },
-    { type: "MuxVideo" },
-    { type: "VimeoVideo" },
-    { type: "YoutubeVideo" },
+    }),
+    defineArrayMember({ type: "Gallery" }),
+    defineArrayMember({ type: "Image" }),
+    defineArrayMember({ type: "MuxVideo" }),
+    defineArrayMember({ type: "VimeoVideo" }),
+    defineArrayMember({ type: "YoutubeVideo" }),
   ],
 });
