@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
-import { Error404 } from "ui-pkg/layouts/Error404/Error404";
-import { Page, PageProps } from "ui-pkg/layouts/Page/Page";
+import { Error404 } from "ui-pkg/pages/Error404/Error404";
+import { Page, PageProps } from "ui-pkg/pages/Page/Page";
 import { Loading } from "ui-pkg/base/app/Loading/Loading";
 import {
   getClient,
@@ -14,7 +14,7 @@ import { HeaderProps } from "ui-pkg/navigation/Header/Header";
 import { GlobalMetadata } from "ui-pkg/types/sanity-schema";
 import { pageRenderChecks } from "next-app/utils/pageRenderChecks";
 import { createSlugFromQuery } from "apis-pkg/sanity-api/createSlugFromQuery";
-import { pageBySlugQuery, pageSlugsQuery } from "ui-pkg/layouts/Page/Page.queries";
+import { pageBySlugQuery, pageSlugsQuery } from "ui-pkg/pages/Page/Page.queries";
 
 // TYPES
 type PageBySlugProps = {

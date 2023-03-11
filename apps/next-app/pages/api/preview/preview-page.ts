@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { previewAnyPageByIdQuery } from "ui-pkg/layouts/Preview/Preview.queries";
+import { previewAnyPageByIdQuery } from "ui-pkg/pages/Preview/Preview.queries";
 import { previewClient } from "apis-pkg/sanity-api/sanity.server";
-import { PageProps } from "ui-pkg/layouts/Page/Page";
+import { PageProps } from "ui-pkg/pages/Page/Page";
 
 export default async function (req: NextApiRequest, res: NextApiResponse): Promise<void> {
   // Check the secret and next parameters

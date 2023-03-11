@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import { Project, ProjectProps } from "ui-pkg/layouts/Project/Project";
+import { Project, ProjectProps } from "ui-pkg/pages/Project/Project";
 import { Loading } from "ui-pkg/base/app/Loading/Loading";
 import {
   getClient,
@@ -14,8 +14,8 @@ import { GlobalMetadata } from "ui-pkg/types/sanity-schema";
 import {
   projectBySlugQuery,
   projectSlugsQuery,
-} from "ui-pkg/layouts/Project/Project.queries";
-import { Error404 } from "ui-pkg/layouts/Error404/Error404";
+} from "ui-pkg/pages/Project/Project.queries";
+import { Error404 } from "ui-pkg/pages/Error404/Error404";
 
 // TYPES
 type ProjectBySlugProps = {
