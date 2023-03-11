@@ -27,6 +27,7 @@
     "@sanity/production-preview": "^2.29.3",
     "@sanity/react-hooks": "^2.30.0",
     "@sanity/vision": "^2.30.0",
+    "@stitches/react": "^1.2.8",
     "dayjs": "^1.10.7",
     "prop-types": "^15.7",
     "react": "^17.0",
