@@ -1,29 +1,36 @@
+import { defineField, defineType } from "sanity";
 import React from "react";
-import { ALL_PAGES_TYPES } from "../../../utils/sanity/ALL_PAGE_TYPES";
+import { ALL_PAGES_TYPES } from "ffa-sanity/constants/ALL_PAGES_TYPES";
+import { RiLinksLine } from "react-icons/ri";
 
-const InternalLinkRender = ({ children }) => <span>{children} 🔗</span>;
+const InternalLinkRender = ({ children }) => (
+  <span>
+    {children} <RiLinksLine />
+  </span>
+);
 
-export default {
+export default defineType({
   name: "InternalLinkWithTitle",
   title: "Internal link",
   type: "object",
   description: "Link to a document on the site",
+  icon: RiLinksLine,
   fields: [
-    {
+    defineField({
       name: "title",
       title: "Title",
       type: "string",
-      codegen: { required: true },
+
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "internalUID",
       title: "Page",
       type: "reference",
       to: ALL_PAGES_TYPES,
-      codegen: { required: true },
+
       validation: (Rule) => Rule.required(),
-    },
+    }),
   ],
   blockEditor: {
     icon: () => "🔗",
@@ -41,4 +48,4 @@ export default {
       };
     },
   },
-};
+});
