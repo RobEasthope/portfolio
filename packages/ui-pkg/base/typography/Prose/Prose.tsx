@@ -60,10 +60,10 @@ export const Prose = styled("div", {
     marginBottom: "$x1",
   },
 
-  '& [class~="lead"]': {
-    marginTop: `calc(${SPACING.VR_BASE} * 1.5)`,
-    marginBottom: `calc(${SPACING.VR_BASE} * 1.5)`,
-  },
+  // '& [class~="lead"]': {
+  //   marginTop: `calc(${SPACING.VR_BASE} * 1.5)`,
+  //   marginBottom: `calc(${SPACING.VR_BASE} * 1.5)`,
+  // },
 
   // Quotes
   "& blockquote": {
