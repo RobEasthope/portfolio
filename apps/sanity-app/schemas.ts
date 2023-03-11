@@ -5,14 +5,14 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 //Links
-import internalLink from "../../packages/ui-pkg/base/links/InternalLink/InternalLink.schema.js";
-import internalLinkWithTitle from "../../packages/ui-pkg/base/links/InternalLink/InternalLinkWithTitle.schema.js";
-import externalLink from "../../packages/ui-pkg/base/links/ExternalLink/ExternalLink.schema.js";
-import externalLinkWithTitle from "../../packages/ui-pkg/base/links/ExternalLink/ExternalLinkWithTitle.schema.js";
+import internalLink from "../../packages/ui-pkg/base/links/InternalLink/InternalLink.schema";
+import internalLinkWithTitle from "../../packages/ui-pkg/base/links/InternalLink/InternalLinkWithTitle.schema";
+import externalLink from "../../packages/ui-pkg/base/links/ExternalLink/ExternalLink.schema";
+import externalLinkWithTitle from "../../packages/ui-pkg/base/links/ExternalLink/ExternalLinkWithTitle.schema";
 
 // Navigation
-import Header from "../../packages/ui-pkg/navigation/Header/Header.schema.js";
-import Footer from "../../packages/ui-pkg/navigation/Footer/Footer.schema.js";
+import Header from "../../packages/ui-pkg/navigation/Header/Header.schema";
+import Footer from "../../packages/ui-pkg/navigation/Footer/Footer.schema";
 
 // Media
 import altImage from "../../packages/ui-pkg/base/media/Picture/altImage.schema";

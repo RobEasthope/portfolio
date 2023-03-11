@@ -15,7 +15,7 @@ import { ProjectProps } from "ui-pkg/pages/Project/Project";
 
 // Dynamic component imports
 const ExampleSection = dynamic(
-  () => import("../../sections/ExampleSection/ExampleSection")
+  () => import("ui-pkg/sections/ExampleSection/ExampleSection")
 );
 const Gallery = dynamic(() => import("ui-pkg/sections/Gallery/Gallery"));
 const Image = dynamic(() => import("ui-pkg/sections/Image/Image"));
