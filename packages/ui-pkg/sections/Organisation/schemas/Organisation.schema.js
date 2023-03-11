@@ -1,32 +1,32 @@
 export default {
-  name: 'organisation',
-  title: 'Organisation',
-  type: 'document',
+  name: "organisation",
+  title: "Organisation",
+  type: "document",
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      name: "name",
+      title: "Name",
+      type: "string",
+      validation: (Rule) => Rule.required().warning("Required field"),
     },
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
+      name: "url",
+      title: "URL",
+      type: "url",
     },
     {
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
+      name: "logo",
+      title: "Logo",
+      type: "image",
       options: {
         hotspot: true,
       },
     },
     {
-      name: 'hiddenOrg',
-      title: 'Hide organisation',
-      descript: 'Hides organisation on frontend',
-      type: 'boolean',
+      name: "hiddenOrg",
+      title: "Hide organisation",
+      descript: "Hides organisation on frontend",
+      type: "boolean",
     },
   ],
   initialValue: {
@@ -34,8 +34,8 @@ export default {
   },
   preview: {
     select: {
-      title: 'name',
-      media: 'logo',
+      title: "name",
+      media: "logo",
     },
   },
 };

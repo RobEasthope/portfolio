@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import BlockContent from '@sanity/block-content-to-react';
+import { ReactNode } from "react";
+import BlockContent from "@sanity/block-content-to-react";
 
 export interface ExampleFormattedTextProps {
   blocks: unknown;
@@ -11,16 +11,16 @@ type BlockRendererProps = {
 };
 
 const BlockRenderer = ({ node, children }: BlockRendererProps) => {
-  const { style = 'normal' } = node;
+  const { style = "normal" } = node;
 
-  if (style === 'h2') {
+  if (style === "h2") {
     return <h2>{children}</h2>;
   }
-  if (style === 'h3') {
+  if (style === "h3") {
     return <h3>{children}</h3>;
   }
 
-  if (style === 'h4') {
+  if (style === "h4") {
     return <h4>{children}</h4>;
   }
 

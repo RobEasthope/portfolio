@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export function headingUI(title: string) {
   return {
@@ -9,12 +9,12 @@ export function headingUI(title: string) {
     }) => (
       <div
         style={{
-          borderBottom: '1px solid rgba(0,0,0,.1)',
-          fontSize: '0.9rem',
-          marginTop: '1em',
-          paddingBottom: '0.33em',
-          textTransform: 'uppercase',
-          fontWeight: 'bold',
+          borderBottom: "1px solid rgba(0,0,0,.1)",
+          fontSize: "0.9rem",
+          marginTop: "1em",
+          paddingBottom: "0.33em",
+          textTransform: "uppercase",
+          fontWeight: "bold",
         }}
       >
         {field.type.title}
@@ -22,10 +22,10 @@ export function headingUI(title: string) {
     ),
     name: `heading${title
       .toLowerCase()
-      .replace(/\s/g, '')
-      .replace(/[^\w-]+/g, '')
-      .replace(/--+/g, '-')}`,
+      .replace(/\s/g, "")
+      .replace(/[^\w-]+/g, "")
+      .replace(/--+/g, "-")}`,
     title,
-    type: 'string',
+    type: "string",
   };
 }

@@ -2,12 +2,12 @@ import {
   ExternalLink,
   ExternalLinkSchemaProps,
   ExternalLinkWithTitleSchemaProps,
-} from 'ui-pkg/base/links/ExternalLink/ExternalLink';
+} from "ui-pkg/base/links/ExternalLink/ExternalLink";
 import {
   InternalLink,
   InternalLinkSchemaProps,
   InternalLinkWithTitleSchemaProps,
-} from 'ui-pkg/base/links/InternalLink/InternalLink';
+} from "ui-pkg/base/links/InternalLink/InternalLink";
 
 export type SuperLinkProps = {
   link:
@@ -20,14 +20,9 @@ export type SuperLinkProps = {
   onClick?: VoidFunction;
 };
 
-export const SuperLink = ({
-  link,
-  className,
-  children,
-  onClick,
-}: SuperLinkProps) => {
+export const SuperLink = ({ link, className, children, onClick }: SuperLinkProps) => {
   switch (link._type) {
-    case 'InternalLinkWithTitle':
+    case "InternalLinkWithTitle":
       return (
         <InternalLink
           href={link?.to?.slug?.current}
@@ -38,7 +33,7 @@ export const SuperLink = ({
         </InternalLink>
       );
 
-    case 'ExternalLinkWithTitle':
+    case "ExternalLinkWithTitle":
       return (
         <ExternalLink href={link?.url} className={className} onClick={onClick}>
           {children}

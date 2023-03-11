@@ -1,17 +1,17 @@
 export default {
-  name: 'BasicText',
-  title: 'Basic text',
-  type: 'array',
+  name: "BasicText",
+  title: "Basic text",
+  type: "array",
   of: [
     {
-      type: 'block',
+      type: "block",
       styles: [],
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
+          { title: "Strong", value: "strong" },
+          { title: "Emphasis", value: "em" },
         ],
-        annotations: [{ type: 'InternalLink' }, { type: 'ExternalLink' }],
+        annotations: [{ type: "InternalLink" }, { type: "ExternalLink" }],
       },
     },
   ],

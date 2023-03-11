@@ -1,74 +1,74 @@
-import { BiHeading } from 'react-icons/bi';
-import { headingUI } from '../../utils/sanity/headingUI';
+import { BiHeading } from "react-icons/bi";
+import { headingUI } from "../../utils/sanity/headingUI";
 
 export default {
-  type: 'object',
-  name: 'LandingHero',
-  title: 'Landing hero',
+  type: "object",
+  name: "LandingHero",
+  title: "Landing hero",
   icon: BiHeading,
   fields: [
-    headingUI('Foreground'),
+    headingUI("Foreground"),
     {
-      name: 'heading',
-      title: 'Heading',
-      type: 'string',
+      name: "heading",
+      title: "Heading",
+      type: "string",
     },
     {
-      name: 'subheading',
-      title: 'Subheading',
-      type: 'string',
+      name: "subheading",
+      title: "Subheading",
+      type: "string",
     },
-    headingUI('Background'),
+    headingUI("Background"),
     {
-      name: 'bkgMode',
-      title: 'Background mode',
-      type: 'string',
+      name: "bkgMode",
+      title: "Background mode",
+      type: "string",
       options: {
         list: [
-          { title: 'Image', value: 'image' },
-          { title: 'Video', value: 'video' },
+          { title: "Image", value: "image" },
+          { title: "Video", value: "video" },
         ],
-        layout: 'radio',
+        layout: "radio",
       },
       validation: (Rule) =>
-        Rule.required().error('Landing hero: Background mode has not been set'),
+        Rule.required().error("Landing hero: Background mode has not been set"),
     },
     {
-      name: 'bkgImage',
-      title: 'Background image',
-      type: 'image',
+      name: "bkgImage",
+      title: "Background image",
+      type: "image",
       options: {
         hotspot: true,
       },
       fields: [
         {
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
+          name: "attribution",
+          type: "string",
+          title: "Attribution",
         },
       ],
-      hidden: ({ parent }) => parent?.bkgMode !== 'image',
+      hidden: ({ parent }) => parent?.bkgMode !== "image",
     },
     {
-      name: 'rawMuxVideo',
-      title: 'Background video',
-      type: 'mux.video',
-      hidden: ({ parent }) => parent?.bkgMode !== 'video',
+      name: "rawMuxVideo",
+      title: "Background video",
+      type: "mux.video",
+      hidden: ({ parent }) => parent?.bkgMode !== "video",
     },
     {
-      name: 'caption',
-      title: 'Background caption',
-      type: 'text',
+      name: "caption",
+      title: "Background caption",
+      type: "text",
       hidden: ({ parent }) => !parent?.bkgMode,
     },
   ],
   preview: {
     select: {
-      bkgImage: 'bkgImage',
+      bkgImage: "bkgImage",
     },
     prepare({ bkgImage }) {
       return {
-        title: 'Landing hero',
+        title: "Landing hero",
         media: bkgImage,
       };
     },

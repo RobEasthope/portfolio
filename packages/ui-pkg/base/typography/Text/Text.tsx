@@ -1,10 +1,10 @@
-import { SPACING } from 'ui-pkg/constants/SPACING';
-import { styled } from 'ui-pkg/styles/stitches.config';
-import { TYPE_SCALE } from 'ui-pkg/styles/constants/TYPE_SCALE';
-import { MAX_WIDTH } from 'ui-pkg/constants/MAX_WIDTHS';
+import { SPACING } from "ui-pkg/constants/SPACING";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { TYPE_SCALE } from "ui-pkg/styles/constants/TYPE_SCALE";
+import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
 
-export const Text = styled('div', {
-  color: '$text',
+export const Text = styled("div", {
+  color: "$text",
 
   marginY: 0,
 
@@ -16,12 +16,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.JUMBOTRON.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.JUMBOTRON.MIN}px + (${TYPE_SCALE.JUMBOTRON.MAX} - ${TYPE_SCALE.JUMBOTRON.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.JUMBOTRON.MAX}px`,
         },
         lineHeight: `calc(${SPACING.VR_BASE} * 3)`,
@@ -31,12 +31,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.EXTRA_LARGE.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.EXTRA_LARGE.MIN}px + (${TYPE_SCALE.EXTRA_LARGE.MAX} - ${TYPE_SCALE.EXTRA_LARGE.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.EXTRA_LARGE.MAX}px`,
         },
         lineHeight: `calc(${SPACING.VR_BASE} * 2)`,
@@ -46,12 +46,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.LARGE.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.LARGE.MIN}px + (${TYPE_SCALE.LARGE.MAX} - ${TYPE_SCALE.LARGE.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.LARGE.MAX}px`,
         },
         lineHeight: `calc(${SPACING.VR_BASE} * 1.5)`,
@@ -61,12 +61,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.MEDIUM.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.MEDIUM.MIN}px + (${TYPE_SCALE.MEDIUM.MAX} - ${TYPE_SCALE.MEDIUM.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.MEDIUM.MAX}px`,
         },
         lineHeight: `calc(${SPACING.VR_BASE})`,
@@ -76,12 +76,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.STANDARD.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.STANDARD.MIN}px + (${TYPE_SCALE.STANDARD.MAX} - ${TYPE_SCALE.STANDARD.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.STANDARD.MAX}px`,
         },
         lineHeight: SPACING.VR_BASE,
@@ -91,12 +91,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.SMALL.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.SMALL.MIN}px + (${TYPE_SCALE.SMALL.MAX} - ${TYPE_SCALE.SMALL.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.SMALL.MAX}px`,
         },
         lineHeight: SPACING.VR_BASE,
@@ -106,12 +106,12 @@ export const Text = styled('div', {
         fontSize: `${TYPE_SCALE.TINY.MIN}px`,
 
         // Dynamic font fontSize
-        '@pageMinWidth': {
+        "@pageMinWidth": {
           fontSize: `calc(${TYPE_SCALE.TINY.MIN}px + (${TYPE_SCALE.TINY.MAX} - ${TYPE_SCALE.TINY.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
         },
 
         // Maximum font fontSize
-        '@pageMaxWidth': {
+        "@pageMaxWidth": {
           fontSize: `${TYPE_SCALE.TINY.MAX}px`,
         },
         lineHeight: SPACING.VR_BASE,
@@ -119,25 +119,25 @@ export const Text = styled('div', {
     },
     typeFace: {
       sansSerif: {
-        fontFamily: '$sansSerif',
+        fontFamily: "$sansSerif",
       },
       serif: {
-        fontFamily: '$serif',
+        fontFamily: "$serif",
       },
     },
     typeWeight: {
       regular: {
-        fontWeight: '400',
+        fontWeight: "400",
       },
       bold: {
-        fontWeight: '700',
-        letterSpacing: '0.025em',
+        fontWeight: "700",
+        letterSpacing: "0.025em",
       },
     },
   },
   defaultVariants: {
-    typeFace: 'serif',
-    typeSize: 'standard',
-    typeWeight: 'regular',
+    typeFace: "serif",
+    typeSize: "standard",
+    typeWeight: "regular",
   },
 });
