@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 
 import { Error404 } from "ui-pkg/pages/Error404/Error404";
 import { Page, PageProps } from "ui-pkg/pages/Page/Page";
-import { Loading } from "ui-pkg/base/app/Loading/Loading";
 import {
   getClient,
   overlayDrafts,
@@ -35,15 +34,7 @@ export default function PageBySlug({ data }: PageBySlugProps) {
     return <Error404 />;
   }
 
-  return (
-    <>
-      {isFallback && <Loading />}
-
-      {!isFallback && page?._type === "Page" && (
-        <Page page={page} globals={globals} homePageSlug={homePageSlug} />
-      )}
-    </>
-  );
+  return <Page page={page} globals={globals} homePageSlug={homePageSlug} />;
 }
 
 // SSG CALLS
