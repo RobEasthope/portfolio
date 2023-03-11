@@ -1,28 +1,24 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import BlockContent from '@sanity/block-content-to-react';
-import { ImageProps } from '~/UI/sections/Image/Image';
-import { MuxVideoProps } from '~/UI/sections/MuxVideo/MuxVideo';
-import { VimeoVideoProps } from '~/UI/sections/VimeoVideo/VimeoVideo';
-import { YoutubeVideoProps } from '~/UI/sections/YoutubeVideo/YoutubeVideo';
-import { GalleryProps } from '~/UI/sections/Gallery/Gallery';
-import { Text } from '~/UI/base/typography/Text/Text';
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import BlockContent from "@sanity/block-content-to-react";
+import { ImageProps } from "ui-pkg/sections/Image/Image";
+import { MuxVideoProps } from "ui-pkg/sections/MuxVideo/MuxVideo";
+import { VimeoVideoProps } from "ui-pkg/sections/VimeoVideo/VimeoVideo";
+import { YoutubeVideoProps } from "ui-pkg/sections/YoutubeVideo/YoutubeVideo";
+import { GalleryProps } from "ui-pkg/sections/Gallery/Gallery";
+import { Text } from "ui-pkg/base/typography/Text/Text";
 import {
   BlockRendererProps,
   SerializerMarksProps,
-} from '~/UI/base/formatted-text/formattedTextProps';
-import { Prose } from '~/UI/base/typography/Prose/Prose';
+} from "ui-pkg/base/formatted-text/formattedTextProps";
+import { Prose } from "ui-pkg/base/typography/Prose/Prose";
 
-const Gallery = dynamic(() => import('../../../sections/Gallery/Gallery'));
-const Image = dynamic(() => import('../../../sections/Image/Image'));
-const MuxVideo = dynamic(() => import('../../../sections/MuxVideo/MuxVideo'));
-const VimeoVideo = dynamic(
-  () => import('../../../sections/VimeoVideo/VimeoVideo')
-);
-const YoutubeVideo = dynamic(
-  () => import('../../../sections/YoutubeVideo/YoutubeVideo')
-);
+const Gallery = dynamic(() => import("../../../sections/Gallery/Gallery"));
+const Image = dynamic(() => import("../../../sections/Image/Image"));
+const MuxVideo = dynamic(() => import("../../../sections/MuxVideo/MuxVideo"));
+const VimeoVideo = dynamic(() => import("../../../sections/VimeoVideo/VimeoVideo"));
+const YoutubeVideo = dynamic(() => import("../../../sections/YoutubeVideo/YoutubeVideo"));
 
 // TYPES
 export interface ProjectTextProps {
@@ -31,16 +27,16 @@ export interface ProjectTextProps {
 
 // MARKUP
 const ProjectTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
-  const { style = 'normal' } = node;
+  const { style = "normal" } = node;
 
-  if (style === 'h2') {
+  if (style === "h2") {
     return (
       <Text as="h2" typeSize="xLarge" typeWeight="bold">
         {children}
       </Text>
     );
   }
-  if (style === 'h3') {
+  if (style === "h3") {
     return (
       <Text as="h3" typeSize="large" typeWeight="bold">
         {children}
@@ -48,7 +44,7 @@ const ProjectTextBlockRenderer = ({ node, children }: BlockRendererProps) => {
     );
   }
 
-  if (style === 'h4') {
+  if (style === "h4") {
     return (
       <Text as="h4" typeSize="medium" typeWeight="bold">
         {children}
@@ -71,9 +67,7 @@ const projectTextSerializer = {
     InternalLink: ({ children, mark }: SerializerMarksProps) => (
       <Link
         href={
-          mark?.page?.slug?.current === 'root'
-            ? '/'
-            : `/${mark?.page?.slug?.current}`
+          mark?.page?.slug?.current === "root" ? "/" : `/${mark?.page?.slug?.current}`
         }
       >
         <a>{children}</a>
@@ -124,25 +118,13 @@ const projectTextSerializer = {
     VimeoVideo: ({ node }: { node: VimeoVideoProps }) => {
       const { url, caption, maxWidth, _type } = node;
 
-      return (
-        <VimeoVideo
-          url={url}
-          caption={caption}
-          maxWidth={maxWidth}
-          _type={_type}
-        />
-      );
+      return <VimeoVideo url={url} caption={caption} maxWidth={maxWidth} _type={_type} />;
     },
     YoutubeVideo: ({ node }: { node: YoutubeVideoProps }) => {
       const { url, caption, maxWidth, _type } = node;
 
       return (
-        <YoutubeVideo
-          url={url}
-          caption={caption}
-          maxWidth={maxWidth}
-          _type={_type}
-        />
+        <YoutubeVideo url={url} caption={caption} maxWidth={maxWidth} _type={_type} />
       );
     },
   },

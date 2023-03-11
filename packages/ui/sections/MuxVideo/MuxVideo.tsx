@@ -1,9 +1,9 @@
-import SanityMuxPlayer from 'sanity-mux-player';
-import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
-import { MuxVideo as rawMuxVideoProps } from '~/UI/types/sanity-schema';
-import { Caption } from '~/UI/base/typography/Caption/Caption';
-import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
+import SanityMuxPlayer from "sanity-mux-player";
+import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
+import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
+import { MuxVideo as rawMuxVideoProps } from "ui-pkg/types/sanity-schema";
+import { Caption } from "ui-pkg/base/typography/Caption/Caption";
+import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
 
 // TYPES
 export interface MuxVideoProps extends rawMuxVideoProps {
@@ -11,11 +11,7 @@ export interface MuxVideoProps extends rawMuxVideoProps {
 }
 
 // MARKUP
-export const MuxVideo = ({
-  muxVideo,
-  caption,
-  maxWidth = 'medium',
-}: MuxVideoProps) => {
+export const MuxVideo = ({ muxVideo, caption, maxWidth = "medium" }: MuxVideoProps) => {
   if (!muxVideo) {
     return null;
   }

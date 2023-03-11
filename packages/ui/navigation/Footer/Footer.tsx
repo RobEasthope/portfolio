@@ -1,20 +1,20 @@
-import { Footer as rawFooterProps } from '~/UI/types/sanity-schema';
-import { styled } from '~/UI/styles/stitches.config';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
-import { Box } from '~/UI/base/structure/Box/Box';
-import { Flex } from '~/UI/base/structure/Flex/Flex';
-import { Text } from '~/UI/base/typography/Text/Text';
-import { romanize } from '~/UI/utils/romanize';
+import { Footer as rawFooterProps } from "ui-pkg/types/sanity-schema";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
+import { Box } from "ui-pkg/base/structure/Box/Box";
+import { Flex } from "ui-pkg/base/structure/Flex/Flex";
+import { Text } from "ui-pkg/base/typography/Text/Text";
+import { romanize } from "ui-pkg/utils/romanize";
 
 // STYLES
 export const Navigation = styled(Flex, {
-  '& ul': {
-    listStyle: 'none',
+  "& ul": {
+    listStyle: "none",
     margin: 0,
   },
 
-  '& li': {
-    display: 'inline-block',
+  "& li": {
+    display: "inline-block",
   },
 });
 
@@ -22,19 +22,17 @@ export const Navigation = styled(Flex, {
 export type FooterProps = rawFooterProps;
 
 // MARKUP
-export const Footer = ({
-  copyrightText,
-}: Pick<FooterProps, 'copyrightText'>) => {
+export const Footer = ({ copyrightText }: Pick<FooterProps, "copyrightText">) => {
   const currentYear = new Date().getUTCFullYear();
 
   return (
     <PaddedComponent as="footer" content="nav">
-      <Flex align="center" justify="center" css={{ height: '$x3' }}>
+      <Flex align="center" justify="center" css={{ height: "$x3" }}>
         <Box>
           {
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             <Text typeSize="small">{`© ${romanize(currentYear)} ${
-              copyrightText || ''
+              copyrightText || ""
             }`}</Text>
           }
         </Box>

@@ -1,5 +1,5 @@
-import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
-import { FullTypeProps } from '~/UI/types/utils';
+import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
+import { FullTypeProps } from "ui-pkg/types/utils";
 
 export const fullType = ({
   fontSize,
@@ -20,12 +20,12 @@ export const fullType = ({
   fontSize: `${fontSize.MIN}px`,
 
   // Dynamic font fontSize
-  '@pageMinWidth': {
+  "@pageMinWidth": {
     fontSize: `calc(${fontSize.MIN}px + (${fontSize.MAX} - ${fontSize.MIN}) * ((100vw - ${MAX_WIDTH.TYPE_LOWER_LIMIT}px) / (${MAX_WIDTH.TYPE_UPPER_LIMIT} - ${MAX_WIDTH.TYPE_LOWER_LIMIT})))`,
   },
 
   // Maximum font fontSize
-  '@pageMaxWidth': {
+  "@pageMaxWidth": {
     fontSize: `${fontSize.MAX}px`,
   },
 

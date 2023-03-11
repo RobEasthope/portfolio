@@ -1,18 +1,18 @@
-import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { PageTitle as rawPageTitleProps } from '~/UI/types/sanity-schema';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
-import { Text } from '~/UI/base/typography/Text/Text';
-import { TextAlign } from '~/UI/base/structure/TextAlign/TextAlign';
-import { styled } from '~/UI/styles/stitches.config';
-import { Spacer } from '~/UI/sections/Spacer/Spacer';
+import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
+import { PageTitle as rawPageTitleProps } from "ui-pkg/types/sanity-schema";
+import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
+import { Text } from "ui-pkg/base/typography/Text/Text";
+import { TextAlign } from "ui-pkg/base/structure/TextAlign/TextAlign";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { Spacer } from "ui-pkg/sections/Spacer/Spacer";
 
 // STYLES
-export const Break = styled('span', {
-  display: 'block',
-  width: '$x2',
-  height: '2px',
-  marginX: 'auto',
-  backgroundColor: '$darkSaffron',
+export const Break = styled("span", {
+  display: "block",
+  width: "$x2",
+  height: "2px",
+  marginX: "auto",
+  backgroundColor: "$darkSaffron",
 });
 
 // TYPES

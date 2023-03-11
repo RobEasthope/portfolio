@@ -1,12 +1,12 @@
-import YouTube from 'react-youtube';
-import { YoutubeVideo as rawYoutubeVideoProps } from '~/UI/types/sanity-schema';
+import YouTube from "react-youtube";
+import { YoutubeVideo as rawYoutubeVideoProps } from "ui-pkg/types/sanity-schema";
 
-import { getYoutubeIdfromUrl } from '~/UI/utils/getYoutubeIdfromUrl';
-import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { IFrameAspectRatio } from '~/UI/base/structure/IFrameAspectRatio/IFrameAspectRatio';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
-import { Caption } from '~/UI/base/typography/Caption/Caption';
-import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
+import { getYoutubeIdfromUrl } from "ui-pkg/utils/getYoutubeIdfromUrl";
+import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
+import { IFrameAspectRatio } from "ui-pkg/base/structure/IFrameAspectRatio/IFrameAspectRatio";
+import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
+import { Caption } from "ui-pkg/base/typography/Caption/Caption";
+import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
 
 // TYPES
 export type YoutubeVideoProps = rawYoutubeVideoProps;
@@ -15,7 +15,7 @@ export type YoutubeVideoProps = rawYoutubeVideoProps;
 export const YoutubeVideo = ({
   url,
   caption,
-  maxWidth = 'medium',
+  maxWidth = "medium",
 }: YoutubeVideoProps) => {
   if (!url) {
     return null;
@@ -26,10 +26,7 @@ export const YoutubeVideo = ({
       <Breakout>
         <MaxWidth width={maxWidth}>
           <IFrameAspectRatio ratio={16 / 9}>
-            <YouTube
-              videoId={getYoutubeIdfromUrl(url)}
-              containerClassName="video"
-            />
+            <YouTube videoId={getYoutubeIdfromUrl(url)} containerClassName="video" />
           </IFrameAspectRatio>
           {caption && <Caption as="figcaption">{caption}</Caption>}
         </MaxWidth>

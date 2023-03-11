@@ -1,55 +1,52 @@
-import { RiMenuLine } from 'react-icons/ri';
-import * as DialogPrimative from '@radix-ui/react-dialog';
-import { styled } from '~/UI/styles/stitches.config';
-import { Header as rawHeaderProps } from '~/UI/types/sanity-schema';
+import { RiMenuLine } from "react-icons/ri";
+import * as DialogPrimative from "@radix-ui/react-dialog";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { Header as rawHeaderProps } from "ui-pkg/types/sanity-schema";
 
-import { SuperLink } from '~/UI/base/links/SuperLink/SuperLink';
-import { InternalLinkWithTitleSchemaProps } from '~/UI/base/links/InternalLink/InternalLink';
-import { ExternalLinkWithTitleSchemaProps } from '~/UI/base/links/ExternalLink/ExternalLink';
-import { HeaderProps } from '~/UI/navigation/Header/Header';
+import { SuperLink } from "ui-pkg/base/links/SuperLink/SuperLink";
+import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/links/InternalLink/InternalLink";
+import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/links/ExternalLink/ExternalLink";
+import { HeaderProps } from "ui-pkg/navigation/Header/Header";
 
 // Styles
 export const DialogContent = styled(DialogPrimative.Content, {
-  backgroundColor: 'white',
+  backgroundColor: "white",
 
-  width: '300px',
-  height: '100vh',
+  width: "300px",
+  height: "100vh",
 
-  borderRight: '1px solid black',
+  borderRight: "1px solid black",
 });
 
 export const DialogOverlay = styled(DialogPrimative.Overlay, {
-  backgroundColor: 'rgba(255, 255, 255, 0.5)',
-  width: '100vw',
-  height: '100vh',
+  backgroundColor: "rgba(255, 255, 255, 0.5)",
+  width: "100vw",
+  height: "100vh",
 });
 
 export const OpenSmallNavigationButton = styled(DialogPrimative.Trigger, {
-  border: 'none',
+  border: "none",
 
-  '@media (min-width: 800px)': {
-    display: 'none',
-    visibility: 'hidden',
+  "@media (min-width: 800px)": {
+    display: "none",
+    visibility: "hidden",
   },
 });
 
 export const CloseSmallNavigationButton = styled(DialogPrimative.Close, {
-  border: 'none',
+  border: "none",
 });
 
 // Types
 export interface SmallNavigationProps extends rawHeaderProps {
-  navigation?: [
-    ExternalLinkWithTitleSchemaProps,
-    InternalLinkWithTitleSchemaProps
-  ];
+  navigation?: [ExternalLinkWithTitleSchemaProps, InternalLinkWithTitleSchemaProps];
 }
 
 // Markup
 export const SmallNavigation = ({
   navigationLeft,
   navigationRight,
-}: Pick<HeaderProps, 'navigationLeft' | 'navigationRight'>) => (
+}: Pick<HeaderProps, "navigationLeft" | "navigationRight">) => (
   <DialogPrimative.Root>
     <OpenSmallNavigationButton>
       <RiMenuLine />

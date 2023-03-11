@@ -1,9 +1,9 @@
-import { styled } from '~/UI/styles/stitches.config';
+import { styled } from "ui-pkg/styles/stitches.config";
 
 // STYLES
-export const BlurredImage = styled('img', {
-  display: 'block',
-  position: 'static',
+export const BlurredImage = styled("img", {
+  display: "block",
+  position: "static",
 
   variants: {
     visibility: {

@@ -1,11 +1,11 @@
-import { Spacer as rawSpacerProps } from '~/UI/types/sanity-schema';
-import { SPACING } from '~/UI/constants/SPACING';
-import { styled } from '~/UI/styles/stitches.config';
-import { Box } from '~/UI/base/structure/Box/Box';
+import { Spacer as rawSpacerProps } from "ui-pkg/types/sanity-schema";
+import { SPACING } from "ui-pkg/constants/SPACING";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { Box } from "ui-pkg/base/structure/Box/Box";
 
 // STYLES
 const StyledSpacer = styled(Box, {
-  width: '100%',
+  width: "100%",
 
   variants: {
     height: {
@@ -23,11 +23,9 @@ const StyledSpacer = styled(Box, {
 });
 
 // TYPES
-export type SpacerProps = Pick<rawSpacerProps, 'height'>;
+export type SpacerProps = Pick<rawSpacerProps, "height">;
 
 // MARKUP
-export const Spacer = ({ height }: SpacerProps) => (
-  <StyledSpacer height={height} />
-);
+export const Spacer = ({ height }: SpacerProps) => <StyledSpacer height={height} />;
 
 export default Spacer;

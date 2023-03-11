@@ -1,9 +1,9 @@
-import { Gallery as rawGalleryProps } from '~/UI/types/sanity-schema';
-import { Breakout } from '~/UI/base/structure/Breakout/Breakout';
-import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
-import { Picture } from '~/UI/base/media/Picture/Picture';
-import { Figure, GalleryCaption, Grid } from './Gallery.styles';
+import { Gallery as rawGalleryProps } from "ui-pkg/types/sanity-schema";
+import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
+import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
+import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
+import { Picture } from "ui-pkg/base/media/Picture/Picture";
+import { Figure, GalleryCaption, Grid } from "./Gallery.styles";
 
 // TYPES
 export type GalleryProps = rawGalleryProps;
@@ -14,7 +14,7 @@ export const Gallery = ({
   galleryCaption,
   columns,
   aspectRatio = 1 / 1,
-  maxWidth = 'medium',
+  maxWidth = "medium",
 }: GalleryProps) => {
   if (!images) {
     return null;
@@ -31,7 +31,7 @@ export const Gallery = ({
                   {card?.image && (
                     <Picture
                       asset={card?.image}
-                      alt={card?.image?.caption || ''}
+                      alt={card?.image?.caption || ""}
                       mode="responsive"
                       maxWidth={800}
                       aspectRatio={aspectRatio}

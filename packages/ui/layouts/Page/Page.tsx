@@ -1,13 +1,13 @@
-import { Footer } from '~/UI/navigation/Footer/Footer';
-import { Header } from '~/UI/navigation/Header/Header';
-import { FixedFooterLayout } from '~/UI/base/structure/FixedFooterLayout/FixedFooterLayout';
-import { MainContentLayout } from '~/UI/base/structure/MainContentLayout/MainContentLayout';
-import { NextMetadata } from '~/UI/base/app/Metadata/NextMetadata';
-import { RenderSections } from '~/UI/utils/RenderSections/RenderSections';
-import { Page as rawPageProps } from '~/UI/types/sanity-schema';
-import { ExampleSectionProps } from '~/UI/sections/ExampleSection/ExampleSection';
-import { AppGlobalsProps } from '~/UI/base/settings/Globals';
-import { ProjectProps } from '~/UI/layouts/Project/Project';
+import { Footer } from "ui-pkg/navigation/Footer/Footer";
+import { Header } from "ui-pkg/navigation/Header/Header";
+import { FixedFooterLayout } from "ui-pkg/base/structure/FixedFooterLayout/FixedFooterLayout";
+import { MainContentLayout } from "ui-pkg/base/structure/MainContentLayout/MainContentLayout";
+import { NextMetadata } from "ui-pkg/base/app/Metadata/NextMetadata";
+import { RenderSections } from "ui-pkg/utils/RenderSections/RenderSections";
+import { Page as rawPageProps } from "ui-pkg/types/sanity-schema";
+import { ExampleSectionProps } from "ui-pkg/sections/ExampleSection/ExampleSection";
+import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
+import { ProjectProps } from "ui-pkg/layouts/Project/Project";
 
 export interface PageProps extends rawPageProps {
   sections: [ExampleSectionProps];

@@ -1,10 +1,10 @@
-import { MAX_WIDTH } from '~/UI/constants/MAX_WIDTHS';
-import { styled } from '~/UI/styles/stitches.config';
+import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
+import { styled } from "ui-pkg/styles/stitches.config";
 
-export const MaxWidth = styled('div', {
-  width: '100%',
-  marginLeft: 'auto',
-  marginRight: 'auto',
+export const MaxWidth = styled("div", {
+  width: "100%",
+  marginLeft: "auto",
+  marginRight: "auto",
 
   variants: {
     width: {
@@ -27,12 +27,12 @@ export const MaxWidth = styled('div', {
         maxWidth: MAX_WIDTH.XLARGE,
       },
       full: {
-        include: 'breakout',
+        include: "breakout",
       },
     },
   },
 
   defaultVariants: {
-    width: 'large',
+    width: "large",
   },
 });

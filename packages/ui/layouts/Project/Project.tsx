@@ -1,40 +1,37 @@
-import { Footer } from '~/UI/navigation/Footer/Footer';
-import { Header } from '~/UI/navigation/Header/Header';
-import { FixedFooterLayout } from '~/UI/base/structure/FixedFooterLayout/FixedFooterLayout';
-import { MainContentLayout } from '~/UI/base/structure/MainContentLayout/MainContentLayout';
-import { NextMetadata } from '~/UI/base/app/Metadata/NextMetadata';
-import {
-  Organisation,
-  Project as rawProjectProps,
-} from '~/UI/types/sanity-schema';
-import { ExampleSectionProps } from '~/UI/sections/ExampleSection/ExampleSection';
-import { AppGlobalsProps } from '~/UI/base/settings/Globals';
-import { Text } from '~/UI/base/typography/Text/Text';
-import { ProjectText } from '~/UI/base/formatted-text/ProjectText/ProjectText';
-import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { Box } from '~/UI/base/structure/Box/Box';
-import { Flex } from '~/UI/base/structure/Flex/Flex';
-import { TextAlign } from '~/UI/base/structure/TextAlign/TextAlign';
-import { Picture } from '~/UI/base/media/Picture/Picture';
+import { Footer } from "ui-pkg/navigation/Footer/Footer";
+import { Header } from "ui-pkg/navigation/Header/Header";
+import { FixedFooterLayout } from "ui-pkg/base/structure/FixedFooterLayout/FixedFooterLayout";
+import { MainContentLayout } from "ui-pkg/base/structure/MainContentLayout/MainContentLayout";
+import { NextMetadata } from "ui-pkg/base/app/Metadata/NextMetadata";
+import { Organisation, Project as rawProjectProps } from "ui-pkg/types/sanity-schema";
+import { ExampleSectionProps } from "ui-pkg/sections/ExampleSection/ExampleSection";
+import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
+import { Text } from "ui-pkg/base/typography/Text/Text";
+import { ProjectText } from "ui-pkg/base/formatted-text/ProjectText/ProjectText";
+import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
+import { Box } from "ui-pkg/base/structure/Box/Box";
+import { Flex } from "ui-pkg/base/structure/Flex/Flex";
+import { TextAlign } from "ui-pkg/base/structure/TextAlign/TextAlign";
+import { Picture } from "ui-pkg/base/media/Picture/Picture";
 
-import { styled } from '~/UI/styles/stitches.config';
-import { Spacer } from '~/UI/sections/Spacer/Spacer';
-import { ExternalLink } from '~/UI/base/links/ExternalLink/ExternalLink';
-import { BsDot } from 'react-icons/bs';
+import { styled } from "ui-pkg/styles/stitches.config";
+import { Spacer } from "ui-pkg/sections/Spacer/Spacer";
+import { ExternalLink } from "ui-pkg/base/links/ExternalLink/ExternalLink";
+import { BsDot } from "react-icons/bs";
 
 export const ProjectLogo = styled(Picture, {
-  borderRadius: '$circle',
-  xySize: '100px',
+  borderRadius: "$circle",
+  xySize: "100px",
 
-  '& img': {
-    borderRadius: '$circle',
-    width: '100%',
-    height: '100%',
+  "& img": {
+    borderRadius: "$circle",
+    width: "100%",
+    height: "100%",
   },
 });
 
 export const Dot = styled(BsDot, {
-  height: '$x1',
+  height: "$x1",
 });
 
 export interface ProjectProps extends rawProjectProps {
@@ -89,12 +86,12 @@ export const Project = ({
           <Spacer height="x2" />
 
           <MaxWidth width="text">
-            <TextAlign align="centre" css={{ marginBottom: '$x1' }}>
+            <TextAlign align="centre" css={{ marginBottom: "$x1" }}>
               {thumbnailImage && (
-                <Flex justify="center" css={{ marginBottom: '$x1' }}>
+                <Flex justify="center" css={{ marginBottom: "$x1" }}>
                   <ProjectLogo
                     asset={thumbnailImage}
-                    alt={title || ''}
+                    alt={title || ""}
                     mode="responsive"
                     maxWidth={200}
                     aspectRatio={1}
@@ -103,21 +100,19 @@ export const Project = ({
               )}
 
               {title && (
-                <Text typeSize="large" css={{ marginBottom: '$x1' }}>
+                <Text typeSize="large" css={{ marginBottom: "$x1" }}>
                   {title}
                 </Text>
               )}
 
-              {description && (
-                <Text css={{ marginBottom: '$x1' }}>{description}</Text>
-              )}
+              {description && <Text css={{ marginBottom: "$x1" }}>{description}</Text>}
 
               {(clientOrg || agencyOrg) && (
                 <Flex justify="center" gap="x1">
                   {clientOrg && (
                     <Text>
-                      <Box as="span" css={{ fontStyle: 'italic' }}>
-                        Client:{' '}
+                      <Box as="span" css={{ fontStyle: "italic" }}>
+                        Client:{" "}
                       </Box>
                       <ExternalLink href={clientOrg?.url || null}>
                         {clientOrg?.name}
@@ -126,8 +121,8 @@ export const Project = ({
                   )}
                   {agencyOrg && (
                     <Text>
-                      <Box as="span" css={{ fontStyle: 'italic' }}>
-                        Agency:{' '}
+                      <Box as="span" css={{ fontStyle: "italic" }}>
+                        Agency:{" "}
                       </Box>
                       <ExternalLink href={agencyOrg?.url || null}>
                         {agencyOrg?.name}
@@ -144,22 +139,22 @@ export const Project = ({
             {projectText && <ProjectText blocks={projectText as unknown} />}
 
             {(projectUrl || repoUrl || date) && (
-              <TextAlign align="centre" css={{ marginTop: '$x1' }}>
+              <TextAlign align="centre" css={{ marginTop: "$x1" }}>
                 <Dot />
 
                 {projectUrl && (
-                  <Text css={{ marginTop: '$x1' }}>
+                  <Text css={{ marginTop: "$x1" }}>
                     <ExternalLink href={projectUrl}>
                       {projectUrlTitle || projectUrl}
                     </ExternalLink>
                   </Text>
                 )}
                 {repoUrl && (
-                  <Text css={{ marginTop: '$x1' }}>
+                  <Text css={{ marginTop: "$x1" }}>
                     <ExternalLink href={repoUrl}>{repoUrl}</ExternalLink>
                   </Text>
                 )}
-                {date && <Text css={{ marginTop: '$x1' }}>{date}</Text>}
+                {date && <Text css={{ marginTop: "$x1" }}>{date}</Text>}
               </TextAlign>
             )}
             <Spacer height="x2" />

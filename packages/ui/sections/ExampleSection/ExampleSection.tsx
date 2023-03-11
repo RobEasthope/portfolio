@@ -1,15 +1,15 @@
-import { styled } from '~/UI/styles/stitches.config';
-import { ExampleFormattedText } from '~/UI/base/formatted-text/ExampleFormattedText/ExampleFormattedText';
-import { MaxWidth } from '~/UI/base/structure/MaxWidth/MaxWidth';
-import { ExampleSection as rawExampleSectionProps } from '~/UI/types/sanity-schema';
-import { Picture } from '~/UI/base/media/Picture/Picture';
-import { TYPE_SCALE } from '~/UI/styles/constants/TYPE_SCALE';
-import { PaddedComponent } from '~/UI/base/structure/PaddedComponent/PaddedComponent';
+import { styled } from "ui-pkg/styles/stitches.config";
+import { ExampleFormattedText } from "ui-pkg/base/formatted-text/ExampleFormattedText/ExampleFormattedText";
+import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
+import { ExampleSection as rawExampleSectionProps } from "ui-pkg/types/sanity-schema";
+import { Picture } from "ui-pkg/base/media/Picture/Picture";
+import { TYPE_SCALE } from "ui-pkg/styles/constants/TYPE_SCALE";
+import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
 
 // Styles
-export const Text = styled('p', {
+export const Text = styled("p", {
   type: { fontSize: TYPE_SCALE.STANDARD },
-  fontWeight: 'bold',
+  fontWeight: "bold",
 });
 
 // Types
@@ -18,11 +18,7 @@ export interface ExampleSectionProps extends rawExampleSectionProps {
 }
 
 // Markup
-export const ExampleSection = ({
-  heading,
-  text,
-  image,
-}: ExampleSectionProps) => {
+export const ExampleSection = ({ heading, text, image }: ExampleSectionProps) => {
   if (!heading && !text) {
     return null;
   }
@@ -32,9 +28,7 @@ export const ExampleSection = ({
       <MaxWidth width="page">
         {heading && <Text as="h1">{heading}</Text>}
         {text && <ExampleFormattedText blocks={text} />}
-        {image && (
-          <Picture asset={image} alt="" mode="responsive" maxWidth={800} />
-        )}
+        {image && <Picture asset={image} alt="" mode="responsive" maxWidth={800} />}
       </MaxWidth>
     </PaddedComponent>
   );

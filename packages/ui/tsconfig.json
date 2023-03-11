@@ -2,15 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/NEXT/*": [
-        "../../apps/portfolio-next/*"
-      ],
-      "~/UI/*": [
-        "../../packages/ui/*"
-      ],
-      "~/UTILS/*": [
-        "../../packages/utils/*"
-      ],
+      "next-app/*": ["../../apps/portfolio-next/*"],
+      "ui-pkg/*": ["../../packages/ui/*"],
+      "apis-pkg/*": ["../../packages/utils/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -26,18 +20,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "downlevelIteration": true,
-    "incremental": true,
+    "incremental": true
   },
   "extends": "eslint-config-wesbos/tsconfig.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
-  "files": [
-    "../../@types/block-content-to-react.d.ts"
-  ],
+  "files": ["../../@types/block-content-to-react.d.ts"]
 }

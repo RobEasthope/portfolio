@@ -1,5 +1,5 @@
-import { PageProps } from '~/UI/layouts/Page/Page';
-import { AppGlobalsProps } from '~/UI/base/settings/Globals';
+import { PageProps } from "ui-pkg/layouts/Page/Page";
+import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
 
 export const pageRenderChecks = (props: {
   data: {
@@ -19,12 +19,12 @@ export const pageRenderChecks = (props: {
   }
 
   // Don't render homepage if we're not at the root path
-  if (currentRoute !== '/' && pageSlug === homePageSlug) {
+  if (currentRoute !== "/" && pageSlug === homePageSlug) {
     return false;
   }
 
   // Render home page if the root path is active and valid home page slug is valid
-  if (currentRoute === '/' && pageSlug === homePageSlug) {
+  if (currentRoute === "/" && pageSlug === homePageSlug) {
     return true;
   }
 

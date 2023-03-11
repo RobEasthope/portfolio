@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { SanityReference, Page } from '~/UI/types/sanity-schema';
-import { Anchor } from '~/UI/base/typography/Anchor/Anchor';
+import Link from "next/link";
+import { SanityReference, Page } from "ui-pkg/types/sanity-schema";
+import { Anchor } from "ui-pkg/base/typography/Anchor/Anchor";
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
-  _type: 'InternalLinkWithTitle';
+  _type: "InternalLinkWithTitle";
   _key: string;
   internalUID: SanityReference<Page>;
   title: string;
@@ -12,7 +12,7 @@ export type InternalLinkWithTitleSchemaProps = {
 };
 
 export type InternalLinkSchemaProps = {
-  _type: 'InternalLinkSansTitle';
+  _type: "InternalLinkSansTitle";
   _key: string;
   internalUID: SanityReference<Page>;
   to: Page;
@@ -37,7 +37,7 @@ export const InternalLink = ({
   }
 
   return (
-    <Link href={href === 'home' ? '/' : `/${href}`} passHref>
+    <Link href={href === "home" ? "/" : `/${href}`} passHref>
       <Anchor
         className={className}
         onClick={onClick}
