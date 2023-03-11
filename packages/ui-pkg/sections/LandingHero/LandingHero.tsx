@@ -1,31 +1,31 @@
-import { LandingHero as rawLandingHeroProps } from 'ui-pkg/types/sanity-schema';
-import SanityMuxPlayer from 'sanity-mux-player';
-import { Picture } from 'ui-pkg/base/media/Picture/Picture';
-import { styled } from 'ui-pkg/styles/stitches.config';
-import { SPACING } from 'ui-pkg/constants/SPACING';
+import { LandingHero as rawLandingHeroProps } from "ui-pkg/types/sanity-schema";
+import SanityMuxPlayer from "sanity-mux-player";
+import { Picture } from "ui-pkg/base/media/Picture/Picture";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { SPACING } from "ui-pkg/constants/SPACING";
 
 // STYLES
 const heroHeight = `calc(100vh - ${SPACING.x5})`;
 
-export const Wrapper = styled('div', {
-  position: 'relative',
-  maxHeight: '100vh',
-  backgroundColor: 'white',
+export const Wrapper = styled("div", {
+  position: "relative",
+  maxHeight: "100vh",
+  backgroundColor: "white",
 });
 
 export const JumbotronBkgImage = styled(Picture, {
-  width: '100%',
+  width: "100%",
   height: heroHeight,
 });
 
 export const JumbotronBkgVideo = styled(SanityMuxPlayer, {
-  width: '100% !important',
+  width: "100% !important",
   height: heroHeight,
 
-  '& video': {
+  "& video": {
     height: heroHeight,
-    objectFit: 'cover',
-    objectPosition: 'center center',
+    objectFit: "cover",
+    objectPosition: "center center",
   },
 });
 
@@ -47,15 +47,15 @@ export const LandingHero = ({
 
   return (
     <Wrapper as="section">
-      {bkgImage && bkgMode === 'image' && (
+      {bkgImage && bkgMode === "image" && (
         <JumbotronBkgImage
-          alt={heading || ''}
+          alt={heading || ""}
           asset={bkgImage}
           mode="cover"
           maxWidth={2560}
         />
       )}
-      {muxVideo && bkgMode === 'video' && (
+      {muxVideo && bkgMode === "video" && (
         <JumbotronBkgVideo
           assetDocument={muxVideo}
           autoload

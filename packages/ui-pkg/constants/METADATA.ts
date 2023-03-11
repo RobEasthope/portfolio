@@ -1,3 +1,3 @@
 export const METADATA = {
-  TITLE: 'Portfolio',
+  TITLE: "Portfolio",
 };

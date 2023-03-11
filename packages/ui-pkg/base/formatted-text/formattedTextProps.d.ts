@@ -1,5 +1,5 @@
-import { PageProps } from 'layouts/Page/Page';
-import { ReactNode } from 'react';
+import { PageProps } from "pages/Page/Page";
+import { ReactNode } from "react";
 
 export type SerializerMarksProps = {
   mark: { url: string; page: PageProps };

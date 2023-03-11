@@ -1,4 +1,4 @@
-import { groq } from 'next-sanity';
+import { groq } from "next-sanity";
 
 export const previewAnyPageByIdQuery = groq`
   *[_type in ["Page"] && _id == $id]{

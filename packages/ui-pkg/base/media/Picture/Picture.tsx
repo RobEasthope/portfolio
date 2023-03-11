@@ -1,39 +1,39 @@
-import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
+import Image from "next/image";
+import { useNextSanityImage } from "next-sanity-image";
 
 import {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from 'ui-pkg/types/sanity-schema';
-import { getClient } from 'apis-pkg/sanity-api/sanity.server';
-import { styled } from 'ui-pkg/styles/stitches.config';
-import { SanityImage } from 'ui-pkg/base/media/SanityImage/SanityImage';
+} from "ui-pkg/types/sanity-schema";
+import { getClient } from "apis-pkg/sanity-api/sanity.server";
+import { styled } from "ui-pkg/styles/stitches.config";
+import { SanityImage } from "ui-pkg/base/media/SanityImage/SanityImage";
 
 // STYLES
-export const ResponsiveImageWrapper = styled('div', {
-  width: '100%',
+export const ResponsiveImageWrapper = styled("div", {
+  width: "100%",
 
-  '& img': {
-    width: '100%',
+  "& img": {
+    width: "100%",
   },
 });
 
-export const CoverImageWrapper = styled('div', {
-  width: '100%',
+export const CoverImageWrapper = styled("div", {
+  width: "100%",
 
-  '& img': {
-    objectFit: 'cover',
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
+  "& img": {
+    objectFit: "cover",
+    position: "absolute",
+    width: "100%",
+    height: "100%",
   },
 });
 
 // TYPES
 export interface ImageAssetProp {
-  _type: 'image';
+  _type: "image";
   asset: SanityReference<SanityImageAsset>;
   crop?: SanityImageCrop;
   hotspot?: SanityImageHotspot;
@@ -43,7 +43,7 @@ export type PictureProps = {
   asset: ImageAssetProp;
   maxWidth: number;
   alt: string;
-  mode: 'responsive' | 'cover' | 'contain' | 'next';
+  mode: "responsive" | "cover" | "contain" | "next";
   preview?: boolean;
   className?: string;
   aspectRatio?: number;
@@ -54,7 +54,7 @@ export const Picture = ({
   asset,
   maxWidth,
   alt,
-  mode = 'responsive',
+  mode = "responsive",
   aspectRatio,
   preview = false,
   className,
@@ -64,7 +64,7 @@ export const Picture = ({
 
   if (imageProps) {
     switch (mode) {
-      case 'responsive':
+      case "responsive":
         return (
           <ResponsiveImageWrapper
             style={{ maxWidth: `${maxWidth}px` }}
@@ -75,28 +75,25 @@ export const Picture = ({
               mode={mode}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
-              alt={alt || ''}
+              alt={alt || ""}
             />
           </ResponsiveImageWrapper>
         );
 
-      case 'cover':
+      case "cover":
         return (
-          <CoverImageWrapper
-            style={{ maxWidth: `${maxWidth}px` }}
-            className={className}
-          >
+          <CoverImageWrapper style={{ maxWidth: `${maxWidth}px` }} className={className}>
             <SanityImage
               asset={asset}
               mode={mode}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
-              alt={alt || ''}
+              alt={alt || ""}
             />
           </CoverImageWrapper>
         );
 
-      case 'next':
+      case "next":
         return (
           <ResponsiveImageWrapper
             style={{ maxWidth: `${maxWidth}px` }}
@@ -106,10 +103,10 @@ export const Picture = ({
               {...imageProps}
               placeholder="blur"
               layout="responsive"
-              sizes={`(max-width: ${
+              sizes={`(max-width: ${Math.ceil(maxWidth / 100) * 100}px) 100vw, ${
                 Math.ceil(maxWidth / 100) * 100
-              }px) 100vw, ${Math.ceil(maxWidth / 100) * 100}px`}
-              alt={alt || ''}
+              }px`}
+              alt={alt || ""}
             />
           </ResponsiveImageWrapper>
         );

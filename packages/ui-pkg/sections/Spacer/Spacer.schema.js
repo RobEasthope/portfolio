@@ -1,15 +1,15 @@
-import { SPACER_OPTIONS } from '../../constants/SPACER_OPTIONS';
+import { SPACER_OPTIONS } from "../../constants/SPACER_OPTIONS";
 
 export default {
-  type: 'object',
-  name: 'Spacer',
-  title: 'Spacer',
+  type: "object",
+  name: "Spacer",
+  title: "Spacer",
   fields: [
     {
-      name: 'height',
-      title: 'Height',
-      type: 'string',
-      description: 'Defaults to single',
+      name: "height",
+      title: "Height",
+      type: "string",
+      description: "Defaults to single",
       options: {
         list: SPACER_OPTIONS,
       },
@@ -18,11 +18,11 @@ export default {
   ],
   preview: {
     select: {
-      height: 'height',
+      height: "height",
     },
     prepare({ height }) {
       return {
-        title: 'Spacer',
+        title: "Spacer",
         subtitle: height,
       };
     },

@@ -1,66 +1,41 @@
 {
-  "extends": [
-    "next",
-    "next/core-web-vitals",
-    "wesbos/typescript"
-  ],
+  "extends": ["next", "next/core-web-vitals", "wesbos/typescript"],
+  "root": true,
   "rules": {
-    "no-unused-vars": "off",
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": "warn",
-    "import/no-extraneous-dependencies": "off"
+    "no-console": 1,
+    "quotes": [1, "double"],
+    "prettier/prettier": [
+      "warn",
+      {
+        "trailingComma": "es5",
+        "singleQuote": false,
+        "printWidth": 90,
+        "tabWidth": 2
+      }
+    ]
   },
-  "overrides": [
-    {
-      "files": [
-        "./**/*.tsx"
-      ],
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": "off"
-      }
-    },
-    {
-      "files": [
-        "./**/*.ts",
-        "./**/*.tsx"
-      ],
-      "rules": {
-        "@typescript-eslint/indent": "off"
-      }
-    },
-    {
-      "files": [
-        "./**/*.schema.js"
-      ],
-      "rules": {
-        "react/prop-types": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off"
-      }
-    }
-  ],
-  "ignorePatterns": [
-    "/node_modules",
-    "/.vercel",
-    "/dist",
-    "/static",
-    "/.next",
-    "/types/sanity-schema.d.ts"
-  ],
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
     "import/resolver": {
       "node": {
-        "paths": [
-          "./"
-        ]
+        "paths": ["./"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
       }
     }
   },
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "ignorePatterns": [
+    "/node_modules",
+    "/.vercel",
+    "/static",
+    "/.next",
+    "next.config.js",
+    "*.d.ts"
+  ]
 }

@@ -1,44 +1,25 @@
 {
-  "extends": [
-    "next",
-    "next/core-web-vitals",
-    "wesbos/typescript"
-  ],
+  "extends": ["next", "next/core-web-vitals", "wesbos/typescript"],
+  "plugins": ["react-hooks"],
   "rules": {
-    "no-unused-vars": "off",
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": "warn",
+    "no-console": 1,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": false,
+        "printWidth": 90,
+        "tabWidth": 2
+      }
+    ],
+    "quotes": [1, "double"],
     "import/no-extraneous-dependencies": "off",
-    "@next/next/no-html-link-for-pages": "off",
-    // 🚨 Could cause issues with Turborepo 🚨
-    "import/no-cycle": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/no-unused-prop-types": "warn"
   },
   "overrides": [
     {
-      "files": [
-        "./**/*.tsx"
-      ],
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": "off"
-      }
-    },
-    {
-      "files": [
-        "./**/*.ts",
-        "./**/*.tsx"
-      ],
-      "rules": {
-        "@typescript-eslint/indent": "off",
-        "react/jsx-no-useless-fragment": ["warn"
-        , {
-          "allowExpressions": true
-        }]
-      }
-    },
-    {
-      "files": [
-        "./**/*.schema.js"
-      ],
+      "files": ["./**/*.schema.js"],
       "rules": {
         "react/prop-types": "off",
         "@typescript-eslint/restrict-template-expressions": "off",
@@ -52,20 +33,17 @@
       }
     }
   ],
-  "ignorePatterns": [
-    "/node_modules",
-    "/.vercel",
-    "/dist",
-    "/static",
-    "/.next",
-    "/types/sanity-schema.d.ts"
-  ],
+  "ignorePatterns": ["/node_modules", "/.vercel", "*.d.ts"],
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
     "import/resolver": {
       "node": {
-        "paths": [
-          "./"
-        ]
+        "paths": ["./"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
       }
     }
   },

@@ -1,22 +1,22 @@
-import { BiText } from 'react-icons/bi';
+import { BiText } from "react-icons/bi";
 
 export default {
-  type: 'object',
-  name: 'PageTitle',
-  title: 'PageTitle',
+  type: "object",
+  name: "PageTitle",
+  title: "PageTitle",
   icon: BiText,
   fields: [
     {
-      name: 'usePageTitle',
-      title: 'Use page title?',
-      type: 'boolean',
+      name: "usePageTitle",
+      title: "Use page title?",
+      type: "boolean",
       codegen: { required: true },
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'customPageTitle',
-      title: 'Custom page title',
-      type: 'string',
+      name: "customPageTitle",
+      title: "Custom page title",
+      type: "string",
       hidden: ({ parent }) => parent?.usePageTitle === true,
     },
   ],
@@ -25,11 +25,11 @@ export default {
   },
   preview: {
     select: {
-      customPageTitle: 'customPageTitle',
+      customPageTitle: "customPageTitle",
     },
     prepare({ customPageTitle }) {
       return {
-        title: customPageTitle || 'Page title',
+        title: customPageTitle || "Page title",
       };
     },
   },

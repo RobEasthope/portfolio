@@ -1,10 +1,10 @@
-import Custom404 from 'pages/404';
+import Custom404 from "pages/404";
 
-import { Page, PageProps } from 'ui-pkg/layouts/Page/Page';
-import { appGlobalsQuery } from 'ui-pkg/base/settings/app-globals.queries';
-import { getClient, overlayDrafts } from 'apis-pkg/sanity-api/sanity.server';
-import { AppGlobalsProps } from 'ui-pkg/base/settings/Globals';
-import { previewAnyPageByIdQuery } from 'ui-pkg/layouts/Preview/Preview.queries';
+import { Page, PageProps } from "ui-pkg/pages/Page/Page";
+import { appGlobalsQuery } from "ui-pkg/base/settings/app-globals.queries";
+import { getClient, overlayDrafts } from "apis-pkg/sanity-api/sanity.server";
+import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
+import { previewAnyPageByIdQuery } from "ui-pkg/pages/Preview/Preview.queries";
 
 // TYPES
 type PreviewPageBySlugProps = {
@@ -21,9 +21,7 @@ export default function PageBySlug({ data }: PreviewPageBySlugProps) {
   }
 
   return (
-    data?.page?._type === 'Page' && (
-      <Page page={data?.page} globals={data?.globals} />
-    )
+    data?.page?._type === "Page" && <Page page={data?.page} globals={data?.globals} />
   );
 }
 
@@ -45,9 +43,7 @@ export const getServerSideProps = async ({
   }
 
   // Fetch global data
-  const globals: AppGlobalsProps = await getClient(preview).fetch(
-    appGlobalsQuery
-  );
+  const globals: AppGlobalsProps = await getClient(preview).fetch(appGlobalsQuery);
 
   // Fetch page data
   const page = overlayDrafts(

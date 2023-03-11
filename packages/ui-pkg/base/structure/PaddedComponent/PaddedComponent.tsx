@@ -1,34 +1,34 @@
-import { styled } from 'ui-pkg/styles/stitches.config';
-import { Box } from 'ui-pkg/base/structure/Box/Box';
+import { styled } from "ui-pkg/styles/stitches.config";
+import { Box } from "ui-pkg/base/structure/Box/Box";
 
 export const PaddedComponent = styled(Box, {
-  width: '100%',
+  width: "100%",
 
   variants: {
     content: {
-      text: { size: { selector: 'paddingX', min: 12, max: 48 } },
-      nav: { size: { selector: 'paddingX', min: 12, max: 48 } },
+      text: { size: { selector: "paddingX", min: 12, max: 48 } },
+      nav: { size: { selector: "paddingX", min: 12, max: 48 } },
       media: {
-        position: 'relative',
-        left: '50%',
-        right: '50',
-        marginX: '-50vw',
-        marginY: '$x2',
-        width: '100vw',
-        maxWidth: '100vw',
+        position: "relative",
+        left: "50%",
+        right: "50",
+        marginX: "-50vw",
+        marginY: "$x2",
+        width: "100vw",
+        maxWidth: "100vw",
 
-        '@small': {
-          size: { selector: 'paddingX', min: 12, max: 48 },
-          left: 'initial',
-          right: 'initial',
-          marginX: 'auto',
-          width: 'inherit',
+        "@small": {
+          size: { selector: "paddingX", min: 12, max: 48 },
+          left: "initial",
+          right: "initial",
+          marginX: "auto",
+          width: "inherit",
         },
       },
     },
   },
 
   defaultVariants: {
-    content: 'text',
+    content: "text",
   },
 });

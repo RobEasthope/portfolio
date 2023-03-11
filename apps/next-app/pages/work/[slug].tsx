@@ -1,21 +1,21 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
-import { Project, ProjectProps } from 'ui-pkg/layouts/Project/Project';
-import { Loading } from 'ui-pkg/base/app/Loading/Loading';
+import { Project, ProjectProps } from "ui-pkg/pages/Project/Project";
+import { Loading } from "ui-pkg/base/app/Loading/Loading";
 import {
   getClient,
   overlayDrafts,
   sanityClient,
-} from 'apis-pkg/sanity-api/sanity.server';
-import { appGlobalsQuery } from 'ui-pkg/base/settings/app-globals.queries';
-import { AppGlobalsProps, SettingsProps } from 'ui-pkg/base/settings/Globals';
-import { HeaderProps } from 'ui-pkg/navigation/Header/Header';
-import { GlobalMetadata } from 'ui-pkg/types/sanity-schema';
+} from "apis-pkg/sanity-api/sanity.server";
+import { appGlobalsQuery } from "ui-pkg/base/settings/app-globals.queries";
+import { AppGlobalsProps, SettingsProps } from "ui-pkg/base/settings/Globals";
+import { HeaderProps } from "ui-pkg/navigation/Header/Header";
+import { GlobalMetadata } from "ui-pkg/types/sanity-schema";
 import {
   projectBySlugQuery,
   projectSlugsQuery,
-} from 'ui-pkg/layouts/Project/Project.queries';
-import { Error404 } from 'ui-pkg/layouts/Error404/Error404';
+} from "ui-pkg/pages/Project/Project.queries";
+import { Error404 } from "ui-pkg/pages/Error404/Error404";
 
 // TYPES
 type ProjectBySlugProps = {
@@ -39,7 +39,7 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
     <>
       {isFallback && <Loading />}
 
-      {!isFallback && project?._type === 'project' && (
+      {!isFallback && project?._type === "project" && (
         <Project project={project} globals={globals} />
       )}
     </>
@@ -62,7 +62,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 

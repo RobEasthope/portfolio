@@ -1,74 +1,74 @@
-import { styled } from 'ui-pkg/styles/stitches.config';
-import { Box } from 'ui-pkg/base/structure/Box/Box';
-import { SPACING } from 'ui-pkg/constants/SPACING';
+import { styled } from "ui-pkg/styles/stitches.config";
+import { Box } from "ui-pkg/base/structure/Box/Box";
+import { SPACING } from "ui-pkg/constants/SPACING";
 
 export const Grid = styled(Box, {
-  display: 'grid',
+  display: "grid",
 
   variants: {
     align: {
       start: {
-        alignItems: 'start',
+        alignItems: "start",
       },
       center: {
-        alignItems: 'center',
+        alignItems: "center",
       },
       end: {
-        alignItems: 'end',
+        alignItems: "end",
       },
       stretch: {
-        alignItems: 'stretch',
+        alignItems: "stretch",
       },
       baseline: {
-        alignItems: 'baseline',
+        alignItems: "baseline",
       },
     },
     justify: {
       start: {
-        justifyContent: 'start',
+        justifyContent: "start",
       },
       center: {
-        justifyContent: 'center',
+        justifyContent: "center",
       },
       end: {
-        justifyContent: 'end',
+        justifyContent: "end",
       },
       between: {
-        justifyContent: 'space-between',
+        justifyContent: "space-between",
       },
     },
     flow: {
       row: {
-        gridAutoFlow: 'row',
+        gridAutoFlow: "row",
       },
       column: {
-        gridAutoFlow: 'column',
+        gridAutoFlow: "column",
       },
       dense: {
-        gridAutoFlow: 'dense',
+        gridAutoFlow: "dense",
       },
       rowDense: {
-        gridAutoFlow: 'row dense',
+        gridAutoFlow: "row dense",
       },
       columnDense: {
-        gridAutoFlow: 'column dense',
+        gridAutoFlow: "column dense",
       },
     },
     columns: {
       1: {
-        gridTemplateColumns: 'repeat(1, 1fr)',
+        gridTemplateColumns: "repeat(1, 1fr)",
       },
       2: {
-        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridTemplateColumns: "repeat(2, 1fr)",
       },
       3: {
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: "repeat(3, 1fr)",
       },
       4: {
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateColumns: "repeat(4, 1fr)",
       },
       5: {
-        gridTemplateColumns: 'repeat(5, 1fr)',
+        gridTemplateColumns: "repeat(5, 1fr)",
       },
     },
     gap: {

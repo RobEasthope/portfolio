@@ -8,8 +8,8 @@
  * utilities we use on the client side, we are able to tree-shake (remove)
  * code that is not used on the client side.
  */
-import { createClient } from 'next-sanity';
-import { sanityConfig } from './sanity-config';
+import { createClient } from "next-sanity";
+import { sanityConfig } from "./sanity-config";
 
 export const sanityClient = createClient(sanityConfig);
 
@@ -19,17 +19,16 @@ export const previewClient = createClient({
   token: process.env.SANITY_API_TOKEN,
 });
 
-export const getClient = (preview: boolean) =>
-  preview ? previewClient : sanityClient;
+export const getClient = (preview: boolean) => (preview ? previewClient : sanityClient);
 
 export function overlayDrafts(docs: any[]) {
   const documents = docs || [];
   const overlayed = documents.reduce((map, doc) => {
     if (!doc._id) {
-      throw new Error('Ensure that `_id` is included in query projection');
+      throw new Error("Ensure that `_id` is included in query projection");
     }
 
-    const isDraft = doc._id.startsWith('drafts.');
+    const isDraft = doc._id.startsWith("drafts.");
     const id = isDraft ? doc._id.slice(7) : doc._id;
     return isDraft || !map.has(id) ? map.set(id, doc) : map;
   }, new Map());

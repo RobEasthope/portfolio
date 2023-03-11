@@ -1,13 +1,10 @@
-import { groq } from 'next-sanity';
+import { groq } from "next-sanity";
 
-export const pageBySlugQuery = groq`
-  *[_type in ["Page"] && slug.current == $slug]{
+export const projectBySlugQuery = groq`
+  *[_type in ["project"] && pageSlug.current == $slug]{
     ...,
-    "projects": *[_type == "project" && !(_id in path('drafts.**'))]  | order(startDate desc){
-      title,
-      slug,
-      thumbnailImage
-    },
+    "clientOrg": client->{name, url},
+    "agencyOrg": agency->{name, url},
     "sections": rawSections[]{
       ...,
       "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
@@ -21,10 +18,9 @@ export const pageBySlugQuery = groq`
     }
   }
 `;
-
 // All page slugs
-export const pageSlugsQuery = groq`
-  *[_type == "Page" && defined(slug.current)]{
+export const projectSlugsQuery = groq`
+  *[_type == "project" && defined(slug.current)]{
     slug {
       current
     },

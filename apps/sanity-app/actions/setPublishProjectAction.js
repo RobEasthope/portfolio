@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import { useDocumentOperation, useValidationStatus } from '@sanity/react-hooks';
+import { useDocumentOperation, useValidationStatus } from "@sanity/react-hooks";
 
-const ROUTE_PREFIX = 'work';
+const ROUTE_PREFIX = "work";
 
 export function SetPublishProjectAction(props) {
   const { patch, publish } = useDocumentOperation(props.id, props.type);
@@ -21,8 +21,8 @@ export function SetPublishProjectAction(props) {
       isPublishing ||
       publish.disabled ||
       isValidating ||
-      markers.some((marker) => marker.level === 'error'),
-    label: isPublishing ? 'Publishing…' : 'Publish',
+      markers.some((marker) => marker.level === "error"),
+    label: isPublishing ? "Publishing…" : "Publish",
     onHandle: async () => {
       // This will update the button text
       setIsPublishing(true);
@@ -34,7 +34,7 @@ export function SetPublishProjectAction(props) {
       if (ROUTE_PREFIX && pageSlug) {
         const pageUrl = `${ROUTE_PREFIX}/${pageSlug?.toLowerCase()}`;
 
-        patch.execute([{ set: { slug: { _type: 'slug', current: pageUrl } } }]);
+        patch.execute([{ set: { slug: { _type: "slug", current: pageUrl } } }]);
       } else {
         return;
       }

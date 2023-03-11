@@ -1,27 +1,27 @@
-import { RiYoutubeFill } from 'react-icons/ri';
-import { MAX_CONTENT_OPTIONS } from '../../constants/MAX_CONTENT_OPTIONS';
+import { RiYoutubeFill } from "react-icons/ri";
+import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
 export default {
-  type: 'object',
-  name: 'YoutubeVideo',
-  title: 'YouTube video',
+  type: "object",
+  name: "YoutubeVideo",
+  title: "YouTube video",
   icon: RiYoutubeFill,
   fields: [
     {
-      name: 'url',
-      title: 'Youtube URL',
-      type: 'string',
+      name: "url",
+      title: "Youtube URL",
+      type: "string",
     },
     {
-      name: 'caption',
-      title: 'Caption',
-      type: 'string',
+      name: "caption",
+      title: "Caption",
+      type: "string",
     },
     {
-      name: 'maxWidth',
-      title: 'Max width',
-      type: 'string',
-      description: 'Defaults to large',
+      name: "maxWidth",
+      title: "Max width",
+      type: "string",
+      description: "Defaults to large",
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
@@ -29,11 +29,11 @@ export default {
   ],
   preview: {
     select: {
-      url: 'url',
+      url: "url",
     },
     prepare({ url }) {
       return {
-        title: 'Youtube video',
+        title: "Youtube video",
         subtitle: url,
       };
     },

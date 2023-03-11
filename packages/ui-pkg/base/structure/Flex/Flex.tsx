@@ -1,65 +1,65 @@
-import { styled } from 'ui-pkg/styles/stitches.config';
-import { SPACING } from 'ui-pkg/constants/SPACING';
-import { Box } from 'ui-pkg/base/structure/Box/Box';
+import { styled } from "ui-pkg/styles/stitches.config";
+import { SPACING } from "ui-pkg/constants/SPACING";
+import { Box } from "ui-pkg/base/structure/Box/Box";
 
 export const Flex = styled(Box, {
-  display: 'flex',
+  display: "flex",
 
   variants: {
     direction: {
       row: {
-        flexDirection: 'row',
+        flexDirection: "row",
       },
       column: {
-        flexDirection: 'column',
+        flexDirection: "column",
       },
       rowReverse: {
-        flexDirection: 'row-reverse',
+        flexDirection: "row-reverse",
       },
       columnReverse: {
-        flexDirection: 'column-reverse',
+        flexDirection: "column-reverse",
       },
     },
     align: {
       start: {
-        alignItems: 'flex-start',
+        alignItems: "flex-start",
       },
       center: {
-        alignItems: 'center',
+        alignItems: "center",
       },
       end: {
-        alignItems: 'flex-end',
+        alignItems: "flex-end",
       },
       stretch: {
-        alignItems: 'stretch',
+        alignItems: "stretch",
       },
       baseline: {
-        alignItems: 'baseline',
+        alignItems: "baseline",
       },
     },
     justify: {
       start: {
-        justifyContent: 'flex-start',
+        justifyContent: "flex-start",
       },
       center: {
-        justifyContent: 'center',
+        justifyContent: "center",
       },
       end: {
-        justifyContent: 'flex-end',
+        justifyContent: "flex-end",
       },
       between: {
-        justifyContent: 'space-between',
+        justifyContent: "space-between",
       },
     },
     wrap: {
       noWrap: {
-        flexWrap: 'nowrap',
+        flexWrap: "nowrap",
       },
       wrap: {
-        flexWrap: 'wrap',
+        flexWrap: "wrap",
       },
       wrapReverse: {
-        flexWrap: 'wrap-reverse',
+        flexWrap: "wrap-reverse",
       },
     },
     gap: {
@@ -75,9 +75,9 @@ export const Flex = styled(Box, {
     },
   },
   defaultVariants: {
-    direction: 'row',
-    align: 'stretch',
-    justify: 'start',
-    wrap: 'noWrap',
+    direction: "row",
+    align: "stretch",
+    justify: "start",
+    wrap: "noWrap",
   },
 });
