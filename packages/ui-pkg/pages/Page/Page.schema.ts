@@ -1,14 +1,4 @@
 import { defineField, defineType } from "sanity";
-import exampleSection from "../../sections/ExampleSection/ExampleSection.schema";
-import Gallery from "../../sections/Gallery/Gallery.schema";
-import Image from "../../sections/Image/Image.schema";
-import LandingHero from "../../sections/LandingHero/LandingHero.schema";
-import Spacer from "../../sections/Spacer/Spacer.schema";
-import Text from "../../sections/Text/Text.schema";
-import PageTitle from "../../sections/PageTitle/PageTitle.schema";
-import ProjectIndex from "../../sections/ProjectIndex/ProjectIndex.schema";
-import YoutubeVideo from "../../sections/YoutubeVideo/YoutubeVideo.schema";
-import VimeoVideo from "../../sections/VimeoVideo/VimeoVideo.schema";
 
 export default defineType({
   name: "Page",
@@ -37,16 +27,16 @@ export default defineType({
       title: "Page sections",
       type: "array",
       of: [
-        { type: exampleSection.name },
-        { type: Gallery.name },
-        { type: Image.name },
-        { type: LandingHero.name },
-        { type: PageTitle.name },
-        { type: ProjectIndex.name },
-        { type: Spacer.name },
-        { type: Text.name },
-        { type: VimeoVideo.name },
-        { type: YoutubeVideo.name },
+        { type: "ExampleSection" },
+        { type: "Gallery" },
+        { type: "Image" },
+        { type: "LandingHero" },
+        { type: "PageTitle" },
+        { type: "ProjectIndex" },
+        { type: "Spacer" },
+        { type: "Text" },
+        { type: "VimeoVideo" },
+        { type: "YoutubeVideo" },
       ],
       validation: (Rule) =>
         Rule.required().min(1).error("At least one page section is required"),
@@ -85,11 +75,6 @@ export default defineType({
   preview: {
     select: {
       title: "title",
-    },
-    prepare({ title }) {
-      return {
-        title,
-      };
     },
   },
 });

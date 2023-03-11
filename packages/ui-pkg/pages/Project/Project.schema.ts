@@ -148,24 +148,34 @@ export default defineType({
   preview: {
     select: {
       title: "title",
-      clientName: "client.name",
-      thumbnailImage: "thumbnailImage",
-      startDate: "startDate",
-      endDate: "endDate",
+      subtitle: "client.name",
+      media: "thumbnailImage",
+      // startDate: "startDate",
+      // endDate: "endDate",
     },
-    prepare({ startDate = null, endDate = null, title, thumbnailImage }) {
-      dayjs.extend(advancedFormat);
+    // prepare({
+    //   title,
+    //   startDate = null,
+    //   endDate = null,
+    //   thumbnailImage,
+    // }: {
+    //   title: string;
+    //   thumbnailImage: string;
+    //   startDate: Date | null;
+    //   endDate: Date | null;
+    // }) {
+    //   dayjs.extend(advancedFormat);
 
-      const formattedStartDate = dayjs.default(startDate).format("MMM Do YYYY");
-      const formattedEndDate = dayjs.default(endDate).format("MMM Do YYYY");
+    //   const formattedStartDate = dayjs.default(startDate).format("MMM Do YYYY");
+    //   const formattedEndDate = dayjs.default(endDate).format("MMM Do YYYY");
 
-      return {
-        title,
-        media: thumbnailImage,
-        subtitle: `${formattedStartDate || "Date missing"} - ${
-          endDate ? formattedEndDate : "Present"
-        }`,
-      };
-    },
+    //   return {
+    //     title,
+    //     media: thumbnailImage,
+    //     // subtitle: `${formattedStartDate || "Date missing"} - ${
+    //     //   endDate ? formattedEndDate : "Present"
+    //     // }`,
+    //   };
+    // },
   },
 });
