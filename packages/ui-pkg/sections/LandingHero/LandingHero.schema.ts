@@ -1,25 +1,26 @@
+import { defineField, defineType } from "sanity";
 import { BiHeading } from "react-icons/bi";
 import { headingUI } from "../../utils/sanity/headingUI";
 
-export default {
+export default defineType({
   type: "object",
   name: "LandingHero",
   title: "Landing hero",
   icon: BiHeading,
   fields: [
     headingUI("Foreground"),
-    {
+    defineField({
       name: "heading",
       title: "Heading",
       type: "string",
-    },
-    {
+    }),
+    defineField({
       name: "subheading",
       title: "Subheading",
       type: "string",
-    },
+    }),
     headingUI("Background"),
-    {
+    defineField({
       name: "bkgMode",
       title: "Background mode",
       type: "string",
@@ -32,8 +33,8 @@ export default {
       },
       validation: (Rule) =>
         Rule.required().error("Landing hero: Background mode has not been set"),
-    },
-    {
+    }),
+    defineField({
       name: "bkgImage",
       title: "Background image",
       type: "image",
@@ -48,29 +49,29 @@ export default {
         },
       ],
       hidden: ({ parent }) => parent?.bkgMode !== "image",
-    },
-    {
+    }),
+    defineField({
       name: "rawMuxVideo",
       title: "Background video",
       type: "mux.video",
       hidden: ({ parent }) => parent?.bkgMode !== "video",
-    },
-    {
+    }),
+    defineField({
       name: "caption",
       title: "Background caption",
       type: "text",
       hidden: ({ parent }) => !parent?.bkgMode,
-    },
+    }),
   ],
   preview: {
     select: {
-      bkgImage: "bkgImage",
+      title: "bkgImage",
     },
-    prepare({ bkgImage }) {
+    prepare({ title }: { title: string }) {
       return {
         title: "Landing hero",
-        media: bkgImage,
+        media: title,
       };
     },
   },
-};
+});
