@@ -18,6 +18,8 @@
     "@sanity/image-url": "^1.0.1",
     "@stitches/react": "^1.2.8",
     "@u-wave/react-vimeo": "^0.9.5",
+    "apis-pkg": "*",
+    "eslint-config-wesbos": "^3.2.3",
     "lodash": "^4.17.21",
     "next": "^12.1.5",
     "next-sanity": "^0.5.2",
@@ -31,8 +33,7 @@
     "sanitize.css": "^13.0.0",
     "sanity-mux-player": "^0.0.27",
     "stitches-mixins": "^1.0.0",
-    "ui-pkg": "*",
-    "apis-pkg": "*"
+    "ui-pkg": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

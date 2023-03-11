@@ -29,6 +29,7 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
+    "eslint-config-wesbos": "^3.2.3",
     "sanity-pills": "^1.11.0"
   }
 }
