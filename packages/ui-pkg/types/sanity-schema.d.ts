@@ -49,7 +49,7 @@ export interface Header extends SanityDocument {
    *
    *
    */
-  rawNavigationLeft: Array<
+  rawNavigationLeft?: Array<
     SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
   >;
 
@@ -58,7 +58,7 @@ export interface Header extends SanityDocument {
    *
    *
    */
-  logo: {
+  logo?: {
     _type: "image";
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
@@ -70,7 +70,7 @@ export interface Header extends SanityDocument {
    *
    *
    */
-  rawNavigationRight: Array<
+  rawNavigationRight?: Array<
     SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
   >;
 }
@@ -88,7 +88,7 @@ export interface Footer extends SanityDocument {
    *
    *
    */
-  rawNavigation: Array<
+  rawNavigation?: Array<
     SanityKeyed<InternalLinkWithTitle> | SanityKeyed<ExternalLinkWithTitle>
   >;
 
@@ -171,7 +171,7 @@ export interface Settings extends SanityDocument {
    *
    * Select home page (Critical requirement)
    */
-  rawHomePageRef: SanityReference<Page>;
+  rawHomePageRef?: SanityReference<Page>;
 }
 
 /**
@@ -187,35 +187,35 @@ export interface GlobalMetadata extends SanityDocument {
    *
    * Used for SEO & descriptive purposes
    */
-  globalSitename: string;
+  globalSitename?: string;
 
   /**
    * Page title — `string`
    *
-   * Can be overridden on a page by page basis in the pages "Metadata" tab.
+   * Can be overridden on a page by page basis in the pages Metadata tab.
    */
-  globalTitle: string;
+  globalTitle?: string;
 
   /**
    * Page title template — `string`
    *
    * Displayed after the page title e.g. PAGE TITLE | Ida
    */
-  globalTitleTemplate: string;
+  globalTitleTemplate?: string;
 
   /**
    * Page description — `text`
    *
-   * Can be overridden on a page by page basis in the pages "Metadata" tab.
+   * Can be overridden on a page by page basis in the pages Metadata tab.
    */
-  globalDescription: string;
+  globalDescription?: string;
 
   /**
    * Page thumbnail — `image`
    *
-   * Can be overridden on a page by page basis in the pages "Metadata" tab.
+   * Can be overridden on a page by page basis in the pages Metadata tab.
    */
-  globalThumbnail: {
+  globalThumbnail?: {
     _type: "image";
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
@@ -446,32 +446,18 @@ export interface Page extends SanityDocument {
   _type: "Page";
 
   /**
-   * Page details — `string`
-   *
-   *
-   */
-  headingpagedetails?: string;
-
-  /**
    * Page title — `string`
    *
    *
    */
-  title: string;
+  title?: string;
 
   /**
    * Slug — `slug`
    *
    * Set the page URL
    */
-  slug: { _type: "slug"; current: string };
-
-  /**
-   * Page content — `string`
-   *
-   *
-   */
-  headingpagecontent?: string;
+  slug?: { _type: "slug"; current: string };
 
   /**
    * Page sections — `array`
@@ -492,32 +478,25 @@ export interface Page extends SanityDocument {
   >;
 
   /**
-   * Page metadata — `string`
-   *
-   *
-   */
-  headingpagemetadata?: string;
-
-  /**
    * Metadata title — `string`
    *
    * Used in browser tab titles and social media
    */
-  metadataTitle: string;
+  metadataTitle?: string;
 
   /**
    * Metadata description — `text`
    *
    * Used in social media and search engine listings
    */
-  metadataDescription: string;
+  metadataDescription?: string;
 
   /**
    * Metadata image — `image`
    *
    * Used in social media and search engine listings.
    */
-  metadataImage: {
+  metadataImage?: {
     _type: "image";
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
@@ -580,7 +559,7 @@ export interface Project extends SanityDocument {
    *
    * I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling
    */
-  projectText: ProjectText;
+  projectText?: ProjectText;
 
   /**
    * Showreel — `mux.video`
@@ -679,7 +658,7 @@ export type InternalLink = {
    *
    *
    */
-  internalUID: SanityReference<Page>;
+  internalUID?: SanityReference<Page | Project>;
 };
 
 export type InternalLinkWithTitle = {
@@ -689,14 +668,14 @@ export type InternalLinkWithTitle = {
    *
    *
    */
-  title: string;
+  title?: string;
 
   /**
    * Page — `reference`
    *
    *
    */
-  internalUID: SanityReference<Page>;
+  internalUID?: SanityReference<Page | Project>;
 };
 
 export type ExternalLink = {
@@ -716,7 +695,7 @@ export type ExternalLinkWithTitle = {
    *
    *
    */
-  title: string;
+  title?: string;
 
   /**
    * URL — `url`
@@ -778,7 +757,7 @@ export type ExampleSection = {
    *
    *
    */
-  heading: string;
+  heading?: string;
 
   /**
    * Text — `ExampleFormattedText`
@@ -850,7 +829,7 @@ export type Gallery = {
    *
    *
    */
-  images: Array<SanityKeyed<GalleryImage>>;
+  images?: Array<SanityKeyed<GalleryImage>>;
 
   /**
    * Gallery caption — `text`
@@ -860,32 +839,25 @@ export type Gallery = {
   galleryCaption?: string;
 
   /**
-   * Gallery layout — `string`
-   *
-   *
-   */
-  headinggallerylayout?: string;
-
-  /**
    * Number of columns — `string`
    *
    * Number of columns at full size
    */
-  columns: "1" | "2" | "3" | "4";
+  columns?: "1" | "2" | "3" | "4";
 
   /**
    * Gallery aspect ratio — `number`
    *
    *
    */
-  aspectRatio: number;
+  aspectRatio?: number;
 
   /**
    * Max width — `string`
    *
    *
    */
-  maxWidth: "small" | "medium" | "large" | "full";
+  maxWidth?: "small" | "medium" | "large" | "full";
 };
 
 export type Image = {
@@ -934,13 +906,6 @@ export type Image = {
 export type LandingHero = {
   _type: "LandingHero";
   /**
-   * Foreground — `string`
-   *
-   *
-   */
-  headingforeground?: string;
-
-  /**
    * Heading — `string`
    *
    *
@@ -953,13 +918,6 @@ export type LandingHero = {
    *
    */
   subheading?: string;
-
-  /**
-   * Background — `string`
-   *
-   *
-   */
-  headingbackground?: string;
 
   /**
    * Background mode — `string`
@@ -1033,7 +991,7 @@ export type PageTitle = {
    *
    *
    */
-  usePageTitle: boolean;
+  usePageTitle?: boolean;
 
   /**
    * Custom page title — `string`
