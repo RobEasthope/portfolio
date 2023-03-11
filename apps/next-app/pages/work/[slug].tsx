@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 
 import { Project, ProjectProps } from "ui-pkg/pages/Project/Project";
-import { Loading } from "ui-pkg/base/app/Loading/Loading";
 import {
   getClient,
   overlayDrafts,
@@ -35,15 +34,7 @@ export default function ProjectBySlug({ data }: ProjectBySlugProps) {
     return <Error404 />;
   }
 
-  return (
-    <>
-      {isFallback && <Loading />}
-
-      {!isFallback && project?._type === "project" && (
-        <Project project={project} globals={globals} />
-      )}
-    </>
-  );
+  return <Project project={project} globals={globals} />;
 }
 
 // SSG CALLS
