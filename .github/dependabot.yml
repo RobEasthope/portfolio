@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/packages/ui" # Location of package manifests
+    directory: "/packages/ui-pkg" # Location of package manifests
     schedule:
       interval: "monthly"
     ignore:
@@ -24,7 +24,7 @@ updates:
       - dependency-name: "eslint-plugin-react-hooks"
       - dependency-name: "prettier"
   - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/apps/portfolio-next" # Location of package manifests
+    directory: "/apps/next-app" # Location of package manifests
     schedule:
       interval: "monthly"
     ignore:
@@ -42,7 +42,7 @@ updates:
       - dependency-name: "eslint-plugin-react-hooks"
       - dependency-name: "prettier"
   - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/apps/portfolio-sanity" # Location of package manifests
+    directory: "/apps/sanity-app" # Location of package manifests
     schedule:
       interval: "monthly"
     ignore:
