@@ -12,7 +12,7 @@ import { appGlobalsQuery } from "ui-pkg/base/settings/app-globals.queries";
 import { AppGlobalsProps, SettingsProps } from "ui-pkg/base/settings/Globals";
 import { HeaderProps } from "ui-pkg/navigation/Header/Header";
 import { GlobalMetadata } from "ui-pkg/types/sanity-schema";
-import { pageRenderChecks } from "next-app/utils/pageRenderChecks";
+import { pageRenderChecks } from "utils/pageRenderChecks";
 import { createSlugFromQuery } from "apis-pkg/sanity-api/createSlugFromQuery";
 import { pageBySlugQuery, pageSlugsQuery } from "ui-pkg/pages/Page/Page.queries";
 
