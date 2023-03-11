@@ -36,7 +36,8 @@
     "sanitize.css": "^13.0.0",
     "sanity-mux-player": "^0.0.27",
     "stitches-mixins": "^1.0.0",
-    "ui-pkg": "*"
+    "ui-pkg": "*",
+    "apis-pkg": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
