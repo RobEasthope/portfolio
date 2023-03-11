@@ -9,6 +9,10 @@
       "path": "../apps/sanity-app"
     },
     {
+      "name": "Sanity Studio 3.0 App 🚀",
+      "path": "../apps/sanity-3-app"
+    },
+    {
       "name": "Gatsby App 🚀",
       "path": "../apps/gatsby-app"
     },
