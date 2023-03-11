@@ -153,7 +153,17 @@ export default defineType({
       startDate: "startDate",
       endDate: "endDate",
     },
-    prepare({ startDate = null, endDate = null, title, thumbnailImage }) {
+    prepare({
+      startDate = null,
+      endDate = null,
+      title,
+      thumbnailImage,
+    }: {
+      startDate: Date | null;
+      endDate: Date | null;
+      title: string;
+      thumbnailImage: string;
+    }) {
       dayjs.extend(advancedFormat);
 
       const formattedStartDate = dayjs.default(startDate).format("MMM Do YYYY");
