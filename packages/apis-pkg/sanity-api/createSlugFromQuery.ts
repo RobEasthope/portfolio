@@ -1,1 +1,1 @@
-export const createSlugFromQuery = (slugArray: string[]) => slugArray.join('/');
+export const createSlugFromQuery = (slugArray: string[]) => slugArray.join("/");

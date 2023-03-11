@@ -1,4 +1,4 @@
-import type { NextApiResponse, NextApiRequest } from 'next';
+import type { NextApiResponse, NextApiRequest } from "next";
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export default async function exit(
@@ -9,5 +9,5 @@ export default async function exit(
   res.clearPreviewData();
 
   // Redirect the user back to the index page.
-  res.writeHead(307, { Location: req?.query?.slug ?? `/` });
+  res.writeHead(307, { Location: req?.query?.slug ?? "/" });
 }
