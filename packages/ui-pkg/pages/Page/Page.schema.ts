@@ -21,7 +21,6 @@ export default defineType({
       name: "title",
       title: "Page title",
       type: "string",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -33,7 +32,6 @@ export default defineType({
         maxLength: 30,
       },
       description: "Set the page URL",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     headingUI("Page content"),
@@ -63,7 +61,6 @@ export default defineType({
       title: "Metadata title",
       description: "Used in browser tab titles and social media",
       type: "string",
-      codegen: { required: true },
       validation: (Rule) =>
         Rule.required().warning(
           "Metadata title has not been set and will fall back to global metadata settings"
@@ -74,7 +71,6 @@ export default defineType({
       title: "Metadata description",
       description: "Used in social media and search engine listings",
       type: "text",
-      codegen: { required: true },
       validation: (Rule) =>
         Rule.required().warning(
           "Metadata description has not been set and will fall back to global metadata settings"
@@ -85,7 +81,6 @@ export default defineType({
       title: "Metadata image",
       description: "Used in social media and search engine listings.",
       type: "image",
-      codegen: { required: true },
       validation: (Rule) =>
         Rule.required().warning(
           "Metadata image has not been set and will fall back to global metadata settings"

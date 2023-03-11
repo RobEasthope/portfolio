@@ -9,7 +9,6 @@ export default defineType({
       name: "heading",
       title: "Heading",
       type: "string",
-      codegen: { required: true },
       validation: (Rule) => Rule.required().error("Example Section: Heading is missing"),
     }),
     defineField({
@@ -30,9 +29,6 @@ export default defineType({
           name: "caption",
           type: "string",
           title: "Caption",
-          options: {
-            isHighlighted: true, // <-- make this field easily accessible
-          },
         }),
         defineField({
           // Editing this field will be hidden behind an "Edit"-button

@@ -12,7 +12,6 @@ export default defineType({
       type: "reference",
       to: ALL_PAGES_TYPES,
       description: "Select home page (Critical requirement)",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
   ],

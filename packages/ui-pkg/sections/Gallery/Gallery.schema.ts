@@ -15,7 +15,6 @@ export default defineType({
       title: "Images",
       type: "array",
       of: [{ type: "GalleryImage" }],
-      codegen: { required: true },
       validation: (Rule) =>
         Rule.required().warning("Gallery: No images have been added to the gallery"),
     }),
@@ -39,7 +38,6 @@ export default defineType({
         ],
         layout: "radio",
       },
-      codegen: { required: true },
       validation: (Rule) =>
         Rule.required().error("Gallery: Please select the desired number of columns"),
     }),
@@ -51,7 +49,6 @@ export default defineType({
         list: ASPECT_RATIOS,
         layout: "radio",
       },
-      codegen: { required: true },
       validation: (Rule) =>
         Rule.required().error("Gallery: Please select an aspect ratio"),
     }),
@@ -62,7 +59,6 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
   ],

@@ -10,14 +10,12 @@ export default defineType({
       title: "Navigation (Left)",
       type: "array",
       of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
-      codegen: { required: true },
       validation: (Rule) => Rule.required().error("No navigation links have been added"),
     }),
     defineField({
       name: "logo",
       title: "Logo",
       type: "image",
-      codegen: { required: true },
       validation: (Rule) => Rule.required().error("Logo is missing"),
     }),
     defineField({
@@ -25,7 +23,6 @@ export default defineType({
       title: "Navigation (Right)",
       type: "array",
       of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
-      codegen: { required: true },
       validation: (Rule) => Rule.required().error("No navigation links have been added"),
     }),
   ],

@@ -10,7 +10,6 @@ export default defineType({
       title: "Footer navigation",
       type: "array",
       of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
-      codegen: { required: true },
       validation: (Rule) => Rule.required().error("No navigation links have been added"),
     }),
     defineField({

@@ -10,7 +10,6 @@ export default defineType({
       title: "Sitename",
       type: "string",
       description: "Used for SEO & descriptive purposes",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -18,7 +17,6 @@ export default defineType({
       title: "Page title",
       type: "string",
       description: "Can be overridden on a page by page basis in the pages Metadata tab.",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -26,7 +24,6 @@ export default defineType({
       title: "Page title template",
       type: "string",
       description: "Displayed after the page title e.g. PAGE TITLE | Ida",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -34,7 +31,6 @@ export default defineType({
       title: "Page description",
       type: "text",
       description: "Can be overridden on a page by page basis in the pages Metadata tab.",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -42,7 +38,6 @@ export default defineType({
       title: "Page thumbnail",
       type: "image",
       description: "Can be overridden on a page by page basis in the pages Metadata tab.",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

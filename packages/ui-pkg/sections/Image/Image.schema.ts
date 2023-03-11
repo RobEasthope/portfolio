@@ -21,9 +21,6 @@ export default defineType({
           name: "caption",
           type: "string",
           title: "Caption",
-          options: {
-            isHighlighted: true,
-          },
         }),
         defineField({
           name: "attribution",

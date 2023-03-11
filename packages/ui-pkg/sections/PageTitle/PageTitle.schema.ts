@@ -11,7 +11,6 @@ export default defineType({
       name: "usePageTitle",
       title: "Use page title?",
       type: "boolean",
-      codegen: { required: true },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
