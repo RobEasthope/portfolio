@@ -10,8 +10,9 @@
     "dev": "sanity start",
     "start": "sanity start",
     "build": "sanity build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint . --color",
+    "lint:fix": "eslint . --color --fix",
+    "clean": "rm -rf node_modules .turbo"
   },
   "keywords": [
     "sanity"
