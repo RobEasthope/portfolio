@@ -3,11 +3,11 @@ import React from "react";
 import { ALL_PAGES_TYPES } from "ui-pkg/pages/ALL_PAGES_TYPES";
 import { RiLinksLine } from "react-icons/ri";
 
-const InternalLinkRender = ({ children }) => (
-  <span>
-    {children} <RiLinksLine />
-  </span>
-);
+// const InternalLinkRender = ({ children }) => (
+//   <span>
+//     {children} <RiLinksLine />
+//   </span>
+// );
 
 export default defineType({
   name: "InternalLinkWithTitle",
@@ -32,10 +32,10 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
-  blockEditor: {
-    icon: () => "🔗",
-    render: InternalLinkRender,
-  },
+  // blockEditor: {
+  //   icon: () => "🔗",
+  //   render: InternalLinkRender,
+  // },
   preview: {
     select: {
       title: "title",
