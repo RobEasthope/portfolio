@@ -1,12 +1,12 @@
 //Links
-import internalLink from 'ui-pkg/base/links/InternalLink/InternalLink.schema.js'
-import internalLinkWithTitle from 'ui-pkg/base/links/InternalLink/InternalLinkWithTitle.schema.js'
-import externalLink from 'ui-pkg/base/links/ExternalLink/ExternalLink.schema.js'
-import externalLinkWithTitle from 'ui-pkg/base/links/ExternalLink/ExternalLinkWithTitle.schema.js'
+import internalLink from 'ui-pkg/base/links/InternalLink/InternalLink.schema'
+import internalLinkWithTitle from 'ui-pkg/base/links/InternalLink/InternalLinkWithTitle.schema'
+import externalLink from 'ui-pkg/base/links/ExternalLink/ExternalLink.schema'
+import externalLinkWithTitle from 'ui-pkg/base/links/ExternalLink/ExternalLinkWithTitle.schema'
 
 // Navigation
-import Header from 'ui-pkg/navigation/Header/Header.schema.js'
-import Footer from 'ui-pkg/navigation/Footer/Footer.schema.js'
+import Header from 'ui-pkg/navigation/Header/Header.schema'
+import Footer from 'ui-pkg/navigation/Footer/Footer.schema'
 
 // Media
 import altImage from 'ui-pkg/base/media/Picture/altImage.schema'
