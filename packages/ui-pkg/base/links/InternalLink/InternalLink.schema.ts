@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 import React from "react";
-import { ALL_PAGES_TYPES } from "ffa-sanity/constants/ALL_PAGES_TYPES";
+import { ALL_PAGES_TYPES } from "ui-pkg/pages/ALL_PAGES_TYPES";
 import { RiLinksLine } from "react-icons/ri";
 
 const InternalLinkRender = ({ children }) => (
