@@ -9,10 +9,6 @@
       "path": "../apps/sanity-app"
     },
     {
-      "name": "Gatsby App 🚀",
-      "path": "../apps/gatsby-app"
-    },
-    {
       "name": "UI Package 📦",
       "path": "../packages/ui-pkg"
     },
