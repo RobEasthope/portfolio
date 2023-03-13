@@ -9,7 +9,10 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "lint": "eslint . && tsc --pretty --noEmit",
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --pretty --noEmit"
   },
   "keywords": [
     "sanity"
