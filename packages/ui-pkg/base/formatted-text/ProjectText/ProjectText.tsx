@@ -2,11 +2,11 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import BlockContent from "@sanity/block-content-to-react";
-import { ImageProps } from "ui-pkg/sections/Image/Image";
-import { MuxVideoProps } from "ui-pkg/sections/MuxVideo/MuxVideo";
-import { VimeoVideoProps } from "ui-pkg/sections/VimeoVideo/VimeoVideo";
-import { YoutubeVideoProps } from "ui-pkg/sections/YoutubeVideo/YoutubeVideo";
-import { GalleryProps } from "ui-pkg/sections/Gallery/Gallery";
+import { ImageProps } from "ui-pkg/blocks/Image/Image";
+import { MuxVideoProps } from "ui-pkg/blocks/MuxVideo/MuxVideo";
+import { VimeoVideoProps } from "ui-pkg/blocks/VimeoVideo/VimeoVideo";
+import { YoutubeVideoProps } from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo";
+import { GalleryProps } from "ui-pkg/blocks/Gallery/Gallery";
 import { Text } from "ui-pkg/base/typography/Text/Text";
 import {
   BlockRendererProps,
@@ -14,11 +14,11 @@ import {
 } from "ui-pkg/base/formatted-text/formattedTextProps";
 import { Prose } from "ui-pkg/base/typography/Prose/Prose";
 
-const Gallery = dynamic(() => import("../../../sections/Gallery/Gallery"));
-const Image = dynamic(() => import("../../../sections/Image/Image"));
-const MuxVideo = dynamic(() => import("../../../sections/MuxVideo/MuxVideo"));
-const VimeoVideo = dynamic(() => import("../../../sections/VimeoVideo/VimeoVideo"));
-const YoutubeVideo = dynamic(() => import("../../../sections/YoutubeVideo/YoutubeVideo"));
+const Gallery = dynamic(() => import("../../../blocks/Gallery/Gallery"));
+const Image = dynamic(() => import("../../../blocks/Image/Image"));
+const MuxVideo = dynamic(() => import("../../../blocks/MuxVideo/MuxVideo"));
+const VimeoVideo = dynamic(() => import("../../../blocks/VimeoVideo/VimeoVideo"));
+const YoutubeVideo = dynamic(() => import("../../../blocks/YoutubeVideo/YoutubeVideo"));
 
 // TYPES
 export interface ProjectTextProps {

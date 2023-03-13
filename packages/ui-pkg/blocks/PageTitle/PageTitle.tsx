@@ -4,7 +4,7 @@ import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedCom
 import { Text } from "ui-pkg/base/typography/Text/Text";
 import { TextAlign } from "ui-pkg/base/structure/TextAlign/TextAlign";
 import { styled } from "ui-pkg/styles/stitches.config";
-import { Spacer } from "ui-pkg/sections/Spacer/Spacer";
+import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
 
 // STYLES
 export const Break = styled("span", {
