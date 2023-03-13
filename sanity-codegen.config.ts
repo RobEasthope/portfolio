@@ -1,7 +1,7 @@
 import { SanityCodegenConfig } from "sanity-codegen";
 
 const config: SanityCodegenConfig = {
-  schemaPath: "./apps/sanity-app/schemas.ts",
+  schemaPath: "./apps/sanity-app/schemas/index.ts",
   outputPath: "./packages/ui-pkg/types/sanity-schema.d.ts",
 
   // NOTE: The CLI ships with a pre-configured babel config that shims out
