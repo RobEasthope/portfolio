@@ -15,7 +15,7 @@
     "storybook:build": "clear && npx turbo run build --scope=storybook-app --include-dependencies --no-deps",
     "sanity": "npx turbo run dev --scope=sanity-app --include-dependencies --no-deps",
     "sanity:build": "npx turbo run build --scope=sanity-app --include-dependencies --no-deps",
-    "types": "clear",
+    "types": "npx sanity-codegen",
     "types:watch": "yarn types && npm-watch types",
     "sanity-upgrade": "npm install -g @sanity/cli && cd ./apps/sanity-app && sanity upgrade",
     "lint": "yarn types && clear && turbo run lint",
