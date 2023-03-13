@@ -5,7 +5,7 @@ import { MainContentLayout } from "ui-pkg/base/structure/MainContentLayout/MainC
 import { NextMetadata } from "ui-pkg/base/app/Metadata/NextMetadata";
 import { RenderSections } from "ui-pkg/utils/RenderSections/RenderSections";
 import { Page as rawPageProps } from "ui-pkg/types/sanity-schema";
-import { ExampleSectionProps } from "ui-pkg/sections/ExampleSection/ExampleSection";
+import { ExampleSectionProps } from "ui-pkg/blocks/ExampleSection/ExampleSection";
 import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
 import { ProjectProps } from "ui-pkg/pages/Project/Project";
 
