@@ -40,7 +40,7 @@ export default defineType({
         { type: "YoutubeVideo" },
       ],
       validation: (Rule) =>
-        Rule.required().min(1).error("At least one page section is required"),
+        Rule.required().error("At least one page section is required"),
     }),
     defineField({
       name: "metadataTitle",
