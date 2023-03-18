@@ -34,9 +34,8 @@ export default defineType({
       title: "title",
     },
     prepare(selection) {
-      const { title } = selection;
       return {
-        title,
+        ...selection,
         subtitle: "Internal link",
       };
     },
