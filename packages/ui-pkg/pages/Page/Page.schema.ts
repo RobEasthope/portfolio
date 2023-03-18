@@ -24,7 +24,7 @@ export default defineType({
     }),
     defineField({
       name: "rawSections",
-      title: "Page sections",
+      title: "Page blocks",
       type: "array",
       of: [
         { type: "ExampleSection" },

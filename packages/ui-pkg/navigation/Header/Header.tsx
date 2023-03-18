@@ -11,7 +11,7 @@ import { METADATA } from "ui-pkg/constants/METADATA";
 import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
 import { Box } from "ui-pkg/base/structure/Box/Box";
 import { Flex } from "ui-pkg/base/structure/Flex/Flex";
-import { Spacer } from "ui-pkg/sections/Spacer/Spacer";
+import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
 import { Text } from "ui-pkg/base/typography/Text/Text";
 
 // Styles

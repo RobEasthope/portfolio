@@ -23,26 +23,26 @@ import Settings from "ui-pkg/base/settings/Settings.schema";
 import GlobalMetadata from "ui-pkg/base/settings/GlobalMetadata.schema";
 
 // Data
-import tech from "ui-pkg/sections/Tech/schemas/Tech.schema";
-import gig from "ui-pkg/sections/Gig/schemas/Gig.schema";
+import tech from "ui-pkg/blocks/Tech/schemas/Tech.schema";
+import gig from "ui-pkg/blocks/Gig/schemas/Gig.schema";
 import project from "ui-pkg/pages/Project/Project.schema";
-import organisation from "ui-pkg/sections/Organisation/schemas/Organisation.schema";
-import education from "ui-pkg/sections/EducationBlock/schemas/Education.schema";
+import organisation from "ui-pkg/blocks/Organisation/schemas/Organisation.schema";
+import education from "ui-pkg/blocks/EducationBlock/schemas/Education.schema";
 
 // Content UI
-import ExampleSection from "ui-pkg/sections/ExampleSection/ExampleSection.schema";
-import GalleryImage from "ui-pkg/sections/Gallery/schemas/GalleryImage.schema";
-import Gallery from "ui-pkg/sections/Gallery/Gallery.schema";
-import Image from "ui-pkg/sections/Image/Image.schema";
+import ExampleSection from "ui-pkg/blocks/ExampleSection/ExampleSection.schema";
+import GalleryImage from "ui-pkg/blocks/Gallery/schemas/GalleryImage.schema";
+import Gallery from "ui-pkg/blocks/Gallery/Gallery.schema";
+import Image from "ui-pkg/blocks/Image/Image.schema";
 
-import LandingHero from "ui-pkg/sections/LandingHero/LandingHero.schema";
-import MuxVideo from "ui-pkg/sections/MuxVideo/MuxVideo.schema";
-import PageTitle from "ui-pkg/sections/PageTitle/PageTitle.schema";
-import ProjectIndex from "ui-pkg/sections/ProjectIndex/ProjectIndex.schema";
-import Spacer from "ui-pkg/sections/Spacer/Spacer.schema";
-import Text from "ui-pkg/sections/Text/Text.schema";
-import VimeoVideo from "ui-pkg/sections/VimeoVideo/VimeoVideo.schema";
-import YoutubeVideo from "ui-pkg/sections/YoutubeVideo/YoutubeVideo.schema";
+import LandingHero from "ui-pkg/blocks/LandingHero/LandingHero.schema";
+import MuxVideo from "ui-pkg/blocks/MuxVideo/MuxVideo.schema";
+import PageTitle from "ui-pkg/blocks/PageTitle/PageTitle.schema";
+import ProjectIndex from "ui-pkg/blocks/ProjectIndex/ProjectIndex.schema";
+import Spacer from "ui-pkg/blocks/Spacer/Spacer.schema";
+import Text from "ui-pkg/blocks/Text/Text.schema";
+import VimeoVideo from "ui-pkg/blocks/VimeoVideo/VimeoVideo.schema";
+import YoutubeVideo from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo.schema";
 
 // Pages
 import page from "ui-pkg/pages/Page/Page.schema";

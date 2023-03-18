@@ -5,7 +5,7 @@ export const projectBySlugQuery = groq`
     ...,
     "clientOrg": client->{name, url},
     "agencyOrg": agency->{name, url},
-    "sections": rawSections[]{
+    "blocks": rawSections[]{
       ...,
       "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
       "bkg": rawBkg->,
