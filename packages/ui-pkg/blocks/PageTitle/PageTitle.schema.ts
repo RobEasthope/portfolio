@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { BiText } from "react-icons/bi";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({
   type: "object",
@@ -17,7 +18,7 @@ export default defineType({
     select: {
       title: "heading",
     },
-    prepare(selection: { title: string }) {
+    prepare(selection: SelectionProps) {
       const { title } = selection;
       return {
         title: selection.title || "Page title",

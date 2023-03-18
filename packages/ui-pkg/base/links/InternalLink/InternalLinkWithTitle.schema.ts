@@ -2,6 +2,7 @@ import { defineField, defineType } from "sanity";
 import React from "react";
 import { ALL_PAGES_TYPES } from "ui-pkg/pages/ALL_PAGES_TYPES";
 import { RiLinksLine } from "react-icons/ri";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 // const InternalLinkRender = ({ children }) => (
 //   <span>
@@ -40,7 +41,7 @@ export default defineType({
     select: {
       title: "title",
     },
-    prepare(selection) {
+    prepare(selection: SelectionProps) {
       const { title } = selection;
       return {
         title,
