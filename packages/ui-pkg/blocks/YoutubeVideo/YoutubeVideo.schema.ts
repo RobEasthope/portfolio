@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { RiYoutubeFill } from "react-icons/ri";
+import { SelectionProps } from "sanity-app/types/Selection";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
 export default defineType({
@@ -30,12 +31,13 @@ export default defineType({
   ],
   preview: {
     select: {
-      url: "url",
+      subtitle: "url",
     },
-    prepare({ url }) {
+    prepare(selection: SelectionProps) {
+      const { subtitle } = selection;
       return {
-        title: "Youtube video",
-        subtitle: url,
+        title: "Vimeo video",
+        subtitle: subtitle || "",
       };
     },
   },

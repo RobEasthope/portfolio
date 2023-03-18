@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { RiGalleryLine } from "react-icons/ri";
+import { SelectionProps } from "sanity-app/types/Selection";
 import { ASPECT_RATIOS } from "../../constants/ASPECT_RATIOS";
 import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
 
@@ -61,13 +62,9 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {
-      images: "images",
-    },
-    prepare({ images }) {
+    prepare() {
       return {
         title: "Gallery",
-        media: images[0].image,
       };
     },
   },

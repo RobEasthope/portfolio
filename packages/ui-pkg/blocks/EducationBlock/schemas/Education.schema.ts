@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({
   name: "education",
@@ -35,10 +36,19 @@ export default defineType({
       },
     }),
   ],
+
   preview: {
     select: {
       title: "name",
       media: "logo",
+    },
+    prepare(selection: SelectionProps) {
+      const { title, media } = selection;
+      return {
+        title: title || "Education",
+        subtitle: title ? "Education" : "",
+        media,
+      };
     },
   },
 });

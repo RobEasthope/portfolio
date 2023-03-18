@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { RiImage2Line } from "react-icons/ri";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({
   type: "object",
@@ -31,14 +32,15 @@ export default defineType({
   ],
   preview: {
     select: {
-      caption: "image.caption",
-      image: "image",
+      title: "heading",
+      media: "image",
     },
-    prepare({ caption, image }) {
+    prepare(selection: SelectionProps) {
+      const { title, media } = selection;
       return {
-        title: "Image",
-        subtitle: caption || null,
-        media: image,
+        title: title || "Gallery image",
+        subtitle: title ? "Gallery image" : "",
+        media,
       };
     },
   },
