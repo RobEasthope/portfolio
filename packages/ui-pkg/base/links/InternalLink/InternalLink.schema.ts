@@ -40,5 +40,4 @@ export default defineType({
       };
     },
   },
-  displayName: "InternalLink",
 });
