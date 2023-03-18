@@ -10,7 +10,7 @@ import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
 import { ProjectProps } from "ui-pkg/pages/Project/Project";
 
 export interface PageProps extends rawPageProps {
-  sections: [ExampleSectionProps];
+  blocks: [ExampleSectionProps];
   projects: ProjectProps[];
 }
 
@@ -27,7 +27,7 @@ export const Page = ({
   const { header, footer, metadata } = globals;
 
   // Page props
-  const { sections, projects, slug } = page;
+  const { blocks, projects, slug } = page;
 
   return (
     <>
@@ -48,12 +48,8 @@ export const Page = ({
         )}
 
         <MainContentLayout as="main">
-          {sections && (
-            <RenderSections
-              sections={sections}
-              projects={projects}
-              pageTitle={page?.title}
-            />
+          {blocks && (
+            <RenderSections blocks={blocks} projects={projects} pageTitle={page?.title} />
           )}
         </MainContentLayout>
 

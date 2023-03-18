@@ -35,7 +35,7 @@ export const Dot = styled(BsDot, {
 });
 
 export interface ProjectProps extends rawProjectProps {
-  sections: [ExampleSectionProps];
+  blocks: [ExampleSectionProps];
   clientOrg: Organisation;
   agencyOrg: Organisation;
 }
