@@ -17,34 +17,24 @@ export const Break = styled("span", {
 
 // TYPES
 export interface PageTitleProps extends rawPageTitleProps {
-  pageTitle: string;
+  heading: string;
 }
 
-export const PageTitle = ({
-  usePageTitle,
-  pageTitle,
-  customPageTitle,
-}: PageTitleProps) => {
-  if (!pageTitle && !customPageTitle) {
+export const PageTitle = ({ heading }: PageTitleProps) => {
+  if (!heading) {
     return null;
   }
 
   return (
     <PaddedComponent as="section" content="text">
       <MaxWidth width="page">
-        {(pageTitle || customPageTitle) && (
-          <TextAlign align="centre">
-            {usePageTitle ? (
-              <Text typeSize="medium">{pageTitle}</Text>
-            ) : (
-              <Text typeSize="medium">{customPageTitle}</Text>
-            )}
+        <TextAlign align="centre">
+          <Text typeSize="medium">{heading}</Text>
 
-            <Spacer height="x1" />
-            <Break />
-            <Spacer height="x2" />
-          </TextAlign>
-        )}
+          <Spacer height="x1" />
+          <Break />
+          <Spacer height="x2" />
+        </TextAlign>
       </MaxWidth>
     </PaddedComponent>
   );

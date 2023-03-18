@@ -8,28 +8,20 @@ export default defineType({
   icon: BiText,
   fields: [
     defineField({
-      name: "usePageTitle",
-      title: "Use page title?",
-      type: "boolean",
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: "customPageTitle",
-      title: "Custom page title",
+      name: "heading",
+      title: "Heading",
       type: "string",
-      hidden: ({ parent }) => parent?.usePageTitle === true,
     }),
   ],
-  initialValue: {
-    usePageTitle: true,
-  },
   preview: {
     select: {
-      customPageTitle: "customPageTitle",
+      title: "heading",
     },
-    prepare({ customPageTitle }) {
+    prepare(selection: { title: string }) {
+      const { title } = selection;
       return {
-        title: customPageTitle || "Page title",
+        title: selection.title || "Page title",
+        subtitle: title ? "Page title" : "",
       };
     },
   },
