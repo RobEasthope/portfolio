@@ -27,7 +27,7 @@ export default defineType({
     defineField({
       name: "hiddenOrg",
       title: "Hide organisation",
-      descript: "Hides organisation on frontend",
+      description: "Hides organisation on frontend",
       type: "boolean",
     }),
   ],
