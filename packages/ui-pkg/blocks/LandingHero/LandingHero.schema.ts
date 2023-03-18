@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { BiHeading } from "react-icons/bi";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({
   type: "object",
@@ -62,12 +63,15 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "bkgImage",
+      title: "heading",
+      media: "image",
     },
-    prepare({ title }: { title: string }) {
+    prepare(selection: SelectionProps) {
+      const { title, media } = selection;
       return {
-        title: "Landing hero",
-        media: title,
+        title: title || "Landing hero",
+        subtitle: title ? "Landing hero" : "",
+        media,
       };
     },
   },

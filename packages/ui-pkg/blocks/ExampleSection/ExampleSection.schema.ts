@@ -1,8 +1,9 @@
 import { defineField, defineType } from "sanity";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({
   name: "ExampleSection",
-  title: "Example",
+  title: "Example block",
   type: "object",
   fields: [
     defineField({
@@ -44,10 +45,14 @@ export default defineType({
   preview: {
     select: {
       title: "heading",
+      media: "image",
     },
-    prepare({ title }) {
+    prepare(selection: SelectionProps) {
+      const { title, media } = selection;
       return {
-        title: title || "Example section",
+        title: title || "Example block",
+        subtitle: title ? "Example block" : "",
+        media,
       };
     },
   },

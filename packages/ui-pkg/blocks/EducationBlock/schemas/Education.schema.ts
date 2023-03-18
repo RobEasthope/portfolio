@@ -45,7 +45,7 @@ export default defineType({
     prepare(selection: SelectionProps) {
       const { title, media } = selection;
       return {
-        title: selection.title || "Education",
+        title: title || "Education",
         subtitle: title ? "Education" : "",
         media,
       };

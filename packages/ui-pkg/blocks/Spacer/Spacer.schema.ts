@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { SelectionProps } from "sanity-app/types/Selection";
 import { SPACER_OPTIONS } from "../../constants/SPACER_OPTIONS";
 
 export default defineType({
@@ -19,12 +20,13 @@ export default defineType({
   ],
   preview: {
     select: {
-      height: "height",
+      subtitle: "height",
     },
-    prepare({ height }) {
+    prepare(selection: SelectionProps) {
+      const { subtitle } = selection;
       return {
         title: "Spacer",
-        subtitle: height,
+        subtitle: subtitle || "",
       };
     },
   },
