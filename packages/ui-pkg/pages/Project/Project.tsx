@@ -4,7 +4,7 @@ import { FixedFooterLayout } from "ui-pkg/base/structure/FixedFooterLayout/Fixed
 import { MainContentLayout } from "ui-pkg/base/structure/MainContentLayout/MainContentLayout";
 import { NextMetadata } from "ui-pkg/base/app/Metadata/NextMetadata";
 import { Organisation, Project as rawProjectProps } from "ui-pkg/types/sanity-schema";
-import { ExampleSectionProps } from "ui-pkg/sections/ExampleSection/ExampleSection";
+import { ExampleSectionProps } from "ui-pkg/blocks/ExampleSection/ExampleSection";
 import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
 import { Text } from "ui-pkg/base/typography/Text/Text";
 import { ProjectText } from "ui-pkg/base/formatted-text/ProjectText/ProjectText";
@@ -15,7 +15,7 @@ import { TextAlign } from "ui-pkg/base/structure/TextAlign/TextAlign";
 import { Picture } from "ui-pkg/base/media/Picture/Picture";
 
 import { styled } from "ui-pkg/styles/stitches.config";
-import { Spacer } from "ui-pkg/sections/Spacer/Spacer";
+import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
 import { ExternalLink } from "ui-pkg/base/links/ExternalLink/ExternalLink";
 import { BsDot } from "react-icons/bs";
 
@@ -35,7 +35,7 @@ export const Dot = styled(BsDot, {
 });
 
 export interface ProjectProps extends rawProjectProps {
-  sections: [ExampleSectionProps];
+  blocks: [ExampleSectionProps];
   clientOrg: Organisation;
   agencyOrg: Organisation;
 }

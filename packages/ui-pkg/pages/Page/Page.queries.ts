@@ -8,7 +8,7 @@ export const pageBySlugQuery = groq`
       slug,
       thumbnailImage
     },
-    "sections": rawSections[]{
+    "blocks": rawSections[]{
       ...,
       "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
       "bkg": rawBkg->,
