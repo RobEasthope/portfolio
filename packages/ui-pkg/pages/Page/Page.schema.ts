@@ -40,7 +40,7 @@ export default defineType({
         { type: "YoutubeVideo" },
       ],
       validation: (Rule) =>
-        Rule.required().min(1).error("At least one page section is required"),
+        Rule.required().error("At least one page section is required"),
     }),
     defineField({
       name: "metadataTitle",
@@ -75,15 +75,15 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "url",
+      title: "title",
       subtitle: "slug",
       media: "metadataImage",
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: { title: string; subtitle: { current: string }; media: string }) {
       const { title, subtitle, media } = selection;
       return {
         title: title || "Page",
-        subtitle: subtitle || "",
+        subtitle: subtitle.current || "",
         media,
       };
     },
