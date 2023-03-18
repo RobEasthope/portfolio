@@ -44,8 +44,8 @@ export default defineType({
     prepare(selection: SelectionProps) {
       const { title } = selection;
       return {
-        title,
-        subtitle: "Internal link",
+        title: title || "Internal link",
+        subtitle: title ? "Internal link" : "",
       };
     },
   },

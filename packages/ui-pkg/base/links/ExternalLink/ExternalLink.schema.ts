@@ -32,14 +32,9 @@ export default defineType({
   //   render: ExternalLinkRender,
   // },
   preview: {
-    select: {
-      title: "title",
-    },
-    prepare(selection: SelectionProps) {
-      const { title } = selection;
+    prepare() {
       return {
-        title,
-        subtitle: "External link",
+        title: "External link",
       };
     },
   },

@@ -31,13 +31,9 @@ export default defineType({
   //   render: InternalLinkRender,
   // },
   preview: {
-    select: {
-      title: "title",
-    },
-    prepare(selection: SelectionProps) {
+    prepare() {
       return {
-        ...selection,
-        subtitle: "Internal link",
+        title: "Internal link",
       };
     },
   },
