@@ -1,15 +1,15 @@
 import YouTube from "react-youtube";
-import { YoutubeVideo as rawYoutubeVideoProps } from "ui-pkg/types/sanity-schema";
-
-import { getYoutubeIdfromUrl } from "ui-pkg/utils/getYoutubeIdfromUrl";
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
-import { IFrameAspectRatio } from "ui-pkg/base/structure/IFrameAspectRatio/IFrameAspectRatio";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Caption } from "ui-pkg/base/typography/Caption/Caption";
-import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
+import { Box } from "ui-pkg/base/Box/Box";
+import { Type } from "ui-pkg/base/Type/Type";
+import { getYoutubeIdfromUrl } from "./getYoutubeIdfromUrl";
 
 // TYPES
-export type YoutubeVideoProps = rawYoutubeVideoProps;
+export type YoutubeVideoProps = {
+  _type: "YoutubeVideo";
+  url?: string;
+  caption?: string;
+  maxWidth: "small" | "text" | "medium" | "large" | "full";
+};
 
 // MARKUP
 export const YoutubeVideo = ({
@@ -22,16 +22,21 @@ export const YoutubeVideo = ({
   }
 
   return (
-    <PaddedComponent as="section" content="media">
-      <Breakout>
-        <MaxWidth width={maxWidth}>
-          <IFrameAspectRatio ratio={16 / 9}>
-            <YouTube videoId={getYoutubeIdfromUrl(url)} containerClassName="video" />
-          </IFrameAspectRatio>
-          {caption && <Caption as="figcaption">{caption}</Caption>}
-        </MaxWidth>
-      </Breakout>
-    </PaddedComponent>
+    <Box as="section" breakout>
+      <Box as="div" className="mx-auto" maxWidth={maxWidth}>
+        <Box as="div">
+          <YouTube
+            videoId={getYoutubeIdfromUrl(url)}
+            className="youtube-video relative aspect-video"
+          />
+        </Box>
+        <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
+          <Type as="figcaption" className="text-sm italic text-gray-600 ">
+            {caption}
+          </Type>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
