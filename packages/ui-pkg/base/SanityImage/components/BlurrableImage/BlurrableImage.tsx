@@ -1,16 +1,21 @@
 import * as React from "react";
-import { useSSRLayoutEffect } from "ui-pkg/utils/useSSRLayoutEffect";
-import { BlurredImage } from "ui-pkg/base/media/SanityImage/components/BlurredImage/BlurredImage";
+import { useSSRLayoutEffect } from "./useSSRLayoutEffect";
 
 // TYPES
 type BlurrableImageProps = {
   img: React.ReactElement<React.ImgHTMLAttributes<HTMLImageElement>>;
   alt?: string;
   blurredAssetUrl?: string;
+  className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 // MARKUP
-export function BlurrableImage({ img, blurredAssetUrl, alt }: BlurrableImageProps) {
+export function BlurrableImage({
+  img,
+  blurredAssetUrl,
+  alt,
+  className = "",
+}: BlurrableImageProps) {
   const [hiResImageLoaded, setFullSizeImageLoaded] = React.useState(false);
   const hiResImageRef = React.useRef<HTMLImageElement>(null);
 
@@ -20,7 +25,7 @@ export function BlurrableImage({ img, blurredAssetUrl, alt }: BlurrableImageProp
 
   React.useEffect(() => {
     if (!hiResImageRef.current) return;
-    // if (hiResImageRef.current.complete) return;
+    if (hiResImageRef.current.complete) return;
 
     let current = true;
     hiResImageRef.current.addEventListener("load", () => {
@@ -38,17 +43,21 @@ export function BlurrableImage({ img, blurredAssetUrl, alt }: BlurrableImageProp
   const hiResImage = React.cloneElement(img, {
     // @ts-expect-error no idea 🤷‍♂️
     ref: hiResImageRef,
-    className: `${hiResImageLoaded ? "show" : "hide"}`,
+    className: `high-res-image ${className} ${
+      hiResImageLoaded ? "high-res-image--show" : "high-res-image--hide"
+    }`,
   });
 
   return (
     <>
       {blurredAssetUrl && (
-        <BlurredImage
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
           src={blurredAssetUrl}
-          className={img.props.className}
+          className={`blurred-res-image ${className} ${
+            hiResImageLoaded ? "blurred-image--hide" : "high-res-image--show"
+          }`}
           alt={alt || ""}
-          visibility={hiResImageLoaded ? "hide" : "show"}
         />
       )}
       {hiResImage}
