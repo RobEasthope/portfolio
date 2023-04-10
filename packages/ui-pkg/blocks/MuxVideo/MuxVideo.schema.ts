@@ -1,6 +1,7 @@
 import { defineField, defineType } from "sanity";
 import { RiVideoLine } from "react-icons/ri";
-import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
+import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
+import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({
   type: "object",
@@ -23,17 +24,22 @@ export default defineType({
       name: "maxWidth",
       title: "Max width",
       type: "string",
-      description: "Defaults to large",
+      description: "Defaults to medium",
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
     }),
   ],
   preview: {
-    select: {},
-    prepare() {
+    select: {
+      title: "caption",
+      subtitle: "url",
+    },
+    prepare(selection: SelectionProps) {
+      const { title, subtitle } = selection;
       return {
         title: "Mux video",
+        subtitle: title || subtitle || "",
       };
     },
   },
