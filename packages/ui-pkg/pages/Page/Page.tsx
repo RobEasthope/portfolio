@@ -1,36 +1,37 @@
-import { NextMetadata } from "ui-pkg/base/app/Metadata/NextMetadata";
-import { RenderSections } from "ui-pkg/utils/RenderSections/RenderSections";
-import { Page as rawPageProps } from "ui-pkg/types/sanity-schema";
-import { ExampleSectionProps } from "ui-pkg/blocks/ExampleSection/ExampleSection";
-import { AppGlobalsProps } from "ui-pkg/settings/Globals";
-import { ProjectProps } from "ui-pkg/pages/Project/Project";
+import { FooterProps } from "ui-pkg/navigation/Footer/Footer";
+import { HeaderProps } from "ui-pkg/navigation/Header/Header";
+import { SanityBlocks } from "ui-pkg/base/SanityBlocks/SanityBlocks";
+import {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityReference,
+} from "sanity-codegen";
 import { BasicLayout } from "ui-pkg/layouts/BasicLayout/BasicLayout";
 
-export interface PageProps extends rawPageProps {
-  blocks: [ExampleSectionProps];
-  projects: ProjectProps[];
-}
-
-export const Page = ({
-  page,
-  globals,
-  homePageSlug,
-}: {
-  page: PageProps;
-  globals: AppGlobalsProps;
-  homePageSlug?: string;
-}) => {
-  // Globals props
-  const { header, footer, metadata } = globals;
-
-  // Page props
-  const { blocks, projects, slug } = page;
-
-  return (
-    <BasicLayout header={header} footer={footer}>
-      {blocks && (
-        <RenderSections blocks={blocks} projects={projects} pageTitle={page?.title} />
-      )}
-    </BasicLayout>
-  );
+// TYPES
+export type PageProps = {
+  page: {
+    _id: string;
+    _type: "Page";
+    title: string;
+    slug: { _type: "slug"; current: string };
+    sections: any[];
+    metadataDescription: string;
+    metadataImage: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+  };
+  header: HeaderProps;
+  footer: FooterProps;
 };
+
+// MARKUP
+export const Page = ({ page, header, footer }: PageProps) => (
+  <BasicLayout header={header} footer={footer}>
+    <SanityBlocks blocks={page?.sections} pageID={page?._id} />
+  </BasicLayout>
+);
