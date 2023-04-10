@@ -15,13 +15,11 @@
     "storybook:build": "clear && npx turbo run build --scope=storybook-app --include-dependencies --no-deps",
     "sanity": "npx turbo run dev --scope=sanity-app --include-dependencies --no-deps",
     "sanity:build": "npx turbo run build --scope=sanity-app --include-dependencies --no-deps",
-    "types": "npx sanity-codegen",
-    "types:watch": "yarn types && npm-watch types",
     "sanity-upgrade": "npm install -g @sanity/cli && cd ./apps/sanity-app && sanity upgrade",
-    "lint": "yarn types && clear && turbo run lint",
+    "lint": "clear && turbo run lint",
     "lint:fix": "clear && turbo run lint:fix",
     "clean": "turbo run clean && rm -rf node_modules",
-    "prepare": "husky install && yarn types"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
