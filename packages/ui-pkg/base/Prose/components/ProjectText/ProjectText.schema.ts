@@ -1,7 +1,7 @@
 import { defineType, defineArrayMember } from "sanity";
 import { createBlockValidator } from "sanity-pills";
 
-const articleTextValidator = createBlockValidator({
+const projectTextValidator = createBlockValidator({
   required: false,
   noEmptyBlocks: true,
   validateLinks: true,
@@ -12,8 +12,8 @@ const articleTextValidator = createBlockValidator({
 });
 
 export default defineType({
-  name: "ArticleText",
-  title: "Article text",
+  name: "ProjectText",
+  title: "Project text",
   type: "array",
   of: [
     defineArrayMember({
@@ -45,5 +45,5 @@ export default defineType({
     defineArrayMember({ type: "VimeoVideo" }),
     defineArrayMember({ type: "YoutubeVideo" }),
   ],
-  validation: articleTextValidator,
+  validation: projectTextValidator,
 });

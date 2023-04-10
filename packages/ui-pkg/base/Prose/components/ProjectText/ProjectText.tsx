@@ -15,12 +15,12 @@ import { SanityBlock, SanityKeyed } from "sanity-codegen";
 const Image = dynamic(() => import("ui-pkg/blocks/Image/Image"));
 const YoutubeVideo = dynamic(() => import("ui-pkg/blocks/YoutubeVideo/YoutubeVideo"));
 
-export type ArticleTextProps = Array<
+export type ProjectTextProps = Array<
   SanityKeyed<SanityBlock> | SanityKeyed<ImageProps> | SanityKeyed<YoutubeVideoProps>
 >;
 
 // MARKUP
-export const ArticleTextComponents: PortableTextComponents = {
+export const ProjectTextComponents: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
       <Type as="h2" className="mb-1 font-sans text-2xl font-bold">
