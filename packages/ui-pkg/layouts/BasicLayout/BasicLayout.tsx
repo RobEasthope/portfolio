@@ -20,12 +20,6 @@ export const BasicLayout = ({ children, header, footer }: BasicLayoutProps) => (
       {children}
     </Box>
 
-    <Footer
-      footerNavigation={footer?.footerNavigation}
-      copyrightText={footer?.copyrightText}
-      socialMedia={footer?.socialMedia}
-      bhpaLogo={footer?.bhpaLogo}
-      bhpaWebsiteUrl={footer?.bhpaWebsiteUrl}
-    />
+    {slug?.current !== homePageSlug && <Footer copyrightText={footer?.copyrightText} />}
   </Box>
 );
