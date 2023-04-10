@@ -1,7 +1,5 @@
 import { defineField, defineType } from "sanity";
-import React from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
-import { SelectionProps } from "sanity-app/types/Selection";
 
 // const ExternalLinkRender = ({ children }) => (
 //   <span>
@@ -10,19 +8,12 @@ import { SelectionProps } from "sanity-app/types/Selection";
 // );
 
 export default defineType({
-  name: "ExternalLinkWithTitle",
+  name: "ExternalLink",
   title: "External link",
   type: "object",
   description: "Add a link to outside the site",
   icon: RiExternalLinkLine,
   fields: [
-    defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
-
-      validation: (Rule) => Rule.required(),
-    }),
     defineField({
       name: "url",
       title: "URL",
@@ -39,15 +30,11 @@ export default defineType({
   //   render: ExternalLinkRender,
   // },
   preview: {
-    select: {
-      title: "title",
-    },
-    prepare(selection: SelectionProps) {
-      const { title } = selection;
+    prepare() {
       return {
-        title: title || "External link",
-        subtitle: title ? "External link" : "",
+        title: "External link",
       };
     },
   },
+  // displayName: "ExternalLink",
 });

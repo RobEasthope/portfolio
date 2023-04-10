@@ -1,8 +1,6 @@
 import { defineField, defineType } from "sanity";
-import React from "react";
-import { ALL_PAGES_TYPES } from "ui-pkg/pages/ALL_PAGES_TYPES";
 import { RiLinksLine } from "react-icons/ri";
-import { SelectionProps } from "sanity-app/types/Selection";
+import { ALL_PAGE_TYPES } from "./ALL_PAGE_TYPES";
 
 // const InternalLinkRender = ({ children }) => (
 //   <span>
@@ -21,7 +19,7 @@ export default defineType({
       name: "internalUID",
       title: "Page",
       type: "reference",
-      to: ALL_PAGES_TYPES,
+      to: ALL_PAGE_TYPES,
 
       validation: (Rule) => Rule.required(),
     }),
@@ -33,8 +31,9 @@ export default defineType({
   preview: {
     prepare() {
       return {
-        title: "Internal link",
+        subtitle: "Internal link",
       };
     },
   },
+  // displayName: "InternalLink",
 });
