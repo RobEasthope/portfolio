@@ -6,9 +6,15 @@ export type BasicLayoutProps = {
   children: React.ReactNode;
   header: HeaderProps;
   footer: FooterProps;
+  homePageSlug?: string;
 };
 
-export const BasicLayout = ({ children, header, footer }: BasicLayoutProps) => (
+export const BasicLayout = ({
+  children,
+  header,
+  footer,
+  homePageSlug,
+}: BasicLayoutProps) => (
   <Box as="div" className="flex min-h-screen w-full flex-col bg-white">
     <Header
       logo={header?.logo}
