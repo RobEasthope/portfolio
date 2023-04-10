@@ -42,7 +42,13 @@ import YoutubeVideo from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo.schema";
 // Pages
 import page from "ui-pkg/pages/Page/Page.schema";
 
+// Legacy schema types
+import altImage from "./altImage.schema";
+
 export const schemaTypes = [
+  // Legacy schema types
+  altImage,
+
   // Links
   InternalLink,
   InternalLinkWithTitle,
