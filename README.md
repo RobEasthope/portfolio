@@ -36,7 +36,6 @@ Each app can also be run individually:
 The following paths are used be default for the local development:
 
 - Next: `http://localhost:3000/`
-- Storybook: `http://localhost:6006/`
 - Sanity: `http://localhost:3333/`
 
 By design browser tabs will not open automatically as is the default with Storybook.
