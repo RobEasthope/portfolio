@@ -1,12 +1,19 @@
-import { Gallery as rawGalleryProps } from "ui-pkg/types/sanity-schema";
-import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Picture } from "ui-pkg/base/media/Picture/Picture";
-import { Figure, GalleryCaption, Grid } from "./Gallery.styles";
+import { Type } from "ui-pkg/base/Type/Type";
+import { Box } from "ui-pkg/base/Box/Box";
+import {
+  GalleryImage,
+  GalleryImageProps,
+} from "ui-pkg/blocks/Gallery/schemas/GalleryImage";
 
 // TYPES
-export type GalleryProps = rawGalleryProps;
+export type GalleryProps = {
+  _type: "Gallery";
+  images: GalleryImageProps[];
+  galleryCaption?: string;
+  columns: "null" | "1" | "2" | "3" | "4" | "5" | undefined;
+  aspectRatio: number;
+  maxWidth: "small" | "text" | "medium" | "large" | "full";
+};
 
 // MARKUP
 export const Gallery = ({
@@ -14,40 +21,36 @@ export const Gallery = ({
   galleryCaption,
   columns,
   aspectRatio = 1 / 1,
-  maxWidth = "medium",
+  maxWidth = "large",
 }: GalleryProps) => {
   if (!images) {
     return null;
   }
 
   return (
-    <PaddedComponent as="section" content="media">
-      <Breakout>
-        <MaxWidth width={maxWidth}>
-          {images && (
-            <Grid columns={columns}>
-              {images.map((card) => (
-                <Figure key={card?._key}>
-                  {card?.image && (
-                    <Picture
-                      asset={card?.image}
-                      alt={card?.image?.caption || ""}
-                      mode="responsive"
-                      maxWidth={800}
-                      aspectRatio={aspectRatio}
-                    />
-                  )}
-                  {card?.image?.caption && (
-                    <figcaption>{card?.image?.caption}</figcaption>
-                  )}
-                </Figure>
-              ))}
-            </Grid>
-          )}
-          {galleryCaption && <GalleryCaption blocks={galleryCaption} />}
-        </MaxWidth>
-      </Breakout>
-    </PaddedComponent>
+    <Box as="section" className="px-1 py-1">
+      <Box
+        as="div"
+        className="mx-auto grid gap-0.75"
+        maxWidth={maxWidth}
+        columns={columns}
+      >
+        {images &&
+          images?.map((card) => (
+            <GalleryImage
+              key={card?._key}
+              _type={card?._type}
+              image={card?.image}
+              aspectRatio={aspectRatio}
+            />
+          ))}
+        <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
+          <Type as="figcaption" className="text-sm italic text-gray-600">
+            {galleryCaption}
+          </Type>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

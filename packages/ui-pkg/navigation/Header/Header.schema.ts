@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 
 export default defineType({
   name: "Header",
@@ -6,24 +6,32 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "rawNavigationLeft",
-      title: "Navigation (Left)",
-      type: "array",
-      of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
-      validation: (Rule) => Rule.required().error("No navigation links have been added"),
-    }),
-    defineField({
       name: "logo",
       title: "Logo",
       type: "image",
       validation: (Rule) => Rule.required().error("Logo is missing"),
     }),
     defineField({
-      name: "rawNavigationRight",
-      title: "Navigation (Right)",
+      name: "rawPrimaryNavigation",
+      title: "Primary header navigation",
       type: "array",
-      of: [{ type: "InternalLinkWithTitle" }, { type: "ExternalLinkWithTitle" }],
-      validation: (Rule) => Rule.required().error("No navigation links have been added"),
+      description: "Displayed on the left at larger sizes",
+      of: [
+        defineArrayMember({ type: "InternalLinkWithTitle" }),
+        defineArrayMember({ type: "ExternalLinkWithTitle" }),
+        defineArrayMember({ type: "EmailLinkWithTitle" }),
+      ],
+    }),
+    defineField({
+      name: "rawSecondaryNavigation",
+      title: "Secondary header navigation",
+      type: "array",
+      description: "Displayed on the right at larger sizes",
+      of: [
+        defineArrayMember({ type: "InternalLinkWithTitle" }),
+        defineArrayMember({ type: "ExternalLinkWithTitle" }),
+        defineArrayMember({ type: "EmailLinkWithTitle" }),
+      ],
     }),
   ],
   preview: {

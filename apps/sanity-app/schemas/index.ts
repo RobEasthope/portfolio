@@ -1,37 +1,32 @@
 // Links
-import internalLink from "ui-pkg/base/links/InternalLink/InternalLink.schema";
-import internalLinkWithTitle from "ui-pkg/base/links/InternalLink/InternalLinkWithTitle.schema";
-import externalLink from "ui-pkg/base/links/ExternalLink/ExternalLink.schema";
-import externalLinkWithTitle from "ui-pkg/base/links/ExternalLink/ExternalLinkWithTitle.schema";
+import InternalLink from "ui-pkg/base/InternalLink/InternalLink.schema";
+import InternalLinkWithTitle from "ui-pkg/base/InternalLink/InternalLinkWithTitle.schema";
+import ExternalLink from "ui-pkg/base/ExternalLink/ExternalLink.schema";
+import ExternalLinkWithTitle from "ui-pkg/base/ExternalLink/ExternalLinkWithTitle.schema";
 
 // Navigation
 import Header from "ui-pkg/navigation/Header/Header.schema";
 import Footer from "ui-pkg/navigation/Footer/Footer.schema";
 
-// Media
-import altImage from "ui-pkg/base/media/Picture/altImage.schema";
-
 // Formatted text
-import blockContent from "ui-pkg/base/formatted-text/ExampleFormattedText/BlockContent.schema";
-import ProjectText from "ui-pkg/base/formatted-text/ProjectText/ProjectText.schema";
-import BasicText from "ui-pkg/base/formatted-text/BasicText/BasicText.schema";
-import ExampleText from "ui-pkg/base/formatted-text/ExampleFormattedText/ExampleFormattedText.schema";
+import ProjectText from "ui-pkg/base/Prose/components/ProjectText/ProjectText.schema";
+import BasicText from "ui-pkg/base/Prose/components/BasicText/BasicText.schema";
 
 // Settings
-import details from "ui-pkg/base/settings/Details.schema";
-import Settings from "ui-pkg/base/settings/Settings.schema";
-import GlobalMetadata from "ui-pkg/base/settings/GlobalMetadata.schema";
+import details from "ui-pkg/settings/Details.schema";
+import Settings from "ui-pkg/settings/Settings.schema";
+import GlobalMetadata from "ui-pkg/settings/GlobalMetadata.schema";
 
 // Data
-import tech from "ui-pkg/blocks/Tech/schemas/Tech.schema";
-import gig from "ui-pkg/blocks/Gig/schemas/Gig.schema";
+import tech from "ui-pkg/blocks/Tech/Tech.schema";
+import gig from "ui-pkg/blocks/Gig/Gig.schema";
 import project from "ui-pkg/pages/Project/Project.schema";
-import organisation from "ui-pkg/blocks/Organisation/schemas/Organisation.schema";
-import education from "ui-pkg/blocks/EducationBlock/schemas/Education.schema";
+import organisation from "ui-pkg/blocks/Organisation/Organisation.schema";
+import education from "ui-pkg/blocks/Education/Education.schema";
 
 // Content UI
 import ExampleSection from "ui-pkg/blocks/ExampleSection/ExampleSection.schema";
-import GalleryImage from "ui-pkg/blocks/Gallery/schemas/GalleryImage.schema";
+import GalleryImage from "ui-pkg/blocks/Gallery/components/GalleryImage/GalleryImage.schema";
 import Gallery from "ui-pkg/blocks/Gallery/Gallery.schema";
 import Image from "ui-pkg/blocks/Image/Image.schema";
 
@@ -47,25 +42,26 @@ import YoutubeVideo from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo.schema";
 // Pages
 import page from "ui-pkg/pages/Page/Page.schema";
 
+// Legacy schema types
+import altImage from "./altImage.schema";
+
 export const schemaTypes = [
+  // Legacy schema types
+  altImage,
+
   // Links
-  internalLink,
-  internalLinkWithTitle,
-  externalLink,
-  externalLinkWithTitle,
+  InternalLink,
+  InternalLinkWithTitle,
+  ExternalLink,
+  ExternalLinkWithTitle,
 
   // Navigation
   Header,
   Footer,
 
-  // Media
-  altImage,
-
   // Formatted text
-  blockContent,
   ProjectText,
   BasicText,
-  ExampleText,
 
   // Settings
   details,

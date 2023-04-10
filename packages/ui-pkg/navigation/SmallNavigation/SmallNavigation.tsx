@@ -1,84 +1,128 @@
-import { RiMenuLine } from "react-icons/ri";
-import * as DialogPrimative from "@radix-ui/react-dialog";
-import { styled } from "ui-pkg/styles/stitches.config";
-import { Header as rawHeaderProps } from "ui-pkg/types/sanity-schema";
-
-import { SuperLink } from "ui-pkg/base/links/SuperLink/SuperLink";
-import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/links/InternalLink/InternalLink";
-import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/links/ExternalLink/ExternalLink";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import * as Dialog from "@radix-ui/react-dialog";
+import { SuperLink } from "ui-pkg/base/SuperLink/SuperLink";
 import { HeaderProps } from "ui-pkg/navigation/Header/Header";
+import { Box } from "ui-pkg/base/Box/Box";
+import { Type } from "ui-pkg/base/Type/Type";
+import { InternalLink } from "ui-pkg/base/InternalLink/InternalLink";
+import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
+import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
+import { METADATA_FALLBACK } from "ui-pkg/config/METADATA";
 
-// Styles
-export const DialogContent = styled(DialogPrimative.Content, {
-  backgroundColor: "white",
+// TYPES
+export type SmallNavigationProps = Pick<
+  HeaderProps,
+  "logo" | "primaryNavigation" | "secondaryNavigation"
+>;
 
-  width: "300px",
-  height: "100vh",
-
-  borderRight: "1px solid black",
-});
-
-export const DialogOverlay = styled(DialogPrimative.Overlay, {
-  backgroundColor: "rgba(255, 255, 255, 0.5)",
-  width: "100vw",
-  height: "100vh",
-});
-
-export const OpenSmallNavigationButton = styled(DialogPrimative.Trigger, {
-  border: "none",
-
-  "@media (min-width: 800px)": {
-    display: "none",
-    visibility: "hidden",
-  },
-});
-
-export const CloseSmallNavigationButton = styled(DialogPrimative.Close, {
-  border: "none",
-});
-
-// Types
-export interface SmallNavigationProps extends rawHeaderProps {
-  navigation?: [ExternalLinkWithTitleSchemaProps, InternalLinkWithTitleSchemaProps];
-}
-
-// Markup
+// MARKUP
 export const SmallNavigation = ({
-  navigationLeft,
-  navigationRight,
-}: Pick<HeaderProps, "navigationLeft" | "navigationRight">) => (
-  <DialogPrimative.Root>
-    <OpenSmallNavigationButton>
-      <RiMenuLine />
-    </OpenSmallNavigationButton>
+  logo,
+  primaryNavigation,
+  secondaryNavigation,
+}: SmallNavigationProps) => {
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    <DialogOverlay />
+  // Ensures menu is closed when resizing to desktop
+  useEffect(() => {
+    function handleCloseOnResize() {
+      const isDesktop = window.matchMedia("(min-width: 480px)").matches;
+      if (isDesktop && menuOpen) {
+        setMenuOpen(false);
+      }
+    }
 
-    <DialogContent>
-      <CloseSmallNavigationButton>Close</CloseSmallNavigationButton>
+    window.addEventListener("resize", handleCloseOnResize);
+    window.addEventListener("orientationchange", handleCloseOnResize);
 
-      <nav>
-        <ul>
-          {navigationLeft &&
-            navigationLeft?.length > 0 &&
-            navigationLeft.map((nav) => (
-              <li key={nav?._key} className="link">
-                <SuperLink className="" link={nav}>
+    return () => {
+      window.removeEventListener("resize", handleCloseOnResize);
+      window.removeEventListener("orientationchange", handleCloseOnResize);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setMenuOpen(false);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [setMenuOpen, router.events]);
+
+  return (
+    <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
+      <Dialog.Trigger className="md:hidden">
+        <Type as="span" className="text-sm font-medium">
+          Menu
+        </Type>
+      </Dialog.Trigger>
+
+      <Dialog.Overlay className="fixed left-0 top-0 z-10 h-screen w-screen bg-white opacity-70" />
+
+      <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1 py-0.5">
+        <Box as="div" className="flex w-full items-center justify-end">
+          <Box
+            as="div"
+            className="absolute left-1/2 flex flex-1 -translate-x-1/2 items-center justify-center"
+          >
+            <InternalLink href={HOME_PAGE_SLUG}>
+              <Box as="span" className="sr-only">
+                {METADATA_FALLBACK.TITLE}
+              </Box>
+              <SanityImage
+                asset={logo}
+                alt={METADATA_FALLBACK.TITLE}
+                mode="contain"
+                maxWidth={200}
+                className="h-1.25"
+              />
+            </InternalLink>
+          </Box>
+          <Dialog.Close className="flex flex-nowrap items-center">
+            <Type as="span" className="text-sm font-medium">
+              Close
+            </Type>
+          </Dialog.Close>
+        </Box>
+
+        <Box as="nav" className="mx-auto mt-2 max-w-xl">
+          <Box as="ul">
+            {primaryNavigation?.map((nav) => (
+              <Type as="li" key={nav?._key} className="text-4xl font-bold">
+                <SuperLink
+                  link={nav}
+                  className="decoration-4 underline-offset-4 hover:underline"
+                >
                   {nav.title}
                 </SuperLink>
-              </li>
+              </Type>
             ))}
-          {navigationRight &&
-            navigationRight?.length > 0 &&
-            navigationRight.map((nav) => (
-              <li key={nav?._key} className="link">
-                <SuperLink className="" link={nav}>
+          </Box>
+          {secondaryNavigation && (
+            <hr className="mb-0.75 mt-0.75 block h-0.25 w-2 bg-black" />
+          )}
+          <Box as="ul">
+            {secondaryNavigation?.map((nav) => (
+              <Type as="li" key={nav?._key} className="text-4xl font-bold">
+                <SuperLink
+                  link={nav}
+                  className="decoration-4 underline-offset-4 hover:underline"
+                >
                   {nav.title}
                 </SuperLink>
-              </li>
+              </Type>
             ))}
-        </ul>
-      </nav>
-    </DialogContent>
-  </DialogPrimative.Root>
-);
+          </Box>
+        </Box>
+      </Dialog.Content>
+    </Dialog.Root>
+  );
+};

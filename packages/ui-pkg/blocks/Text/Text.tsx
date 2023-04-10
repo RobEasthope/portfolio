@@ -1,10 +1,13 @@
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
-import { Text as rawTextProps } from "ui-pkg/types/sanity-schema";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { BasicText } from "ui-pkg/base/formatted-text/BasicText/BasicText";
+import { Box } from "ui-pkg/base/Box/Box";
+import { Prose } from "ui-pkg/base/Prose/Prose";
+import { ArticleTextComponents } from "ui-pkg/base/Prose/components/ArticleText/ArticleText";
+import { FullTextProps } from "ui-pkg/base/Prose/components/FullText/FullText";
 
 // TYPES
-export type TextProps = rawTextProps;
+export type TextProps = {
+  _type: "Text";
+  text?: FullTextProps;
+};
 
 export const Text = ({ text }: TextProps) => {
   if (!text) {
@@ -12,9 +15,14 @@ export const Text = ({ text }: TextProps) => {
   }
 
   return (
-    <PaddedComponent as="section">
-      <MaxWidth width="page">{text && <BasicText blocks={text as unknown} />}</MaxWidth>
-    </PaddedComponent>
+    <Box as="section" className="px-1 py-1">
+      <Prose
+        as="div"
+        content={text}
+        components={ArticleTextComponents}
+        className="mx-auto font-serif text-md"
+      />
+    </Box>
   );
 };
 

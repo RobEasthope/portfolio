@@ -1,109 +1,107 @@
-import Link from "next/link";
-import Headroom from "react-headroom";
-import { Header as rawHeaderProps } from "ui-pkg/types/sanity-schema";
-import { styled } from "ui-pkg/styles/stitches.config";
-import { Picture } from "ui-pkg/base/media/Picture/Picture";
-import { SuperLink } from "ui-pkg/base/links/SuperLink/SuperLink";
+import { Box } from "ui-pkg/base/Box/Box";
+import { Type } from "ui-pkg/base/Type/Type";
 import { SmallNavigation } from "ui-pkg/navigation/SmallNavigation/SmallNavigation";
-import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/links/ExternalLink/ExternalLink";
-import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/links/InternalLink/InternalLink";
-import { METADATA } from "ui-pkg/constants/METADATA";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Box } from "ui-pkg/base/structure/Box/Box";
-import { Flex } from "ui-pkg/base/structure/Flex/Flex";
-import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
-import { Text } from "ui-pkg/base/typography/Text/Text";
+import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/ExternalLink/ExternalLink";
+import {
+  InternalLink,
+  InternalLinkWithTitleSchemaProps,
+} from "ui-pkg/base/InternalLink/InternalLink";
+import { SuperLink } from "ui-pkg/base/SuperLink/SuperLink";
+import Headroom from "react-headroom";
+import { METADATA_FALLBACK } from "ui-pkg/config/METADATA";
+import { SanityImageAsset, SanityImageCrop, SanityReference } from "sanity-codegen";
+import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
+import { EmailLinkWithTitleSchemaProps } from "ui-pkg/base/EmailLink/EmailLink";
+import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
 
-// Styles
-export const LargeNavigation = styled(Box, {
-  display: "flex",
-  gap: "$x1",
-  listStyle: "none",
-  width: "12em",
-  marginY: 0,
+// TYPES
+export type HeaderProps = {
+  _type?: "Header";
+  logo?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    attribution?: string;
+  };
+  primaryNavigation:
+    | [
+        | ExternalLinkWithTitleSchemaProps
+        | InternalLinkWithTitleSchemaProps
+        | EmailLinkWithTitleSchemaProps
+      ]
+    | null;
+  secondaryNavigation:
+    | [
+        | ExternalLinkWithTitleSchemaProps
+        | InternalLinkWithTitleSchemaProps
+        | EmailLinkWithTitleSchemaProps
+      ]
+    | null;
+};
 
-  "& li": {
-    display: "inline-block",
-  },
-});
+// MARKUP
+export const Header = ({ logo, primaryNavigation, secondaryNavigation }: HeaderProps) => {
+  if (!logo && !primaryNavigation) {
+    return null;
+  }
 
-export const LeftNavigation = styled(LargeNavigation, {});
-
-export const RightNavigation = styled(LargeNavigation, {
-  justifyContent: "flex-end",
-});
-
-// Types
-export interface HeaderProps extends rawHeaderProps {
-  navigationLeft?: [ExternalLinkWithTitleSchemaProps, InternalLinkWithTitleSchemaProps];
-  navigationRight?: [ExternalLinkWithTitleSchemaProps, InternalLinkWithTitleSchemaProps];
-}
-
-// Markup
-export const Header = ({
-  logo,
-  navigationLeft,
-  navigationRight,
-}: Pick<HeaderProps, "logo" | "navigationLeft" | "navigationRight">) => (
-  <Headroom>
-    <PaddedComponent
-      as="header"
-      content="nav"
-      css={{ backgroundColor: "white", zIndex: 1 }}
-    >
-      <Flex
-        as="nav"
-        align="center"
-        justify="center"
-        css={{ flex: "0 1 auto", height: "$x3" }}
-      >
-        <Box>
-          <LeftNavigation as="ul">
-            {navigationLeft &&
-              navigationLeft?.length > 0 &&
-              navigationLeft.map((nav) => (
-                <Text as="li" key={nav?._key}>
-                  <SuperLink link={nav}>{nav.title}</SuperLink>
-                </Text>
-              ))}
-          </LeftNavigation>
-        </Box>
-
-        <Spacer />
-
+  return (
+    <Headroom>
+      <Box as="header" className="bg-white px-1 py-0.5">
         <Box
-          css={{
-            display: "inline-block",
-            size: { selector: "minXySize", min: 32, max: 40 },
-          }}
+          as="nav"
+          className="mx-auto flex w-full flex-row-reverse flex-wrap items-center justify-between leading-4 md:flex-row"
         >
-          <Link href="/">
-            <a>
-              <Picture
+          <Box as="ul" className="hidden flex-row gap-1 md:flex">
+            {primaryNavigation?.map((nav) => (
+              <Type as="li" key={nav?._key} className="text-sm font-medium">
+                <SuperLink
+                  link={nav}
+                  className="decoration-2 underline-offset-2 hover:underline"
+                >
+                  {nav.title}
+                </SuperLink>
+              </Type>
+            ))}
+          </Box>
+
+          <Box
+            as="div"
+            className="absolute left-1/2 flex flex-1 -translate-x-1/2 items-center justify-center"
+          >
+            <InternalLink href={HOME_PAGE_SLUG}>
+              <Box as="span" className="sr-only">
+                {METADATA_FALLBACK.TITLE}
+              </Box>
+              <SanityImage
                 asset={logo}
-                alt={METADATA?.TITLE || ""}
-                mode="responsive"
-                aspectRatio={1}
-                maxWidth={40}
+                alt={METADATA_FALLBACK.TITLE}
+                mode="contain"
+                maxWidth={200}
+                className="h-1.25"
               />
-            </a>
-          </Link>
-        </Box>
+            </InternalLink>
+          </Box>
 
-        <Spacer />
-
-        <Box>
-          <RightNavigation as="ul">
-            {navigationRight &&
-              navigationRight?.length > 0 &&
-              navigationRight.map((nav) => (
-                <Text as="li" key={nav?._key}>
-                  <SuperLink link={nav}>{nav.title}</SuperLink>
-                </Text>
-              ))}
-          </RightNavigation>
+          <Box as="ul" className="hidden flex-row gap-1  md:flex">
+            {secondaryNavigation?.map((nav) => (
+              <Type as="li" key={nav?._key} className="text-sm font-medium">
+                <SuperLink
+                  link={nav}
+                  className="decoration-2 underline-offset-2 hover:underline"
+                >
+                  {nav.title}
+                </SuperLink>
+              </Type>
+            ))}
+          </Box>
+          <SmallNavigation
+            logo={logo}
+            primaryNavigation={primaryNavigation}
+            secondaryNavigation={secondaryNavigation}
+          />
         </Box>
-      </Flex>
-    </PaddedComponent>
-  </Headroom>
-);
+      </Box>
+    </Headroom>
+  );
+};

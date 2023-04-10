@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 import { RiImage2Line } from "react-icons/ri";
 import { SelectionProps } from "sanity-app/types/Selection";
-import { ASPECT_RATIOS } from "../../constants/ASPECT_RATIOS";
-import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
+import { ASPECT_RATIOS } from "ui-pkg/config/ASPECT_RATIOS";
+import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
 
 export default defineType({
   type: "object",
@@ -45,7 +45,7 @@ export default defineType({
       name: "maxWidth",
       title: "Max width",
       type: "string",
-      description: "Defaults to large",
+      description: "Defaults to medium",
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
@@ -53,7 +53,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "caption",
+      title: "image.caption",
       media: "image",
     },
     prepare(selection: SelectionProps) {

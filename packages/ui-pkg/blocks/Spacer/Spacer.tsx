@@ -1,31 +1,43 @@
-import { Spacer as rawSpacerProps } from "ui-pkg/types/sanity-schema";
-import { SPACING } from "ui-pkg/constants/SPACING";
-import { styled } from "ui-pkg/styles/stitches.config";
-import { Box } from "ui-pkg/base/structure/Box/Box";
-
-// STYLES
-const StyledSpacer = styled(Box, {
-  width: "100%",
-
-  variants: {
-    height: {
-      quarter: { height: `calc(${SPACING.VR_BASE} / 4)` },
-      third: { height: `calc(${SPACING.VR_BASE} / 3)` },
-      twoThirds: { height: `calc(${SPACING.VR_BASE} * 0.666)` },
-      half: { height: `calc(${SPACING.VR_BASE} / 2)` },
-      x1: { height: SPACING.VR_BASE },
-      x2: { height: `calc(${SPACING.VR_BASE} * 2)` },
-      x3: { height: `calc(${SPACING.VR_BASE} * 3)` },
-      x4: { height: `calc(${SPACING.VR_BASE} * 4)` },
-      x5: { height: `calc(${SPACING.VR_BASE} * 5)` },
-    },
-  },
-});
-
 // TYPES
-export type SpacerProps = Pick<rawSpacerProps, "height">;
+export type SpacerProps = {
+  _type?: "Spacer";
+  height:
+    | "1"
+    | "2"
+    | "3"
+    | "4"
+    | "5"
+    | "6"
+    | "7"
+    | "8"
+    | "9"
+    | "10"
+    | "11"
+    | "12"
+    | "14"
+    | "16"
+    | "20"
+    | "24"
+    | "28"
+    | "32"
+    | "36"
+    | "40"
+    | "44"
+    | "48"
+    | "52"
+    | "56"
+    | "60"
+    | "64";
+  className?: string;
+};
 
 // MARKUP
-export const Spacer = ({ height }: SpacerProps) => <StyledSpacer height={height} />;
+export const Spacer = ({ height, className }: SpacerProps) => {
+  if (!height) {
+    return null;
+  }
+
+  return <div className={`w-full ${height || "h-1"} ${className || ""}`} />;
+};
 
 export default Spacer;

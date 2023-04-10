@@ -1,33 +1,51 @@
-import { Image as rawImageProps } from "ui-pkg/types/sanity-schema";
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Picture } from "ui-pkg/base/media/Picture/Picture";
-import { Caption } from "ui-pkg/base/typography/Caption/Caption";
-import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
+import { Box } from "ui-pkg/base/Box/Box";
+import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
+import { Type } from "ui-pkg/base/Type/Type";
+import {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityReference,
+} from "sanity-codegen";
 
 // TYPES
-export type ImageProps = rawImageProps;
+export type ImageProps = {
+  _type: "Image";
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+    caption?: string;
+    attribution?: string;
+  };
+  aspectRatio?: number;
+  maxWidth: "small" | "text" | "medium" | "large" | "full";
+};
 
 // MARKUP
-export const Image = ({ image, maxWidth }: ImageProps) => {
+export const Image = ({ image, maxWidth = "medium", aspectRatio }: ImageProps) => {
   if (!image) {
     return null;
   }
 
   return (
-    <PaddedComponent as="section" content="media">
-      <Breakout>
-        <MaxWidth as="figure" width={maxWidth}>
-          <Picture
-            asset={image}
-            alt={image?.caption || ""}
-            mode="responsive"
-            maxWidth={4000}
-          />
-          {image?.caption && <Caption as="figcaption">{image?.caption}</Caption>}
-        </MaxWidth>
-      </Breakout>
-    </PaddedComponent>
+    <Box as="section" breakout>
+      <Box as="figure" className="mx-auto" maxWidth={maxWidth}>
+        <SanityImage
+          asset={image}
+          alt={image?.caption || ""}
+          aspectRatio={aspectRatio}
+          mode="responsive"
+          maxWidth={4000}
+        />
+        <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
+          <Type as="figcaption" className="text-sm italic text-gray-600 ">
+            {image?.caption}
+          </Type>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

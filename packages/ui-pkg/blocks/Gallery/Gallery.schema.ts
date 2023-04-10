@@ -1,8 +1,9 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 import { RiGalleryLine } from "react-icons/ri";
 import { SelectionProps } from "sanity-app/types/Selection";
-import { ASPECT_RATIOS } from "../../constants/ASPECT_RATIOS";
-import { MAX_CONTENT_OPTIONS } from "../../constants/MAX_CONTENT_OPTIONS";
+import { ASPECT_RATIOS } from "ui-pkg/config/ASPECT_RATIOS";
+import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
+import { COLUMN_OPTIONS } from "ui-pkg/config/COLUMN_OPTIONS";
 
 export default defineType({
   type: "object",
@@ -14,14 +15,9 @@ export default defineType({
       name: "images",
       title: "Images",
       type: "array",
-      of: [{ type: "GalleryImage" }],
+      of: [defineArrayMember({ type: "GalleryImage" })],
       validation: (Rule) =>
         Rule.required().warning("Gallery: No images have been added to the gallery"),
-    }),
-    defineField({
-      name: "galleryCaption",
-      title: "Gallery caption",
-      type: "text",
     }),
     defineField({
       name: "columns",
@@ -29,12 +25,7 @@ export default defineType({
       type: "string",
       description: "Number of columns at full size",
       options: {
-        list: [
-          { title: "One", value: "1" },
-          { title: "Two", value: "2" },
-          { title: "Three", value: "3" },
-          { title: "Four", value: "4" },
-        ],
+        list: COLUMN_OPTIONS,
         layout: "radio",
       },
       validation: (Rule) =>
@@ -49,22 +40,32 @@ export default defineType({
         layout: "radio",
       },
       validation: (Rule) =>
-        Rule.required().error("Gallery: Please select an aspect ratio"),
+        Rule.required().warning("Gallery: Please select an aspect ratio"),
     }),
     defineField({
       name: "maxWidth",
       title: "Max width",
       type: "string",
+      description: "Defaults to large",
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
-      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "galleryCaption",
+      title: "Gallery caption",
+      type: "text",
     }),
   ],
   preview: {
-    prepare() {
+    select: {
+      title: "heading",
+    },
+    prepare(selection: SelectionProps) {
+      const { title } = selection;
       return {
-        title: "Gallery",
+        title: title || "Gallery",
+        subtitle: title ? "Gallery" : "",
       };
     },
   },
