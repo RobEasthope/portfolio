@@ -31,7 +31,6 @@
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "prettier": "^2.5.1",
-    "sanity-codegen": "^0.9.8",
     "turbo": "^1.1.10",
     "typescript": "^4.5.4"
   },
