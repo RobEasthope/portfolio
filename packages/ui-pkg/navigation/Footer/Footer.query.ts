@@ -1,5 +1,4 @@
 import groq from "groq";
-import { SOCIAL_MEDIA_QUERY } from "ui-pkg/navigation/Footer/components/SocialMedia/SocialMedia.query";
 
 export const FOOTER_QUERY = groq`
   *[_type== 'Footer' && !(_id in path("drafts.**"))][0]{
@@ -10,9 +9,6 @@ export const FOOTER_QUERY = groq`
       url,
       "to": internalUID->{slug},
     },
-    "socialMedia": ${SOCIAL_MEDIA_QUERY},
-    bhpaLogo,
-    bhpaWebsiteUrl,
     copyrightText,
   }
 `;
