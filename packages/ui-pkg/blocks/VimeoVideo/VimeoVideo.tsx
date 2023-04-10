@@ -1,12 +1,14 @@
 import Vimeo from "@u-wave/react-vimeo";
-import { VimeoVideo as rawVimeoVideoProps } from "ui-pkg/types/sanity-schema";
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Caption } from "ui-pkg/base/typography/Caption/Caption";
-import { Breakout } from "ui-pkg/base/structure/Breakout/Breakout";
+import { Box } from "ui-pkg/base/Box/Box";
+import { Type } from "ui-pkg/base/Type/Type";
 
 // TYPES
-export type VimeoVideoProps = rawVimeoVideoProps;
+export type VimeoVideoProps = {
+  _type: "VimeoVideo";
+  url?: string;
+  caption?: string;
+  maxWidth: "small" | "text" | "medium" | "large" | "full";
+};
 
 // MARKUP
 export const VimeoVideo = ({ url, caption, maxWidth = "medium" }: VimeoVideoProps) => {
@@ -15,14 +17,16 @@ export const VimeoVideo = ({ url, caption, maxWidth = "medium" }: VimeoVideoProp
   }
 
   return (
-    <PaddedComponent as="section" content="media">
-      <Breakout>
-        <MaxWidth width={maxWidth}>
-          <Vimeo video={url} responsive />
-          {caption && <Caption as="figcaption">{caption}</Caption>}
-        </MaxWidth>
-      </Breakout>
-    </PaddedComponent>
+    <Box as="section" breakout>
+      <Box as="div" className="mx-auto" maxWidth={maxWidth}>
+        <Vimeo video={url} responsive />
+        <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
+          <Type as="figcaption" className="text-sm italic text-gray-600 ">
+            {caption}
+          </Type>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
