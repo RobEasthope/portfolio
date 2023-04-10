@@ -1,8 +1,10 @@
 // Links
-import InternalLink from "ui-pkg/base/InternalLink/InternalLink.schema";
-import InternalLinkWithTitle from "ui-pkg/base/InternalLink/InternalLinkWithTitle.schema";
+import EmailLink from "ui-pkg/base/EmailLink/EmailLink.schema";
+import EmailLinkWithTitle from "ui-pkg/base/EmailLink/EmailLinkWithTitle.schema";
 import ExternalLink from "ui-pkg/base/ExternalLink/ExternalLink.schema";
 import ExternalLinkWithTitle from "ui-pkg/base/ExternalLink/ExternalLinkWithTitle.schema";
+import InternalLink from "ui-pkg/base/InternalLink/InternalLink.schema";
+import InternalLinkWithTitle from "ui-pkg/base/InternalLink/InternalLinkWithTitle.schema";
 
 // Navigation
 import Header from "ui-pkg/navigation/Header/Header.schema";
@@ -50,10 +52,12 @@ export const schemaTypes = [
   altImage,
 
   // Links
-  InternalLink,
-  InternalLinkWithTitle,
+  EmailLink,
+  EmailLinkWithTitle,
   ExternalLink,
   ExternalLinkWithTitle,
+  InternalLink,
+  InternalLinkWithTitle,
 
   // Navigation
   Header,
