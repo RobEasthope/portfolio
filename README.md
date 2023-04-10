@@ -36,7 +36,6 @@ Each app can also be run individually:
 The following paths are used be default for the local development:
 
 - Next: `http://localhost:3000/`
-- Storybook: `http://localhost:6006/`
 - Sanity: `http://localhost:3333/`
 
 By design browser tabs will not open automatically as is the default with Storybook.
@@ -45,8 +44,8 @@ By design browser tabs will not open automatically as is the default with Storyb
 
 ### Build commands for Vercel
 
-- Next (next-app): `cd ../.. && yarn types && npx turbo run build --scope=next-app --include-dependencies --no-deps`
-- Sanity (sanity-app): `cd ../.. && yarn types && npx turbo run build --scope=sanity-app --include-dependencies --no-deps`
+- Next (next-app): `cd ../.. && npx turbo run build --scope=next-app --include-dependencies --no-deps`
+- Sanity (sanity-app): `cd ../.. && npx turbo run build --scope=sanity-app --include-dependencies --no-deps`
 
 ### Vercel ignore build deployment rules
 
