@@ -1,32 +1,73 @@
-import { groq } from "next-sanity";
+import groq from "groq";
+import { SANITY_BLOCK_QUERIES } from "ui-pkg/base/SanityBlocks/SANITY_BLOCK_QUERIES";
+import { SanityPageByIdQueryProps } from "ui-pkg/types/SanityPageByIdQueryProps";
+import { HEADER_QUERY } from "ui-pkg/navigation/Header/Header.query";
+import { FOOTER_QUERY } from "ui-pkg/navigation/Footer/Footer.query";
+import { METADATA_SETTINGS_QUERY } from "ui-pkg/settings/MetadataSettings.query";
 
-export const pageBySlugQuery = groq`
-  *[_type in ["Page"] && slug.current == $slug]{
-    ...,
-    "projects": *[_type == "project" && !(_id in path('drafts.**'))]  | order(startDate desc){
+// Fetch all page slugs
+export const PAGE_SLUGS_QUERY = groq`
+  *[_type == "Page" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+`;
+
+// Fetch page id and components types by slug
+export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
+  *[_type in ["Page"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
+    "id": _id,
+    "componentTypes": array::unique(sections[]._type),
+  }
+`;
+
+// Fetch components types by id
+export const PAGE_COMPONENT_TYPES_BY_ID_QUERY = groq`
+  *[_type in ["Page"] && _id == $id][0]{
+    "componentTypes": array::unique(sections[]._type),
+  }
+`;
+
+// Fetch page data by id
+export const PAGE_BY_ID_QUERY = ({
+  id,
+  componentTypes = [],
+}: SanityPageByIdQueryProps) => {
+  const hydratedSanityBlockQueries: Record<string, unknown> = SANITY_BLOCK_QUERIES({
+    courseId: null,
+  });
+
+  return groq`{
+    "page": *[_id == "${id}"][0]{
+      _id,
       title,
       slug,
-      thumbnailImage
+      metadataDescription,
+      metadataImage,
+      "sections": sections[_type in [${componentTypes?.map(
+        (type: string) => `"${type}"`
+      )}]]{
+        ${componentTypes
+          .map(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            (type: string) => `_type == "${type}" => ${hydratedSanityBlockQueries[type]}`
+          )
+          .join(",")}
+      }
     },
-    "blocks": rawSections[]{
-      ...,
-      "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
-      "bkg": rawBkg->,
+    "header": ${HEADER_QUERY},
+    "footer": ${FOOTER_QUERY},
+    "error404": *[_type == "Error404" && !(_id in path("drafts.**"))][0]{
+      _type,
+      logo,
+      heading,
+      subheading,
       "cards": rawCards[]{
-        ...,
-        "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
-        "bkg": rawBkg->,
+        heading,
+        description,
+        "link": {
+          "to": internalUID->{slug}
+        }
       },
-      "muxVideo": rawMuxVideo.asset->,
-    }
-  }
-`;
-
-// All page slugs
-export const pageSlugsQuery = groq`
-  *[_type == "Page" && defined(slug.current)]{
-    slug {
-      current
+      goBackTitle,
     },
-  }
-`;
+    "fallbacks": ${METADATA_SETTINGS_QUERY},
+  }`;
+};
