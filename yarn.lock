@@ -4253,11 +4253,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stitches/react@^1.2.8":
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.8.tgz#954f8008be8d9c65c4e58efa0937f32388ce3a38"
-  integrity sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==
-
 "@swc/helpers@0.4.14":
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.14.tgz#1352ac6d95e3617ccb7c1498ff019654f1e12a74"
@@ -12903,11 +12898,6 @@ start-server-and-test@^1.13.1:
     lazy-ass "1.6.0"
     ps-tree "1.2.0"
     wait-on "6.0.0"
-
-stitches-mixins@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stitches-mixins/-/stitches-mixins-1.0.0.tgz#4112eb7af0a1f8216da116881dffd31bb4c4e5be"
-  integrity sha512-h9sHAAZL3M+CrMeBm6C1u9ncvqtnV/+U0uNTYieYediGC1z9CiutbuFMsnzhXOTCQ0ygv1cscneR5na8sdmGvA==
 
 stop-iteration-iterator@^1.0.0:
   version "1.0.0"
