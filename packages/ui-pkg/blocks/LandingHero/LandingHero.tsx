@@ -2,7 +2,7 @@ import { LandingHero as rawLandingHeroProps } from "ui-pkg/types/sanity-schema";
 import SanityMuxPlayer from "sanity-mux-player";
 import { Picture } from "ui-pkg/base/media/Picture/Picture";
 import { styled } from "ui-pkg/styles/stitches.config";
-import { SPACING } from "ui-pkg/constants/SPACING";
+import { SPACING } from "ui-pkg/config/SPACING";
 
 // STYLES
 const heroHeight = `calc(100vh - ${SPACING.x5})`;

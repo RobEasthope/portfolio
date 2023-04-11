@@ -1,4 +1,4 @@
-import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
+import { MAX_WIDTH } from "ui-pkg/config/MAX_WIDTHS";
 import { FullTypeProps } from "ui-pkg/types/utils";
 
 export const fullType = ({
