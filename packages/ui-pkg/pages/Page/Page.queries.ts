@@ -7,12 +7,12 @@ import { METADATA_SETTINGS_QUERY } from "ui-pkg/settings/MetadataSettings.query"
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`
-  *[_type == "Page" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+  *[_type == "page" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
 `;
 
 // Fetch page id and components types by slug
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
-  *[_type in ["Page"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
+  *[_type in ["page"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
     "id": _id,
     "componentTypes": array::unique(sections[]._type),
   }
@@ -20,7 +20,7 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
 
 // Fetch components types by id
 export const PAGE_COMPONENT_TYPES_BY_ID_QUERY = groq`
-  *[_type in ["Page"] && _id == $id][0]{
+  *[_type in ["page"] && _id == $id][0]{
     "componentTypes": array::unique(sections[]._type),
   }
 `;
