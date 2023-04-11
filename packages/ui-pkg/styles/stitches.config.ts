@@ -5,8 +5,6 @@ import { SizeProps, TypeProps, FullTypeProps } from "ui-pkg/types/utils";
 import { type } from "ui-pkg/styles/utils/type";
 import { fullType } from "ui-pkg/styles/utils/fullType";
 import { size } from "ui-pkg/styles/utils/size";
-import { MAX_WIDTH } from "ui-pkg/config/MAX_WIDTHS";
-import { SPACING } from "ui-pkg/config/SPACING";
 import { RADII } from "ui-pkg/styles/constants/RADII";
 
 export const { css, styled, globalCss, getCssText } = createStitches({
@@ -35,12 +33,6 @@ export const { css, styled, globalCss, getCssText } = createStitches({
       purple400: "hsl(252,75%,84%)",
       purple500: "hsl(252,78%,60%)",
       purple600: "hsl(252,80%,53%)",
-    },
-    space: {
-      ...SPACING,
-    },
-    sizes: {
-      ...SPACING,
     },
     fontSizes: {},
     fonts: {

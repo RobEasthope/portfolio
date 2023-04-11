@@ -1,7 +1,6 @@
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ReactNode } from "react";
-import { globalStyles } from "ui-pkg/styles/globalStyles";
 
 // Sanitize CSS
 import "sanitize.css";
@@ -17,7 +16,6 @@ function MyApp({ Component, pageProps }: AppProps): ReactNode {
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/jpv8zzo.css" />
       </Head>
-      {globalStyles()}
       <Component {...pageProps} />
     </>
   );
