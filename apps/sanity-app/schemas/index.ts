@@ -11,8 +11,9 @@ import Header from "ui-pkg/navigation/Header/Header.schema";
 import Footer from "ui-pkg/navigation/Footer/Footer.schema";
 
 // Formatted text
-import ProjectText from "ui-pkg/base/Prose/components/ProjectText/ProjectText.schema";
 import BasicText from "ui-pkg/base/Prose/components/BasicText/BasicText.schema";
+import FullText from "ui-pkg/base/Prose/components/FullText/FullText.schema";
+import ProjectText from "ui-pkg/base/Prose/components/ProjectText/ProjectText.schema";
 
 // Settings
 import details from "ui-pkg/settings/Details.schema";
@@ -65,8 +66,9 @@ export const schemaTypes = [
   Footer,
 
   // Formatted text
-  ProjectText,
   BasicText,
+  FullText,
+  ProjectText,
 
   // Settings
   details,
