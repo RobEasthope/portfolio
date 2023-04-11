@@ -1,5 +1,1 @@
-export const ALL_PAGE_TYPES = [
-  { type: "Page" },
-  { type: "Course" },
-  { type: "BlogPost" },
-];
+export const ALL_PAGE_TYPES = [{ type: "Page" }, { type: "Project" }];
