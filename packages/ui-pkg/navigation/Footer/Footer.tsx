@@ -14,26 +14,12 @@ export type FooterProps = {
   footerNavigation:
     | [ExternalLinkWithTitleSchemaProps | InternalLinkWithTitleSchemaProps]
     | undefined;
-  bhpaLogo:
-    | {
-        _type: "image";
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        attribution?: string;
-      }
-    | undefined;
-  bhpaWebsiteUrl: string | undefined;
   copyrightText: string | undefined;
 };
 
 // MARKUP
-export const Footer = ({
-  footerNavigation,
-  bhpaLogo,
-  bhpaWebsiteUrl,
-  copyrightText,
-}: FooterProps) => {
-  if (!footerNavigation && !socialMedia) {
+export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
+  if (!footerNavigation) {
     return null;
   }
   const timeStamp = new Date();
@@ -41,15 +27,6 @@ export const Footer = ({
   return (
     <Box as="footer">
       <Box as="div" className="mx-auto flex flex-col gap-1 px-1 py-3">
-        <ExternalLink href={bhpaWebsiteUrl || null} className="mx-auto">
-          <SanityImage
-            asset={bhpaLogo}
-            alt="BHPA Logo"
-            mode="contain"
-            maxWidth={500}
-            className="h-4"
-          />
-        </ExternalLink>
         <Box as="nav" className="flex flex-wrap justify-center" aria-label="Footer">
           <Box as="ul" className="flex gap-1">
             {footerNavigation?.map((nav, i) => (
