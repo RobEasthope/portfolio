@@ -2,7 +2,7 @@ import Custom404 from "pages/404";
 
 import { Page, PageProps } from "ui-pkg/pages/Page/Page";
 import { appGlobalsQuery } from "ui-pkg/settings/app-globals.queries";
-import { getClient, overlayDrafts } from "apis-pkg/sanity-api/sanity.server";
+import { getClient, overlayDrafts } from "apis-pkg/sanity/sanity.server";
 import { AppGlobalsProps } from "ui-pkg/settings/Globals";
 import { previewAnyPageByIdQuery } from "ui-pkg/pages/Preview/Preview.queries";
 

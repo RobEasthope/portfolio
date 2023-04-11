@@ -1,11 +1,7 @@
 import { useRouter } from "next/router";
 
 import { Project, ProjectProps } from "ui-pkg/pages/Project/Project";
-import {
-  getClient,
-  overlayDrafts,
-  sanityClient,
-} from "apis-pkg/sanity-api/sanity.server";
+import { getClient, overlayDrafts, sanityClient } from "apis-pkg/sanity/sanity.server";
 import { appGlobalsQuery } from "ui-pkg/settings/app-globals.queries";
 import { AppGlobalsProps, SettingsProps } from "ui-pkg/settings/Globals";
 import { HeaderProps } from "ui-pkg/navigation/Header/Header";
