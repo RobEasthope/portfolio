@@ -21,7 +21,7 @@ export const Project = ({
   page,
   globals,
 }: {
-  project: ProjectProps;
+  page: ProjectProps;
   globals: AppGlobalsProps;
 }) => (
   <BasicLayout header={globals?.header} footer={globals?.footer}>
