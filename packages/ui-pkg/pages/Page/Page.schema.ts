@@ -28,7 +28,6 @@ export default defineType({
       title: "Page blocks",
       type: "array",
       of: [
-        { type: "ExampleSection" },
         { type: "Gallery" },
         { type: "Image" },
         { type: "LandingHero" },
@@ -76,15 +75,13 @@ export default defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "slug",
-      media: "metadataImage",
+      subtitle: "slug.current",
     },
-    prepare(selection: { title: string; subtitle: { current: string }; media: string }) {
-      const { title, subtitle, media } = selection;
+    prepare({ title, subtitle }: SelectionProps) {
       return {
         title: title || "Page",
-        subtitle: subtitle.current || "",
-        media,
+        subtitle: subtitle === "home" ? "Home page" : "Page",
+        // subtitle: title ? "Page" : null,
       };
     },
   },

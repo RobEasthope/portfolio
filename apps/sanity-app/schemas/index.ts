@@ -11,8 +11,9 @@ import Header from "ui-pkg/navigation/Header/Header.schema";
 import Footer from "ui-pkg/navigation/Footer/Footer.schema";
 
 // Formatted text
-import ProjectText from "ui-pkg/base/Prose/components/ProjectText/ProjectText.schema";
 import BasicText from "ui-pkg/base/Prose/components/BasicText/BasicText.schema";
+import FullText from "ui-pkg/base/Prose/components/FullText/FullText.schema";
+import ProjectText from "ui-pkg/base/Prose/components/ProjectText/ProjectText.schema";
 
 // Settings
 import details from "ui-pkg/settings/Details.schema";
@@ -27,7 +28,6 @@ import organisation from "ui-pkg/blocks/Organisation/Organisation.schema";
 import education from "ui-pkg/blocks/Education/Education.schema";
 
 // Content UI
-import ExampleSection from "ui-pkg/blocks/ExampleSection/ExampleSection.schema";
 import GalleryImage from "ui-pkg/blocks/Gallery/components/GalleryImage/GalleryImage.schema";
 import Gallery from "ui-pkg/blocks/Gallery/Gallery.schema";
 import Image from "ui-pkg/blocks/Image/Image.schema";
@@ -46,10 +46,12 @@ import page from "ui-pkg/pages/Page/Page.schema";
 
 // Legacy schema types
 import altImage from "./altImage.schema";
+import blockContentSchema from "./blockContent.schema";
 
 export const schemaTypes = [
   // Legacy schema types
   altImage,
+  blockContentSchema,
 
   // Links
   EmailLink,
@@ -64,8 +66,9 @@ export const schemaTypes = [
   Footer,
 
   // Formatted text
-  ProjectText,
   BasicText,
+  FullText,
+  ProjectText,
 
   // Settings
   details,
@@ -79,7 +82,6 @@ export const schemaTypes = [
   education,
 
   // Content UI
-  ExampleSection,
   GalleryImage,
   Gallery,
   Image,

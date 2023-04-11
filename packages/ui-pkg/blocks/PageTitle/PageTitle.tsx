@@ -1,19 +1,6 @@
-import { MaxWidth } from "ui-pkg/base/structure/MaxWidth/MaxWidth";
 import { PageTitle as rawPageTitleProps } from "ui-pkg/types/sanity-schema";
-import { PaddedComponent } from "ui-pkg/base/structure/PaddedComponent/PaddedComponent";
-import { Text } from "ui-pkg/base/typography/Text/Text";
-import { TextAlign } from "ui-pkg/base/structure/TextAlign/TextAlign";
-import { styled } from "ui-pkg/styles/stitches.config";
-import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
-
-// STYLES
-export const Break = styled("span", {
-  display: "block",
-  width: "$x2",
-  height: "2px",
-  marginX: "auto",
-  backgroundColor: "$darkSaffron",
-});
+import { Box } from "ui-pkg/base/Box/Box";
+import { Type } from "ui-pkg/base/Type/Type";
 
 // TYPES
 export interface PageTitleProps extends rawPageTitleProps {
@@ -26,17 +13,15 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
   }
 
   return (
-    <PaddedComponent as="section" content="text">
-      <MaxWidth width="page">
-        <TextAlign align="centre">
-          <Text typeSize="medium">{heading}</Text>
+    <Box as="section" className="px-1">
+      <Box as="div">
+        <Box as="div" className="text-center">
+          <Type as="h1">{heading}</Type>
 
-          <Spacer height="x1" />
-          <Break />
-          <Spacer height="x2" />
-        </TextAlign>
-      </MaxWidth>
-    </PaddedComponent>
+          <span className="block w-2 h-[2px] bg-black mx-auto mt-1 mb-2" />
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

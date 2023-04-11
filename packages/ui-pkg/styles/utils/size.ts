@@ -1,4 +1,4 @@
-import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
+import { MAX_WIDTH } from "ui-pkg/config/MAX_WIDTHS";
 import { SizeProps, SizeReturnProps } from "ui-pkg/types/utils";
 
 export const size = ({ selector, min, max }: SizeProps): SizeReturnProps => {

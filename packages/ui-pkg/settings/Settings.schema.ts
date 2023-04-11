@@ -1,5 +1,5 @@
+import { ALL_PAGES_TYPES } from "ui-pkg/pages/ALL_PAGES_TYPES";
 import { defineField, defineType } from "sanity";
-import { ALL_PAGES_TYPES } from "../../utils/sanity/ALL_PAGE_TYPES";
 
 export default defineType({
   name: "Settings",

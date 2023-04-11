@@ -1,6 +1,6 @@
 import { globalCss } from "ui-pkg/styles/stitches.config";
 import { TYPE_SCALE } from "ui-pkg/styles/constants/TYPE_SCALE";
-import { MAX_WIDTH } from "ui-pkg/constants/MAX_WIDTHS";
+import { MAX_WIDTH } from "ui-pkg/config/MAX_WIDTHS";
 
 export const globalStyles = globalCss({
   html: {
