@@ -1,44 +1,51 @@
-import { LandingHero as rawLandingHeroProps } from "ui-pkg/types/sanity-schema";
+import { Box } from "ui-pkg/base/Box/Box";
+import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
 import SanityMuxPlayer from "sanity-mux-player";
-import { Picture } from "ui-pkg/base/media/Picture/Picture";
-import { styled } from "ui-pkg/styles/stitches.config";
-import { SPACING } from "ui-pkg/config/SPACING";
-
-// STYLES
-const heroHeight = `calc(100vh - ${SPACING.x5})`;
-
-export const Wrapper = styled("div", {
-  position: "relative",
-  maxHeight: "100vh",
-  backgroundColor: "white",
-});
-
-export const JumbotronBkgImage = styled(Picture, {
-  width: "100%",
-  height: heroHeight,
-});
-
-export const JumbotronBkgVideo = styled(SanityMuxPlayer, {
-  width: "100% !important",
-  height: heroHeight,
-
-  "& video": {
-    height: heroHeight,
-    objectFit: "cover",
-    objectPosition: "center center",
-  },
-});
+import { Type } from "ui-pkg/base/Type/Type";
+import { METADATA_FALLBACK } from "ui-pkg/config/METADATA";
+import {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityReference,
+} from "sanity-codegen";
+import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/ExternalLink/ExternalLink";
+import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/InternalLink/InternalLink";
 
 // TYPES
-export interface LandingHeroProps extends rawLandingHeroProps {
+export type LandingHeroProps = {
+  _type: "LandingHero";
+  headingforeground?: string;
+  heading?: string;
+  subHeading?: string;
+  headingbackground?: string;
+  bkgMode?: "image" | "video";
+  logo?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+    attribution?: string;
+  };
+  bkgImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+    attribution?: string;
+  };
+  caption?: string;
+  link: ExternalLinkWithTitleSchemaProps | InternalLinkWithTitleSchemaProps;
   muxVideo: unknown;
-}
+};
 
 // MARKUP
 export const LandingHero = ({
   heading,
+  logo,
   bkgMode,
   bkgImage,
+  caption,
   muxVideo,
 }: LandingHeroProps) => {
   if (!bkgImage && !muxVideo) {
@@ -46,26 +53,58 @@ export const LandingHero = ({
   }
 
   return (
-    <Wrapper as="section">
-      {bkgImage && bkgMode === "image" && (
-        <JumbotronBkgImage
-          alt={heading || ""}
-          asset={bkgImage}
-          mode="cover"
-          maxWidth={2560}
-        />
+    <Box
+      as="section"
+      className="flex max-h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))] flex-row"
+    >
+      {bkgMode === "image" && (
+        <Box as="div" className="w-screen">
+          <SanityImage
+            asset={bkgImage}
+            alt={caption || ""}
+            mode="cover"
+            maxWidth={2560}
+            className="w-screen"
+          />
+        </Box>
       )}
-      {muxVideo && bkgMode === "video" && (
-        <JumbotronBkgVideo
-          assetDocument={muxVideo}
-          autoload
-          autoplay
-          mute
-          loop
-          showControls={false}
-        />
+
+      {bkgMode === "video" && (
+        <Box as="div" className="w-screen">
+          <SanityMuxPlayer
+            assetDocument={muxVideo}
+            autoload
+            autoplay
+            mute
+            loop
+            showControls={false}
+            className="w-screen"
+          />
+        </Box>
       )}
-    </Wrapper>
+
+      <Box as="div" className="w-screen -translate-x-full">
+        <Box
+          as="div"
+          className="flex h-full w-screen flex-col items-center justify-center gap-1 text-white"
+        >
+          <Box as="div" className="mx-auto w-2/5 max-w-[1200px]">
+            <Box as="div" className="mx-auto flex min-w-[120px] justify-center">
+              <SanityImage
+                asset={logo}
+                alt={METADATA_FALLBACK.TITLE}
+                mode="responsive"
+                maxWidth={2000}
+              />
+            </Box>
+          </Box>
+
+          <Type as="h1" className="sr-only font-serif text-3xl uppercase">
+            {heading}
+          </Type>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

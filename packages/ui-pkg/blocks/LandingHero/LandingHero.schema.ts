@@ -9,13 +9,13 @@ export default defineType({
   icon: BiHeading,
   fields: [
     defineField({
-      name: "heading",
-      title: "Heading",
-      type: "string",
+      name: "logo",
+      title: "Logo",
+      type: "image",
     }),
     defineField({
-      name: "subheading",
-      title: "Subheading",
+      name: "heading",
+      title: "Heading",
       type: "string",
     }),
     defineField({
@@ -40,31 +40,34 @@ export default defineType({
         hotspot: true,
       },
       fields: [
-        {
+        defineField({
           name: "attribution",
           type: "string",
           title: "Attribution",
-        },
+        }),
       ],
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       hidden: ({ parent }) => parent?.bkgMode !== "image",
     }),
     defineField({
       name: "rawMuxVideo",
       title: "Background video",
       type: "mux.video",
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       hidden: ({ parent }) => parent?.bkgMode !== "video",
     }),
     defineField({
       name: "caption",
       title: "Background caption",
       type: "text",
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       hidden: ({ parent }) => !parent?.bkgMode,
     }),
   ],
   preview: {
     select: {
       title: "heading",
-      media: "image",
+      media: "bkgImage",
     },
     prepare(selection: SelectionProps) {
       const { title, media } = selection;
