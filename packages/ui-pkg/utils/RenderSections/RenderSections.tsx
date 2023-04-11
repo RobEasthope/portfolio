@@ -10,13 +10,9 @@ import { SpacerProps } from "ui-pkg/blocks/Spacer/Spacer";
 import { TextProps } from "ui-pkg/blocks/Text/Text";
 import { VimeoVideoProps } from "ui-pkg/blocks/VimeoVideo/VimeoVideo";
 import { YoutubeVideoProps } from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo";
-import { ExampleSectionProps } from "ui-pkg/blocks/ExampleSection/ExampleSection";
 import { ProjectProps } from "ui-pkg/pages/Project/Project";
 
 // Dynamic component imports
-const ExampleSection = dynamic(
-  () => import("ui-pkg/blocks/ExampleSection/ExampleSection")
-);
 const Gallery = dynamic(() => import("ui-pkg/blocks/Gallery/Gallery"));
 const Image = dynamic(() => import("ui-pkg/blocks/Image/Image"));
 const LandingHero = dynamic(() => import("ui-pkg/blocks/LandingHero/LandingHero"));
@@ -45,13 +41,6 @@ export const RenderSections = ({ blocks, projects, pageTitle }: RenderSectionsPr
       const { _type } = block;
 
       switch (_type) {
-        case "ExampleSection":
-          return (
-            <ExampleSection
-              {...(block as ExampleSectionProps)}
-              key={`render-blocks-${block._key as string}`}
-            />
-          );
         case "Gallery":
           return (
             <Gallery

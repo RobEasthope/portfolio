@@ -27,7 +27,6 @@ import organisation from "ui-pkg/blocks/Organisation/Organisation.schema";
 import education from "ui-pkg/blocks/Education/Education.schema";
 
 // Content UI
-import ExampleSection from "ui-pkg/blocks/ExampleSection/ExampleSection.schema";
 import GalleryImage from "ui-pkg/blocks/Gallery/components/GalleryImage/GalleryImage.schema";
 import Gallery from "ui-pkg/blocks/Gallery/Gallery.schema";
 import Image from "ui-pkg/blocks/Image/Image.schema";
@@ -79,7 +78,6 @@ export const schemaTypes = [
   education,
 
   // Content UI
-  ExampleSection,
   GalleryImage,
   Gallery,
   Image,

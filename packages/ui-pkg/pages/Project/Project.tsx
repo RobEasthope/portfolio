@@ -10,7 +10,7 @@ import { Type } from "base/Type/Type";
 import { SanityImage } from "base/SanityImage/SanityImage";
 
 export interface ProjectProps extends rawProjectProps {
-  blocks: [ExampleSectionProps];
+  blocks: [];
   clientOrg: Organisation;
   agencyOrg: Organisation;
 }

@@ -28,7 +28,6 @@ export default defineType({
       title: "Page blocks",
       type: "array",
       of: [
-        { type: "ExampleSection" },
         { type: "Gallery" },
         { type: "Image" },
         { type: "LandingHero" },
