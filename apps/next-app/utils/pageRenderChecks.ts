@@ -1,17 +1,17 @@
+import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
 import { PageProps } from "ui-pkg/pages/Page/Page";
-import { AppGlobalsProps } from "ui-pkg/settings/Globals";
 
-export const pageRenderChecks = (props: {
-  data: {
-    page: PageProps;
-    globals: AppGlobalsProps;
-  };
+export type PageRenderChecksProps = {
+  page: PageProps["page"];
   currentRoute: string;
-}): boolean => {
-  const page = props?.data?.page;
-  const currentRoute: string = props?.currentRoute;
-  const pageSlug: string = props?.data?.page?.slug?.current;
-  const homePageSlug: string = props?.data?.globals?.settings.homePageSlug;
+};
+
+// Only use of this function with Page types. It's designed to check for the home page and render the correct page based on the url slug
+export const pageRenderChecks = ({
+  page,
+  currentRoute,
+}: PageRenderChecksProps): boolean => {
+  const slug: string = page?.slug?.current || "";
 
   // No page data at all
   if (page === null) {
@@ -19,12 +19,12 @@ export const pageRenderChecks = (props: {
   }
 
   // Don't render homepage if we're not at the root path
-  if (currentRoute !== "/" && pageSlug === homePageSlug) {
+  if (currentRoute !== "/" && slug === HOME_PAGE_SLUG) {
     return false;
   }
 
   // Render home page if the root path is active and valid home page slug is valid
-  if (currentRoute === "/" && pageSlug === homePageSlug) {
+  if (currentRoute === "/" && slug === HOME_PAGE_SLUG) {
     return true;
   }
 
