@@ -45,10 +45,12 @@ import page from "ui-pkg/pages/Page/Page.schema";
 
 // Legacy schema types
 import altImage from "./altImage.schema";
+import blockContentSchema from "./blockContent.schema";
 
 export const schemaTypes = [
   // Legacy schema types
   altImage,
+  blockContentSchema,
 
   // Links
   EmailLink,
