@@ -6,10 +6,6 @@ import {
   ExternalLinkWithTitleSchemaProps,
 } from "ui-pkg/base/ExternalLink/ExternalLink";
 import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/InternalLink/InternalLink";
-import {
-  SocialMedia,
-  SocialMediaProps,
-} from "ui-pkg/navigation/Footer/components/SocialMedia/SocialMedia";
 import { SanityImageAsset, SanityImageCrop, SanityReference } from "sanity-codegen";
 import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
 
@@ -28,7 +24,6 @@ export type FooterProps = {
     | undefined;
   bhpaWebsiteUrl: string | undefined;
   copyrightText: string | undefined;
-  socialMedia: SocialMediaProps | undefined;
 };
 
 // MARKUP
@@ -37,7 +32,6 @@ export const Footer = ({
   bhpaLogo,
   bhpaWebsiteUrl,
   copyrightText,
-  socialMedia,
 }: FooterProps) => {
   if (!footerNavigation && !socialMedia) {
     return null;
@@ -47,14 +41,6 @@ export const Footer = ({
   return (
     <Box as="footer">
       <Box as="div" className="mx-auto flex flex-col gap-1 px-1 py-3">
-        <SocialMedia
-          facebook={socialMedia?.facebook}
-          youtube={socialMedia?.youtube}
-          vimeo={socialMedia?.vimeo}
-          instagram={socialMedia?.instagram}
-          applePodcasts={socialMedia?.applePodcasts}
-        />
-
         <ExternalLink href={bhpaWebsiteUrl || null} className="mx-auto">
           <SanityImage
             asset={bhpaLogo}
