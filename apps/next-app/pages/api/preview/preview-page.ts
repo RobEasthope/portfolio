@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { previewAnyPageByIdQuery } from "ui-pkg/pages/Preview/Preview.queries";
-import { previewClient } from "apis-pkg/sanity-api/sanity.server";
+import { previewClient } from "apis-pkg/sanity/sanity.server";
 import { PageProps } from "ui-pkg/pages/Page/Page";
 
 export default async function (req: NextApiRequest, res: NextApiResponse): Promise<void> {

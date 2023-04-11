@@ -2,17 +2,13 @@ import { useRouter } from "next/router";
 
 import { Error404 } from "ui-pkg/pages/Error404/Error404";
 import { Page, PageProps } from "ui-pkg/pages/Page/Page";
-import {
-  getClient,
-  overlayDrafts,
-  sanityClient,
-} from "apis-pkg/sanity-api/sanity.server";
+import { getClient, overlayDrafts, sanityClient } from "apis-pkg/sanity/sanity.server";
 import { appGlobalsQuery } from "ui-pkg/settings/app-globals.queries";
 import { AppGlobalsProps, SettingsProps } from "ui-pkg/settings/Globals";
 import { HeaderProps } from "ui-pkg/navigation/Header/Header";
 import { GlobalMetadata } from "ui-pkg/types/sanity-schema";
 import { pageRenderChecks } from "utils/pageRenderChecks";
-import { createSlugFromQuery } from "apis-pkg/sanity-api/createSlugFromQuery";
+import { createSlugFromQuery } from "apis-pkg/sanity/createSlugFromQuery";
 import { pageBySlugQuery, pageSlugsQuery } from "ui-pkg/pages/Page/Page.queries";
 
 // TYPES
