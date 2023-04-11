@@ -13,6 +13,9 @@ import "sanitize.css/reduce-motion.css";
 // Tailwind CSS
 import "styles/tailwind-globals.css";
 
+// UI styles
+import "ui-pkg/styles/styles.css";
+
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
   return (
     <>
