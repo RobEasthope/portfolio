@@ -1,7 +1,9 @@
 import { Box } from "ui-pkg/base/Box/Box";
 import { Prose } from "ui-pkg/base/Prose/Prose";
-import { ArticleTextComponents } from "ui-pkg/base/Prose/components/ArticleText/ArticleText";
-import { FullTextProps } from "ui-pkg/base/Prose/components/FullText/FullText";
+import {
+  FullTextComponents,
+  FullTextProps,
+} from "ui-pkg/base/Prose/components/FullText/FullText";
 
 // TYPES
 export type TextProps = {
@@ -19,7 +21,7 @@ export const Text = ({ text }: TextProps) => {
       <Prose
         as="div"
         content={text}
-        components={ArticleTextComponents}
+        components={FullTextComponents}
         className="mx-auto font-serif text-md"
       />
     </Box>

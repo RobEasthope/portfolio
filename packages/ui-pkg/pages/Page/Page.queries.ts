@@ -14,14 +14,14 @@ export const PAGE_SLUGS_QUERY = groq`
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
   *[_type in ["Page"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
     "id": _id,
-    "componentTypes": array::unique(sections[]._type),
+    "componentTypes": array::unique(rawSections[]._type),
   }
 `;
 
 // Fetch components types by id
 export const PAGE_COMPONENT_TYPES_BY_ID_QUERY = groq`
   *[_type in ["Page"] && _id == $id][0]{
-    "componentTypes": array::unique(sections[]._type),
+    "componentTypes": array::unique(rawSections[]._type),
   }
 `;
 
@@ -41,7 +41,7 @@ export const PAGE_BY_ID_QUERY = ({
       slug,
       metadataDescription,
       metadataImage,
-      "sections": sections[_type in [${componentTypes?.map(
+      "sections": rawSections[_type in [${componentTypes?.map(
         (type: string) => `"${type}"`
       )}]]{
         ${componentTypes
