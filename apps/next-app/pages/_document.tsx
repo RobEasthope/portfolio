@@ -1,5 +1,4 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from "next/document";
-import { getCssText } from "ui-pkg/styles/stitches.config";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -35,12 +34,6 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-
-          <style
-            id="stitches"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
         </Head>
         <body>
           <Main />
