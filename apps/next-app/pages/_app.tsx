@@ -10,6 +10,9 @@ import "sanitize.css/forms.css";
 import "sanitize.css/system-ui.css";
 import "sanitize.css/reduce-motion.css";
 
+// Tailwind CSS
+import "styles/tailwind-globals.css";
+
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
   return (
     <>
