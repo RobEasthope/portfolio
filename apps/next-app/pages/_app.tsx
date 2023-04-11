@@ -1,4 +1,3 @@
-import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ReactNode } from "react";
 
@@ -9,14 +8,7 @@ import "styles/tailwind-globals.css";
 import "ui-pkg/styles/styles.css";
 
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
-  return (
-    <>
-      <Head>
-        <link rel="stylesheet" href="https://use.typekit.net/jpv8zzo.css" />
-      </Head>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

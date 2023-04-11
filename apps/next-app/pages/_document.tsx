@@ -27,6 +27,8 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+
+        <link rel="stylesheet" href="https://use.typekit.net/jpv8zzo.css" />
       </Head>
 
       <body className="h-full">
