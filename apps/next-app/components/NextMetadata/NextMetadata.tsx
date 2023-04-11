@@ -5,7 +5,7 @@ import {
   SanityImageCrop,
   SanityImageHotspot,
 } from "ui-pkg/types/sanity-schema";
-import { METADATA_FALLBACK } from "ui-pkg/config/METADATA";
+import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
 import { urlFor } from "apis-pkg/sanity/urlFor";
 import { MetadataSettingsProps } from "ui-pkg/settings/MetadataSettingsProps";
 
@@ -31,11 +31,13 @@ export const NextMetadata = ({
 }: NextMetadataType) => (
   <Head>
     {/* Standard HTML */}
-    <title>{title || fallbacks?.titleFallback || METADATA_FALLBACK.TITLE}</title>
+    <title>
+      {title || fallbacks?.titleFallback || METADATA_HARD_CODED_FALLBACKS.TITLE}
+    </title>
     <meta name="description" content={description || fallbacks?.descriptionFallback} />
 
     {/* Opengraph */}
-    <meta property="og:title" content={title || METADATA_FALLBACK.TITLE} />
+    <meta property="og:title" content={title || METADATA_HARD_CODED_FALLBACKS.TITLE} />
     <meta
       property="og:description"
       content={description || fallbacks?.descriptionFallback}

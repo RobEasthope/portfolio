@@ -2,7 +2,7 @@ import { Box } from "ui-pkg/base/Box/Box";
 import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
 import SanityMuxPlayer from "sanity-mux-player";
 import { Type } from "ui-pkg/base/Type/Type";
-import { METADATA_FALLBACK } from "ui-pkg/config/METADATA";
+import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
 import {
   SanityImageAsset,
   SanityImageCrop,
@@ -92,7 +92,7 @@ export const LandingHero = ({
             <Box as="div" className="mx-auto flex min-w-[120px] justify-center">
               <SanityImage
                 asset={logo}
-                alt={METADATA_FALLBACK.TITLE}
+                alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
                 mode="responsive"
                 maxWidth={2000}
               />

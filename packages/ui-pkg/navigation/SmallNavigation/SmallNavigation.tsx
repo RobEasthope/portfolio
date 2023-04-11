@@ -8,7 +8,7 @@ import { Type } from "ui-pkg/base/Type/Type";
 import { InternalLink } from "ui-pkg/base/InternalLink/InternalLink";
 import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
 import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
-import { METADATA_FALLBACK } from "ui-pkg/config/METADATA";
+import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
 
 // TYPES
 export type SmallNavigationProps = Pick<
@@ -75,11 +75,11 @@ export const SmallNavigation = ({
           >
             <InternalLink href={HOME_PAGE_SLUG}>
               <Box as="span" className="sr-only">
-                {METADATA_FALLBACK.TITLE}
+                {METADATA_HARD_CODED_FALLBACKS.TITLE}
               </Box>
               <SanityImage
                 asset={logo}
-                alt={METADATA_FALLBACK.TITLE}
+                alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
                 mode="contain"
                 maxWidth={200}
                 className="h-1.25"
