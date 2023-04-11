@@ -2,8 +2,6 @@ import { Organisation, Project as rawProjectProps } from "ui-pkg/types/sanity-sc
 import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
 import { ProjectText } from "ui-pkg/base/Prose/components/ProjectText/ProjectText";
 import { Box } from "ui-pkg/base/Box/Box";
-
-import { styled } from "ui-pkg/styles/stitches.config";
 import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
 import { ExternalLink } from "ui-pkg/base/ExternalLink/ExternalLink";
 import { BsDot } from "react-icons/bs";
