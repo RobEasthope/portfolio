@@ -1,5 +1,5 @@
 import { Organisation, Project as rawProjectProps } from "ui-pkg/types/sanity-schema";
-import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
+import { AppGlobalsProps } from "ui-pkg/settings/Globals";
 import { ProjectText } from "ui-pkg/base/Prose/components/ProjectText/ProjectText";
 import { Box } from "ui-pkg/base/Box/Box";
 import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";

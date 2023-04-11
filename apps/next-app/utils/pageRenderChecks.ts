@@ -1,5 +1,5 @@
 import { PageProps } from "ui-pkg/pages/Page/Page";
-import { AppGlobalsProps } from "ui-pkg/base/settings/Globals";
+import { AppGlobalsProps } from "ui-pkg/settings/Globals";
 
 export const pageRenderChecks = (props: {
   data: {
