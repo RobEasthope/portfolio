@@ -261,7 +261,12 @@ export function Illustration() {
             <stop offset="0.786458" stopColor="#333333" stopOpacity="0" />
           </linearGradient>
           <clipPath id="clip0_131_9">
-            <rect width="77" height="86.8488" fill="white" transform="translate(496 347)" />
+            <rect
+              width="77"
+              height="86.8488"
+              fill="white"
+              transform="translate(496 347)"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -320,7 +325,13 @@ export function Illustration() {
           strokeWidth="1.16501"
         />
         <g className="orbit" data-index={0} filter="url(#filter0_d_12_112)">
-          <circle cx="145.622" cy="499.408" r="6.40757" transform="rotate(180 145.622 499.408)" fill="black" />
+          <circle
+            cx="145.622"
+            cy="499.408"
+            r="6.40757"
+            transform="rotate(180 145.622 499.408)"
+            fill="black"
+          />
           <circle
             cx="145.622"
             cy="499.408"
@@ -331,7 +342,13 @@ export function Illustration() {
           />
         </g>
         <g className="orbit" data-index={1} filter="url(#filter1_d_12_112)">
-          <circle cx="152.622" cy="264.408" r="6.40757" transform="rotate(180 152.622 264.408)" fill="black" />
+          <circle
+            cx="152.622"
+            cy="264.408"
+            r="6.40757"
+            transform="rotate(180 152.622 264.408)"
+            fill="black"
+          />
           <circle
             cx="152.622"
             cy="264.408"
@@ -342,7 +359,13 @@ export function Illustration() {
           />
         </g>
         <g className="orbit" data-index={2} filter="url(#filter2_d_12_112)">
-          <circle cx="319.622" cy="310.408" r="6.40757" transform="rotate(180 319.622 310.408)" fill="black" />
+          <circle
+            cx="319.622"
+            cy="310.408"
+            r="6.40757"
+            transform="rotate(180 319.622 310.408)"
+            fill="black"
+          />
           <circle
             cx="319.622"
             cy="310.408"
@@ -353,7 +376,13 @@ export function Illustration() {
           />
         </g>
         <g className="orbit" data-index={3} filter="url(#filter3_d_12_112)">
-          <circle cx="491.622" cy="264.408" r="6.40757" transform="rotate(180 491.622 264.408)" fill="black" />
+          <circle
+            cx="491.622"
+            cy="264.408"
+            r="6.40757"
+            transform="rotate(180 491.622 264.408)"
+            fill="black"
+          />
           <circle
             cx="491.622"
             cy="264.408"
@@ -364,7 +393,13 @@ export function Illustration() {
           />
         </g>
         <g className="orbit" data-index={4} filter="url(#filter4_d_12_112)">
-          <circle cx="640.622" cy="482.408" r="6.40757" transform="rotate(180 640.622 482.408)" fill="black" />
+          <circle
+            cx="640.622"
+            cy="482.408"
+            r="6.40757"
+            transform="rotate(180 640.622 482.408)"
+            fill="black"
+          />
           <circle
             cx="640.622"
             cy="482.408"
@@ -420,9 +455,21 @@ export function Illustration() {
             />
             <feOffset dy="11.6501" />
             <feGaussianBlur stdDeviation="17.4752" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_112" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_112" result="shape" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_12_112"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_12_112"
+              result="shape"
+            />
           </filter>
           <filter
             id="filter1_d_12_112"
@@ -442,9 +489,21 @@ export function Illustration() {
             />
             <feOffset dy="11.6501" />
             <feGaussianBlur stdDeviation="17.4752" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_112" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_112" result="shape" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_12_112"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_12_112"
+              result="shape"
+            />
           </filter>
           <filter
             id="filter2_d_12_112"
@@ -464,9 +523,21 @@ export function Illustration() {
             />
             <feOffset dy="11.6501" />
             <feGaussianBlur stdDeviation="17.4752" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_112" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_112" result="shape" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_12_112"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_12_112"
+              result="shape"
+            />
           </filter>
           <filter
             id="filter3_d_12_112"
@@ -486,9 +557,21 @@ export function Illustration() {
             />
             <feOffset dy="11.6501" />
             <feGaussianBlur stdDeviation="17.4752" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_112" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_112" result="shape" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_12_112"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_12_112"
+              result="shape"
+            />
           </filter>
           <filter
             id="filter4_d_12_112"
@@ -508,9 +591,21 @@ export function Illustration() {
             />
             <feOffset dy="11.6501" />
             <feGaussianBlur stdDeviation="17.4752" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_112" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_112" result="shape" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_12_112"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_12_112"
+              result="shape"
+            />
           </filter>
           <filter
             id="filter5_dd_12_112"
@@ -531,8 +626,15 @@ export function Illustration() {
             <feOffset />
             <feGaussianBlur stdDeviation="10" />
             <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.572549 0 0 0 0 1 0 0 0 1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_112" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.223529 0 0 0 0 0.572549 0 0 0 0 1 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_12_112"
+            />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -542,9 +644,21 @@ export function Illustration() {
             <feOffset />
             <feGaussianBlur stdDeviation="10" />
             <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.572549 0 0 0 0 1 0 0 0 0.9 0" />
-            <feBlend mode="normal" in2="effect1_dropShadow_12_112" result="effect2_dropShadow_12_112" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_12_112" result="shape" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.223529 0 0 0 0 0.572549 0 0 0 0 1 0 0 0 0.9 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="effect1_dropShadow_12_112"
+              result="effect2_dropShadow_12_112"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect2_dropShadow_12_112"
+              result="shape"
+            />
           </filter>
           <linearGradient
             id="paint0_linear_12_112"

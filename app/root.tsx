@@ -32,14 +32,12 @@ export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: mainCss,
-    },
-  ];
-};
+export const links: LinksFunction = () => [
+  {
+    rel: 'stylesheet',
+    href: mainCss,
+  },
+];
 
 export default function App() {
   return (

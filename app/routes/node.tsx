@@ -6,7 +6,7 @@ import { Region } from '~/components/region';
 import { Illustration } from '~/components/illustration';
 
 let isCold = true;
-let initialDate = Date.now();
+const initialDate = Date.now();
 
 export async function loader({ request }: LoaderArgs) {
   const wasCold = isCold;
@@ -58,7 +58,11 @@ export default function App() {
       <Footer>
         <p>
           Generated at {date} <span data-break /> ({isCold ? 'cold' : 'hot'}) by{' '}
-          <a href="https://vercel.com/docs/concepts/functions/serverless-functions" target="_blank" rel="noreferrer">
+          <a
+            href="https://vercel.com/docs/concepts/functions/serverless-functions"
+            target="_blank"
+            rel="noreferrer"
+          >
             Vercel Serverless Functions
           </a>
         </p>
@@ -69,7 +73,14 @@ export default function App() {
 
 function Nodejs(props: React.HTMLAttributes<HTMLOrSVGElement>) {
   return (
-    <svg width={127} height={144} viewBox="0 0 127 144" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width={127}
+      height={144}
+      viewBox="0 0 127 144"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <mask
         id="a"
         style={{
@@ -131,7 +142,10 @@ function Nodejs(props: React.HTMLAttributes<HTMLOrSVGElement>) {
         />
       </mask>
       <g mask="url(#c)">
-        <path d="M4.286.557v143.24H126.53V.557H4.286z" fill="url(#paint2_linear_0_1)" />
+        <path
+          d="M4.286.557v143.24H126.53V.557H4.286z"
+          fill="url(#paint2_linear_0_1)"
+        />
       </g>
       <defs>
         <linearGradient
