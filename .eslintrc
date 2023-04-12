@@ -1,14 +1,14 @@
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
-  extends: [
+{
+  "extends": [
     "@remix-run/eslint-config",
     "@remix-run/eslint-config/node",
-    "wesbos/typescript",
+    "wesbos/typescript"
   ],
-  parserOptions: {
-    project: "./tsconfig.json",
+  "parserOptions": {
+    "project": "./tsconfig.json"
   },
-  ignorePatterns: [
+  "ignorePatterns": [
     "/.cache",
     "/node_modules",
     "/.vercel",
@@ -16,6 +16,6 @@ module.exports = {
     "/public",
     "remix.config.js",
     "*.d.ts",
-    "/legacy-code",
-  ],
-};
+    "/legacy-code"
+  ]
+}
