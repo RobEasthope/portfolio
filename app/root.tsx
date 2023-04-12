@@ -1,4 +1,4 @@
-import type { MetaFunction, LinksFunction, LoaderArgs } from '@vercel/remix';
+import type { LinksFunction } from '@vercel/remix';
 
 import {
   Links,
@@ -11,22 +11,16 @@ import {
 
 import tailwindCSS from '~/styles/tailwind.css';
 
-export function loader({ request }: LoaderArgs) {
-  return {
-    host: request.headers.get('x-forwarded-host'),
-  };
-}
-
-export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
-  charset: 'utf-8',
-  title: 'Rob Easthope',
-  description: 'Portfolio website for Rob Easthope',
-  viewport: 'width=device-width,initial-scale=1',
-});
-
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: tailwindCSS },
 ];
+
+export const meta = () => ({
+  charset: 'utf-8',
+  viewport: 'width=device-width,initial-scale=1',
+  title: 'Rob Easthope',
+  description: 'Portfolio website for Rob Easthope',
+});
 
 export default function App() {
   return (
