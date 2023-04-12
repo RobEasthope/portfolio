@@ -13,7 +13,7 @@ export default function Index() {
   const { date } = useLoaderData<typeof loader>();
   return (
     <main>
-      <h1>foo</h1>
+      <h1 className="text-red-400">foo</h1>
     </main>
   );
 }
