@@ -9,8 +9,6 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
-import mainCss from '~/styles/main.css';
-
 import stylesheet from '~/tailwind.css';
 
 export function loader({ request }: LoaderArgs) {
@@ -33,13 +31,7 @@ export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-export const links: LinksFunction = () => [
-  {
-    rel: 'stylesheet',
-    href: mainCss,
-  },
-  { rel: 'stylesheet', href: stylesheet },
-];
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
 
 export default function App() {
   return (
