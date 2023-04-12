@@ -24,7 +24,9 @@ export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: tailwindCSS }];
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: tailwindCSS },
+];
 
 export default function App() {
   return (
