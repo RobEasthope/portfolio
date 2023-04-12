@@ -16,5 +16,6 @@ module.exports = {
     "/public",
     "remix.config.js",
     "*.d.ts",
+    "/legacy-code",
   ],
 };
