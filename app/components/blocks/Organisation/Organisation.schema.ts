@@ -1,35 +1,35 @@
-import { defineField, defineType } from "sanity";
-import { SelectionProps } from "sanity-app/types/Selection";
+import { defineField, defineType } from 'sanity';
+import type { SelectionProps } from 'sanity-app/types/Selection';
 
 export default defineType({
-  name: "organisation",
-  title: "Organisation",
-  type: "document",
+  name: 'organisation',
+  title: 'Organisation',
+  type: 'document',
   fields: [
     defineField({
-      name: "name",
-      title: "Name",
-      type: "string",
-      validation: (Rule) => Rule.required().warning("Required field"),
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+      validation: (Rule) => Rule.required().warning('Required field'),
     }),
     defineField({
-      name: "url",
-      title: "URL",
-      type: "url",
+      name: 'url',
+      title: 'URL',
+      type: 'url',
     }),
     defineField({
-      name: "logo",
-      title: "Logo",
-      type: "image",
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
-      name: "hiddenOrg",
-      title: "Hide organisation",
-      description: "Hides organisation on frontend",
-      type: "boolean",
+      name: 'hiddenOrg',
+      title: 'Hide organisation',
+      description: 'Hides organisation on frontend',
+      type: 'boolean',
     }),
   ],
   initialValue: {
@@ -37,14 +37,14 @@ export default defineType({
   },
   preview: {
     select: {
-      title: "name",
-      media: "logo",
+      title: 'name',
+      media: 'logo',
     },
     prepare(selection: SelectionProps) {
       const { title, media } = selection;
       return {
-        title: title || "Example block",
-        subtitle: title ? "Example block" : "",
+        title: title || 'Example block',
+        subtitle: title ? 'Example block' : '',
         media,
       };
     },

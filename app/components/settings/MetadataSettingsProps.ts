@@ -1,12 +1,12 @@
-import {
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
+} from 'sanity-codegen';
 
 export type MetadataSettingsProps = {
-  _type: "MetadataSettings";
+  _type: 'MetadataSettings';
   headingappsettings?: string;
   sitename: string;
   canonicalUrl?: string;
@@ -14,7 +14,7 @@ export type MetadataSettingsProps = {
   titleFallback: string;
   descriptionFallback: string;
   thumbnailFallback: {
-    _type: "image";
+    _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;

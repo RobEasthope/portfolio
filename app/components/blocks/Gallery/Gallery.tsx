@@ -1,18 +1,16 @@
-import { Type } from "~/components/base/Type/Type";
-import { Box } from "~/components/base/Box/Box";
-import {
-  GalleryImage,
-  GalleryImageProps,
-} from "~/components/blocks/Gallery/components/GalleryImage/GalleryImage";
+import { Type } from '~/components/base/Type/Type';
+import { Box } from '~/components/base/Box/Box';
+import type { GalleryImageProps } from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage';
+import { GalleryImage } from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage';
 
 // TYPES
 export type GalleryProps = {
-  _type: "Gallery";
+  _type: 'Gallery';
   images: GalleryImageProps[];
   galleryCaption?: string;
-  columns: "null" | "1" | "2" | "3" | "4" | "5" | undefined;
+  columns: 'null' | '1' | '2' | '3' | '4' | '5' | undefined;
   aspectRatio: number;
-  maxWidth: "small" | "text" | "medium" | "large" | "full";
+  maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
 };
 
 // MARKUP
@@ -21,7 +19,7 @@ export const Gallery = ({
   galleryCaption,
   columns,
   aspectRatio = 1 / 1,
-  maxWidth = "large",
+  maxWidth = 'large',
 }: GalleryProps) => {
   if (!images) {
     return null;

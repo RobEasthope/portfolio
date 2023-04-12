@@ -1,17 +1,21 @@
-import SanityMuxPlayer from "sanity-mux-player";
-import { Box } from "~/components/base/Box/Box";
-import { Type } from "~/components/base/Type/Type";
+import SanityMuxPlayer from 'sanity-mux-player';
+import { Box } from '~/components/base/Box/Box';
+import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type MuxVideoProps = {
-  _type: "MuxVideo";
+  _type: 'MuxVideo';
   muxVideo: Record<string, unknown>;
   caption?: string;
-  maxWidth: "small" | "text" | "medium" | "large" | "full";
+  maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
 };
 
 // MARKUP
-export const MuxVideo = ({ muxVideo, caption, maxWidth = "medium" }: MuxVideoProps) => {
+export const MuxVideo = ({
+  muxVideo,
+  caption,
+  maxWidth = 'medium',
+}: MuxVideoProps) => {
   if (!muxVideo) {
     return null;
   }

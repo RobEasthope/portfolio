@@ -1,28 +1,28 @@
-import { Box } from "~/components/base/Box/Box";
-import * as Dialog from "@radix-ui/react-dialog";
-import { SanityImage } from "~/components/base/SanityImage/SanityImage";
-import { GalleryProps } from "~/components/blocks/Gallery/Gallery";
-import {
+import { Box } from '~/components/base/Box/Box';
+import * as Dialog from '@radix-ui/react-dialog';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
-import { Type } from "~/components/base/Type/Type";
+} from 'sanity-codegen';
+import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type GalleryImageProps = {
-  _type: "GalleryImage";
+  _type: 'GalleryImage';
   _key?: string;
   image?: {
-    _type: "image";
+    _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
     caption?: string;
     attribution?: string;
   };
-  aspectRatio?: GalleryProps["aspectRatio"];
+  aspectRatio?: GalleryProps['aspectRatio'];
 };
 
 // MARKUP
@@ -49,7 +49,10 @@ export const GalleryImage = ({ image, aspectRatio }: GalleryImageProps) => {
 
         <Dialog.Content className="bg-whitefocus:outline-none fixed left-0 top-0 z-50 h-screen w-screen overflow-y-auto sm:px-1 sm:pb-1 lg:px-2 lg:pb-2 lg:pt-0">
           <Dialog.Title className="sr-only">{image?.caption}</Dialog.Title>
-          <Box as="figure" className="flex w-full flex-nowrap items-center justify-end">
+          <Box
+            as="figure"
+            className="flex w-full flex-nowrap items-center justify-end"
+          >
             <Dialog.Close className="p-0.5">
               <Type as="span" className="text-sm font-medium leading-none">
                 Close
@@ -58,11 +61,14 @@ export const GalleryImage = ({ image, aspectRatio }: GalleryImageProps) => {
           </Box>
           <SanityImage
             asset={image}
-            alt={image?.caption || ""}
+            alt={image?.caption || ''}
             mode="contain"
             maxWidth={4000}
           />
-          <Type as="figcaption" className="my-0.5 max-w-prose font-serif text-sm italic">
+          <Type
+            as="figcaption"
+            className="my-0.5 max-w-prose font-serif text-sm italic"
+          >
             {image?.caption}
           </Type>
         </Dialog.Content>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export const useSSRLayoutEffect =
-  typeof window === "undefined" ? () => {} : React.useLayoutEffect;
+  typeof window === 'undefined' ? () => {} : React.useLayoutEffect;

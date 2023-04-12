@@ -1,27 +1,25 @@
-import { useRouter } from "next/router";
-import { FooterProps } from "~/components/navigation/Footer/Footer";
-import { HeaderProps } from "~/components/navigation/Header/Header";
-import {
-  Error404NavCard,
-  Error404NavCardProps,
-} from "~/components/pages/Error404/components/Error404NavCard/Error404NavCard";
-import { Box } from "~/components/base/Box/Box";
-import { TbParachute } from "react-icons/tb";
-import {
+import { useRouter } from 'next/router';
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+import type { Error404NavCardProps } from '~/components/pages/Error404/components/Error404NavCard/Error404NavCard';
+import { Error404NavCard } from '~/components/pages/Error404/components/Error404NavCard/Error404NavCard';
+import { Box } from '~/components/base/Box/Box';
+import { TbParachute } from 'react-icons/tb';
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
-import { Button } from "~/components/base/Button/Button";
-import { Type } from "~/components/base/Type/Type";
-import { BasicLayout } from "~/components/layouts/BasicLayout/BasicLayout";
+} from 'sanity-codegen';
+import { Button } from '~/components/base/Button/Button';
+import { Type } from '~/components/base/Type/Type';
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 export type Error404Props = {
   page: {
-    _type: "Error404";
+    _type: 'Error404';
     logo: {
-      _type: "image";
+      _type: 'image';
       asset: SanityReference<SanityImageAsset>;
       crop?: SanityImageCrop;
       hotspot?: SanityImageHotspot;

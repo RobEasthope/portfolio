@@ -1,5 +1,5 @@
-import { PortableTextComponents } from "@portabletext/react";
-import { SanityBlock, SanityKeyed } from "sanity-codegen";
+import type { PortableTextComponents } from '@portabletext/react';
+import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
 export type QuoteTextProps = Array<SanityKeyed<SanityBlock>>;
 

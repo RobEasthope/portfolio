@@ -1,4 +1,4 @@
-import groq from "groq";
+import groq from 'groq';
 
 export const FULL_TEXT_QUERY_BODY = groq`
   ...,

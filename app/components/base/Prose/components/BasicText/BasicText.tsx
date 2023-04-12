@@ -2,12 +2,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { PortableTextComponents } from "@portabletext/react";
-import { Type } from "~/components/base/Type/Type";
-import { InternalLink } from "~/components/base/InternalLink/InternalLink";
-import { ExternalLink } from "~/components/base/ExternalLink/ExternalLink";
-import { EmailLink } from "~/components/base/EmailLink/EmailLink";
-import { SanityBlock, SanityKeyed } from "sanity-codegen";
+import type { PortableTextComponents } from '@portabletext/react';
+import { Type } from '~/components/base/Type/Type';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import { EmailLink } from '~/components/base/EmailLink/EmailLink';
+import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
 export type BasicTextProps = Array<SanityKeyed<SanityBlock>>;
 

@@ -1,34 +1,34 @@
-import { Box } from "~/components/base/Box/Box";
-import { SanityImage } from "~/components/base/SanityImage/SanityImage";
-import SanityMuxPlayer from "sanity-mux-player";
-import { Type } from "~/components/base/Type/Type";
-import { METADATA_HARD_CODED_FALLBACKS } from "~/components/config/METADATA_HARD_CODED_FALLBACKS";
-import {
+import { Box } from '~/components/base/Box/Box';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import SanityMuxPlayer from 'sanity-mux-player';
+import { Type } from '~/components/base/Type/Type';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
-import { ExternalLinkWithTitleSchemaProps } from "~/components/base/ExternalLink/ExternalLink";
-import { InternalLinkWithTitleSchemaProps } from "~/components/base/InternalLink/InternalLink";
+} from 'sanity-codegen';
+import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
 
 // TYPES
 export type LandingHeroProps = {
-  _type: "LandingHero";
+  _type: 'LandingHero';
   headingforeground?: string;
   heading?: string;
   subHeading?: string;
   headingbackground?: string;
-  bkgMode?: "image" | "video";
+  bkgMode?: 'image' | 'video';
   logo?: {
-    _type: "image";
+    _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
     attribution?: string;
   };
   bkgImage?: {
-    _type: "image";
+    _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
@@ -57,11 +57,11 @@ export const LandingHero = ({
       as="section"
       className="flex max-h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))] flex-row"
     >
-      {bkgMode === "image" && (
+      {bkgMode === 'image' && (
         <Box as="div" className="w-screen">
           <SanityImage
             asset={bkgImage}
-            alt={caption || ""}
+            alt={caption || ''}
             mode="cover"
             maxWidth={2560}
             className="w-screen"
@@ -69,7 +69,7 @@ export const LandingHero = ({
         </Box>
       )}
 
-      {bkgMode === "video" && (
+      {bkgMode === 'video' && (
         <Box as="div" className="w-screen">
           <SanityMuxPlayer
             assetDocument={muxVideo}

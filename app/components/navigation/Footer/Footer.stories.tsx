@@ -1,8 +1,9 @@
-import { StoryObj } from "@storybook/react";
-import { Footer, FooterProps } from "./Footer";
+import type { StoryObj } from '@storybook/react';
+import type { FooterProps } from './Footer';
+import { Footer } from './Footer';
 
 export default {
-  title: "Navigation/Footer",
+  title: 'Navigation/Footer',
   component: Footer,
 };
 

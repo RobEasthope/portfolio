@@ -1,13 +1,13 @@
 // Schema props
 export type ExternalLinkWithTitleSchemaProps = {
-  _type: "ExternalLinkWithTitle";
+  _type: 'ExternalLinkWithTitle';
   _key: string;
   title: string;
   url: string;
 };
 
 export type ExternalLinkSchemaProps = {
-  _type: "ExternalLinkSansTitle";
+  _type: 'ExternalLinkSansTitle';
   _key: string;
   newTab: boolean;
   url: string;

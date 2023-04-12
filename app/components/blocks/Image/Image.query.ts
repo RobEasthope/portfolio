@@ -1,4 +1,4 @@
-import groq from "groq";
+import groq from 'groq';
 
 export const IMAGE_QUERY = groq`{
   _type,

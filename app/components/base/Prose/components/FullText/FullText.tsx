@@ -2,21 +2,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/naming-convention */
-import dynamic from "next/dynamic";
-import { PortableTextComponents } from "@portabletext/react";
-import { ImageProps } from "~/components/blocks/Image/Image";
-import { YoutubeVideoProps } from "~/components/blocks/YoutubeVideo/YoutubeVideo";
-import { Type } from "~/components/base/Type/Type";
-import { InternalLink } from "~/components/base/InternalLink/InternalLink";
-import { ExternalLink } from "~/components/base/ExternalLink/ExternalLink";
-import { EmailLink } from "~/components/base/EmailLink/EmailLink";
-import { SanityBlock, SanityKeyed } from "sanity-codegen";
+import dynamic from 'next/dynamic';
+import type { PortableTextComponents } from '@portabletext/react';
+import type { ImageProps } from '~/components/blocks/Image/Image';
+import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
+import { Type } from '~/components/base/Type/Type';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import { EmailLink } from '~/components/base/EmailLink/EmailLink';
+import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
-const Image = dynamic(() => import("~/components/blocks/Image/Image"));
-const YoutubeVideo = dynamic(() => import("~/components/blocks/YoutubeVideo/YoutubeVideo"));
+const Image = dynamic(() => import('~/components/blocks/Image/Image'));
+const YoutubeVideo = dynamic(
+  () => import('~/components/blocks/YoutubeVideo/YoutubeVideo'),
+);
 
 export type FullTextProps = Array<
-  SanityKeyed<SanityBlock> | SanityKeyed<ImageProps> | SanityKeyed<YoutubeVideoProps>
+  | SanityKeyed<SanityBlock>
+  | SanityKeyed<ImageProps>
+  | SanityKeyed<YoutubeVideoProps>
 >;
 
 // MARKUP

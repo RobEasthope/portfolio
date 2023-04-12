@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useSSRLayoutEffect } from "./useSSRLayoutEffect";
+import * as React from 'react';
+import { useSSRLayoutEffect } from './useSSRLayoutEffect';
 
 // TYPES
 type BlurrableImageProps = {
@@ -14,7 +14,7 @@ export function BlurrableImage({
   img,
   blurredAssetUrl,
   alt,
-  className = "",
+  className = '',
 }: BlurrableImageProps) {
   const [hiResImageLoaded, setFullSizeImageLoaded] = React.useState(false);
   const hiResImageRef = React.useRef<HTMLImageElement>(null);
@@ -28,7 +28,7 @@ export function BlurrableImage({
     if (hiResImageRef.current.complete) return;
 
     let current = true;
-    hiResImageRef.current.addEventListener("load", () => {
+    hiResImageRef.current.addEventListener('load', () => {
       if (!hiResImageRef.current || !current) return;
       setTimeout(() => {
         setFullSizeImageLoaded(true);
@@ -44,7 +44,7 @@ export function BlurrableImage({
     // @ts-expect-error no idea 🤷‍♂️
     ref: hiResImageRef,
     className: `high-res-image ${className} ${
-      hiResImageLoaded ? "high-res-image--show" : "high-res-image--hide"
+      hiResImageLoaded ? 'high-res-image--show' : 'high-res-image--hide'
     }`,
   });
 
@@ -55,9 +55,9 @@ export function BlurrableImage({
         <img
           src={blurredAssetUrl}
           className={`blurred-res-image ${className} ${
-            hiResImageLoaded ? "blurred-image--hide" : "high-res-image--show"
+            hiResImageLoaded ? 'blurred-image--hide' : 'high-res-image--show'
           }`}
-          alt={alt || ""}
+          alt={alt || ''}
         />
       )}
       {hiResImage}

@@ -1,15 +1,15 @@
-import { defineType, defineArrayMember } from "sanity";
+import { defineType, defineArrayMember } from 'sanity';
 
 export default defineType({
-  name: "EmphasisedText",
-  title: "Emphasised text",
-  type: "array",
+  name: 'EmphasisedText',
+  title: 'Emphasised text',
+  type: 'array',
   of: [
     defineArrayMember({
-      type: "block",
+      type: 'block',
       styles: [],
       marks: {
-        decorators: [{ title: "Highlight", value: "strong" }],
+        decorators: [{ title: 'Highlight', value: 'strong' }],
         annotations: [],
       },
       lists: [],

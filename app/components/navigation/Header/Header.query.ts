@@ -1,4 +1,4 @@
-import groq from "groq";
+import groq from 'groq';
 
 export const HEADER_QUERY = groq`
   *[_type== 'Header' && !(_id in path("drafts.**"))][0]{

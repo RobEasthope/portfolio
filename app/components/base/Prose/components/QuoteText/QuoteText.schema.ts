@@ -1,17 +1,17 @@
-import { defineType, defineArrayMember } from "sanity";
+import { defineType, defineArrayMember } from 'sanity';
 
 export default defineType({
-  name: "QuoteText",
-  title: "Quote text",
-  type: "array",
+  name: 'QuoteText',
+  title: 'Quote text',
+  type: 'array',
   of: [
     defineArrayMember({
-      type: "block",
+      type: 'block',
       styles: [],
       marks: {
         decorators: [
-          { title: "Strong", value: "strong" },
-          { title: "Italics", value: "em" },
+          { title: 'Strong', value: 'strong' },
+          { title: 'Italics', value: 'em' },
         ],
         annotations: [],
       },

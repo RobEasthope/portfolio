@@ -1,18 +1,18 @@
-import { Box } from "~/components/base/Box/Box";
-import { SanityImage } from "~/components/base/SanityImage/SanityImage";
-import { Type } from "~/components/base/Type/Type";
-import {
+import { Box } from '~/components/base/Box/Box';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Type } from '~/components/base/Type/Type';
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
+} from 'sanity-codegen';
 
 // TYPES
 export type ImageProps = {
-  _type: "Image";
+  _type: 'Image';
   image?: {
-    _type: "image";
+    _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
@@ -20,11 +20,15 @@ export type ImageProps = {
     attribution?: string;
   };
   aspectRatio?: number;
-  maxWidth: "small" | "text" | "medium" | "large" | "full";
+  maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
 };
 
 // MARKUP
-export const Image = ({ image, maxWidth = "medium", aspectRatio }: ImageProps) => {
+export const Image = ({
+  image,
+  maxWidth = 'medium',
+  aspectRatio,
+}: ImageProps) => {
   if (!image) {
     return null;
   }
@@ -34,7 +38,7 @@ export const Image = ({ image, maxWidth = "medium", aspectRatio }: ImageProps) =
       <Box as="figure" className="mx-auto" maxWidth={maxWidth}>
         <SanityImage
           asset={image}
-          alt={image?.caption || ""}
+          alt={image?.caption || ''}
           aspectRatio={aspectRatio}
           mode="responsive"
           maxWidth={4000}

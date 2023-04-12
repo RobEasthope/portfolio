@@ -1,28 +1,28 @@
-import { defineField, defineType } from "sanity";
-import { BiText } from "react-icons/bi";
-import { SelectionProps } from "sanity-app/types/Selection";
+import { defineField, defineType } from 'sanity';
+import { BiText } from 'react-icons/bi';
+import type { SelectionProps } from 'sanity-app/types/Selection';
 
 export default defineType({
-  type: "object",
-  name: "PageTitle",
-  title: "PageTitle",
+  type: 'object',
+  name: 'PageTitle',
+  title: 'PageTitle',
   icon: BiText,
   fields: [
     defineField({
-      name: "heading",
-      title: "Heading",
-      type: "string",
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
     }),
   ],
   preview: {
     select: {
-      title: "heading",
+      title: 'heading',
     },
     prepare(selection: SelectionProps) {
       const { title } = selection;
       return {
-        title: selection.title || "Page title",
-        subtitle: title ? "Page title" : "",
+        title: selection.title || 'Page title',
+        subtitle: title ? 'Page title' : '',
       };
     },
   },

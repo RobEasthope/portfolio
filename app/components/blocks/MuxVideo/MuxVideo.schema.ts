@@ -1,30 +1,31 @@
-import { defineField, defineType } from "sanity";
-import { RiVideoLine } from "react-icons/ri";
-import { MAX_CONTENT_OPTIONS } from "~/components/config/MAX_CONTENT_OPTIONS";
-import { SelectionProps } from "sanity-app/types/Selection";
+import { defineField, defineType } from 'sanity';
+import { RiVideoLine } from 'react-icons/ri';
+import { MAX_CONTENT_OPTIONS } from '~/components/config/MAX_CONTENT_OPTIONS';
+import type { SelectionProps } from 'sanity-app/types/Selection';
 
 export default defineType({
-  type: "object",
-  name: "MuxVideo",
-  title: "Mux video",
+  type: 'object',
+  name: 'MuxVideo',
+  title: 'Mux video',
   icon: RiVideoLine,
   fields: [
     defineField({
-      name: "rawMuxVideo",
-      title: "Mux video",
-      type: "mux.video",
-      validation: (Rule) => Rule.required().error("Mux video: Video is missing"),
+      name: 'rawMuxVideo',
+      title: 'Mux video',
+      type: 'mux.video',
+      validation: (Rule) =>
+        Rule.required().error('Mux video: Video is missing'),
     }),
     defineField({
-      name: "caption",
-      title: "Caption",
-      type: "string",
+      name: 'caption',
+      title: 'Caption',
+      type: 'string',
     }),
     defineField({
-      name: "maxWidth",
-      title: "Max width",
-      type: "string",
-      description: "Defaults to medium",
+      name: 'maxWidth',
+      title: 'Max width',
+      type: 'string',
+      description: 'Defaults to medium',
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
@@ -32,14 +33,14 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "caption",
-      subtitle: "url",
+      title: 'caption',
+      subtitle: 'url',
     },
     prepare(selection: SelectionProps) {
       const { title, subtitle } = selection;
       return {
-        title: "Mux video",
-        subtitle: title || subtitle || "",
+        title: 'Mux video',
+        subtitle: title || subtitle || '',
       };
     },
   },

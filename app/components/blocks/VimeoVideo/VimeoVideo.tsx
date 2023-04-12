@@ -1,17 +1,21 @@
-import Vimeo from "@u-wave/react-vimeo";
-import { Box } from "~/components/base/Box/Box";
-import { Type } from "~/components/base/Type/Type";
+import Vimeo from '@u-wave/react-vimeo';
+import { Box } from '~/components/base/Box/Box';
+import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type VimeoVideoProps = {
-  _type: "VimeoVideo";
+  _type: 'VimeoVideo';
   url?: string;
   caption?: string;
-  maxWidth: "small" | "text" | "medium" | "large" | "full";
+  maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
 };
 
 // MARKUP
-export const VimeoVideo = ({ url, caption, maxWidth = "medium" }: VimeoVideoProps) => {
+export const VimeoVideo = ({
+  url,
+  caption,
+  maxWidth = 'medium',
+}: VimeoVideoProps) => {
   if (!url) {
     return null;
   }

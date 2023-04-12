@@ -1,9 +1,9 @@
-import groq from "groq";
-import { SANITY_BLOCK_QUERIES } from "~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES";
-import { SanityPageByIdQueryProps } from "~/components/types/SanityPageByIdQueryProps";
-import { HEADER_QUERY } from "~/components/navigation/Header/Header.query";
-import { FOOTER_QUERY } from "~/components/navigation/Footer/Footer.query";
-import { METADATA_SETTINGS_QUERY } from "~/components/settings/MetadataSettings.query";
+import groq from 'groq';
+import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES';
+import type { SanityPageByIdQueryProps } from '~/components/types/SanityPageByIdQueryProps';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
+import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`
@@ -30,9 +30,10 @@ export const PAGE_BY_ID_QUERY = ({
   id,
   componentTypes = [],
 }: SanityPageByIdQueryProps) => {
-  const hydratedSanityBlockQueries: Record<string, unknown> = SANITY_BLOCK_QUERIES({
-    courseId: null,
-  });
+  const hydratedSanityBlockQueries: Record<string, unknown> =
+    SANITY_BLOCK_QUERIES({
+      courseId: null,
+    });
 
   return groq`{
     "page": *[_id == "${id}"][0]{
@@ -42,14 +43,15 @@ export const PAGE_BY_ID_QUERY = ({
       metadataDescription,
       metadataImage,
       "sections": rawSections[_type in [${componentTypes?.map(
-        (type: string) => `"${type}"`
+        (type: string) => `"${type}"`,
       )}]]{
         ${componentTypes
           .map(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            (type: string) => `_type == "${type}" => ${hydratedSanityBlockQueries[type]}`
+            (type: string) =>
+              `_type == "${type}" => ${hydratedSanityBlockQueries[type]}`,
           )
-          .join(",")}
+          .join(',')}
       }
     },
     "header": ${HEADER_QUERY},

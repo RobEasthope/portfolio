@@ -1,19 +1,21 @@
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Box } from "~/components/base/Box/Box";
-import { Type } from "~/components/base/Type/Type";
-import {
-  InternalLink,
-  InternalLinkWithTitleSchemaProps,
-} from "~/components/base/InternalLink/InternalLink";
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import { Box } from '~/components/base/Box/Box';
+import { Type } from '~/components/base/Type/Type';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 
 export type Error404NavCardProps = {
-  _type?: "Error404NavCard";
+  _type?: 'Error404NavCard';
   heading: string;
   description?: string;
   link: InternalLinkWithTitleSchemaProps;
 };
 
-export const Error404NavCard = ({ heading, description, link }: Error404NavCardProps) => (
+export const Error404NavCard = ({
+  heading,
+  description,
+  link,
+}: Error404NavCardProps) => (
   <Box as="li" className="relative flex items-start py-1 align-middle">
     <Box as="div" className="min-w-0 flex-1">
       <Type as="h3" className="text-base font-medium text-gray-900">

@@ -1,28 +1,28 @@
-import Link from "next/link";
-import { SanityReference } from "sanity-codegen";
-import { HOME_PAGE_SLUG } from "~/components/pages/Page/constants/HOME_PAGE_SLUG";
-import { PageProps } from "~/components/pages/Page/Page";
-import { CourseProps } from "~/components/pages/Course/Course";
-import { BlogPostProps } from "~/components/pages/BlogPost/BlogPost";
+import Link from 'next/link';
+import type { SanityReference } from 'sanity-codegen';
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+import type { PageProps } from '~/components/pages/Page/Page';
+import type { CourseProps } from '~/components/pages/Course/Course';
+import type { BlogPostProps } from '~/components/pages/BlogPost/BlogPost';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
-  _type: "InternalLinkWithTitle";
+  _type: 'InternalLinkWithTitle';
   _key: string;
   internalUID: SanityReference<
-    PageProps["page"] | CourseProps["page"] | BlogPostProps["page"]
+    PageProps['page'] | CourseProps['page'] | BlogPostProps['page']
   >;
-  to?: PageProps["page"] | CourseProps["page"] | BlogPostProps["page"];
+  to?: PageProps['page'] | CourseProps['page'] | BlogPostProps['page'];
   title: string;
 };
 
 export type InternalLinkSchemaProps = {
-  _type: "InternalLinkSansTitle";
+  _type: 'InternalLinkSansTitle';
   _key: string;
   internalUID: SanityReference<
-    PageProps["page"] | CourseProps["page"] | BlogPostProps["page"]
+    PageProps['page'] | CourseProps['page'] | BlogPostProps['page']
   >;
-  to?: PageProps["page"] | CourseProps["page"] | BlogPostProps["page"];
+  to?: PageProps['page'] | CourseProps['page'] | BlogPostProps['page'];
 };
 
 // Component props
@@ -48,7 +48,7 @@ export const InternalLink = ({
 
   return (
     <Link
-      href={href === HOME_PAGE_SLUG ? "/" : `/${href}`}
+      href={href === HOME_PAGE_SLUG ? '/' : `/${href}`}
       className={className}
       role="link"
       tabIndex={0}

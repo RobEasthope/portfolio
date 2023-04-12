@@ -1,4 +1,4 @@
-import groq from "groq";
+import groq from 'groq';
 
 export const YOUTUBE_VIDEO_QUERY = groq`{
   _type,

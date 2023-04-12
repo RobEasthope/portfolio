@@ -21,6 +21,6 @@ export function romanize(num: number) {
       acc.num %= rom[ch];
       return acc;
     },
-    { str: "", num }
+    { str: '', num },
   ).str;
 }

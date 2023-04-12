@@ -1,7 +1,7 @@
-import { defineField, defineType } from "sanity";
-import { RiLinksLine } from "react-icons/ri";
-import { SelectionProps } from "sanity-app/types/Selection";
-import { ALL_PAGE_TYPES } from "./ALL_PAGE_TYPES";
+import { defineField, defineType } from 'sanity';
+import { RiLinksLine } from 'react-icons/ri';
+import type { SelectionProps } from 'sanity-app/types/Selection';
+import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 
 // const InternalLinkRender = ({ children }) => (
 //   <span>
@@ -10,23 +10,23 @@ import { ALL_PAGE_TYPES } from "./ALL_PAGE_TYPES";
 // );
 
 export default defineType({
-  name: "InternalLinkWithTitle",
-  title: "Internal link",
-  type: "object",
-  description: "Link to a document on the site",
+  name: 'InternalLinkWithTitle',
+  title: 'Internal link',
+  type: 'object',
+  description: 'Link to a document on the site',
   icon: RiLinksLine,
   fields: [
     defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'title',
+      title: 'Title',
+      type: 'string',
 
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "internalUID",
-      title: "Page",
-      type: "reference",
+      name: 'internalUID',
+      title: 'Page',
+      type: 'reference',
       to: ALL_PAGE_TYPES,
 
       validation: (Rule) => Rule.required(),
@@ -38,13 +38,13 @@ export default defineType({
   // },
   preview: {
     select: {
-      title: "title",
+      title: 'title',
     },
     prepare(selection: SelectionProps) {
       const { title } = selection;
       return {
         title,
-        subtitle: "Internal link",
+        subtitle: 'Internal link',
       };
     },
   },

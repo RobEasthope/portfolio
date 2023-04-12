@@ -1,5 +1,5 @@
-import { defineType, defineArrayMember } from "sanity";
-import { createBlockValidator } from "sanity-pills";
+import { defineType, defineArrayMember } from 'sanity';
+import { createBlockValidator } from 'sanity-pills';
 
 const articleTextValidator = createBlockValidator({
   required: false,
@@ -12,33 +12,33 @@ const articleTextValidator = createBlockValidator({
 });
 
 export default defineType({
-  name: "FullText",
-  title: "Full text",
-  type: "array",
+  name: 'FullText',
+  title: 'Full text',
+  type: 'array',
   of: [
     defineArrayMember({
-      type: "block",
+      type: 'block',
       styles: [
-        { title: "Normal", value: "normal" },
-        { title: "Large heading", value: "h2" },
-        { title: "Medium heading", value: "h3" },
-        { title: "Small heading", value: "h4" },
+        { title: 'Normal', value: 'normal' },
+        { title: 'Large heading', value: 'h2' },
+        { title: 'Medium heading', value: 'h3' },
+        { title: 'Small heading', value: 'h4' },
       ],
       marks: {
         decorators: [
-          { title: "Strong", value: "strong" },
-          { title: "Emphasis", value: "em" },
-          { title: "Code", value: "code" },
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Code', value: 'code' },
         ],
         annotations: [
-          { type: "InternalLink" },
-          { type: "ExternalLink" },
-          { type: "EmailLink" },
+          { type: 'InternalLink' },
+          { type: 'ExternalLink' },
+          { type: 'EmailLink' },
         ],
       },
     }),
-    defineArrayMember({ type: "Image" }),
-    defineArrayMember({ type: "YoutubeVideo" }),
+    defineArrayMember({ type: 'Image' }),
+    defineArrayMember({ type: 'YoutubeVideo' }),
   ],
   validation: articleTextValidator,
 });

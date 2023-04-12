@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import * as Dialog from "@radix-ui/react-dialog";
-import { SuperLink } from "~/components/base/SuperLink/SuperLink";
-import { HeaderProps } from "~/components/navigation/Header/Header";
-import { Box } from "~/components/base/Box/Box";
-import { Type } from "~/components/base/Type/Type";
-import { InternalLink } from "~/components/base/InternalLink/InternalLink";
-import { HOME_PAGE_SLUG } from "~/components/pages/Page/constants/HOME_PAGE_SLUG";
-import { SanityImage } from "~/components/base/SanityImage/SanityImage";
-import { METADATA_HARD_CODED_FALLBACKS } from "~/components/config/METADATA_HARD_CODED_FALLBACKS";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import * as Dialog from '@radix-ui/react-dialog';
+import { SuperLink } from '~/components/base/SuperLink/SuperLink';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+import { Box } from '~/components/base/Box/Box';
+import { Type } from '~/components/base/Type/Type';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
 
 // TYPES
 export type SmallNavigationProps = Pick<
   HeaderProps,
-  "logo" | "primaryNavigation" | "secondaryNavigation"
+  'logo' | 'primaryNavigation' | 'secondaryNavigation'
 >;
 
 // MARKUP
@@ -28,18 +28,18 @@ export const SmallNavigation = ({
   // Ensures menu is closed when resizing to desktop
   useEffect(() => {
     function handleCloseOnResize() {
-      const isDesktop = window.matchMedia("(min-width: 480px)").matches;
+      const isDesktop = window.matchMedia('(min-width: 480px)').matches;
       if (isDesktop && menuOpen) {
         setMenuOpen(false);
       }
     }
 
-    window.addEventListener("resize", handleCloseOnResize);
-    window.addEventListener("orientationchange", handleCloseOnResize);
+    window.addEventListener('resize', handleCloseOnResize);
+    window.addEventListener('orientationchange', handleCloseOnResize);
 
     return () => {
-      window.removeEventListener("resize", handleCloseOnResize);
-      window.removeEventListener("orientationchange", handleCloseOnResize);
+      window.removeEventListener('resize', handleCloseOnResize);
+      window.removeEventListener('orientationchange', handleCloseOnResize);
     };
   }, [menuOpen]);
 
@@ -48,12 +48,12 @@ export const SmallNavigation = ({
       setMenuOpen(false);
     };
 
-    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on('routeChangeStart', handleRouteChange);
 
     // If the component is unmounted, unsubscribe
     // from the event with the `off` method:
     return () => {
-      router.events.off("routeChangeStart", handleRouteChange);
+      router.events.off('routeChangeStart', handleRouteChange);
     };
   }, [setMenuOpen, router.events]);
 

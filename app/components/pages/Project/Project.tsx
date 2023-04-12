@@ -1,13 +1,16 @@
-import { Organisation, Project as rawProjectProps } from "~/components/types/sanity-schema";
-import { AppGlobalsProps } from "~/components/settings/Globals";
-import { ProjectText } from "~/components/base/Prose/components/ProjectText/ProjectText";
-import { Box } from "~/components/base/Box/Box";
-import { Spacer } from "~/components/blocks/Spacer/Spacer";
-import { ExternalLink } from "~/components/base/ExternalLink/ExternalLink";
-import { BsDot } from "react-icons/bs";
-import { BasicLayout } from "~/components/layouts/BasicLayout/BasicLayout";
-import { Type } from "base/Type/Type";
-import { SanityImage } from "base/SanityImage/SanityImage";
+import type {
+  Organisation,
+  Project as rawProjectProps,
+} from '~/components/types/sanity-schema';
+import type { AppGlobalsProps } from '~/components/settings/Globals';
+import { ProjectText } from '~/components/base/Prose/components/ProjectText/ProjectText';
+import { Box } from '~/components/base/Box/Box';
+import { Spacer } from '~/components/blocks/Spacer/Spacer';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import { BsDot } from 'react-icons/bs';
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
+import { Type } from 'base/Type/Type';
+import { SanityImage } from 'base/SanityImage/SanityImage';
 
 export interface ProjectProps extends rawProjectProps {
   blocks: [];
@@ -27,7 +30,7 @@ export const Project = ({
       <Box as="div" className="text-center mb-1">
         <SanityImage
           asset={page?.thumbnailImage}
-          alt={page?.title || ""}
+          alt={page?.title || ''}
           mode="responsive"
           maxWidth={200}
           aspectRatio={1}
@@ -65,7 +68,9 @@ export const Project = ({
         <BsDot className="h-1" />
       </Box>
 
-      {page?.projectText && <ProjectText blocks={page?.projectText as unknown} />}
+      {page?.projectText && (
+        <ProjectText blocks={page?.projectText as unknown} />
+      )}
 
       <Box as="div" className="mt-1 text-center">
         <BsDot className="h-1" />
@@ -76,7 +81,9 @@ export const Project = ({
           </ExternalLink>
         </Type>
         <Type as="p" className="mt-1">
-          <ExternalLink href={page?.repoUrl || null}>{page?.repoUrl}</ExternalLink>
+          <ExternalLink href={page?.repoUrl || null}>
+            {page?.repoUrl}
+          </ExternalLink>
         </Type>
         <Type as="p" className="mt-1">
           {page?.date}

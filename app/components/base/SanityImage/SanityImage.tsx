@@ -1,14 +1,14 @@
-import {
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
-import { SanitySrcSetImage } from "./components/SanitySrcSetImage/SanitySrcSetImage";
+} from 'sanity-codegen';
+import { SanitySrcSetImage } from './components/SanitySrcSetImage/SanitySrcSetImage';
 
 // TYPES
 export type ImageAssetProp = {
-  _type: "image";
+  _type: 'image';
   asset: SanityReference<SanityImageAsset>;
   crop?: SanityImageCrop;
   hotspot?: SanityImageHotspot;
@@ -18,7 +18,7 @@ export type SanityImageProps = {
   asset: ImageAssetProp | undefined;
   maxWidth: number;
   alt: string | undefined;
-  mode: "responsive" | "cover" | "contain" | "next";
+  mode: 'responsive' | 'cover' | 'contain' | 'next';
   className?: string;
   wrapperClassName?: string;
   assetClassName?: string;
@@ -31,19 +31,19 @@ export const SanityImage = ({
   asset,
   maxWidth,
   alt,
-  mode = "responsive",
+  mode = 'responsive',
   aspectRatio,
   containAspectRatio = 1,
-  className = "",
-  wrapperClassName = "",
-  assetClassName = "",
+  className = '',
+  wrapperClassName = '',
+  assetClassName = '',
 }: SanityImageProps) => {
   if (!asset) {
     return null;
   }
 
   switch (mode) {
-    case "responsive":
+    case 'responsive':
       return (
         <div className={className}>
           <div
@@ -55,13 +55,13 @@ export const SanityImage = ({
               asset={asset}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
-              alt={alt || ""}
+              alt={alt || ''}
             />
           </div>
         </div>
       );
 
-    case "cover":
+    case 'cover':
       return (
         <div
           style={{ maxWidth: `${maxWidth}px` }}
@@ -72,15 +72,15 @@ export const SanityImage = ({
             asset={asset}
             maxWidth={maxWidth}
             aspectRatio={aspectRatio}
-            alt={alt || ""}
+            alt={alt || ''}
           />
         </div>
       );
 
-    case "contain":
+    case 'contain':
       return (
         <div
-          style={{ maxWidth: `${maxWidth}px`, position: "relative" }}
+          style={{ maxWidth: `${maxWidth}px`, position: 'relative' }}
           className={`contain-image-wrapper ${className} ${wrapperClassName}`}
         >
           <div className="contain-image-wrapper">
@@ -89,7 +89,7 @@ export const SanityImage = ({
               asset={asset}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
-              alt={alt || ""}
+              alt={alt || ''}
             />
           </div>
         </div>

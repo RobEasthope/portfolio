@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
-  type: "button" | "submit" | "reset";
+  type: 'button' | 'submit' | 'reset';
   className?: string;
   children: ReactNode;
 };

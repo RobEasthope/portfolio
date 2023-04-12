@@ -1,9 +1,9 @@
-import { ProjectIndex as rawProjectIndexProps } from "~/components/types/sanity-schema";
-import { ProjectProps } from "~/components/pages/Project/Project";
-import { InternalLink } from "~/components/base/InternalLink/InternalLink";
-import { Box } from "~/components/base/Box/Box";
-import { SanityImage } from "~/components/base/SanityImage/SanityImage";
-import { Type } from "~/components/base/Type/Type";
+import type { ProjectIndex as rawProjectIndexProps } from '~/components/types/sanity-schema';
+import type { ProjectProps } from '~/components/pages/Project/Project';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { Box } from '~/components/base/Box/Box';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export interface ProjectIndexProps extends rawProjectIndexProps {
@@ -19,13 +19,17 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
         className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         {projects.map((project, i) => (
-          <Box as="li" key={`${project?._id}-${i}`} className="flex items-center">
+          <Box
+            as="li"
+            key={`${project?._id}-${i}`}
+            className="flex items-center"
+          >
             {project?.thumbnailImage && project?.slug && (
               <InternalLink href={project?.slug?.current}>
                 <a>
                   <SanityImage
                     asset={project?.thumbnailImage}
-                    alt={project?.title || ""}
+                    alt={project?.title || ''}
                     mode="responsive"
                     maxWidth={48}
                     aspectRatio={1}

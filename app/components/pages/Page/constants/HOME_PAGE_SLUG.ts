@@ -1,1 +1,1 @@
-export const HOME_PAGE_SLUG = "home";
+export const HOME_PAGE_SLUG = 'home';

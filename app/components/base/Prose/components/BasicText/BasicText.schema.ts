@@ -1,5 +1,5 @@
-import { defineType, defineArrayMember } from "sanity";
-import { createBlockValidator } from "sanity-pills";
+import { defineType, defineArrayMember } from 'sanity';
+import { createBlockValidator } from 'sanity-pills';
 
 const basicTextValidator = createBlockValidator({
   required: false,
@@ -12,22 +12,22 @@ const basicTextValidator = createBlockValidator({
 });
 
 export default defineType({
-  name: "BasicText",
-  title: "Basic text",
-  type: "array",
+  name: 'BasicText',
+  title: 'Basic text',
+  type: 'array',
   of: [
     defineArrayMember({
-      type: "block",
+      type: 'block',
       styles: [],
       marks: {
         decorators: [
-          { title: "Strong", value: "strong" },
-          { title: "Emphasis", value: "em" },
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
         ],
         annotations: [
-          { type: "InternalLink" },
-          { type: "ExternalLink" },
-          { type: "EmailLink" },
+          { type: 'InternalLink' },
+          { type: 'ExternalLink' },
+          { type: 'EmailLink' },
         ],
       },
     }),

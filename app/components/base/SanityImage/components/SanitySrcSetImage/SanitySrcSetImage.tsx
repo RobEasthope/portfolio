@@ -1,17 +1,17 @@
-import { urlFor } from "apis-pkg/sanity/urlFor";
-import {
+import { urlFor } from 'apis-pkg/sanity/urlFor';
+import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
-} from "sanity-codegen";
-import { BlurrableImage } from "~/components/base/SanityImage/components/BlurrableImage/BlurrableImage";
-import { VectorImage } from "~/components/base/SanityImage/components/VectorImage/VectorImage";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+} from 'sanity-codegen';
+import { BlurrableImage } from '~/components/base/SanityImage/components/BlurrableImage/BlurrableImage';
+import { VectorImage } from '~/components/base/SanityImage/components/VectorImage/VectorImage';
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 // TYPES
 export type ImageAssetProp = {
-  _type: "image";
+  _type: 'image';
   asset: SanityReference<SanityImageAsset>;
   crop: SanityImageCrop;
   hotspot: SanityImageHotspot;
@@ -42,8 +42,10 @@ export const SanitySrcSetImage = ({
   // Render a basic img element if the asset is an svg
   const assetRef = asset?.asset?._ref;
 
-  if (assetRef?.slice(-4) === ".svg") {
-    return <VectorImage asset={asset || ""} alt={alt || ""} className={className} />;
+  if (assetRef?.slice(-4) === '.svg') {
+    return (
+      <VectorImage asset={asset || ''} alt={alt || ''} className={className} />
+    );
   }
 
   // BITMAPS
@@ -57,10 +59,10 @@ export const SanitySrcSetImage = ({
   const blurredImageAsset = (): string => {
     if (!aspectRatio) {
       // Generate url and push to array
-      return urlFor(asset).auto("format").width(100).blur(BLURRING).url();
+      return urlFor(asset).auto('format').width(100).blur(BLURRING).url();
     }
     return urlFor(asset)
-      .auto("format")
+      .auto('format')
       .width(100)
       .height(Math.floor(100 / aspectRatio))
       .blur(BLURRING)
@@ -78,7 +80,9 @@ export const SanitySrcSetImage = ({
       size += 100;
     }
 
-    return `(max-width: ${maxWidth}px) ${String(widths?.map((width) => width))}`;
+    return `(max-width: ${maxWidth}px) ${String(
+      widths?.map((width) => width),
+    )}`;
   };
 
   const srcSetAssets = () => {
@@ -88,15 +92,19 @@ export const SanitySrcSetImage = ({
     while (size <= roundedUpMaxWidth) {
       if (!aspectRatio) {
         // Generate url
-        const url = urlFor(asset)?.auto("format")?.fit("crop")?.width(size)?.url();
+        const url = urlFor(asset)
+          ?.auto('format')
+          ?.fit('crop')
+          ?.width(size)
+          ?.url();
 
         // Push to array
         assetUrls.push(`${url && url} ${size && size}w`);
       } else {
         // Generate url
         const url = urlFor(asset)
-          .auto("format")
-          .fit("crop")
+          .auto('format')
+          .fit('crop')
           .width(size)
           .height(Math.floor(size / aspectRatio))
           .url();
@@ -123,7 +131,7 @@ export const SanitySrcSetImage = ({
             srcSet={srcSetAssets()}
             className={className}
             loading="lazy"
-            alt={alt || ""}
+            alt={alt || ''}
           />
         }
         blurredAssetUrl={blurredImageAsset()}
