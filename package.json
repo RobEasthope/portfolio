@@ -9,6 +9,7 @@
     "lint:fix": "eslint . --color --fix && tsc --pretty --noEmit"
   },
   "dependencies": {
+    "@playwright/test": "^1.32.3",
     "@remix-run/node": "^1.15.0",
     "@remix-run/react": "^1.15.0",
     "@vercel/remix": "1.15.0",
