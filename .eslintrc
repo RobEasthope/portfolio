@@ -5,6 +5,18 @@
     "@remix-run/eslint-config/node",
     "wesbos/typescript"
   ],
+  "rules": {
+    "no-console": 1,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "all",
+        "singleQuote": true,
+        "printWidth": 80,
+        "tabWidth": 2
+      }
+    ]
+  },
   "parserOptions": {
     "project": "./tsconfig.json"
   },

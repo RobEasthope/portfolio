@@ -1,4 +1,4 @@
-import type { MetaFunction, LinksFunction, LoaderArgs } from '@vercel/remix';
+import type { LinksFunction } from '@vercel/remix';
 
 import {
   Links,
@@ -8,39 +8,19 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import NavigationSwitcher from '~/nav';
 
-import mainCss from '~/styles/main.css';
-
-import stylesheet from '~/tailwind.css';
-
-export function loader({ request }: LoaderArgs) {
-  return {
-    host: request.headers.get('x-forwarded-host'),
-  };
-}
-
-export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
-  charset: 'utf-8',
-  title: 'Remix on Vercel Edge Functions',
-  description: 'HTML, dynamically rendered in a city near you',
-  'twitter:card': 'summary_large_image',
-  'twitter:site': '@vercel',
-  'twitter:creator': '@vercel',
-  'twitter:title': 'Remix on Vercel Edge Functions',
-  'twitter:description': 'HTML, dynamically rendered in a city near you',
-  'twitter:image': `https://${host}/og-card.png`,
-  'twitter:image:alt': 'The Vercel and Remix logos',
-  viewport: 'width=device-width,initial-scale=1',
-});
+import tailwindCSS from '~/styles/tailwind.css';
 
 export const links: LinksFunction = () => [
-  {
-    rel: 'stylesheet',
-    href: mainCss,
-  },
-  { rel: 'stylesheet', href: stylesheet },
+  { rel: 'stylesheet', href: tailwindCSS },
 ];
+
+export const meta = () => ({
+  charset: 'utf-8',
+  viewport: 'width=device-width,initial-scale=1',
+  title: 'Rob Easthope',
+  description: 'Portfolio website for Rob Easthope',
+});
 
 export default function App() {
   return (
@@ -50,7 +30,6 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <NavigationSwitcher />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
