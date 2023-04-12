@@ -9,7 +9,7 @@ export async function loader({ request }: LoaderArgs) {
   };
 }
 
-export default function App() {
+export default function Index() {
   const { date } = useLoaderData<typeof loader>();
   return (
     <main>

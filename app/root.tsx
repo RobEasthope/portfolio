@@ -9,7 +9,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
-import stylesheet from '~/styles/tailwind.css';
+import tailwindCSS from '~/styles/tailwind.css';
 
 export function loader({ request }: LoaderArgs) {
   return {
@@ -24,7 +24,7 @@ export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: tailwindCSS }];
 
 export default function App() {
   return (
