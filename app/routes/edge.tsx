@@ -9,13 +9,13 @@ import { parseVercelId } from '~/parse-vercel-id';
 export const config = { runtime: 'edge' };
 
 let isCold = true;
-let initialDate = Date.now();
+const initialDate = Date.now();
 
 export async function loader({ request }: LoaderArgs) {
   const wasCold = isCold;
   isCold = false;
 
-  const parsedId = parseVercelId(request.headers.get("x-vercel-id"));
+  const parsedId = parseVercelId(request.headers.get('x-vercel-id'));
 
   return {
     ...parsedId,
@@ -31,7 +31,8 @@ export function headers() {
 }
 
 export default function App() {
-  const { proxyRegion, computeRegion, isCold, date } = useLoaderData<typeof loader>();
+  const { proxyRegion, computeRegion, isCold, date } =
+    useLoaderData<typeof loader>();
   return (
     <>
       <main>
@@ -51,7 +52,11 @@ export default function App() {
       <Footer>
         <p>
           Generated at {date} <span data-break /> ({isCold ? 'cold' : 'hot'}) by{' '}
-          <a href="https://vercel.com/docs/concepts/functions/edge-functions" target="_blank" rel="noreferrer">
+          <a
+            href="https://vercel.com/docs/concepts/functions/edge-functions"
+            target="_blank"
+            rel="noreferrer"
+          >
             Vercel Edge Runtime
           </a>
         </p>

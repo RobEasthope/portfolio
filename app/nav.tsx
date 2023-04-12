@@ -14,55 +14,49 @@ export default function NavigationSwitcher() {
     (section) => section.href === pathname
   );
 
-  const buttons = SECTION_DATA.map((section) => {
-    return (
-      <NavLink
-        to={section.href}
-        className={({ isActive, isPending }) =>
-          `nav-link ${isActive ? 'active' : isPending ? 'pending' : ''}`
-        }
-        key={section.label}
-      >
-        {({ isActive }) => {
-          return (
+  const buttons = SECTION_DATA.map((section) => (
+    <NavLink
+      to={section.href}
+      className={({ isActive, isPending }) =>
+        `nav-link ${isActive ? 'active' : isPending ? 'pending' : ''}`
+      }
+      key={section.label}
+    >
+      {({ isActive }) => (
+        <>
+          <div style={{ position: 'relative', zIndex: 2 }}>{section.label}</div>
+          {isActive ? (
             <>
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                {section.label}
-              </div>
-              {isActive ? (
-                <>
-                  <motion.div
-                    aria-hidden
-                    className="nav-glow"
-                    layoutId="glow"
-                    transition={{
-                      delay: 0.03,
-                      type: 'spring',
-                      stiffness: 125,
-                      damping: 20,
-                      mass: 1,
-                    }}
-                    style={{ scale: 2, opacity: 0.2, rotate: 0.00001 }}
-                  />
-                  <motion.div
-                    aria-hidden
-                    className="nav-pill"
-                    layoutId="pill"
-                    transition={{
-                      type: 'spring',
-                      stiffness: 150,
-                      damping: 20,
-                      mass: 1,
-                    }}
-                  />
-                </>
-              ) : null}
+              <motion.div
+                aria-hidden
+                className="nav-glow"
+                layoutId="glow"
+                transition={{
+                  delay: 0.03,
+                  type: 'spring',
+                  stiffness: 125,
+                  damping: 20,
+                  mass: 1,
+                }}
+                style={{ scale: 2, opacity: 0.2, rotate: 0.00001 }}
+              />
+              <motion.div
+                aria-hidden
+                className="nav-pill"
+                layoutId="pill"
+                transition={{
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                  mass: 1,
+                }}
+              />
             </>
-          );
-        }}
-      </NavLink>
-    );
-  });
+          ) : null}
+        </>
+      )}
+    </NavLink>
+  ));
 
   return (
     <>
