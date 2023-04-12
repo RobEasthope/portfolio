@@ -1,9 +1,9 @@
 import groq from "groq";
-import { SANITY_BLOCK_QUERIES } from "ui-pkg/base/SanityBlocks/SANITY_BLOCK_QUERIES";
-import { SanityPageByIdQueryProps } from "ui-pkg/types/SanityPageByIdQueryProps";
-import { HEADER_QUERY } from "ui-pkg/navigation/Header/Header.query";
-import { FOOTER_QUERY } from "ui-pkg/navigation/Footer/Footer.query";
-import { METADATA_SETTINGS_QUERY } from "ui-pkg/settings/MetadataSettings.query";
+import { SANITY_BLOCK_QUERIES } from "~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES";
+import { SanityPageByIdQueryProps } from "~/components/types/SanityPageByIdQueryProps";
+import { HEADER_QUERY } from "~/components/navigation/Header/Header.query";
+import { FOOTER_QUERY } from "~/components/navigation/Footer/Footer.query";
+import { METADATA_SETTINGS_QUERY } from "~/components/settings/MetadataSettings.query";
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`

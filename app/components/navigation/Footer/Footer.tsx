@@ -1,13 +1,15 @@
-import { Box } from "ui-pkg/base/Box/Box";
-import { SuperLink } from "ui-pkg/base/SuperLink/SuperLink";
-import { Type } from "ui-pkg/base/Type/Type";
+import { Box } from '~/components/base/Box/Box';
+import { SuperLink } from '~/components/base/SuperLink/SuperLink';
+import { Type } from '~/components/base/Type/Type';
+import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
 import {
-  ExternalLink,
-  ExternalLinkWithTitleSchemaProps,
-} from "ui-pkg/base/ExternalLink/ExternalLink";
-import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/InternalLink/InternalLink";
-import { SanityImageAsset, SanityImageCrop, SanityReference } from "sanity-codegen";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityReference,
+} from 'sanity-codegen';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 
 // TYPES
 export type FooterProps = {
@@ -27,7 +29,11 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
   return (
     <Box as="footer">
       <Box as="div" className="mx-auto flex flex-col gap-1 px-1 py-3">
-        <Box as="nav" className="flex flex-wrap justify-center" aria-label="Footer">
+        <Box
+          as="nav"
+          className="flex flex-wrap justify-center"
+          aria-label="Footer"
+        >
           <Box as="ul" className="flex gap-1">
             {footerNavigation?.map((nav, i) => (
               <Type as="li" key={nav?._key} className="text-base font-medium">

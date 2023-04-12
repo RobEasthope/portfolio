@@ -1,14 +1,14 @@
-import { Box } from "ui-pkg/base/Box/Box";
+import { Box } from "~/components/base/Box/Box";
 import * as Dialog from "@radix-ui/react-dialog";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
-import { GalleryProps } from "ui-pkg/blocks/Gallery/Gallery";
+import { SanityImage } from "~/components/base/SanityImage/SanityImage";
+import { GalleryProps } from "~/components/blocks/Gallery/Gallery";
 import {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from "sanity-codegen";
-import { Type } from "ui-pkg/base/Type/Type";
+import { Type } from "~/components/base/Type/Type";
 
 // TYPES
 export type GalleryImageProps = {

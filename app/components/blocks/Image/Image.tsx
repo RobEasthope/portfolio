@@ -1,6 +1,6 @@
-import { Box } from "ui-pkg/base/Box/Box";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
-import { Type } from "ui-pkg/base/Type/Type";
+import { Box } from "~/components/base/Box/Box";
+import { SanityImage } from "~/components/base/SanityImage/SanityImage";
+import { Type } from "~/components/base/Type/Type";
 import {
   SanityImageAsset,
   SanityImageCrop,

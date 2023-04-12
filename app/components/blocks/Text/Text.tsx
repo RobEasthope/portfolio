@@ -1,9 +1,9 @@
-import { Box } from "ui-pkg/base/Box/Box";
-import { Prose } from "ui-pkg/base/Prose/Prose";
+import { Box } from "~/components/base/Box/Box";
+import { Prose } from "~/components/base/Prose/Prose";
 import {
   FullTextComponents,
   FullTextProps,
-} from "ui-pkg/base/Prose/components/FullText/FullText";
+} from "~/components/base/Prose/components/FullText/FullText";
 
 // TYPES
 export type TextProps = {

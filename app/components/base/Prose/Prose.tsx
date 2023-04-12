@@ -1,5 +1,6 @@
-import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { Box } from "ui-pkg/base/Box/Box";
+import type { PortableTextComponents } from '@portabletext/react';
+import { PortableText } from '@portabletext/react';
+import { Box } from '~/components/base/Box/Box';
 
 export type ProseProps = {
   as: string;
@@ -8,13 +9,18 @@ export type ProseProps = {
   components: unknown;
 };
 
-export const Prose = ({ as = "div", content, components, className }: ProseProps) => {
+export const Prose = ({
+  as = 'div',
+  content,
+  components,
+  className,
+}: ProseProps) => {
   if (!content) {
     return null;
   }
 
   return (
-    <Box as={as} className={`prose text-black ${className || ""}`}>
+    <Box as={as} className={`prose text-black ${className || ''}`}>
       <PortableText
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value={content}

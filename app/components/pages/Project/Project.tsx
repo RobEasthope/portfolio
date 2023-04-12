@@ -1,11 +1,11 @@
-import { Organisation, Project as rawProjectProps } from "ui-pkg/types/sanity-schema";
-import { AppGlobalsProps } from "ui-pkg/settings/Globals";
-import { ProjectText } from "ui-pkg/base/Prose/components/ProjectText/ProjectText";
-import { Box } from "ui-pkg/base/Box/Box";
-import { Spacer } from "ui-pkg/blocks/Spacer/Spacer";
-import { ExternalLink } from "ui-pkg/base/ExternalLink/ExternalLink";
+import { Organisation, Project as rawProjectProps } from "~/components/types/sanity-schema";
+import { AppGlobalsProps } from "~/components/settings/Globals";
+import { ProjectText } from "~/components/base/Prose/components/ProjectText/ProjectText";
+import { Box } from "~/components/base/Box/Box";
+import { Spacer } from "~/components/blocks/Spacer/Spacer";
+import { ExternalLink } from "~/components/base/ExternalLink/ExternalLink";
 import { BsDot } from "react-icons/bs";
-import { BasicLayout } from "ui-pkg/layouts/BasicLayout/BasicLayout";
+import { BasicLayout } from "~/components/layouts/BasicLayout/BasicLayout";
 import { Type } from "base/Type/Type";
 import { SanityImage } from "base/SanityImage/SanityImage";
 

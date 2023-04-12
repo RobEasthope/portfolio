@@ -1,13 +1,13 @@
-import { FooterProps } from "ui-pkg/navigation/Footer/Footer";
-import { HeaderProps } from "ui-pkg/navigation/Header/Header";
-import { SanityBlocks } from "ui-pkg/base/SanityBlocks/SanityBlocks";
+import { FooterProps } from "~/components/navigation/Footer/Footer";
+import { HeaderProps } from "~/components/navigation/Header/Header";
+import { SanityBlocks } from "~/components/base/SanityBlocks/SanityBlocks";
 import {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from "sanity-codegen";
-import { BasicLayout } from "ui-pkg/layouts/BasicLayout/BasicLayout";
+import { BasicLayout } from "~/components/layouts/BasicLayout/BasicLayout";
 
 // TYPES
 export type PageProps = {

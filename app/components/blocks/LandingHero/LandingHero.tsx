@@ -1,16 +1,16 @@
-import { Box } from "ui-pkg/base/Box/Box";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
+import { Box } from "~/components/base/Box/Box";
+import { SanityImage } from "~/components/base/SanityImage/SanityImage";
 import SanityMuxPlayer from "sanity-mux-player";
-import { Type } from "ui-pkg/base/Type/Type";
-import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
+import { Type } from "~/components/base/Type/Type";
+import { METADATA_HARD_CODED_FALLBACKS } from "~/components/config/METADATA_HARD_CODED_FALLBACKS";
 import {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from "sanity-codegen";
-import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/ExternalLink/ExternalLink";
-import { InternalLinkWithTitleSchemaProps } from "ui-pkg/base/InternalLink/InternalLink";
+import { ExternalLinkWithTitleSchemaProps } from "~/components/base/ExternalLink/ExternalLink";
+import { InternalLinkWithTitleSchemaProps } from "~/components/base/InternalLink/InternalLink";
 
 // TYPES
 export type LandingHeroProps = {

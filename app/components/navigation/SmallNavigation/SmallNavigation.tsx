@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import * as Dialog from "@radix-ui/react-dialog";
-import { SuperLink } from "ui-pkg/base/SuperLink/SuperLink";
-import { HeaderProps } from "ui-pkg/navigation/Header/Header";
-import { Box } from "ui-pkg/base/Box/Box";
-import { Type } from "ui-pkg/base/Type/Type";
-import { InternalLink } from "ui-pkg/base/InternalLink/InternalLink";
-import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
-import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
+import { SuperLink } from "~/components/base/SuperLink/SuperLink";
+import { HeaderProps } from "~/components/navigation/Header/Header";
+import { Box } from "~/components/base/Box/Box";
+import { Type } from "~/components/base/Type/Type";
+import { InternalLink } from "~/components/base/InternalLink/InternalLink";
+import { HOME_PAGE_SLUG } from "~/components/pages/Page/constants/HOME_PAGE_SLUG";
+import { SanityImage } from "~/components/base/SanityImage/SanityImage";
+import { METADATA_HARD_CODED_FALLBACKS } from "~/components/config/METADATA_HARD_CODED_FALLBACKS";
 
 // TYPES
 export type SmallNavigationProps = Pick<

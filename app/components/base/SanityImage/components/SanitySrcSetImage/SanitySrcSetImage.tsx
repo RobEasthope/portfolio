@@ -5,8 +5,8 @@ import {
   SanityImageHotspot,
   SanityReference,
 } from "sanity-codegen";
-import { BlurrableImage } from "ui-pkg/base/SanityImage/components/BlurrableImage/BlurrableImage";
-import { VectorImage } from "ui-pkg/base/SanityImage/components/VectorImage/VectorImage";
+import { BlurrableImage } from "~/components/base/SanityImage/components/BlurrableImage/BlurrableImage";
+import { VectorImage } from "~/components/base/SanityImage/components/VectorImage/VectorImage";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // TYPES

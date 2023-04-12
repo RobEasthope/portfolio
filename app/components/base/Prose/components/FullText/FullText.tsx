@@ -4,16 +4,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import dynamic from "next/dynamic";
 import { PortableTextComponents } from "@portabletext/react";
-import { ImageProps } from "ui-pkg/blocks/Image/Image";
-import { YoutubeVideoProps } from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo";
-import { Type } from "ui-pkg/base/Type/Type";
-import { InternalLink } from "ui-pkg/base/InternalLink/InternalLink";
-import { ExternalLink } from "ui-pkg/base/ExternalLink/ExternalLink";
-import { EmailLink } from "ui-pkg/base/EmailLink/EmailLink";
+import { ImageProps } from "~/components/blocks/Image/Image";
+import { YoutubeVideoProps } from "~/components/blocks/YoutubeVideo/YoutubeVideo";
+import { Type } from "~/components/base/Type/Type";
+import { InternalLink } from "~/components/base/InternalLink/InternalLink";
+import { ExternalLink } from "~/components/base/ExternalLink/ExternalLink";
+import { EmailLink } from "~/components/base/EmailLink/EmailLink";
 import { SanityBlock, SanityKeyed } from "sanity-codegen";
 
-const Image = dynamic(() => import("ui-pkg/blocks/Image/Image"));
-const YoutubeVideo = dynamic(() => import("ui-pkg/blocks/YoutubeVideo/YoutubeVideo"));
+const Image = dynamic(() => import("~/components/blocks/Image/Image"));
+const YoutubeVideo = dynamic(() => import("~/components/blocks/YoutubeVideo/YoutubeVideo"));
 
 export type FullTextProps = Array<
   SanityKeyed<SanityBlock> | SanityKeyed<ImageProps> | SanityKeyed<YoutubeVideoProps>

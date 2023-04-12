@@ -3,17 +3,17 @@ import {
   ExternalLink,
   ExternalLinkSchemaProps,
   ExternalLinkWithTitleSchemaProps,
-} from "ui-pkg/base/ExternalLink/ExternalLink";
+} from "~/components/base/ExternalLink/ExternalLink";
 import {
   InternalLink,
   InternalLinkSchemaProps,
   InternalLinkWithTitleSchemaProps,
-} from "ui-pkg/base/InternalLink/InternalLink";
+} from "~/components/base/InternalLink/InternalLink";
 
 import {
   EmailLink,
   EmailLinkWithTitleSchemaProps,
-} from "ui-pkg/base/EmailLink/EmailLink";
+} from "~/components/base/EmailLink/EmailLink";
 
 export type SuperLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   link:

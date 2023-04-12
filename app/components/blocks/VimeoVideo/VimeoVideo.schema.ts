@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 import { RiVimeoFill } from "react-icons/ri";
 import { SelectionProps } from "sanity-app/types/Selection";
-import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
+import { MAX_CONTENT_OPTIONS } from "~/components/config/MAX_CONTENT_OPTIONS";
 
 export default defineType({
   type: "object",

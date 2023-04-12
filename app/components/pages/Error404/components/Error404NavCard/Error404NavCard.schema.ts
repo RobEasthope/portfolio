@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { SelectionProps } from "sanity-app/types/Selection";
-import { ALL_PAGE_TYPES } from "ui-pkg/base/InternalLink/ALL_PAGE_TYPES";
+import { ALL_PAGE_TYPES } from "~/components/base/InternalLink/ALL_PAGE_TYPES";
 
 export default defineType({
   name: "Error404NavCard",

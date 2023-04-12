@@ -1,6 +1,6 @@
 import SanityMuxPlayer from "sanity-mux-player";
-import { Box } from "ui-pkg/base/Box/Box";
-import { Type } from "ui-pkg/base/Type/Type";
+import { Box } from "~/components/base/Box/Box";
+import { Type } from "~/components/base/Type/Type";
 
 // TYPES
 export type MuxVideoProps = {

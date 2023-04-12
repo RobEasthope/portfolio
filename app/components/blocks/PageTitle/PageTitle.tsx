@@ -1,6 +1,6 @@
-import { PageTitle as rawPageTitleProps } from "ui-pkg/types/sanity-schema";
-import { Box } from "ui-pkg/base/Box/Box";
-import { Type } from "ui-pkg/base/Type/Type";
+import { PageTitle as rawPageTitleProps } from "~/components/types/sanity-schema";
+import { Box } from "~/components/base/Box/Box";
+import { Type } from "~/components/base/Type/Type";
 
 // TYPES
 export interface PageTitleProps extends rawPageTitleProps {

@@ -1,7 +1,9 @@
-import { Footer, FooterProps } from "ui-pkg/navigation/Footer/Footer";
-import { Header, HeaderProps } from "ui-pkg/navigation/Header/Header";
-import { Box } from "ui-pkg/base/Box/Box";
-import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import { Footer } from '~/components/navigation/Footer/Footer';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+import { Header } from '~/components/navigation/Header/Header';
+import { Box } from '~/components/base/Box/Box';
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 
 export type BasicLayoutProps = {
   children: React.ReactNode;
@@ -10,7 +12,12 @@ export type BasicLayoutProps = {
   slug?: string;
 };
 
-export const BasicLayout = ({ children, header, footer, slug }: BasicLayoutProps) => (
+export const BasicLayout = ({
+  children,
+  header,
+  footer,
+  slug,
+}: BasicLayoutProps) => (
   <Box as="div" className="flex min-h-screen w-full flex-col bg-white">
     <Header
       logo={header?.logo}

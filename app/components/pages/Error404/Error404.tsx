@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
-import { FooterProps } from "ui-pkg/navigation/Footer/Footer";
-import { HeaderProps } from "ui-pkg/navigation/Header/Header";
+import { FooterProps } from "~/components/navigation/Footer/Footer";
+import { HeaderProps } from "~/components/navigation/Header/Header";
 import {
   Error404NavCard,
   Error404NavCardProps,
-} from "ui-pkg/pages/Error404/components/Error404NavCard/Error404NavCard";
-import { Box } from "ui-pkg/base/Box/Box";
+} from "~/components/pages/Error404/components/Error404NavCard/Error404NavCard";
+import { Box } from "~/components/base/Box/Box";
 import { TbParachute } from "react-icons/tb";
 import {
   SanityImageAsset,
@@ -13,9 +13,9 @@ import {
   SanityImageHotspot,
   SanityReference,
 } from "sanity-codegen";
-import { Button } from "ui-pkg/base/Button/Button";
-import { Type } from "ui-pkg/base/Type/Type";
-import { BasicLayout } from "ui-pkg/layouts/BasicLayout/BasicLayout";
+import { Button } from "~/components/base/Button/Button";
+import { Type } from "~/components/base/Type/Type";
+import { BasicLayout } from "~/components/layouts/BasicLayout/BasicLayout";
 
 export type Error404Props = {
   page: {

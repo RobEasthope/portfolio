@@ -1,9 +1,9 @@
-import { ProjectIndex as rawProjectIndexProps } from "ui-pkg/types/sanity-schema";
-import { ProjectProps } from "ui-pkg/pages/Project/Project";
-import { InternalLink } from "ui-pkg/base/InternalLink/InternalLink";
-import { Box } from "ui-pkg/base/Box/Box";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
-import { Type } from "ui-pkg/base/Type/Type";
+import { ProjectIndex as rawProjectIndexProps } from "~/components/types/sanity-schema";
+import { ProjectProps } from "~/components/pages/Project/Project";
+import { InternalLink } from "~/components/base/InternalLink/InternalLink";
+import { Box } from "~/components/base/Box/Box";
+import { SanityImage } from "~/components/base/SanityImage/SanityImage";
+import { Type } from "~/components/base/Type/Type";
 
 // TYPES
 export interface ProjectIndexProps extends rawProjectIndexProps {

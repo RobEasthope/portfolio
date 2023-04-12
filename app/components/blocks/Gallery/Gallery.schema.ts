@@ -1,9 +1,9 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
 import { RiGalleryLine } from "react-icons/ri";
 import { SelectionProps } from "sanity-app/types/Selection";
-import { ASPECT_RATIOS } from "ui-pkg/config/ASPECT_RATIOS";
-import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
-import { COLUMN_OPTIONS } from "ui-pkg/config/COLUMN_OPTIONS";
+import { ASPECT_RATIOS } from "~/components/config/ASPECT_RATIOS";
+import { MAX_CONTENT_OPTIONS } from "~/components/config/MAX_CONTENT_OPTIONS";
+import { COLUMN_OPTIONS } from "~/components/config/COLUMN_OPTIONS";
 
 export default defineType({
   type: "object",

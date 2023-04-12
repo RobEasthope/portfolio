@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { RiVideoLine } from "react-icons/ri";
-import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
+import { MAX_CONTENT_OPTIONS } from "~/components/config/MAX_CONTENT_OPTIONS";
 import { SelectionProps } from "sanity-app/types/Selection";
 
 export default defineType({

@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 import { RiImage2Line } from "react-icons/ri";
 import { SelectionProps } from "sanity-app/types/Selection";
-import { ASPECT_RATIOS } from "ui-pkg/config/ASPECT_RATIOS";
-import { MAX_CONTENT_OPTIONS } from "ui-pkg/config/MAX_CONTENT_OPTIONS";
+import { ASPECT_RATIOS } from "~/components/config/ASPECT_RATIOS";
+import { MAX_CONTENT_OPTIONS } from "~/components/config/MAX_CONTENT_OPTIONS";
 
 export default defineType({
   type: "object",

@@ -1,10 +1,10 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Box } from "ui-pkg/base/Box/Box";
-import { Type } from "ui-pkg/base/Type/Type";
+import { Box } from "~/components/base/Box/Box";
+import { Type } from "~/components/base/Type/Type";
 import {
   InternalLink,
   InternalLinkWithTitleSchemaProps,
-} from "ui-pkg/base/InternalLink/InternalLink";
+} from "~/components/base/InternalLink/InternalLink";
 
 export type Error404NavCardProps = {
   _type?: "Error404NavCard";

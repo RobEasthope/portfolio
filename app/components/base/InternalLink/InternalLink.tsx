@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { SanityReference } from "sanity-codegen";
-import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
-import { PageProps } from "ui-pkg/pages/Page/Page";
-import { CourseProps } from "ui-pkg/pages/Course/Course";
-import { BlogPostProps } from "ui-pkg/pages/BlogPost/BlogPost";
+import { HOME_PAGE_SLUG } from "~/components/pages/Page/constants/HOME_PAGE_SLUG";
+import { PageProps } from "~/components/pages/Page/Page";
+import { CourseProps } from "~/components/pages/Course/Course";
+import { BlogPostProps } from "~/components/pages/BlogPost/BlogPost";
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {

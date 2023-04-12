@@ -1,9 +1,9 @@
-import { Type } from "ui-pkg/base/Type/Type";
-import { Box } from "ui-pkg/base/Box/Box";
+import { Type } from "~/components/base/Type/Type";
+import { Box } from "~/components/base/Box/Box";
 import {
   GalleryImage,
   GalleryImageProps,
-} from "ui-pkg/blocks/Gallery/components/GalleryImage/GalleryImage";
+} from "~/components/blocks/Gallery/components/GalleryImage/GalleryImage";
 
 // TYPES
 export type GalleryProps = {

@@ -1,24 +1,26 @@
-import { Box } from "ui-pkg/base/Box/Box";
-import { Type } from "ui-pkg/base/Type/Type";
-import { SmallNavigation } from "ui-pkg/navigation/SmallNavigation/SmallNavigation";
-import { ExternalLinkWithTitleSchemaProps } from "ui-pkg/base/ExternalLink/ExternalLink";
-import {
-  InternalLink,
-  InternalLinkWithTitleSchemaProps,
-} from "ui-pkg/base/InternalLink/InternalLink";
-import { SuperLink } from "ui-pkg/base/SuperLink/SuperLink";
-import Headroom from "react-headroom";
-import { SanityImageAsset, SanityImageCrop, SanityReference } from "sanity-codegen";
-import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
-import { EmailLinkWithTitleSchemaProps } from "ui-pkg/base/EmailLink/EmailLink";
-import { SanityImage } from "ui-pkg/base/SanityImage/SanityImage";
-import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
+import { Box } from '~/components/base/Box/Box';
+import { Type } from '~/components/base/Type/Type';
+import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
+import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { SuperLink } from '~/components/base/SuperLink/SuperLink';
+import Headroom from 'react-headroom';
+import type {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityReference,
+} from 'sanity-codegen';
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
 
 // TYPES
 export type HeaderProps = {
-  _type?: "Header";
+  _type?: 'Header';
   logo?: {
-    _type: "image";
+    _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     attribution?: string;
@@ -27,20 +29,24 @@ export type HeaderProps = {
     | [
         | ExternalLinkWithTitleSchemaProps
         | InternalLinkWithTitleSchemaProps
-        | EmailLinkWithTitleSchemaProps
+        | EmailLinkWithTitleSchemaProps,
       ]
     | null;
   secondaryNavigation:
     | [
         | ExternalLinkWithTitleSchemaProps
         | InternalLinkWithTitleSchemaProps
-        | EmailLinkWithTitleSchemaProps
+        | EmailLinkWithTitleSchemaProps,
       ]
     | null;
 };
 
 // MARKUP
-export const Header = ({ logo, primaryNavigation, secondaryNavigation }: HeaderProps) => {
+export const Header = ({
+  logo,
+  primaryNavigation,
+  secondaryNavigation,
+}: HeaderProps) => {
   if (!logo && !primaryNavigation) {
     return null;
   }

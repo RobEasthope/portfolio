@@ -1,28 +1,28 @@
 import dynamic from "next/dynamic";
 // Type imports
-import { GalleryProps } from "ui-pkg/blocks/Gallery/Gallery";
-import { ImageProps } from "ui-pkg/blocks/Image/Image";
-import { LandingHeroProps } from "ui-pkg/blocks/LandingHero/LandingHero";
-import { MuxVideoProps } from "ui-pkg/blocks/MuxVideo/MuxVideo";
-import { PageTitleProps } from "ui-pkg/blocks/PageTitle/PageTitle";
-import { ProjectIndexProps } from "ui-pkg/blocks/ProjectIndex/ProjectIndex";
-import { SpacerProps } from "ui-pkg/blocks/Spacer/Spacer";
-import { TextProps } from "ui-pkg/blocks/Text/Text";
-import { VimeoVideoProps } from "ui-pkg/blocks/VimeoVideo/VimeoVideo";
-import { YoutubeVideoProps } from "ui-pkg/blocks/YoutubeVideo/YoutubeVideo";
-import { ProjectProps } from "ui-pkg/pages/Project/Project";
+import { GalleryProps } from "~/components/blocks/Gallery/Gallery";
+import { ImageProps } from "~/components/blocks/Image/Image";
+import { LandingHeroProps } from "~/components/blocks/LandingHero/LandingHero";
+import { MuxVideoProps } from "~/components/blocks/MuxVideo/MuxVideo";
+import { PageTitleProps } from "~/components/blocks/PageTitle/PageTitle";
+import { ProjectIndexProps } from "~/components/blocks/ProjectIndex/ProjectIndex";
+import { SpacerProps } from "~/components/blocks/Spacer/Spacer";
+import { TextProps } from "~/components/blocks/Text/Text";
+import { VimeoVideoProps } from "~/components/blocks/VimeoVideo/VimeoVideo";
+import { YoutubeVideoProps } from "~/components/blocks/YoutubeVideo/YoutubeVideo";
+import { ProjectProps } from "~/components/pages/Project/Project";
 
 // Dynamic component imports
-const Gallery = dynamic(() => import("ui-pkg/blocks/Gallery/Gallery"));
-const Image = dynamic(() => import("ui-pkg/blocks/Image/Image"));
-const LandingHero = dynamic(() => import("ui-pkg/blocks/LandingHero/LandingHero"));
-const MuxVideo = dynamic(() => import("ui-pkg/blocks/MuxVideo/MuxVideo"));
-const PageTitle = dynamic(() => import("ui-pkg/blocks/PageTitle/PageTitle"));
-const ProjectIndex = dynamic(() => import("ui-pkg/blocks/ProjectIndex/ProjectIndex"));
-const Spacer = dynamic(() => import("ui-pkg/blocks/Spacer/Spacer"));
-const Text = dynamic(() => import("ui-pkg/blocks/Text/Text"));
-const VimeoVideo = dynamic(() => import("ui-pkg/blocks/VimeoVideo/VimeoVideo"));
-const YoutubeVideo = dynamic(() => import("ui-pkg/blocks/YoutubeVideo/YoutubeVideo"));
+const Gallery = dynamic(() => import("~/components/blocks/Gallery/Gallery"));
+const Image = dynamic(() => import("~/components/blocks/Image/Image"));
+const LandingHero = dynamic(() => import("~/components/blocks/LandingHero/LandingHero"));
+const MuxVideo = dynamic(() => import("~/components/blocks/MuxVideo/MuxVideo"));
+const PageTitle = dynamic(() => import("~/components/blocks/PageTitle/PageTitle"));
+const ProjectIndex = dynamic(() => import("~/components/blocks/ProjectIndex/ProjectIndex"));
+const Spacer = dynamic(() => import("~/components/blocks/Spacer/Spacer"));
+const Text = dynamic(() => import("~/components/blocks/Text/Text"));
+const VimeoVideo = dynamic(() => import("~/components/blocks/VimeoVideo/VimeoVideo"));
+const YoutubeVideo = dynamic(() => import("~/components/blocks/YoutubeVideo/YoutubeVideo"));
 
 export type RenderSectionsProps = {
   blocks: Record<"_type" | "_key" | string, any>[];
