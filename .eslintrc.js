@@ -8,4 +8,13 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
+  ignorePatterns: [
+    "/.cache",
+    "/node_modules",
+    "/.vercel",
+    "/build",
+    "/public",
+    "remix.config.js",
+    "*.d.ts",
+  ],
 };
