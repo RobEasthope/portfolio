@@ -8,7 +8,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import NavigationSwitcher from '~/nav';
 
 import mainCss from '~/styles/main.css';
 
@@ -50,7 +49,6 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <NavigationSwitcher />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
