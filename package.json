@@ -5,8 +5,8 @@
     "build": "remix build",
     "dev": "remix dev",
     "typecheck": "tsc",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint . --color && tsc --pretty --noEmit",
+    "lint:fix": "eslint . --color --fix && tsc --pretty --noEmit"
   },
   "dependencies": {
     "@remix-run/node": "^1.15.0",
