@@ -9,7 +9,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
-import stylesheet from '~/tailwind.css';
+import stylesheet from '~/styles/tailwind.css';
 
 export function loader({ request }: LoaderArgs) {
   return {
