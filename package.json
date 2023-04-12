@@ -27,9 +27,12 @@
     "@remix-run/dev": "^1.15.0",
     "@remix-run/eslint-config": "^1.15.0",
     "@remix-run/serve": "^1.15.0",
+    "@sanity/eslint-config-studio": "^2.0.1",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
     "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
     "typescript": "^5.0.4"
   },
   "engines": {
