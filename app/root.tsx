@@ -19,8 +19,8 @@ export function loader({ request }: LoaderArgs) {
 
 export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
   charset: 'utf-8',
-  title: 'Remix on Vercel Edge Functions',
-  description: 'HTML, dynamically rendered in a city near you',
+  title: 'Rob Easthope',
+  description: 'Portfolio website for Rob Easthope',
   viewport: 'width=device-width,initial-scale=1',
 });
 
