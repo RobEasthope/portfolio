@@ -12,6 +12,8 @@ import NavigationSwitcher from '~/nav';
 
 import mainCss from '~/styles/main.css';
 
+import stylesheet from '~/tailwind.css';
+
 export function loader({ request }: LoaderArgs) {
   return {
     host: request.headers.get('x-forwarded-host'),
@@ -37,6 +39,7 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: mainCss,
   },
+  { rel: 'stylesheet', href: stylesheet },
 ];
 
 export default function App() {
