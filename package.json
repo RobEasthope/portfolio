@@ -36,6 +36,7 @@
     "react-headroom": "^3.2.1",
     "react-icons": "^4.8.0",
     "react-is": "^18.2.0",
+    "react-youtube": "^10.1.0",
     "remix-utils": "^6.1.0",
     "sanity": "^3.8.3",
     "sanity-mux-player": "^0.0.27",
