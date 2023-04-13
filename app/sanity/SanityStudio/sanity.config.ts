@@ -17,6 +17,7 @@ import { FaGlobeEurope } from 'react-icons/fa';
 import { IoMdSchool } from 'react-icons/io';
 import { GoDatabase, GoPaintcan, GoTerminal } from 'react-icons/go';
 
+import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 import { schemaTypes } from './sanity.schema';
 
 export default defineConfig({
@@ -25,8 +26,8 @@ export default defineConfig({
 
   basePath: '/sanity-studio',
 
-  projectId: '117tt97y',
-  dataset: 'production',
+  projectId: SANITY_PROJECT.PUBLIC_ID,
+  dataset: SANITY_PROJECT.PUBLIC_DATASET,
 
   plugins: [
     deskTool({
