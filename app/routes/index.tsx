@@ -1,3 +1,4 @@
+import { json } from '@vercel/remix';
 import type { LoaderArgs } from '@vercel/remix';
 import { useLoaderData } from '@remix-run/react';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
@@ -10,9 +11,9 @@ export const config = { runtime: 'edge' };
 export async function loader() {
   const header: HeaderProps = await sanityAPI.fetch(HEADER_QUERY);
 
-  return {
+  return json({
     header,
-  };
+  });
 }
 
 export default function Index() {
