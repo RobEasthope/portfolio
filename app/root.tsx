@@ -1,5 +1,4 @@
 import type { LinksFunction } from '@vercel/remix';
-import { json } from '@vercel/remix';
 
 import {
   Links,
@@ -8,7 +7,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
 } from '@remix-run/react';
 
 import appCSS from '~/app.css';
@@ -25,15 +23,6 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: YoutubeVideoCSS },
 ];
 
-export async function loader() {
-  return json({
-    ENV: {
-      SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
-      SANITY_PROJECT_DATASET: process.env.SANITY_PROJECT_DATASET,
-    },
-  });
-}
-
 export const meta = () => ({
   charset: 'utf-8',
   viewport: 'width=device-width,initial-scale=1',
@@ -42,8 +31,6 @@ export const meta = () => ({
 });
 
 export default function App() {
-  const data = useLoaderData<typeof loader>();
-
   return (
     <html lang="en">
       <head>
@@ -53,12 +40,7 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
-          }}
-        />
+
         <Scripts />
         <LiveReload />
       </body>
