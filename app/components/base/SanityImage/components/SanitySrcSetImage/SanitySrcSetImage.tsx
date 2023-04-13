@@ -7,7 +7,7 @@ import type {
 import { BlurrableImage } from '~/components/base/SanityImage/components/BlurrableImage/BlurrableImage';
 import { VectorImage } from '~/components/base/SanityImage/components/VectorImage/VectorImage';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { urlFor } from '~/utils/sanity-js-api/urlFor';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 // TYPES
 export type ImageAssetProp = {
