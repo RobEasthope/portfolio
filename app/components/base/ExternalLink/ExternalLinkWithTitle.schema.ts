@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 import { RiExternalLinkLine } from 'react-icons/ri';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 // const ExternalLinkRender = ({ children }) => (
 //   <span>
@@ -40,7 +40,7 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title } = selection;
       return {
         title: title || 'External link',

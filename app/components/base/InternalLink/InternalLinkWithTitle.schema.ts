@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 import { RiLinksLine } from 'react-icons/ri';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 
 // const InternalLinkRender = ({ children }) => (
@@ -40,7 +40,7 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title } = selection;
       return {
         title,

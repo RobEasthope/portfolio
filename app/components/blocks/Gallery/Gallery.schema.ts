@@ -1,9 +1,9 @@
 import { defineField, defineType, defineArrayMember } from 'sanity';
 import { RiGalleryLine } from 'react-icons/ri';
-import type { SelectionProps } from 'sanity-app/types/Selection';
 import { ASPECT_RATIOS } from '~/components/config/ASPECT_RATIOS';
 import { MAX_CONTENT_OPTIONS } from '~/components/config/MAX_CONTENT_OPTIONS';
 import { COLUMN_OPTIONS } from '~/components/config/COLUMN_OPTIONS';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   type: 'object',
@@ -65,7 +65,7 @@ export default defineType({
     select: {
       title: 'heading',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title } = selection;
       return {
         title: title || 'Gallery',

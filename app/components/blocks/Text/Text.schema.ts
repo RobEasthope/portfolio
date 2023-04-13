@@ -1,7 +1,7 @@
 import { defineField, defineType } from 'sanity';
 import { BiText } from 'react-icons/bi';
-import type { SelectionProps } from 'sanity-app/types/Selection';
 import { blockPreview } from 'sanity-pills';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   type: 'object',
@@ -20,7 +20,7 @@ export default defineType({
     select: {
       title: 'text',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title } = selection;
       return {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
