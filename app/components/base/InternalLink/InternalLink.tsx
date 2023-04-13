@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@remix-run/react';
 import type { SanityReference } from 'sanity-codegen';
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 import type { PageProps } from '~/components/pages/Page/Page';
@@ -42,7 +42,7 @@ export const InternalLink = ({
 
   return (
     <Link
-      href={href === HOME_PAGE_SLUG ? '/' : `/${href}`}
+      to={href === HOME_PAGE_SLUG ? '/' : `/${href}`}
       className={className}
       role="link"
       tabIndex={0}
