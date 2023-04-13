@@ -41,6 +41,8 @@ export const meta = () => ({
 });
 
 export default function App() {
+  const data = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>
@@ -50,6 +52,12 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
         <Scripts />
         <LiveReload />
       </body>
