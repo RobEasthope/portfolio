@@ -1,4 +1,5 @@
 import type { LinksFunction } from '@vercel/remix';
+import { json } from '@vercel/remix';
 
 import {
   Links,
@@ -22,6 +23,15 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: HeadroomCSS },
   { rel: 'stylesheet', href: YoutubeVideoCSS },
 ];
+
+export async function loader() {
+  return json({
+    ENV: {
+      SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
+      SANITY_PROJECT_DATASET: process.env.SANITY_PROJECT_DATASET,
+    },
+  });
+}
 
 export const meta = () => ({
   charset: 'utf-8',
