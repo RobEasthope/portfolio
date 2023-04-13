@@ -3,6 +3,7 @@
   "extends": [
     "@remix-run/eslint-config",
     "@remix-run/eslint-config/node",
+    "@sanity/eslint-config-studio",
     "wesbos/typescript"
   ],
   "rules": {
