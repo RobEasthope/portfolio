@@ -46,10 +46,11 @@ export type HeaderProps = {
 };
 
 // MARKUP
-export const Header = () => {
-  const { logo, primaryNavigation, secondaryNavigation } =
-    useLoaderData<typeof loader>();
-
+export const Header = ({
+  logo,
+  primaryNavigation,
+  secondaryNavigation,
+}: HeaderProps) => {
   if (!logo && !primaryNavigation) {
     return null;
   }

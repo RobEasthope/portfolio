@@ -12,17 +12,20 @@ export async function loader({}: LoaderArgs) {
   console.log('header', header);
 
   return {
-    logo: header?.logo,
-    primaryNavigation: header?.primaryNavigation,
-    secondaryNavigation: header?.secondaryNavigation,
+    header,
   };
 }
 
 export default function Index() {
-  const { date } = useLoaderData<typeof loader>();
+  const { header } = useLoaderData<typeof loader>();
+
   return (
     <>
-      <Header />
+      <Header
+        logo={header?.logo}
+        primaryNavigation={header?.primaryNavigation}
+        secondaryNavigation={header?.secondaryNavigation}
+      />
       <main>
         <h1 className="text-red-400">foo</h1>
       </main>
