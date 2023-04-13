@@ -3,29 +3,21 @@ import dynamic from 'next/dynamic';
 
 // Type imports
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
+import { Gallery } from '~/components/blocks/Gallery/Gallery';
 import type { ImageProps } from '~/components/blocks/Image/Image';
+import { Image } from '~/components/blocks/Image/Image';
 import type { LandingHeroProps } from '~/components/blocks/LandingHero/LandingHero';
+import { LandingHero } from '~/components/blocks/LandingHero/LandingHero';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
+import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
 import type { SpacerProps } from '~/components/blocks/Spacer/Spacer';
+import { Spacer } from '~/components/blocks/Spacer/Spacer';
 import type { TextProps } from '~/components/blocks/Text/Text';
+import { Text } from '~/components/blocks/Text/Text';
 import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-
-// Dynamic component imports
-const Gallery = dynamic(() => import('~/components/blocks/Gallery/Gallery'));
-const Image = dynamic(() => import('~/components/blocks/Image/Image'));
-const LandingHero = dynamic(
-  () => import('~/components/blocks/LandingHero/LandingHero'),
-);
-const MuxVideo = dynamic(() => import('~/components/blocks/MuxVideo/MuxVideo'));
-const Spacer = dynamic(() => import('~/components/blocks/Spacer/Spacer'));
-const Text = dynamic(() => import('~/components/blocks/Text/Text'));
-const VimeoVideo = dynamic(
-  () => import('~/components/blocks/VimeoVideo/VimeoVideo'),
-);
-const YoutubeVideo = dynamic(
-  () => import('~/components/blocks/YoutubeVideo/YoutubeVideo'),
-);
+import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
 
 // TYPES
 export type SanityBlocksProps = {
