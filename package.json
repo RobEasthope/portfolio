@@ -32,6 +32,7 @@
     "groq": "^3.8.3",
     "isbot": "^3.6.8",
     "prettier-plugin-tailwindcss": "^0.2.7",
+    "pretty-cache-header": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
