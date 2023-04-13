@@ -1,9 +1,9 @@
 import { createClient } from '@sanity/client';
 
 export const sanityPreviewAPI = createClient({
-  dataset: process.env.SANITY_PROJECT_DATASET || '',
-  projectId: process.env.SANITY_PROJECT_ID || '',
+  projectId: process.env.SANITY_PUBLIC_PROJECT_ID || '',
+  dataset: process.env.SANITY_PUBLIC_DATASET || '',
+  apiVersion: process.env.SANITY_PUBLIC_API_VERSION || '',
   useCdn: false,
   token: process.env.SANITY_API_TOKEN || '',
-  apiVersion: process.env.SANITY_API_VERSION || '',
 });
