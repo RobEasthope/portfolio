@@ -16,6 +16,9 @@ import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG
 import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+import { useLoaderData } from '@remix-run/react';
 
 // TYPES
 export type HeaderProps = {
@@ -44,44 +47,21 @@ export type HeaderProps = {
 
 export const config = { runtime: 'edge' };
 
-export const loader = async ({ request, params }: LoaderArgs) => {
-  const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
-    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-    {
-      slug:
-        // If the router returns the app root pass in the home page slug. Other wise just pass in the page slug
-        params?.slug?.length > 0
-          ? createSlugFromQuery(params?.slug)
-          : HOME_PAGE_SLUG,
-    },
-  );
-
-  const payload = await sanityAPI
-    .fetch(
-      PAGE_BY_ID_QUERY({
-        id: primer?.id,
-        componentTypes: primer?.componentTypes,
-      }),
-    )
-    .then((result) => (result ? articleZ.parse(result) : null));
-
-  if (!payload) {
-    throw new Response(`Page not found`, { status: 404 });
-  }
+export const loader = async () => {
+  const header = await sanityAPI.fetch(HEADER_QUERY).then((payload) => payload);
 
   return json({
-    payload,
-    query: preview ? articleQuery : null,
-    params: preview ? params : null,
+    logo: header?.logo,
+    primaryNavigation: header?.primaryNavigation,
+    secondaryNavigation: header?.secondaryNavigation,
   });
 };
 
 // MARKUP
-export const Header = ({
-  logo,
-  primaryNavigation,
-  secondaryNavigation,
-}: HeaderProps) => {
+export const Header = () => {
+  const { logo, primaryNavigation, secondaryNavigation } =
+    useLoaderData<typeof loader>();
+
   if (!logo && !primaryNavigation) {
     return null;
   }
