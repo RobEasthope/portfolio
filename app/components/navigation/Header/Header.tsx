@@ -45,18 +45,6 @@ export type HeaderProps = {
     | null;
 };
 
-export const config = { runtime: 'edge' };
-
-export const loader = async () => {
-  const header = await sanityAPI.fetch(HEADER_QUERY).then((payload) => payload);
-
-  return json({
-    logo: header?.logo,
-    primaryNavigation: header?.primaryNavigation,
-    secondaryNavigation: header?.secondaryNavigation,
-  });
-};
-
 // MARKUP
 export const Header = () => {
   const { logo, primaryNavigation, secondaryNavigation } =
