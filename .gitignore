@@ -1,12 +1,35 @@
-node_modules
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
 
+# Build.compile
 .cache
 .env
 .vercel
 .output
 .DS_Store
-
+/dist
 /build/
 /public/build
+
+# Logs
+/logs
+*.log
+
+# Coverage directory used by testing tools
+/coverage
+
+# Remix
 /api/index.js
 /api/index.js.map
+
+# Typescript
+*.tsbuildinfo
+
+# Dotenv and similar local-only files
+*.local
+
+# Misc
+.DS_Store
+*.pem
