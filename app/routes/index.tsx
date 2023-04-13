@@ -6,7 +6,7 @@ import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
 export const config = { runtime: 'edge' };
 
-export const loader = async () => {
+export async function loader({}: LoaderArgs) {
   const header = await sanityAPI.fetch(HEADER_QUERY).then((payload) => payload);
 
   console.log('header', header);
@@ -16,7 +16,7 @@ export const loader = async () => {
     primaryNavigation: header?.primaryNavigation,
     secondaryNavigation: header?.secondaryNavigation,
   };
-};
+}
 
 export default function Index() {
   const { date } = useLoaderData<typeof loader>();
