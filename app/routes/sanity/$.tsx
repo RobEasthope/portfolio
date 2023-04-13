@@ -1,7 +1,7 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Suspense, lazy } from 'react';
 
-import styles from '~/components/sanity/SanityStudioWrapper/SanityStudioWrapper.css';
+import styles from '~/components/sanity-studio/SanityStudioWrapper/SanityStudioWrapper.css';
 
 export const meta: MetaFunction = () => ({
   title: 'Sanity Studio',
@@ -14,7 +14,10 @@ export const links: LinksFunction = () => [
 ];
 
 const SanityStudioWrapper = lazy(
-  () => import('~/components/sanity/SanityStudioWrapper/SanityStudioWrapper'),
+  () =>
+    import(
+      '~/components/sanity-studio/SanityStudioWrapper/SanityStudioWrapper'
+    ),
 );
 const Fallback = (
   <div className="flex h-screen w-screen items-center justify-center">
