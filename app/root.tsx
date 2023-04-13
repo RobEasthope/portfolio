@@ -10,8 +10,18 @@ import {
 } from '@remix-run/react';
 
 import appCSS from '~/app.css';
+import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
+import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
+import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: appCSS }];
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: appCSS },
+  { rel: 'stylesheet', href: SanityImageCSS },
+  { rel: 'stylesheet', href: ProseOverridesCSS },
+  { rel: 'stylesheet', href: HeadroomCSS },
+  { rel: 'stylesheet', href: YoutubeVideoCSS },
+];
 
 export const meta = () => ({
   charset: 'utf-8',
