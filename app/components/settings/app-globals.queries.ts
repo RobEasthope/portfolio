@@ -1,4 +1,4 @@
-import { groq } from 'next-sanity';
+import groq from 'groq';
 
 // Global meta data
 export const appGlobalsQuery = groq`
