@@ -1,7 +1,7 @@
 import { ClientOnly } from 'remix-utils';
 import { Studio } from 'sanity';
 
-import { config } from '~/sanity.config';
+import config from '~/components/sanity-studio/sanity.config';
 
 export function SanityStudioWrapper() {
   return (
