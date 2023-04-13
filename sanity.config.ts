@@ -17,7 +17,7 @@ import { FaGlobeEurope } from 'react-icons/fa';
 import { IoMdSchool } from 'react-icons/io';
 import { GoDatabase, GoPaintcan, GoTerminal } from 'react-icons/go';
 
-import { schemaTypes } from './schemas';
+import { schemaTypes } from './sanity.schema';
 
 export default defineConfig({
   name: 'default',
