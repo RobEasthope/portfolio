@@ -7,4 +7,5 @@ module.exports = {
   future: {
     unstable_tailwind: true,
   },
+  serverDependenciesToBundle: ['classname-variants'],
 };
