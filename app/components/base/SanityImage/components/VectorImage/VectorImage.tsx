@@ -10,7 +10,6 @@ export type VectorImageProps = {
 export const VectorImage = ({ asset, alt, className }: VectorImageProps) => {
   const vectorImageUrl: string | null = urlFor(asset).url();
 
-  // eslint-disable-next-line @next/next/no-img-element
   return (
     <img src={vectorImageUrl || ''} alt={alt || ''} className={className} />
   );
