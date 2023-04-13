@@ -1,10 +1,10 @@
 import { ClientOnly } from 'remix-utils';
 import { Studio } from 'sanity';
 
-import config from '~/components/sanity-studio/sanity.config';
+import config from '~/components/sanity/SanityStudio/sanity.config';
 
-export function SanityStudioWrapper() {
+export function SanityStudio() {
   return <ClientOnly>{() => <Studio config={config} />}</ClientOnly>;
 }
 
-export default SanityStudioWrapper;
+export default SanityStudio;
