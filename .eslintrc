@@ -16,7 +16,8 @@
         "printWidth": 80,
         "tabWidth": 2
       }
-    ]
+    ],
+    "react/no-unused-prop-types": "warn"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
