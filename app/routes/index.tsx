@@ -8,7 +8,7 @@ import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
 export const config = { runtime: 'edge' };
 
-export async function loader() {
+export async function loader({ request }: LoaderArgs) {
   const header: HeaderProps = await sanityAPI.fetch(HEADER_QUERY);
 
   return json({
