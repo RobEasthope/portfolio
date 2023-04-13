@@ -125,7 +125,6 @@ export const SanitySrcSetImage = ({
     <div className={`sanity-image-wrapper ${className}`}>
       <BlurrableImage
         img={
-          // eslint-disable-next-line @next/next/no-img-element
           <img
             sizes={srcSetSizes()}
             srcSet={srcSetAssets()}
