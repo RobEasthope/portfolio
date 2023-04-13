@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-import dynamic from 'next/dynamic';
-
-// Type imports
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 import { Gallery } from '~/components/blocks/Gallery/Gallery';
 import type { ImageProps } from '~/components/blocks/Image/Image';
