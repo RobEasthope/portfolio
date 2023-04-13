@@ -24,7 +24,7 @@ const fluidTypeSize = ({
   min: number;
   max: number;
   lineHeight?: number;
-}) => [fontSize: fluidPx({ min, max }), lineHeight];
+}) => [fluidPx({ min, max }), { lineHeight }];
 
 /** @type {import('tailwindcss').Config} */
 export default {
