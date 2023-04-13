@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import createClient from "@sanity/client";
+import {createClient} from "@sanity/client";
 
 export const sanityPreviewAPI = createClient({
   dataset:

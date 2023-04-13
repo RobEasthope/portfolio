@@ -6,10 +6,8 @@ export const sanityConfig = {
     process.env.STORYBOOK_SANITY_DATASET ||
     'production',
   projectId:
-    process.env.SANITY_PROJECT_ID! ||
-    process.env.STORYBOOK_SANITY_PROJECT_ID!,
+    process.env.SANITY_PROJECT_ID! || process.env.STORYBOOK_SANITY_PROJECT_ID!,
   useCdn: process.env.NODE_ENV !== 'production',
-  token:
-    process.env.SANITY_API_TOKEN! || process.env.SANITY_API_TOKEN!,
+  token: process.env.SANITY_API_TOKEN! || process.env.SANITY_API_TOKEN!,
   apiVersion: process.env.SANITY_API_VERSION!,
 };
