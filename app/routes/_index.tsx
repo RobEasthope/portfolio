@@ -7,15 +7,45 @@ import {
 } from '@remix-run/react';
 import { cacheHeader } from 'pretty-cache-header';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
-import { Header } from '~/components/navigation/Header/Header';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+import type { PageProps } from '~/components/pages/Page/Page';
+import { Page } from '~/components/pages/Page/Page';
+import type { SanityPageByIdQueryProps } from '~/components/types/SanityPageByIdQueryProps';
+import {
+  PAGE_BY_ID_QUERY,
+  PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
+} from '~/components/pages/Page/Page.queries';
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+import type { Error404Props } from '~/components/pages/Error404/Error404';
+import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
+
+type PageBySlugProps = PageProps & {
+  error404: Error404Props['page'];
+  fallbacks: MetadataSettingsProps;
+};
 
 export async function loader({ request }: LoaderArgs) {
-  const header: HeaderProps = await sanityAPI.fetch(HEADER_QUERY);
+  const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
+    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
+    {
+      slug: HOME_PAGE_SLUG,
+    },
+  );
+
+  const payload: PageBySlugProps = await sanityAPI.fetch(
+    PAGE_BY_ID_QUERY({
+      id: primer?.id,
+      componentTypes: primer?.componentTypes,
+    }),
+  );
 
   return json({
-    header,
+    page: payload?.page || null,
+    header: payload?.header || null,
+    footer: payload?.footer || null,
+    fallbacks: payload?.fallbacks || null,
+    error404: payload?.error404 || null,
   });
 }
 
@@ -60,18 +90,7 @@ export function ErrorBoundary() {
 }
 
 export default function Index() {
-  const { header } = useLoaderData<typeof loader>();
+  const { page, header, footer } = useLoaderData<typeof loader>();
 
-  return (
-    <>
-      <Header
-        logo={header?.logo}
-        primaryNavigation={header?.primaryNavigation}
-        secondaryNavigation={header?.secondaryNavigation}
-      />
-      <main>
-        <h1 className="text-red-400">foo</h1>
-      </main>
-    </>
-  );
+  return <Page page={page} header={header} footer={footer} />;
 }
