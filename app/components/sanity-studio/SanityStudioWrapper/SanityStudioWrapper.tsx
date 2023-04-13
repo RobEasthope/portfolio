@@ -4,11 +4,7 @@ import { Studio } from 'sanity';
 import config from '~/components/sanity-studio/sanity.config';
 
 export function SanityStudioWrapper() {
-  return (
-    <ClientOnly>
-      {() => <Studio config={config} unstable_noAuthBoundary />}
-    </ClientOnly>
-  );
+  return <ClientOnly>{() => <Studio config={config} />}</ClientOnly>;
 }
 
 export default SanityStudioWrapper;
