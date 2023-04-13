@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 import { RiImage2Line } from 'react-icons/ri';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   type: 'object',
@@ -23,7 +23,7 @@ export default defineType({
       title: 'heading',
       media: 'image',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title, media } = selection;
       return {
         title: title || 'Gallery image',

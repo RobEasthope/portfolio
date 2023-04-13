@@ -1,7 +1,7 @@
 import { defineField, defineType } from 'sanity';
-import type { SelectionProps } from 'sanity-app/types/Selection';
 import { SPACER_OPTIONS } from '~/components/blocks/Spacer/SPACER_OPTIONS';
 import { AiOutlineColumnHeight } from 'react-icons/ai';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   type: 'object',
@@ -24,7 +24,7 @@ export default defineType({
     select: {
       subtitle: 'height',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { subtitle } = selection;
       return {
         title: 'Spacer',

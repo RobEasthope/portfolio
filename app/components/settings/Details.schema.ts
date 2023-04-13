@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { SelectionProps } from 'sanity-app/types/Selection';
+import { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   name: 'details',
