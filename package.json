@@ -6,7 +6,12 @@
     "dev": "remix dev",
     "typecheck": "tsc",
     "lint": "eslint . --color && tsc --pretty --noEmit",
-    "lint:fix": "eslint . --color --fix && tsc --pretty --noEmit"
+    "lint:fix": "eslint . --color --fix && tsc --pretty --noEmit",
+    "sanity": "sanity dev",
+    "sanity:start": "sanity start",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy",
+    "sanity:deploy-graphql": "sanity graphql deploy"
   },
   "dependencies": {
     "@remix-run/node": "^1.15.0",
