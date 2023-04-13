@@ -9,6 +9,7 @@
 .vercel
 .output
 .DS_Store
+/.sanity
 /dist
 /build/
 /public/build
