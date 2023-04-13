@@ -20,7 +20,7 @@ export async function loader({ request }: LoaderArgs) {
 export function headers() {
   return {
     'Cache-Control': cacheHeader({
-      sMaxAge: '30days',
+      maxAge: '30days',
       staleWhileRevalidate: '1day',
       staleIfError: '7days',
     }),
