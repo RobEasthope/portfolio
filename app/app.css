@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base components */
-@import '../base/SanityImage/SanityImage.css';
-@import '../base/Prose/prose-overrides.css';
-
-/* Navigation components */
-@import '../navigation/Header/headroom.css';
-
-/* Block components */
-@import '../blocks/YoutubeVideo/YoutubeVideo.css';
-
 /* Base styles */
 html {
   font-size: clamp(
