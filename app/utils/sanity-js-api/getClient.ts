@@ -1,5 +1,5 @@
-import { sanityAPI } from "sanity/sanityAPI";
-import { sanityPreviewAPI } from "sanity/sanityPreviewAPI";
+import { sanityAPI } from 'sanity/sanityAPI';
+import { sanityPreviewAPI } from 'sanity/sanityPreviewAPI';
 
 export const getClient = (props: { preview: boolean }) => {
   const { preview } = props;
