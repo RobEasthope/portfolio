@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 import { ALL_PAGE_TYPES } from '~/components/base/InternalLink/ALL_PAGE_TYPES';
 
 export default defineType({
@@ -30,7 +30,7 @@ export default defineType({
     select: {
       title: 'heading',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title } = selection;
       return {
         title: title || 'Error 404 card',

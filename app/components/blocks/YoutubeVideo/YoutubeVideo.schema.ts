@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 import { RiYoutubeFill } from 'react-icons/ri';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 import { MAX_CONTENT_OPTIONS } from '~/components/config/MAX_CONTENT_OPTIONS';
 
 export default defineType({
@@ -34,7 +34,7 @@ export default defineType({
       title: 'caption',
       subtitle: 'url',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title, subtitle } = selection;
       return {
         title: 'Youtube video',

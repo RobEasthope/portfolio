@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 import { RiImage2Line } from 'react-icons/ri';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 import { ASPECT_RATIOS } from '~/components/config/ASPECT_RATIOS';
 import { MAX_CONTENT_OPTIONS } from '~/components/config/MAX_CONTENT_OPTIONS';
 
@@ -56,7 +56,7 @@ export default defineType({
       title: 'image.caption',
       media: 'image',
     },
-    prepare(selection: SelectionProps) {
+    prepare(selection: BasicSanityListingProps) {
       const { title, media } = selection;
       return {
         title: title || 'Image',

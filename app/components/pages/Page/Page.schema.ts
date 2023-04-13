@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import type { SelectionProps } from 'sanity-app/types/Selection';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   name: 'Page',
@@ -77,7 +77,7 @@ export default defineType({
       title: 'title',
       subtitle: 'slug.current',
     },
-    prepare({ title, subtitle }: SelectionProps) {
+    prepare({ title, subtitle }: BasicSanityListingProps) {
       return {
         title: title || 'Page',
         subtitle: subtitle === 'home' ? 'Home page' : 'Page',
