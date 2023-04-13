@@ -11,7 +11,7 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import type { PageProps } from '~/components/pages/Page/Page';
 import { Page } from '~/components/pages/Page/Page';
-import type { SanityPageByIdQueryProps } from '~/components/types/SanityPageByIdQueryProps';
+import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
