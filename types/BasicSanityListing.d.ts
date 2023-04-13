@@ -1,4 +1,4 @@
-export type SelectionProps = {
+export type BasicSanityListingProps = {
   title?: string;
   subtitle?: string;
   media?: string;
