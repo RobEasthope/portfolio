@@ -2,7 +2,7 @@ import { Box } from '~/components/base/Box/Box';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import SanityMuxPlayer from 'sanity-mux-player';
 import { Type } from '~/components/base/Type/Type';
-import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 import type {
   SanityImageAsset,
   SanityImageCrop,

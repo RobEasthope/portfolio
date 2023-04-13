@@ -7,7 +7,7 @@ import { Type } from '~/components/base/Type/Type';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
-import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
 // TYPES
 export type SmallNavigationProps = Pick<

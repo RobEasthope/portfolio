@@ -15,7 +15,7 @@ import type {
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
-import { METADATA_HARD_CODED_FALLBACKS } from '~/components/config/METADATA_HARD_CODED_FALLBACKS';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 import { useLoaderData } from '@remix-run/react';
