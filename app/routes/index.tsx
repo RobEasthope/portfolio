@@ -1,6 +1,7 @@
 import { json } from '@vercel/remix';
 import type { LoaderArgs } from '@vercel/remix';
 import { useLoaderData } from '@remix-run/react';
+import { cacheHeader } from 'pretty-cache-header';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { Header } from '~/components/navigation/Header/Header';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
@@ -14,6 +15,16 @@ export async function loader({ request }: LoaderArgs) {
   return json({
     header,
   });
+}
+
+export function headers() {
+  return {
+    'Cache-Control': cacheHeader({
+      sMaxAge: '30days',
+      staleWhileRevalidate: '1day',
+      staleIfError: '7days',
+    }),
+  };
 }
 
 export default function Index() {
