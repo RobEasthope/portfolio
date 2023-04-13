@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* Responsive REM units */
 html {
   font-size: clamp(
     16px,
