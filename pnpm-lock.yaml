@@ -13,6 +13,9 @@ dependencies:
   '@vercel/remix':
     specifier: 1.15.0
     version: 1.15.0(react-dom@18.2.0)(react@18.2.0)
+  dayjs:
+    specifier: ^1.11.7
+    version: 1.11.7
   eslint-config-wesbos:
     specifier: ^3.2.3
     version: 3.2.3(eslint@8.38.0)(prettier@2.8.7)(typescript@5.0.4)
@@ -40,6 +43,9 @@ dependencies:
   sanity:
     specifier: ^3.8.3
     version: 3.8.3(@types/react@18.0.33)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.9)
+  sanity-pills:
+    specifier: ^1.13.0
+    version: 1.13.0
   sanity-plugin-mux-input:
     specifier: ^2.0.17
     version: 2.0.17(@types/react-dom@18.0.11)(@types/react@18.0.33)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.8.3)(styled-components@5.3.9)
@@ -4415,6 +4421,10 @@ packages:
 
   /date-now@1.0.1:
     resolution: {integrity: sha512-yiizelQCqYLUEVT4zqYihOW6Ird7Qyc6fD3Pv5xGxk4+Jz0rsB1dMN2KyNV6jgOHYh5K+sPGCSOknQN4Upa3pg==}
+    dev: false
+
+  /dayjs@1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /deasync@0.1.28:
@@ -9121,6 +9131,13 @@ packages:
       diff-match-patch: 1.0.5
     dev: false
 
+  /sanity-pills@1.13.0:
+    resolution: {integrity: sha512-nu78/yAVU6tB43IUw87vy2tZU+qrZhYAW/WXYF9cAsy0B3b5WHZCsguuBmknocOgck5CsHIaFDOTLewvAE50Bg==}
+    dependencies:
+      lodash: 4.17.21
+      slugify: 1.6.6
+    dev: false
+
   /sanity-plugin-mux-input@2.0.17(@types/react-dom@18.0.11)(@types/react@18.0.33)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.8.3)(styled-components@5.3.9):
     resolution: {integrity: sha512-Xx1Yhr+GKRtwlhbGjzsEnqIWbS1fQq1hyCWP2vVf71iDzsCkzgIZ8TubAc13ydpI5zemCOKK/167IKAStBb7jQ==}
     engines: {node: '>=14'}
@@ -9421,6 +9438,11 @@ packages:
       immer: 9.0.21
       is-plain-object: 5.0.0
       tiny-warning: 1.0.3
+    dev: false
+
+  /slugify@1.6.6:
+    resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
+    engines: {node: '>=8.0.0'}
     dev: false
 
   /smart-buffer@4.2.0:
