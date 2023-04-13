@@ -51,7 +51,6 @@ export function BlurrableImage({
   return (
     <>
       {blurredAssetUrl && (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={blurredAssetUrl}
           className={`blurred-res-image ${className} ${
