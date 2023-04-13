@@ -45,8 +45,8 @@ import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
 import page from '~/components/pages/Page/Page.schema';
 
 // Legacy schema types
-import altImage from 'sanity-app/schemas/altImage.schema';
-import blockContentSchema from 'sanity-app/schemas/blockContent.schema';
+import altImage from '~/legacy-schemas/altImage.schema';
+import blockContentSchema from '~/legacy-schemas/blockContent.schema';
 
 export const schemaTypes = [
   // Legacy schema types
