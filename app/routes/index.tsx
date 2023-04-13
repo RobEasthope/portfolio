@@ -65,8 +65,15 @@ export default function Index() {
   const { header } = useLoaderData<typeof loader>();
 
   return (
-    <main>
-      <h1 className="text-red-400">foo</h1>
-    </main>
+    <>
+      <Header
+        logo={header?.logo}
+        primaryNavigation={header?.primaryNavigation}
+        secondaryNavigation={header?.secondaryNavigation}
+      />
+      <main>
+        <h1 className="text-red-400">foo</h1>
+      </main>
+    </>
   );
 }
