@@ -1,4 +1,3 @@
-import { urlFor } from 'apis-pkg/sanity/urlFor';
 import type {
   SanityImageAsset,
   SanityImageCrop,
@@ -8,6 +7,7 @@ import type {
 import { BlurrableImage } from '~/components/base/SanityImage/components/BlurrableImage/BlurrableImage';
 import { VectorImage } from '~/components/base/SanityImage/components/VectorImage/VectorImage';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { urlFor } from '~/utils/sanity-js-api/urlFor';
 
 // TYPES
 export type ImageAssetProp = {
