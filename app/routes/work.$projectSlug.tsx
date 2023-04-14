@@ -16,6 +16,7 @@ import type { Error404Props } from '~/components/pages/Error404/Error404';
 import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
 import type { ProjectProps } from '~/components/pages/Project/Project';
 import { Project } from '~/components/pages/Project/Project';
+import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.queries';
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
@@ -23,18 +24,11 @@ type ProjectBySlugProps = ProjectProps & {
 };
 
 export async function loader({ params }: LoaderArgs) {
-  const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
-    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
+  const payload: ProjectBySlugProps = await sanityAPI.fetch(
+    PROJECT_BY_SLUG_QUERY,
     {
       slug: params?.projectSlug,
     },
-  );
-
-  const payload: ProjectBySlugProps = await sanityAPI.fetch(
-    PAGE_BY_ID_QUERY({
-      id: primer?.id,
-      componentTypes: primer?.componentTypes,
-    }),
   );
 
   return json({
