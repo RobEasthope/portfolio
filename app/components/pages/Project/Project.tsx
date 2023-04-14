@@ -65,7 +65,6 @@ export const Project = ({
             </Type>
           )}
         </Box>
-        <Spacer height="1" />
 
         <Dot />
       </Box>
@@ -79,17 +78,12 @@ export const Project = ({
 
       <Box as="div" className="flex flex-col gap-1 text-center">
         <Dot className="mt-1" />
-
-        <Type as="p">
-          <ExternalLink href={page?.projectUrl || null}>
-            {page?.projectUrlTitle || page?.projectUrl}
-          </ExternalLink>
-        </Type>
-        <Type as="p">
-          <ExternalLink href={page?.repoUrl || null}>
-            {page?.repoUrl}
-          </ExternalLink>
-        </Type>
+        <ExternalLink href={page?.projectUrl || null}>
+          {page?.projectUrlTitle || page?.projectUrl}
+        </ExternalLink>
+        <ExternalLink href={page?.repoUrl || null}>
+          {page?.repoUrl}
+        </ExternalLink>
         <Type as="p">{page?.date}</Type>
       </Box>
     </Box>
