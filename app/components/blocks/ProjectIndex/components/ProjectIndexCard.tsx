@@ -22,10 +22,8 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
       />
     </InternalLink>
 
-    <Type as="p" className="text-center">
-      <InternalLink href={project?.slug?.current}>
-        {project?.title}
-      </InternalLink>
-    </Type>
+    <InternalLink href={project?.slug?.current} className="text-center">
+      {project?.title}
+    </InternalLink>
   </Box>
 );
