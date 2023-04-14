@@ -7,6 +7,6 @@ export const LANDING_HERO_QUERY = groq`{
   heading,
   bkgMode,
   bkgImage,
-  "bkgVideo": rawBackgroundVideo.asset->,
+  "bkgVideo": rawMuxVideo.asset->,
   caption
 }`;

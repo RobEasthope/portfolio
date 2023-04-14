@@ -1,4 +1,4 @@
-import SanityMuxPlayer from 'sanity-mux-player';
+import MuxPlayer from '@mux/mux-player-react';
 
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
@@ -25,12 +25,14 @@ export const MuxVideo = ({
     <Box as="section" breakout>
       <Box as="div" className="mx-auto" maxWidth={maxWidth}>
         {muxVideo && (
-          <SanityMuxPlayer
-            assetDocument={muxVideo}
-            autoload={false}
-            autoplay={false}
-            loop={false}
-            showControls
+          <MuxPlayer
+            playbackId={muxVideo?.playbackId}
+            streamType="on-demand"
+            metadata={{
+              video_id: 'video-id-54321',
+              video_title: 'Test video title',
+              viewer_user_id: 'user-id-007',
+            }}
           />
         )}
         <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
