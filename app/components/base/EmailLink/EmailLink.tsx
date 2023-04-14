@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 // Schema props
 export type EmailLinkWithTitleSchemaProps = {
   _type: 'EmailLinkWithTitle';
@@ -39,7 +41,7 @@ export const EmailLink = ({
       href={`mailto:${email}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={className}
+      className={classNames(className, 'hover:text-saffron')}
       {...rest}
     >
       {children || null}
