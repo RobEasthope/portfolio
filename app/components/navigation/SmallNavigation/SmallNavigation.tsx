@@ -100,21 +100,6 @@ export const SmallNavigation = ({
               </Type>
             ))}
           </Box>
-          {secondaryNavigation && (
-            <hr className="mb-0.75 mt-0.75 block h-0.25 w-2 bg-black" />
-          )}
-          <Box as="ul">
-            {secondaryNavigation?.map((nav) => (
-              <Type as="li" key={nav?._key} className="text-4xl font-bold">
-                <SuperLink
-                  link={nav}
-                  className="decoration-4 underline-offset-4 hover:underline"
-                >
-                  {nav.title}
-                </SuperLink>
-              </Type>
-            ))}
-          </Box>
         </Box>
       </Dialog.Content>
     </Dialog.Root>
