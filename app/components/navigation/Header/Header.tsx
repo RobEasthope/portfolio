@@ -19,6 +19,7 @@ import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_F
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 import { useLoaderData } from '@remix-run/react';
+import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
 
 // TYPES
 export type HeaderProps = {
@@ -62,18 +63,7 @@ export const Header = ({
           as="nav"
           className="mx-auto flex w-full flex-row-reverse flex-wrap items-center justify-between leading-4 md:flex-row"
         >
-          <Box as="ul" className="hidden flex-row gap-1 md:flex">
-            {primaryNavigation?.map((nav) => (
-              <Type as="li" key={nav?._key} className="text-sm font-medium">
-                <SuperLink
-                  link={nav}
-                  className="decoration-2 underline-offset-2 hover:underline"
-                >
-                  {nav.title}
-                </SuperLink>
-              </Type>
-            ))}
-          </Box>
+          <NavListing links={primaryNavigation} />
 
           <Box
             as="div"
@@ -93,18 +83,8 @@ export const Header = ({
             </InternalLink>
           </Box>
 
-          <Box as="ul" className="hidden flex-row gap-1  md:flex">
-            {secondaryNavigation?.map((nav) => (
-              <Type as="li" key={nav?._key} className="text-sm font-medium">
-                <SuperLink
-                  link={nav}
-                  className="decoration-2 underline-offset-2 hover:underline"
-                >
-                  {nav.title}
-                </SuperLink>
-              </Type>
-            ))}
-          </Box>
+          <NavListing links={secondaryNavigation} />
+
           <SmallNavigation
             logo={logo}
             primaryNavigation={primaryNavigation}
