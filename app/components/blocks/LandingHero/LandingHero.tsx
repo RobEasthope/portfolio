@@ -41,10 +41,7 @@ export const LandingHero = ({
   }
 
   return (
-    <Box
-      as="section"
-      className="flex max-h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))] flex-row"
-    >
+    <Box as="section" className="flex flex-row px-2">
       {bkgMode === 'image' && (
         <Box as="div" className="w-screen">
           <SanityImage
@@ -58,20 +55,19 @@ export const LandingHero = ({
       )}
 
       {bkgMode === 'video' && (
-        <Box as="div" className="w-screen">
-          <MuxPlayer
-            playbackId={bkgVideo?.playbackId}
-            streamType="on-demand"
-            metadata={{
-              video_id: 'video-id-54321',
-              video_title: 'Test video title',
-              viewer_user_id: 'user-id-007',
-            }}
-            autoPlay
-            loop
-            muted
-          />
-        </Box>
+        <MuxPlayer
+          playbackId={bkgVideo?.playbackId}
+          streamType="on-demand"
+          metadata={{
+            video_id: 'video-id-54321',
+            video_title: 'Test video title',
+            viewer_user_id: 'user-id-007',
+          }}
+          autoPlay
+          loop
+          muted
+          className="px-2 h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))]"
+        />
       )}
     </Box>
   );
