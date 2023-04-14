@@ -41,7 +41,7 @@ export const ExternalLink = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={classNames(className, 'hover:text-saffron')}
+      className={classNames(className, 'hover:text-saffron duration-300')}
       {...rest}
     >
       {children || null}

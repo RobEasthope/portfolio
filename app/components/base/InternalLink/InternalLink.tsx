@@ -47,7 +47,7 @@ export const InternalLink = ({
       to={href === HOME_PAGE_SLUG ? '/' : `/${href}`}
       role="link"
       tabIndex={0}
-      className={classNames(className, 'hover:text-saffron')}
+      className={classNames(className, 'hover:text-saffron duration-300')}
       {...rest}
     >
       {children || null}
