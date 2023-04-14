@@ -7,11 +7,6 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Portfolio section title',
-      type: 'string',
-    }),
-    defineField({
       name: 'index',
       title: 'Index',
       type: 'array',
