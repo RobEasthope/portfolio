@@ -89,7 +89,7 @@ export const SmallNavigation = ({
 
         <Box as="nav" className="mx-auto mt-2 max-w-xl">
           <Box as="ul">
-            {primaryNavigation?.map((nav) => (
+            {combindedNavigation?.map((nav) => (
               <Type as="li" key={nav?._key} className="text-4xl font-bold">
                 <SuperLink
                   link={nav}
