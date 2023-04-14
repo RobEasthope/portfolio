@@ -26,11 +26,11 @@ const PROJECT_QUERY_BODY = groq`
 `;
 
 export const PROJECT_SLUGS_QUERY = groq`
-  *[_type == "BlogPost" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+  *[_type == "Project" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
 `;
 
 export const PROJECT_BY_ID_QUERY = groq`
-  *[_type== 'BlogPost' && !(_id in path("drafts.**")) && _id == $id][0]{
+  *[_type== 'Project' && !(_id in path("drafts.**")) && _id == $id][0]{
     "page": ${PROJECT_QUERY_BODY},
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
