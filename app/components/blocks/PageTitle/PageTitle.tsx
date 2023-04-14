@@ -1,7 +1,7 @@
+import type { PageTitle as rawPageTitleProps } from '~/components/types/sanity-schema';
 
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
-import type { PageTitle as rawPageTitleProps } from '~/components/types/sanity-schema';
 
 // TYPES
 export interface PageTitleProps extends rawPageTitleProps {
@@ -17,7 +17,7 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
     <Box as="section" className="px-1">
       <Box as="div">
         <Box as="div" className="text-center">
-          <Type as="h1" className="text-lg">
+          <Type as="h1" className="text-xl">
             {heading}
           </Type>
 
