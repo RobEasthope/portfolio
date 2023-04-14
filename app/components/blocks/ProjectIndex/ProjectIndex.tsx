@@ -19,7 +19,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
         as="ul"
         className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <Box
             as="li"
             key={`${project?._id}-${i}`}
