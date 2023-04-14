@@ -12,6 +12,8 @@ import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
+import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>
@@ -84,6 +86,18 @@ export const ProjectTextComponents: PortableTextComponents = {
           image={image}
           maxWidth={maxWidth}
           aspectRatio={aspectRatio}
+          _type={_type}
+        />
+      );
+    },
+    VimeoVideo: ({ value }: { value: VimeoVideoProps }) => {
+      const { url, caption, maxWidth, _type } = value;
+
+      return (
+        <VimeoVideo
+          url={url}
+          caption={caption}
+          maxWidth={maxWidth}
           _type={_type}
         />
       );
