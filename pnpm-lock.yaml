@@ -46,6 +46,9 @@ dependencies:
   classname-variants:
     specifier: ^1.3.2
     version: 1.3.2
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   dayjs:
     specifier: ^1.11.7
     version: 1.11.7
