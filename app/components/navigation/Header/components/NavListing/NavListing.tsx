@@ -16,7 +16,7 @@ export type NavListingProps = {
 };
 
 export const NavListing = ({ links }: NavListingProps) => (
-  <Box as="ul" className="hidden flex-row gap-1  md:flex">
+  <Box as="ul" className="hidden flex-row gap-1 sm:flex">
     {links?.map((link) => (
       <Type as="li" key={link?._key} className="text-base">
         <SuperLink
