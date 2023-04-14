@@ -1,4 +1,3 @@
-
 import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
@@ -24,7 +23,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
           <Box
             as="li"
             key={`${project?._id}-${i}`}
-            className="flex items-center"
+            className="flex items-center gap-0.5"
           >
             {project?.thumbnailImage && project?.slug && (
               <InternalLink href={project?.slug?.current}>
