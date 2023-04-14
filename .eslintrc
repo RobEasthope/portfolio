@@ -4,8 +4,7 @@
     "@remix-run/eslint-config",
     "@remix-run/eslint-config/node",
     "@sanity/eslint-config-studio",
-    "wesbos/typescript",
-    "@trivago/prettier-plugin-sort-imports"
+    "wesbos/typescript"
   ],
   "rules": {
     "no-console": 1,
