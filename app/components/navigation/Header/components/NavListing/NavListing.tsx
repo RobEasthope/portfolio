@@ -18,7 +18,7 @@ export type NavListingProps = {
 export const NavListing = ({ links }: NavListingProps) => (
   <Box as="ul" className="hidden flex-row gap-1  md:flex">
     {links?.map((link) => (
-      <Type as="li" key={link?._key} className="text-sm font-medium">
+      <Type as="li" key={link?._key} className="text-base">
         <SuperLink
           link={link}
           className="decoration-2 underline-offset-2 hover:underline"
