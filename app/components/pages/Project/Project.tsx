@@ -15,7 +15,8 @@ export type ProjectProps = {
 
 export const Project = ({
   page,
-  globals,
+  header,
+  footer,
 }: {
   page: ProjectProps;
   globals: AppGlobalsProps;
