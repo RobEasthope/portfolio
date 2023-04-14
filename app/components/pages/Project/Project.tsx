@@ -1,4 +1,5 @@
 import { BsDot } from 'react-icons/bs';
+import { Dot } from '~/components/decoration/Dot';
 
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
@@ -66,7 +67,7 @@ export const Project = ({
         </Box>
         <Spacer height="1" />
 
-        <BsDot className="h-1" />
+        <Dot />
       </Box>
 
       <Prose
@@ -77,7 +78,7 @@ export const Project = ({
       />
 
       <Box as="div" className="flex flex-col gap-1 text-center">
-        <BsDot className="h-1" />
+        <Dot className="mt-1" />
 
         <Type as="p">
           <ExternalLink href={page?.projectUrl || null}>
