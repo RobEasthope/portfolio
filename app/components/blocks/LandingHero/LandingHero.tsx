@@ -1,10 +1,10 @@
+import MuxPlayer from '@mux/mux-player-react';
 import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import SanityMuxPlayer from 'sanity-mux-player';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -73,14 +73,15 @@ export const LandingHero = ({
 
       {bkgMode === 'video' && (
         <Box as="div" className="w-screen">
-          <SanityMuxPlayer
-            assetDocument={muxVideo}
-            autoload
-            autoplay
-            mute
-            loop
-            showControls={false}
-            className="w-screen"
+          <MuxPlayer
+            streamType="on-demand"
+            playbackId="EcHgOK9coz5K4rjSwOkoE7Y7O01201YMIC200RI6lNxnhs"
+            metadata={{
+              video_id: 'video-id-54321',
+              video_title: 'Test video title',
+              viewer_user_id: 'user-id-007',
+            }}
+            className="w-screen h-screen"
           />
         </Box>
       )}
