@@ -8,6 +8,7 @@ import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
 
 // TYPES
 export type SmallNavigationProps = Pick<
@@ -58,7 +59,7 @@ export const SmallNavigation = ({
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
       <Dialog.Trigger className="md:hidden">
-        <Type as="span" className="text-sm font-medium">
+        <Type as="span" className="text-base">
           Menu
         </Type>
       </Dialog.Trigger>
@@ -67,25 +68,9 @@ export const SmallNavigation = ({
 
       <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1 py-0.5">
         <Box as="div" className="flex w-full items-center justify-end">
-          <Box
-            as="div"
-            className="absolute left-1/2 flex flex-1 -translate-x-1/2 items-center justify-center"
-          >
-            <InternalLink href={HOME_PAGE_SLUG}>
-              <Box as="span" className="sr-only">
-                {METADATA_HARD_CODED_FALLBACKS.TITLE}
-              </Box>
-              <SanityImage
-                asset={logo}
-                alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
-                mode="contain"
-                maxWidth={200}
-                className="h-1.25"
-              />
-            </InternalLink>
-          </Box>
+          <HeaderLogo logo={logo} />
           <Dialog.Close className="flex flex-nowrap items-center">
-            <Type as="span" className="text-sm font-medium">
+            <Type as="span" className="text-base">
               Close
             </Type>
           </Dialog.Close>
