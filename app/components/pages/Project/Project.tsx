@@ -20,7 +20,7 @@ export const Project = ({
   page: ProjectProps;
   globals: AppGlobalsProps;
 }) => (
-  <BasicLayout header={globals?.header} footer={globals?.footer}>
+  <BasicLayout header={header} footer={footer}>
     <Box as="div" className="py-2">
       <Box as="div" className="text-center mb-1">
         <SanityImage
