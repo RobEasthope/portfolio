@@ -72,22 +72,20 @@ export const Project = ({
         className="mx-auto"
       />
 
-      <Box as="div" className="mt-1 text-center">
+      <Box as="div" className="flex flex-col gap-1 text-center">
         <BsDot className="h-1" />
 
-        <Type as="p" className="mt-1">
+        <Type as="p">
           <ExternalLink href={page?.projectUrl || null}>
             {page?.projectUrlTitle || page?.projectUrl}
           </ExternalLink>
         </Type>
-        <Type as="p" className="mt-1">
+        <Type as="p">
           <ExternalLink href={page?.repoUrl || null}>
             {page?.repoUrl}
           </ExternalLink>
         </Type>
-        <Type as="p" className="mt-1">
-          {page?.date}
-        </Type>
+        <Type as="p">{page?.date}</Type>
       </Box>
     </Box>
   </BasicLayout>
