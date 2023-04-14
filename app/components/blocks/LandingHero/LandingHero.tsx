@@ -81,6 +81,7 @@ export const LandingHero = ({
               video_title: 'Test video title',
               viewer_user_id: 'user-id-007',
             }}
+            autoPlay
             className="absolute w-full h-full"
           />
         </Box>
