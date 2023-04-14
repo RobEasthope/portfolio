@@ -8,6 +8,7 @@ export const HEADER_QUERY = groq`
       _key,
       title,
       url,
+      email,
       "to": internalUID->{slug},
     },
     "secondaryNavigation": rawSecondaryNavigation[]{
@@ -15,6 +16,7 @@ export const HEADER_QUERY = groq`
       _key,
       title,
       url,
+      email,
       "to": internalUID->{slug},
     },
   }
