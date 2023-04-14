@@ -14,6 +14,7 @@ import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
+import LandingHeroCSS from '~/components/blocks/LandingHero/LandingHero.css';
 import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
 
 export const links: LinksFunction = () => [
@@ -27,6 +28,7 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: SanityImageCSS },
   { rel: 'stylesheet', href: ProseOverridesCSS },
   { rel: 'stylesheet', href: HeadroomCSS },
+  { rel: 'stylesheet', href: LandingHeroCSS },
   { rel: 'stylesheet', href: YoutubeVideoCSS },
 ];
 
