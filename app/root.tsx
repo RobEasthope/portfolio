@@ -19,7 +19,7 @@ import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
 
 export const links: LinksFunction = () => [
   // Adobe Typekit
-  { rel: 'stylesheet', href: 'https://use.typekit.net/qjp7bat.css' },
+  { rel: 'stylesheet', href: 'https://use.typekit.net/jpv8zzo.css' },
 
   // Tailwind and app styles
   { rel: 'stylesheet', href: appCSS },
@@ -120,7 +120,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="font-serif">
+      <body className="font-plantin">
         <Outlet />
         <ScrollRestoration />
 
