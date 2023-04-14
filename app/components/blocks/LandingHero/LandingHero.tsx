@@ -17,18 +17,7 @@ import { Type } from '~/components/base/Type/Type';
 // TYPES
 export type LandingHeroProps = {
   _type: 'LandingHero';
-  headingforeground?: string;
-  heading?: string;
-  subHeading?: string;
-  headingbackground?: string;
   bkgMode?: 'image' | 'video';
-  logo?: {
-    _type: 'image';
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-    attribution?: string;
-  };
   bkgImage?: {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;
@@ -37,14 +26,11 @@ export type LandingHeroProps = {
     attribution?: string;
   };
   caption?: string;
-  link: ExternalLinkWithTitleSchemaProps | InternalLinkWithTitleSchemaProps;
-  muxVideo: unknown;
+  bkgVideo: unknown;
 };
 
 // MARKUP
 export const LandingHero = ({
-  heading,
-  logo,
   bkgMode,
   bkgImage,
   caption,
@@ -87,28 +73,6 @@ export const LandingHero = ({
           />
         </Box>
       )}
-
-      <Box as="div" className="w-screen -translate-x-full">
-        <Box
-          as="div"
-          className="flex h-full w-screen flex-col items-center justify-center gap-1 text-white"
-        >
-          <Box as="div" className="mx-auto w-2/5 max-w-[1200px]">
-            <Box as="div" className="mx-auto flex min-w-[120px] justify-center">
-              <SanityImage
-                asset={logo}
-                alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
-                mode="responsive"
-                maxWidth={2000}
-              />
-            </Box>
-          </Box>
-
-          <Type as="h1" className="sr-only font-serif text-3xl uppercase">
-            {heading}
-          </Type>
-        </Box>
-      </Box>
     </Box>
   );
 };
