@@ -1,5 +1,6 @@
-import { defineField, defineType } from 'sanity';
 import { RiLinksLine } from 'react-icons/ri';
+import { defineField, defineType } from 'sanity';
+
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 
 // const InternalLinkRender = ({ children }) => (

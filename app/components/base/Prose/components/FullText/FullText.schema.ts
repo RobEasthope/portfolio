@@ -1,4 +1,4 @@
-import { defineType, defineArrayMember } from 'sanity';
+import { defineArrayMember, defineType } from 'sanity';
 import { createBlockValidator } from 'sanity-pills';
 
 const articleTextValidator = createBlockValidator({

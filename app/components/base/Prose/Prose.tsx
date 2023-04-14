@@ -1,5 +1,6 @@
 import type { PortableTextComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
+
 import { Box } from '~/components/base/Box/Box';
 
 export type ProseProps = {

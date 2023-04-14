@@ -1,8 +1,12 @@
 import groq from 'groq';
-import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES';
+
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
-import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+
+import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES';
+
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+
 import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
 
 // Fetch all page slugs

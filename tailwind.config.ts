@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
 import tailwindTypography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 const LOWER_SCREEN_SIZE = 320;

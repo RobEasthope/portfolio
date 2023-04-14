@@ -29,6 +29,7 @@
     "/build",
     "/public",
     "remix.config.js",
+    "prettier.config.js",
     "*.d.ts",
     "/legacy-code"
   ]

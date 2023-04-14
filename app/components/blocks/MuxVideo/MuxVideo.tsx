@@ -1,4 +1,5 @@
 import SanityMuxPlayer from 'sanity-mux-player';
+
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
 

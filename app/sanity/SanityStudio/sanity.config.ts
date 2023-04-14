@@ -1,23 +1,23 @@
-import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
-import { muxInput } from 'sanity-plugin-mux-input';
-
+import { FaGlobeEurope } from 'react-icons/fa';
+import { GoDatabase, GoPaintcan, GoTerminal } from 'react-icons/go';
+import { IoMdSchool } from 'react-icons/io';
 import {
+  RiAccountCircleLine,
+  RiBriefcaseFill,
   RiCompasses2Line,
   RiListSettingsLine,
+  RiPhoneLine,
   RiQuillPenLine,
-  RiAccountCircleLine,
   RiSettings2Line,
   RiShieldLine,
-  RiBriefcaseFill,
-  RiPhoneLine,
 } from 'react-icons/ri';
-import { FaGlobeEurope } from 'react-icons/fa';
-import { IoMdSchool } from 'react-icons/io';
-import { GoDatabase, GoPaintcan, GoTerminal } from 'react-icons/go';
+import { defineConfig } from 'sanity';
+import { muxInput } from 'sanity-plugin-mux-input';
+import { deskTool } from 'sanity/desk';
 
 import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
+
 import { schemaTypes } from './sanity.schema';
 
 export default defineConfig({
