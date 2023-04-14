@@ -30,8 +30,9 @@ export const PROJECT_SLUGS_QUERY = groq`
 `;
 
 export const PROJECT_BY_ID_QUERY = groq`
-  *[_type== 'Project' && !(_id in path("drafts.**")) && _id == $id][0]{
-    "page": ${PROJECT_QUERY_BODY},
+    "page": *[_type== 'Project' && !(_id in path("drafts.**")) && _id == $id][0]{
+      ${PROJECT_QUERY_BODY}
+    },
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
     "fallbacks": ${METADATA_SETTINGS_QUERY},
