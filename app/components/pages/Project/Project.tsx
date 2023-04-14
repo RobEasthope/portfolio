@@ -66,7 +66,11 @@ export const Project = ({
       {page?.projectText && (
         <ProjectText blocks={page?.projectText as unknown} />
       )}
-      <Prose content={page?.projectText} components={ProjectTextComponents} />
+      <Prose
+        as="div"
+        content={page?.projectText}
+        components={ProjectTextComponents}
+      />
 
       <Box as="div" className="mt-1 text-center">
         <BsDot className="h-1" />
