@@ -64,7 +64,7 @@ export const SmallNavigation = ({
 
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
-      <Dialog.Trigger className="sm:hidden">
+      <Dialog.Trigger className="sm:hidden p-0.25">
         <Type as="span" className="text-lg">
           <HiOutlineMenuAlt2 />
         </Type>
@@ -78,7 +78,7 @@ export const SmallNavigation = ({
           className="flex w-full items-center justify-end py-0.75 sm:py-1"
         >
           <HeaderLogo logo={logo} />
-          <Dialog.Close className="flex flex-nowrap items-center">
+          <Dialog.Close className="flex flex-nowrap items-center p-0.25">
             <Type as="span" className="text-lg">
               <IoMdClose />
             </Type>
