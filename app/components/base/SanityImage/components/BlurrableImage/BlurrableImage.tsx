@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import * as React from 'react';
 
 import { useSSRLayoutEffect } from './useSSRLayoutEffect';
@@ -44,9 +45,11 @@ export function BlurrableImage({
   const hiResImage = React.cloneElement(img, {
     // @ts-expect-error no idea 🤷‍♂️
     ref: hiResImageRef,
-    className: `high-res-image ${className} ${
-      hiResImageLoaded ? 'high-res-image--show' : 'high-res-image--hide'
-    }`,
+    className: classNames(
+      'high-res-image',
+      className,
+      hiResImageLoaded ? 'high-res-image--show' : 'high-res-image--hide',
+    ),
   });
 
   return (
@@ -54,9 +57,11 @@ export function BlurrableImage({
       {blurredAssetUrl && (
         <img
           src={blurredAssetUrl}
-          className={`blurred-res-image ${className} ${
-            hiResImageLoaded ? 'blurred-image--hide' : 'high-res-image--show'
-          }`}
+          className={classNames(
+            'blurred-res-image',
+            className,
+            hiResImageLoaded ? 'blurred-image--hide' : 'high-res-image--show',
+          )}
           alt={alt || ''}
         />
       )}

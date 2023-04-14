@@ -46,6 +46,9 @@ dependencies:
   classname-variants:
     specifier: ^1.3.2
     version: 1.3.2
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   dayjs:
     specifier: ^1.11.7
     version: 1.11.7
@@ -91,9 +94,6 @@ dependencies:
   sanity-codegen:
     specifier: ^0.9.8
     version: 0.9.8(@babel/core@7.21.4)(@babel/preset-env@7.21.4)(@babel/preset-react@7.18.6)(@babel/preset-typescript@7.21.4)(jsdom@20.0.3)(prettier@2.8.7)
-  sanity-mux-player:
-    specifier: ^0.0.27
-    version: 0.0.27(react@18.2.0)
   sanity-pills:
     specifier: ^1.13.0
     version: 1.13.0
@@ -6821,13 +6821,6 @@ packages:
       '@babel/runtime': 7.21.0
     dev: false
 
-  /hls.js@0.11.0:
-    resolution: {integrity: sha512-qlCP7uBaHxF1iiP9xw8RFZ9Es9ZM5micqaMTp8P/2WYhd+CSmMMREH+taAzkQDu7u2nHBBd9yZyKgCjg3O3wSw==}
-    dependencies:
-      string.prototype.endswith: 0.2.0
-      url-toolkit: 2.2.5
-    dev: false
-
   /hls.js@1.4.0-beta.2:
     resolution: {integrity: sha512-Gl3OcY+ufUZaIMX0/4drb5z8FeeDSSm6f0DMsfOEDuLmNkfa3J9yB233+K5m2IcBqM+rrDtwrcntVzijRHud9w==}
     dev: false
@@ -10006,18 +9999,6 @@ packages:
       diff-match-patch: 1.0.5
     dev: false
 
-  /sanity-mux-player@0.0.27(react@18.2.0):
-    resolution: {integrity: sha512-a07k+d08PQsim8pks9H2T1fGrh9iCZU5ZL7ZDvrKfh0CIUDebAmkkBJWYTRoatf4P0ihzbM2ps7XF5S4Gr9prw==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    peerDependencies:
-      react: '>=16.3.x'
-    dependencies:
-      hls.js: 0.11.0
-      lodash: 4.17.21
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
   /sanity-pills@1.13.0:
     resolution: {integrity: sha512-nu78/yAVU6tB43IUw87vy2tZU+qrZhYAW/WXYF9cAsy0B3b5WHZCsguuBmknocOgck5CsHIaFDOTLewvAE50Bg==}
     dependencies:
@@ -10503,10 +10484,6 @@ packages:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.1
-
-  /string.prototype.endswith@0.2.0:
-    resolution: {integrity: sha512-CLb+YN1AleXLWyh88P1R5s2ajz83wF6bWOyxfOXJ7P3ioK/lOnA39VIEcen24/ELWJvU6y8NG6vEmWSOJIVFfQ==}
-    dev: false
 
   /string.prototype.matchall@4.0.8:
     resolution: {integrity: sha512-6zOCOcJ+RJAQshcTvXPHoxoQGONa3e/Lqx90wUA+wEzX78sg5Bo+1tQo4N0pohS0erG9qtCqJDjNCQBjeWVxyg==}
@@ -11137,10 +11114,6 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
-    dev: false
-
-  /url-toolkit@2.2.5:
-    resolution: {integrity: sha512-mtN6xk+Nac+oyJ/PrI7tzfmomRVNFIWKUbG8jdYFt52hxbiReFAXIjYskvu64/dvuW71IcB7lV8l0HvZMac6Jg==}
     dev: false
 
   /use-callback-ref@1.3.0(@types/react@18.0.33)(react@18.2.0):

@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import type {
   SanityImageAsset,
   SanityImageCrop,
@@ -52,7 +53,11 @@ export const SanityImage = ({
             className={`responsive-image-wrapper ${wrapperClassName}`}
           >
             <SanitySrcSetImage
-              className={`responsive-image-element ${className} ${assetClassName}`}
+              className={classNames(
+                `responsive-image-element`,
+                className,
+                assetClassName,
+              )}
               asset={asset}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
@@ -66,10 +71,18 @@ export const SanityImage = ({
       return (
         <div
           style={{ maxWidth: `${maxWidth}px` }}
-          className={`cover-image-wrapper ${className} ${wrapperClassName}`}
+          className={classNames(
+            `cover-image-wrapper`,
+            className,
+            wrapperClassName,
+          )}
         >
           <SanitySrcSetImage
-            className={`cover-image-element ${className} ${assetClassName}`}
+            className={classNames(
+              `cover-image-element`,
+              className,
+              wrapperClassName,
+            )}
             asset={asset}
             maxWidth={maxWidth}
             aspectRatio={aspectRatio}
@@ -82,11 +95,19 @@ export const SanityImage = ({
       return (
         <div
           style={{ maxWidth: `${maxWidth}px`, position: 'relative' }}
-          className={`contain-image-wrapper ${className} ${wrapperClassName}`}
+          className={classNames(
+            `contain-image-wrapper`,
+            className,
+            wrapperClassName,
+          )}
         >
           <div className="contain-image-wrapper">
             <SanitySrcSetImage
-              className={`contain-image-element ${className} ${assetClassName}`}
+              className={classNames(
+                `contain-image-element`,
+                className,
+                wrapperClassName,
+              )}
               asset={asset}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}

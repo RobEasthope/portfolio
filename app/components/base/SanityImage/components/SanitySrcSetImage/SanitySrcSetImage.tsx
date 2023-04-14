@@ -1,4 +1,5 @@
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import classNames from 'classnames';
 import type {
   SanityImageAsset,
   SanityImageCrop,
@@ -123,7 +124,7 @@ export const SanitySrcSetImage = ({
 
   return (
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    <div className={`sanity-image-wrapper ${className}`}>
+    <div className={classNames('sanity-image-wrapper', className)}>
       <BlurrableImage
         img={
           <img

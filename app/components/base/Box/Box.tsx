@@ -1,4 +1,5 @@
 import { variants } from 'classname-variants';
+import classNames from 'classnames';
 import type { ReactNode } from 'react';
 import { createElement } from 'react';
 
@@ -54,9 +55,10 @@ export const Box = ({
   return createElement(
     as,
     {
-      className: `${boxVariants({ breakout, maxWidth, columns })} ${
-        className || ''
-      }`,
+      className: classNames(
+        boxVariants({ breakout, maxWidth, columns }),
+        className,
+      ),
       ref,
       ...rest,
     },
