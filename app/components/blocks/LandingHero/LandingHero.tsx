@@ -84,7 +84,6 @@ export const LandingHero = ({
             autoPlay
             loop
             muted
-            className="absolute w-full h-full"
           />
         </Box>
       )}
