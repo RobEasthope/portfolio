@@ -1,4 +1,6 @@
+
 import { Box } from '~/components/base/Box/Box';
+
 import { ProjectIndexCard } from '~/components/blocks/ProjectIndex/components/ProjectIndexCard';
 
 import type { ProjectProps } from '~/components/pages/Project/Project';

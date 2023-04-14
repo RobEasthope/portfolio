@@ -78,6 +78,7 @@ export default {
       0: '0',
       px: '1px',
       '2px': '2px',
+      0.125: `calc(${BASE_UNIT} * 0.125)`,
       0.25: `calc(${BASE_UNIT} * 0.25)`,
       0.5: `calc(${BASE_UNIT} * 0.5)`,
       0.75: `calc(${BASE_UNIT} * 0.75)`,
