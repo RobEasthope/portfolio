@@ -12,6 +12,12 @@ import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
+import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
+import { Gallery } from '~/components/blocks/Gallery/Gallery';
+import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
+import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
 
 export type FullTextProps = Array<
   | SanityKeyed<SanityBlock>
@@ -76,6 +82,19 @@ export const FullTextComponents: PortableTextComponents = {
     ),
   },
   types: {
+    Gallery: ({ value }: { value: GalleryProps }) => {
+      const { images, columns, maxWidth, aspectRatio, _type } = value;
+
+      return (
+        <Gallery
+          images={images}
+          columns={columns}
+          maxWidth={maxWidth}
+          aspectRatio={aspectRatio}
+          _type={_type}
+        />
+      );
+    },
     Image: ({ value }: { value: ImageProps }) => {
       const { image, maxWidth, aspectRatio, _type } = value;
 
@@ -88,10 +107,41 @@ export const FullTextComponents: PortableTextComponents = {
         />
       );
     },
-    YoutubeVideo: ({ value }: { value: YoutubeVideoProps }) => {
-      const { url, maxWidth, _type } = value;
+    MuxVideo: ({ value }: { value: MuxVideoProps }) => {
+      const { muxVideo, caption, maxWidth, _type } = value;
 
-      return <YoutubeVideo url={url} maxWidth={maxWidth} _type={_type} />;
+      return (
+        <MuxVideo
+          muxVideo={muxVideo}
+          caption={caption}
+          maxWidth={maxWidth}
+          _type={_type}
+        />
+      );
+    },
+    VimeoVideo: ({ value }: { value: VimeoVideoProps }) => {
+      const { url, caption, maxWidth, _type } = value;
+
+      return (
+        <VimeoVideo
+          url={url}
+          caption={caption}
+          maxWidth={maxWidth}
+          _type={_type}
+        />
+      );
+    },
+    YoutubeVideo: ({ value }: { value: YoutubeVideoProps }) => {
+      const { url, caption, maxWidth, _type } = value;
+
+      return (
+        <YoutubeVideo
+          url={url}
+          caption={caption}
+          maxWidth={maxWidth}
+          _type={_type}
+        />
+      );
     },
   },
 };
