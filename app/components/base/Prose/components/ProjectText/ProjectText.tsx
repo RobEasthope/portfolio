@@ -16,6 +16,8 @@ import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo'
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo';
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 import Gallery from '~/components/blocks/Gallery/Gallery';
+import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
+import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>
@@ -101,6 +103,18 @@ export const ProjectTextComponents: PortableTextComponents = {
           image={image}
           maxWidth={maxWidth}
           aspectRatio={aspectRatio}
+          _type={_type}
+        />
+      );
+    },
+    MuxVideo: ({ value }: { value: MuxVideoProps }) => {
+      const { muxVideo, caption, maxWidth, _type } = value;
+
+      return (
+        <MuxVideo
+          muxVideo={muxVideo}
+          caption={caption}
+          maxWidth={maxWidth}
           _type={_type}
         />
       );
