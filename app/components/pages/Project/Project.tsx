@@ -37,7 +37,7 @@ export const Project = ({
           mode="responsive"
           maxWidth={200}
           aspectRatio={1}
-          className="mx-auto"
+          className="mx-auto rounded-full"
         />
 
         <Type as="h1" className="text-2xl">
