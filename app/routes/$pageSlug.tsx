@@ -6,7 +6,9 @@ import {
   isRouteErrorResponse,
 } from '@remix-run/react';
 import { cacheHeader } from 'pretty-cache-header';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import type { PageProps } from '~/components/pages/Page/Page';
 import { Page } from '~/components/pages/Page/Page';
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
@@ -23,11 +25,11 @@ type PageBySlugProps = PageProps & {
   fallbacks: MetadataSettingsProps;
 };
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ params }: LoaderArgs) {
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
-      slug: HOME_PAGE_SLUG,
+      slug: params?.pageSlug,
     },
   );
 
