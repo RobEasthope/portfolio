@@ -6,9 +6,12 @@ import {
 import { json } from '@vercel/remix';
 import type { LoaderArgs } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
-import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
+
+import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+
+import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import {

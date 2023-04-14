@@ -1,5 +1,6 @@
 import { BiHeading } from 'react-icons/bi';
 import { defineField, defineType } from 'sanity';
+
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({

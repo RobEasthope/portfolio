@@ -1,5 +1,6 @@
 import { ClientOnly } from 'remix-utils';
 import { Studio } from 'sanity';
+
 import config from '~/sanity/SanityStudio/sanity.config';
 
 export function SanityStudio() {

@@ -1,6 +1,8 @@
 import groq from 'groq';
+
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+
 import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
 
 export const ERROR_404_QUERY = groq`{

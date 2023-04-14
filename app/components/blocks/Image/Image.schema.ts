@@ -1,8 +1,10 @@
 import { RiImage2Line } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
+
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
 import { ASPECT_RATIOS } from '~/constants/ASPECT_RATIOS';
 import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   type: 'object',

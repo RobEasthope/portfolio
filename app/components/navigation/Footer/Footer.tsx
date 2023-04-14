@@ -3,7 +3,6 @@ import {
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
-import { romanize } from '~/components/navigation/Footer/romanize';
 
 import { Box } from '~/components/base/Box/Box';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
@@ -12,6 +11,8 @@ import type { InternalLinkWithTitleSchemaProps } from '~/components/base/Interna
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { SuperLink } from '~/components/base/SuperLink/SuperLink';
 import { Type } from '~/components/base/Type/Type';
+
+import { romanize } from '~/components/navigation/Footer/romanize';
 
 // TYPES
 export type FooterProps = {

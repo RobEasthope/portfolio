@@ -4,14 +4,15 @@ import type {
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
-import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
-import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
-import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
 
 import { Box } from '~/components/base/Box/Box';
 import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
 import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+
+import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
+import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
+import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
 
 // TYPES
 export type HeaderProps = {

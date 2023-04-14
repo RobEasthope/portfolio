@@ -5,11 +5,12 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 
 import { Box } from '~/components/base/Box/Box';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
+
+import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 
 // TYPES
 export type GalleryImageProps = {

@@ -1,7 +1,9 @@
 import { RiYoutubeFill } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
-import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
+
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
+import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
 
 export default defineType({
   type: 'object',

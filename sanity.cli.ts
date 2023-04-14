@@ -1,4 +1,5 @@
 import { defineCliConfig } from 'sanity/cli';
+
 import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 
 export default defineCliConfig({

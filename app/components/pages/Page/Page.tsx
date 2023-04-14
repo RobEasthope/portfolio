@@ -4,11 +4,13 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
+
+import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
+
 import type { FooterProps } from '~/components/navigation/Footer/Footer';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 
-import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 // TYPES
 export type PageProps = {

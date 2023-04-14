@@ -6,13 +6,15 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-import type { FooterProps } from '~/components/navigation/Footer/Footer';
-import type { HeaderProps } from '~/components/navigation/Header/Header';
 
 import { Box } from '~/components/base/Box/Box';
 import { Button } from '~/components/base/Button/Button';
 import { Type } from '~/components/base/Type/Type';
+
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 import type { Error404NavCardProps } from '~/components/pages/Error404/components/Error404NavCard/Error404NavCard';
 import { Error404NavCard } from '~/components/pages/Error404/components/Error404NavCard/Error404NavCard';

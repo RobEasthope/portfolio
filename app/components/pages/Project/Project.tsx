@@ -1,7 +1,4 @@
 import { BsDot } from 'react-icons/bs';
-import { Spacer } from '~/components/blocks/Spacer/Spacer';
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-import type { AppGlobalsProps } from '~/components/settings/Globals';
 
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
@@ -9,6 +6,12 @@ import { Prose } from '~/components/base/Prose/Prose';
 import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
+
+import type { AppGlobalsProps } from '~/components/settings/Globals';
+
+import { Spacer } from '~/components/blocks/Spacer/Spacer';
+
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 export type ProjectProps = {
   blocks: [];

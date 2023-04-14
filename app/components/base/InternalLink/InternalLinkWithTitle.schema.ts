@@ -1,5 +1,6 @@
 import { RiLinksLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
+
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';

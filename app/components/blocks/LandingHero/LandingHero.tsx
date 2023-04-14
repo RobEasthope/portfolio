@@ -5,6 +5,7 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 import SanityMuxPlayer from 'sanity-mux-player';
+
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
 import { Box } from '~/components/base/Box/Box';

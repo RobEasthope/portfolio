@@ -1,5 +1,6 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Suspense, lazy } from 'react';
+
 import styles from '~/sanity/SanityStudio/SanityStudio.css';
 
 export const meta: MetaFunction = () => ({

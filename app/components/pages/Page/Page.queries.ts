@@ -1,10 +1,13 @@
 import groq from 'groq';
-import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
-import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
-import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
+
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES';
+
+import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+
+import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`

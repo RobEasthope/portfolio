@@ -3,6 +3,7 @@ import type {
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
+
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
 import { Box } from '~/components/base/Box/Box';

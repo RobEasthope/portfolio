@@ -8,11 +8,13 @@ import {
 } from '@remix-run/react';
 import type { LinksFunction } from '@vercel/remix';
 import appCSS from '~/app.css';
-import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
-import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
+
+import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+
+import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
 
 export const links: LinksFunction = () => [
   // Adobe Typekit
