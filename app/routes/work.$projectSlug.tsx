@@ -27,7 +27,7 @@ export async function loader({ params }: LoaderArgs) {
   const payload: ProjectBySlugProps = await sanityAPI.fetch(
     PROJECT_BY_SLUG_QUERY,
     {
-      slug: params?.projectSlug,
+      slug: `work/${params?.projectSlug}`,
     },
   );
 
