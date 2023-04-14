@@ -36,6 +36,10 @@ export default {
         serif: ['linotype-sabon', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
+        xs: fluidTypeSize({
+          min: 12,
+          max: 14,
+        }),
         sm: fluidTypeSize({
           min: 14,
           max: 16,
@@ -44,33 +48,21 @@ export default {
           min: 16,
           max: 18,
         }),
-        md: fluidTypeSize({
-          min: 18,
-          max: 21,
-        }),
         lg: fluidTypeSize({
-          min: 18,
-          max: 24,
-        }),
-        xl: fluidTypeSize({
-          min: 21,
+          min: 19,
           max: 32,
         }),
-        '2xl': fluidTypeSize({
-          min: 23,
-          max: 43,
+        xl: fluidTypeSize({
+          min: 28,
+          max: 42,
         }),
-        '3xl': fluidTypeSize({
-          min: 26,
+        '2xl': fluidTypeSize({
+          min: 34,
           max: 56,
         }),
-        '4xl': fluidTypeSize({
-          min: 28,
+        '3xl': fluidTypeSize({
+          min: 40,
           max: 76,
-        }),
-        '5xl': fluidTypeSize({
-          min: 32,
-          max: 100,
         }),
       },
     },
