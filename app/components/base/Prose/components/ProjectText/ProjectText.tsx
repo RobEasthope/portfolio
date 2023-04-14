@@ -13,11 +13,11 @@ import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
-import Gallery from '~/components/blocks/Gallery/Gallery';
+import { Gallery } from '~/components/blocks/Gallery/Gallery';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
-import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo';
+import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>
