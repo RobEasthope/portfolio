@@ -1,5 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useEffect, useState } from 'react';
+import { HiOutlineMenuAlt2 } from 'react-icons/hi';
+import { IoMdClose } from 'react-icons/io';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -62,20 +64,23 @@ export const SmallNavigation = ({
 
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
-      <Dialog.Trigger className="sm:hidden">
-        <Type as="span" className="text-base">
-          Menu
+      <Dialog.Trigger className="sm:hidden p-0.25">
+        <Type as="span" className="text-lg">
+          <HiOutlineMenuAlt2 />
         </Type>
       </Dialog.Trigger>
 
       <Dialog.Overlay className="fixed left-0 top-0 z-10 h-screen w-screen bg-white opacity-70" />
 
-      <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1 py-0.5">
-        <Box as="div" className="flex w-full items-center justify-end">
+      <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1">
+        <Box
+          as="div"
+          className="flex w-full items-center justify-end py-0.75 sm:py-1"
+        >
           <HeaderLogo logo={logo} />
-          <Dialog.Close className="flex flex-nowrap items-center">
-            <Type as="span" className="text-base">
-              Close
+          <Dialog.Close className="flex flex-nowrap items-center p-0.25">
+            <Type as="span" className="text-lg">
+              <IoMdClose />
             </Type>
           </Dialog.Close>
         </Box>
