@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useEffect, useState } from 'react';
+import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -63,8 +64,8 @@ export const SmallNavigation = ({
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
       <Dialog.Trigger className="sm:hidden">
-        <Type as="span" className="text-base">
-          Menu
+        <Type as="span" className="text-lg">
+          <HiOutlineMenuAlt2 />
         </Type>
       </Dialog.Trigger>
 
