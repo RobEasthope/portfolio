@@ -1,31 +1,27 @@
-import type {
-  Organisation,
-  Project as rawProjectProps,
-} from '~/components/types/sanity-schema';
 import type { AppGlobalsProps } from '~/components/settings/Globals';
-import { ProjectText } from '~/components/base/Prose/components/ProjectText/ProjectText';
+import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
 import { Box } from '~/components/base/Box/Box';
 import { Spacer } from '~/components/blocks/Spacer/Spacer';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { BsDot } from 'react-icons/bs';
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-import { Type } from 'base/Type/Type';
-import { SanityImage } from 'base/SanityImage/SanityImage';
+import { Type } from '~/components/base/Type/Type';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Prose } from '~/components/base/Prose/Prose';
 
-export interface ProjectProps extends rawProjectProps {
+export type ProjectProps = {
   blocks: [];
-  clientOrg: Organisation;
-  agencyOrg: Organisation;
-}
+};
 
 export const Project = ({
   page,
-  globals,
+  header,
+  footer,
 }: {
   page: ProjectProps;
   globals: AppGlobalsProps;
 }) => (
-  <BasicLayout header={globals?.header} footer={globals?.footer}>
+  <BasicLayout header={header} footer={footer}>
     <Box as="div" className="py-2">
       <Box as="div" className="text-center mb-1">
         <SanityImage
@@ -68,9 +64,11 @@ export const Project = ({
         <BsDot className="h-1" />
       </Box>
 
-      {page?.projectText && (
-        <ProjectText blocks={page?.projectText as unknown} />
-      )}
+      <Prose
+        as="div"
+        content={page?.projectText}
+        components={ProjectTextComponents}
+      />
 
       <Box as="div" className="mt-1 text-center">
         <BsDot className="h-1" />
