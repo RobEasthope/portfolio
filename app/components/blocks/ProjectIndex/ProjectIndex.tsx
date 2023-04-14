@@ -23,7 +23,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
           <Box
             as="li"
             key={`${project?._id}-${i}`}
-            className="flex items-center gap-0.5"
+            className="flex flex-row sm:flex-col items-center gap-0.5"
           >
             {project?.thumbnailImage && project?.slug && (
               <InternalLink href={project?.slug?.current}>
