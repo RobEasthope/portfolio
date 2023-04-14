@@ -32,7 +32,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        text: 'rgb(21, 23, 24)',
+        ink: 'rgb(21, 23, 24)',
         saffron: 'rgba(255, 153, 51, 1)',
         darkSaffron: 'rgba(250, 145, 46, 1)',
         imperialRed: 'rgb(170, 0, 0)',

@@ -120,7 +120,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="font-plantin">
+      <body className="font-plantin text-ink">
         <Outlet />
         <ScrollRestoration />
 
