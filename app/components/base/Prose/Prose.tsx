@@ -22,7 +22,7 @@ export const Prose = ({
   }
 
   return (
-    <Box as={as} className={classNames('prose', className)}>
+    <Box as={as} className={classNames('prose', 'text-ink', className)}>
       <PortableText
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value={content}
