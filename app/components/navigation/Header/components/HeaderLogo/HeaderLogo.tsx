@@ -36,7 +36,7 @@ export const HeaderLogo = ({ logo }: HeaderLogoProps) => (
         alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
         mode="contain"
         maxWidth={200}
-        className="h-1.25"
+        className="h-1.25 w-1.25"
       />
     </InternalLink>
   </Box>
