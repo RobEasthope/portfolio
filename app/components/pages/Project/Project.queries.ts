@@ -38,9 +38,9 @@ export const PROJECT_BY_ID_QUERY = groq`
   }
 `;
 
-export const PROJECT_BY_SLUG_QUERY = groq`
-  *[_type== 'BlogPost' && !(_id in path("drafts.**")) && slug.current == $slug][0]{
-    "page": ${PROJECT_QUERY_BODY},
+export const PROJECT_BY_SLUG_QUERY = groq`{
+    "page": *[_type== 'Project' && !(_id in path("drafts.**")) && slug.current == $slug][0]{${PROJECT_QUERY_BODY}
+    },
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
     "fallbacks": ${METADATA_SETTINGS_QUERY},
