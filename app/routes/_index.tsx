@@ -1,10 +1,5 @@
 import { json } from '@vercel/remix';
-import type { LoaderArgs } from '@vercel/remix';
-import {
-  useLoaderData,
-  useRouteError,
-  isRouteErrorResponse,
-} from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import { cacheHeader } from 'pretty-cache-header';
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 import type { PageProps } from '~/components/pages/Page/Page';
@@ -23,7 +18,7 @@ type PageBySlugProps = PageProps & {
   fallbacks: MetadataSettingsProps;
 };
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader() {
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
