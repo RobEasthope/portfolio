@@ -41,7 +41,10 @@ export const LandingHero = ({
   }
 
   return (
-    <Box as="section" className="flex flex-row px-2">
+    <Box
+      as="section"
+      className="flex flex-row px-1 md:px-2 h-[calc(100vh_-_(23px_+_(25_-_23)_*_((100vw_-_320px)_/_(1400_-_320))))] md:px-2 md:h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))]"
+    >
       {bkgMode === 'image' && (
         <Box as="div" className="w-screen">
           <SanityImage
