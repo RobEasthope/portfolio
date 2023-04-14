@@ -75,7 +75,7 @@ export const SmallNavigation = ({
       <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1">
         <Box
           as="div"
-          className="flex w-full items-center justify-end py-0.75 sm:py-1"
+          className="flex w-full items-center justify-end py-0.5 sm:py-1"
         >
           <HeaderLogo logo={logo} />
           <Dialog.Close className="flex flex-nowrap items-center p-0.25">

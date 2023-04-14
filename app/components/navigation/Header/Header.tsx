@@ -51,7 +51,7 @@ export const Header = ({
 
   return (
     <Headroom>
-      <Box as="header" className="bg-white px-1 md:px-2 py-0.75 sm:py-1">
+      <Box as="header" className="bg-white px-1 md:px-2 py-0.5 sm:py-1">
         <Box
           as="nav"
           className="mx-auto flex w-full flex-row-reverse flex-wrap items-center justify-between leading-4 sm:flex-row"
