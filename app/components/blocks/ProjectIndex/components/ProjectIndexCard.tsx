@@ -10,7 +10,7 @@ export type ProjectIndexCardProps = {
 };
 
 export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
-  <Box as="li" className="flex flex-row sm:flex-col items-center gap-0.5">
+  <Box as="li" className="flex flex-row sm:flex-col items-center gap-0.25">
     <InternalLink href={project?.slug?.current}>
       <SanityImage
         asset={project?.thumbnailImage}
