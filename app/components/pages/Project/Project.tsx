@@ -68,6 +68,7 @@ export const Project = ({
         as="div"
         content={page?.projectText}
         components={ProjectTextComponents}
+        className="mx-auto"
       />
 
       <Box as="div" className="mt-1 text-center">
