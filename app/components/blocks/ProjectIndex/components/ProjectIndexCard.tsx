@@ -10,8 +10,11 @@ export type ProjectIndexCardProps = {
 };
 
 export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
-  <Box as="li" className="flex flex-row sm:flex-col items-center gap-0.25">
-    <InternalLink href={project?.slug?.current}>
+  <Box as="li">
+    <InternalLink
+      href={project?.slug?.current}
+      className="flex flex-row sm:flex-col items-center gap-0.25 text-center"
+    >
       <SanityImage
         asset={project?.thumbnailImage}
         alt={project?.title || ''}
@@ -20,9 +23,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
         aspectRatio={1}
         className="rounded-full w-2 h-2"
       />
-    </InternalLink>
 
-    <InternalLink href={project?.slug?.current} className="text-center">
       {project?.title}
     </InternalLink>
   </Box>
