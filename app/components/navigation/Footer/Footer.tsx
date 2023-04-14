@@ -31,7 +31,7 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
 
   return (
     <Box as="footer">
-      <Box as="div" className="mx-auto flex flex-col gap-1 px-1 py-3">
+      <Box as="div" className="mx-auto flex flex-col gap-1 px-1 py-2">
         <Box
           as="nav"
           className="flex flex-wrap justify-center"
