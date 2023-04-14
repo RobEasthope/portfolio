@@ -1,5 +1,9 @@
 module.exports = {
-  importOrder: ['^@core/(.*)$', '^@server/(.*)$', '^@ui/(.*)$', '^[./]'],
+  importOrder: [
+    "^~/components/base/(.*)$",
+    "^~/components/pages/(.*)$",
+    "^[./]",
+  ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
 };
