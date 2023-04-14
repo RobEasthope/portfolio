@@ -1,7 +1,9 @@
-import { defineField, defineType } from 'sanity';
 import { RiVideoLine } from 'react-icons/ri';
-import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
+import { defineField, defineType } from 'sanity';
+
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
+import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
 
 export default defineType({
   type: 'object',

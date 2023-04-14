@@ -1,12 +1,13 @@
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
+
 import { BlurrableImage } from '~/components/base/SanityImage/components/BlurrableImage/BlurrableImage';
 import { VectorImage } from '~/components/base/SanityImage/components/VectorImage/VectorImage';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 // TYPES

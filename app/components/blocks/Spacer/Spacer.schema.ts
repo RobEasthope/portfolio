@@ -1,7 +1,9 @@
-import { defineField, defineType } from 'sanity';
-import { SPACER_OPTIONS } from '~/components/blocks/Spacer/SPACER_OPTIONS';
 import { AiOutlineColumnHeight } from 'react-icons/ai';
+import { defineField, defineType } from 'sanity';
+
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
+import { SPACER_OPTIONS } from '~/components/blocks/Spacer/SPACER_OPTIONS';
 
 export default defineType({
   type: 'object',

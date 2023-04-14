@@ -1,4 +1,5 @@
 import Vimeo from '@u-wave/react-vimeo';
+
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
 

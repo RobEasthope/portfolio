@@ -1,23 +1,28 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 /* eslint-disable react/prop-types */
+
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
-import type { ImageProps } from '~/components/blocks/Image/Image';
-import { Image } from '~/components/blocks/Image/Image';
-import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-import { Type } from '~/components/base/Type/Type';
-import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
-import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
-import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
+
+import { EmailLink } from '~/components/base/EmailLink/EmailLink';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { Type } from '~/components/base/Type/Type';
+
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 import { Gallery } from '~/components/blocks/Gallery/Gallery';
+import type { ImageProps } from '~/components/blocks/Image/Image';
+import { Image } from '~/components/blocks/Image/Image';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
+import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>

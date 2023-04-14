@@ -1,6 +1,6 @@
-import { defineField, defineType } from 'sanity';
 import * as dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'project',

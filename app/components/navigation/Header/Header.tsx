@@ -1,16 +1,18 @@
-import { Box } from '~/components/base/Box/Box';
-import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
-import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
-import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
 import Headroom from 'react-headroom';
 import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
+
+import { Box } from '~/components/base/Box/Box';
 import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
-import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
+import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
+import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
+import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
 
 // TYPES
 export type HeaderProps = {

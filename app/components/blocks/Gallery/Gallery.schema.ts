@@ -1,9 +1,11 @@
-import { defineField, defineType, defineArrayMember } from 'sanity';
 import { RiGalleryLine } from 'react-icons/ri';
-import { ASPECT_RATIOS } from '~/constants/ASPECT_RATIOS';
-import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
-import { COLUMN_OPTIONS } from '~/constants/COLUMN_OPTIONS';
+import { defineArrayMember, defineField, defineType } from 'sanity';
+
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
+import { ASPECT_RATIOS } from '~/constants/ASPECT_RATIOS';
+import { COLUMN_OPTIONS } from '~/constants/COLUMN_OPTIONS';
+import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
 
 export default defineType({
   type: 'object',
