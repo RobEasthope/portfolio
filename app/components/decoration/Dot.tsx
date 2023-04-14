@@ -3,11 +3,9 @@ export type DotProps = {
 };
 
 export const Dot = ({ className }: DotProps) => (
-  <span className="flex items-center h-1">
-    <hr
-      className={`mx-auto h-0.25 w-0.25 bg-black rounded-full border-none ${
-        className || ''
-      }`}
-    />
-  </span>
+  <hr
+    className={`flex justify-center items-center h-1 mx-auto after:content-[''] after:h-0.25 after:w-0.25 after:bg-black after:rounded-full border-none ${
+      className || ''
+    }`}
+  />
 );
