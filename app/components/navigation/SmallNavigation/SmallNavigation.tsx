@@ -62,6 +62,8 @@ export const SmallNavigation = ({
   //   };
   // }, [setMenuOpen, router.events]);
 
+  const combindedNavigation = [...primaryNavigation, ...secondaryNavigation];
+
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
       <Dialog.Trigger className="sm:hidden p-0.25">
