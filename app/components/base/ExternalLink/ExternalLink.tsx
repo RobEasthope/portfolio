@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 // Schema props
 export type ExternalLinkWithTitleSchemaProps = {
   _type: 'ExternalLinkWithTitle';
@@ -39,7 +41,7 @@ export const ExternalLink = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={className}
+      className={classNames(className, 'hover:text-saffron duration-300')}
       {...rest}
     >
       {children || null}
