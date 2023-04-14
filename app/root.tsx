@@ -43,7 +43,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-serif">
         <Outlet />
         <ScrollRestoration />
 
