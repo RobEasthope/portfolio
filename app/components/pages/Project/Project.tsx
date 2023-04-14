@@ -23,23 +23,24 @@ export const Project = ({
 }) => (
   <BasicLayout header={header} footer={footer}>
     <Box as="div" className="py-2">
-      <Box as="div" className="text-center mb-1">
+      <Box
+        as="div"
+        className="flex flex-col gap-1 justify-center text-center mb-1"
+      >
         <SanityImage
           asset={page?.thumbnailImage}
           alt={page?.title || ''}
           mode="responsive"
           maxWidth={200}
           aspectRatio={1}
-          className="mb-1"
+          className="mx-auto"
         />
 
-        <Type as="h1" className="text-2xl mb-1">
+        <Type as="h1" className="text-2xl">
           {page?.title}
         </Type>
 
-        <Type as="p" className="mb-1">
-          {page?.description}
-        </Type>
+        <Type as="p">{page?.description}</Type>
 
         <Box as="section" className="flex gap-1 justify-center">
           {page?.clientOrg && (
