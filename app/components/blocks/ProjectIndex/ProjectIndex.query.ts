@@ -7,5 +7,5 @@ export const PROJECT_INDEX_QUERY = groq`{
     title,
     slug,
     thumbnailImage,
-  }
+  } | order(endDate desc)
 }`;
