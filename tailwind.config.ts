@@ -33,7 +33,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['aktiv-grotesk', ...defaultTheme.fontFamily.sans],
-        serif: ['linotype-sabon', ...defaultTheme.fontFamily.serif],
+        serif: ['plantin', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         sm: fluidTypeSize({
