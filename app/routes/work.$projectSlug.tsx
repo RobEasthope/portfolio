@@ -44,16 +44,6 @@ export async function loader({ params }: LoaderArgs) {
   });
 }
 
-export function headers() {
-  return {
-    'Cache-Control': cacheHeader({
-      maxAge: '30days',
-      staleWhileRevalidate: '1day',
-      staleIfError: '7days',
-    }),
-  };
-}
-
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
 
