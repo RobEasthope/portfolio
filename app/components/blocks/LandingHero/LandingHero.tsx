@@ -82,6 +82,7 @@ export const LandingHero = ({
               viewer_user_id: 'user-id-007',
             }}
             autoPlay
+            loop
             className="absolute w-full h-full"
           />
         </Box>
