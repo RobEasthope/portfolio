@@ -16,9 +16,9 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
         asset={project?.thumbnailImage}
         alt={project?.title || ''}
         mode="responsive"
-        maxWidth={48}
+        maxWidth={100}
         aspectRatio={1}
-        className="rounded-full w-[48px] h-[48px]"
+        className="rounded-full w-2 h-2"
       />
     </InternalLink>
 
