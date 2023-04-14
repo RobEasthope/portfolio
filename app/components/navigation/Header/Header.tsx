@@ -20,6 +20,7 @@ import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 import { useLoaderData } from '@remix-run/react';
 import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
+import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
 
 // TYPES
 export type HeaderProps = {
@@ -65,23 +66,7 @@ export const Header = ({
         >
           <NavListing links={primaryNavigation} />
 
-          <Box
-            as="div"
-            className="absolute left-1/2 flex flex-1 -translate-x-1/2 items-center justify-center"
-          >
-            <InternalLink href={HOME_PAGE_SLUG}>
-              <Box as="span" className="sr-only">
-                {METADATA_HARD_CODED_FALLBACKS.TITLE}
-              </Box>
-              <SanityImage
-                asset={logo}
-                alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
-                mode="contain"
-                maxWidth={200}
-                className="h-1.25"
-              />
-            </InternalLink>
-          </Box>
+          <HeaderLogo logo={logo} />
 
           <NavListing links={secondaryNavigation} />
 
