@@ -1,7 +1,8 @@
-import type { PageTitle as rawPageTitleProps } from '~/components/types/sanity-schema';
+import { LineBreak , LineBreak } from '~/components/decoration/LineBreak';
 
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
+import type { PageTitle as rawPageTitleProps } from '~/components/types/sanity-schema';
 
 // TYPES
 export interface PageTitleProps extends rawPageTitleProps {
@@ -21,7 +22,7 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
             {heading}
           </Type>
 
-          <hr className="block w-3 h-0.125 bg-darkSaffron mx-auto mt-1 mb-2 border-none" />
+          <LineBreak />
         </Box>
       </Box>
     </Box>
