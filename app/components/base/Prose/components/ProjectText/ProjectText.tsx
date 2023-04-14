@@ -14,6 +14,8 @@ import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo';
+import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
+import Gallery from '~/components/blocks/Gallery/Gallery';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>
@@ -78,6 +80,19 @@ export const ProjectTextComponents: PortableTextComponents = {
     ),
   },
   types: {
+    Gallery: ({ value }: { value: GalleryProps }) => {
+      const { images, columns, maxWidth, aspectRatio, _type } = value;
+
+      return (
+        <Gallery
+          images={images}
+          columns={columns}
+          maxWidth={maxWidth}
+          aspectRatio={aspectRatio}
+          _type={_type}
+        />
+      );
+    },
     Image: ({ value }: { value: ImageProps }) => {
       const { image, maxWidth, aspectRatio, _type } = value;
 
