@@ -2,6 +2,7 @@ import { GALLERY_QUERY } from '~/components/blocks/Gallery/Gallery.query';
 import { IMAGE_QUERY } from '~/components/blocks/Image/Image.query';
 import { LANDING_HERO_QUERY } from '~/components/blocks/LandingHero/LandingHero.query';
 import { MUX_VIDEO_QUERY } from '~/components/blocks/MuxVideo/MuxVideo.query';
+import { PAGE_TITLE_QUERY } from '~/components/blocks/PageTitle/PageTitle.query';
 import { SPACER_QUERY } from '~/components/blocks/Spacer/Spacer.query';
 import { TEXT_QUERY } from '~/components/blocks/Text/Text.query';
 import { VIMEO_VIDEO_QUERY } from '~/components/blocks/VimeoVideo/VimeoVideo.query';
@@ -16,6 +17,7 @@ export const SANITY_BLOCK_QUERIES = ({
   Image: IMAGE_QUERY,
   LandingHero: LANDING_HERO_QUERY,
   MuxVideo: MUX_VIDEO_QUERY,
+  PageTitle: PAGE_TITLE_QUERY,
   Spacer: SPACER_QUERY,
   Text: TEXT_QUERY,
   VimeoVideo: VIMEO_VIDEO_QUERY,
