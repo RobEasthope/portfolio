@@ -8,6 +8,7 @@
 import type { PortableTextComponents } from '@portabletext/react';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
+import { Box } from '~/components/base/Box/Box';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
@@ -91,61 +92,71 @@ export const ProjectTextComponents: PortableTextComponents = {
       const { images, columns, maxWidth, aspectRatio, _type } = value;
 
       return (
-        <Gallery
-          images={images}
-          columns={columns}
-          maxWidth={maxWidth}
-          aspectRatio={aspectRatio}
-          _type={_type}
-        />
+        <Box as="section" className="py-1">
+          <Gallery
+            images={images}
+            columns={columns}
+            maxWidth={maxWidth}
+            aspectRatio={aspectRatio}
+            _type={_type}
+          />
+        </Box>
       );
     },
     Image: ({ value }: { value: ImageProps }) => {
       const { image, maxWidth, aspectRatio, _type } = value;
 
       return (
-        <Image
-          image={image}
-          maxWidth={maxWidth}
-          aspectRatio={aspectRatio}
-          _type={_type}
-        />
+        <Box as="section" className="py-1">
+          <Image
+            image={image}
+            maxWidth={maxWidth}
+            aspectRatio={aspectRatio}
+            _type={_type}
+          />
+        </Box>
       );
     },
     MuxVideo: ({ value }: { value: MuxVideoProps }) => {
       const { muxVideo, caption, maxWidth, _type } = value;
 
       return (
-        <MuxVideo
-          muxVideo={muxVideo}
-          caption={caption}
-          maxWidth={maxWidth}
-          _type={_type}
-        />
+        <Box as="section" className="py-1">
+          <MuxVideo
+            muxVideo={muxVideo}
+            caption={caption}
+            maxWidth={maxWidth}
+            _type={_type}
+          />
+        </Box>
       );
     },
     VimeoVideo: ({ value }: { value: VimeoVideoProps }) => {
       const { url, caption, maxWidth, _type } = value;
 
       return (
-        <VimeoVideo
-          url={url}
-          caption={caption}
-          maxWidth={maxWidth}
-          _type={_type}
-        />
+        <Box as="section" className="py-1">
+          <VimeoVideo
+            url={url}
+            caption={caption}
+            maxWidth={maxWidth}
+            _type={_type}
+          />
+        </Box>
       );
     },
     YoutubeVideo: ({ value }: { value: YoutubeVideoProps }) => {
       const { url, caption, maxWidth, _type } = value;
 
       return (
-        <YoutubeVideo
-          url={url}
-          caption={caption}
-          maxWidth={maxWidth}
-          _type={_type}
-        />
+        <Box as="section" className="py-1">
+          <YoutubeVideo
+            url={url}
+            caption={caption}
+            maxWidth={maxWidth}
+            _type={_type}
+          />
+        </Box>
       );
     },
   },
