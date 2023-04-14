@@ -17,7 +17,9 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
     <Box as="section" className="px-1">
       <Box as="div">
         <Box as="div" className="text-center">
-          <Type as="h1">{heading}</Type>
+          <Type as="h1" className="text-2xl">
+            {heading}
+          </Type>
 
           <span className="block w-2 h-[2px] bg-black mx-auto mt-1 mb-2" />
         </Box>
