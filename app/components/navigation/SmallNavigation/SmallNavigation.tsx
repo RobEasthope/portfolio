@@ -87,8 +87,11 @@ export const SmallNavigation = ({
           </Dialog.Close>
         </Box>
 
-        <Box as="nav" className="mx-auto mt-2 max-w-xl">
-          <Box as="ul">
+        <Box
+          as="nav"
+          className="flex justify-center items-center h-[calc(100vh_-_(2.5rem_*_1.5))] mx-auto max-w-xl"
+        >
+          <Box as="ul" className="flex flex-col gap-1">
             {combindedNavigation?.map((nav) => (
               <Type as="li" key={nav?._key} className="text-xl text-center">
                 <SuperLink
