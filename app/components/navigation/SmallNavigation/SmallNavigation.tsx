@@ -72,8 +72,11 @@ export const SmallNavigation = ({
 
       <Dialog.Overlay className="fixed left-0 top-0 z-10 h-screen w-screen bg-white opacity-70" />
 
-      <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1 py-0.5">
-        <Box as="div" className="flex w-full items-center justify-end">
+      <Dialog.Content className="absolute right-0 top-0 z-50 h-screen w-full  overflow-y-scroll bg-white px-1">
+        <Box
+          as="div"
+          className="flex w-full items-center justify-end py-0.75 sm:py-1"
+        >
           <HeaderLogo logo={logo} />
           <Dialog.Close className="flex flex-nowrap items-center">
             <Type as="span" className="text-lg">
