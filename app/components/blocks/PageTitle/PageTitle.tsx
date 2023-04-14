@@ -21,7 +21,7 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
             {heading}
           </Type>
 
-          <span className="block w-2 h-[2px] bg-black mx-auto mt-1 mb-2" />
+          <span className="block w-2 h-[2px] bg-darkSaffron mx-auto mt-1 mb-2" />
         </Box>
       </Box>
     </Box>
