@@ -7,7 +7,7 @@ export type LineBreakProps = {
 export const LineBreak = ({ className }: LineBreakProps) => (
   <hr
     className={classNames(
-      'block w-3 h-0.125 bg-darkSaffron mx-auto border-none',
+      'flex items-center justify-center h-1 after:content-[""] after:block after:w-3 after:h-0.125 after:bg-darkSaffron  border-none',
       className,
     )}
   />
