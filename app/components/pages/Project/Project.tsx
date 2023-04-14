@@ -65,7 +65,6 @@ export const Project = ({
             </Type>
           )}
         </Box>
-        <Spacer height="1" />
 
         <Dot />
       </Box>
