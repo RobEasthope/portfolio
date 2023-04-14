@@ -59,7 +59,7 @@ export const SmallNavigation = ({
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
       <Dialog.Trigger className="md:hidden">
-        <Type as="span" className="text-sm font-medium">
+        <Type as="span" className="text-base">
           Menu
         </Type>
       </Dialog.Trigger>
@@ -70,7 +70,7 @@ export const SmallNavigation = ({
         <Box as="div" className="flex w-full items-center justify-end">
           <HeaderLogo logo={logo} />
           <Dialog.Close className="flex flex-nowrap items-center">
-            <Type as="span" className="text-sm font-medium">
+            <Type as="span" className="text-base">
               Close
             </Type>
           </Dialog.Close>
