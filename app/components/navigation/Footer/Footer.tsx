@@ -21,7 +21,7 @@ export type FooterProps = {
 
 // MARKUP
 export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
-  if (!footerNavigation) {
+  if (!footerNavigation && !copyrightText) {
     return null;
   }
   const timeStamp = new Date();
