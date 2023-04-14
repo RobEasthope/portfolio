@@ -16,8 +16,13 @@ import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
 
 export const links: LinksFunction = () => [
+  // Adobe Typekit
   { rel: 'stylesheet', href: 'https://use.typekit.net/qjp7bat.css' },
+
+  // Tailwind and app styles
   { rel: 'stylesheet', href: appCSS },
+
+  // UI styles
   { rel: 'stylesheet', href: SanityImageCSS },
   { rel: 'stylesheet', href: ProseOverridesCSS },
   { rel: 'stylesheet', href: HeadroomCSS },
