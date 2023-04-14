@@ -15,7 +15,7 @@ export type NavListingProps = {
     | null;
 };
 
-export const Navlisting = ({ links }: NavListingProps) => (
+export const NavListing = ({ links }: NavListingProps) => (
   <Box as="ul" className="hidden flex-row gap-1  md:flex">
     {links?.map((link) => (
       <Type as="li" key={link?._key} className="text-sm font-medium">
