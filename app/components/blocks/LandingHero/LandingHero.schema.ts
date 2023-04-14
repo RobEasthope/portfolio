@@ -10,16 +10,6 @@ export default defineType({
   icon: BiHeading,
   fields: [
     defineField({
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
-    }),
-    defineField({
-      name: 'heading',
-      title: 'Heading',
-      type: 'string',
-    }),
-    defineField({
       name: 'bkgMode',
       title: 'Background mode',
       type: 'string',
