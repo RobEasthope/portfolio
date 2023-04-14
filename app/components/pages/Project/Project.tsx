@@ -78,7 +78,7 @@ export const Project = ({
       />
 
       <Box as="div" className="flex flex-col gap-1 text-center">
-        <Dot />
+        <Dot className="mt-1" />
 
         <Type as="p">
           <ExternalLink href={page?.projectUrl || null}>
