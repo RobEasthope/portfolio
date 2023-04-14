@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
+import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import type {
   ExternalLinkSchemaProps,
   ExternalLinkWithTitleSchemaProps,
@@ -9,9 +11,6 @@ import type {
   InternalLinkWithTitleSchemaProps,
 } from '~/components/base/InternalLink/InternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-
-import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
-import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 
 export type SuperLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   link:

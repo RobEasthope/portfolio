@@ -1,6 +1,3 @@
-import type { FooterProps } from '~/components/navigation/Footer/Footer';
-import type { HeaderProps } from '~/components/navigation/Header/Header';
-import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
 import type {
   SanityImageAsset,
   SanityImageCrop,
@@ -8,6 +5,10 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+
+import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
 
 // TYPES
 export type PageProps = {

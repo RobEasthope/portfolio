@@ -1,7 +1,7 @@
-import { defineField, defineType } from 'sanity';
 import { RiVimeoFill } from 'react-icons/ri';
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import { defineField, defineType } from 'sanity';
 import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
   type: 'object',

@@ -1,4 +1,4 @@
-import { defineField, defineType, defineArrayMember } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'Footer',

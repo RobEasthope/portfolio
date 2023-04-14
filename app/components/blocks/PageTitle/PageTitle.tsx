@@ -1,3 +1,4 @@
+
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
 import type { PageTitle as rawPageTitleProps } from '~/components/types/sanity-schema';

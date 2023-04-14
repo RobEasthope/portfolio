@@ -3,12 +3,14 @@ import type {
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+
 import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
+
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
 export type HeaderLogoProps = {
   logo?: {

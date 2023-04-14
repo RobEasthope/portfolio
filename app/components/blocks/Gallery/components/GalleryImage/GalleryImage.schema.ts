@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity';
 import { RiImage2Line } from 'react-icons/ri';
+import { defineField, defineType } from 'sanity';
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({

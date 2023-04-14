@@ -1,5 +1,3 @@
-import type { LinksFunction } from '@vercel/remix';
-
 import {
   Links,
   LiveReload,
@@ -8,12 +6,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-
+import type { LinksFunction } from '@vercel/remix';
 import appCSS from '~/app.css';
-import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
-import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
-import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
+import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+
+import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
+import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
 
 export const links: LinksFunction = () => [
   // Adobe Typekit

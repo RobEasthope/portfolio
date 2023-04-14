@@ -1,7 +1,8 @@
 import { Link } from '@remix-run/react';
 import type { SanityReference } from 'sanity-codegen';
-import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+
 import type { PageProps } from '~/components/pages/Page/Page';
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {

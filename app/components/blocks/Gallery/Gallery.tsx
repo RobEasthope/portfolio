@@ -1,7 +1,8 @@
-import { Type } from '~/components/base/Type/Type';
-import { Box } from '~/components/base/Box/Box';
 import type { GalleryImageProps } from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage';
 import { GalleryImage } from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage';
+
+import { Box } from '~/components/base/Box/Box';
+import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type GalleryProps = {

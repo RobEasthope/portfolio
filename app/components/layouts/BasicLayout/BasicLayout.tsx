@@ -2,7 +2,9 @@ import type { FooterProps } from '~/components/navigation/Footer/Footer';
 import { Footer } from '~/components/navigation/Footer/Footer';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { Header } from '~/components/navigation/Header/Header';
+
 import { Box } from '~/components/base/Box/Box';
+
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 
 export type BasicLayoutProps = {

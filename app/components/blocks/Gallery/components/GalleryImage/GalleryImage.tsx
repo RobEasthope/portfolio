@@ -1,13 +1,14 @@
-import { Box } from '~/components/base/Box/Box';
 import * as Dialog from '@radix-ui/react-dialog';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
+import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
+
+import { Box } from '~/components/base/Box/Box';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
 // TYPES

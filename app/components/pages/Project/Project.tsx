@@ -1,13 +1,14 @@
-import type { AppGlobalsProps } from '~/components/settings/Globals';
-import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
-import { Box } from '~/components/base/Box/Box';
-import { Spacer } from '~/components/blocks/Spacer/Spacer';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { BsDot } from 'react-icons/bs';
+import { Spacer } from '~/components/blocks/Spacer/Spacer';
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-import { Type } from '~/components/base/Type/Type';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import type { AppGlobalsProps } from '~/components/settings/Globals';
+
+import { Box } from '~/components/base/Box/Box';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/base/Prose/Prose';
+import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Type } from '~/components/base/Type/Type';
 
 export type ProjectProps = {
   blocks: [];

@@ -1,6 +1,6 @@
+import { variants } from 'classname-variants';
 import type { ReactNode } from 'react';
 import { createElement } from 'react';
-import { variants } from 'classname-variants';
 
 type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
   as: string;

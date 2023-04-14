@@ -1,6 +1,6 @@
+import { AiOutlineColumnHeight } from 'react-icons/ai';
 import { defineField, defineType } from 'sanity';
 import { SPACER_OPTIONS } from '~/components/blocks/Spacer/SPACER_OPTIONS';
-import { AiOutlineColumnHeight } from 'react-icons/ai';
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({

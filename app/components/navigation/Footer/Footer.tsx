@@ -1,16 +1,17 @@
-import { Box } from '~/components/base/Box/Box';
-import { SuperLink } from '~/components/base/SuperLink/SuperLink';
-import { Type } from '~/components/base/Type/Type';
-import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
-import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
 import {
   SanityImageAsset,
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { romanize } from '~/components/navigation/Footer/romanize';
+
+import { Box } from '~/components/base/Box/Box';
+import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { SuperLink } from '~/components/base/SuperLink/SuperLink';
+import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type FooterProps = {

@@ -1,8 +1,8 @@
-import { defineField, defineType, defineArrayMember } from 'sanity';
 import { RiGalleryLine } from 'react-icons/ri';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { ASPECT_RATIOS } from '~/constants/ASPECT_RATIOS';
-import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
 import { COLUMN_OPTIONS } from '~/constants/COLUMN_OPTIONS';
+import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
