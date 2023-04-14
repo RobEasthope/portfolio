@@ -15,7 +15,7 @@ export default defineType({
         defineArrayMember({ type: 'EmailLinkWithTitle' }),
       ],
       validation: (Rule) =>
-        Rule.required().error('No footer navigation links have been added'),
+        Rule.required().warning('No footer navigation links have been added'),
     }),
     defineField({
       name: 'copyrightText',
@@ -23,7 +23,7 @@ export default defineType({
       type: 'string',
       description: 'The current year will be added automatically',
       validation: (Rule) =>
-        Rule.required().error('No copyright text has been added'),
+        Rule.required().warning('No copyright text has been added'),
     }),
   ],
   preview: {

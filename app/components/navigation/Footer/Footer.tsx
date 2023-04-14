@@ -10,6 +10,7 @@ import {
   SanityReference,
 } from 'sanity-codegen';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { romanize } from '~/components/navigation/Footer/romanize';
 
 // TYPES
 export type FooterProps = {
@@ -21,7 +22,7 @@ export type FooterProps = {
 
 // MARKUP
 export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
-  if (!footerNavigation) {
+  if (!footerNavigation && !copyrightText) {
     return null;
   }
   const timeStamp = new Date();
@@ -49,7 +50,7 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
         </Box>
 
         <Type as="p" className="text-center text-sm">
-          {copyrightText} {copyrightText && timeStamp.getFullYear()}
+          {copyrightText} {copyrightText && romanize(timeStamp.getFullYear())}
         </Type>
       </Box>
     </Box>
