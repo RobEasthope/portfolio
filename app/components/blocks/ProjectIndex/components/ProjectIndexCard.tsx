@@ -10,22 +10,21 @@ export type ProjectIndexCardProps = {
 };
 
 export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
-  <Box as="li" className="flex flex-row sm:flex-col items-center gap-0.5">
-    <InternalLink href={project?.slug?.current}>
+  <Box as="li">
+    <InternalLink
+      href={project?.slug?.current}
+      className="flex flex-row sm:flex-col items-center gap-0.25 text-center"
+    >
       <SanityImage
         asset={project?.thumbnailImage}
         alt={project?.title || ''}
         mode="responsive"
-        maxWidth={48}
+        maxWidth={100}
         aspectRatio={1}
-        className="rounded-full w-[48px] h-[48px]"
+        className="rounded-full w-2 h-2"
       />
-    </InternalLink>
 
-    <Type as="p" className="text-center">
-      <InternalLink href={project?.slug?.current}>
-        {project?.title}
-      </InternalLink>
-    </Type>
+      {project?.title}
+    </InternalLink>
   </Box>
 );
