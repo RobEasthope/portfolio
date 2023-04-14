@@ -26,7 +26,7 @@ export async function loader({ params }: LoaderArgs) {
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
-      slug: params?.pageSlug,
+      slug: params?.projectSlug,
     },
   );
 
