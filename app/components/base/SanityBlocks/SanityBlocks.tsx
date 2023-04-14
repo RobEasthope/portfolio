@@ -7,7 +7,9 @@ import { LandingHero } from '~/components/blocks/LandingHero/LandingHero';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
 import type { PageTitleProps } from '~/components/blocks/PageTitle/PageTitle';
-import PageTitle from '~/components/blocks/PageTitle/PageTitle';
+import { PageTitle } from '~/components/blocks/PageTitle/PageTitle';
+import type { ProjectIndexProps } from '~/components/blocks/ProjectIndex/ProjectIndex';
+import { ProjectIndex } from '~/components/blocks/ProjectIndex/ProjectIndex';
 import type { SpacerProps } from '~/components/blocks/Spacer/Spacer';
 import { Spacer } from '~/components/blocks/Spacer/Spacer';
 import type { TextProps } from '~/components/blocks/Text/Text';
@@ -73,6 +75,13 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
           return (
             <PageTitle
               {...(block as PageTitleProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+        case 'ProjectIndex':
+          return (
+            <ProjectIndex
+              {...(block as ProjectIndexProps)}
               key={`${pageID}-${block._key as string}`}
             />
           );
