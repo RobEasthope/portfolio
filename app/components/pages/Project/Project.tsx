@@ -27,7 +27,7 @@ export const Project = ({
   globals: AppGlobalsProps;
 }) => (
   <BasicLayout header={header} footer={footer}>
-    <Box as="div" className="py-2">
+    <Box as="div" className="px-1 md:px-2 py-2">
       <Box
         as="div"
         className="flex flex-col gap-1 justify-center text-center mb-1"
