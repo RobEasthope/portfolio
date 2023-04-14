@@ -1,6 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useEffect, useState } from 'react';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
+import { IoMdClose } from 'react-icons/io';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -75,8 +76,8 @@ export const SmallNavigation = ({
         <Box as="div" className="flex w-full items-center justify-end">
           <HeaderLogo logo={logo} />
           <Dialog.Close className="flex flex-nowrap items-center">
-            <Type as="span" className="text-base">
-              Close
+            <Type as="span" className="text-lg">
+              <IoMdClose />
             </Type>
           </Dialog.Close>
         </Box>
