@@ -41,7 +41,8 @@ export default {
       },
       fontFamily: {
         sans: ['aktiv-grotesk', ...defaultTheme.fontFamily.sans],
-        serif: ['plantin', ...defaultTheme.fontFamily.serif],
+        plantin: ['plantin', ...defaultTheme.fontFamily.serif],
+        sabon: ['linotype-sabon', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         xs: fluidTypeSize({
