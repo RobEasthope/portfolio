@@ -1,8 +1,14 @@
 import groq from 'groq';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
+import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
+import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
 
-export const projectBySlugQuery = groq`
-  *[_type in ["project"] && pageSlug.current == $slug]{
+const PROJECT_QUERY_BODY = groq`
+  {
     ...,
+    _id,
+    title,
+    slug,
     "clientOrg": client->{name, url},
     "agencyOrg": agency->{name, url},
     "blocks": rawSections[]{
@@ -18,11 +24,25 @@ export const projectBySlugQuery = groq`
     }
   }
 `;
-// All page slugs
-export const projectSlugsQuery = groq`
-  *[_type == "project" && defined(slug.current)]{
-    slug {
-      current
-    },
+
+export const PROJECT_SLUGS_QUERY = groq`
+  *[_type == "BlogPost" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+`;
+
+export const PROJECT_BY_ID_QUERY = groq`
+  *[_type== 'BlogPost' && !(_id in path("drafts.**")) && _id == $id][0]{
+    "page": ${PROJECT_QUERY_BODY},
+    "header": ${HEADER_QUERY},
+    "footer": ${FOOTER_QUERY},
+    "fallbacks": ${METADATA_SETTINGS_QUERY},
+  }
+`;
+
+export const PROJECT_BY_SLUG_QUERY = groq`
+  *[_type== 'BlogPost' && !(_id in path("drafts.**")) && slug.current == $slug][0]{
+    "page": ${PROJECT_QUERY_BODY},
+    "header": ${HEADER_QUERY},
+    "footer": ${FOOTER_QUERY},
+    "fallbacks": ${METADATA_SETTINGS_QUERY},
   }
 `;
