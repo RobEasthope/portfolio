@@ -62,7 +62,7 @@ export const SmallNavigation = ({
 
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
-      <Dialog.Trigger className="md:hidden">
+      <Dialog.Trigger className="sm:hidden">
         <Type as="span" className="text-base">
           Menu
         </Type>
