@@ -25,28 +25,24 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
             key={`${project?._id}-${i}`}
             className="flex flex-row sm:flex-col items-center gap-0.5"
           >
-            {project?.thumbnailImage && project?.slug && (
-              <InternalLink href={project?.slug?.current}>
-                <a>
-                  <SanityImage
-                    asset={project?.thumbnailImage}
-                    alt={project?.title || ''}
-                    mode="responsive"
-                    maxWidth={48}
-                    aspectRatio={1}
-                    className="rounded-full w-[48px] h-[48px]"
-                  />
-                </a>
-              </InternalLink>
-            )}
+            <InternalLink href={project?.slug?.current}>
+              <a>
+                <SanityImage
+                  asset={project?.thumbnailImage}
+                  alt={project?.title || ''}
+                  mode="responsive"
+                  maxWidth={48}
+                  aspectRatio={1}
+                  className="rounded-full w-[48px] h-[48px]"
+                />
+              </a>
+            </InternalLink>
 
-            {project?.slug && (
-              <Type as="p">
-                <InternalLink href={project?.slug?.current}>
-                  {project?.title}
-                </InternalLink>
-              </Type>
-            )}
+            <Type as="p">
+              <InternalLink href={project?.slug?.current}>
+                {project?.title}
+              </InternalLink>
+            </Type>
           </Box>
         ))}
       </Box>
