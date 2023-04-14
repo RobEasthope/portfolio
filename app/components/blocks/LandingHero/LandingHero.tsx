@@ -48,9 +48,9 @@ export const LandingHero = ({
   bkgMode,
   bkgImage,
   caption,
-  muxVideo,
+  bkgVideo,
 }: LandingHeroProps) => {
-  if (!bkgImage && !muxVideo) {
+  if (!bkgImage && !bkgVideo) {
     return null;
   }
 
@@ -74,14 +74,14 @@ export const LandingHero = ({
       {bkgMode === 'video' && (
         <Box as="div" className="w-screen">
           <MuxPlayer
+            playbackId={bkgVideo?.playbackId}
             streamType="on-demand"
-            playbackId="EcHgOK9coz5K4rjSwOkoE7Y7O01201YMIC200RI6lNxnhs"
             metadata={{
               video_id: 'video-id-54321',
               video_title: 'Test video title',
               viewer_user_id: 'user-id-007',
             }}
-            className="w-screen h-screen"
+            className="absolute w-full h-full"
           />
         </Box>
       )}
