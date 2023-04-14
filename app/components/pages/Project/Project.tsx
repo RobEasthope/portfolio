@@ -9,8 +9,8 @@ import { Spacer } from '~/components/blocks/Spacer/Spacer';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { BsDot } from 'react-icons/bs';
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-import { Type } from 'base/Type/Type';
-import { SanityImage } from 'base/SanityImage/SanityImage';
+import { Type } from '~/components/base/Type/Type';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Prose } from '~/components/base/Prose/Prose';
 
 export interface ProjectProps extends rawProjectProps {
