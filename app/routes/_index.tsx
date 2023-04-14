@@ -6,9 +6,7 @@ import {
   isRouteErrorResponse,
 } from '@remix-run/react';
 import { cacheHeader } from 'pretty-cache-header';
-import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
-import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import type { PageProps } from '~/components/pages/Page/Page';
 import { Page } from '~/components/pages/Page/Page';
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
