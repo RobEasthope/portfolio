@@ -1,7 +1,3 @@
-import type {
-  Organisation,
-  Project as rawProjectProps,
-} from '~/components/types/sanity-schema';
 import type { AppGlobalsProps } from '~/components/settings/Globals';
 import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
 import { Box } from '~/components/base/Box/Box';
@@ -13,11 +9,9 @@ import { Type } from '~/components/base/Type/Type';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Prose } from '~/components/base/Prose/Prose';
 
-export interface ProjectProps extends rawProjectProps {
+export type ProjectProps = {
   blocks: [];
-  clientOrg: Organisation;
-  agencyOrg: Organisation;
-}
+};
 
 export const Project = ({
   page,
