@@ -1,5 +1,6 @@
 import type { PortableTextComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
+import classNames from 'classnames';
 
 import { Box } from '~/components/base/Box/Box';
 
@@ -21,7 +22,7 @@ export const Prose = ({
   }
 
   return (
-    <Box as={as} className={`prose text-black ${className || ''}`}>
+    <Box as={as} className={classNames('prose', 'text-black', className)}>
       <PortableText
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value={content}
