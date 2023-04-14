@@ -62,6 +62,8 @@ export const SmallNavigation = ({
   //   };
   // }, [setMenuOpen, router.events]);
 
+  const combindedNavigation = [...primaryNavigation, ...secondaryNavigation];
+
   return (
     <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
       <Dialog.Trigger className="sm:hidden p-0.25">
@@ -85,25 +87,13 @@ export const SmallNavigation = ({
           </Dialog.Close>
         </Box>
 
-        <Box as="nav" className="mx-auto mt-2 max-w-xl">
-          <Box as="ul">
-            {primaryNavigation?.map((nav) => (
-              <Type as="li" key={nav?._key} className="text-4xl font-bold">
-                <SuperLink
-                  link={nav}
-                  className="decoration-4 underline-offset-4 hover:underline"
-                >
-                  {nav.title}
-                </SuperLink>
-              </Type>
-            ))}
-          </Box>
-          {secondaryNavigation && (
-            <hr className="mb-0.75 mt-0.75 block h-0.25 w-2 bg-black" />
-          )}
-          <Box as="ul">
-            {secondaryNavigation?.map((nav) => (
-              <Type as="li" key={nav?._key} className="text-4xl font-bold">
+        <Box
+          as="nav"
+          className="flex justify-center items-center h-[calc(100vh_-_(2.5rem_*_1.5))] mx-auto max-w-xl"
+        >
+          <Box as="ul" className="flex flex-col gap-0.5">
+            {combindedNavigation?.map((nav) => (
+              <Type as="li" key={nav?._key} className="text-xl text-center">
                 <SuperLink
                   link={nav}
                   className="decoration-4 underline-offset-4 hover:underline"

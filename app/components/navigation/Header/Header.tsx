@@ -23,20 +23,16 @@ export type HeaderProps = {
     crop?: SanityImageCrop;
     attribution?: string;
   };
-  primaryNavigation:
-    | [
-        | ExternalLinkWithTitleSchemaProps
-        | InternalLinkWithTitleSchemaProps
-        | EmailLinkWithTitleSchemaProps,
-      ]
-    | null;
-  secondaryNavigation:
-    | [
-        | ExternalLinkWithTitleSchemaProps
-        | InternalLinkWithTitleSchemaProps
-        | EmailLinkWithTitleSchemaProps,
-      ]
-    | null;
+  primaryNavigation: [
+    | ExternalLinkWithTitleSchemaProps
+    | InternalLinkWithTitleSchemaProps
+    | EmailLinkWithTitleSchemaProps,
+  ];
+  secondaryNavigation: [
+    | ExternalLinkWithTitleSchemaProps
+    | InternalLinkWithTitleSchemaProps
+    | EmailLinkWithTitleSchemaProps,
+  ];
 };
 
 // MARKUP
