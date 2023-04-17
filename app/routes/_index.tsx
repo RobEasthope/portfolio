@@ -47,15 +47,15 @@ export async function loader() {
   });
 }
 
-export const meta: V2_MetaFunction = () => [
-  { title: payload?.page?.title },
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
+  { title: data?.page?.title },
   {
     property: 'og:title',
-    content: payload?.page?.title,
+    content: data?.page?.title,
   },
   {
     name: 'description',
-    content: payload?.page?.metadataDescription,
+    content: data?.page?.metadataDescription,
   },
 ];
 
