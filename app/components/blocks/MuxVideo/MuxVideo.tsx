@@ -29,8 +29,8 @@ export const MuxVideo = ({
             playbackId={muxVideo?.playbackId}
             streamType="on-demand"
             metadata={{
-              video_id: 'video-id-54321',
-              video_title: 'Test video title',
+              video_id: muxVideo?.assetId,
+              video_title: muxVideo?.title || '',
               viewer_user_id: 'user-id-007',
             }}
           />

@@ -62,8 +62,8 @@ export const LandingHero = ({
           playbackId={bkgVideo?.playbackId}
           streamType="on-demand"
           metadata={{
-            video_id: 'video-id-54321',
-            video_title: 'Test video title',
+            video_id: bkgVideo?.assetId,
+            video_title: bkgVideo?.title || '',
             viewer_user_id: 'user-id-007',
           }}
           autoPlay
