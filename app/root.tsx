@@ -9,10 +9,14 @@ import {
 import type { LinksFunction } from '@vercel/remix';
 import appCSS from '~/app.css';
 
+import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 import LandingHeroCSS from '~/components/blocks/LandingHero/LandingHero.css';
 import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
@@ -31,6 +35,16 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: LandingHeroCSS },
   { rel: 'stylesheet', href: YoutubeVideoCSS },
 ];
+
+export async function loader() {
+  const payload: PageBySlugProps = await sanityAPI.fetch(
+    METADATA_FALLBACKS_QUERY,
+  );
+
+  return json({
+    fallbacks: payload?.fallbacks || null,
+  });
+}
 
 export const meta = () => ({
   charset: 'utf-8',
