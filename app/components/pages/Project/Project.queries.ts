@@ -22,7 +22,8 @@ const PROJECT_QUERY_BODY = groq`
       "bkg": rawBkg->,
     },
     "muxVideo": rawMuxVideo.asset->,
-  }
+  },
+  containLogo
 `;
 
 export const PROJECT_SLUGS_QUERY = groq`

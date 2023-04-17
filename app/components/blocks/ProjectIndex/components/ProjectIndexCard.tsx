@@ -18,9 +18,9 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
       <SanityImage
         asset={project?.thumbnailImage}
         alt={project?.title || ''}
-        mode="responsive"
+        mode={project?.containLogo ? 'contain' : 'responsive'}
         maxWidth={100}
-        aspectRatio={1}
+        aspectRatio={project?.containLogo ? null : 1}
         className="rounded-full w-2 h-2"
       />
 
