@@ -1,4 +1,5 @@
 // Legacy schema types
+import Details from '~/components/about/Details/Details.schema';
 import altImage from '~/legacy-schemas/altImage.schema';
 import blockContentSchema from '~/legacy-schemas/blockContent.schema';
 
@@ -20,7 +21,6 @@ import Header from '~/components/navigation/Header/Header.schema';
 
 // Settings
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
-import details from '~/components/settings/Details.schema';
 import GlobalMetadata from '~/components/settings/GlobalMetadata.schema';
 
 import education from '~/components/blocks/Education/Education.schema';
@@ -68,7 +68,7 @@ export const schemaTypes = [
   ProjectText,
 
   // Settings
-  details,
+  Details,
   AppSettings,
   GlobalMetadata,
 
