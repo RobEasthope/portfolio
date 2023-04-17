@@ -7,13 +7,11 @@ import type {
 
 export type MetadataFallbacksProps = {
   _type: 'MetadataFallbacks';
-  headingappsettings?: string;
   sitename: string;
   canonicalUrl?: string;
-  headingseometadatafallbacks?: string;
-  titleFallback: string;
-  descriptionFallback: string;
-  thumbnailFallback: {
+  title: string;
+  description: string;
+  thumbnail: {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
