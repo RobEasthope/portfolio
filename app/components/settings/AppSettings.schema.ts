@@ -3,9 +3,9 @@ import { defineField, defineType } from 'sanity';
 import { ALL_PAGES_TYPES } from '~/components/pages/ALL_PAGES_TYPES';
 
 export default defineType({
-  name: 'Settings',
+  name: 'appSettings',
+  title: 'App settings',
   type: 'document',
-  title: 'Site settings',
   fields: [
     defineField({
       name: 'rawHomePageRef',
@@ -19,7 +19,7 @@ export default defineType({
   preview: {
     prepare() {
       return {
-        title: 'Settings',
+        title: 'App settings',
       };
     },
   },

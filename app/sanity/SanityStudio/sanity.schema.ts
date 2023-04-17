@@ -18,10 +18,10 @@ import Footer from '~/components/navigation/Footer/Footer.schema';
 // Navigation
 import Header from '~/components/navigation/Header/Header.schema';
 
+import AppSettings from '~/components/settings/AppSettings.schema';
 // Settings
 import details from '~/components/settings/Details.schema';
 import GlobalMetadata from '~/components/settings/GlobalMetadata.schema';
-import Settings from '~/components/settings/Settings.schema';
 
 import education from '~/components/blocks/Education/Education.schema';
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
@@ -69,7 +69,7 @@ export const schemaTypes = [
 
   // Settings
   details,
-  Settings,
+  AppSettings,
   GlobalMetadata,
 
   // Data
