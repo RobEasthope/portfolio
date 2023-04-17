@@ -31,6 +31,9 @@ export default {
   content: ['./app/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '400px',
+      },
       colors: {
         ink: 'rgb(21, 23, 24)',
         saffron: 'rgba(255, 153, 51, 1)',
