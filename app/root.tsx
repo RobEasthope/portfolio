@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import type { LinksFunction } from '@vercel/remix';
+import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
@@ -45,6 +46,22 @@ export async function loader() {
     fallbacks: payload?.fallbacks || null,
   });
 }
+
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
+  { title: data?.fallbacks?.title },
+  {
+    property: 'og:title',
+    content: data?.fallbacks?.title,
+  },
+  {
+    name: 'description',
+    content: data?.fallbacks?.description,
+  },
+  {
+    property: 'og:image',
+    content: data?.fallbacks?.thumbnail,
+  },
+];
 
 // export const meta = () => ({
 //   charset: 'utf-8',
