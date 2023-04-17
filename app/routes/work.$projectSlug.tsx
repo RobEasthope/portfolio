@@ -11,7 +11,7 @@ import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps'
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks';
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import {
