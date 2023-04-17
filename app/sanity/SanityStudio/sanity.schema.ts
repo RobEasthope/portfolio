@@ -21,7 +21,6 @@ import Header from '~/components/navigation/Header/Header.schema';
 
 // Settings
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
-import GlobalMetadata from '~/components/settings/GlobalMetadata.schema';
 
 import education from '~/components/blocks/Education/Education.schema';
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
@@ -70,7 +69,6 @@ export const schemaTypes = [
   // Settings
   Details,
   AppSettings,
-  GlobalMetadata,
 
   // Data
   tech,
