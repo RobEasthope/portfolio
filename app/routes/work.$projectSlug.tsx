@@ -54,6 +54,10 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
     name: 'description',
     content: data?.page?.metadataDescription,
   },
+  {
+    property: 'og:image',
+    content: data?.page?.metadataImage,
+  },
 ];
 
 export default function Index() {
