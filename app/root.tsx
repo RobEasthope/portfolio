@@ -49,27 +49,23 @@ export async function loader() {
   });
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
-  console.log(data);
-
-  return [
-    { title: data?.fallbacks?.title },
-    {
-      property: 'og:title',
-      content: data?.fallbacks?.title,
-    },
-    {
-      name: 'description',
-      content: data?.fallbacks?.description,
-    },
-    {
-      property: 'og:image',
-      content:
-        data?.fallbacks?.thumbnail &&
-        urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
-    },
-  ];
-};
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
+  { title: data?.fallbacks?.title },
+  {
+    property: 'og:title',
+    content: data?.fallbacks?.title,
+  },
+  {
+    name: 'description',
+    content: data?.fallbacks?.description,
+  },
+  {
+    property: 'og:image',
+    content:
+      data?.fallbacks?.thumbnail &&
+      urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
+  },
+];
 
 // export const meta = () => ({
 //   charset: 'utf-8',
