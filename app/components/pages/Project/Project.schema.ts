@@ -1,6 +1,9 @@
 import * as dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { defineField, defineType } from 'sanity';
+import { formatSlug } from '~/utils/formatSlug';
+
+import { PROJECT_SLUG } from '~/components/pages/Project/PROJECT_SLUG';
 
 export default defineType({
   name: 'project',
@@ -26,20 +29,19 @@ export default defineType({
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
     defineField({
-      name: 'pageSlug',
-      title: 'Project slug',
+      name: 'slug',
+      title: 'Page url/slug',
       type: 'slug',
+      description: 'Set the page URL',
       options: {
         source: 'title',
-        maxLength: 96,
+        slugify: (input) => {
+          const formattedSlug = formatSlug(input);
+
+          return `${PROJECT_SLUG}/${formattedSlug}`;
+        },
       },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      readOnly: true,
+      validation: (Rule) => Rule.required().error('The slug is missing'),
     }),
     defineField({
       name: 'projectText',
