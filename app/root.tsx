@@ -14,6 +14,7 @@ import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
@@ -63,7 +64,9 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
     },
     {
       property: 'og:image',
-      content: data?.fallbacks?.thumbnail,
+      content:
+        data?.fallbacks?.thumbnail &&
+        urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
     },
   ];
 };

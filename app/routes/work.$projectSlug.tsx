@@ -11,6 +11,8 @@ import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps'
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
+import { urlFor } from '~/components/base/SanityImage/urlFor';
+
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
@@ -62,7 +64,9 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data, matches }) => {
     },
     {
       property: 'og:image',
-      content: data?.page?.metadataImage,
+      content:
+        data?.page?.metadataImage &&
+        urlFor(data?.page?.metadataImage).width(1200).height(630).url(),
     },
   ];
 };
