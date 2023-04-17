@@ -29,16 +29,6 @@ export default defineType({
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
     defineField({
-      name: 'pageSlug',
-      title: 'Project slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'slug',
       title: 'Page url/slug',
       type: 'slug',
