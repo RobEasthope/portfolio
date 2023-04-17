@@ -144,12 +144,12 @@ export default defineConfig({
                           .documentId('Settings'),
                       ),
                     S.listItem()
-                      .title('SEO & Metadata')
+                      .title('Metadata fallbacks')
                       .icon(FaGlobeEurope)
                       .child(
                         S.document()
-                          .schemaType('GlobalMetadata')
-                          .documentId('GlobalMetadata'),
+                          .schemaType('MetadataFallbacks')
+                          .documentId('MetadataFallbacks'),
                       ),
                   ]),
               ),
