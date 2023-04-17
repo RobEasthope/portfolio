@@ -29,6 +29,11 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
+      name: 'loop',
+      title: 'Loop video',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'maxWidth',
       title: 'Max width',
       type: 'string',
