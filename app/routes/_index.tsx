@@ -47,21 +47,28 @@ export async function loader() {
   });
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
-  { title: data?.page?.title },
-  {
-    property: 'og:title',
-    content: data?.page?.title,
-  },
-  {
-    name: 'description',
-    content: data?.page?.metadataDescription,
-  },
-  {
-    property: 'og:image',
-    content: data?.page?.metadataImage,
-  },
-];
+export const meta: V2_MetaFunction<typeof loader> = ({ data, matches }) => {
+  const parentMeta = matches
+    .flatMap((match) => match.meta ?? [])
+    .filter((meta) => !('title' in meta));
+
+  return [
+    ...parentMeta,
+    { title: data?.page?.title },
+    {
+      property: 'og:title',
+      content: data?.page?.title,
+    },
+    {
+      name: 'description',
+      content: data?.page?.metadataDescription,
+    },
+    {
+      property: 'og:image',
+      content: data?.page?.metadataImage,
+    },
+  ];
+};
 
 export function headers() {
   return {
