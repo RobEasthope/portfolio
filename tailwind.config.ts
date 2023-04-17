@@ -32,7 +32,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: '400px',
+        xs: '420px',
       },
       colors: {
         ink: 'rgb(21, 23, 24)',
