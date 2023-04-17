@@ -2,6 +2,7 @@ import { useLoaderData } from '@remix-run/react';
 import type { V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
+import { mergeMeta } from '~/utils/mergeMeta';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
@@ -49,30 +50,26 @@ export async function loader() {
   });
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data, matches }) => {
-  const parentMeta = matches
-    .flatMap((match) => match.meta ?? [])
-    .filter((meta) => !('title' in meta));
-
-  return [
-    ...parentMeta,
-    { title: data?.page?.title },
+export const meta = mergeMeta(
+  // these will override the parent meta
+  ({ data }) => [
+    { title: data?.page?.title || null },
     {
       property: 'og:title',
       content: data?.page?.title,
     },
     {
       name: 'description',
-      content: data?.page?.metadataDescription,
+      content: data?.page?.metadataDescription || null,
     },
     {
       property: 'og:image',
-      content:
-        data?.page?.metadataImage &&
-        urlFor(data?.page?.metadataImage).width(1200).height(630).url(),
+      content: data?.page?.metadataImage
+        ? urlFor(data?.page?.metadataImage).width(1200).height(630).url()
+        : null,
     },
-  ];
-};
+  ],
+);
 
 export function headers() {
   return {
