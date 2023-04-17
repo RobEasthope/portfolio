@@ -13,7 +13,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
   <Box as="li">
     <InternalLink
       href={project?.slug?.current}
-      className="flex flex-row sm:flex-col items-center gap-0.5 sm:gap-0.25 text-left sm:text-center"
+      className="flex h-full items-center flex-row sm:flex-col items-center gap-0.5 sm:gap-0.25 text-left sm:text-center"
     >
       <SanityImage
         asset={project?.thumbnailImage}
