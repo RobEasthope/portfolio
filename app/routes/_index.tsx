@@ -48,14 +48,14 @@ export async function loader() {
 }
 
 export const meta: V2_MetaFunction = () => [
-  { title: 'Very cool app | Remix' },
+  { title: payload?.page?.title },
   {
     property: 'og:title',
-    content: 'Very cool app',
+    content: payload?.page?.title,
   },
   {
     name: 'description',
-    content: 'This app is the best',
+    content: payload?.page?.metadataDescription,
   },
 ];
 
