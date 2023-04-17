@@ -51,7 +51,5 @@ export function checkMetadata({
     });
   }
 
-  console.log(data);
-
   return data;
 }
