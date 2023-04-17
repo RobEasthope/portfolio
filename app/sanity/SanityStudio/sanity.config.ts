@@ -140,16 +140,16 @@ export default defineConfig({
                       .icon(RiSettings2Line)
                       .child(
                         S.document()
-                          .schemaType('Settings')
-                          .documentId('Settings'),
+                          .schemaType('AppSettings')
+                          .documentId('AppSettings'),
                       ),
                     S.listItem()
-                      .title('SEO & Metadata')
+                      .title('Metadata fallbacks')
                       .icon(FaGlobeEurope)
                       .child(
                         S.document()
-                          .schemaType('GlobalMetadata')
-                          .documentId('GlobalMetadata'),
+                          .schemaType('MetadataFallbacks')
+                          .documentId('MetadataFallbacks'),
                       ),
                   ]),
               ),

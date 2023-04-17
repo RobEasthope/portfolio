@@ -3,7 +3,7 @@ import groq from 'groq';
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
-import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 const PROJECT_QUERY_BODY = groq`
   ...,
@@ -35,7 +35,7 @@ export const PROJECT_BY_ID_QUERY = groq`
     },
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
-    "fallbacks": ${METADATA_SETTINGS_QUERY},
+    "fallbacks": ${METADATA_FALLBACKS_QUERY},
   }
 `;
 
@@ -45,6 +45,6 @@ export const PROJECT_BY_SLUG_QUERY = groq`{
     },
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
-    "fallbacks": ${METADATA_SETTINGS_QUERY},
+    "fallbacks": ${METADATA_FALLBACKS_QUERY},
   }
 `;

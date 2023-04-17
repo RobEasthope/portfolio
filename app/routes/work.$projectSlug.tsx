@@ -6,12 +6,17 @@ import {
 import { json } from '@vercel/remix';
 import type { LoaderArgs } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
+import { blockPreview } from 'sanity-pills';
+import { checkMetadata } from '~/utils/checkMetadata';
+import { mergeMeta } from '~/utils/mergeMeta';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
+
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import {
@@ -24,7 +29,7 @@ import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.querie
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader({ params }: LoaderArgs) {
@@ -44,21 +49,18 @@ export async function loader({ params }: LoaderArgs) {
   });
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
-  { title: data?.page?.title },
-  {
-    property: 'og:title',
-    content: data?.page?.title,
-  },
-  {
-    name: 'description',
-    content: data?.page?.metadataDescription,
-  },
-  {
-    property: 'og:image',
-    content: data?.page?.metadataImage,
-  },
-];
+export const meta: V2_MetaFunction = ({
+  matches,
+  data,
+}): V2_HtmlMetaDescriptor[] =>
+  mergeMeta(
+    matches,
+    checkMetadata({
+      title: data?.page?.title,
+      description: blockPreview(data?.page?.projectText),
+      image: data?.page?.thumbnailImage,
+    }),
+  );
 
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();

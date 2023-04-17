@@ -2,12 +2,16 @@ import { useLoaderData } from '@remix-run/react';
 import type { V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
+import { checkMetadata } from '~/utils/checkMetadata';
+import { mergeMeta } from '~/utils/mergeMeta';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
+
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import type { PageProps } from '~/components/pages/Page/Page';
@@ -20,7 +24,7 @@ import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader() {
@@ -47,21 +51,18 @@ export async function loader() {
   });
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
-  { title: data?.page?.title },
-  {
-    property: 'og:title',
-    content: data?.page?.title,
-  },
-  {
-    name: 'description',
-    content: data?.page?.metadataDescription,
-  },
-  {
-    property: 'og:image',
-    content: data?.page?.metadataImage,
-  },
-];
+export const meta: V2_MetaFunction = ({
+  matches,
+  data,
+}): V2_HtmlMetaDescriptor[] =>
+  mergeMeta(
+    matches,
+    checkMetadata({
+      title: data?.page?.title,
+      description: data?.page?.metadataDescription,
+      image: data?.page?.metadataImage,
+    }),
+  );
 
 export function headers() {
   return {

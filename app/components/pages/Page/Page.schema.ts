@@ -43,16 +43,6 @@ export default defineType({
         Rule.required().error('At least one page section is required'),
     }),
     defineField({
-      name: 'metadataTitle',
-      title: 'Metadata title',
-      description: 'Used in browser tab titles and social media',
-      type: 'string',
-      validation: (Rule) =>
-        Rule.required().warning(
-          'Metadata title has not been set and will fall back to global metadata settings',
-        ),
-    }),
-    defineField({
       name: 'metadataDescription',
       title: 'Metadata description',
       description: 'Used in social media and search engine listings',

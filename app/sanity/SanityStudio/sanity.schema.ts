@@ -1,8 +1,9 @@
-// Links
 // Legacy schema types
+import Details from '~/components/about/Details/Details.schema';
 import altImage from '~/legacy-schemas/altImage.schema';
 import blockContentSchema from '~/legacy-schemas/blockContent.schema';
 
+// Links
 import EmailLink from '~/components/base/EmailLink/EmailLink.schema';
 import EmailLinkWithTitle from '~/components/base/EmailLink/EmailLinkWithTitle.schema';
 import ExternalLink from '~/components/base/ExternalLink/ExternalLink.schema';
@@ -14,14 +15,13 @@ import BasicText from '~/components/base/Prose/components/BasicText/BasicText.sc
 import FullText from '~/components/base/Prose/components/FullText/FullText.schema';
 import ProjectText from '~/components/base/Prose/components/ProjectText/ProjectText.schema';
 
-import Footer from '~/components/navigation/Footer/Footer.schema';
 // Navigation
+import Footer from '~/components/navigation/Footer/Footer.schema';
 import Header from '~/components/navigation/Header/Header.schema';
 
 // Settings
-import details from '~/components/settings/Details.schema';
-import GlobalMetadata from '~/components/settings/GlobalMetadata.schema';
-import Settings from '~/components/settings/Settings.schema';
+import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
+import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
 import education from '~/components/blocks/Education/Education.schema';
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
@@ -68,9 +68,11 @@ export const schemaTypes = [
   ProjectText,
 
   // Settings
-  details,
-  Settings,
-  GlobalMetadata,
+  AppSettings,
+  MetadataFallbacks,
+
+  // About
+  Details,
 
   // Data
   tech,

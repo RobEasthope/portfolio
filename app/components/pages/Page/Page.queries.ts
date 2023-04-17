@@ -7,7 +7,7 @@ import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOC
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
-import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`
@@ -74,6 +74,6 @@ export const PAGE_BY_ID_QUERY = ({
       },
       goBackTitle,
     },
-    "fallbacks": ${METADATA_SETTINGS_QUERY},
+    "fallbacks": ${METADATA_FALLBACKS_QUERY},
   }`;
 };

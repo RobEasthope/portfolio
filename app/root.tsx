@@ -7,12 +7,19 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import type { LinksFunction } from '@vercel/remix';
+import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
+
+import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 import LandingHeroCSS from '~/components/blocks/LandingHero/LandingHero.css';
 import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
@@ -32,6 +39,34 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: YoutubeVideoCSS },
 ];
 
+export async function loader() {
+  const fallbacks: MetadataFallbacksProps = await sanityAPI.fetch(
+    METADATA_FALLBACKS_QUERY,
+  );
+
+  return json({
+    fallbacks: fallbacks || null,
+  });
+}
+
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
+  { title: data?.fallbacks?.title },
+  {
+    property: 'og:title',
+    content: data?.fallbacks?.title,
+  },
+  {
+    name: 'description',
+    content: data?.fallbacks?.description,
+  },
+  {
+    property: 'og:image',
+    content:
+      data?.fallbacks?.thumbnail &&
+      urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
+  },
+];
+
 // export const meta = () => ({
 //   charset: 'utf-8',
 //   viewport: 'width=device-width,initial-scale=1',
@@ -43,6 +78,9 @@ export default function App() {
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
         {/* Favicons */}
         <link
           rel="apple-touch-icon"

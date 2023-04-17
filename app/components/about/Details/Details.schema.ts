@@ -1,9 +1,7 @@
 import { defineField, defineType } from 'sanity';
 
-import { BasicSanityListingProps } from '~/types/BasicSanityListing';
-
 export default defineType({
-  name: 'details',
+  name: 'Details',
   title: 'Details',
   type: 'document',
   fields: [

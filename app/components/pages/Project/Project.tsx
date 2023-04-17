@@ -8,8 +8,6 @@ import { ProjectTextComponents } from '~/components/base/Prose/components/Projec
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
-import type { AppGlobalsProps } from '~/components/settings/Globals';
-
 import { Spacer } from '~/components/blocks/Spacer/Spacer';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
@@ -18,14 +16,7 @@ export type ProjectProps = {
   blocks: [];
 };
 
-export const Project = ({
-  page,
-  header,
-  footer,
-}: {
-  page: ProjectProps;
-  globals: AppGlobalsProps;
-}) => (
+export const Project = ({ page, header, footer }: { page: ProjectProps }) => (
   <BasicLayout header={header} footer={footer}>
     <Box as="div" className="px-1 md:px-2 py-2">
       <Box
