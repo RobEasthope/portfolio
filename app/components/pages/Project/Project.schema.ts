@@ -42,13 +42,6 @@ export default defineType({
       readOnly: true,
     }),
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-      description:
-        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
-    }),
-    defineField({
       name: 'projectText',
       title: 'Text',
       type: 'ProjectText',
