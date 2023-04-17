@@ -17,6 +17,7 @@ import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 import LandingHeroCSS from '~/components/blocks/LandingHero/LandingHero.css';
@@ -38,30 +39,34 @@ export const links: LinksFunction = () => [
 ];
 
 export async function loader() {
-  const payload: PageBySlugProps = await sanityAPI.fetch(
+  const fallbacks: MetadataFallbacksProps = await sanityAPI.fetch(
     METADATA_FALLBACKS_QUERY,
   );
 
   return json({
-    fallbacks: payload?.fallbacks || null,
+    fallbacks: fallbacks || null,
   });
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
-  { title: data?.fallbacks?.title },
-  {
-    property: 'og:title',
-    content: data?.fallbacks?.title,
-  },
-  {
-    name: 'description',
-    content: data?.fallbacks?.description,
-  },
-  {
-    property: 'og:image',
-    content: data?.fallbacks?.thumbnail,
-  },
-];
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+  console.log(data);
+
+  return [
+    { title: data?.fallbacks?.title },
+    {
+      property: 'og:title',
+      content: data?.fallbacks?.title,
+    },
+    {
+      name: 'description',
+      content: data?.fallbacks?.description,
+    },
+    {
+      property: 'og:image',
+      content: data?.fallbacks?.thumbnail,
+    },
+  ];
+};
 
 // export const meta = () => ({
 //   charset: 'utf-8',
