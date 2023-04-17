@@ -57,11 +57,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'showreel',
-      title: 'Showreel',
-      type: 'mux.video',
-    }),
-    defineField({
       name: 'gallery',
       title: 'Image gallery',
       type: 'array',
