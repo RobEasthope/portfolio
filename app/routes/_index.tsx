@@ -6,7 +6,7 @@ import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps'
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import type { PageProps } from '~/components/pages/Page/Page';
@@ -19,7 +19,7 @@ import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader() {

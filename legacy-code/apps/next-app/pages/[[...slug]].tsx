@@ -12,11 +12,11 @@ import { pageRenderChecks } from "utils/pageRenderChecks";
 import { sanityAPI } from "apis-pkg/sanity/sanityAPI";
 import { HOME_PAGE_SLUG } from "ui-pkg/pages/Page/constants/HOME_PAGE_SLUG";
 import { SanityPageByIdQueryProps } from "ui-pkg/types/SanityPageByIdQueryProps";
-import { MetadataSettingsProps } from "ui-pkg/settings/MetadataSettingsProps";
+import { MetadataFallbacksProps } from "ui-pkg/settings/MetadataFallbacksProps";
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props["page"];
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 // MARKUP

@@ -5,8 +5,8 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-export type MetadataSettingsProps = {
-  _type: 'MetadataSettings';
+export type MetadataFallbacksProps = {
+  _type: 'MetadataFallbacks';
   headingappsettings?: string;
   sitename: string;
   canonicalUrl?: string;

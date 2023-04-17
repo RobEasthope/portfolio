@@ -3,7 +3,7 @@ import groq from 'groq';
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
-import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataSettings.query';
+import { METADATA_SETTINGS_QUERY } from '~/components/settings/MetadataFallbacks.query';
 
 const PROJECT_QUERY_BODY = groq`
   ...,
