@@ -139,11 +139,6 @@ export default defineType({
       name: 'startDateDesc',
       by: [{ field: 'startDate', direction: 'desc' }],
     },
-    {
-      title: 'Start Date, Old',
-      name: 'startDateAsc',
-      by: [{ field: 'startDate', direction: 'asc' }],
-    },
   ],
   preview: {
     select: {
