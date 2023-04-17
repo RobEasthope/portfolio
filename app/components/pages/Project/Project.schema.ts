@@ -120,6 +120,11 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
+    defineField({
+      name: 'containLogo',
+      title: 'Contain logo',
+      type: 'boolean',
+    }),
   ],
   orderings: [
     {
