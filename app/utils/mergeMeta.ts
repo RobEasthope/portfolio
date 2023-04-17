@@ -1,36 +1,50 @@
-import type { V2_HtmlMetaDescriptor, V2_MetaFunction } from '@remix-run/node';
+/**
+ * A utility function for the v2 meta API. It will
+ * merge (filter) root metatags - replacing any that match
+ * the supplied route module meta tags. It may not be complete
+ * or the best way to do this but it works for the moment.
+ * https://github.com/remix-run/remix/releases/tag/remix%401.8.0
+ * https://github.com/remix-run/remix/discussions/4462
+ *
+ * @returns {V2_HtmlMetaDescriptor[]} Merged metatags
+ */
+export function mergeMeta(
+  matches: any,
+  tags: V2_HtmlMetaDescriptor[] = [],
+): V2_HtmlMetaDescriptor[] {
+  const rootModule = matches?.find((match: any) => match.route.id === 'root');
+  const rootMeta = rootModule.meta;
 
-export const mergeMeta =
-  (overrideFn: V2_MetaFunction, appendFn?: V2_MetaFunction): V2_MetaFunction =>
-  (arg) => {
-    // get meta from parent routes
-    let mergedMeta = arg.matches.reduce(
-      (acc, match) => acc.concat(match.meta || []),
-      [] as V2_HtmlMetaDescriptor[],
-    );
+  function findMatch(rootTag: any, tag: any) {
+    const rules = [
+      { k: 'charSet', f: () => !!tag.charSet },
+      { k: 'title', f: () => !!tag.title },
+      { k: 'name', f: () => rootTag.name === tag.name },
+      { k: 'property', f: () => rootTag.property === tag.property },
+      { k: 'httpEquiv', f: () => rootTag.httpEquiv === tag.httpEquiv },
+    ];
 
-    // replace any parent meta with the same name or property with the override
-    const overrides = overrideFn(arg);
-    for (const override of overrides) {
-      const index = mergedMeta.findIndex(
-        (meta) =>
-          ('name' in meta &&
-            'name' in override &&
-            meta.name === override.name) ||
-          ('property' in meta &&
-            'property' in override &&
-            meta.property === override.property) ||
-          ('title' in meta && 'title' in override),
-      );
-      if (index !== -1) {
-        mergedMeta.splice(index, 1, override);
+    for (const rule of rules) {
+      if (rootTag[rule.k] !== undefined) {
+        return rule.f();
       }
     }
+    return false;
+  }
 
-    // append any additional meta
-    if (appendFn) {
-      mergedMeta = mergedMeta.concat(appendFn(arg));
-    }
+  if (rootMeta) {
+    const filteredRootMeta = rootMeta.filter(
+      (rootTag: V2_HtmlMetaDescriptor) => {
+        for (const tag of tags) {
+          if (findMatch(rootTag, tag)) {
+            return false;
+          }
+        }
+        return true;
+      },
+    );
 
-    return mergedMeta;
-  };
+    return [...filteredRootMeta, tags];
+  }
+  return tags;
+}
