@@ -34,6 +34,11 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
+      name: 'autoPlay',
+      title: 'Autoplay video',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'maxWidth',
       title: 'Max width',
       type: 'string',
