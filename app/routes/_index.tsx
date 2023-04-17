@@ -1,4 +1,5 @@
 import { useLoaderData } from '@remix-run/react';
+import type { V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
 
@@ -45,6 +46,18 @@ export async function loader() {
     error404: payload?.error404 || null,
   });
 }
+
+export const meta: V2_MetaFunction = () => [
+  { title: 'Very cool app | Remix' },
+  {
+    property: 'og:title',
+    content: 'Very cool app',
+  },
+  {
+    name: 'description',
+    content: 'This app is the best',
+  },
+];
 
 export function headers() {
   return {
