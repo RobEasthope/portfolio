@@ -6,6 +6,8 @@ import {
 import { json } from '@vercel/remix';
 import type { LoaderArgs } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
+import { blockPreview } from 'sanity-pills';
+import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
@@ -49,23 +51,21 @@ export async function loader({ params }: LoaderArgs) {
 
 export const meta = mergeMeta(
   // these will override the parent meta
-  ({ data }) => [
-    { title: data?.page?.title || null },
-    {
-      property: 'og:title',
-      content: data?.page?.title,
-    },
-    {
-      name: 'description',
-      content: data?.page?.metadataDescription || null,
-    },
-    {
-      property: 'og:image',
-      content: data?.page?.metadataImage
-        ? urlFor(data?.page?.metadataImage).width(1200).height(630).url()
-        : null,
-    },
-  ],
+  ({ data }) => {
+    console.log(
+      checkMetadata({
+        title: data?.page?.title,
+        description: blockPreview(data?.page?.projectText),
+        image: data?.page?.metadataImage,
+      }),
+    );
+
+    return checkMetadata({
+      title: data?.page?.title,
+      description: blockPreview(data?.page?.projectText),
+      image: data?.page?.metadataImage,
+    });
+  },
 );
 
 export default function Index() {
