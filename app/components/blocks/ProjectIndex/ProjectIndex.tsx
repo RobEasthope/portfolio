@@ -17,7 +17,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => (
     {projects?.length > 0 && (
       <Box
         as="ul"
-        className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
       >
         {projects?.map((project, i) => (
           <ProjectIndexCard key={`${project?._id}-${i}`} project={project} />
