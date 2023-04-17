@@ -44,6 +44,22 @@ export async function loader({ params }: LoaderArgs) {
   });
 }
 
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
+  { title: data?.page?.title },
+  {
+    property: 'og:title',
+    content: data?.page?.title,
+  },
+  {
+    name: 'description',
+    content: data?.page?.metadataDescription,
+  },
+  {
+    property: 'og:image',
+    content: data?.page?.metadataImage,
+  },
+];
+
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
 
