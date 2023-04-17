@@ -18,11 +18,11 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
     <Box as="section" className="px-1">
       <Box as="div">
         <Box as="div" className="text-center">
-          <Type as="h1" className="text-xl">
+          <Type as="h1" className="text-xl leading-none">
             {heading}
           </Type>
 
-          <LineBreak className='mt-1 mb-2' />
+          <LineBreak className='mt-1' />
         </Box>
       </Box>
     </Box>
