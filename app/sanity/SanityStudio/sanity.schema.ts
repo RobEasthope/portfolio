@@ -21,6 +21,7 @@ import Header from '~/components/navigation/Header/Header.schema';
 
 // Settings
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
+import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
 import education from '~/components/blocks/Education/Education.schema';
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
@@ -67,8 +68,11 @@ export const schemaTypes = [
   ProjectText,
 
   // Settings
-  Details,
   AppSettings,
+  MetadataFallbacks,
+
+  // About
+  Details,
 
   // Data
   tech,
