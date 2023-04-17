@@ -24,6 +24,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'muted',
+      title: 'Mute video',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'maxWidth',
       title: 'Max width',
       type: 'string',
