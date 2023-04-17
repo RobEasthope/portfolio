@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 import { ALL_PAGES_TYPES } from '~/components/pages/ALL_PAGES_TYPES';
 
 export default defineType({
-  name: 'appSettings',
+  name: 'AppSettings',
   title: 'App settings',
   type: 'document',
   fields: [
