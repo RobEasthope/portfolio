@@ -1,3 +1,4 @@
 export const METADATA_HARD_CODED_FALLBACKS = {
-  TITLE: 'Portfolio',
+  TITLE: 'Rob Easthope',
+  DESCRIPTION: 'Senior front end developer',
 };
