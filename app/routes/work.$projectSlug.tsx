@@ -49,24 +49,18 @@ export async function loader({ params }: LoaderArgs) {
   });
 }
 
-export const meta = mergeMeta(
-  // these will override the parent meta
-  ({ data }) => {
-    console.log(
-      checkMetadata({
-        title: data?.page?.title,
-        description: blockPreview(data?.page?.projectText),
-        image: data?.page?.metadataImage,
-      }),
-    );
-
-    return checkMetadata({
+export const meta: V2_MetaFunction = ({
+  matches,
+  data,
+}): V2_HtmlMetaDescriptor[] =>
+  mergeMeta(
+    matches,
+    checkMetadata({
       title: data?.page?.title,
       description: blockPreview(data?.page?.projectText),
-      image: data?.page?.metadataImage,
-    });
-  },
-);
+      image: data?.page?.thumbnailImage,
+    }),
+  );
 
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
