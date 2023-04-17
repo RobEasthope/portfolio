@@ -9,11 +9,17 @@ export type MuxVideoProps = {
   muxVideo: Record<string, unknown>;
   caption?: string;
   maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
+  autoPlay: boolean;
+  loop: boolean;
+  muted: boolean;
 };
 
 // MARKUP
 export const MuxVideo = ({
   muxVideo,
+  autoPlay = false,
+  loop = false,
+  muted = false,
   caption,
   maxWidth = 'medium',
 }: MuxVideoProps) => {
@@ -33,6 +39,9 @@ export const MuxVideo = ({
               video_title: 'Test video title',
               viewer_user_id: 'user-id-007',
             }}
+            autoPlay={autoPlay}
+            loop={loop}
+            muted={muted}
           />
         )}
         <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
