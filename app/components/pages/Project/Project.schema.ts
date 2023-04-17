@@ -135,12 +135,12 @@ export default defineType({
   ],
   orderings: [
     {
-      title: 'Start Date, New',
+      title: 'Start Date',
       name: 'startDateDesc',
       by: [{ field: 'startDate', direction: 'desc' }],
     },
     {
-      title: 'End Date, New',
+      title: 'End Date',
       name: 'endDateDesc',
       by: [{ field: 'endDate', direction: 'desc' }],
     },
