@@ -51,13 +51,18 @@ export async function loader() {
   });
 }
 
-export const meta = mergeMeta(({ data }) =>
-  checkMetadata({
-    title: data?.page?.title,
-    description: data?.page?.metadataDescription,
-    image: data?.page?.metadataImage,
-  }),
-);
+export const meta: V2_MetaFunction = ({
+  matches,
+  data,
+}): V2_HtmlMetaDescriptor[] =>
+  mergeMeta(
+    matches,
+    checkMetadata({
+      title: data?.page?.title,
+      description: data?.page?.metadataDescription,
+      image: data?.page?.metadataImage,
+    }),
+  );
 
 export function headers() {
   return {
