@@ -21,7 +21,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
         mode={project?.containLogo ? 'contain' : 'responsive'}
         maxWidth={100}
         aspectRatio={project?.containLogo ? null : 1}
-        className="rounded-full w-2 h-2"
+        className="rounded-full w-2 h-2 flex-shrink-0"
       />
 
       {project?.title}
