@@ -1,5 +1,5 @@
 module.exports = {
-  ignoredRouteFiles: ['**/.*'],
+  ignoredRouteFiles: ["**/.*"],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
@@ -7,7 +7,8 @@ module.exports = {
   future: {
     unstable_tailwind: true,
     v2_errorBoundary: true,
+    v2_meta: true,
     v2_routeConvention: true,
   },
-  serverDependenciesToBundle: ['classname-variants'],
+  serverDependenciesToBundle: ["classname-variants"],
 };

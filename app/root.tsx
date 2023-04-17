@@ -32,12 +32,12 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: YoutubeVideoCSS },
 ];
 
-export const meta = () => ({
-  charset: 'utf-8',
-  viewport: 'width=device-width,initial-scale=1',
-  title: 'Rob Easthope',
-  description: 'Portfolio website for Rob Easthope',
-});
+// export const meta = () => ({
+//   charset: 'utf-8',
+//   viewport: 'width=device-width,initial-scale=1',
+//   title: 'Rob Easthope',
+//   description: 'Portfolio website for Rob Easthope',
+// });
 
 export default function App() {
   return (

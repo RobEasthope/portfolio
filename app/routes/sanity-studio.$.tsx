@@ -1,12 +1,15 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import { Suspense, lazy } from 'react';
 
 import styles from '~/sanity/SanityStudio/SanityStudio.css';
 
-export const meta: MetaFunction = () => ({
-  title: 'Sanity Studio',
-  robots: 'noindex',
-});
+export const meta: V2_MetaFunction<typeof loader> = () => [
+  { title: 'Sanity Studio' },
+  {
+    property: 'robots',
+    content: 'noindex',
+  },
+];
 
 export const links: LinksFunction = () => [
   { rel: 'preload', href: styles, as: 'style' },
