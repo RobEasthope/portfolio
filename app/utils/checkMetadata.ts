@@ -1,6 +1,30 @@
+import type {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityReference,
+} from 'sanity-codegen';
+
 import { urlFor } from '~/components/base/SanityImage/urlFor';
 
-export function checkMetadata({ title, description, image }) {
+type CheckMetadataProps = {
+  title?: string;
+  description?: string;
+  image?: {
+    _type: 'image';
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+    caption?: string;
+    attribution?: string;
+  };
+};
+
+export function checkMetadata({
+  title,
+  description,
+  image,
+}: CheckMetadataProps) {
   const data = [];
 
   if (title) {
