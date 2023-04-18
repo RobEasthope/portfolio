@@ -13,7 +13,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
   <Box as="li">
     <InternalLink
       href={project?.slug?.current}
-      className="flex flex-row sm:flex-col items-center gap-0.25 text-center"
+      className="flex h-full flex-row sm:flex-col items-center gap-0.5 sm:gap-0.25 text-left sm:text-center"
     >
       <SanityImage
         asset={project?.thumbnailImage}
@@ -21,7 +21,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => (
         mode={project?.containLogo ? 'contain' : 'responsive'}
         maxWidth={100}
         aspectRatio={project?.containLogo ? null : 1}
-        className="rounded-full w-2 h-2"
+        className="rounded-full w-2 h-2 flex-shrink-0"
       />
 
       {project?.title}
