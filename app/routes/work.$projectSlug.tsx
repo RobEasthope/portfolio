@@ -40,6 +40,12 @@ export async function loader({ params }: LoaderArgs) {
     },
   );
 
+  if (!payload?.page || !payload.page?.displayProject) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
   return json({
     page: payload?.page || null,
     header: payload?.header || null,

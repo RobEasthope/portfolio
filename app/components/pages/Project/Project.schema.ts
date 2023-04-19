@@ -1,7 +1,7 @@
-import * as dayjs from 'dayjs';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { defineField, defineType } from 'sanity';
 import { formatSlug } from '~/utils/formatSlug';
+
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 import { PROJECT_SLUG } from '~/components/pages/Project/PROJECT_SLUG';
 
@@ -15,18 +15,6 @@ export default defineType({
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'shortTitle',
-      title: 'Short title',
-      type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
-    }),
-    defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
     }),
     defineField({
       name: 'slug',
@@ -43,6 +31,19 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().error('The slug is missing'),
     }),
+    defineField({
+      name: 'shortTitle',
+      title: 'Short title',
+      type: 'string',
+      validation: (Rule) => Rule.required().warning('Required field'),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: (Rule) => Rule.required().warning('Required field'),
+    }),
+
     defineField({
       name: 'projectText',
       title: 'Text',
@@ -127,6 +128,12 @@ export default defineType({
       title: 'Contain logo',
       type: 'boolean',
     }),
+    defineField({
+      name: 'displayProject',
+      title: 'Display project',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   orderings: [
     {
@@ -140,37 +147,28 @@ export default defineType({
       by: [{ field: 'endDate', direction: 'desc' }],
     },
   ],
+  initialValue: {
+    containLogo: false,
+    displayProject: false,
+  },
   preview: {
     select: {
       title: 'title',
       subtitle: 'client.name',
       media: 'thumbnailImage',
-      // startDate: "startDate",
-      // endDate: "endDate",
+      displayProject: 'displayProject',
     },
-    // prepare({
-    //   title,
-    //   startDate = null,
-    //   endDate = null,
-    //   thumbnailImage,
-    // }: {
-    //   title: string;
-    //   thumbnailImage: string;
-    //   startDate: Date | null;
-    //   endDate: Date | null;
-    // }) {
-    //   dayjs.extend(advancedFormat);
-
-    //   const formattedStartDate = dayjs.default(startDate).format("MMM Do YYYY");
-    //   const formattedEndDate = dayjs.default(endDate).format("MMM Do YYYY");
-
-    //   return {
-    //     title,
-    //     media: thumbnailImage,
-    //     // subtitle: `${formattedStartDate || "Date missing"} - ${
-    //     //   endDate ? formattedEndDate : "Present"
-    //     // }`,
-    //   };
-    // },
+    prepare({
+      title,
+      subtitle,
+      media,
+      displayProject,
+    }: BasicSanityListingProps & { displayProject: boolean }) {
+      return {
+        title: title || 'Page',
+        subtitle: displayProject ? subtitle : 'HIDDEN',
+        media,
+      };
+    },
   },
 });
