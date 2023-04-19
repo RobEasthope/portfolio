@@ -9,6 +9,7 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'email',
@@ -39,21 +40,25 @@ export default defineType({
       name: 'twitter',
       title: 'Twitter profile',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'linkedin',
       title: 'LinkedIn profile',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'github',
       title: 'Github profile',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'portfolioUrl',
       title: 'Portfolio URL',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 
