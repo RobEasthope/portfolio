@@ -85,9 +85,9 @@ export default defineConfig({
               .icon(RiPhoneLine)
               .child(
                 S.editor()
-                  .id('details')
-                  .schemaType('details')
-                  .documentId('details'),
+                  .id('Details')
+                  .schemaType('Details')
+                  .documentId('Details'),
               ),
             S.divider(),
             S.listItem()
