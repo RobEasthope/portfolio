@@ -57,49 +57,39 @@ export default defineConfig({
               ),
             S.divider(),
             S.listItem()
-              .title('About')
-              .icon(RiAccountCircleLine)
+              .title('Gigs')
+              .icon(RiBriefcaseFill)
               .child(
-                S.list()
-                  .title('About')
-                  .items([
-                    S.listItem()
-                      .title('Gigs')
-                      .icon(RiBriefcaseFill)
-                      .child(
-                        S.documentTypeList('gig').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                    S.listItem()
-                      .title('Education')
-                      .icon(IoMdSchool)
-                      .child(
-                        S.documentTypeList('education').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                    S.listItem()
-                      .title('Contact details')
-                      .icon(RiPhoneLine)
-                      .child(
-                        S.editor()
-                          .id('details')
-                          .schemaType('details')
-                          .documentId('details'),
-                      ),
-
-                    S.listItem()
-                      .title('Organisations')
-                      .icon(RiShieldLine)
-                      .child(
-                        S.documentTypeList('organisation').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                  ]),
+                S.documentTypeList('gig').defaultOrdering([
+                  { field: 'name', direction: 'desc' },
+                ]),
+              ),
+            S.listItem()
+              .title('Education')
+              .icon(IoMdSchool)
+              .child(
+                S.documentTypeList('education').defaultOrdering([
+                  { field: 'name', direction: 'desc' },
+                ]),
+              ),
+            S.listItem()
+              .title('Contact details')
+              .icon(RiPhoneLine)
+              .child(
+                S.editor()
+                  .id('details')
+                  .schemaType('details')
+                  .documentId('details'),
               ),
 
+            S.listItem()
+              .title('Organisations')
+              .icon(RiShieldLine)
+              .child(
+                S.documentTypeList('organisation').defaultOrdering([
+                  { field: 'name', direction: 'desc' },
+                ]),
+              ),
             S.divider(),
             S.listItem()
               .title('Navigation')
