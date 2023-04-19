@@ -13,11 +13,20 @@ export default defineType({
     defineField({
       name: 'email',
       title: 'Email address',
-      type: 'url',
+      type: 'string',
       validation: (Rule) =>
-        Rule.uri({
-          allowRelative: true,
-          scheme: ['mailto'],
+        Rule.custom((email) => {
+          if (typeof email === 'undefined') {
+            return true; // Allow undefined values
+          }
+
+          return email
+            .toLowerCase()
+            .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            )
+            ? true
+            : 'This is not an email';
         }),
     }),
     defineField({
