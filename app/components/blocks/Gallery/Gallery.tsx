@@ -40,7 +40,10 @@ export const Gallery = ({
               key={card?._key}
               _type={card?._type}
               image={card?.image}
-              aspectRatio={aspectRatio}
+              galleryAspectRatio={aspectRatio}
+              aspectRatio={card?.aspectRatio}
+              maxWidth={card?.maxWidth}
+              caption={card?.caption}
             />
           ))}
         <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
