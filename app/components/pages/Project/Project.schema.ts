@@ -53,12 +53,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'gallery',
-      title: 'Image gallery',
-      type: 'array',
-      of: [{ type: 'altImage' }],
-    }),
-    defineField({
       name: 'client',
       title: 'Client',
       type: 'reference',
