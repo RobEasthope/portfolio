@@ -37,19 +37,19 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'twitter',
+      name: 'twitterUrl',
       title: 'Twitter profile',
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'linkedin',
+      name: 'linkedinUrl',
       title: 'LinkedIn profile',
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'github',
+      name: 'githubUrl',
       title: 'Github profile',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -61,7 +61,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
-
   preview: {
     prepare() {
       return {
