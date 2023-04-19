@@ -24,11 +24,20 @@ export type GalleryImageProps = {
     caption?: string;
     attribution?: string;
   };
-  aspectRatio?: GalleryProps['aspectRatio'];
+  galleryAspectRatio?: number;
+  aspectRatio: number | null;
+  maxWidth?: 'small' | 'text' | 'medium' | 'large' | 'full';
+  caption?: string;
 };
 
 // MARKUP
-export const GalleryImage = ({ image, aspectRatio }: GalleryImageProps) => {
+export const GalleryImage = ({
+  image,
+  galleryAspectRatio,
+  aspectRatio = null,
+  maxWidth = 'full',
+  caption,
+}: GalleryImageProps) => {
   if (!image) {
     return null;
   }
@@ -40,7 +49,7 @@ export const GalleryImage = ({ image, aspectRatio }: GalleryImageProps) => {
           <SanityImage
             asset={image}
             alt=""
-            aspectRatio={aspectRatio}
+            aspectRatio={galleryAspectRatio}
             mode="responsive"
             maxWidth={4000}
           />
@@ -52,7 +61,7 @@ export const GalleryImage = ({ image, aspectRatio }: GalleryImageProps) => {
         <Dialog.Content className="bg-whitefocus:outline-none fixed left-0 top-0 z-50 h-screen w-screen overflow-y-auto sm:px-1 sm:pb-1 lg:px-2 lg:pb-2 lg:pt-0">
           <Dialog.Title className="sr-only">{image?.caption}</Dialog.Title>
           <Box
-            as="figure"
+            as="div"
             className="flex w-full flex-nowrap items-center justify-end"
           >
             <Dialog.Close className="p-0.5">
@@ -61,18 +70,21 @@ export const GalleryImage = ({ image, aspectRatio }: GalleryImageProps) => {
               </Type>
             </Dialog.Close>
           </Box>
-          <SanityImage
-            asset={image}
-            alt={image?.caption || ''}
-            mode="contain"
-            maxWidth={4000}
-          />
-          <Type
-            as="figcaption"
-            className="my-0.5 max-w-prose font-serif text-sm italic"
-          >
-            {image?.caption}
-          </Type>
+          <Box as="figure" maxWidth={maxWidth}>
+            <SanityImage
+              asset={image}
+              alt={caption || ''}
+              mode="contain"
+              aspectRatio={aspectRatio}
+              maxWidth={4000}
+            />
+            <Type
+              as="figcaption"
+              className="my-0.5 max-w-prose font-serif text-sm italic"
+            >
+              {caption}
+            </Type>
+          </Box>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
