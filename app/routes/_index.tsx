@@ -42,6 +42,12 @@ export async function loader() {
     }),
   );
 
+  if (!payload?.page) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
   return json({
     page: payload?.page || null,
     header: payload?.header || null,
