@@ -47,7 +47,14 @@ export default defineConfig({
               .schemaType('project')
               .icon(GoPaintcan)
               .child(S.documentTypeList('project')),
-
+            S.listItem()
+              .title('Technologies')
+              .icon(GoTerminal)
+              .child(
+                S.documentTypeList('tech').defaultOrdering([
+                  { field: 'name', direction: 'desc' },
+                ]),
+              ),
             S.listItem()
               .title('About')
               .icon(RiAccountCircleLine)
@@ -80,14 +87,7 @@ export default defineConfig({
                           .schemaType('details')
                           .documentId('details'),
                       ),
-                    S.listItem()
-                      .title('Technologies')
-                      .icon(GoTerminal)
-                      .child(
-                        S.documentTypeList('tech').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
+
                     S.listItem()
                       .title('Organisations')
                       .icon(RiShieldLine)
