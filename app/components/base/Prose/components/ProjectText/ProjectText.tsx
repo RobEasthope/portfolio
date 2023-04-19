@@ -118,7 +118,8 @@ export const ProjectTextComponents: PortableTextComponents = {
       );
     },
     MuxVideo: ({ value }: { value: MuxVideoProps }) => {
-      const { muxVideo, caption, maxWidth, _type } = value;
+      const { muxVideo, caption, maxWidth, loop, muted, autoPlay, _type } =
+        value;
 
       return (
         <Box as="section" className="py-1">
@@ -127,6 +128,9 @@ export const ProjectTextComponents: PortableTextComponents = {
             caption={caption}
             maxWidth={maxWidth}
             _type={_type}
+            autoPlay={autoPlay}
+            loop={loop}
+            muted={muted}
           />
         </Box>
       );

@@ -12,17 +12,17 @@ const PROJECT_QUERY_BODY = groq`
   slug,
   "clientOrg": client->{name, url},
   "agencyOrg": agency->{name, url},
-  "blocks": rawSections[]{
-    ...,
-    "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
-    "bkg": rawBkg->,
-    "cards": rawCards[]{
+  projectText[]{
       ...,
-      "link": rawLink[0]{..., "to": {...internalUID->{...},  }},
-      "bkg": rawBkg->,
+      "muxVideo": rawMuxVideo.asset->,
+      "testimonial": rawTestimonial->,
+      markDefs[]{
+        ...,
+        _type == "InternalLink" => {
+          "page": @.internalUID->
+        }
+      }
     },
-    "muxVideo": rawMuxVideo.asset->,
-  },
   containLogo,
   displayProject,
 `;
