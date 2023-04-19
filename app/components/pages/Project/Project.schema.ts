@@ -1,5 +1,3 @@
-import * as dayjs from 'dayjs';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { defineField, defineType } from 'sanity';
 import { formatSlug } from '~/utils/formatSlug';
 
@@ -156,32 +154,6 @@ export default defineType({
       title: 'title',
       subtitle: 'client.name',
       media: 'thumbnailImage',
-      // startDate: "startDate",
-      // endDate: "endDate",
     },
-    // prepare({
-    //   title,
-    //   startDate = null,
-    //   endDate = null,
-    //   thumbnailImage,
-    // }: {
-    //   title: string;
-    //   thumbnailImage: string;
-    //   startDate: Date | null;
-    //   endDate: Date | null;
-    // }) {
-    //   dayjs.extend(advancedFormat);
-
-    //   const formattedStartDate = dayjs.default(startDate).format("MMM Do YYYY");
-    //   const formattedEndDate = dayjs.default(endDate).format("MMM Do YYYY");
-
-    //   return {
-    //     title,
-    //     media: thumbnailImage,
-    //     // subtitle: `${formattedStartDate || "Date missing"} - ${
-    //     //   endDate ? formattedEndDate : "Present"
-    //     // }`,
-    //   };
-    // },
   },
 });
