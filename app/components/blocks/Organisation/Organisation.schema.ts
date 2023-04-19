@@ -44,8 +44,8 @@ export default defineType({
     prepare(selection: BasicSanityListingProps) {
       const { title, media } = selection;
       return {
-        title: title || 'Example block',
-        subtitle: title ? 'Example block' : '',
+        title: title || 'Organisation',
+        subtitle: title ? 'Organisation' : '',
         media,
       };
     },
