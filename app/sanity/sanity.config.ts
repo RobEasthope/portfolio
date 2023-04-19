@@ -65,6 +65,14 @@ export default defineConfig({
                 ]),
               ),
             S.listItem()
+              .title('Organisations')
+              .icon(RiShieldLine)
+              .child(
+                S.documentTypeList('organisation').defaultOrdering([
+                  { field: 'name', direction: 'desc' },
+                ]),
+              ),
+            S.listItem()
               .title('Education')
               .icon(IoMdSchool)
               .child(
@@ -80,15 +88,6 @@ export default defineConfig({
                   .id('details')
                   .schemaType('details')
                   .documentId('details'),
-              ),
-
-            S.listItem()
-              .title('Organisations')
-              .icon(RiShieldLine)
-              .child(
-                S.documentTypeList('organisation').defaultOrdering([
-                  { field: 'name', direction: 'desc' },
-                ]),
               ),
             S.divider(),
             S.listItem()
