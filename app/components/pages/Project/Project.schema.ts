@@ -164,13 +164,9 @@ export default defineType({
       media,
       displayProject,
     }: BasicSanityListingProps & { displayProject: boolean }) {
-      const subtitleText = [`${!displayProject ? 'Hidden' : ''}`, subtitle]
-        .filter((string) => string !== '')
-        .join(' / ');
-
       return {
         title: title || 'Page',
-        subtitle: subtitleText,
+        subtitle: displayProject ? 'HIDDEN' : subtitle,
         media,
       };
     },
