@@ -25,6 +25,7 @@ export default defineType({
       name: 'aspectRatio',
       title: 'Gallery aspect ratio',
       type: 'number',
+      description: 'Defaults to original aspect ratio',
       options: {
         list: ASPECT_RATIOS,
         layout: 'radio',
