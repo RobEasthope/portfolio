@@ -48,7 +48,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'heading',
+      title: 'caption',
       media: 'image',
     },
     prepare(selection: BasicSanityListingProps) {
