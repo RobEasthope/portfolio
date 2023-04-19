@@ -127,6 +127,12 @@ export default defineType({
       title: 'Contain logo',
       type: 'boolean',
     }),
+    defineField({
+      name: 'displayProject',
+      title: 'Display project',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   orderings: [
     {
