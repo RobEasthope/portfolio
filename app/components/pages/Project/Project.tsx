@@ -1,4 +1,3 @@
-import { BsDot } from 'react-icons/bs';
 import { Dot } from '~/components/decoration/Dot';
 
 import { Box } from '~/components/base/Box/Box';
@@ -7,8 +6,6 @@ import { Prose } from '~/components/base/Prose/Prose';
 import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
-
-import { Spacer } from '~/components/blocks/Spacer/Spacer';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
