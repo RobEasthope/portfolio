@@ -14,6 +14,8 @@ import type { InternalLinkWithTitleSchemaProps } from '~/components/base/Interna
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
+import Spacer from '~/components/blocks/Spacer/Spacer';
+
 // TYPES
 export type LandingHeroProps = {
   _type: 'LandingHero';
@@ -41,38 +43,38 @@ export const LandingHero = ({
   }
 
   return (
-    <Box
-      as="section"
-      className="flex flex-row px-1 md:px-2 h-[calc(100vh_-_(23px_+_(25_-_23)_*_((100vw_-_320px)_/_(1400_-_320))))] md:px-2 md:h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))]"
-    >
-      {bkgMode === 'image' && (
-        <Box as="div" className="w-screen">
-          <SanityImage
-            asset={bkgImage}
-            alt={caption || ''}
-            mode="cover"
-            maxWidth={2560}
-            className="w-screen"
-          />
-        </Box>
-      )}
+    <>
+      <Box as="section" className="flex flex-row px-1 md:px-2">
+        {bkgMode === 'image' && (
+          <Box as="div" className="w-screen">
+            <SanityImage
+              asset={bkgImage}
+              alt={caption || ''}
+              mode="cover"
+              maxWidth={2560}
+              className="w-screen"
+            />
+          </Box>
+        )}
 
-      {bkgMode === 'video' && (
-        <MuxPlayer
-          playbackId={bkgVideo?.playbackId}
-          streamType="on-demand"
-          metadata={{
-            video_id: 'video-id-54321',
-            video_title: 'Test video title',
-            viewer_user_id: 'user-id-007',
-          }}
-          autoPlay
-          loop
-          muted
-          className="px-1 h-[calc(100vh_-_(23px_+_(25_-_23)_*_((100vw_-_320px)_/_(1400_-_320))))] md:px-2 md:h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))]"
-        />
-      )}
-    </Box>
+        {bkgMode === 'video' && (
+          <MuxPlayer
+            playbackId={bkgVideo?.playbackId}
+            streamType="on-demand"
+            metadata={{
+              video_id: 'video-id-54321',
+              video_title: 'Test video title',
+              viewer_user_id: 'user-id-007',
+            }}
+            autoPlay
+            loop
+            muted
+            className="px-1 h-[calc(100vh_-_(23px_+_(25_-_23)_*_((100vw_-_320px)_/_(1400_-_320))))] md:px-2 md:h-[calc(100vh_-_(45px_+_(50_-_45)_*_((100vw_-_320px)_/_(1400_-_320))))]"
+          />
+        )}
+      </Box>
+      <Spacer height="2" />
+    </>
   );
 };
 
