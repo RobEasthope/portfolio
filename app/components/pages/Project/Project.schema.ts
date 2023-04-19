@@ -147,6 +147,7 @@ export default defineType({
     },
   ],
   initialValue: {
+    containLogo: false,
     displayProject: false,
   },
   preview: {
