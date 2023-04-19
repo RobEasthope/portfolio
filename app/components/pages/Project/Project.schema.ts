@@ -1,6 +1,8 @@
 import { defineField, defineType } from 'sanity';
 import { formatSlug } from '~/utils/formatSlug';
 
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
 import { PROJECT_SLUG } from '~/components/pages/Project/PROJECT_SLUG';
 
 export default defineType({
@@ -154,6 +156,23 @@ export default defineType({
       title: 'title',
       subtitle: 'client.name',
       media: 'thumbnailImage',
+      displayProject: 'displayProject',
+    },
+    prepare({
+      title,
+      subtitle,
+      media,
+      displayProject,
+    }: BasicSanityListingProps & { displayProject: boolean }) {
+      const subtitleText = [`${!displayProject ? 'Hidden' : ''}`, subtitle]
+        .filter((string) => string !== '')
+        .join(' / ');
+
+      return {
+        title: title || 'Page',
+        subtitle: subtitleText,
+        media,
+      };
     },
   },
 });
