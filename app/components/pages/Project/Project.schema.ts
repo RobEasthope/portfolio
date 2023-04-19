@@ -166,7 +166,7 @@ export default defineType({
     }: BasicSanityListingProps & { displayProject: boolean }) {
       return {
         title: title || 'Page',
-        subtitle: displayProject ? 'HIDDEN' : subtitle,
+        subtitle: displayProject ? subtitle : 'HIDDEN',
         media,
       };
     },
