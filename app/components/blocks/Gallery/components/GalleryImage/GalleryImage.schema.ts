@@ -36,7 +36,7 @@ export default defineType({
       name: 'maxWidth',
       title: 'Max width',
       type: 'string',
-      description: 'Defaults to large',
+      description: 'Defaults to full width',
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
