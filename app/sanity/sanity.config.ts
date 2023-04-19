@@ -80,15 +80,6 @@ export default defineConfig({
                           .schemaType('details')
                           .documentId('details'),
                       ),
-                  ]),
-              ),
-            S.listItem()
-              .title('Data')
-              .icon(GoDatabase)
-              .child(
-                S.list()
-                  .title('Data')
-                  .items([
                     S.listItem()
                       .title('Technologies')
                       .icon(GoTerminal)
@@ -107,6 +98,7 @@ export default defineConfig({
                       ),
                   ]),
               ),
+
             S.divider(),
             S.listItem()
               .title('Navigation')
