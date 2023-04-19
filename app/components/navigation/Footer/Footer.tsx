@@ -8,6 +8,7 @@ import { Box } from '~/components/base/Box/Box';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { SuperLink } from '~/components/base/SuperLink/SuperLink';
 import { Type } from '~/components/base/Type/Type';
@@ -51,9 +52,12 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
           </Box>
         </Box>
 
-        <Type as="p" className="text-center text-sm">
+        <InternalLink
+          href="sanity-studio"
+          className="text-center text-sm hover:text-ink hover:cursor-default"
+        >
           {copyrightText} {copyrightText && romanize(timeStamp.getFullYear())}
-        </Type>
+        </InternalLink>
       </Box>
     </Box>
   );
