@@ -55,6 +55,7 @@ export default defineConfig({
                   { field: 'name', direction: 'desc' },
                 ]),
               ),
+            S.divider(),
             S.listItem()
               .title('About')
               .icon(RiAccountCircleLine)
