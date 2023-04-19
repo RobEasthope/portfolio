@@ -146,6 +146,9 @@ export default defineType({
       by: [{ field: 'endDate', direction: 'desc' }],
     },
   ],
+  initialValue: {
+    displayProject: false,
+  },
   preview: {
     select: {
       title: 'title',
