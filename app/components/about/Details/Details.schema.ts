@@ -23,12 +23,8 @@ export default defineType({
     defineField({
       name: 'phoneNumber',
       title: 'Phone number',
-      type: 'url',
-      validation: (Rule) =>
-        Rule.uri({
-          allowRelative: true,
-          scheme: ['tel'],
-        }),
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'twitter',
