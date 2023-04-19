@@ -137,6 +137,11 @@ export default defineType({
   ],
   orderings: [
     {
+      title: 'Title',
+      name: 'titleAsc',
+      by: [{ field: 'title', direction: 'asc' }],
+    },
+    {
       title: 'Start Date',
       name: 'startDateDesc',
       by: [{ field: 'startDate', direction: 'desc' }],
