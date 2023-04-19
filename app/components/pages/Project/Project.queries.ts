@@ -23,7 +23,8 @@ const PROJECT_QUERY_BODY = groq`
     },
     "muxVideo": rawMuxVideo.asset->,
   },
-  containLogo
+  containLogo,
+  displayProject,
 `;
 
 export const PROJECT_SLUGS_QUERY = groq`
