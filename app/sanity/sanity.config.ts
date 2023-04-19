@@ -51,26 +51,26 @@ export default defineConfig({
               .title('Technologies')
               .icon(GoTerminal)
               .child(
-                S.documentTypeList('tech').defaultOrdering([
-                  { field: 'name', direction: 'desc' },
-                ]),
+                S.documentTypeList('tech')
+                  .title('Technologies')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.divider(),
             S.listItem()
               .title('Gigs')
               .icon(RiBriefcaseFill)
               .child(
-                S.documentTypeList('gig').defaultOrdering([
-                  { field: 'name', direction: 'desc' },
-                ]),
+                S.documentTypeList('gig')
+                  .title('Gigs')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.listItem()
               .title('Organisations')
               .icon(RiShieldLine)
               .child(
-                S.documentTypeList('organisation').defaultOrdering([
-                  { field: 'name', direction: 'desc' },
-                ]),
+                S.documentTypeList('organisation')
+                  .title('Organisations')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.listItem()
               .title('Education')
