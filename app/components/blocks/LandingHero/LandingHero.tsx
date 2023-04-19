@@ -6,13 +6,8 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
-
 import { Box } from '~/components/base/Box/Box';
-import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
-import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
-import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type LandingHeroProps = {
