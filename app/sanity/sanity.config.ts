@@ -13,6 +13,7 @@ import {
   RiShieldLine,
 } from 'react-icons/ri';
 import { defineConfig } from 'sanity';
+import { media } from 'sanity-plugin-media';
 import { muxInput } from 'sanity-plugin-mux-input';
 import { deskTool } from 'sanity/desk';
 
@@ -138,6 +139,7 @@ export default defineConfig({
               ),
           ]),
     }),
+    media(),
     visionTool(),
     muxInput(),
   ],
