@@ -29,8 +29,6 @@ export default defineType({
         list: ASPECT_RATIOS,
         layout: 'radio',
       },
-      validation: (Rule) =>
-        Rule.required().warning('Gallery: Please select an aspect ratio'),
     }),
     defineField({
       name: 'maxWidth',
