@@ -13,11 +13,11 @@ export type ProjectProps = {
   blocks: [];
 };
 
-export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
+export const Project = ({ page }: { page: ProjectProps }) => {
   if (!page?.displayProject || page?.displayProject === false) return null;
 
   return (
-    <BasicLayout header={header} footer={footer}>
+    <BasicLayout>
       <Box as="div" className="px-1 md:px-2 py-2">
         <Box
           as="div"
