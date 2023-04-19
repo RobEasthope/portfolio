@@ -22,6 +22,11 @@ export default defineType({
       validation: (Rule) => Rule.required().warning('Image: Image is missing'),
     }),
     defineField({
+      name: 'caption',
+      title: 'Caption',
+      type: 'text',
+    }),
+    defineField({
       name: 'aspectRatio',
       title: 'Gallery aspect ratio',
       type: 'number',
@@ -39,11 +44,6 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
-    }),
-    defineField({
-      name: 'caption',
-      title: 'Gallery caption',
-      type: 'text',
     }),
   ],
   preview: {
