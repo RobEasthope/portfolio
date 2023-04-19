@@ -37,16 +37,17 @@ export default defineConfig({
           .title('Portfolio')
           .items([
             S.listItem()
-              .title('Projects')
-              .schemaType('project')
-              .icon(GoPaintcan)
-              .child(S.documentTypeList('project')),
-            S.listItem()
               .title('Pages')
               .icon(RiQuillPenLine)
               .schemaType('Page')
               .child(S.documentTypeList('Page').title('Pages')),
             S.divider(),
+            S.listItem()
+              .title('Projects')
+              .schemaType('project')
+              .icon(GoPaintcan)
+              .child(S.documentTypeList('project')),
+
             S.listItem()
               .title('About')
               .icon(RiAccountCircleLine)
