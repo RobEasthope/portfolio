@@ -37,74 +37,57 @@ export default defineConfig({
           .title('Portfolio')
           .items([
             S.listItem()
-              .title('Projects')
-              .schemaType('project')
-              .icon(GoPaintcan)
-              .child(S.documentTypeList('project')),
-            S.listItem()
               .title('Pages')
               .icon(RiQuillPenLine)
               .schemaType('Page')
               .child(S.documentTypeList('Page').title('Pages')),
             S.divider(),
             S.listItem()
-              .title('About')
-              .icon(RiAccountCircleLine)
+              .title('Projects')
+              .schemaType('project')
+              .icon(GoPaintcan)
+              .child(S.documentTypeList('project')),
+            S.listItem()
+              .title('Technologies')
+              .icon(GoTerminal)
               .child(
-                S.list()
-                  .title('About')
-                  .items([
-                    S.listItem()
-                      .title('Gigs')
-                      .icon(RiBriefcaseFill)
-                      .child(
-                        S.documentTypeList('gig').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                    S.listItem()
-                      .title('Education')
-                      .icon(IoMdSchool)
-                      .child(
-                        S.documentTypeList('education').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                    S.listItem()
-                      .title('Contact details')
-                      .icon(RiPhoneLine)
-                      .child(
-                        S.editor()
-                          .id('details')
-                          .schemaType('details')
-                          .documentId('details'),
-                      ),
-                  ]),
+                S.documentTypeList('tech')
+                  .title('Technologies')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
+              ),
+            S.divider(),
+            S.listItem()
+              .title('Gigs')
+              .icon(RiBriefcaseFill)
+              .child(
+                S.documentTypeList('gig')
+                  .title('Gigs')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.listItem()
-              .title('Data')
-              .icon(GoDatabase)
+              .title('Organisations')
+              .icon(RiShieldLine)
               .child(
-                S.list()
-                  .title('Data')
-                  .items([
-                    S.listItem()
-                      .title('Technologies')
-                      .icon(GoTerminal)
-                      .child(
-                        S.documentTypeList('tech').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                    S.listItem()
-                      .title('Organisations')
-                      .icon(RiShieldLine)
-                      .child(
-                        S.documentTypeList('organisation').defaultOrdering([
-                          { field: 'name', direction: 'desc' },
-                        ]),
-                      ),
-                  ]),
+                S.documentTypeList('organisation')
+                  .title('Organisations')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
+              ),
+            S.listItem()
+              .title('Education')
+              .icon(IoMdSchool)
+              .child(
+                S.documentTypeList('education').defaultOrdering([
+                  { field: 'name', direction: 'desc' },
+                ]),
+              ),
+            S.listItem()
+              .title('Contact details')
+              .icon(RiPhoneLine)
+              .child(
+                S.editor()
+                  .id('Details')
+                  .schemaType('Details')
+                  .documentId('Details'),
               ),
             S.divider(),
             S.listItem()

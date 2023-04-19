@@ -2,60 +2,69 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'Details',
-  title: 'Details',
+  title: 'Contact details',
   type: 'document',
   fields: [
     defineField({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'email',
       title: 'Email address',
-      type: 'url',
+      type: 'string',
       validation: (Rule) =>
-        Rule.uri({
-          allowRelative: true,
-          scheme: ['mailto'],
+        Rule.custom((email) => {
+          if (typeof email === 'undefined') {
+            return true; // Allow undefined values
+          }
+
+          return email
+            .toLowerCase()
+            .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            )
+            ? true
+            : 'This is not an email';
         }),
     }),
     defineField({
       name: 'phoneNumber',
       title: 'Phone number',
-      type: 'url',
-      validation: (Rule) =>
-        Rule.uri({
-          allowRelative: true,
-          scheme: ['tel'],
-        }),
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'twitter',
+      name: 'twitterUrl',
       title: 'Twitter profile',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'linkedin',
+      name: 'linkedinUrl',
       title: 'LinkedIn profile',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'github',
+      name: 'githubUrl',
       title: 'Github profile',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'portfolioUrl',
       title: 'Portfolio URL',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
-
   preview: {
     prepare() {
       return {
-        title: 'Details',
+        title: 'Contact details',
       };
     },
   },
