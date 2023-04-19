@@ -2,12 +2,16 @@ import { useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
 import type { LoaderArgs } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
+import { checkMetadata } from '~/utils/checkMetadata';
+import { mergeMeta } from '~/utils/mergeMeta';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { MetadataSettingsProps } from '~/components/settings/MetadataSettingsProps';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
+
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import type { PageProps } from '~/components/pages/Page/Page';
@@ -19,7 +23,7 @@ import {
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader({ params }: LoaderArgs) {
@@ -37,6 +41,12 @@ export async function loader({ params }: LoaderArgs) {
     }),
   );
 
+  if (!payload?.page) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
   return json({
     page: payload?.page || null,
     header: payload?.header || null,
@@ -45,6 +55,27 @@ export async function loader({ params }: LoaderArgs) {
     error404: payload?.error404 || null,
   });
 }
+
+// export const meta: V2_MetaFunction = mergeMeta(({ data }): V2_HtmlMetaDescriptor[] =>
+//   checkMetadata({
+//     title: data?.page?.title,
+//     description: data?.page?.metadataDescription,
+//     image: data?.page?.metadataImage,
+//   }),
+// );
+
+export const meta: V2_MetaFunction = ({
+  matches,
+  data,
+}): V2_HtmlMetaDescriptor[] =>
+  mergeMeta(
+    matches,
+    checkMetadata({
+      title: data?.page?.title,
+      description: data?.page?.metadataDescription,
+      image: data?.page?.metadataImage,
+    }),
+  );
 
 export function headers() {
   return {

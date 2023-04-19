@@ -5,15 +5,13 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-export type MetadataSettingsProps = {
-  _type: 'MetadataSettings';
-  headingappsettings?: string;
+export type MetadataFallbacksProps = {
+  _type: 'MetadataFallbacks';
   sitename: string;
   canonicalUrl?: string;
-  headingseometadatafallbacks?: string;
-  titleFallback: string;
-  descriptionFallback: string;
-  thumbnailFallback: {
+  title: string;
+  description: string;
+  thumbnail: {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;

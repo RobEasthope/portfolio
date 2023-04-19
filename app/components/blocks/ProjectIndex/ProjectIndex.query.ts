@@ -7,6 +7,8 @@ export const PROJECT_INDEX_QUERY = groq`{
     title,
     slug,
     thumbnailImage,
-    endDate
+    containLogo,
+    endDate,
+    displayProject
   } | order(endDate desc)
 }`;

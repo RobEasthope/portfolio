@@ -7,7 +7,7 @@ import {
 } from "ui-pkg/types/sanity-schema";
 import { METADATA_HARD_CODED_FALLBACKS } from "ui-pkg/config/METADATA_HARD_CODED_FALLBACKS";
 import { urlFor } from "apis-pkg/sanity/urlFor";
-import { MetadataSettingsProps } from "ui-pkg/settings/MetadataSettingsProps";
+import { MetadataFallbacksProps } from "ui-pkg/settings/MetadataFallbacksProps";
 
 // TYPES
 type NextMetadataType = {
@@ -19,7 +19,7 @@ type NextMetadataType = {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 // MARKUP

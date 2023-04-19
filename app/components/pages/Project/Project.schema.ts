@@ -1,6 +1,9 @@
-import * as dayjs from 'dayjs';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { defineField, defineType } from 'sanity';
+import { formatSlug } from '~/utils/formatSlug';
+
+import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+
+import { PROJECT_SLUG } from '~/components/pages/Project/PROJECT_SLUG';
 
 export default defineType({
   name: 'project',
@@ -14,6 +17,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'slug',
+      title: 'Page url/slug',
+      type: 'slug',
+      description: 'Set the page URL',
+      options: {
+        source: 'title',
+        slugify: (input) => {
+          const formattedSlug = formatSlug(input);
+
+          return `${PROJECT_SLUG}/${formattedSlug}`;
+        },
+      },
+      validation: (Rule) => Rule.required().error('The slug is missing'),
+    }),
+    defineField({
       name: 'shortTitle',
       title: 'Short title',
       type: 'string',
@@ -25,29 +43,7 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
-    defineField({
-      name: 'pageSlug',
-      title: 'Project slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      readOnly: true,
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-      description:
-        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
-    }),
+
     defineField({
       name: 'projectText',
       title: 'Text',
@@ -55,17 +51,6 @@ export default defineType({
       description:
         'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'showreel',
-      title: 'Showreel',
-      type: 'mux.video',
-    }),
-    defineField({
-      name: 'gallery',
-      title: 'Image gallery',
-      type: 'array',
-      of: [{ type: 'altImage' }],
     }),
     defineField({
       name: 'client',
@@ -132,50 +117,57 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
+    defineField({
+      name: 'containLogo',
+      title: 'Contain logo',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'displayProject',
+      title: 'Display project',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   orderings: [
     {
-      title: 'Start Date, New',
+      title: 'Title',
+      name: 'titleAsc',
+      by: [{ field: 'title', direction: 'asc' }],
+    },
+    {
+      title: 'Start Date',
       name: 'startDateDesc',
       by: [{ field: 'startDate', direction: 'desc' }],
     },
     {
-      title: 'Start Date, Old',
-      name: 'startDateAsc',
-      by: [{ field: 'startDate', direction: 'asc' }],
+      title: 'End Date',
+      name: 'endDateDesc',
+      by: [{ field: 'endDate', direction: 'desc' }],
     },
   ],
+  initialValue: {
+    containLogo: false,
+    displayProject: false,
+  },
   preview: {
     select: {
       title: 'title',
       subtitle: 'client.name',
       media: 'thumbnailImage',
-      // startDate: "startDate",
-      // endDate: "endDate",
+      displayProject: 'displayProject',
     },
-    // prepare({
-    //   title,
-    //   startDate = null,
-    //   endDate = null,
-    //   thumbnailImage,
-    // }: {
-    //   title: string;
-    //   thumbnailImage: string;
-    //   startDate: Date | null;
-    //   endDate: Date | null;
-    // }) {
-    //   dayjs.extend(advancedFormat);
-
-    //   const formattedStartDate = dayjs.default(startDate).format("MMM Do YYYY");
-    //   const formattedEndDate = dayjs.default(endDate).format("MMM Do YYYY");
-
-    //   return {
-    //     title,
-    //     media: thumbnailImage,
-    //     // subtitle: `${formattedStartDate || "Date missing"} - ${
-    //     //   endDate ? formattedEndDate : "Present"
-    //     // }`,
-    //   };
-    // },
+    prepare({
+      title,
+      subtitle,
+      media,
+      displayProject,
+    }: BasicSanityListingProps & { displayProject: boolean }) {
+      return {
+        title: title || 'Page',
+        subtitle: displayProject ? subtitle : 'HIDDEN',
+        media,
+      };
+    },
   },
 });

@@ -2,11 +2,11 @@ import { sanityAPI } from "apis-pkg/sanity/sanityAPI";
 import { NextMetadata } from "components/NextMetadata/NextMetadata";
 import { Error404, Error404Props } from "ui-pkg/pages/Error404/Error404";
 import { ERROR_404_QUERY } from "ui-pkg/pages/Error404/Error404.queries";
-import { MetadataSettingsProps } from "ui-pkg/settings/MetadataSettingsProps";
+import { MetadataFallbacksProps } from "ui-pkg/settings/MetadataFallbacksProps";
 
 // TYPES
 type Custom404Props = Error404Props & {
-  fallbacks: MetadataSettingsProps;
+  fallbacks: MetadataFallbacksProps;
 };
 
 // MARKUP
