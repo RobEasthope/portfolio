@@ -7,6 +7,8 @@ import { ProjectTextComponents } from '~/components/base/Prose/components/Projec
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
+import { TechList } from '~/components/blocks/Tech/TechList';
+
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 export type ProjectProps = {
@@ -69,6 +71,7 @@ export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
 
         <Box as="div" className="flex flex-col gap-1 text-center">
           <Dot className="mt-1" />
+          <TechList technologies={page?.technologies} />
           <ExternalLink href={page?.projectUrl || null}>
             {page?.projectUrlTitle || page?.projectUrl}
           </ExternalLink>
