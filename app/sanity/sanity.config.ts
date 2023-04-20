@@ -1,6 +1,7 @@
 import { visionTool } from '@sanity/vision';
 import { FaGlobeEurope } from 'react-icons/fa';
 import { GoDatabase, GoPaintcan, GoTerminal } from 'react-icons/go';
+import { HiOutlineCode , HiOutlineCode } from 'react-icons/hi';
 import { IoMdSchool } from 'react-icons/io';
 import {
   RiAccountCircleLine,
@@ -20,6 +21,7 @@ import { deskTool } from 'sanity/desk';
 import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 
 import { schemaTypes } from './sanity.schema';
+
 
 export default defineConfig({
   name: 'default',
@@ -50,11 +52,11 @@ export default defineConfig({
               .child(S.documentTypeList('project')),
             S.listItem()
               .title('Technologies')
-              .icon(GoTerminal)
+              .icon(HiOutlineCode)
               .child(
                 S.documentTypeList('tech')
                   .title('Technologies')
-                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }])
               ),
             S.divider(),
             S.listItem()
@@ -63,7 +65,7 @@ export default defineConfig({
               .child(
                 S.documentTypeList('gig')
                   .title('Gigs')
-                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }])
               ),
             S.listItem()
               .title('Organisations')
@@ -71,7 +73,7 @@ export default defineConfig({
               .child(
                 S.documentTypeList('organisation')
                   .title('Organisations')
-                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }])
               ),
             S.listItem()
               .title('Education')
@@ -88,7 +90,7 @@ export default defineConfig({
                 S.editor()
                   .id('Details')
                   .schemaType('Details')
-                  .documentId('Details'),
+                  .documentId('Details')
               ),
             S.divider(),
             S.listItem()
@@ -102,12 +104,12 @@ export default defineConfig({
                     S.listItem()
                       .title('Header')
                       .child(
-                        S.document().schemaType('Header').documentId('Header'),
+                        S.document().schemaType('Header').documentId('Header')
                       ),
                     S.listItem()
                       .title('Footer')
                       .child(
-                        S.document().schemaType('Footer').documentId('Footer'),
+                        S.document().schemaType('Footer').documentId('Footer')
                       ),
                   ]),
               ),
@@ -125,7 +127,7 @@ export default defineConfig({
                       .child(
                         S.document()
                           .schemaType('AppSettings')
-                          .documentId('AppSettings'),
+                          .documentId('AppSettings')
                       ),
                     S.listItem()
                       .title('Metadata fallbacks')
@@ -133,7 +135,7 @@ export default defineConfig({
                       .child(
                         S.document()
                           .schemaType('MetadataFallbacks')
-                          .documentId('MetadataFallbacks'),
+                          .documentId('MetadataFallbacks')
                       ),
                   ]),
               ),
