@@ -13,9 +13,16 @@ export type TechListProps = {
 };
 
 export const TechList = ({ technologies }: TechListProps) => (
-  <Box as="ul">
+  <Box
+    as="ul"
+    className="flex flex-wrap justify-center max-w-prose px-2 mx-auto"
+  >
     {technologies?.map((tech) => (
-      <Type as="li" key={tech?._id}>
+      <Type
+        as="li"
+        key={tech?._id}
+        className="inline after:content-['/'] after:mx-0.25 last:after:content-['']"
+      >
         <ExternalLink href={tech?.url}>{tech?.name}</ExternalLink>
       </Type>
     ))}
