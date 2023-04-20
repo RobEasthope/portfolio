@@ -34,21 +34,37 @@ export function checkMetadata({
         property: 'og:title',
         content: title,
       },
+      {
+        name: 'twitter:title',
+        content: title,
+      },
     );
   }
 
   if (description) {
-    data.push({
-      property: 'description',
-      content: description,
-    });
+    data.push(
+      {
+        property: 'description',
+        content: description,
+      },
+      {
+        name: 'twitter:description',
+        content: description,
+      },
+    );
   }
 
   if (image) {
-    data.push({
-      property: 'og:image',
-      content: urlFor(image).width(1200).height(630).url(),
-    });
+    data.push(
+      {
+        property: 'og:image',
+        content: urlFor(image).width(1200).height(630).url(),
+      },
+      {
+        property: 'twitter:image',
+        content: urlFor(image).width(1200).height(630).url(),
+      },
+    );
   }
 
   return data;
