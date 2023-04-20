@@ -29,12 +29,6 @@ export default defineType({
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
     defineField({
-      name: 'projects',
-      title: 'Related projects',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'project' } }],
-    }),
-    defineField({
       name: 'startDate',
       title: 'Start date',
       type: 'date',
