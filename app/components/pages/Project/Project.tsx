@@ -7,9 +7,9 @@ import { ProjectTextComponents } from '~/components/base/Prose/components/Projec
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
-import { TechList } from '~/components/blocks/Tech/TechList';
-
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
+
+import { TechList } from '~/components/pages/Project/components/TechList/TechList';
 
 export type ProjectProps = {
   blocks: [];
