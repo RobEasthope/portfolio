@@ -21,7 +21,7 @@ export const TechList = ({ technologies }: TechListProps) => (
       <Type
         as="li"
         key={tech?._id}
-        className="inline after:content-['/'] after:mx-0.25 last:after:content-['']"
+        className="inline after:content-['/'] after:mx-0.25 last:after:content-[''] last:after:mx-0"
       >
         <ExternalLink href={tech?.url}>{tech?.name}</ExternalLink>
       </Type>
