@@ -59,7 +59,7 @@ export default defineType({
     }),
     defineField({
       name: 'date',
-      title: 'Date (Written form)',
+      title: 'Date (Long form)',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -82,7 +82,7 @@ export default defineType({
     }),
     defineField({
       name: 'projectUrlTitle',
-      title: 'Project url title',
+      title: 'Project url label',
       type: 'string',
     }),
     defineField({
