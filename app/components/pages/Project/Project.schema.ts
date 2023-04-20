@@ -32,18 +32,11 @@ export default defineType({
       validation: (Rule) => Rule.required().error('The slug is missing'),
     }),
     defineField({
-      name: 'shortTitle',
-      title: 'Short title',
-      type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
-    }),
-    defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
       validation: (Rule) => Rule.required().warning('Required field'),
     }),
-
     defineField({
       name: 'projectText',
       title: 'Text',
