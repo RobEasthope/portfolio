@@ -38,7 +38,7 @@ export const LandingHero = ({
   return (
     <Box
       as="section"
-      className="relative mx-1 h-[calc(100vh_-_(23px_+_(25_-_23)_*_((100vw_-_320px)_/_(1400_-_320))))] md:mx-2 md:h-[calc(100vh_-_(93px_+_((79_+_54)_-_(93))_*_((100vw_-_320px)_/_(1400_-_320))))]"
+      className="relative mx-1 md:mx-2 h-[calc(100vh-(3.5rem*1.5))] md:h-[calc(100vh-(5rem*1.5))]"
     >
       {bkgMode === 'image' && (
         <Box as="div" className="w-screen">
