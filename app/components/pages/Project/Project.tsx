@@ -71,13 +71,16 @@ export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
 
         <Box as="div" className="flex flex-col gap-1 text-center">
           <Dot className="mt-1" />
-          <TechList technologies={page?.technologies} />
           <ExternalLink href={page?.projectUrl || null}>
             {page?.projectUrlTitle || page?.projectUrl}
           </ExternalLink>
+
+          <TechList technologies={page?.technologies} />
+
           <ExternalLink href={page?.repoUrl || null}>
             {page?.repoUrl}
           </ExternalLink>
+
           <Type as="p">{page?.date}</Type>
         </Box>
       </Box>
