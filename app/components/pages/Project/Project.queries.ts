@@ -23,6 +23,11 @@ const PROJECT_QUERY_BODY = groq`
       }
     }
   },
+  "technologies": techUsed[]->{
+    _id,
+    name,
+    url,
+  },
   containLogo,
   displayProject,
 `;
