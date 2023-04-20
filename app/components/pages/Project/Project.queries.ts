@@ -13,16 +13,21 @@ const PROJECT_QUERY_BODY = groq`
   "clientOrg": client->{name, url},
   "agencyOrg": agency->{name, url},
   projectText[]{
+    ...,
+    "muxVideo": rawMuxVideo.asset->,
+    "testimonial": rawTestimonial->,
+    markDefs[]{
       ...,
-      "muxVideo": rawMuxVideo.asset->,
-      "testimonial": rawTestimonial->,
-      markDefs[]{
-        ...,
-        _type == "InternalLink" => {
-          "page": @.internalUID->
-        }
+      _type == "InternalLink" => {
+        "page": @.internalUID->
       }
-    },
+    }
+  },
+  "technologies": techUsed[]->{
+    _id,
+    name,
+    url,
+  },
   containLogo,
   displayProject,
 `;

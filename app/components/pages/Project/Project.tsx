@@ -9,6 +9,8 @@ import { Type } from '~/components/base/Type/Type';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
+import { TechList } from '~/components/pages/Project/components/TechList/TechList';
+
 export type ProjectProps = {
   blocks: [];
 };
@@ -69,6 +71,7 @@ export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
 
         <Box as="div" className="flex flex-col gap-1 text-center">
           <Dot className="mt-1" />
+          <TechList technologies={page?.technologies} />
           <ExternalLink href={page?.projectUrl || null}>
             {page?.projectUrlTitle || page?.projectUrl}
           </ExternalLink>
