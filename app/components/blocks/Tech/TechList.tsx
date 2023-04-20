@@ -14,7 +14,7 @@ export type TechListProps = {
 
 export const TechList = ({ technologies }: TechListProps) => (
   <Box as="ul">
-    {technologies.map((tech) => (
+    {technologies?.map((tech) => (
       <Type as="li" key={tech?._id}>
         <ExternalLink href={tech?.url}>{tech?.name}</ExternalLink>
       </Type>
