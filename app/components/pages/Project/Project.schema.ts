@@ -31,20 +31,7 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().error('The slug is missing'),
     }),
-    defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
-    }),
-    defineField({
-      name: 'projectText',
-      title: 'Text',
-      type: 'ProjectText',
-      description:
-        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
-      validation: (Rule) => Rule.required().warning(),
-    }),
+
     defineField({
       name: 'client',
       title: 'Client',
@@ -56,6 +43,26 @@ export default defineType({
       title: 'Agency',
       type: 'reference',
       to: { type: 'organisation' },
+    }),
+    defineField({
+      name: 'projectText',
+      title: 'Text',
+      type: 'ProjectText',
+      description:
+        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
+      validation: (Rule) => Rule.required().warning(),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: (Rule) => Rule.required().warning('Required field'),
+    }),
+    defineField({
+      name: 'techUsed',
+      title: 'Technologies used',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'tech' } }],
     }),
     defineField({
       name: 'date',
@@ -95,12 +102,7 @@ export default defineType({
       title: 'Repo url',
       type: 'url',
     }),
-    defineField({
-      name: 'techUsed',
-      title: 'Technologies used',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'tech' } }],
-    }),
+
     defineField({
       name: 'thumbnailImage',
       title: 'Thumbnail image',
