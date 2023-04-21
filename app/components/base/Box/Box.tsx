@@ -40,6 +40,15 @@ const boxVariants = variants({
       full: 'w-screen',
     },
   },
+  compoundVariants: [
+    {
+      variants: {
+        blockSpacing: true,
+        maxWidth: 'full',
+      },
+      className: 'px-0 md:px-0',
+    },
+  ],
 });
 
 export const Box = ({
