@@ -35,7 +35,7 @@ export const Image = ({
   }
 
   return (
-    <Box as="section" breakout>
+    <Box as="section" breakout blockSpacing>
       <Box as="figure" className="mx-auto" maxWidth={maxWidth}>
         <SanityImage
           asset={image}

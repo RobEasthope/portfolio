@@ -1,10 +1,10 @@
-import type { ProjectIndex as rawProjectIndexProps } from '~/components/types/sanity-schema';
 
 import { Box } from '~/components/base/Box/Box';
 
 import { ProjectIndexCard } from '~/components/blocks/ProjectIndex/components/ProjectIndexCard';
 
 import type { ProjectProps } from '~/components/pages/Project/Project';
+import type { ProjectIndex as rawProjectIndexProps } from '~/components/types/sanity-schema';
 
 // TYPES
 export interface ProjectIndexProps extends rawProjectIndexProps {
@@ -18,7 +18,7 @@ export const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   }
 
   return (
-    <Box as="section" className="px-1">
+    <Box as="section" blockSpacing>
       {projects?.length > 0 && (
         <Box
           as="ul"
