@@ -27,6 +27,7 @@ import Image from '~/components/blocks/Image/Image.schema';
 import LandingHero from '~/components/blocks/LandingHero/LandingHero.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
 import organisation from '~/components/blocks/Organisation/Organisation.schema';
+import Organisations from '~/components/blocks/Organisation/Organisations.schema';
 import PageTitle from '~/components/blocks/PageTitle/PageTitle.schema';
 import ProjectIndex from '~/components/blocks/ProjectIndex/ProjectIndex.schema';
 import Spacer from '~/components/blocks/Spacer/Spacer.schema';
@@ -39,7 +40,6 @@ import page from '~/components/pages/Page/Page.schema';
 import project from '~/components/pages/Project/Project.schema';
 // Data
 import tech from '~/components/pages/Project/schemas/Tech.schema';
-import Organisations from '~/components/blocks/Organisation/Organisations.schema';
 
 export const schemaTypes = [
   // Legacy schema types
