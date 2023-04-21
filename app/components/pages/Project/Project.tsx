@@ -1,4 +1,4 @@
-import { Dot } from '~/components/decoration/Dot';
+import { Dot } from '~/components/decoration/Dot/Dot';
 
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
