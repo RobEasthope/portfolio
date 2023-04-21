@@ -1,4 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
+import { useLocation } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
@@ -28,6 +29,7 @@ export const SmallNavigation = ({
   primaryNavigation,
   secondaryNavigation,
 }: SmallNavigationProps) => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Ensures menu is closed when resizing to desktop
@@ -61,6 +63,10 @@ export const SmallNavigation = ({
   //     router.events.off('routeChangeStart', handleRouteChange);
   //   };
   // }, [setMenuOpen, router.events]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   const combindedNavigation = [...primaryNavigation, ...secondaryNavigation];
 
