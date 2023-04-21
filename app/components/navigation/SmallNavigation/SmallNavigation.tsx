@@ -50,20 +50,6 @@ export const SmallNavigation = ({
     };
   }, [menuOpen]);
 
-  // useEffect(() => {
-  //   const handleRouteChange = () => {
-  //     setMenuOpen(false);
-  //   };
-
-  //   router.events.on('routeChangeStart', handleRouteChange);
-
-  //   // If the component is unmounted, unsubscribe
-  //   // from the event with the `off` method:
-  //   return () => {
-  //     router.events.off('routeChangeStart', handleRouteChange);
-  //   };
-  // }, [setMenuOpen, router.events]);
-
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
