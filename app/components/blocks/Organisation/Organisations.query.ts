@@ -7,5 +7,5 @@ export const ORGANISATIONS_QUERY = groq`{
     _id,
     name,
     url
-  } | order(name desc)
+  } | order(name asc)
 }`;
