@@ -35,6 +35,7 @@
     "eslint-config-wesbos": "^3.2.3",
     "groq": "^3.8.3",
     "isbot": "^3.6.8",
+    "picosanity": "^4.0.0",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "pretty-cache-header": "^1.0.0",
     "react": "^18.2.0",
