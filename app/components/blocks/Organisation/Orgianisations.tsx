@@ -11,7 +11,7 @@ export const Organisations = ({ organisations }: OrganisationsProps) => (
   <Box as="div">
     <Box as="ul" className="grid grid-columns-4">
       {organisations?.map((org) => (
-        <Box as="li">
+        <Box key={org?._id} as="li">
           <ExternalLink href={org?.url || ''}>{org.name}</ExternalLink>
         </Box>
       ))}
