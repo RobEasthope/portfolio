@@ -4,18 +4,12 @@ import { useEffect, useState } from 'react';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
-
 import { Box } from '~/components/base/Box/Box';
-import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { SuperLink } from '~/components/base/SuperLink/SuperLink';
 import { Type } from '~/components/base/Type/Type';
 
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
-
-import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 
 // TYPES
 export type SmallNavigationProps = Pick<
