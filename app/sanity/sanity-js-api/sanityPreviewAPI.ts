@@ -1,6 +1,6 @@
-import { createClient } from '@sanity/client';
+import PicoSanity from 'picosanity';
 
-export const sanityPreviewAPI = createClient({
+export const sanityPreviewAPI = new PicoSanity({
   projectId: process.env.SANITY_PUBLIC_PROJECT_ID || '',
   dataset: process.env.SANITY_PUBLIC_DATASET || '',
   apiVersion: process.env.SANITY_PUBLIC_API_VERSION || '',
