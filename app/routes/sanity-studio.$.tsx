@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import { Suspense, lazy } from 'react';
 

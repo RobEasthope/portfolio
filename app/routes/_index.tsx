@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useLoaderData } from '@remix-run/react';
 import type { V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
