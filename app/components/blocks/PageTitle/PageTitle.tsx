@@ -22,7 +22,7 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
             {heading}
           </Type>
 
-          <LineBreak className='mt-1' />
+          <LineBreak className="mt-1" />
         </Box>
       </Box>
     </Box>
