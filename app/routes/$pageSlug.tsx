@@ -77,6 +77,8 @@ export const meta: V2_MetaFunction = ({
     }),
   );
 
+export const config = { runtime: 'edge' };
+
 export function headers() {
   return {
     'Cache-Control': cacheHeader({
@@ -86,8 +88,6 @@ export function headers() {
     }),
   };
 }
-
-export const config = { runtime: 'edge' };
 
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
