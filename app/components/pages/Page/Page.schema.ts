@@ -32,6 +32,7 @@ export default defineType({
         { type: 'Gallery' },
         { type: 'Image' },
         { type: 'LandingHero' },
+        { type: 'Organisations' },
         { type: 'PageTitle' },
         { type: 'ProjectIndex' },
         { type: 'Spacer' },
