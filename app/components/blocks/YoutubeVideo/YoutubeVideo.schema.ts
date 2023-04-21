@@ -15,6 +15,7 @@ export default defineType({
       name: 'url',
       title: 'Youtube URL',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'caption',
@@ -29,8 +30,12 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
+  initialValue: {
+    maxWidth: 'medium',
+  },
   preview: {
     select: {
       title: 'caption',
