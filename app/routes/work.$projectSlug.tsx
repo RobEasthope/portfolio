@@ -70,6 +70,16 @@ export const meta: V2_MetaFunction = ({
 
 export const config = { runtime: 'edge' };
 
+export function headers() {
+  return {
+    'Cache-Control': cacheHeader({
+      maxAge: '30days',
+      staleWhileRevalidate: '1day',
+      staleIfError: '7days',
+    }),
+  };
+}
+
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
 
