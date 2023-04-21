@@ -22,6 +22,9 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
+  initialValue: {
+    height: '1',
+  },
   preview: {
     select: {
       subtitle: 'height',
