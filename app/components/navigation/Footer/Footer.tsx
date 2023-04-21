@@ -1,15 +1,7 @@
-import {
-  SanityImageAsset,
-  SanityImageCrop,
-  SanityReference,
-} from 'sanity-codegen';
-
 import { Box } from '~/components/base/Box/Box';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { SuperLink } from '~/components/base/SuperLink/SuperLink';
 import { Type } from '~/components/base/Type/Type';
 
