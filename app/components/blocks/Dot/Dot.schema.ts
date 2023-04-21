@@ -20,7 +20,7 @@ export default defineType({
   preview: {
     prepare() {
       return {
-        title: 'Spacer',
+        title: 'Dot',
       };
     },
   },
