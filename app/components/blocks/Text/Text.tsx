@@ -15,7 +15,7 @@ export const Text = ({ text }: TextProps) => {
   }
 
   return (
-    <Box as="section" className="px-1">
+    <Box as="section" className="px-1 md:px-2">
       <Prose
         as="div"
         content={text}
