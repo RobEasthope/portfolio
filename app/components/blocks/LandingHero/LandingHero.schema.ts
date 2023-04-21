@@ -20,8 +20,7 @@ export default defineType({
         ],
         layout: 'radio',
       },
-      validation: (Rule) =>
-        Rule.required().error('Landing hero: Background mode has not been set'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'bkgImage',
