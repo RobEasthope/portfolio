@@ -50,6 +50,7 @@ export const SmallNavigation = ({
     };
   }, [menuOpen]);
 
+  // Ensures menu is closed when navigating
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
