@@ -18,6 +18,7 @@ const boxVariants = variants({
     breakout: {
       true: 'max-w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] w-screen',
     },
+
     maxWidth: {
       none: '',
       auto: 'max-w-auto',
@@ -26,6 +27,9 @@ const boxVariants = variants({
       medium: 'max-w-5xl',
       large: 'max-w-7xl',
       full: 'w-screen',
+    },
+    sectionSpacing: {
+      true: 'px-1 md:px-2',
     },
     columns: {
       null: '',
