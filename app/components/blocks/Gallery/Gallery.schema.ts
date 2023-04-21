@@ -18,10 +18,7 @@ export default defineType({
       title: 'Images',
       type: 'array',
       of: [defineArrayMember({ type: 'GalleryImage' })],
-      validation: (Rule) =>
-        Rule.required().warning(
-          'Gallery: No images have been added to the gallery',
-        ),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'columns',
@@ -32,10 +29,7 @@ export default defineType({
         list: COLUMN_OPTIONS,
         layout: 'radio',
       },
-      validation: (Rule) =>
-        Rule.required().error(
-          'Gallery: Please select the desired number of columns',
-        ),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'aspectRatio',
@@ -45,8 +39,7 @@ export default defineType({
         list: ASPECT_RATIOS,
         layout: 'radio',
       },
-      validation: (Rule) =>
-        Rule.required().warning('Gallery: Please select an aspect ratio'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'maxWidth',
@@ -56,6 +49,7 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'galleryCaption',
@@ -63,6 +57,11 @@ export default defineType({
       type: 'text',
     }),
   ],
+  initialValue: {
+    columns: '3',
+    aspectRatio: 4 / 3,
+    maxWidth: 'large',
+  },
   preview: {
     select: {
       title: 'heading',
