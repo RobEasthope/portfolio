@@ -19,7 +19,7 @@ export const Gallery = ({
   images,
   galleryCaption,
   columns,
-  aspectRatio = 1 / 1,
+  aspectRatio,
   maxWidth = 'large',
 }: GalleryProps) => {
   if (!images) {
