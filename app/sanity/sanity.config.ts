@@ -1,9 +1,9 @@
 import { visionTool } from '@sanity/vision';
 import { FaGlobeEurope } from 'react-icons/fa';
-import { GoDatabase, GoPaintcan, GoTerminal } from 'react-icons/go';
+import { GoPaintcan } from 'react-icons/go';
+import { HiOutlineCode } from 'react-icons/hi';
 import { IoMdSchool } from 'react-icons/io';
 import {
-  RiAccountCircleLine,
   RiBriefcaseFill,
   RiCompasses2Line,
   RiListSettingsLine,
@@ -50,7 +50,7 @@ export default defineConfig({
               .child(S.documentTypeList('project')),
             S.listItem()
               .title('Technologies')
-              .icon(GoTerminal)
+              .icon(HiOutlineCode)
               .child(
                 S.documentTypeList('tech')
                   .title('Technologies')
