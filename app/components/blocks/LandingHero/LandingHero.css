@@ -1,4 +1,4 @@
-mux-player {
+.landing-hero > mux-player {
   --controls: none;
   --media-object-fit: cover;
 
