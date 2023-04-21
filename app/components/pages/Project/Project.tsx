@@ -1,11 +1,11 @@
-import { Dot } from '~/components/decoration/Dot/Dot';
-
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/base/Prose/Prose';
 import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
+
+import { Dot } from '~/components/blocks/Dot/Dot';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 

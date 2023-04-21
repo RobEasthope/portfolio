@@ -1,6 +1,5 @@
-import type { DotProps } from '~/components/decoration/Dot/Dot';
-import { Dot } from '~/components/decoration/Dot/Dot';
-
+import type { DotProps } from '~/components/blocks/Dot/Dot';
+import { Dot } from '~/components/blocks/Dot/Dot';
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 import { Gallery } from '~/components/blocks/Gallery/Gallery';
 import type { ImageProps } from '~/components/blocks/Image/Image';
