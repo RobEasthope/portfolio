@@ -6,7 +6,6 @@ import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 const PROJECT_QUERY_BODY = groq`
-  ...,
   _id,
   title,
   slug,
@@ -23,11 +22,19 @@ const PROJECT_QUERY_BODY = groq`
       }
     }
   },
+  description,
   "technologies": techUsed[]->{
     _id,
     name,
     url,
   },
+  date,
+  startDate,
+  endDate,
+  projectUrlTitle,
+  projectUrl,
+  repoUrl,
+  thumbnailImage,
   containLogo,
   displayProject,
 `;
