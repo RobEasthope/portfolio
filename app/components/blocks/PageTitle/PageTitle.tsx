@@ -1,4 +1,4 @@
-import { LineBreak , LineBreak } from '~/components/decoration/LineBreak';
+import { LineBreak } from '~/components/decoration/LineBreak';
 
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
@@ -22,7 +22,7 @@ export const PageTitle = ({ heading }: PageTitleProps) => {
             {heading}
           </Type>
 
-          <LineBreak className='mt-1' />
+          <LineBreak className="mt-1" />
         </Box>
       </Box>
     </Box>

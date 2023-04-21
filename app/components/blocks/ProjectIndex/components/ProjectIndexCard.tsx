@@ -1,7 +1,6 @@
 import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
-import { Type } from '~/components/base/Type/Type';
 
 import type { ProjectProps } from '~/components/pages/Project/Project';
 

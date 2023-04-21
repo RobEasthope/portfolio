@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useLoaderData } from '@remix-run/react';
 import type { V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
@@ -8,8 +9,6 @@ import { mergeMeta } from '~/utils/mergeMeta';
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
-
-import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
