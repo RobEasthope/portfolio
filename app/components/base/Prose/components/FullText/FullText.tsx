@@ -8,6 +8,7 @@
 import type { PortableTextComponents } from '@portabletext/react';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
+import { Box } from '~/components/base/Box/Box';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
