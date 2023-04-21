@@ -68,6 +68,8 @@ export const meta: V2_MetaFunction = ({
     }),
   );
 
+export const config = { runtime: 'edge' };
+
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
 

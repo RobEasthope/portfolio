@@ -87,6 +87,8 @@ export function headers() {
   };
 }
 
+export const config = { runtime: 'edge' };
+
 export default function Index() {
   const { page, header, footer } = useLoaderData<typeof loader>();
 
