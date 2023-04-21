@@ -41,28 +41,19 @@ export default defineType({
         { type: 'VimeoVideo' },
         { type: 'YoutubeVideo' },
       ],
-      validation: (Rule) =>
-        Rule.required().error('At least one page section is required'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'metadataDescription',
       title: 'Metadata description',
       description: 'Used in social media and search engine listings',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().warning(
-          'Metadata description has not been set and will fall back to global metadata settings',
-        ),
     }),
     defineField({
       name: 'metadataImage',
       title: 'Metadata image',
       description: 'Used in social media and search engine listings.',
       type: 'image',
-      validation: (Rule) =>
-        Rule.required().warning(
-          'Metadata image has not been set and will fall back to global metadata settings',
-        ),
     }),
   ],
   preview: {
