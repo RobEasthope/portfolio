@@ -8,7 +8,7 @@ export type OrganisationsProps = {
 };
 
 export const Organisations = ({ organisations }: OrganisationsProps) => (
-  <Box as="div" className="px-1">
+  <Box as="section" className="px-1">
     <Box as="div" className="max-w-6xl mx-auto">
       <Box
         as="ul"
