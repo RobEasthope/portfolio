@@ -9,11 +9,7 @@ import { TEXT_QUERY } from '~/components/blocks/Text/Text.query';
 import { VIMEO_VIDEO_QUERY } from '~/components/blocks/VimeoVideo/VimeoVideo.query';
 import { YOUTUBE_VIDEO_QUERY } from '~/components/blocks/YoutubeVideo/YoutubeVideo.query';
 
-export const SANITY_BLOCK_QUERIES = ({
-  courseId,
-}: {
-  courseId: string | null;
-}) => ({
+export const SANITY_BLOCK_QUERIES = () => ({
   Gallery: GALLERY_QUERY,
   Image: IMAGE_QUERY,
   LandingHero: LANDING_HERO_QUERY,
