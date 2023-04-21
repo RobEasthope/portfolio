@@ -6,6 +6,8 @@ import type { LandingHeroProps } from '~/components/blocks/LandingHero/LandingHe
 import { LandingHero } from '~/components/blocks/LandingHero/LandingHero';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
+import type { OrganisationsProps } from '~/components/blocks/Organisation/Orgianisations';
+import { Organisations } from '~/components/blocks/Organisation/Orgianisations';
 import type { PageTitleProps } from '~/components/blocks/PageTitle/PageTitle';
 import { PageTitle } from '~/components/blocks/PageTitle/PageTitle';
 import type { ProjectIndexProps } from '~/components/blocks/ProjectIndex/ProjectIndex';
@@ -67,6 +69,14 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
           return (
             <MuxVideo
               {...(block as MuxVideoProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+
+        case 'Organisations':
+          return (
+            <Organisations
+              {...(block as OrganisationsProps)}
               key={`${pageID}-${block._key as string}`}
             />
           );
