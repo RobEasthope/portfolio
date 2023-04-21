@@ -39,6 +39,7 @@ import page from '~/components/pages/Page/Page.schema';
 import project from '~/components/pages/Project/Project.schema';
 // Data
 import tech from '~/components/pages/Project/schemas/Tech.schema';
+import Organisations from '~/components/blocks/Organisation/Organisations.schema';
 
 export const schemaTypes = [
   // Legacy schema types
@@ -80,6 +81,7 @@ export const schemaTypes = [
   Gallery,
   Image,
   LandingHero,
+  Organisations,
   MuxVideo,
   PageTitle,
   ProjectIndex,
