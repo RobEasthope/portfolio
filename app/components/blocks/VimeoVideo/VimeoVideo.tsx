@@ -22,7 +22,7 @@ export const VimeoVideo = ({
   }
 
   return (
-    <Box as="section" breakout>
+    <Box as="section" breakout blockSpacing>
       <Box as="div" className="mx-auto" maxWidth={maxWidth}>
         <Vimeo video={url} responsive />
         <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">

@@ -24,7 +24,7 @@ export const YoutubeVideo = ({
   }
 
   return (
-    <Box as="section" breakout>
+    <Box as="section" breakout blockSpacing>
       <Box as="div" className="mx-auto" maxWidth={maxWidth}>
         <Box as="div">
           <YouTube
