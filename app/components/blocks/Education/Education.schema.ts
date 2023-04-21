@@ -11,27 +11,31 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'url',
       title: 'URL',
       type: 'url',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'qualification',
       title: 'Qualification',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'when',
       title: 'When',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'logo',
       title: 'Logo',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
