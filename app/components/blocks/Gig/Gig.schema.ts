@@ -12,13 +12,13 @@ export default defineType({
       title: 'Employer',
       type: 'reference',
       to: { type: 'organisation' },
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'jobTitle',
       title: 'Job title',
       type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
@@ -26,7 +26,7 @@ export default defineType({
       type: 'blockContent',
       description:
         'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'startDate',
@@ -35,7 +35,7 @@ export default defineType({
       options: {
         dateFormat: 'DD-MMMM-YYYY',
       },
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'endDate',

@@ -15,8 +15,7 @@ export default defineType({
       name: 'rawMuxVideo',
       title: 'Mux video',
       type: 'mux.video',
-      validation: (Rule) =>
-        Rule.required().error('Mux video: Video is missing'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'caption',
@@ -48,6 +47,12 @@ export default defineType({
       },
     }),
   ],
+  initialValue: {
+    muted: true,
+    loop: false,
+    autoplay: false,
+    maxWidth: 'medium',
+  },
   preview: {
     select: {
       title: 'caption',
