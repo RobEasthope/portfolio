@@ -1,3 +1,4 @@
+import { RiShieldLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -6,6 +7,7 @@ export default defineType({
   name: 'organisation',
   title: 'Organisation',
   type: 'document',
+  icon: RiShieldLine,
   fields: [
     defineField({
       name: 'name',
