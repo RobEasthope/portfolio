@@ -1,11 +1,11 @@
-import { AiOutlineColumnHeight } from 'react-icons/ai';
+import { RxDotFilled } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
   type: 'object',
   name: 'Dot',
   title: 'Dot',
-  icon: AiOutlineColumnHeight,
+  icon: RxDotFilled,
   fields: [
     defineField({
       name: 'displayDot',
