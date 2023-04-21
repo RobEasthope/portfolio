@@ -1,3 +1,5 @@
+import type { DotProps } from '~/components/blocks/Dot/Dot';
+import { Dot } from '~/components/blocks/Dot/Dot';
 import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
 import { Gallery } from '~/components/blocks/Gallery/Gallery';
 import type { ImageProps } from '~/components/blocks/Image/Image';
@@ -41,6 +43,13 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
       }
 
       switch (_type) {
+        case 'Dot':
+          return (
+            <Dot
+              {...(block as DotProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
         case 'Gallery':
           return (
             <Gallery
