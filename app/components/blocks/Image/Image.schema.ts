@@ -31,7 +31,7 @@ export default defineType({
           title: 'Attribution',
         }),
       ],
-      validation: (Rule) => Rule.required().warning('Image: Image is missing'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'aspectRatio',
@@ -42,6 +42,7 @@ export default defineType({
         list: ASPECT_RATIOS,
         layout: 'radio',
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'maxWidth',
@@ -51,8 +52,13 @@ export default defineType({
       options: {
         list: MAX_CONTENT_OPTIONS,
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
+  initialValue: {
+    aspectRatio: 0,
+    maxWidth: 'large',
+  },
   preview: {
     select: {
       title: 'image.caption',
