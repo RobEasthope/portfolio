@@ -8,8 +8,8 @@ export type OrganisationsProps = {
 };
 
 export const Organisations = ({ organisations }: OrganisationsProps) => (
-    <Box as="ul" className="grid grid-columns-4">
   <Box as="div" className="px-1">
+    <Box as="ul" className="grid grid-cols-4 max-w-7xl mx-auto">
       {organisations?.map((org) => (
         <Box key={org?._id} as="li">
           <ExternalLink href={org?.url || ''}>{org.name}</ExternalLink>
