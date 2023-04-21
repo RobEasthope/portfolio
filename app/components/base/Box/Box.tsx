@@ -8,6 +8,7 @@ type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
   className?: string;
   children: ReactNode | ReactNode[];
   ref?: React.RefObject<HTMLDivElement>;
+  blockSpacing?: boolean;
   breakout?: boolean;
   maxWidth?: 'none' | 'auto' | 'small' | 'text' | 'medium' | 'large' | 'full';
   columns?: 'null' | '1' | '2' | '3' | '4' | '5';
@@ -15,6 +16,9 @@ type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const boxVariants = variants({
   variants: {
+    blockSpacing: {
+      true: 'px-1 md:px-2',
+    },
     breakout: {
       true: 'max-w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] w-screen',
     },
@@ -35,15 +39,13 @@ const boxVariants = variants({
       large: 'max-w-7xl',
       full: 'w-screen',
     },
-    sectionSpacing: {
-      true: 'px-1 md:px-2',
-    },
   },
 });
 
 export const Box = ({
   as = 'div',
   className,
+  blockSpacing = false,
   breakout = false,
   maxWidth = 'none',
   columns = 'null',
@@ -59,7 +61,7 @@ export const Box = ({
     as,
     {
       className: classNames(
-        boxVariants({ breakout, maxWidth, columns }),
+        boxVariants({ blockSpacing, breakout, columns, maxWidth }),
         className,
       ),
       ref,
