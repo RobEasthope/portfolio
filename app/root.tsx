@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import type { LinksFunction } from '@vercel/remix';
+import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 
