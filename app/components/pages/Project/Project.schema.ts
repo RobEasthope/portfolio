@@ -29,7 +29,7 @@ export default defineType({
           return `${PROJECT_SLUG}/${formattedSlug}`;
         },
       },
-      validation: (Rule) => Rule.required().error('The slug is missing'),
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -37,6 +37,7 @@ export default defineType({
       title: 'Client',
       type: 'reference',
       to: { type: 'organisation' },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'agency',
@@ -50,19 +51,20 @@ export default defineType({
       type: 'ProjectText',
       description:
         'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
-      validation: (Rule) => Rule.required().warning(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'techUsed',
       title: 'Technologies used',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'tech' } }],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'date',
@@ -110,7 +112,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required().warning('Required field'),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'containLogo',
