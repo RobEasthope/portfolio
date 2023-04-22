@@ -28,7 +28,7 @@ export type ImageProps = {
 export const Image = ({
   image,
   maxWidth = 'medium',
-  aspectRatio,
+  aspectRatio = 0,
 }: ImageProps) => {
   if (!image) {
     return null;
