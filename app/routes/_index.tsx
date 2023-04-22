@@ -36,7 +36,7 @@ export async function loader() {
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
-      slug: HOME_PAGE_SLUG,
+      slug: homePageSlug?.homePageSlug,
     },
   );
 
