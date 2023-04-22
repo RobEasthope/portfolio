@@ -26,6 +26,7 @@ export type InternalLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   href: string | null;
   className?: string;
   children: any;
+  homePageSlug: string;
 };
 
 export const InternalLink = ({
