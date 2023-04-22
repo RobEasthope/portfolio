@@ -3,6 +3,8 @@ import { Prose } from '~/components/base/Prose/Prose';
 import type { FullTextProps } from '~/components/base/Prose/components/FullText/FullText';
 import { FullTextComponents } from '~/components/base/Prose/components/FullText/FullText';
 
+import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+
 // TYPES
 export type TextProps = {
   _type: 'Text';
@@ -21,6 +23,7 @@ export const Text = ({ text }: TextProps) => {
         content={text}
         components={FullTextComponents}
         className="mx-auto font-serif text-md"
+        homePageSlug={HOME_PAGE_SLUG}
       />
     </Box>
   );
