@@ -28,14 +28,14 @@ type PageBySlugProps = PageProps & {
 };
 
 export async function loader() {
-  const homePageSlug: AppSettingsProps = await sanityAPI.fetch(
+  const appSettings: AppSettingsProps = await sanityAPI.fetch(
     APP_SETTINGS_QUERY,
   );
 
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
-      slug: homePageSlug?.homePageSlug,
+      slug: appSettings?.homePageSlug,
     },
   );
 
