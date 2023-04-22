@@ -21,6 +21,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'galleryCaption',
+      title: 'Gallery caption',
+      type: 'text',
+    }),
+    defineField({
       name: 'columns',
       title: 'Number of columns',
       type: 'string',
@@ -50,11 +55,6 @@ export default defineType({
         list: MAX_CONTENT_OPTIONS,
       },
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'galleryCaption',
-      title: 'Gallery caption',
-      type: 'text',
     }),
   ],
   initialValue: {
