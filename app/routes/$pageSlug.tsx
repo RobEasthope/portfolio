@@ -31,6 +31,12 @@ export async function loader({ params }: LoaderArgs) {
     APP_SETTINGS_QUERY,
   );
 
+  if (params?.pageSlug === appSettings?.homePageSlug) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
