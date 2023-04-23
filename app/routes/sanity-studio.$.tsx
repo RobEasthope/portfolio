@@ -16,7 +16,7 @@ export async function loader() {
   );
 
   return json({
-    appSettings: payload?.appSettings || null,
+    appSettings: appSettings || null,
   });
 }
 
