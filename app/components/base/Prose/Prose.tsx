@@ -9,7 +9,6 @@ export type ProseProps = {
   className?: string;
   content: any;
   components: unknown;
-  homePageSlug: string;
 };
 
 export const Prose = ({
@@ -17,7 +16,6 @@ export const Prose = ({
   content,
   components,
   className,
-  homePageSlug,
 }: ProseProps) => {
   if (!content) {
     return null;
@@ -29,7 +27,6 @@ export const Prose = ({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value={content}
         components={components as PortableTextComponents}
-        homePageSlug={homePageSlug}
       />
     </Box>
   );
