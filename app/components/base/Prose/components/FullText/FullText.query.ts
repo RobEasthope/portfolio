@@ -7,5 +7,6 @@ export const FULL_TEXT_QUERY = groq`
   markDefs[]{
     ...,
     ${INTERNAL_LINK_QUERY},
-  }
+  },
+  "muxVideo": rawMuxVideo.asset->,
 `;
