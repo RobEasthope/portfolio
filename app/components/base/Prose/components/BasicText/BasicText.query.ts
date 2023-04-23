@@ -7,5 +7,5 @@ export const BASIC_TEXT_QUERY = groq`
   markDefs[]{
     ...,
     ${INTERNAL_LINK_QUERY},
-  }
+  },
 `;
