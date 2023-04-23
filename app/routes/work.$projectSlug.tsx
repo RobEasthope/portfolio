@@ -22,10 +22,10 @@ import type { Error404Props } from '~/components/pages/Error404/Error404';
 import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-} from '~/components/pages/Page/Page.queries';
+} from '~/components/pages/Page/Page.query';
 import type { ProjectProps } from '~/components/pages/Project/Project';
 import { Project } from '~/components/pages/Project/Project';
-import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.queries';
+import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.query';
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
