@@ -1,5 +1,7 @@
 /* eslint-disable camelcase */
 import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import { Suspense, lazy } from 'react';
 
 import styles from '~/sanity/SanityStudio/SanityStudio.css';
