@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import type { SanityReference } from 'sanity-codegen';
 
 import type { PageProps } from '~/components/pages/Page/Page';
-import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
