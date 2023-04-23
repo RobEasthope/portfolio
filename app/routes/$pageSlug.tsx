@@ -9,6 +9,8 @@ import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps'
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
@@ -25,6 +27,16 @@ type PageBySlugProps = PageProps & {
 };
 
 export async function loader({ params }: LoaderArgs) {
+  const appSettings: AppSettingsProps = await sanityAPI.fetch(
+    APP_SETTINGS_QUERY,
+  );
+
+  if (params?.pageSlug === appSettings?.homePageSlug) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {

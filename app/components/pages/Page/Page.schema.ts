@@ -59,13 +59,11 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      subtitle: 'slug.current',
     },
-    prepare({ title, subtitle }: BasicSanityListingProps) {
+    prepare({ title }: BasicSanityListingProps) {
       return {
         title: title || 'Page',
-        subtitle: subtitle === 'home' ? 'Home page' : 'Page',
-        // subtitle: title ? "Page" : null,
+        subtitle: title ? 'Page' : '',
       };
     },
   },
