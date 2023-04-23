@@ -1,18 +1,11 @@
 import groq from 'groq';
 
-import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
+import { FULL_TEXT_QUERY } from '~/components/base/Prose/components/FullText/FullText.query';
 
 export const TEXT_QUERY = groq`{
   _type,
   _key,
   text[]{
-    ...,
-    markDefs[]{
-      ...,
-      _type == "InternalLink" => {
-        "page": @.internalUID->,
-        "appSettings": ${APP_SETTINGS_QUERY}
-      }
-    },
+    ${FULL_TEXT_QUERY}
   },
 }`;
