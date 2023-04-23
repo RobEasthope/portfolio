@@ -1,6 +1,6 @@
 import groq from 'groq';
 
-import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.queries';
+import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
 
 export const TEXT_QUERY = groq`{
   _type,
