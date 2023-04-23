@@ -1,5 +1,7 @@
 import groq from 'groq';
 
+import { PROJECT_TEXT_QUERY } from '~/components/base/Prose/components/ProjectText/ProjectText.query';
+
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
@@ -12,14 +14,7 @@ const PROJECT_QUERY_BODY = groq`
   "clientOrg": client->{name, url},
   "agencyOrg": agency->{name, url},
   projectText[]{
-    ...,
-    "muxVideo": rawMuxVideo.asset->,
-    markDefs[]{
-      ...,
-      _type == "InternalLink" => {
-        "page": @.internalUID->
-      }
-    }
+    ${PROJECT_TEXT_QUERY}
   },
   description,
   "technologies": techUsed[]->{
