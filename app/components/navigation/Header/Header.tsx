@@ -14,6 +14,8 @@ import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo
 import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
 import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+
 // TYPES
 export type HeaderProps = {
   _type?: 'Header';
@@ -33,6 +35,7 @@ export type HeaderProps = {
     | InternalLinkWithTitleSchemaProps
     | EmailLinkWithTitleSchemaProps,
   ];
+  appSettings: AppSettingsProps;
 };
 
 // MARKUP
@@ -40,6 +43,7 @@ export const Header = ({
   logo,
   primaryNavigation,
   secondaryNavigation,
+  appSettings,
 }: HeaderProps) => {
   if (!logo && !primaryNavigation) {
     return null;
@@ -54,7 +58,7 @@ export const Header = ({
         >
           <NavListing links={primaryNavigation} />
 
-          <HeaderLogo logo={logo} />
+          <HeaderLogo logo={logo} homePageSlug={appSettings?.homePageSlug} />
 
           <NavListing links={secondaryNavigation} />
 
