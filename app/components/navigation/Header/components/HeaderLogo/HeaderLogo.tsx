@@ -13,8 +13,6 @@ import { Type } from '~/components/base/Type/Type';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 
-import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
-
 export type HeaderLogoProps = {
   logo?: {
     _type: 'image';
