@@ -25,7 +25,7 @@ import {
 } from '~/components/pages/Page/Page.query';
 import type { ProjectProps } from '~/components/pages/Project/Project';
 import { Project } from '~/components/pages/Project/Project';
-import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.queries';
+import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.query';
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
