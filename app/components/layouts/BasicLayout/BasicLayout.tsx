@@ -25,6 +25,7 @@ export const BasicLayout = ({
       logo={header?.logo}
       primaryNavigation={header?.primaryNavigation}
       secondaryNavigation={header?.secondaryNavigation}
+      appSettings={header?.appSettings}
     />
 
     <Box as="main" className="flex-grow">
