@@ -18,7 +18,7 @@ import { Page } from '~/components/pages/Page/Page';
 import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-} from '~/components/pages/Page/Page.queries';
+} from '~/components/pages/Page/Page.query';
 import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
 
 type PageBySlugProps = PageProps & {
