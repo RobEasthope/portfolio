@@ -27,7 +27,11 @@ export const HeaderLogo = ({ logo }: HeaderLogoProps) => (
     as="div"
     className="absolute left-1/2 flex flex-1 -translate-x-1/2 items-center justify-center"
   >
-    <InternalLink href={HOME_PAGE_SLUG} className="p-0.25">
+    <InternalLink
+      href={HOME_PAGE_SLUG}
+      className="p-0.25"
+      homePageSlug={HOME_PAGE_SLUG}
+    >
       <Type as="span" className="sr-only">
         {METADATA_HARD_CODED_FALLBACKS.TITLE}
       </Type>
