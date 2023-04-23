@@ -31,7 +31,7 @@ export const HeaderLogo = ({ logo, homePageSlug }: HeaderLogoProps) => (
     className="absolute left-1/2 flex flex-1 -translate-x-1/2 items-center justify-center"
   >
     <InternalLink
-      href={HOME_PAGE_SLUG}
+      href={homePageSlug}
       className="p-0.25"
       homePageSlug={homePageSlug}
     >
