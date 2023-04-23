@@ -14,7 +14,6 @@ const PROJECT_QUERY_BODY = groq`
   projectText[]{
     ...,
     "muxVideo": rawMuxVideo.asset->,
-    "testimonial": rawTestimonial->,
     markDefs[]{
       ...,
       _type == "InternalLink" => {
