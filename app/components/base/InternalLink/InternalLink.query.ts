@@ -4,7 +4,7 @@ import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSetting
 
 export const INTERNAL_LINK_QUERY = groq`
   _type == "InternalLink" => {
-      "page": @.internalUID->,
-      "appSettings": ${APP_SETTINGS_QUERY}
-    }
+    "page": @.internalUID->,
+    "appSettings": ${APP_SETTINGS_QUERY}
+  }
 `;
