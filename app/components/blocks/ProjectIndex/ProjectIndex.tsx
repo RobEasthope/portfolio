@@ -8,7 +8,7 @@ import type { ProjectIndex as rawProjectIndexProps } from '~/components/types/sa
 
 // TYPES
 export interface ProjectIndexProps extends rawProjectIndexProps {
-  projects: ProjectProps[];
+  projects: ProjectProps['page'][];
 }
 
 // MARKUP
