@@ -71,14 +71,6 @@ export async function loader({ params }: LoaderArgs) {
   });
 }
 
-// export const meta: V2_MetaFunction = mergeMeta(({ data }): V2_HtmlMetaDescriptor[] =>
-//   checkMetadata({
-//     title: data?.page?.title,
-//     description: data?.page?.metadataDescription,
-//     image: data?.page?.metadataImage,
-//   }),
-// );
-
 export const meta: V2_MetaFunction = ({
   matches,
   data,
