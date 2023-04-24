@@ -7,7 +7,7 @@ import { BasicTextComponents } from '~/components/base/Prose/components/BasicTex
 import { Type } from '~/components/base/Type/Type';
 
 export type GigProps = {
-  _id: string;
+  _id?: string;
   employer: OrganisationProps;
   jobTitle: string;
   description: BasicTextProps;
