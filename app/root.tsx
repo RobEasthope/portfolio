@@ -12,7 +12,6 @@ import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
-import BasicLayout from '~/routes/_basicLayout';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
@@ -33,6 +32,8 @@ import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 import LandingHeroCSS from '~/components/decoration/LandingHero/LandingHero.css';
 
