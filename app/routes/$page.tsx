@@ -94,7 +94,7 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page, header, footer } = useLoaderData<typeof loader>();
+  const { page } = useLoaderData<typeof loader>();
 
-  return <Page page={page} header={header} footer={footer} />;
+  return <Page page={page} />;
 }

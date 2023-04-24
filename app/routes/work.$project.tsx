@@ -60,7 +60,7 @@ export const meta: V2_MetaFunction = ({
   );
 
 export default function Index() {
-  const { page, header, footer } = useLoaderData<typeof loader>();
+  const { page } = useLoaderData<typeof loader>();
 
-  return <Project page={page} header={header} footer={footer} />;
+  return <Project page={page} />;
 }
