@@ -12,8 +12,8 @@ import type { OrganisationsProps } from '~/components/blocks/Organisation/Organi
 import { Organisations } from '~/components/blocks/Organisation/Organisations';
 import type { PageTitleProps } from '~/components/blocks/PageTitle/PageTitle';
 import { PageTitle } from '~/components/blocks/PageTitle/PageTitle';
-import type { ProjectIndexProps } from '~/components/blocks/ProjectIndex/ProjectIndex';
-import { ProjectIndex } from '~/components/blocks/ProjectIndex/ProjectIndex';
+import type { ProjectIndexProps } from '~/components/project/ProjectIndex/ProjectIndex';
+import { ProjectIndex } from '~/components/project/ProjectIndex/ProjectIndex';
 import type { SpacerProps } from '~/components/blocks/Spacer/Spacer';
 import { Spacer } from '~/components/blocks/Spacer/Spacer';
 import type { TextProps } from '~/components/blocks/Text/Text';

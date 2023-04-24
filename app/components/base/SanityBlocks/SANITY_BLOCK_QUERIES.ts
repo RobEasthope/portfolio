@@ -5,7 +5,7 @@ import { LANDING_HERO_QUERY } from '~/components/blocks/LandingHero/LandingHero.
 import { MUX_VIDEO_QUERY } from '~/components/blocks/MuxVideo/MuxVideo.query';
 import { ORGANISATIONS_QUERY } from '~/components/blocks/Organisation/Organisations.query';
 import { PAGE_TITLE_QUERY } from '~/components/blocks/PageTitle/PageTitle.query';
-import { PROJECT_INDEX_QUERY } from '~/components/blocks/ProjectIndex/ProjectIndex.query';
+import { PROJECT_INDEX_QUERY } from '~/components/project/ProjectIndex/ProjectIndex.query';
 import { SPACER_QUERY } from '~/components/blocks/Spacer/Spacer.query';
 import { TEXT_QUERY } from '~/components/blocks/Text/Text.query';
 import { VIMEO_VIDEO_QUERY } from '~/components/blocks/VimeoVideo/VimeoVideo.query';
