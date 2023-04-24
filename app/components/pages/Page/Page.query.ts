@@ -34,10 +34,7 @@ export const PAGE_BY_ID_QUERY = ({
   id,
   componentTypes = [],
 }: SanityPageByIdQueryProps) => {
-  const hydratedSanityBlockQueries: Record<string, unknown> =
-    SANITY_BLOCK_QUERIES({
-      courseId: null,
-    });
+  const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
   return groq`{
     "page": *[_id == "${id}"][0]{
@@ -53,6 +50,7 @@ export const PAGE_BY_ID_QUERY = ({
           .map(
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             (type: string) =>
+              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-member-access
               `_type == "${type}" => ${hydratedSanityBlockQueries[type]}`,
           )
           .join(',')}
