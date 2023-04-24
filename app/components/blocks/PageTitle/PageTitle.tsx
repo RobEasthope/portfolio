@@ -2,12 +2,11 @@ import { LineBreak } from '~/components/decoration/LineBreak';
 
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
-import type { PageTitle as rawPageTitleProps } from '~/components/types/sanity-schema';
 
 // TYPES
-export interface PageTitleProps extends rawPageTitleProps {
+export type PageTitleProps = {
   heading: string;
-}
+};
 
 export const PageTitle = ({ heading }: PageTitleProps) => {
   if (!heading) {
