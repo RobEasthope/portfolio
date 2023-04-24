@@ -22,7 +22,7 @@ export const Error404NavCard = ({
       <Type as="h3" className="text-base font-medium text-gray-900">
         <span className="rounded-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2">
           <InternalLink
-            href={link?.to?.slug?.current || null}
+            href={link?.to?.slug?.current}
             className="focus:outline-none"
           >
             <span className="absolute inset-0" aria-hidden="true" />
