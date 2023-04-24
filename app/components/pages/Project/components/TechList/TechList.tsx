@@ -10,7 +10,7 @@ export type TechProps = {
 };
 
 export type TechListProps = {
-  technologies: TechProps[];
+  technologies: TechProps[] | undefined;
 };
 
 export const TechList = ({ technologies }: TechListProps) => {
