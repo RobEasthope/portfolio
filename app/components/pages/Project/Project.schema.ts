@@ -1,3 +1,4 @@
+import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 import { formatSlug } from '~/utils/formatSlug';
 
@@ -9,6 +10,7 @@ export default defineType({
   name: 'project',
   title: 'Project',
   type: 'document',
+  icon: BsBrush,
   fields: [
     defineField({
       name: 'title',
