@@ -16,7 +16,7 @@ import Header from '~/components/navigation/Header/Header.schema';
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
 import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
-import Dot from '~/components/blocks/Dot/Dot.schema';
+import Dot from '~/components/decoration/Dot/Dot.schema';
 import education from '~/components/blocks/Education/Education.schema';
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
 import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage.schema';

@@ -1,4 +1,4 @@
-import { DOT_QUERY } from '~/components/blocks/Dot/Dot.query';
+import { DOT_QUERY } from '~/components/decoration/Dot/Dot.query';
 import { GALLERY_QUERY } from '~/components/blocks/Gallery/Gallery.query';
 import { IMAGE_QUERY } from '~/components/blocks/Image/Image.query';
 import { LANDING_HERO_QUERY } from '~/components/blocks/LandingHero/LandingHero.query';

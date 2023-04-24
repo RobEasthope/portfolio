@@ -15,7 +15,7 @@ import { Type } from '~/components/base/Type/Type';
 import type { FooterProps } from '~/components/navigation/Footer/Footer';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 
-import { Dot } from '~/components/blocks/Dot/Dot';
+import { Dot } from '~/components/decoration/Dot/Dot';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
