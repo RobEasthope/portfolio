@@ -33,10 +33,9 @@ import Text from '~/components/blocks/Text/Text.schema';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
 
-// Pages
+import CV from '~/components/pages/CV/CV.schema';
 import page from '~/components/pages/Page/Page.schema';
 import project from '~/components/pages/Project/Project.schema';
-// Data
 import tech from '~/components/pages/Project/schemas/Tech.schema';
 
 export const schemaTypes = [
@@ -86,6 +85,7 @@ export const schemaTypes = [
   YoutubeVideo,
 
   // Pages
+  CV,
   page,
   project,
 ];
