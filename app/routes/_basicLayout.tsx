@@ -38,12 +38,10 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
         {children}
       </Box>
 
-      {/* {slug !== HOME_PAGE_SLUG && ( */}
       <Footer
         footerNavigation={footer?.footerNavigation}
         copyrightText={footer?.copyrightText}
       />
-      {/* )} */}
     </Box>
   );
 };
