@@ -2,7 +2,7 @@ import { visionTool } from '@sanity/vision';
 import { BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
 import { GoPaintcan } from 'react-icons/go';
-import { HiOutlineCode } from 'react-icons/hi';
+import { HiOutlineBriefcase, HiOutlineCode } from 'react-icons/hi';
 import { IoMdSchool } from 'react-icons/io';
 import {
   RiBriefcaseFill,
@@ -60,7 +60,7 @@ export default defineConfig({
             S.divider(),
             S.listItem()
               .title('CVs')
-              .icon(RiBriefcaseFill)
+              .icon(HiOutlineBriefcase)
               .child(
                 S.documentTypeList('CV')
                   .title('CVs')

@@ -1,4 +1,4 @@
-import { RiBriefcaseFill } from 'react-icons/ri';
+import { HiOutlineBriefcase } from 'react-icons/hi';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -7,7 +7,7 @@ export default defineType({
   name: 'CV',
   title: 'CV',
   type: 'document',
-  icon: RiBriefcaseFill,
+  icon: HiOutlineBriefcase,
   fields: [
     defineField({
       name: 'title',
