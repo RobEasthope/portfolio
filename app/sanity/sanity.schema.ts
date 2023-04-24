@@ -30,7 +30,7 @@ import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
 import organisation from '~/components/about/Organisation/Organisation.schema';
 import Organisations from '~/components/about/Organisation/Organisations.schema';
 import PageTitle from '~/components/blocks/PageTitle/PageTitle.schema';
-import Spacer from '~/components/blocks/Spacer/Spacer.schema';
+import Spacer from '~/components/decoration/Spacer/Spacer.schema';
 import Text from '~/components/blocks/Text/Text.schema';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
