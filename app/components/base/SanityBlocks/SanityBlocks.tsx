@@ -8,8 +8,8 @@ import type { LandingHeroProps } from '~/components/blocks/LandingHero/LandingHe
 import { LandingHero } from '~/components/blocks/LandingHero/LandingHero';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
-import type { OrganisationsProps } from '~/components/blocks/Organisation/Organisations';
-import { Organisations } from '~/components/blocks/Organisation/Organisations';
+import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
+import { Organisations } from '~/components/about/Organisation/Organisations';
 import type { PageTitleProps } from '~/components/blocks/PageTitle/PageTitle';
 import { PageTitle } from '~/components/blocks/PageTitle/PageTitle';
 import type { ProjectIndexProps } from '~/components/project/ProjectIndex/ProjectIndex';

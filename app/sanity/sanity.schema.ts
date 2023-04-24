@@ -27,8 +27,8 @@ import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/Ga
 import Image from '~/components/blocks/Image/Image.schema';
 import LandingHero from '~/components/blocks/LandingHero/LandingHero.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
-import organisation from '~/components/blocks/Organisation/Organisation.schema';
-import Organisations from '~/components/blocks/Organisation/Organisations.schema';
+import organisation from '~/components/about/Organisation/Organisation.schema';
+import Organisations from '~/components/about/Organisation/Organisations.schema';
 import PageTitle from '~/components/blocks/PageTitle/PageTitle.schema';
 import Spacer from '~/components/blocks/Spacer/Spacer.schema';
 import Text from '~/components/blocks/Text/Text.schema';
