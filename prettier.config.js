@@ -6,8 +6,9 @@ module.exports = {
   tailwindConfig: "./tailwind.config.ts",
   importOrder: [
     "^~/types/(.*)$",
-    "^~/sanity/(.*)$",
     "^~/constants/(.*)$",
+    "^~/utils/(.*)$",
+    "^~/sanity/(.*)$",
     "^~/components/settings/(.*)$",
     "^~/components/base/(.*)$",
     "^~/components/navigation/(.*)$",
