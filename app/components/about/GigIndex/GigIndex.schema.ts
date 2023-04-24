@@ -3,28 +3,31 @@ import { defineField, defineType } from 'sanity';
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
 export default defineType({
-  name: 'ProjectIndex',
-  title: 'Project index',
+  name: 'GigIndex',
+  title: 'Gig index',
   type: 'object',
   fields: [
     defineField({
-      name: 'index',
-      title: 'Index',
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    }),
+    defineField({
+      name: 'selectedGigs',
+      title: 'Selected gigs',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'project' } }],
     }),
   ],
   preview: {
     select: {
-      title: 'title',
-      media: 'image',
+      title: 'heading',
     },
     prepare(selection: BasicSanityListingProps) {
-      const { title, media } = selection;
+      const { title } = selection;
       return {
-        title: title || 'Project index',
-        subtitle: title ? 'Project index' : '',
-        media,
+        title: title || 'Gig index',
+        subtitle: title ? 'Gig index' : '',
       };
     },
   },
