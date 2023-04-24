@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import type { ReactNode } from 'react';
 import { createElement } from 'react';
 
-type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
+export type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
   as: string;
   className?: string;
   children: ReactNode | ReactNode[];
