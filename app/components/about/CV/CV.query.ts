@@ -2,12 +2,12 @@ import groq from 'groq';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
+
 import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES';
 
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
-
-import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 // Fetch all page slugs
 export const CV_SLUGS_QUERY = groq`

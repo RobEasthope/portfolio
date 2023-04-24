@@ -1,16 +1,17 @@
-import CV from '~/components/about/CV/CV.schema';
-import Details from '~/components/about/Details/Details.schema';
-import education from '~/components/about/Education/Education.schema';
-import gig from '~/components/about/Gig/Gig.schema';
-import organisation from '~/components/about/Organisation/Organisation.schema';
-import Organisations from '~/components/about/Organisation/Organisations.schema';
-import Dot from '~/components/decoration/Dot/Dot.schema';
-import LandingHero from '~/components/decoration/LandingHero/LandingHero.schema';
-import PageTitle from '~/components/decoration/PageTitle/PageTitle.schema';
-import Spacer from '~/components/decoration/Spacer/Spacer.schema';
+import Gallery from '~/components/generic/Gallery/Gallery.schema';
+import GalleryImage from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.schema';
+import Image from '~/components/generic/Image/Image.schema';
+import MuxVideo from '~/components/generic/MuxVideo/MuxVideo.schema';
+import page from '~/components/generic/Page/Page.schema';
+import Text from '~/components/generic/Text/Text.schema';
+import VimeoVideo from '~/components/generic/VimeoVideo/VimeoVideo.schema';
+import YoutubeVideo from '~/components/generic/YoutubeVideo/YoutubeVideo.schema';
 import project from '~/components/project/Project/Project.schema';
 import tech from '~/components/project/Project/schemas/Tech.schema';
 import ProjectIndex from '~/components/project/ProjectIndex/ProjectIndex.schema';
+
+import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
+import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
 import EmailLink from '~/components/base/EmailLink/EmailLink.schema';
 import EmailLinkWithTitle from '~/components/base/EmailLink/EmailLinkWithTitle.schema';
@@ -25,18 +26,17 @@ import ProjectText from '~/components/base/Prose/components/ProjectText/ProjectT
 import Footer from '~/components/navigation/Footer/Footer.schema';
 import Header from '~/components/navigation/Header/Header.schema';
 
-import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
-import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
+import Dot from '~/components/decoration/Dot/Dot.schema';
+import LandingHero from '~/components/decoration/LandingHero/LandingHero.schema';
+import PageTitle from '~/components/decoration/PageTitle/PageTitle.schema';
+import Spacer from '~/components/decoration/Spacer/Spacer.schema';
 
-import Gallery from '~/components/generic/Gallery/Gallery.schema';
-import GalleryImage from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.schema';
-import Image from '~/components/generic/Image/Image.schema';
-import MuxVideo from '~/components/generic/MuxVideo/MuxVideo.schema';
-import Text from '~/components/generic/Text/Text.schema';
-import VimeoVideo from '~/components/generic/VimeoVideo/VimeoVideo.schema';
-import YoutubeVideo from '~/components/generic/YoutubeVideo/YoutubeVideo.schema';
-
-import page from '~/components/generic/Page/Page.schema';
+import CV from '~/components/about/CV/CV.schema';
+import Details from '~/components/about/Details/Details.schema';
+import education from '~/components/about/Education/Education.schema';
+import gig from '~/components/about/Gig/Gig.schema';
+import organisation from '~/components/about/Organisation/Organisation.schema';
+import Organisations from '~/components/about/Organisation/Organisations.schema';
 
 export const schemaTypes = [
   // Links

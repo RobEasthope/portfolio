@@ -6,12 +6,12 @@ import type {
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+
 import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
-
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 
 export type HeaderLogoProps = {
   logo?: {

@@ -5,6 +5,8 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+
 import { Box } from '~/components/base/Box/Box';
 import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
@@ -13,8 +15,6 @@ import type { InternalLinkWithTitleSchemaProps } from '~/components/base/Interna
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
 import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
 import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
-
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 
 // TYPES
 export type HeaderProps = {

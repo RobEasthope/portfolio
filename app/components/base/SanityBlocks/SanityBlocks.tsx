@@ -1,27 +1,29 @@
-import type { DotProps } from '~/components/decoration/Dot/Dot';
-import { Dot } from '~/components/decoration/Dot/Dot';
 import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
 import { Gallery } from '~/components/generic/Gallery/Gallery';
 import type { ImageProps } from '~/components/generic/Image/Image';
 import { Image } from '~/components/generic/Image/Image';
-import type { LandingHeroProps } from '~/components/decoration/LandingHero/LandingHero';
-import { LandingHero } from '~/components/decoration/LandingHero/LandingHero';
 import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
-import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
-import { Organisations } from '~/components/about/Organisation/Organisations';
-import type { PageTitleProps } from '~/components/decoration/PageTitle/PageTitle';
-import { PageTitle } from '~/components/decoration/PageTitle/PageTitle';
-import type { ProjectIndexProps } from '~/components/project/ProjectIndex/ProjectIndex';
-import { ProjectIndex } from '~/components/project/ProjectIndex/ProjectIndex';
-import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
-import { Spacer } from '~/components/decoration/Spacer/Spacer';
 import type { TextProps } from '~/components/generic/Text/Text';
 import { Text } from '~/components/generic/Text/Text';
 import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
 import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import type { ProjectIndexProps } from '~/components/project/ProjectIndex/ProjectIndex';
+import { ProjectIndex } from '~/components/project/ProjectIndex/ProjectIndex';
+
+import type { DotProps } from '~/components/decoration/Dot/Dot';
+import { Dot } from '~/components/decoration/Dot/Dot';
+import type { LandingHeroProps } from '~/components/decoration/LandingHero/LandingHero';
+import { LandingHero } from '~/components/decoration/LandingHero/LandingHero';
+import type { PageTitleProps } from '~/components/decoration/PageTitle/PageTitle';
+import { PageTitle } from '~/components/decoration/PageTitle/PageTitle';
+import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
+import { Spacer } from '~/components/decoration/Spacer/Spacer';
+
+import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
+import { Organisations } from '~/components/about/Organisation/Organisations';
 
 // TYPES
 export type SanityBlocksProps = {

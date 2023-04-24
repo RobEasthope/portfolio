@@ -7,13 +7,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
-
-import { Box } from '~/components/base/Box/Box';
-import { EmailLink } from '~/components/base/EmailLink/EmailLink';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
-import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { Type } from '~/components/base/Type/Type';
-
 import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
 import { Gallery } from '~/components/generic/Gallery/Gallery';
 import type { ImageProps } from '~/components/generic/Image/Image';
@@ -24,6 +17,12 @@ import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo
 import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+
+import { Box } from '~/components/base/Box/Box';
+import { EmailLink } from '~/components/base/EmailLink/EmailLink';
+import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { Type } from '~/components/base/Type/Type';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>

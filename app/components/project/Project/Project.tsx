@@ -4,6 +4,8 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
+import type { TechProps } from '~/components/project/Project/components/TechList/TechList';
+import { TechList } from '~/components/project/Project/components/TechList/TechList';
 
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
@@ -15,12 +17,9 @@ import { Type } from '~/components/base/Type/Type';
 import type { FooterProps } from '~/components/navigation/Footer/Footer';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 
-import { Dot } from '~/components/decoration/Dot/Dot';
-
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
-import type { TechProps } from '~/components/project/Project/components/TechList/TechList';
-import { TechList } from '~/components/project/Project/components/TechList/TechList';
+import { Dot } from '~/components/decoration/Dot/Dot';
 
 export type ProjectProps = {
   page?: {
