@@ -37,6 +37,7 @@ export async function loader({ params }: LoaderArgs) {
   );
 
   if (params?.page === appSettings?.homePageSlug) {
+    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
     });
@@ -57,6 +58,7 @@ export async function loader({ params }: LoaderArgs) {
   );
 
   if (!payload?.page) {
+    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
     });

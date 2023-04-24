@@ -33,6 +33,7 @@ export async function loader({ params }: LoaderArgs) {
   );
 
   if (!payload?.page || !payload.page?.displayProject) {
+    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
     });
