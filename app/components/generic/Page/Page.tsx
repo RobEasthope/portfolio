@@ -7,8 +7,6 @@ import type {
 
 import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
 
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-
 // TYPES
 export type PageProps = {
   page: {

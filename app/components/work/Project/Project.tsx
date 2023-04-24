@@ -14,8 +14,6 @@ import { ProjectTextComponents } from '~/components/base/Prose/components/Projec
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-
 import { Dot } from '~/components/decoration/Dot/Dot';
 
 export type ProjectProps = {

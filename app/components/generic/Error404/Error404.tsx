@@ -12,8 +12,6 @@ import { Box } from '~/components/base/Box/Box';
 import { Button } from '~/components/base/Button/Button';
 import { Type } from '~/components/base/Type/Type';
 
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-
 export type Error404Props = {
   page: {
     _type: 'Error404';
