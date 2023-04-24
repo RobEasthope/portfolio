@@ -32,6 +32,7 @@ export default defineType({
       type: 'array',
       of: [
         { type: 'Dot' },
+        { type: 'GigIndex' },
         { type: 'Organisations' },
         { type: 'Spacer' },
         { type: 'Text' },
