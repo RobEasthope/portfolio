@@ -12,7 +12,7 @@ import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
 
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';

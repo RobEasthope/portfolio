@@ -4,8 +4,9 @@ import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { Suspense, lazy } from 'react';
 
-import styles from '~/sanity/SanityStudio/SanityStudio.css';
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+
+import styles from '~/components/sanity/SanityStudio/SanityStudio.css';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
@@ -33,7 +34,9 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
 ];
 
-const SanityStudio = lazy(() => import('~/sanity/SanityStudio/SanityStudio'));
+const SanityStudio = lazy(
+  () => import('~/components/sanity/SanityStudio/SanityStudio'),
+);
 const Fallback = (
   <div className="flex h-screen w-screen items-center justify-center">
     Loading...
