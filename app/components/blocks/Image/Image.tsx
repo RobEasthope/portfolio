@@ -11,7 +11,7 @@ import { Type } from '~/components/base/Type/Type';
 
 // TYPES
 export type ImageProps = {
-  _type: 'Image';
+  _type?: 'Image';
   image?: {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;

@@ -9,6 +9,7 @@ import { romanize } from '~/components/navigation/Footer/romanize';
 
 // TYPES
 export type FooterProps = {
+  _type?: 'Footer';
   footerNavigation:
     | [ExternalLinkWithTitleSchemaProps | InternalLinkWithTitleSchemaProps]
     | undefined;
@@ -31,7 +32,7 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
           aria-label="Footer"
         >
           <Box as="ul" className="flex gap-1">
-            {footerNavigation?.map((nav, i) => (
+            {footerNavigation?.map((nav) => (
               <Type as="li" key={nav?._key} className="text-base font-medium">
                 <SuperLink
                   link={nav}

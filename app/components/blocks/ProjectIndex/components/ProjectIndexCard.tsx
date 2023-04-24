@@ -5,7 +5,7 @@ import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import type { ProjectProps } from '~/components/pages/Project/Project';
 
 export type ProjectIndexCardProps = {
-  project: ProjectProps;
+  project: ProjectProps['page'];
 };
 
 export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
@@ -23,7 +23,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
           alt={project?.title || ''}
           mode={project?.containLogo ? 'contain' : 'responsive'}
           maxWidth={100}
-          aspectRatio={project?.containLogo ? null : 1}
+          aspectRatio={project?.containLogo ? 0 : 1}
           className="rounded-full w-2 h-2 flex-shrink-0"
         />
 

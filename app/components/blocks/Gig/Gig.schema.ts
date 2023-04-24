@@ -65,7 +65,17 @@ export default defineType({
       endDate: 'endDate',
       employerLogo: 'employer.logo',
     },
-    prepare({ startDate, endDate, title, employerLogo }) {
+    prepare({
+      startDate,
+      endDate,
+      title,
+      employerLogo,
+    }: {
+      startDate: string;
+      endDate: string;
+      title: string;
+      employerLogo: string;
+    }) {
       dayjs.extend(advancedFormat);
 
       const formattedStartDate = dayjs.default(startDate).format('MMM Do YYYY');
@@ -76,7 +86,7 @@ export default defineType({
         media: employerLogo,
         subtitle: `${formattedStartDate} - ${
           endDate ? formattedEndDate : 'Present'
-        }`, // YYYY-MM-DD --> YYYY,
+        }`,
       };
     },
   },

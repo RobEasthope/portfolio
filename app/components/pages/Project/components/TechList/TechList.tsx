@@ -4,12 +4,13 @@ import { Type } from '~/components/base/Type/Type';
 
 export type TechProps = {
   _type: 'tech';
+  _id: string;
   name: string;
   url: string;
 };
 
 export type TechListProps = {
-  technologies: TechProps[];
+  technologies: TechProps[] | undefined;
 };
 
 export const TechList = ({ technologies }: TechListProps) => {

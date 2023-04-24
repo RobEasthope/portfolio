@@ -1,9 +1,19 @@
+import type {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityReference,
+} from 'sanity-codegen';
+
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/base/Prose/Prose';
 import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
+
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
 
 import { Dot } from '~/components/blocks/Dot/Dot';
 
@@ -12,10 +22,46 @@ import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 import { TechList } from '~/components/pages/Project/components/TechList/TechList';
 
 export type ProjectProps = {
-  blocks: [];
+  page?: {
+    _id?: string;
+    _type?: 'Project';
+    title?: string;
+    slug?: {
+      _type?: 'slug';
+      current?: string;
+    };
+    thumbnailImage?: {
+      _type: 'image';
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+    containLogo?: boolean;
+    description?: string;
+    clientOrg?: {
+      name?: string;
+      url?: string;
+    };
+    agencyOrg?: {
+      name?: string;
+      url?: string;
+    };
+    projectText?: any[] | string;
+    projectUrl?: string;
+    projectUrlTitle?: string;
+    repoUrl?: string;
+    date?: string;
+    technologies?: {
+      name?: string;
+      url?: string;
+    }[];
+    displayProject?: boolean;
+  };
+  header: HeaderProps;
+  footer: FooterProps;
 };
 
-export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
+export const Project = ({ page, header, footer }: ProjectProps) => {
   if (!page?.displayProject || page?.displayProject === false) return null;
 
   return (
@@ -30,7 +76,7 @@ export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
             alt={page?.title || ''}
             mode={page?.containLogo ? 'contain' : 'responsive'}
             maxWidth={200}
-            aspectRatio={page?.containLogo ? null : 1}
+            aspectRatio={page?.containLogo ? 0 : 1}
             className="mx-auto rounded-full w-4 h-4"
           />
 

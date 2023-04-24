@@ -20,7 +20,12 @@ export type LandingHeroProps = {
     hotspot?: SanityImageHotspot;
   };
   caption?: string;
-  bkgVideo: unknown;
+  bkgVideo: {
+    _type: 'muxVideo';
+    playbackId: string;
+    assetId: string;
+    title: string;
+  };
 };
 
 // MARKUP

@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { TbParachute } from 'react-icons/tb';
 import type {
   SanityImageAsset,
@@ -37,58 +36,50 @@ export type Error404Props = {
   footer: FooterProps;
 };
 
-export const Error404 = ({ page, header, footer }: Error404Props) => {
-  const router = useRouter();
-
-  return (
-    <BasicLayout header={header} footer={footer}>
-      <Box as="div" className="bg-white">
-        <Box as="main" className="mx-auto w-full max-w-7xl px-1 lg:px-3">
-          <Box as="div" className="flex-shrink-0 pt-1">
-            <TbParachute className="mx-auto h-2 w-auto" />
+export const Error404 = ({ page, header, footer }: Error404Props) => (
+  <BasicLayout header={header} footer={footer}>
+    <Box as="div" className="bg-white">
+      <Box as="main" className="mx-auto w-full max-w-7xl px-1 lg:px-3">
+        <Box as="div" className="flex-shrink-0 pt-1">
+          <TbParachute className="mx-auto h-2 w-auto" />
+        </Box>
+        <Box as="div" className="mx-auto max-w-xl py-2">
+          <Box as="div" className="text-center">
+            <Type as="p" className="text-lg font-semibold">
+              404
+            </Type>
+            <Type as="h1" className="mb-1 text-3xl font-bold tracking-tight">
+              {page?.heading}
+            </Type>
+            <Type as="p" className="mb-1 text-lg">
+              {page?.subheading}
+            </Type>
           </Box>
-          <Box as="div" className="mx-auto max-w-xl py-2">
-            <Box as="div" className="text-center">
-              <Type as="p" className="text-lg font-semibold">
-                404
-              </Type>
-              <Type as="h1" className="mb-1 text-3xl font-bold tracking-tight">
-                {page?.heading}
-              </Type>
-              <Type as="p" className="mb-1 text-lg">
-                {page?.subheading}
-              </Type>
+          <Box as="div">
+            <Box
+              as="ul"
+              className="mt-2 divide-y divide-gray-200 border-b border-t border-gray-200"
+            >
+              {page?.cards?.map((card, i) => (
+                <Error404NavCard
+                  heading={card.heading}
+                  description={card.description}
+                  link={card.link}
+                  key={i}
+                />
+              ))}
             </Box>
-            <Box as="div">
-              <Box
-                as="ul"
-                className="mt-2 divide-y divide-gray-200 border-b border-t border-gray-200"
-              >
-                {page?.cards?.map((card, i) => (
-                  <Error404NavCard
-                    heading={card.heading}
-                    description={card.description}
-                    link={card.link}
-                    key={i}
-                  />
-                ))}
+            {page?.goBackTitle && (
+              <Box as="div" className="mt-2">
+                <Button type="button" className="text-base">
+                  <span aria-hidden="true">&larr; </span>
+                  {page?.goBackTitle}
+                </Button>
               </Box>
-              {page?.goBackTitle && (
-                <Box as="div" className="mt-2">
-                  <Button
-                    type="button"
-                    onClick={() => router.back()}
-                    className="text-base"
-                  >
-                    <span aria-hidden="true">&larr; </span>
-                    {page?.goBackTitle}
-                  </Button>
-                </Box>
-              )}
-            </Box>
+            )}
           </Box>
         </Box>
       </Box>
-    </BasicLayout>
-  );
-};
+    </Box>
+  </BasicLayout>
+);
