@@ -1,4 +1,9 @@
 import Details from '~/components/about/Details/Details.schema';
+import education from '~/components/about/Education/Education.schema';
+import Dot from '~/components/decoration/Dot/Dot.schema';
+import project from '~/components/project/Project/Project.schema';
+import tech from '~/components/project/Project/schemas/Tech.schema';
+import ProjectIndex from '~/components/project/ProjectIndex/ProjectIndex.schema';
 
 import EmailLink from '~/components/base/EmailLink/EmailLink.schema';
 import EmailLinkWithTitle from '~/components/base/EmailLink/EmailLinkWithTitle.schema';
@@ -16,8 +21,6 @@ import Header from '~/components/navigation/Header/Header.schema';
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
 import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
-import Dot from '~/components/decoration/Dot/Dot.schema';
-import education from '~/components/blocks/Education/Education.schema';
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
 import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage.schema';
 import gig from '~/components/blocks/Gig/Gig.schema';
@@ -27,7 +30,6 @@ import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
 import organisation from '~/components/blocks/Organisation/Organisation.schema';
 import Organisations from '~/components/blocks/Organisation/Organisations.schema';
 import PageTitle from '~/components/blocks/PageTitle/PageTitle.schema';
-import ProjectIndex from '~/components/project/ProjectIndex/ProjectIndex.schema';
 import Spacer from '~/components/blocks/Spacer/Spacer.schema';
 import Text from '~/components/blocks/Text/Text.schema';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo.schema';
@@ -35,8 +37,6 @@ import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
 
 import CV from '~/components/pages/CV/CV.schema';
 import page from '~/components/pages/Page/Page.schema';
-import project from '~/components/project/Project/Project.schema';
-import tech from '~/components/project/Project/schemas/Tech.schema';
 
 export const schemaTypes = [
   // Links
