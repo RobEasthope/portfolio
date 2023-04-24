@@ -30,7 +30,7 @@ import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataF
 
 import Gallery from '~/components/generic/Gallery/Gallery.schema';
 import GalleryImage from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.schema';
-import Image from '~/components/blocks/Image/Image.schema';
+import Image from '~/components/generic/Image/Image.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
 import Text from '~/components/blocks/Text/Text.schema';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo.schema';

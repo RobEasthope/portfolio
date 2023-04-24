@@ -16,8 +16,8 @@ import { Type } from '~/components/base/Type/Type';
 
 import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
 import { Gallery } from '~/components/generic/Gallery/Gallery';
-import type { ImageProps } from '~/components/blocks/Image/Image';
-import { Image } from '~/components/blocks/Image/Image';
+import type { ImageProps } from '~/components/generic/Image/Image';
+import { Image } from '~/components/generic/Image/Image';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
 import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
