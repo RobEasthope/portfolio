@@ -1,7 +1,13 @@
+import CV from '~/components/about/CV/CV.schema';
 import Details from '~/components/about/Details/Details.schema';
 import education from '~/components/about/Education/Education.schema';
 import gig from '~/components/about/Gig/Gig.schema';
+import organisation from '~/components/about/Organisation/Organisation.schema';
+import Organisations from '~/components/about/Organisation/Organisations.schema';
 import Dot from '~/components/decoration/Dot/Dot.schema';
+import LandingHero from '~/components/decoration/LandingHero/LandingHero.schema';
+import PageTitle from '~/components/decoration/PageTitle/PageTitle.schema';
+import Spacer from '~/components/decoration/Spacer/Spacer.schema';
 import project from '~/components/project/Project/Project.schema';
 import tech from '~/components/project/Project/schemas/Tech.schema';
 import ProjectIndex from '~/components/project/ProjectIndex/ProjectIndex.schema';
@@ -25,17 +31,11 @@ import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataF
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
 import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage.schema';
 import Image from '~/components/blocks/Image/Image.schema';
-import LandingHero from '~/components/decoration/LandingHero/LandingHero.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
-import organisation from '~/components/about/Organisation/Organisation.schema';
-import Organisations from '~/components/about/Organisation/Organisations.schema';
-import PageTitle from '~/components/blocks/PageTitle/PageTitle.schema';
-import Spacer from '~/components/decoration/Spacer/Spacer.schema';
 import Text from '~/components/blocks/Text/Text.schema';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
 
-import CV from '~/components/pages/CV/CV.schema';
 import page from '~/components/pages/Page/Page.schema';
 
 export const schemaTypes = [
