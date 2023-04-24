@@ -5,6 +5,9 @@ import { ProjectTextComponents } from '~/components/base/Prose/components/Projec
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+
 import { Dot } from '~/components/blocks/Dot/Dot';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
@@ -12,10 +15,46 @@ import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 import { TechList } from '~/components/pages/Project/components/TechList/TechList';
 
 export type ProjectProps = {
-  blocks: [];
+  page?: {
+    _type?: 'Project';
+    title?: string;
+    slug?: {
+      _type?: 'slug';
+      current?: string;
+    };
+    thumbnailImage?: {
+      _type?: 'image';
+      asset?: {
+        _type?: 'reference';
+        _ref?: string;
+      };
+    };
+    containLogo?: boolean;
+    description?: string;
+    clientOrg?: {
+      name?: string;
+      url?: string;
+    };
+    agencyOrg?: {
+      name?: string;
+      url?: string;
+    };
+    projectText?: any;
+    projectUrl?: string;
+    projectUrlTitle?: string;
+    repoUrl?: string;
+    date?: string;
+    technologies?: {
+      name?: string;
+      url?: string;
+    }[];
+    displayProject?: boolean;
+  };
+  header: HeaderProps;
+  footer: FooterProps;
 };
 
-export const Project = ({ page, header, footer }: { page: ProjectProps }) => {
+export const Project = ({ page, header, footer }: ProjectProps) => {
   if (!page?.displayProject || page?.displayProject === false) return null;
 
   return (
