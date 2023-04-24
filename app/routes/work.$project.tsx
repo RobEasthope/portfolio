@@ -12,7 +12,7 @@ import { mergeMeta } from '~/utils/mergeMeta';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { Error404Props } from '~/components/pages/Error404/Error404';
+import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { ProjectProps } from '~/components/project/Project/Project';
 import { Project } from '~/components/project/Project/Project';
 import { PROJECT_BY_SLUG_QUERY } from '~/components/project/Project/Project.query';

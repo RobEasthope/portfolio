@@ -36,7 +36,7 @@ import Text from '~/components/blocks/Text/Text.schema';
 import VimeoVideo from '~/components/blocks/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
 
-import page from '~/components/pages/Page/Page.schema';
+import page from '~/components/generic/Page/Page.schema';
 
 export const schemaTypes = [
   // Links
