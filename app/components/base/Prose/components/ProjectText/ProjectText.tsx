@@ -20,8 +20,8 @@ import type { ImageProps } from '~/components/generic/Image/Image';
 import { Image } from '~/components/generic/Image/Image';
 import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
-import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
+import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
 import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
 
