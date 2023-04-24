@@ -12,8 +12,6 @@ import { mergeMeta } from '~/utils/mergeMeta';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
-import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
-
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import type { ProjectProps } from '~/components/pages/Project/Project';
 import { Project } from '~/components/pages/Project/Project';
@@ -21,7 +19,6 @@ import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.query'
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader({ params }: LoaderArgs) {
@@ -43,7 +40,6 @@ export async function loader({ params }: LoaderArgs) {
     page: payload?.page || null,
     header: payload?.header || null,
     footer: payload?.footer || null,
-    fallbacks: payload?.fallbacks || null,
     error404: payload?.error404 || null,
   });
 }
