@@ -4,6 +4,7 @@ import { Type } from '~/components/base/Type/Type';
 
 export type TechProps = {
   _type: 'tech';
+  _id: string;
   name: string;
   url: string;
 };
