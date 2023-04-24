@@ -1,6 +1,11 @@
+/* eslint-disable camelcase */
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
-import type { LoaderArgs } from '@vercel/remix';
+import type {
+  LoaderArgs,
+  V2_HtmlMetaDescriptor,
+  V2_MetaFunction,
+} from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
@@ -77,6 +82,9 @@ export async function loader({ params }: LoaderArgs) {
 export const meta: V2_MetaFunction = ({
   matches,
   data,
+}: {
+  matches: string[];
+  data: PageProps;
 }): V2_HtmlMetaDescriptor[] =>
   mergeMeta(
     matches,

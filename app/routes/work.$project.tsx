@@ -1,6 +1,10 @@
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
-import type { LoaderArgs } from '@vercel/remix';
+import type {
+  LoaderArgs,
+  V2_HtmlMetaDescriptor,
+  V2_MetaFunction,
+} from '@vercel/remix';
 import { blockPreview } from 'sanity-pills';
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
@@ -23,7 +27,7 @@ export async function loader({ params }: LoaderArgs) {
   const payload: ProjectBySlugProps = await sanityAPI.fetch(
     PROJECT_BY_SLUG_QUERY,
     {
-      slug: `work/${params?.project}`,
+      slug: `work/${params?.project as string}`,
     },
   );
 
@@ -42,9 +46,13 @@ export async function loader({ params }: LoaderArgs) {
   });
 }
 
+// eslint-disable-next-line camelcase
 export const meta: V2_MetaFunction = ({
   matches,
   data,
+}: {
+  matches: string[];
+  data: ProjectProps;
 }): V2_HtmlMetaDescriptor[] =>
   mergeMeta(
     matches,
