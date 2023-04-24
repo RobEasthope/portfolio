@@ -1,3 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
+/* eslint-disable camelcase */
+import type { V2_HtmlMetaDescriptor } from '@vercel/remix';
+
 /**
  * A utility function for the v2 meta API. It will
  * merge (filter) root metatags - replacing any that match
