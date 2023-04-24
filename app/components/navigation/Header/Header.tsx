@@ -23,7 +23,6 @@ export type HeaderProps = {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
-    attribution?: string;
   };
   primaryNavigation: [
     | ExternalLinkWithTitleSchemaProps

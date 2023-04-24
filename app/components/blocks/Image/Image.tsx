@@ -17,9 +17,8 @@ export type ImageProps = {
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
-    caption?: string;
-    attribution?: string;
   };
+  caption?: string;
   aspectRatio?: number;
   maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
 };
@@ -27,6 +26,7 @@ export type ImageProps = {
 // MARKUP
 export const Image = ({
   image,
+  caption,
   maxWidth = 'medium',
   aspectRatio = 0,
 }: ImageProps) => {
@@ -39,14 +39,14 @@ export const Image = ({
       <Box as="figure" className="mx-auto" maxWidth={maxWidth}>
         <SanityImage
           asset={image}
-          alt={image?.caption || ''}
+          alt={caption}
           aspectRatio={aspectRatio}
           mode="responsive"
           maxWidth={4000}
         />
         <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
           <Type as="figcaption" className="text-sm italic text-gray-600 ">
-            {image?.caption}
+            {caption}
           </Type>
         </Box>
       </Box>

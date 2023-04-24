@@ -19,19 +19,12 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      fields: [
-        defineField({
-          name: 'caption',
-          type: 'string',
-          title: 'Caption',
-        }),
-        defineField({
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
-        }),
-      ],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'caption',
+      title: 'Caption',
+      type: 'text',
     }),
     defineField({
       name: 'aspectRatio',

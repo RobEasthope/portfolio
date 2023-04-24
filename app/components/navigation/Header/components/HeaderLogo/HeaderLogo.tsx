@@ -18,7 +18,6 @@ export type HeaderLogoProps = {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
-    attribution?: string;
   };
   homePageSlug: AppSettingsProps['homePageSlug'];
 };
