@@ -5,7 +5,7 @@ import { useLoaderData } from '@remix-run/react';
 import { Suspense, lazy } from 'react';
 
 import styles from '~/sanity/SanityStudio/SanityStudio.css';
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';

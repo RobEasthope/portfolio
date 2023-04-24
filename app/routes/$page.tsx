@@ -20,7 +20,7 @@ import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps'
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
 
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
