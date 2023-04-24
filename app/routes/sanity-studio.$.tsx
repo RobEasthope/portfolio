@@ -3,8 +3,10 @@ import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { Suspense, lazy } from 'react';
-import styles from '~/components/sanity/SanityStudio/SanityStudio.css';
+
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+
+import styles from '~/components/sanity/SanityStudio/SanityStudio.css';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
