@@ -1,3 +1,10 @@
+import type {
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityReference,
+} from 'sanity-codegen';
+
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/base/Prose/Prose';
@@ -16,6 +23,7 @@ import { TechList } from '~/components/pages/Project/components/TechList/TechLis
 
 export type ProjectProps = {
   page?: {
+    _id?: string;
     _type?: 'Project';
     title?: string;
     slug?: {
@@ -23,11 +31,10 @@ export type ProjectProps = {
       current?: string;
     };
     thumbnailImage?: {
-      _type?: 'image';
-      asset?: {
-        _type?: 'reference';
-        _ref?: string;
-      };
+      _type: 'image';
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
     };
     containLogo?: boolean;
     description?: string;
@@ -39,7 +46,7 @@ export type ProjectProps = {
       name?: string;
       url?: string;
     };
-    projectText?: any;
+    projectText?: any[] | string;
     projectUrl?: string;
     projectUrlTitle?: string;
     repoUrl?: string;
