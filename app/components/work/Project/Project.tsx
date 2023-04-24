@@ -4,8 +4,8 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import type { TechProps } from '~/components/project/Project/components/TechList/TechList';
-import { TechList } from '~/components/project/Project/components/TechList/TechList';
+import type { TechProps } from '~/components/work/Project/components/TechList/TechList';
+import { TechList } from '~/components/work/Project/components/TechList/TechList';
 
 import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
