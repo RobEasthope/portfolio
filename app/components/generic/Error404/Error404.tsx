@@ -12,9 +12,6 @@ import { Box } from '~/components/base/Box/Box';
 import { Button } from '~/components/base/Button/Button';
 import { Type } from '~/components/base/Type/Type';
 
-import type { FooterProps } from '~/components/navigation/Footer/Footer';
-import type { HeaderProps } from '~/components/navigation/Header/Header';
-
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 export type Error404Props = {
@@ -31,12 +28,10 @@ export type Error404Props = {
     cards: Error404NavCardProps[];
     goBackTitle: string;
   };
-  header: HeaderProps;
-  footer: FooterProps;
 };
 
-export const Error404 = ({ page, header, footer }: Error404Props) => (
-  <BasicLayout header={header} footer={footer}>
+export const Error404 = ({ page }: Error404Props) => (
+  <BasicLayout>
     <Box as="div" className="bg-white">
       <Box as="main" className="mx-auto w-full max-w-7xl px-1 lg:px-3">
         <Box as="div" className="flex-shrink-0 pt-1">
