@@ -10,10 +10,11 @@ import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
-import { checkMetadata } from '~/utils/checkMetadata';
-import { mergeMeta } from '~/utils/mergeMeta';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
+
+import { checkMetadata } from '~/utils/checkMetadata';
+import { mergeMeta } from '~/utils/mergeMeta';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
