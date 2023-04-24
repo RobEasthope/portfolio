@@ -10,8 +10,6 @@ import { Box } from '~/components/base/Box/Box';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
-
 // TYPES
 export type GalleryImageProps = {
   _type: 'GalleryImage';
@@ -23,7 +21,7 @@ export type GalleryImageProps = {
     hotspot?: SanityImageHotspot;
   };
   galleryAspectRatio?: number;
-  aspectRatio: number | null;
+  aspectRatio: number;
   maxWidth?: 'small' | 'text' | 'medium' | 'large' | 'full';
   caption?: string;
 };
@@ -32,7 +30,7 @@ export type GalleryImageProps = {
 export const GalleryImage = ({
   image,
   galleryAspectRatio,
-  aspectRatio = null,
+  aspectRatio = 1,
   maxWidth = 'full',
   caption,
 }: GalleryImageProps) => {
@@ -57,7 +55,7 @@ export const GalleryImage = ({
         <Dialog.Overlay className="fixed left-0 top-0 z-10 h-screen w-screen bg-white" />
 
         <Dialog.Content className="bg-whitefocus:outline-none fixed left-0 top-0 z-50 h-screen w-screen overflow-y-auto sm:px-1 sm:pb-1 lg:px-2 lg:pb-2 lg:pt-0">
-          <Dialog.Title className="sr-only">{image?.caption}</Dialog.Title>
+          <Dialog.Title className="sr-only">{caption}</Dialog.Title>
           <Box
             as="div"
             className="flex w-full flex-nowrap items-center justify-end"
