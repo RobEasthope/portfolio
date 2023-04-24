@@ -63,8 +63,6 @@ export async function loader({ params }: LoaderArgs) {
 
   return json({
     page: payload?.page || null,
-    header: payload?.header || null,
-    footer: payload?.footer || null,
     error404: payload?.error404 || null,
   });
 }
