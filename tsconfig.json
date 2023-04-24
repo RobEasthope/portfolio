@@ -19,5 +19,16 @@
 
     // Remix takes care of building everything in `remix build`.
     "noEmit": true
-  }
+  },
+  "exclude": [
+    "/.cache",
+    "/.vercel",
+    "/node_modules",
+    "/build",
+    "/public",
+    "prettier.config.js",
+    "remix.config.js",
+    "tailwind.config.ts",
+    "/app/types"
+  ]
 }

@@ -1,23 +1,29 @@
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
-import { Gallery } from '~/components/blocks/Gallery/Gallery';
-import type { ImageProps } from '~/components/blocks/Image/Image';
-import { Image } from '~/components/blocks/Image/Image';
-import type { LandingHeroProps } from '~/components/blocks/LandingHero/LandingHero';
-import { LandingHero } from '~/components/blocks/LandingHero/LandingHero';
-import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
-import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
-import type { PageTitleProps } from '~/components/blocks/PageTitle/PageTitle';
-import { PageTitle } from '~/components/blocks/PageTitle/PageTitle';
-import type { ProjectIndexProps } from '~/components/blocks/ProjectIndex/ProjectIndex';
-import { ProjectIndex } from '~/components/blocks/ProjectIndex/ProjectIndex';
-import type { SpacerProps } from '~/components/blocks/Spacer/Spacer';
-import { Spacer } from '~/components/blocks/Spacer/Spacer';
-import type { TextProps } from '~/components/blocks/Text/Text';
-import { Text } from '~/components/blocks/Text/Text';
-import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
+import type { GigIndexProps } from '~/components/about/GigIndex/GigIndex';
+import { GigIndex } from '~/components/about/GigIndex/GigIndex';
+import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
+import { Organisations } from '~/components/about/Organisation/Organisations';
+import type { DotProps } from '~/components/decoration/Dot/Dot';
+import { Dot } from '~/components/decoration/Dot/Dot';
+import type { LandingHeroProps } from '~/components/decoration/LandingHero/LandingHero';
+import { LandingHero } from '~/components/decoration/LandingHero/LandingHero';
+import type { PageTitleProps } from '~/components/decoration/PageTitle/PageTitle';
+import { PageTitle } from '~/components/decoration/PageTitle/PageTitle';
+import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
+import { Spacer } from '~/components/decoration/Spacer/Spacer';
+import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
+import { Gallery } from '~/components/generic/Gallery/Gallery';
+import type { ImageProps } from '~/components/generic/Image/Image';
+import { Image } from '~/components/generic/Image/Image';
+import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
+import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
+import type { TextProps } from '~/components/generic/Text/Text';
+import { Text } from '~/components/generic/Text/Text';
+import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
+import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import type { ProjectIndexProps } from '~/components/work/ProjectIndex/ProjectIndex';
+import { ProjectIndex } from '~/components/work/ProjectIndex/ProjectIndex';
 
 // TYPES
 export type SanityBlocksProps = {
@@ -39,10 +45,26 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
       }
 
       switch (_type) {
+        case 'Dot':
+          return (
+            <Dot
+              {...(block as DotProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+
         case 'Gallery':
           return (
             <Gallery
               {...(block as GalleryProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+
+        case 'GigIndex':
+          return (
+            <GigIndex
+              {...(block as GigIndexProps)}
               key={`${pageID}-${block._key as string}`}
             />
           );
@@ -67,6 +89,14 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
           return (
             <MuxVideo
               {...(block as MuxVideoProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+
+        case 'Organisations':
+          return (
+            <Organisations
+              {...(block as OrganisationsProps)}
               key={`${pageID}-${block._key as string}`}
             />
           );

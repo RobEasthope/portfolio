@@ -52,7 +52,7 @@ export const SuperLink = ({
     case 'InternalLinkWithTitle':
       return (
         <InternalLink
-          href={link?.to?.slug?.current || null}
+          href={link?.to?.slug?.current}
           className={className}
           onClick={onClick}
           {...rest}

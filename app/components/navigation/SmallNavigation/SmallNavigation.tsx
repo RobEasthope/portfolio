@@ -1,25 +1,20 @@
 import * as Dialog from '@radix-ui/react-dialog';
+import { useLocation } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
-
 import { Box } from '~/components/base/Box/Box';
-import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { SuperLink } from '~/components/base/SuperLink/SuperLink';
 import { Type } from '~/components/base/Type/Type';
 
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
 
-import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
-
 // TYPES
 export type SmallNavigationProps = Pick<
   HeaderProps,
-  'logo' | 'primaryNavigation' | 'secondaryNavigation'
+  'logo' | 'primaryNavigation' | 'secondaryNavigation' | 'appSettings'
 >;
 
 // MARKUP
@@ -27,7 +22,9 @@ export const SmallNavigation = ({
   logo,
   primaryNavigation,
   secondaryNavigation,
+  appSettings,
 }: SmallNavigationProps) => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Ensures menu is closed when resizing to desktop
@@ -48,19 +45,10 @@ export const SmallNavigation = ({
     };
   }, [menuOpen]);
 
-  // useEffect(() => {
-  //   const handleRouteChange = () => {
-  //     setMenuOpen(false);
-  //   };
-
-  //   router.events.on('routeChangeStart', handleRouteChange);
-
-  //   // If the component is unmounted, unsubscribe
-  //   // from the event with the `off` method:
-  //   return () => {
-  //     router.events.off('routeChangeStart', handleRouteChange);
-  //   };
-  // }, [setMenuOpen, router.events]);
+  // Ensures menu is closed when navigating
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   const combindedNavigation = [...primaryNavigation, ...secondaryNavigation];
 
@@ -79,7 +67,7 @@ export const SmallNavigation = ({
           as="div"
           className="flex w-full items-center justify-end py-0.5 sm:py-1"
         >
-          <HeaderLogo logo={logo} />
+          <HeaderLogo logo={logo} homePageSlug={appSettings?.homePageSlug} />
           <Dialog.Close className="flex flex-nowrap items-center p-0.25">
             <Type as="span" className="text-lg">
               <IoMdClose />

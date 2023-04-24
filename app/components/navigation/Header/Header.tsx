@@ -5,6 +5,8 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+
 import { Box } from '~/components/base/Box/Box';
 import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
@@ -21,7 +23,6 @@ export type HeaderProps = {
     _type: 'image';
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
-    attribution?: string;
   };
   primaryNavigation: [
     | ExternalLinkWithTitleSchemaProps
@@ -33,6 +34,7 @@ export type HeaderProps = {
     | InternalLinkWithTitleSchemaProps
     | EmailLinkWithTitleSchemaProps,
   ];
+  appSettings: AppSettingsProps;
 };
 
 // MARKUP
@@ -40,6 +42,7 @@ export const Header = ({
   logo,
   primaryNavigation,
   secondaryNavigation,
+  appSettings,
 }: HeaderProps) => {
   if (!logo && !primaryNavigation) {
     return null;
@@ -54,7 +57,7 @@ export const Header = ({
         >
           <NavListing links={primaryNavigation} />
 
-          <HeaderLogo logo={logo} />
+          <HeaderLogo logo={logo} homePageSlug={appSettings?.homePageSlug} />
 
           <NavListing links={secondaryNavigation} />
 
@@ -62,6 +65,7 @@ export const Header = ({
             logo={logo}
             primaryNavigation={primaryNavigation}
             secondaryNavigation={secondaryNavigation}
+            appSettings={appSettings}
           />
         </Box>
       </Box>

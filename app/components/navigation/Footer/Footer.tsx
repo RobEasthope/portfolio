@@ -1,14 +1,7 @@
-import {
-  SanityImageAsset,
-  SanityImageCrop,
-  SanityReference,
-} from 'sanity-codegen';
-
 import { Box } from '~/components/base/Box/Box';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SuperLink } from '~/components/base/SuperLink/SuperLink';
 import { Type } from '~/components/base/Type/Type';
 
@@ -16,6 +9,7 @@ import { romanize } from '~/components/navigation/Footer/romanize';
 
 // TYPES
 export type FooterProps = {
+  _type?: 'Footer';
   footerNavigation:
     | [ExternalLinkWithTitleSchemaProps | InternalLinkWithTitleSchemaProps]
     | undefined;
@@ -38,7 +32,7 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
           aria-label="Footer"
         >
           <Box as="ul" className="flex gap-1">
-            {footerNavigation?.map((nav, i) => (
+            {footerNavigation?.map((nav) => (
               <Type as="li" key={nav?._key} className="text-base font-medium">
                 <SuperLink
                   link={nav}
@@ -51,9 +45,12 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
           </Box>
         </Box>
 
-        <Type as="p" className="text-center text-sm">
+        <InternalLink
+          href="sanity-studio"
+          className="text-center text-sm hover:text-ink hover:cursor-default"
+        >
           {copyrightText} {copyrightText && romanize(timeStamp.getFullYear())}
-        </Type>
+        </InternalLink>
       </Box>
     </Box>
   );

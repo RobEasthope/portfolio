@@ -54,6 +54,7 @@ export const BasicTextComponents: PortableTextComponents = {
       <InternalLink
         href={value?.page?.slug?.current}
         className="text-inherit underline decoration-2 hover:underline-offset-2"
+        homePageSlug={value?.appSettings?.homePageSlug}
       >
         {children}
       </InternalLink>

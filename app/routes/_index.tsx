@@ -1,37 +1,38 @@
+/* eslint-disable camelcase */
 import { useLoaderData } from '@remix-run/react';
-import type { V2_MetaFunction } from '@vercel/remix';
+import type { V2_HtmlMetaDescriptor, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
-import { checkMetadata } from '~/utils/checkMetadata';
-import { mergeMeta } from '~/utils/mergeMeta';
-
-import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
-
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
-
-import { urlFor } from '~/components/base/SanityImage/urlFor';
-
-import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
-
-import type { Error404Props } from '~/components/pages/Error404/Error404';
-import type { PageProps } from '~/components/pages/Page/Page';
-import { Page } from '~/components/pages/Page/Page';
+import type { Error404Props } from '~/components/generic/Error404/Error404';
+import type { PageProps } from '~/components/generic/Page/Page';
+import { Page } from '~/components/generic/Page/Page';
 import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-} from '~/components/pages/Page/Page.queries';
-import { HOME_PAGE_SLUG } from '~/components/pages/Page/constants/HOME_PAGE_SLUG';
+} from '~/components/generic/Page/Page.query';
+
+import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
+
+import { checkMetadata } from '~/utils/checkMetadata';
+import { mergeMeta } from '~/utils/mergeMeta';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader() {
+  const appSettings: AppSettingsProps = await sanityAPI.fetch(
+    APP_SETTINGS_QUERY,
+  );
+
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
-      slug: HOME_PAGE_SLUG,
+      slug: appSettings?.homePageSlug,
     },
   );
 
@@ -43,6 +44,7 @@ export async function loader() {
   );
 
   if (!payload?.page) {
+    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
     });
@@ -52,7 +54,6 @@ export async function loader() {
     page: payload?.page || null,
     header: payload?.header || null,
     footer: payload?.footer || null,
-    fallbacks: payload?.fallbacks || null,
     error404: payload?.error404 || null,
   });
 }
@@ -60,6 +61,9 @@ export async function loader() {
 export const meta: V2_MetaFunction = ({
   matches,
   data,
+}: {
+  matches: string[];
+  data: PageProps;
 }): V2_HtmlMetaDescriptor[] =>
   mergeMeta(
     matches,

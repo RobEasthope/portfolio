@@ -1,7 +1,5 @@
 import { defineField, defineType } from 'sanity';
 
-import { ALL_PAGES_TYPES } from '~/components/pages/ALL_PAGES_TYPES';
-
 export default defineType({
   name: 'AppSettings',
   title: 'App settings',
@@ -11,7 +9,7 @@ export default defineType({
       name: 'rawHomePageRef',
       title: 'Home page',
       type: 'reference',
-      to: ALL_PAGES_TYPES,
+      to: [{ type: 'Page' }],
       description: 'Select home page (Critical requirement)',
       validation: (Rule) => Rule.required(),
     }),

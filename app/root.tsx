@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import {
   Links,
   LiveReload,
@@ -7,11 +8,15 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
-import type { LinksFunction } from '@vercel/remix';
+import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
+import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
 
-import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 import { Box } from '~/components/base/Box/Box';
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
@@ -26,11 +31,7 @@ import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
-import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
-import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
-
-import LandingHeroCSS from '~/components/blocks/LandingHero/LandingHero.css';
-import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
+import LandingHeroCSS from '~/components/decoration/LandingHero/LandingHero.css';
 
 export const links: LinksFunction = () => [
   // Adobe Typekit
