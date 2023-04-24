@@ -29,13 +29,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      fields: [
-        defineField({
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
-        }),
-      ],
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       hidden: ({ parent }) => parent?.bkgMode !== 'image',
     }),

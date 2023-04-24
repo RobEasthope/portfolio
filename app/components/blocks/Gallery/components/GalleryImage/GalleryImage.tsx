@@ -21,8 +21,6 @@ export type GalleryImageProps = {
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
-    caption?: string;
-    attribution?: string;
   };
   galleryAspectRatio?: number;
   aspectRatio: number | null;

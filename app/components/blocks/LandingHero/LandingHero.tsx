@@ -18,7 +18,6 @@ export type LandingHeroProps = {
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
-    attribution?: string;
   };
   caption?: string;
   bkgVideo: unknown;
