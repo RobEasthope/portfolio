@@ -10,27 +10,27 @@ import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 // Fetch all page slugs
-export const PAGE_SLUGS_QUERY = groq`
-  *[_type == "Page" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+export const CV_SLUGS_QUERY = groq`
+  *[_type == "CV" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
 `;
 
 // Fetch page id and components types by slug
-export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
-  *[_type in ["Page"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
+export const CV_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
+  *[_type in ["CV"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
     "id": _id,
     "componentTypes": array::unique(rawSections[]._type),
   }
 `;
 
 // Fetch components types by id
-export const PAGE_COMPONENT_TYPES_BY_ID_QUERY = groq`
-  *[_type in ["Page"] && _id == $id][0]{
+export const CV_COMPONENT_TYPES_BY_ID_QUERY = groq`
+  *[_type in ["CV"] && _id == $id][0]{
     "componentTypes": array::unique(rawSections[]._type),
   }
 `;
 
 // Fetch page data by id
-export const PAGE_BY_ID_QUERY = ({
+export const CV_BY_ID_QUERY = ({
   id,
   componentTypes = [],
 }: SanityPageByIdQueryProps) => {
@@ -41,8 +41,6 @@ export const PAGE_BY_ID_QUERY = ({
       _id,
       title,
       slug,
-      metadataDescription,
-      metadataImage,
       "sections": rawSections[_type in [${componentTypes?.map(
         (type: string) => `"${type}"`,
       )}]]{
@@ -58,20 +56,6 @@ export const PAGE_BY_ID_QUERY = ({
     },
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
-    "error404": *[_type == "Error404" && !(_id in path("drafts.**"))][0]{
-      _type,
-      logo,
-      heading,
-      subheading,
-      "cards": rawCards[]{
-        heading,
-        description,
-        "link": {
-          "to": internalUID->{slug}
-        }
-      },
-      goBackTitle,
-    },
     "fallbacks": ${METADATA_FALLBACKS_QUERY},
   }`;
 };
