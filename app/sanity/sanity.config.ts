@@ -1,11 +1,9 @@
 import { visionTool } from '@sanity/vision';
-import { BsFillCircleFill } from 'react-icons/bs';
+import { BsBrush, BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
-import { GoPaintcan } from 'react-icons/go';
 import { HiOutlineBriefcase, HiOutlineCode } from 'react-icons/hi';
 import { IoMdSchool } from 'react-icons/io';
 import {
-  RiBriefcaseFill,
   RiCompasses2Line,
   RiListSettingsLine,
   RiPhoneLine,
@@ -47,7 +45,7 @@ export default defineConfig({
             S.listItem()
               .title('Projects')
               .schemaType('project')
-              .icon(GoPaintcan)
+              .icon(BsBrush)
               .child(S.documentTypeList('project')),
             S.listItem()
               .title('Technologies')
