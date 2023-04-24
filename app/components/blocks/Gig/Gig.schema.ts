@@ -1,11 +1,13 @@
 import * as dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
+import { BsFillCircleFill } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'gig',
   title: 'Gig',
   type: 'document',
+  icon: BsFillCircleFill,
   fields: [
     defineField({
       name: 'employer',
