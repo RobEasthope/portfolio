@@ -8,7 +8,7 @@ module.exports = {
     "^~/types/(.*)$",
     "^~/constants/(.*)$",
     "^~/utils/(.*)$",
-    "^~/sanity/(.*)$",
+    "^~/components/sanity/(.*)$",
     "^~/components/settings/(.*)$",
     "^~/components/base/(.*)$",
     "^~/components/navigation/(.*)$",
