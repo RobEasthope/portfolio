@@ -1,7 +1,4 @@
-// Legacy schema types
 import Details from '~/components/about/Details/Details.schema';
-import altImage from '~/legacy-schemas/altImage.schema';
-import blockContentSchema from '~/legacy-schemas/blockContent.schema';
 
 import EmailLink from '~/components/base/EmailLink/EmailLink.schema';
 import EmailLinkWithTitle from '~/components/base/EmailLink/EmailLinkWithTitle.schema';
@@ -44,7 +41,6 @@ import tech from '~/components/pages/Project/schemas/Tech.schema';
 
 export const schemaTypes = [
   // Legacy schema types
-  altImage,
   blockContentSchema,
 
   // Links
