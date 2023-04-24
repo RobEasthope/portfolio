@@ -62,7 +62,7 @@ export type ProjectProps = {
 };
 
 export const Project = ({ page, header, footer }: ProjectProps) => {
-  if (!page?.displayProject || page?.displayProject === false) return null;
+  if (!page?.displayProject) return null;
 
   return (
     <BasicLayout header={header} footer={footer}>
