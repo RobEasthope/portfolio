@@ -80,13 +80,6 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
   },
 ];
 
-// export const meta = () => ({
-//   charset: 'utf-8',
-//   viewport: 'width=device-width,initial-scale=1',
-//   title: 'Rob Easthope',
-//   description: 'Portfolio website for Rob Easthope',
-// });
-
 export default function App() {
   const { header, footer } = useLoaderData<typeof loader>();
   return (
