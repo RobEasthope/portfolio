@@ -1,4 +1,5 @@
 import type { GigProps } from '~/components/about/GigIndex/components/Gig/Gig';
+import { Gig } from '~/components/about/GigIndex/components/Gig/Gig';
 
 import { Box } from '~/components/base/Box/Box';
 
