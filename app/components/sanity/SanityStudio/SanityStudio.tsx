@@ -1,7 +1,7 @@
 import { ClientOnly } from 'remix-utils';
 import { Studio } from 'sanity';
 
-import config from '~/sanity/sanity.config';
+import config from '~/components/sanity/sanity.config';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 

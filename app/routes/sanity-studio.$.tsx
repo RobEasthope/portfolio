@@ -33,7 +33,7 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
 ];
 
-const SanityStudio = lazy(() => import('~/sanity/SanityStudio/SanityStudio'));
+const SanityStudio = lazy(() => import('~/components/sanity/SanityStudio/SanityStudio'));
 const Fallback = (
   <div className="flex h-screen w-screen items-center justify-center">
     Loading...
