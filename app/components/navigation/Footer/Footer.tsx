@@ -9,6 +9,7 @@ import { romanize } from '~/components/navigation/Footer/romanize';
 
 // TYPES
 export type FooterProps = {
+  _type?: 'Footer';
   footerNavigation:
     | [ExternalLinkWithTitleSchemaProps | InternalLinkWithTitleSchemaProps]
     | undefined;
