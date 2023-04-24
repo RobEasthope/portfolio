@@ -1,6 +1,7 @@
 import CV from '~/components/about/CV/CV.schema';
 import Details from '~/components/about/Details/Details.schema';
 import education from '~/components/about/Education/Education.schema';
+import GigIndex from '~/components/about/GigIndex/GigIndex.schema';
 import gig from '~/components/about/GigIndex/components/Gig/Gig.schema';
 import organisation from '~/components/about/Organisation/Organisation.schema';
 import Organisations from '~/components/about/Organisation/Organisations.schema';
@@ -71,6 +72,7 @@ export const schemaTypes = [
   Dot,
   GalleryImage,
   Gallery,
+  GigIndex,
   Image,
   LandingHero,
   Organisations,
