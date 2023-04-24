@@ -3,8 +3,7 @@ import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { Suspense, lazy } from 'react';
-
-import styles from '~/sanity/SanityStudio/SanityStudio.css';
+import styles from '~/components/sanity/SanityStudio/SanityStudio.css';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
@@ -33,7 +32,9 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
 ];
 
-const SanityStudio = lazy(() => import('~/components/sanity/SanityStudio/SanityStudio'));
+const SanityStudio = lazy(
+  () => import('~/components/sanity/SanityStudio/SanityStudio'),
+);
 const Fallback = (
   <div className="flex h-screen w-screen items-center justify-center">
     Loading...
