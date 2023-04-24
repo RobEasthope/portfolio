@@ -60,7 +60,7 @@ export default defineConfig({
             S.divider(),
             S.listItem()
               .title('CVs')
-              .icon(BsFillCircleFill)
+              .icon(RiBriefcaseFill)
               .child(
                 S.documentTypeList('CV')
                   .title('CVs')
@@ -68,7 +68,7 @@ export default defineConfig({
               ),
             S.listItem()
               .title('Gigs')
-              .icon(RiBriefcaseFill)
+              .icon(BsFillCircleFill)
               .child(
                 S.documentTypeList('gig')
                   .title('Gigs')
