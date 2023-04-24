@@ -6,7 +6,12 @@ import { Type } from '~/components/base/Type/Type';
 // TYPES
 export type MuxVideoProps = {
   _type: 'MuxVideo';
-  muxVideo: Record<string, unknown>;
+  muxVideo: {
+    _type: 'muxVideo';
+    playbackId: string;
+    assetId: string;
+    title: string;
+  };
   caption?: string;
   maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
   autoPlay: boolean;
