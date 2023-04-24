@@ -20,8 +20,8 @@ import type { TextProps } from '~/components/generic/Text/Text';
 import { Text } from '~/components/generic/Text/Text';
 import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
 import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
+import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 
 // TYPES
 export type SanityBlocksProps = {

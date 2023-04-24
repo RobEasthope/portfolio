@@ -22,8 +22,8 @@ import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
 import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
 import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
 import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
+import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>
