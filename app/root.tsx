@@ -10,8 +10,12 @@ import {
 import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
+import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
+
+import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
+import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
@@ -19,11 +23,7 @@ import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
-import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
-import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
-
-import LandingHeroCSS from '~/components/blocks/LandingHero/LandingHero.css';
-import YoutubeVideoCSS from '~/components/blocks/YoutubeVideo/YoutubeVideo.css';
+import LandingHeroCSS from '~/components/decoration/LandingHero/LandingHero.css';
 
 export const links: LinksFunction = () => [
   // Adobe Typekit

@@ -7,23 +7,23 @@ import type {
   V2_MetaFunction,
 } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
-import { checkMetadata } from '~/utils/checkMetadata';
-import { mergeMeta } from '~/utils/mergeMeta';
+import type { Error404Props } from '~/components/generic/Error404/Error404';
+import type { PageProps } from '~/components/generic/Page/Page';
+import { Page } from '~/components/generic/Page/Page';
+import {
+  PAGE_BY_ID_QUERY,
+  PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
+} from '~/components/generic/Page/Page.query';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
+
+import { checkMetadata } from '~/utils/checkMetadata';
+import { mergeMeta } from '~/utils/mergeMeta';
 
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
-
-import type { Error404Props } from '~/components/pages/Error404/Error404';
-import type { PageProps } from '~/components/pages/Page/Page';
-import { Page } from '~/components/pages/Page/Page';
-import {
-  PAGE_BY_ID_QUERY,
-  PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-} from '~/components/pages/Page/Page.query';
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];

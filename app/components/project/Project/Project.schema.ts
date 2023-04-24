@@ -1,10 +1,10 @@
 import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
-import { formatSlug } from '~/utils/formatSlug';
+import { PROJECT_SLUG } from '~/components/project/Project/PROJECT_SLUG';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
-import { PROJECT_SLUG } from '~/components/pages/Project/PROJECT_SLUG';
+import { formatSlug } from '~/utils/formatSlug';
 
 export default defineType({
   name: 'project',

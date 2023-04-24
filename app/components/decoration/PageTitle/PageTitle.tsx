@@ -1,7 +1,7 @@
-import { LineBreak } from '~/components/decoration/LineBreak';
-
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
+
+import { LineBreak } from '~/components/decoration/LineBreak/LineBreak';
 
 // TYPES
 export type PageTitleProps = {

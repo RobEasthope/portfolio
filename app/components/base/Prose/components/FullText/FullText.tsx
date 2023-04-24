@@ -7,23 +7,22 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
+import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
+import { Gallery } from '~/components/generic/Gallery/Gallery';
+import type { ImageProps } from '~/components/generic/Image/Image';
+import { Image } from '~/components/generic/Image/Image';
+import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
+import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
+import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
+import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 
 import { Box } from '~/components/base/Box/Box';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { Type } from '~/components/base/Type/Type';
-
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
-import { Gallery } from '~/components/blocks/Gallery/Gallery';
-import type { ImageProps } from '~/components/blocks/Image/Image';
-import { Image } from '~/components/blocks/Image/Image';
-import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
-import { MuxVideo } from '~/components/blocks/MuxVideo/MuxVideo';
-import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
 
 export type FullTextProps = Array<
   | SanityKeyed<SanityBlock>
