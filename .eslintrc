@@ -24,13 +24,13 @@
   },
   "ignorePatterns": [
     "/.cache",
-    "/node_modules",
     "/.vercel",
+    "/node_modules",
     "/build",
     "/public",
-    "remix.config.js",
     "prettier.config.js",
-    "*.d.ts",
-    "/legacy-code"
+    "remix.config.js",
+    "tailwind.config.ts",
+    "/app/types"
   ]
 }

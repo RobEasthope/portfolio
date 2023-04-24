@@ -34,7 +34,7 @@ export const SanityImage = ({
   maxWidth,
   alt,
   mode = 'responsive',
-  aspectRatio,
+  aspectRatio = 0,
   containAspectRatio = 1,
   className = '',
   wrapperClassName = '',

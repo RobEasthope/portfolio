@@ -14,7 +14,7 @@ import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo
 // TYPES
 export type SmallNavigationProps = Pick<
   HeaderProps,
-  'logo' | 'primaryNavigation' | 'secondaryNavigation'
+  'logo' | 'primaryNavigation' | 'secondaryNavigation' | 'appSettings'
 >;
 
 // MARKUP
@@ -22,6 +22,7 @@ export const SmallNavigation = ({
   logo,
   primaryNavigation,
   secondaryNavigation,
+  appSettings,
 }: SmallNavigationProps) => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -66,7 +67,7 @@ export const SmallNavigation = ({
           as="div"
           className="flex w-full items-center justify-end py-0.5 sm:py-1"
         >
-          <HeaderLogo logo={logo} />
+          <HeaderLogo logo={logo} homePageSlug={appSettings?.homePageSlug} />
           <Dialog.Close className="flex flex-nowrap items-center p-0.25">
             <Type as="span" className="text-lg">
               <IoMdClose />
