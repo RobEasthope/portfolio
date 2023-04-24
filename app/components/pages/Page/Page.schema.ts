@@ -1,4 +1,4 @@
-import { GoPaintcan } from 'react-icons/go';
+import { RiQuillPenLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -7,7 +7,7 @@ export default defineType({
   name: 'Page',
   title: 'Page',
   type: 'document',
-  icon: GoPaintcan,
+  icon: RiQuillPenLine,
   fields: [
     defineField({
       name: 'title',
