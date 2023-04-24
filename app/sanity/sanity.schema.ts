@@ -40,9 +40,6 @@ import project from '~/components/pages/Project/Project.schema';
 import tech from '~/components/pages/Project/schemas/Tech.schema';
 
 export const schemaTypes = [
-  // Legacy schema types
-  blockContentSchema,
-
   // Links
   EmailLink,
   EmailLinkWithTitle,
