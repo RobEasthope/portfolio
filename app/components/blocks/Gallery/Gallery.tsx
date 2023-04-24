@@ -6,7 +6,7 @@ import { GalleryImage } from '~/components/blocks/Gallery/components/GalleryImag
 
 // TYPES
 export type GalleryProps = {
-  _type: 'Gallery';
+  _type?: 'Gallery';
   images: GalleryImageProps[];
   galleryCaption?: string;
   columns: 'null' | '1' | '2' | '3' | '4' | '5' | undefined;
