@@ -1,4 +1,4 @@
-import { LineBreak } from '~/components/decoration/LineBreak';
+import { LineBreak } from '~/components/decoration/LineBreak/LineBreak';
 
 import { Box } from '~/components/base/Box/Box';
 import { Type } from '~/components/base/Type/Type';
