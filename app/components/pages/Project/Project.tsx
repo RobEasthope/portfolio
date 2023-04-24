@@ -19,6 +19,7 @@ import { Dot } from '~/components/blocks/Dot/Dot';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
+import type { TechProps } from '~/components/pages/Project/components/TechList/TechList';
 import { TechList } from '~/components/pages/Project/components/TechList/TechList';
 
 export type ProjectProps = {
@@ -51,10 +52,7 @@ export type ProjectProps = {
     projectUrlTitle?: string;
     repoUrl?: string;
     date?: string;
-    technologies?: {
-      name?: string;
-      url?: string;
-    }[];
+    technologies?: TechProps[];
     displayProject?: boolean;
   };
   header: HeaderProps;
