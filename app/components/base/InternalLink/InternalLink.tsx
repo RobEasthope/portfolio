@@ -22,7 +22,7 @@ export type InternalLinkSchemaProps = {
 
 // Component props
 export type InternalLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
-  href: string | null;
+  href: string | undefined;
   className?: string;
   children: any;
   homePageSlug?: string;
