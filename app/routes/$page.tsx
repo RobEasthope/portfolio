@@ -16,7 +16,6 @@ import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
-import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
 import type { PageProps } from '~/components/pages/Page/Page';
@@ -28,7 +27,6 @@ import {
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
-  fallbacks: MetadataFallbacksProps;
 };
 
 export async function loader({ params }: LoaderArgs) {
@@ -68,7 +66,6 @@ export async function loader({ params }: LoaderArgs) {
     page: payload?.page || null,
     header: payload?.header || null,
     footer: payload?.footer || null,
-    fallbacks: payload?.fallbacks || null,
     error404: payload?.error404 || null,
   });
 }
