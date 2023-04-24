@@ -1,6 +1,4 @@
-// Legacy schema types
 import Details from '~/components/about/Details/Details.schema';
-import blockContentSchema from '~/legacy-schemas/blockContent.schema';
 
 import EmailLink from '~/components/base/EmailLink/EmailLink.schema';
 import EmailLinkWithTitle from '~/components/base/EmailLink/EmailLinkWithTitle.schema';
