@@ -1,14 +1,13 @@
 import groq from 'groq';
 
-export const PROJECT_INDEX_QUERY = groq`{
+export const GIG_INDEX_QUERY = groq`{
   _key,
   _type,
-  "projects": *[_type == "project" && !(_id in path("drafts.**")) && defined(slug.current) && defined(endDate)]{
-    title,
-    slug,
-    thumbnailImage,
-    containLogo,
+  "gigs": *[_type == "gig" && !(_id in path("drafts.**")) && defined(startDate)]{
+    employer,
+    jobTitle,
+    description,
+    startDate,
     endDate,
-    displayProject
   } | order(endDate desc)
 }`;
