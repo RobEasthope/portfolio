@@ -25,7 +25,6 @@ export const GigIndex = ({ allGigs }: GigIndexProps) => {
             <Gig
               key={`${gig?._id || ''}-${i}`}
               employer={gig.employer}
-              location={gig.location}
               jobTitle={gig.jobTitle}
               description={gig.description}
               startDate={gig.startDate}
