@@ -25,7 +25,7 @@ import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataF
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
 import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage.schema';
 import Image from '~/components/blocks/Image/Image.schema';
-import LandingHero from '~/components/blocks/LandingHero/LandingHero.schema';
+import LandingHero from '~/components/decoration/LandingHero/LandingHero.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
 import organisation from '~/components/about/Organisation/Organisation.schema';
 import Organisations from '~/components/about/Organisation/Organisations.schema';
