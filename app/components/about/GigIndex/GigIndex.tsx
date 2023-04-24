@@ -34,4 +34,4 @@ export const GigIndex = ({ allGigs }: GigIndexProps) => {
   );
 };
 
-export default ProjectIndex;
+export default GigIndex;
