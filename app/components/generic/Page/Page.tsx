@@ -29,7 +29,5 @@ export type PageProps = {
 
 // MARKUP
 export const Page = ({ page }: PageProps) => (
-  <BasicLayout>
-    <SanityBlocks blocks={page?.sections} pageID={page?._id} />
-  </BasicLayout>
+  <SanityBlocks blocks={page?.sections} pageID={page?._id} />
 );
