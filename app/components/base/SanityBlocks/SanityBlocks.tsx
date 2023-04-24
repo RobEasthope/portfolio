@@ -16,8 +16,8 @@ import type { ProjectIndexProps } from '~/components/project/ProjectIndex/Projec
 import { ProjectIndex } from '~/components/project/ProjectIndex/ProjectIndex';
 import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
 import { Spacer } from '~/components/decoration/Spacer/Spacer';
-import type { TextProps } from '~/components/blocks/Text/Text';
-import { Text } from '~/components/blocks/Text/Text';
+import type { TextProps } from '~/components/generic/Text/Text';
+import { Text } from '~/components/generic/Text/Text';
 import type { VimeoVideoProps } from '~/components/blocks/VimeoVideo/VimeoVideo';
 import { VimeoVideo } from '~/components/blocks/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/blocks/YoutubeVideo/YoutubeVideo';
