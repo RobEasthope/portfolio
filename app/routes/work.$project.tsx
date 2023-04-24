@@ -14,7 +14,6 @@ import { PROJECT_BY_SLUG_QUERY } from '~/components/project/Project/Project.quer
 
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
-
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 type ProjectBySlugProps = ProjectProps & {
