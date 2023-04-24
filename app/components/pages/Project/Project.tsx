@@ -76,7 +76,7 @@ export const Project = ({ page, header, footer }: ProjectProps) => {
             alt={page?.title || ''}
             mode={page?.containLogo ? 'contain' : 'responsive'}
             maxWidth={200}
-            aspectRatio={page?.containLogo ? null : 1}
+            aspectRatio={page?.containLogo ? 0 : 1}
             className="mx-auto rounded-full w-4 h-4"
           />
 
