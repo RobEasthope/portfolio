@@ -1,4 +1,5 @@
 import { visionTool } from '@sanity/vision';
+import { BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
 import { GoPaintcan } from 'react-icons/go';
 import { HiOutlineCode } from 'react-icons/hi';
@@ -57,6 +58,14 @@ export default defineConfig({
                   .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.divider(),
+            S.listItem()
+              .title('CVs')
+              .icon(BsFillCircleFill)
+              .child(
+                S.documentTypeList('CV')
+                  .title('CVs')
+                  .defaultOrdering([{ field: 'title', direction: 'desc' }]),
+              ),
             S.listItem()
               .title('Gigs')
               .icon(RiBriefcaseFill)

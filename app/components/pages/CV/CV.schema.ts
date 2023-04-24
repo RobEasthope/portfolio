@@ -1,3 +1,4 @@
+import { BsFillCircleFill } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -6,6 +7,7 @@ export default defineType({
   name: 'CV',
   title: 'CV',
   type: 'document',
+  icon: BsFillCircleFill,
   fields: [
     defineField({
       name: 'title',
