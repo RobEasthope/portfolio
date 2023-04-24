@@ -65,6 +65,7 @@ export const Header = ({
             logo={logo}
             primaryNavigation={primaryNavigation}
             secondaryNavigation={secondaryNavigation}
+            appSettings={appSettings}
           />
         </Box>
       </Box>
