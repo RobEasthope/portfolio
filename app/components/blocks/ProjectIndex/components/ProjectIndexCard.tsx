@@ -9,8 +9,9 @@ export type ProjectIndexCardProps = {
 };
 
 export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
-  if (!project?.displayProject || project?.displayProject === false)
+  if (!project?.displayProject) {
     return null;
+  }
 
   return (
     <Box as="li">
