@@ -193,12 +193,10 @@ export default function App() {
             <Outlet />
           </Box>
 
-          {/* {slug !== HOME_PAGE_SLUG && ( */}
           <Footer
             footerNavigation={footer?.footerNavigation}
             copyrightText={footer?.copyrightText}
           />
-          {/* )} */}
         </Box>
         <ScrollRestoration />
 
