@@ -1,5 +1,6 @@
 import Details from '~/components/about/Details/Details.schema';
 import education from '~/components/about/Education/Education.schema';
+import gig from '~/components/about/Gig/Gig.schema';
 import Dot from '~/components/decoration/Dot/Dot.schema';
 import project from '~/components/project/Project/Project.schema';
 import tech from '~/components/project/Project/schemas/Tech.schema';
@@ -23,7 +24,6 @@ import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataF
 
 import Gallery from '~/components/blocks/Gallery/Gallery.schema';
 import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage.schema';
-import gig from '~/components/blocks/Gig/Gig.schema';
 import Image from '~/components/blocks/Image/Image.schema';
 import LandingHero from '~/components/blocks/LandingHero/LandingHero.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
