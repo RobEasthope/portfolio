@@ -17,7 +17,6 @@ export type ImageProps = {
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
-    attribution?: string;
   };
   caption?: string;
   aspectRatio?: number;

@@ -19,13 +19,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      fields: [
-        defineField({
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
-        }),
-      ],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
