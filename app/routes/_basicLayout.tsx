@@ -31,18 +31,17 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
         logo={header?.logo}
         primaryNavigation={header?.primaryNavigation}
         secondaryNavigation={header?.secondaryNavigation}
+        appSettings={header?.appSettings}
       />
 
       <Box as="main" className="flex-grow">
         {children}
       </Box>
 
-      {/* {slug !== HOME_PAGE_SLUG && ( */}
       <Footer
         footerNavigation={footer?.footerNavigation}
         copyrightText={footer?.copyrightText}
       />
-      {/* )} */}
     </Box>
   );
 };
