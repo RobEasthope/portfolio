@@ -4,7 +4,7 @@ import { MUX_VIDEO_QUERY } from '~/components/generic/MuxVideo/MuxVideo.query';
 import { TEXT_QUERY } from '~/components/generic/Text/Text.query';
 import { VIMEO_VIDEO_QUERY } from '~/components/generic/VimeoVideo/VimeoVideo.query';
 import { YOUTUBE_VIDEO_QUERY } from '~/components/generic/YoutubeVideo/YoutubeVideo.query';
-import { PROJECT_INDEX_QUERY } from '~/components/project/ProjectIndex/ProjectIndex.query';
+import { PROJECT_INDEX_QUERY } from '~/components/work/ProjectIndex/ProjectIndex.query';
 
 import { DOT_QUERY } from '~/components/decoration/Dot/Dot.query';
 import { LANDING_HERO_QUERY } from '~/components/decoration/LandingHero/LandingHero.query';

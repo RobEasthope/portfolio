@@ -6,9 +6,9 @@ import page from '~/components/generic/Page/Page.schema';
 import Text from '~/components/generic/Text/Text.schema';
 import VimeoVideo from '~/components/generic/VimeoVideo/VimeoVideo.schema';
 import YoutubeVideo from '~/components/generic/YoutubeVideo/YoutubeVideo.schema';
-import project from '~/components/project/Project/Project.schema';
-import tech from '~/components/project/Project/schemas/Tech.schema';
-import ProjectIndex from '~/components/project/ProjectIndex/ProjectIndex.schema';
+import project from '~/components/work/Project/Project.schema';
+import tech from '~/components/work/Project/schemas/Tech.schema';
+import ProjectIndex from '~/components/work/ProjectIndex/ProjectIndex.schema';
 
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
 import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';

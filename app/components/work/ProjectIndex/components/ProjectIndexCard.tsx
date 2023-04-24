@@ -1,4 +1,4 @@
-import type { ProjectProps } from '~/components/project/Project/Project';
+import type { ProjectProps } from '~/components/work/Project/Project';
 
 import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';

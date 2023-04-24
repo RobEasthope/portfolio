@@ -10,8 +10,8 @@ import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo
 import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
-import type { ProjectIndexProps } from '~/components/project/ProjectIndex/ProjectIndex';
-import { ProjectIndex } from '~/components/project/ProjectIndex/ProjectIndex';
+import type { ProjectIndexProps } from '~/components/work/ProjectIndex/ProjectIndex';
+import { ProjectIndex } from '~/components/work/ProjectIndex/ProjectIndex';
 
 import type { DotProps } from '~/components/decoration/Dot/Dot';
 import { Dot } from '~/components/decoration/Dot/Dot';

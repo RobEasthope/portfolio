@@ -1,5 +1,5 @@
-import type { ProjectProps } from '~/components/project/Project/Project';
-import { ProjectIndexCard } from '~/components/project/ProjectIndex/components/ProjectIndexCard';
+import type { ProjectProps } from '~/components/work/Project/Project';
+import { ProjectIndexCard } from '~/components/work/ProjectIndex/components/ProjectIndexCard';
 
 import { Box } from '~/components/base/Box/Box';
 
