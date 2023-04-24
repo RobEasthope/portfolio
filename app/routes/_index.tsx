@@ -64,6 +64,9 @@ export async function loader() {
 export const meta: V2_MetaFunction = ({
   matches,
   data,
+}: {
+  matches: string[];
+  data: PageProps;
 }): V2_HtmlMetaDescriptor[] =>
   mergeMeta(
     matches,
