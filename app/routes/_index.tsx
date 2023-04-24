@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { useLoaderData } from '@remix-run/react';
-import type { V2_MetaFunction } from '@vercel/remix';
+import type { V2_HtmlMetaDescriptor, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
 import { checkMetadata } from '~/utils/checkMetadata';
