@@ -1,10 +1,10 @@
-import type { OrganisationProps } from '~/components/about/Organisation/Organisations';
-
 import { Box } from '~/components/base/Box/Box';
 import { Prose } from '~/components/base/Prose/Prose';
 import type { BasicTextProps } from '~/components/base/Prose/components/BasicText/BasicText';
 import { BasicTextComponents } from '~/components/base/Prose/components/BasicText/BasicText';
 import { Type } from '~/components/base/Type/Type';
+
+import type { OrganisationProps } from '~/components/about/Organisation/Organisations';
 
 export type GigProps = {
   _id?: string;

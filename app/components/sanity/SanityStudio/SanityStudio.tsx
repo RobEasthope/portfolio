@@ -2,10 +2,10 @@ import { ClientOnly } from 'remix-utils';
 import { Studio } from 'sanity';
 import config from 'sanity.config';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+
 import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 
 export type SanityStudioProps = {
   homePageSlug: AppSettingsProps['homePageSlug'];
