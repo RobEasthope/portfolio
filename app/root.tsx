@@ -12,28 +12,24 @@ import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
-import BasicLayout from '~/routes/_basicLayout';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
-import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
 import { Favicons } from '~/components/settings/Favicons/Favicons';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
-import { Box } from '~/components/base/Box/Box';
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
 import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import type { FooterProps } from '~/components/navigation/Footer/Footer';
-import { Footer } from '~/components/navigation/Footer/Footer';
 import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
 import type { HeaderProps } from '~/components/navigation/Header/Header';
-import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+
+import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
 import LandingHeroCSS from '~/components/decoration/LandingHero/LandingHero.css';
 
@@ -84,13 +80,6 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
       urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
   },
 ];
-
-// export const meta = () => ({
-//   charset: 'utf-8',
-//   viewport: 'width=device-width,initial-scale=1',
-//   title: 'Rob Easthope',
-//   description: 'Portfolio website for Rob Easthope',
-// });
 
 export default function App() {
   const { header, footer } = useLoaderData<typeof loader>();
