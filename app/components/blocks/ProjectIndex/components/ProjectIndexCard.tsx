@@ -2,7 +2,7 @@ import { Box } from '~/components/base/Box/Box';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 
-import type { ProjectProps } from '~/components/pages/Project/Project';
+import type { ProjectProps } from '~/components/project/Project/Project';
 
 export type ProjectIndexCardProps = {
   project: ProjectProps['page'];

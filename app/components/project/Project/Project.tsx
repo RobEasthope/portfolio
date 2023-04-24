@@ -19,8 +19,8 @@ import { Dot } from '~/components/decoration/Dot/Dot';
 
 import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
 
-import type { TechProps } from '~/components/pages/Project/components/TechList/TechList';
-import { TechList } from '~/components/pages/Project/components/TechList/TechList';
+import type { TechProps } from '~/components/project/Project/components/TechList/TechList';
+import { TechList } from '~/components/project/Project/components/TechList/TechList';
 
 export type ProjectProps = {
   page?: {

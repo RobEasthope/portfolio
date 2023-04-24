@@ -13,9 +13,9 @@ import { mergeMeta } from '~/utils/mergeMeta';
 import { sanityAPI } from '~/sanity/sanity-js-api/sanityAPI';
 
 import type { Error404Props } from '~/components/pages/Error404/Error404';
-import type { ProjectProps } from '~/components/pages/Project/Project';
-import { Project } from '~/components/pages/Project/Project';
-import { PROJECT_BY_SLUG_QUERY } from '~/components/pages/Project/Project.query';
+import type { ProjectProps } from '~/components/project/Project/Project';
+import { Project } from '~/components/project/Project/Project';
+import { PROJECT_BY_SLUG_QUERY } from '~/components/project/Project/Project.query';
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];

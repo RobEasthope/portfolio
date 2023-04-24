@@ -35,8 +35,8 @@ import YoutubeVideo from '~/components/blocks/YoutubeVideo/YoutubeVideo.schema';
 
 import CV from '~/components/pages/CV/CV.schema';
 import page from '~/components/pages/Page/Page.schema';
-import project from '~/components/pages/Project/Project.schema';
-import tech from '~/components/pages/Project/schemas/Tech.schema';
+import project from '~/components/project/Project/Project.schema';
+import tech from '~/components/project/Project/schemas/Tech.schema';
 
 export const schemaTypes = [
   // Links
