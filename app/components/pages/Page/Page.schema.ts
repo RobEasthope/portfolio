@@ -1,3 +1,4 @@
+import { GoPaintcan } from 'react-icons/go';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -6,6 +7,7 @@ export default defineType({
   name: 'Page',
   title: 'Page',
   type: 'document',
+  icon: GoPaintcan,
   fields: [
     defineField({
       name: 'title',
