@@ -7,11 +7,6 @@ import type {
 
 import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
 
-import type { FooterProps } from '~/components/navigation/Footer/Footer';
-import type { HeaderProps } from '~/components/navigation/Header/Header';
-
-import { BasicLayout } from '~/components/layouts/BasicLayout/BasicLayout';
-
 // TYPES
 export type PageProps = {
   page: {
@@ -28,13 +23,9 @@ export type PageProps = {
       hotspot?: SanityImageHotspot;
     };
   };
-  header: HeaderProps;
-  footer: FooterProps;
 };
 
 // MARKUP
-export const Page = ({ page, header, footer }: PageProps) => (
-  <BasicLayout header={header} footer={footer} slug={page?.slug?.current}>
-    <SanityBlocks blocks={page?.sections} pageID={page?._id} />
-  </BasicLayout>
+export const Page = ({ page }: PageProps) => (
+  <SanityBlocks blocks={page?.sections} pageID={page?._id} />
 );

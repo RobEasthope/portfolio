@@ -6,21 +6,32 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
 import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
+import BasicLayout from '~/routes/_basicLayout';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
+import { Box } from '~/components/base/Box/Box';
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
 import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
 import { urlFor } from '~/components/base/SanityImage/urlFor';
 
+import type { FooterProps } from '~/components/navigation/Footer/Footer';
+import { Footer } from '~/components/navigation/Footer/Footer';
+import { FOOTER_QUERY } from '~/components/navigation/Footer/Footer.query';
+import type { HeaderProps } from '~/components/navigation/Header/Header';
+import { Header } from '~/components/navigation/Header/Header';
+import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
 import LandingHeroCSS from '~/components/decoration/LandingHero/LandingHero.css';
@@ -45,7 +56,12 @@ export async function loader() {
     METADATA_FALLBACKS_QUERY,
   );
 
+  const header: HeaderProps = await sanityAPI.fetch(HEADER_QUERY);
+  const footer: FooterProps = await sanityAPI.fetch(FOOTER_QUERY);
+
   return json({
+    header: header || null,
+    footer: footer || null,
     fallbacks: fallbacks || null,
   });
 }
@@ -76,6 +92,7 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
 // });
 
 export default function App() {
+  const { header, footer } = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -160,9 +177,11 @@ export default function App() {
         <Links />
       </head>
       <body className="font-plantin text-ink">
-        <Outlet />
-        <ScrollRestoration />
+        <BasicLayout header={header} footer={footer}>
+          <Outlet />
+        </BasicLayout>
 
+        <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
