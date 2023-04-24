@@ -5,7 +5,7 @@ import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import type { ProjectProps } from '~/components/pages/Project/Project';
 
 export type ProjectIndexCardProps = {
-  project: ProjectProps;
+  project: ProjectProps['page'];
 };
 
 export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
