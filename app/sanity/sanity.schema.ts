@@ -28,8 +28,8 @@ import Header from '~/components/navigation/Header/Header.schema';
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
 import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
-import Gallery from '~/components/blocks/Gallery/Gallery.schema';
-import GalleryImage from '~/components/blocks/Gallery/components/GalleryImage/GalleryImage.schema';
+import Gallery from '~/components/generic/Gallery/Gallery.schema';
+import GalleryImage from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.schema';
 import Image from '~/components/blocks/Image/Image.schema';
 import MuxVideo from '~/components/blocks/MuxVideo/MuxVideo.schema';
 import Text from '~/components/blocks/Text/Text.schema';

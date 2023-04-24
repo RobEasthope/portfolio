@@ -1,7 +1,7 @@
 import type { DotProps } from '~/components/decoration/Dot/Dot';
 import { Dot } from '~/components/decoration/Dot/Dot';
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
-import { Gallery } from '~/components/blocks/Gallery/Gallery';
+import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
+import { Gallery } from '~/components/generic/Gallery/Gallery';
 import type { ImageProps } from '~/components/blocks/Image/Image';
 import { Image } from '~/components/blocks/Image/Image';
 import type { LandingHeroProps } from '~/components/decoration/LandingHero/LandingHero';

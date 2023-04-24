@@ -14,8 +14,8 @@ import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
 import { Type } from '~/components/base/Type/Type';
 
-import type { GalleryProps } from '~/components/blocks/Gallery/Gallery';
-import { Gallery } from '~/components/blocks/Gallery/Gallery';
+import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
+import { Gallery } from '~/components/generic/Gallery/Gallery';
 import type { ImageProps } from '~/components/blocks/Image/Image';
 import { Image } from '~/components/blocks/Image/Image';
 import type { MuxVideoProps } from '~/components/blocks/MuxVideo/MuxVideo';
