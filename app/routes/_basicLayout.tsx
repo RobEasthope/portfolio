@@ -1,6 +1,7 @@
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
 import type { ReactNode } from 'react';
+
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import { Box } from '~/components/base/Box/Box';
