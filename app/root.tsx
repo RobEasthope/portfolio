@@ -15,6 +15,8 @@ import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css'
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
@@ -49,6 +51,10 @@ export const links: LinksFunction = () => [
 ];
 
 export async function loader() {
+  const appSettings: AppSettingsProps = await sanityAPI.fetch(
+    APP_SETTINGS_QUERY,
+  );
+
   const fallbacks: MetadataFallbacksProps = await sanityAPI.fetch(
     METADATA_FALLBACKS_QUERY,
   );
@@ -60,6 +66,7 @@ export async function loader() {
     header: header || null,
     footer: footer || null,
     fallbacks: fallbacks || null,
+    appSettings: appSettings || null,
   });
 }
 
@@ -89,7 +96,7 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
 // });
 
 export default function App() {
-  const { header, footer } = useLoaderData<typeof loader>();
+  const { header, footer, appSettings } = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -179,6 +186,7 @@ export default function App() {
             logo={header?.logo}
             primaryNavigation={header?.primaryNavigation}
             secondaryNavigation={header?.secondaryNavigation}
+            appSettings={appSettings}
           />
 
           <Box as="main" className="flex-grow">
