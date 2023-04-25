@@ -8,13 +8,20 @@ export default defineType({
   icon: RiPhoneLine,
   fields: [
     defineField({
+      name: 'displayLogo',
+      title: 'Display logo',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'displayDetails',
-      title: 'Display',
+      title: 'Display block',
       type: 'boolean',
       validation: (Rule) => Rule.required(),
     }),
   ],
   initialValue: {
+    displayLogo: true,
     displayDetails: true,
   },
   preview: {
