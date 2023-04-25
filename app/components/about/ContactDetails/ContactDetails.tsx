@@ -28,7 +28,6 @@ export const ContactDetails = ({
       <ExternalLink href={`tel:${details?.phoneNumber}`}>
         {details?.phoneNumber}
       </ExternalLink>
-      <ExternalLink href={details?.twitterUrl}>Twitter</ExternalLink>
       <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>
       <ExternalLink href={details?.githubUrl}>Github</ExternalLink>
       <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>

@@ -8,7 +8,6 @@ export const CONTACT_DETAILS_QUERY = groq`{
     name,
     email,
     phoneNumber,
-    twitterUrl,
     linkedinUrl,
     githubUrl,
     portfolioUrl,

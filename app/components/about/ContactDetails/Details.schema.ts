@@ -39,12 +39,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'twitterUrl',
-      title: 'Twitter profile',
-      type: 'url',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'linkedinUrl',
       title: 'LinkedIn profile',
       type: 'url',
