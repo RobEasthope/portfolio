@@ -1,9 +1,11 @@
+import { RiPhoneLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'Details',
   title: 'Contact details',
   type: 'document',
+  icon: RiPhoneLine,
   fields: [
     defineField({
       name: 'name',
@@ -34,12 +36,6 @@ export default defineType({
       name: 'phoneNumber',
       title: 'Phone number',
       type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'twitterUrl',
-      title: 'Twitter profile',
-      type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
