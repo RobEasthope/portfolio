@@ -1,6 +1,5 @@
 import { Outlet, useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
-import type { ReactNode } from 'react';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
@@ -23,7 +22,7 @@ export async function loader() {
   });
 }
 
-export const BasicLayout = ({ children }: { children: ReactNode }) => {
+export const BasicLayout = () => {
   const { header, footer } = useLoaderData<typeof loader>();
   return (
     <Box as="div" className="flex min-h-screen w-full flex-col bg-white">
