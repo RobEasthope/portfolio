@@ -17,5 +17,10 @@ export const CV = ({ page }: CVProps) => {
     return null;
   }
 
-  return <SanityBlocks blocks={page?.sections} pageID={page?._id} />;
+  return (
+    <div>
+      foobar
+      <SanityBlocks blocks={page?.sections} pageID={page?._id} />
+    </div>
+  );
 };

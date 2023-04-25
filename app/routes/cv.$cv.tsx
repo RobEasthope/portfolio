@@ -9,6 +9,7 @@ import type {
 import { cacheHeader } from 'pretty-cache-header';
 import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { PageProps } from '~/components/generic/Page/Page';
+import { Page } from '~/components/generic/Page/Page';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
@@ -16,13 +17,14 @@ import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
+import type { CVProps } from '~/components/about/CV/CV';
 import { CV } from '~/components/about/CV/CV';
 import {
   CV_BY_ID_QUERY,
   CV_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/about/CV/CV.query';
 
-type PageBySlugProps = PageProps & {
+type CVBySlugProps = CVProps & {
   error404: Error404Props['page'];
 };
 
@@ -34,7 +36,7 @@ export async function loader({ params }: LoaderArgs) {
     },
   );
 
-  const payload: PageBySlugProps = await sanityAPI.fetch(
+  const payload: CVBySlugProps = await sanityAPI.fetch(
     CV_BY_ID_QUERY({
       id: primer?.id,
       componentTypes: primer?.componentTypes,
@@ -50,7 +52,6 @@ export async function loader({ params }: LoaderArgs) {
 
   return json({
     page: payload?.page || null,
-    error404: payload?.error404 || null,
   });
 }
 
@@ -80,8 +81,11 @@ export function headers() {
   };
 }
 
-export default function CVRoute() {
+export default function Index() {
   const { page } = useLoaderData<typeof loader>();
-
+  // console.log(page);
   return <CV page={page} />;
+  // return <Page page={page} />;
+  // return null;
+  // return <h1>#foo</h1>;
 }
