@@ -1,5 +1,6 @@
 import { Outlet, useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
+import groq from 'groq';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
@@ -13,12 +14,14 @@ import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
 export async function loader() {
-  const header: HeaderProps = await sanityAPI.fetch(HEADER_QUERY);
-  const footer: FooterProps = await sanityAPI.fetch(FOOTER_QUERY);
+  const payload: HeaderProps = await sanityAPI.fetch(groq`{
+    "header": ${HEADER_QUERY},
+    "footer": ${FOOTER_QUERY},
+  }`);
 
   return json({
-    header: header || null,
-    footer: footer || null,
+    header: payload?.header || null,
+    footer: payload?.footer || null,
   });
 }
 
