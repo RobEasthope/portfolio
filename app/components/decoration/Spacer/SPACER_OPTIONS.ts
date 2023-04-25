@@ -1,4 +1,5 @@
 export const SPACER_OPTIONS = [
+  { title: '0', value: '0' },
   { title: '1', value: '1' },
   { title: '1.25', value: '1.25' },
   { title: '1.5', value: '1.5' },
