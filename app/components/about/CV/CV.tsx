@@ -1,3 +1,4 @@
+import { Box } from '~/components/base/Box/Box';
 import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
 
 // TYPES
@@ -17,5 +18,9 @@ export const CV = ({ page }: CVProps) => {
     return null;
   }
 
-  return <SanityBlocks blocks={page?.sections} pageID={page?._id} />;
+  return (
+    <Box as="main" className="py-1">
+      <SanityBlocks blocks={page?.sections} pageID={page?._id} />
+    </Box>
+  );
 };
