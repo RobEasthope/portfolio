@@ -13,20 +13,20 @@ export const GigDate = ({ startDate, endDate = new Date() }: GigDateProps) => {
   const parsedEndDate = new Date(endDate);
 
   const startDateFull = parsedStartDate.toLocaleString('default', {
-    month: 'short',
+    month: 'long',
     year: 'numeric',
   });
   const startMonth = parsedStartDate.toLocaleString('default', {
-    month: 'short',
+    month: 'long',
   });
   const startYear = parsedStartDate.getFullYear();
 
   const endDateFull = parsedEndDate.toLocaleString('default', {
-    month: 'short',
+    month: 'long',
     year: 'numeric',
   });
   const endMonth = parsedEndDate.toLocaleString('default', {
-    month: 'short',
+    month: 'long',
   });
   const endYear = parsedEndDate.getFullYear();
 
