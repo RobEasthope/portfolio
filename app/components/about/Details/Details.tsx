@@ -34,3 +34,5 @@ export const Details = ({
     </Box>
   </Box>
 );
+
+export default Details;
