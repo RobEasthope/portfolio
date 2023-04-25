@@ -25,11 +25,19 @@ export const Gig = ({
   const parsedStartDate = new Date(startDate);
   const parsedEndDate = new Date(endDate);
 
+  const startDateFull = parsedStartDate.toLocaleString('default', {
+    month: 'short',
+    year: 'numeric',
+  });
   const startMonth = parsedStartDate.toLocaleString('default', {
     month: 'short',
   });
   const startYear = parsedStartDate.getFullYear();
 
+  const endDateFull = parsedEndDate.toLocaleString('default', {
+    month: 'short',
+    year: 'numeric',
+  });
   const endMonth = parsedEndDate.toLocaleString('default', {
     month: 'short',
   });
@@ -46,13 +54,13 @@ export const Gig = ({
       </Box>
       <Box as="div" className="flex flex-wrap">
         <Type as="p">
-          {startMonth} {startYear !== endYear ? startYear : ''}
+          {startMonth} {startYear !== endYear && startYear}
         </Type>
         <Type as="span" className="mx-0.25">
           &ndash;
         </Type>
         <Type as="p">
-          {endMonth} {endYear}
+          {startDateFull !== endDateFull && endMonth} {endYear}
         </Type>
       </Box>
 
