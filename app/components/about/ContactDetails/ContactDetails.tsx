@@ -30,13 +30,15 @@ export const ContactDetails = ({
 }: ContactDetailsProps) => (
   <Box as="section" blockSpacing>
     <Box as="div" className="max-w-prose mx-auto">
-      <SanityImage
-        asset={logo}
-        alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
-        mode="contain"
-        maxWidth={200}
-        className="h-1.25 w-1.25"
-      />
+      {displayLogo && (
+        <SanityImage
+          asset={logo}
+          alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
+          mode="contain"
+          maxWidth={200}
+          className="h-1.25 w-1.25"
+        />
+      )}
       <Type as="h1">{details?.name}</Type>
       <Box as="div" className="flex gap-0.5">
         <EmailLink email={details?.email}>{details?.email}</EmailLink>
