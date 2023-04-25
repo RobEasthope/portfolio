@@ -22,6 +22,8 @@ import { PageTitle } from '~/components/decoration/PageTitle/PageTitle';
 import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
 import { Spacer } from '~/components/decoration/Spacer/Spacer';
 
+import type { ContactDetailsProps } from '~/components/about/ContactDetails/ContactDetails';
+import ContactDetails from '~/components/about/ContactDetails/ContactDetails';
 import type { GigIndexProps } from '~/components/about/GigIndex/GigIndex';
 import { GigIndex } from '~/components/about/GigIndex/GigIndex';
 import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
@@ -51,6 +53,14 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
           return (
             <Dot
               {...(block as DotProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+
+        case 'ContactDetails':
+          return (
+            <ContactDetails
+              {...(block as ContactDetailsProps)}
               key={`${pageID}-${block._key as string}`}
             />
           );
