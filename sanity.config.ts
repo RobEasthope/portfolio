@@ -12,7 +12,6 @@ import {
   RiShieldLine,
 } from 'react-icons/ri';
 import { defineConfig } from 'sanity';
-import { contentGraphView } from 'sanity-plugin-graph-view';
 import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { muxInput } from 'sanity-plugin-mux-input';
 import { deskTool } from 'sanity/desk';
@@ -148,7 +147,6 @@ export default defineConfig({
           ]),
     }),
     media(),
-    contentGraphView({}),
     visionTool(),
     muxInput(),
   ],
