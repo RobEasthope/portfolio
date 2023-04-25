@@ -22,7 +22,7 @@ export async function loader() {
   });
 }
 
-export const BasicLayout = () => {
+export const HeaderAndFooterLayout = () => {
   const { header, footer } = useLoaderData<typeof loader>();
   return (
     <Box as="div" className="flex min-h-screen w-full flex-col bg-white">
@@ -45,4 +45,4 @@ export const BasicLayout = () => {
   );
 };
 
-export default BasicLayout;
+export default HeaderAndFooterLayout;
