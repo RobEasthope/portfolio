@@ -33,7 +33,7 @@ export default defineType({
       const { subtitle } = selection;
       return {
         title: 'Spacer',
-        subtitle: subtitle || '',
+        subtitle: subtitle ? `Height: ${subtitle}` : '',
       };
     },
   },
