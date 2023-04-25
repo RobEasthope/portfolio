@@ -1,9 +1,11 @@
+import { RiPhoneLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'Details',
   title: 'Contact details',
   type: 'document',
+  icon: RiPhoneLine,
   fields: [
     defineField({
       name: 'name',
