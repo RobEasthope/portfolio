@@ -7,9 +7,7 @@ import type {
   V2_MetaFunction,
 } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
-import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { PageProps } from '~/components/generic/Page/Page';
-import { Page } from '~/components/generic/Page/Page';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
@@ -24,9 +22,7 @@ import {
   CV_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/about/CV/CV.query';
 
-type CVBySlugProps = CVProps & {
-  error404: Error404Props['page'];
-};
+type CVBySlugProps = CVProps;
 
 export async function loader({ params }: LoaderArgs) {
   const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
