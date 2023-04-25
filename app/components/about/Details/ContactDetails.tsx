@@ -3,7 +3,7 @@ import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Type } from '~/components/base/Type/Type';
 
-export type DetailsProps = {
+export type ContactDetailsProps = {
   name: string;
   email: string;
   phoneNumber: string;
@@ -13,7 +13,7 @@ export type DetailsProps = {
   portfolioUrl: string;
 };
 
-export const Details = ({
+export const ContactDetails = ({
   name,
   email,
   phoneNumber,
@@ -21,7 +21,7 @@ export const Details = ({
   linkedinUrl,
   githubUrl,
   portfolioUrl,
-}: DetailsProps) => (
+}: ContactDetailsProps) => (
   <Box as="section" blockSpacing>
     <Box as="div" className="max-w-prose mx-auto">
       <Type as="h1">{name}</Type>
@@ -35,4 +35,4 @@ export const Details = ({
   </Box>
 );
 
-export default Details;
+export default ContactDetails;
