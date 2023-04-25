@@ -47,7 +47,6 @@
     "sanity": "^3.9.0",
     "sanity-codegen": "^0.9.8",
     "sanity-pills": "^1.13.0",
-    "sanity-plugin-graph-view": "^2.0.1",
     "sanity-plugin-media": "^2.0.5",
     "sanity-plugin-mux-input": "^2.0.17",
     "styled-components": "^5.3.9",
