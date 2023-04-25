@@ -14,7 +14,8 @@ import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
 export async function loader() {
-  const payload: HeaderProps = await sanityAPI.fetch(groq`{
+  const payload: { header: HeaderProps; footer: FooterProps } =
+    await sanityAPI.fetch(groq`{
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
   }`);
