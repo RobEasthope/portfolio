@@ -25,7 +25,9 @@ export const ContactDetails = ({
     <Box as="div" className="max-w-prose mx-auto">
       <Type as="h1">{details?.name}</Type>
       <EmailLink email={details?.email}>{details?.email}</EmailLink>
-      <Type as="p">{details?.phoneNumber}</Type>
+      <ExternalLink href={`tel:${details?.phoneNumber}`}>
+        {details?.phoneNumber}
+      </ExternalLink>
       <ExternalLink href={details?.twitterUrl}>Twitter</ExternalLink>
       <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>
       <ExternalLink href={details?.githubUrl}>Github</ExternalLink>
