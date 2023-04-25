@@ -32,6 +32,7 @@ import PageTitle from '~/components/decoration/PageTitle/PageTitle.schema';
 import Spacer from '~/components/decoration/Spacer/Spacer.schema';
 
 import CV from '~/components/about/CV/CV.schema';
+import ContactDetails from '~/components/about/Details/ContactDetails.schema';
 import Details from '~/components/about/Details/Details.schema';
 import education from '~/components/about/Education/Education.schema';
 import GigIndex from '~/components/about/GigIndex/GigIndex.schema';
@@ -72,6 +73,7 @@ export const schemaTypes = [
 
   // Content UI
   Dot,
+  ContactDetails,
   GalleryImage,
   Gallery,
   GigIndex,
