@@ -42,9 +42,17 @@ export default defineType({
     spacingBottom: '0',
   },
   preview: {
-    prepare() {
+    select: {
+      spacingTop: 'spacingTop',
+      spacingBottom: 'spacingBottom',
+    },
+    prepare(selection: { spacingTop: string; spacingBottom: string }) {
+      const { spacingTop, spacingBottom } = selection;
+
+      const subtitle = `Space above: ${spacingTop} / Space below: ${spacingBottom}`;
       return {
         title: 'Dot',
+        subtitle,
       };
     },
   },
