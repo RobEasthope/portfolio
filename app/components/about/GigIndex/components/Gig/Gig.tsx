@@ -4,11 +4,12 @@ import type { BasicTextProps } from '~/components/base/Prose/components/BasicTex
 import { BasicTextComponents } from '~/components/base/Prose/components/BasicText/BasicText';
 import { Type } from '~/components/base/Type/Type';
 
+import { GigDate } from '~/components/about/GigIndex/components/Gig/GigDate';
 import type { OrganisationProps } from '~/components/about/Organisation/Organisations';
 
 export type GigProps = {
   _id?: string;
-  employer: OrganisationProps;
+  client: OrganisationProps;
   jobTitle: string;
   description: BasicTextProps;
   startDate: string;
@@ -16,17 +17,23 @@ export type GigProps = {
 };
 
 export const Gig = ({
-  employer,
+  client,
   jobTitle,
   description,
   startDate,
-  endDate,
+  endDate = 'present',
 }: GigProps) => (
   <Box as="article">
-    <Type as="h4">{employer?.name}</Type>
-    <Type as="h4">{jobTitle}</Type>
-    <Type as="p">{startDate}</Type>
-    <Type as="p">{endDate}</Type>
+    <Box as="section" className="flex flex-row font-bold">
+      <Type as="h4">{client?.name}</Type>
+      <Type as="span" className="mx-0.25">
+        /
+      </Type>
+      <Type as="h4">{jobTitle}</Type>
+    </Box>
+
+    <GigDate startDate={startDate} endDate={endDate} />
+
     <Prose as="div" content={description} components={BasicTextComponents} />
   </Box>
 );
