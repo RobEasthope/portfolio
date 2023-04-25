@@ -17,7 +17,7 @@ export const GigIndex = ({ allGigs }: GigIndexProps) => {
   return (
     <Box as="section" blockSpacing>
       {allGigs?.length > 0 && (
-        <Box as="ul" className="max-w-prose mx-auto flex flex-col gap-1">
+        <Box as="ul" className="max-w-prose mx-auto flex flex-col gap-1.5">
           {allGigs?.map((gig, i) => (
             <Gig
               key={`${gig?._id || ''}-${i}`}
