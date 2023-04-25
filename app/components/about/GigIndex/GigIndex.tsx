@@ -21,7 +21,7 @@ export const GigIndex = ({ allGigs }: GigIndexProps) => {
           {allGigs?.map((gig, i) => (
             <Gig
               key={`${gig?._id || ''}-${i}`}
-              employer={gig.employer}
+              client={gig.client}
               jobTitle={gig.jobTitle}
               description={gig.description}
               startDate={gig.startDate}

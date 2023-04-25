@@ -8,7 +8,7 @@ import type { OrganisationProps } from '~/components/about/Organisation/Organisa
 
 export type GigProps = {
   _id?: string;
-  employer: OrganisationProps;
+  client: OrganisationProps;
   jobTitle: string;
   description: BasicTextProps;
   startDate: string;
@@ -16,14 +16,14 @@ export type GigProps = {
 };
 
 export const Gig = ({
-  employer,
+  client,
   jobTitle,
   description,
   startDate,
   endDate,
 }: GigProps) => (
   <Box as="article">
-    <Type as="h4">{employer?.name}</Type>
+    <Type as="h4">{client?.name}</Type>
     <Type as="h4">{jobTitle}</Type>
     <Type as="p">{startDate}</Type>
     <Type as="p">{endDate}</Type>
