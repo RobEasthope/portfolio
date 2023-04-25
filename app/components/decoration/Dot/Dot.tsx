@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 
+import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
+
 export type DotProps = {
-  spacingTop?: number;
-  spacingBottom?: number;
+  spacingTop?: SpacerProps['height'];
+  spacingBottom?: SpacerProps['height'];
   className?: string;
 };
 
