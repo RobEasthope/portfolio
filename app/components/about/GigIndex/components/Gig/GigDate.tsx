@@ -31,7 +31,7 @@ export const GigDate = ({ startDate, endDate = new Date() }: GigDateProps) => {
   const endYear = parsedEndDate.getFullYear();
 
   return (
-    <Box as="div" className="flex flex-wrap">
+    <Box as="div" className="flex flex-wrap italic">
       <Type as="p">
         {startMonth} {startYear !== endYear && startYear}
       </Type>

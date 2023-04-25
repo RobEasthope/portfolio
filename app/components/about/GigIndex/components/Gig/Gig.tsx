@@ -24,7 +24,7 @@ export const Gig = ({
   endDate = 'present',
 }: GigProps) => (
   <Box as="article">
-    <Box as="section" className="flex flex-row">
+    <Box as="section" className="flex flex-row font-bold">
       <Type as="h4">{client?.name}</Type>
       <Type as="span" className="mx-0.25">
         /
