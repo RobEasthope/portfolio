@@ -4,33 +4,32 @@ import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Type } from '~/components/base/Type/Type';
 
 export type ContactDetailsProps = {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  twitterUrl: string;
-  linkedinUrl: string;
-  githubUrl: string;
-  portfolioUrl: string;
+  _id: 'ContactDetails';
+  displayLogo: boolean;
+  details: {
+    name: string;
+    email: string;
+    phoneNumber: string;
+    twitterUrl: string;
+    linkedinUrl: string;
+    githubUrl: string;
+    portfolioUrl: string;
+  };
 };
 
 export const ContactDetails = ({
-  name,
-  email,
-  phoneNumber,
-  twitterUrl,
-  linkedinUrl,
-  githubUrl,
-  portfolioUrl,
+  displayLogo,
+  details,
 }: ContactDetailsProps) => (
   <Box as="section" blockSpacing>
     <Box as="div" className="max-w-prose mx-auto">
-      <Type as="h1">{name}</Type>
-      <EmailLink email={email}>{email}</EmailLink>
-      <Type as="p">{phoneNumber}</Type>
-      <ExternalLink href={twitterUrl}>Twitter</ExternalLink>
-      <ExternalLink href={linkedinUrl}>LinkedIn</ExternalLink>
-      <ExternalLink href={githubUrl}>Github</ExternalLink>
-      <ExternalLink href={portfolioUrl}>Portfolio</ExternalLink>
+      <Type as="h1">{details?.name}</Type>
+      <EmailLink email={details?.email}>{details?.email}</EmailLink>
+      <Type as="p">{details?.phoneNumber}</Type>
+      <ExternalLink href={details?.twitterUrl}>Twitter</ExternalLink>
+      <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>
+      <ExternalLink href={details?.githubUrl}>Github</ExternalLink>
+      <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
     </Box>
   </Box>
 );
