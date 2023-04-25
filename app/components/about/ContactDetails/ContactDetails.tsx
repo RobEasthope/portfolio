@@ -24,13 +24,18 @@ export const ContactDetails = ({
   <Box as="section" blockSpacing>
     <Box as="div" className="max-w-prose mx-auto">
       <Type as="h1">{details?.name}</Type>
-      <EmailLink email={details?.email}>{details?.email}</EmailLink>
-      <ExternalLink href={`tel:${details?.phoneNumber}`}>
-        {details?.phoneNumber}
-      </ExternalLink>
-      <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>
-      <ExternalLink href={details?.githubUrl}>Github</ExternalLink>
-      <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
+      <Box as="div" className="flex gap-0.5">
+        <EmailLink email={details?.email}>{details?.email}</EmailLink>
+        <ExternalLink href={`tel:${details?.phoneNumber}`}>
+          {details?.phoneNumber}
+        </ExternalLink>
+      </Box>
+
+      <Box as="div" className="flex gap-0.5">
+        <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>
+        <ExternalLink href={details?.githubUrl}>Github</ExternalLink>
+        <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
+      </Box>
     </Box>
   </Box>
 );
