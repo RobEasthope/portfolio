@@ -4,6 +4,7 @@ import classNames from 'classnames';
 export type SpacerProps = {
   _type?: 'Spacer';
   height:
+    | '0'
     | '1'
     | '2'
     | '3'
@@ -34,12 +35,12 @@ export type SpacerProps = {
 };
 
 // MARKUP
-export const Spacer = ({ height, className }: SpacerProps) => {
+export const Spacer = ({ height = '1', className }: SpacerProps) => {
   if (!height) {
     return null;
   }
 
-  return <div className={classNames('w-full', height || 'h-1', className)} />;
+  return <div className={classNames('w-full', `h-${height}`, className)} />;
 };
 
 export default Spacer;
