@@ -1,6 +1,6 @@
-import { useLoaderData } from '@remix-run/react';
+import { Outlet, useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
-import type { ReactNode } from 'react';
+import groq from 'groq';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
@@ -14,16 +14,19 @@ import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
 export async function loader() {
-  const header: HeaderProps = await sanityAPI.fetch(HEADER_QUERY);
-  const footer: FooterProps = await sanityAPI.fetch(FOOTER_QUERY);
+  const payload: { header: HeaderProps; footer: FooterProps } =
+    await sanityAPI.fetch(groq`{
+    "header": ${HEADER_QUERY},
+    "footer": ${FOOTER_QUERY},
+  }`);
 
   return json({
-    header: header || null,
-    footer: footer || null,
+    header: payload?.header || null,
+    footer: payload?.footer || null,
   });
 }
 
-export const BasicLayout = ({ children }: { children: ReactNode }) => {
+export const HeaderAndFooterLayout = () => {
   const { header, footer } = useLoaderData<typeof loader>();
   return (
     <Box as="div" className="flex min-h-screen w-full flex-col bg-white">
@@ -35,7 +38,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
       />
 
       <Box as="main" className="flex-grow">
-        {children}
+        <Outlet />
       </Box>
 
       <Footer
@@ -46,4 +49,4 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default BasicLayout;
+export default HeaderAndFooterLayout;
