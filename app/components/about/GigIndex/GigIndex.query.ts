@@ -5,14 +5,20 @@ export const GIG_INDEX_QUERY = groq`{
   _type,
   heading,
   "allGigs": *[_type == "gig" && !(_id in path("drafts.**")) && defined(startDate)]{
-    employer,
+    "client": employer -> {
+      name,
+      url,
+    },
     jobTitle,
     description,
     startDate,
     endDate,
   } | order(endDate desc),
   "selectedGigs": selectedGigs[]->{
-    employer,
+    "client": employer -> {
+      name,
+      url,
+    },
     jobTitle,
     description,
     startDate,
