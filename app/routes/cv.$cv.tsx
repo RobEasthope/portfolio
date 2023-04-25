@@ -83,9 +83,6 @@ export function headers() {
 
 export default function Index() {
   const { page } = useLoaderData<typeof loader>();
-  // console.log(page);
+
   return <CV page={page} />;
-  // return <Page page={page} />;
-  // return null;
-  // return <h1>#foo</h1>;
 }
