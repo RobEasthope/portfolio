@@ -93,9 +93,9 @@ export default function App() {
         <Links />
       </head>
       <body className="font-plantin text-ink">
-        <BasicLayout header={header} footer={footer}>
-          <Outlet />
-        </BasicLayout>
+        {/* <BasicLayout header={header} footer={footer}> */}
+        <Outlet />
+        {/* </BasicLayout> */}
 
         <ScrollRestoration />
         <Scripts />
