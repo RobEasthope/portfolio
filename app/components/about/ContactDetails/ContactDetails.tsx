@@ -29,7 +29,10 @@ export const ContactDetails = ({
   details,
 }: ContactDetailsProps) => (
   <Box as="section" blockSpacing>
-    <Box as="div" className="max-w-prose mx-auto">
+    <Box
+      as="div"
+      className="max-w-prose mx-auto flex flex-col items-center gap-0.5"
+    >
       {displayLogo && (
         <SanityImage
           asset={logo}
@@ -40,16 +43,16 @@ export const ContactDetails = ({
         />
       )}
       <Type as="h1">{details?.name}</Type>
-      <Box as="div" className="flex gap-0.5">
-        <EmailLink email={details?.email}>{details?.email}</EmailLink>
+      <Box as="div" className="flex gap-0.25">
+        <EmailLink email={details?.email}>{details?.email}</EmailLink>/
         <ExternalLink href={`tel:${details?.phoneNumber}`}>
           {details?.phoneNumber}
         </ExternalLink>
       </Box>
 
-      <Box as="div" className="flex gap-0.5">
-        <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>
-        <ExternalLink href={details?.githubUrl}>Github</ExternalLink>
+      <Box as="div" className="flex gap-0.25">
+        <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>/
+        <ExternalLink href={details?.githubUrl}>Github</ExternalLink>/
         <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
       </Box>
     </Box>
