@@ -12,6 +12,10 @@ export type CVProps = {
 };
 
 // MARKUP
-export const CV = ({ page }: CVProps) => (
-  <SanityBlocks blocks={page?.sections} pageID={page?._id} />
-);
+export const CV = ({ page }: CVProps) => {
+  if (!page?.sections) {
+    return null;
+  }
+
+  return <SanityBlocks blocks={page?.sections} pageID={page?._id} />;
+};
