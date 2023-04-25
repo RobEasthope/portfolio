@@ -1,4 +1,4 @@
-import { useLoaderData } from '@remix-run/react';
+import { Outlet, useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
 import type { ReactNode } from 'react';
 
@@ -35,7 +35,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
       />
 
       <Box as="main" className="flex-grow">
-        {children}
+        <Outlet />
       </Box>
 
       <Footer
