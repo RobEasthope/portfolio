@@ -39,9 +39,10 @@ export const EduInstitution = ({
 }: EduInstitutionProps) => (
   <Box as="article">
     <Box as="section" className="flex flex-row font-bold">
-      <ExternalLink href={url}>{name}</ExternalLink> /{' '}
-      <Type as="h4">{qualification}</Type>
-      <GigDate startDate={startDate} endDate={endDate} />
+      <ExternalLink href={url}>{name}</ExternalLink>
+      <Type as="span">&nbsp;/&nbsp;</Type>
+      <Type as="p">{qualification}</Type>
     </Box>
+    <GigDate startDate={startDate} endDate={endDate} />
   </Box>
 );
