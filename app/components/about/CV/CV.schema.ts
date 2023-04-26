@@ -33,6 +33,7 @@ export default defineType({
       of: [
         { type: 'Dot' },
         { type: 'ContactDetails' },
+        { type: 'Education' },
         { type: 'GigIndex' },
         { type: 'Organisations' },
         { type: 'Spacer' },
