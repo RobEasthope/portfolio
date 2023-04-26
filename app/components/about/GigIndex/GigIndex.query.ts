@@ -4,6 +4,7 @@ export const GIG_INDEX_QUERY = groq`{
   _key,
   _type,
   heading,
+  gigsDisplayed,
   "allGigs": *[_type == "gig" && !(_id in path("drafts.**"))]{
     "client": employer -> {
       name,
