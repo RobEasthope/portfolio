@@ -1,11 +1,11 @@
-import { RiPhoneLine } from 'react-icons/ri';
+import { IoMdSchool } from 'react-icons/io';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
   type: 'object',
   name: 'Education',
   title: 'Education',
-  icon: RiPhoneLine,
+  icon: IoMdSchool,
   fields: [
     defineField({
       name: 'display',

@@ -1,3 +1,4 @@
+import { IoMdSchool } from 'react-icons/io';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -6,6 +7,7 @@ export default defineType({
   name: 'EduInstitution',
   title: 'EduInstitution',
   type: 'document',
+  icon: IoMdSchool,
   fields: [
     defineField({
       name: 'name',
