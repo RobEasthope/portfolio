@@ -3,8 +3,8 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   type: 'object',
-  name: 'Education index',
-  title: 'Education index',
+  name: 'Education',
+  title: 'Education',
   icon: RiPhoneLine,
   fields: [
     defineField({
@@ -20,7 +20,7 @@ export default defineType({
   preview: {
     prepare() {
       return {
-        title: 'Education index',
+        title: 'Education',
       };
     },
   },
