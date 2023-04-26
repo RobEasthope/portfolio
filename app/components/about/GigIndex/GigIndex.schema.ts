@@ -15,6 +15,22 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'gigsDisplayed',
+      title: 'Gigs displayed',
+      type: 'string',
+      options: {
+        list: [
+          {
+            title: 'All gigs',
+            value: 'all',
+          },
+          { title: 'Recent', value: 'recent' },
+          { title: 'Custom list', value: 'custom' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'selectedGigs',
       title: 'Selected gigs',
       type: 'array',
