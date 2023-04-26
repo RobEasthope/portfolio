@@ -3,16 +3,25 @@ import { Type } from '~/components/base/Type/Type';
 
 import type { GigProps } from '~/components/about/GigIndex/components/Gig/Gig';
 import { Gig } from '~/components/about/GigIndex/components/Gig/Gig';
+import { GigList } from '~/components/about/GigIndex/components/GigList/GigList';
 
 // TYPES
 export type GigIndexProps = {
   heading?: string;
+  gigsDisplayed: 'all' | 'recent' | 'custom';
   allGigs: GigProps[];
   recentGigs: GigProps[];
+  selectedGigs: GigProps[];
 };
 
 // MARKUP
-export const GigIndex = ({ heading, allGigs, recentGigs }: GigIndexProps) => {
+export const GigIndex = ({
+  heading,
+  gigsDisplayed = 'recent',
+  allGigs,
+  recentGigs,
+  selectedGigs,
+}: GigIndexProps) => {
   if (!allGigs?.length) {
     return null;
   }
@@ -23,20 +32,9 @@ export const GigIndex = ({ heading, allGigs, recentGigs }: GigIndexProps) => {
         <Type as="h2" className="text-lg mb-1 text-center">
           {heading}
         </Type>
-        {recentGigs?.length > 0 && (
-          <Box as="ul" className=" flex flex-col gap-1.5">
-            {recentGigs?.map((gig, i) => (
-              <Gig
-                key={`${gig?._id || ''}-${i}`}
-                client={gig.client}
-                jobTitle={gig.jobTitle}
-                description={gig.description}
-                startDate={gig.startDate}
-                endDate={gig.endDate}
-              />
-            ))}
-          </Box>
-        )}
+        {gigsDisplayed === 'all' && <GigList gigs={allGigs} />}
+        {gigsDisplayed === 'recent' && <GigList gigs={recentGigs} />}
+        {gigsDisplayed === 'custom' && <GigList gigs={selectedGigs} />}
       </Box>
     </Box>
   );
