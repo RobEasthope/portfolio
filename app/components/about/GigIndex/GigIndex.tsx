@@ -8,10 +8,11 @@ import { Gig } from '~/components/about/GigIndex/components/Gig/Gig';
 export type GigIndexProps = {
   heading?: string;
   allGigs: GigProps[];
+  recentGigs: GigProps[];
 };
 
 // MARKUP
-export const GigIndex = ({ heading, allGigs }: GigIndexProps) => {
+export const GigIndex = ({ heading, allGigs, recentGigs }: GigIndexProps) => {
   if (!allGigs?.length) {
     return null;
   }
@@ -22,9 +23,9 @@ export const GigIndex = ({ heading, allGigs }: GigIndexProps) => {
         <Type as="h2" className="text-lg mb-1 text-center">
           {heading}
         </Type>
-        {allGigs?.length > 0 && (
+        {recentGigs?.length > 0 && (
           <Box as="ul" className=" flex flex-col gap-1.5">
-            {allGigs?.map((gig, i) => (
+            {recentGigs?.map((gig, i) => (
               <Gig
                 key={`${gig?._id || ''}-${i}`}
                 client={gig.client}
