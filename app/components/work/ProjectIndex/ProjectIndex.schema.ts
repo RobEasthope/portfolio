@@ -1,3 +1,4 @@
+import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -6,6 +7,7 @@ export default defineType({
   name: 'ProjectIndex',
   title: 'Project index',
   type: 'object',
+  icon: BsBrush,
   fields: [
     defineField({
       name: 'index',
