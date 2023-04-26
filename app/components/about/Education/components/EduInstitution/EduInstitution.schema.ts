@@ -56,13 +56,14 @@ export default defineType({
   preview: {
     select: {
       title: 'name',
+      subtitle: 'qualification',
       media: 'logo',
     },
     prepare(selection: BasicSanityListingProps) {
-      const { title, media } = selection;
+      const { title, subtitle, media } = selection;
       return {
         title: title || 'EduInstitution',
-        subtitle: title ? 'EduInstitution' : '',
+        subtitle: title ? subtitle : '',
         media,
       };
     },
