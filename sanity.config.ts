@@ -84,9 +84,9 @@ export default defineConfig({
               .title('Education')
               .icon(IoMdSchool)
               .child(
-                S.documentTypeList('EduInstitution').defaultOrdering([
-                  { field: 'name', direction: 'desc' },
-                ]),
+                S.documentTypeList('EduInstitution')
+                  .title('Education')
+                  .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.listItem()
               .title('Contact details')
