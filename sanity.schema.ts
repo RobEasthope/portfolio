@@ -34,7 +34,8 @@ import Spacer from '~/components/decoration/Spacer/Spacer.schema';
 import CV from '~/components/about/CV/CV.schema';
 import ContactDetails from '~/components/about/ContactDetails/ContactDetails.schema';
 import Details from '~/components/about/ContactDetails/Details.schema';
-import education from '~/components/about/Education/Education.schema';
+import Education from '~/components/about/Education/Education.schema';
+import EduInstitution from '~/components/about/Education/components/EduInstitution/EduInstitution.schema';
 import GigIndex from '~/components/about/GigIndex/GigIndex.schema';
 import gig from '~/components/about/GigIndex/components/Gig/Gig.schema';
 import organisation from '~/components/about/Organisation/Organisation.schema';
@@ -69,11 +70,12 @@ export const schemaTypes = [
   tech,
   gig,
   organisation,
-  education,
+  EduInstitution,
 
   // Content UI
   Dot,
   ContactDetails,
+  Education,
   GalleryImage,
   Gallery,
   GigIndex,
