@@ -12,12 +12,14 @@ import { PAGE_TITLE_QUERY } from '~/components/decoration/PageTitle/PageTitle.qu
 import { SPACER_QUERY } from '~/components/decoration/Spacer/Spacer.query';
 
 import { CONTACT_DETAILS_QUERY } from '~/components/about/ContactDetails/ContactDetails.query';
+import { EDUCATION_QUERY } from '~/components/about/Education/Education.query';
 import { GIG_INDEX_QUERY } from '~/components/about/GigIndex/GigIndex.query';
 import { ORGANISATIONS_QUERY } from '~/components/about/Organisation/Organisations.query';
 
 export const SANITY_BLOCK_QUERIES = () => ({
   Dot: DOT_QUERY,
   ContactDetails: CONTACT_DETAILS_QUERY,
+  Education: EDUCATION_QUERY,
   Gallery: GALLERY_QUERY,
   GigIndex: GIG_INDEX_QUERY,
   Image: IMAGE_QUERY,
