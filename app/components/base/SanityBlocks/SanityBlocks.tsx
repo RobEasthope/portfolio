@@ -23,7 +23,9 @@ import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
 import { Spacer } from '~/components/decoration/Spacer/Spacer';
 
 import type { ContactDetailsProps } from '~/components/about/ContactDetails/ContactDetails';
-import ContactDetails from '~/components/about/ContactDetails/ContactDetails';
+import { ContactDetails } from '~/components/about/ContactDetails/ContactDetails';
+import type { EducationProps } from '~/components/about/Education/Education';
+import { Education } from '~/components/about/Education/Education';
 import type { GigIndexProps } from '~/components/about/GigIndex/GigIndex';
 import { GigIndex } from '~/components/about/GigIndex/GigIndex';
 import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
@@ -61,6 +63,13 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
           return (
             <ContactDetails
               {...(block as ContactDetailsProps)}
+              key={`${pageID}-${block._key as string}`}
+            />
+          );
+        case 'Education':
+          return (
+            <Education
+              {...(block as EducationProps)}
               key={`${pageID}-${block._key as string}`}
             />
           );
