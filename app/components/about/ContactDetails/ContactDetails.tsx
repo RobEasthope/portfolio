@@ -42,7 +42,9 @@ export const ContactDetails = ({
           className="h-1.25 w-1.25"
         />
       )}
-      <Type as="h1">{details?.name}</Type>
+      <Type as="h1" className="font-bold">
+        {details?.name}
+      </Type>
       <Box as="div" className="flex gap-0.25">
         <EmailLink email={details?.email}>{details?.email}</EmailLink>/
         <ExternalLink href={`tel:${details?.phoneNumber}`}>
@@ -50,10 +52,10 @@ export const ContactDetails = ({
         </ExternalLink>
       </Box>
 
-      <Box as="div" className="flex gap-0.25">
         <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>/
         <ExternalLink href={details?.githubUrl}>Github</ExternalLink>/
         <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
+      <Box as="div" className="flex gap-0.25 italic">
       </Box>
     </Box>
   </Box>
