@@ -47,7 +47,7 @@ export const Organisations = ({
           as="div"
           content={description}
           components={BasicTextComponents}
-          className="mx-auto mb-2 text-center text-lg"
+          className="mx-auto mb-2 text-center"
         />
         <Box
           as="ul"
