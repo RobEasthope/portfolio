@@ -64,7 +64,7 @@ export const FullTextComponents: PortableTextComponents = {
     ExternalLink: ({ children, value }) => (
       <ExternalLink
         href={value.url}
-        className="text-inherit underline decoration-2 hover:underline-offset-2"
+        className="text-inherit underline decoration-2 hover:underline-offset-2 print:no-underline"
       >
         {children}
       </ExternalLink>
@@ -72,7 +72,7 @@ export const FullTextComponents: PortableTextComponents = {
     InternalLink: ({ children, value }) => (
       <InternalLink
         href={value?.page?.slug?.current}
-        className="text-inherit underline decoration-2 hover:underline-offset-2"
+        className="text-inherit underline decoration-2 hover:underline-offset-2 print:no-underline"
         homePageSlug={value?.appSettings?.homePageSlug}
       >
         {children}
@@ -81,7 +81,7 @@ export const FullTextComponents: PortableTextComponents = {
     EmailLink: ({ children, value }) => (
       <EmailLink
         email={value?.email}
-        className="text-inherit underline decoration-2 hover:underline-offset-2"
+        className="text-inherit underline decoration-2 hover:underline-offset-2 print:no-underline"
       >
         {children}
       </EmailLink>
