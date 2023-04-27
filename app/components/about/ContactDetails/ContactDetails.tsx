@@ -16,7 +16,6 @@ export type ContactDetailsProps = {
     name: string;
     email: string;
     phoneNumber: string;
-    twitterUrl: string;
     linkedinUrl: string;
     prettyLinkedinUrl: string;
     prettyGithubUrl: string;
