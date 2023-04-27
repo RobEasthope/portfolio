@@ -52,10 +52,21 @@ export const ContactDetails = ({
         </ExternalLink>
       </Box>
 
-        <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>/
-        <ExternalLink href={details?.githubUrl}>Github</ExternalLink>/
-        <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
       <Box as="div" className="flex gap-0.25 italic">
+        <ExternalLink href={details?.linkedinUrl}>
+          LinkedIn
+          <span className="hidden print:inline">: {details?.linkedinUrl}</span>
+        </ExternalLink>
+        /
+        <ExternalLink href={details?.githubUrl}>
+          Github
+          <span className="hidden print:inline">: {details?.githubUrl}</span>
+        </ExternalLink>
+        /
+        <ExternalLink href={details?.portfolioUrl}>
+          Portfolio
+          <span className="hidden print:inline">: {details?.portfolioUrl}</span>
+        </ExternalLink>
       </Box>
     </Box>
   </Box>
