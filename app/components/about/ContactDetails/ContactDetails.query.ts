@@ -10,7 +10,10 @@ export const CONTACT_DETAILS_QUERY = groq`{
     email,
     phoneNumber,
     linkedinUrl,
+    prettyLinkedinUrl,
     githubUrl,
+    prettyGithubUrl,
     portfolioUrl,
+    prettyPortfolioUrl,
   }}
 `;

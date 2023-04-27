@@ -16,10 +16,10 @@ export type ContactDetailsProps = {
     name: string;
     email: string;
     phoneNumber: string;
-    twitterUrl: string;
     linkedinUrl: string;
-    githubUrl: string;
-    portfolioUrl: string;
+    prettyLinkedinUrl: string;
+    prettyGithubUrl: string;
+    prettyPortfolioUrl: string;
   };
 };
 
@@ -42,18 +42,48 @@ export const ContactDetails = ({
           className="h-1.25 w-1.25"
         />
       )}
-      <Type as="h1">{details?.name}</Type>
-      <Box as="div" className="flex gap-0.25">
-        <EmailLink email={details?.email}>{details?.email}</EmailLink>/
-        <ExternalLink href={`tel:${details?.phoneNumber}`}>
+      <Type as="h1" className="font-bold">
+        {details?.name}
+      </Type>
+      <Box as="div" className="flex gap-0.25 flex-wrap justify-center">
+        <EmailLink email={details?.email} className="inline-block">
+          {details?.email}
+        </EmailLink>
+        /
+        <ExternalLink
+          href={`tel:${details?.phoneNumber}`}
+          className="inline-block"
+        >
           {details?.phoneNumber}
         </ExternalLink>
       </Box>
 
-      <Box as="div" className="flex gap-0.25">
-        <ExternalLink href={details?.linkedinUrl}>LinkedIn</ExternalLink>/
-        <ExternalLink href={details?.githubUrl}>Github</ExternalLink>/
-        <ExternalLink href={details?.portfolioUrl}>Portfolio</ExternalLink>
+      <Box
+        as="div"
+        className="flex print:gap-1 italic flex-wrap justify-center print:mt-1"
+      >
+        <ExternalLink href={details?.linkedinUrl}>
+          LinkedIn<span className="hidden print:inline">:</span>
+          <span className="hidden print:block">
+            {details?.prettyLinkedinUrl}
+          </span>
+        </ExternalLink>
+        <Type as="span" className="print:hidden mx-0.125">
+          /
+        </Type>
+        <ExternalLink href={details?.githubUrl}>
+          Github<span className="hidden print:inline">:</span>
+          <span className="hidden print:block">{details?.prettyGithubUrl}</span>
+        </ExternalLink>
+        <Type as="span" className="print:hidden mx-0.125">
+          /
+        </Type>
+        <ExternalLink href={details?.portfolioUrl}>
+          Portfolio<span className="hidden print:inline">:</span>
+          <span className="hidden print:block">
+            {details?.prettyPortfolioUrl}
+          </span>
+        </ExternalLink>
       </Box>
     </Box>
   </Box>

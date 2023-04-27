@@ -6,6 +6,7 @@
 
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
+import classNames from 'classnames';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
 import { Gallery } from '~/components/generic/Gallery/Gallery';
@@ -22,6 +23,7 @@ import { Box } from '~/components/base/Box/Box';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { twLinkStyles } from '~/components/base/Prose/twLinkStyles';
 import { Type } from '~/components/base/Type/Type';
 
 export type FullTextProps = Array<
@@ -62,27 +64,21 @@ export const FullTextComponents: PortableTextComponents = {
 
     // Links
     ExternalLink: ({ children, value }) => (
-      <ExternalLink
-        href={value.url}
-        className="text-inherit underline decoration-2 hover:underline-offset-2"
-      >
+      <ExternalLink href={value.url} className={twLinkStyles}>
         {children}
       </ExternalLink>
     ),
     InternalLink: ({ children, value }) => (
       <InternalLink
         href={value?.page?.slug?.current}
-        className="text-inherit underline decoration-2 hover:underline-offset-2"
+        className={twLinkStyles}
         homePageSlug={value?.appSettings?.homePageSlug}
       >
         {children}
       </InternalLink>
     ),
     EmailLink: ({ children, value }) => (
-      <EmailLink
-        email={value?.email}
-        className="text-inherit underline decoration-2 hover:underline-offset-2"
-      >
+      <EmailLink email={value?.email} className={twLinkStyles}>
         {children}
       </EmailLink>
     ),
