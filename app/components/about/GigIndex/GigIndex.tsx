@@ -28,7 +28,7 @@ export const GigIndex = ({
 
   return (
     <Box as="section" blockSpacing>
-      <Box as="div" className="max-w-prose mx-auto">
+      <Box as="div" className="max-w-prose mx-auto print:max-w-full">
         <Type as="h2" className="text-lg mb-1 text-center">
           {heading}
         </Type>

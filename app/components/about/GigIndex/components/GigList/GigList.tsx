@@ -11,7 +11,7 @@ export const GigList = ({ gigs }: GigListProps) => {
   if (!gigs?.length) return null;
 
   return (
-    <Box as="ul" className=" flex flex-col gap-1.5">
+    <Box as="ul" className="flex flex-col gap-1.5">
       {gigs?.map((gig, i) => (
         <Gig
           key={`${gig?._id || ''}-${i}`}

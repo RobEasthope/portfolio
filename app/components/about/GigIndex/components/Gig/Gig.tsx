@@ -34,6 +34,11 @@ export const Gig = ({
 
     <GigDate startDate={startDate} endDate={endDate} />
 
-    <Prose as="div" content={description} components={BasicTextComponents} />
+    <Prose
+      as="div"
+      content={description}
+      components={BasicTextComponents}
+      className="print:max-w-full"
+    />
   </Box>
 );
