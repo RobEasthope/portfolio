@@ -58,24 +58,29 @@ export const ContactDetails = ({
         </ExternalLink>
       </Box>
 
-      <Box as="div" className="flex gap-0.25 italic flex-wrap justify-center">
+      <Box
+        as="div"
+        className="flex print:gap-1 italic flex-wrap justify-center print:mt-1"
+      >
         <ExternalLink href={details?.linkedinUrl}>
-          <span className="print:hidden">LinkedIn</span>
-          <span className="hidden print:inline">
+          LinkedIn<span className="hidden print:inline">:</span>
+          <span className="hidden print:block">
             {details?.prettyLinkedinUrl}
           </span>
         </ExternalLink>
-        /
+        <Type as="span" className="print:hidden mx-0.125">
+          /
+        </Type>
         <ExternalLink href={details?.githubUrl}>
-          <span className="print:hidden">Github</span>
-          <span className="hidden print:inline">
-            {details?.prettyGithubUrl}
-          </span>
+          Github<span className="hidden print:inline">:</span>
+          <span className="hidden print:block">{details?.prettyGithubUrl}</span>
         </ExternalLink>
-        /
+        <Type as="span" className="print:hidden mx-0.125">
+          /
+        </Type>
         <ExternalLink href={details?.portfolioUrl}>
-          <span className="print:hidden">Portfolio</span>
-          <span className="hidden print:inline">
+          Portfolio<span className="hidden print:inline">:</span>
+          <span className="hidden print:block">
             {details?.prettyPortfolioUrl}
           </span>
         </ExternalLink>
