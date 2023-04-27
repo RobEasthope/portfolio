@@ -10,6 +10,7 @@ import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/base/Prose/Prose';
 import type { BasicTextProps } from '~/components/base/Prose/components/BasicText/BasicText';
 import { BasicTextComponents } from '~/components/base/Prose/components/BasicText/BasicText';
+import { Type } from '~/components/base/Type/Type';
 
 export type OrganisationProps = {
   _type: 'organisation';
@@ -26,11 +27,13 @@ export type OrganisationProps = {
 };
 
 export type OrganisationsProps = {
+  heading: string;
   description: BasicTextProps;
   organisations: OrganisationProps[];
 };
 
 export const Organisations = ({
+  heading,
   description,
   organisations,
 }: OrganisationsProps) => {
@@ -39,6 +42,7 @@ export const Organisations = ({
   return (
     <Box as="section" blockSpacing>
       <Box as="div" className="max-w-6xl mx-auto">
+        <Type as="h2">{heading}</Type>
         <Prose
           as="div"
           content={description}
