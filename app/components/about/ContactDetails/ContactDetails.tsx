@@ -18,8 +18,9 @@ export type ContactDetailsProps = {
     phoneNumber: string;
     twitterUrl: string;
     linkedinUrl: string;
-    githubUrl: string;
-    portfolioUrl: string;
+    prettyLinkedinUrl: string;
+    prettyGithubUrl: string;
+    prettyPortfolioUrl: string;
   };
 };
 
@@ -55,17 +56,23 @@ export const ContactDetails = ({
       <Box as="div" className="flex gap-0.25 italic">
         <ExternalLink href={details?.linkedinUrl}>
           LinkedIn
-          <span className="hidden print:inline">: {details?.linkedinUrl}</span>
+          <span className="hidden print:inline">
+            : {details?.prettyLinkedinUrl}
+          </span>
         </ExternalLink>
         /
         <ExternalLink href={details?.githubUrl}>
           Github
-          <span className="hidden print:inline">: {details?.githubUrl}</span>
+          <span className="hidden print:inline">
+            : {details?.prettyGithubUrl}
+          </span>
         </ExternalLink>
         /
         <ExternalLink href={details?.portfolioUrl}>
           Portfolio
-          <span className="hidden print:inline">: {details?.portfolioUrl}</span>
+          <span className="hidden print:inline">
+            : {details?.prettyPortfolioUrl}
+          </span>
         </ExternalLink>
       </Box>
     </Box>
