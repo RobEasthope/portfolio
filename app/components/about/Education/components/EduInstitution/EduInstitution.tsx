@@ -38,11 +38,9 @@ export const EduInstitution = ({
   logo,
 }: EduInstitutionProps) => (
   <Box as="article">
-    <Box as="section" className="flex flex-row font-bold">
-      <ExternalLink href={url}>{name}</ExternalLink>
-      <Type as="span">&nbsp;/&nbsp;</Type>
-      <Type as="p">{qualification}</Type>
-    </Box>
+    <ExternalLink href={url} className="font-bold">
+      {name} / {qualification}
+    </ExternalLink>
     <GigDate startDate={startDate} endDate={endDate} />
   </Box>
 );

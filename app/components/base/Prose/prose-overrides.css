@@ -3,3 +3,16 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+@media print {
+  .prose
+    :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .prose :where(li):not(:where([class~="not-prose"] *)) {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+}
