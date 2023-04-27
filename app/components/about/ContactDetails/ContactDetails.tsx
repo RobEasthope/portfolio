@@ -45,14 +45,20 @@ export const ContactDetails = ({
       <Type as="h1" className="font-bold">
         {details?.name}
       </Type>
-      <Box as="div" className="flex gap-0.25">
-        <EmailLink email={details?.email}>{details?.email}</EmailLink>/
-        <ExternalLink href={`tel:${details?.phoneNumber}`}>
+      <Box as="div" className="flex gap-0.25 flex-wrap justify-center">
+        <EmailLink email={details?.email} className="inline-block">
+          {details?.email}
+        </EmailLink>
+        /
+        <ExternalLink
+          href={`tel:${details?.phoneNumber}`}
+          className="inline-block"
+        >
           {details?.phoneNumber}
         </ExternalLink>
       </Box>
 
-      <Box as="div" className="flex gap-0.25 italic">
+      <Box as="div" className="flex gap-0.25 italic flex-wrap justify-center">
         <ExternalLink href={details?.linkedinUrl}>
           <span className="print:hidden">LinkedIn</span>
           <span className="hidden print:inline">
