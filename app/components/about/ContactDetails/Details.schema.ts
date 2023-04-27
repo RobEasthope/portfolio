@@ -40,25 +40,25 @@ export default defineType({
     }),
     defineField({
       name: 'linkedinUrl',
-      title: 'LinkedIn profile',
+      title: 'LinkedIn URL',
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'prettyLinkedinUrl',
-      title: 'Pretty LinkedIn profile',
+      title: 'Pretty LinkedIn URL',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'githubUrl',
-      title: 'Github profile',
+      title: 'Github URL',
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'prettyGithubUrl',
-      title: 'Pretty Github profile',
+      title: 'Pretty Github URL',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -70,7 +70,7 @@ export default defineType({
     }),
     defineField({
       name: 'prettyPortfolioUrl',
-      title: 'Portfolio URL',
+      title: 'Pretty Portfolio URL',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
