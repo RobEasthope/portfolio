@@ -54,23 +54,25 @@ export const ContactDetails = ({
 
       <Box as="div" className="flex gap-0.25 italic">
         <ExternalLink href={details?.linkedinUrl}>
-          LinkedIn
+          <span className="print:hidden">LinkedIn</span>
           <span className="hidden print:inline">
-            : {details?.prettyLinkedinUrl}
+            {details?.prettyLinkedinUrl}
           </span>
         </ExternalLink>
         /
         <ExternalLink href={details?.githubUrl}>
-          Github
+          <span className="print:hidden">Github</span>
+
           <span className="hidden print:inline">
-            : {details?.prettyGithubUrl}
+            {details?.prettyGithubUrl}
           </span>
         </ExternalLink>
         /
         <ExternalLink href={details?.portfolioUrl}>
-          Portfolio
+          <span className="print:hidden">Portfolio</span>
+
           <span className="hidden print:inline">
-            : {details?.prettyPortfolioUrl}
+            {details?.prettyPortfolioUrl}
           </span>
         </ExternalLink>
       </Box>
