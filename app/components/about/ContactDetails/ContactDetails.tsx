@@ -62,7 +62,6 @@ export const ContactDetails = ({
         /
         <ExternalLink href={details?.githubUrl}>
           <span className="print:hidden">Github</span>
-
           <span className="hidden print:inline">
             {details?.prettyGithubUrl}
           </span>
@@ -70,7 +69,6 @@ export const ContactDetails = ({
         /
         <ExternalLink href={details?.portfolioUrl}>
           <span className="print:hidden">Portfolio</span>
-
           <span className="hidden print:inline">
             {details?.prettyPortfolioUrl}
           </span>
