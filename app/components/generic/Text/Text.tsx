@@ -20,7 +20,7 @@ export const Text = ({ text }: TextProps) => {
         as="div"
         content={text}
         components={FullTextComponents}
-        className="mx-auto font-serif text-md"
+        className="mx-auto font-serif"
       />
     </Box>
   );
