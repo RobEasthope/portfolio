@@ -45,15 +45,33 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'prettyLinkedinUrl',
+      title: 'Pretty LinkedIn profile',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'githubUrl',
       title: 'Github profile',
       type: 'url',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'prettyGithubUrl',
+      title: 'Pretty Github profile',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'portfolioUrl',
       title: 'Portfolio URL',
       type: 'url',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'prettyPortfolioUrl',
+      title: 'Portfolio URL',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     }),
   ],
