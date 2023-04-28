@@ -1,4 +1,7 @@
 import classNames from 'classnames';
+import { BsDot } from 'react-icons/bs';
+
+import { Box } from '~/components/base/Box/Box';
 
 import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
 
@@ -13,12 +16,15 @@ export const Dot = ({
   spacingBottom = '0',
   className,
 }: DotProps) => (
-  <hr
+  <Box
+    as="div"
     className={classNames(
-      `flex w-full justify-center items-center h-1 mx-auto after:content-[''] after:h-0.25 after:w-0.25 after:bg-black after:rounded-full border-none`,
-      className,
+      `flex w-full justify-center items-center h-1 mx-auto text-lg text-ink`,
       `mt-${spacingTop}`,
       `mb-${spacingBottom}`,
+      className,
     )}
-  />
+  >
+    <BsDot />
+  </Box>
 );
