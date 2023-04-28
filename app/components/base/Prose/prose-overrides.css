@@ -4,6 +4,10 @@
   margin-bottom: 0;
 }
 
+.prose {
+  --tw-prose-bullets: rgb(21, 23, 24);
+}
+
 @media print {
   .prose
     :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"] *)) {
@@ -14,5 +18,13 @@
   .prose :where(li):not(:where([class~="not-prose"] *)) {
     margin-top: 0em;
     margin-bottom: 0em;
+  }
+
+  .prose p,
+  .prose ul,
+  .prose ol {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    line-height: 1.5;
   }
 }

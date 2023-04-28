@@ -23,7 +23,7 @@ export const Footer = ({ footerNavigation, copyrightText }: FooterProps) => {
   const timeStamp = new Date();
 
   return (
-    <Box as="footer">
+    <Box as="footer" className="print:hidden">
       <Box as="div" className="mx-auto flex flex-col gap-1 px-1 py-1">
         <Box
           as="nav"
