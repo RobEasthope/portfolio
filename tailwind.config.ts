@@ -60,6 +60,10 @@ export default {
           min: 16,
           max: 18,
         }),
+        md: fluidTypeSize({
+          min: 18,
+          max: 21,
+        }),
         lg: fluidTypeSize({
           min: 19,
           max: 32,
