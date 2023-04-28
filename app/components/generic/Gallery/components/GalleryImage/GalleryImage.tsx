@@ -77,7 +77,7 @@ export const GalleryImage = ({
               />
               <Type
                 as="figcaption"
-                className="my-0.5 max-w-prose font-serif text-sm italic"
+                className="my-0.5 max-w-prose font-serif text-sm italic text-center mx-auto"
               >
                 {caption}
               </Type>
