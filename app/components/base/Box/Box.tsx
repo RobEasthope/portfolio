@@ -17,7 +17,7 @@ export type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
 const boxVariants = variants({
   variants: {
     blockSpacing: {
-      true: 'px-1 md:px-2',
+      true: 'px-1 md:px-2 print:px-0 print:md:px-0',
     },
     breakout: {
       true: 'max-w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] w-screen',
