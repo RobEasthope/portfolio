@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
+import { Analytics } from '@vercel/analytics/react';
 import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
@@ -81,6 +82,7 @@ export default function App() {
         <Links />
       </head>
       <body className="font-plantin text-ink">
+        <Analytics />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
