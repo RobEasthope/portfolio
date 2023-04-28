@@ -66,20 +66,22 @@ export const GalleryImage = ({
               </Type>
             </Dialog.Close>
           </Box>
-          <Box as="figure" maxWidth={maxWidth}>
-            <SanityImage
-              asset={image}
-              alt={caption || ''}
-              mode="contain"
-              aspectRatio={aspectRatio}
-              maxWidth={4000}
-            />
-            <Type
-              as="figcaption"
-              className="my-0.5 max-w-prose font-serif text-sm italic"
-            >
-              {caption}
-            </Type>
+          <Box as="figure">
+            <Box as="div" className="mx-auto">
+              <SanityImage
+                asset={image}
+                alt={caption || ''}
+                mode="contain"
+                aspectRatio={aspectRatio}
+                maxWidth={4000}
+              />
+              <Type
+                as="figcaption"
+                className="my-0.5 max-w-prose font-serif text-sm italic"
+              >
+                {caption}
+              </Type>
+            </Box>
           </Box>
         </Dialog.Content>
       </Dialog.Portal>
