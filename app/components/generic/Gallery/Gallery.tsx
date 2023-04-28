@@ -27,7 +27,7 @@ export const Gallery = ({
   }
 
   return (
-    <Box as="section" className="py-1" breakout blockSpacing>
+    <Box as="section" breakout blockSpacing>
       <Box
         as="div"
         className="mx-auto grid gap-0.75"
