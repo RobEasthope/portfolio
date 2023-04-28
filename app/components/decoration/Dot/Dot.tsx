@@ -22,6 +22,7 @@ export const Dot = ({
       `flex w-full justify-center items-center h-1 mx-auto text-lg text-ink`,
       `mt-${spacingTop}`,
       `mb-${spacingBottom}`,
+      'print:my-0.5',
       className,
     )}
   >
