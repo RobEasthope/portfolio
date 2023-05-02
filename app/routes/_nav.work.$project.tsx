@@ -52,7 +52,7 @@ export const meta: V2_MetaFunction = ({
   mergeMeta(
     matches,
     checkMetadata({
-      title: data?.page?.title,
+      title: `${data?.page?.title || ''} // Rob Easthope`,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       description: blockPreview(data?.page?.projectText),
       image: data?.page?.thumbnailImage,
