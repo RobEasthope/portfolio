@@ -77,7 +77,7 @@ export const meta: V2_MetaFunction = ({
   mergeMeta(
     matches,
     checkMetadata({
-      title: data?.page?.title,
+      title: `${data?.page?.title} // Rob Easthope`,
       description: data?.page?.metadataDescription,
       image: data?.page?.metadataImage,
     }),
