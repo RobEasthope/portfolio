@@ -29,6 +29,18 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'agency',
+      title: 'Agency',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'client',
+      title: 'Client',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'hiddenOrg',
       title: 'Hide organisation',
       description: 'Hides organisation on frontend',
