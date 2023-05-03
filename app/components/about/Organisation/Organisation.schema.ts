@@ -29,6 +29,16 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'agency',
+      title: 'Agency',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'client',
+      title: 'Client',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'hiddenOrg',
       title: 'Hide organisation',
       description: 'Hides organisation on frontend',
