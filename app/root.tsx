@@ -54,7 +54,7 @@ export async function loader() {
 }
 
 export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
-  { title: data?.fallbacks?.title },
+  { title: `${data?.fallbacks?.title} // Rob Easthope` },
   {
     property: 'og:title',
     content: data?.fallbacks?.title,
