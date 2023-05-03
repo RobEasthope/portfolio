@@ -17,6 +17,8 @@ import {
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
@@ -77,7 +79,7 @@ export const meta: V2_MetaFunction = ({
   mergeMeta(
     matches,
     checkMetadata({
-      title: `${data?.page?.title} // Rob Easthope`,
+      title: `${data?.page?.title}${METADATA_HARD_CODED_FALLBACKS?.SITE_TITLE}`,
       description: data?.page?.metadataDescription,
       image: data?.page?.metadataImage,
     }),
