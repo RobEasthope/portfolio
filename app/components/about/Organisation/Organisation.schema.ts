@@ -32,11 +32,13 @@ export default defineType({
       name: 'agency',
       title: 'Agency',
       type: 'boolean',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'client',
       title: 'Client',
       type: 'boolean',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'hiddenOrg',
