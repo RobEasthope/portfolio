@@ -21,6 +21,7 @@ export const GIG_INDEX_QUERY = groq`{
       url,
     },
     jobTitle,
+    jobType,
     description,
     startDate,
     endDate,
