@@ -12,6 +12,8 @@ import type { ProjectProps } from '~/components/work/Project/Project';
 import { Project } from '~/components/work/Project/Project';
 import { PROJECT_BY_SLUG_QUERY } from '~/components/work/Project/Project.query';
 
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
@@ -52,7 +54,9 @@ export const meta: V2_MetaFunction = ({
   mergeMeta(
     matches,
     checkMetadata({
-      title: `${data?.page?.title || ''} // Rob Easthope`,
+      title: `${data?.page?.title || ''}${
+        METADATA_HARD_CODED_FALLBACKS?.SITE_TITLE
+      }`,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       description: blockPreview(data?.page?.projectText),
       image: data?.page?.thumbnailImage,

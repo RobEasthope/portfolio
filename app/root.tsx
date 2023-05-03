@@ -14,6 +14,8 @@ import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
 import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
 
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import { Favicons } from '~/components/settings/Favicons/Favicons';
@@ -54,7 +56,9 @@ export async function loader() {
 }
 
 export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
-  { title: data?.fallbacks?.title },
+  {
+    title: `${data?.fallbacks?.title}${METADATA_HARD_CODED_FALLBACKS?.SITE_TITLE}`,
+  },
   {
     property: 'og:title',
     content: data?.fallbacks?.title,
