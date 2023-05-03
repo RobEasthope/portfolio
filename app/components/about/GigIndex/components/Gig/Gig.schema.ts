@@ -23,6 +23,18 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'jobType',
+      title: 'Job type',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Permanent', value: 'permanent' },
+          { title: 'Contract', value: 'contract' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'BasicText',
