@@ -1,6 +1,10 @@
 /* eslint-disable camelcase */
 import { useLoaderData } from '@remix-run/react';
-import type { V2_HtmlMetaDescriptor, V2_MetaFunction } from '@vercel/remix';
+import type {
+  LoaderArgs,
+  V2_HtmlMetaDescriptor,
+  V2_MetaFunction,
+} from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
 import type { Error404Props } from '~/components/generic/Error404/Error404';
@@ -26,7 +30,7 @@ type PageBySlugProps = PageProps & {
 
 // export const config = { runtime: 'edge' };
 
-export async function loader() {
+export async function loader({ request }: LoaderArgs) {
   const appSettings: AppSettingsProps = await sanityAPI.fetch(
     APP_SETTINGS_QUERY,
   );
