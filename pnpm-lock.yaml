@@ -23,9 +23,6 @@ dependencies:
   '@remix-run/react':
     specifier: ^1.18.1
     version: 1.18.1(react-dom@18.2.0)(react@18.2.0)
-  '@sanity/client':
-    specifier: ^5.4.2
-    version: 5.4.2
   '@sanity/image-url':
     specifier: ^1.0.2
     version: 1.0.2
@@ -3345,17 +3342,6 @@ packages:
       get-it: 8.2.0
       golden-fleece: 1.0.9
       pkg-dir: 5.0.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@sanity/client@5.4.2:
-    resolution: {integrity: sha512-M/ebzTGwYq+NDGMfBWxKtwtmCRJbBvXxAIQXu/J0vxnr8mXKw8gBQ7GaG0tI4WJ54w5sI6pnrD6mPiKdRHVNYw==}
-    engines: {node: '>=14.18'}
-    dependencies:
-      '@sanity/eventsource': 5.0.0
-      get-it: 8.2.0
-      rxjs: 7.8.1
     transitivePeerDependencies:
       - supports-color
     dev: false
