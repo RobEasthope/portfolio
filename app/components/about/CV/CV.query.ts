@@ -6,12 +6,12 @@ import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOC
 
 // Fetch all page slugs
 export const CV_SLUGS_QUERY = groq`
-  *[_type == "CV" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+  *[_type == "CV"  && defined(slug.current)].slug.current
 `;
 
 // Fetch page id and components types by slug
 export const CV_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
-  *[_type in ["CV"] && !(_id in path("drafts.**")) && slug.current == $slug][0]{
+  *[_type in ["CV"]  && slug.current == $slug][0]{
     "id": _id,
     "componentTypes": array::unique(rawSections[]._type),
   }

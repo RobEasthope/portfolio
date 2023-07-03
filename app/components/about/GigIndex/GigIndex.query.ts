@@ -5,7 +5,7 @@ export const GIG_INDEX_QUERY = groq`{
   _type,
   heading,
   gigsDisplayed,
-  "allGigs": *[_type == "gig" && !(_id in path("drafts.**"))]{
+  "allGigs": *[_type == "gig" ]{
     "client": employer -> {
       name,
       url,
@@ -15,7 +15,7 @@ export const GIG_INDEX_QUERY = groq`{
     startDate,
     endDate,
   } | order(endDate desc),
-  "recentGigs": *[_type == "gig" && !(_id in path("drafts.**")) && endDate > "2020-01-01"]{
+  "recentGigs": *[_type == "gig"  && endDate > "2020-01-01"]{
     "client": employer -> {
       name,
       url,

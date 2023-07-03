@@ -1,7 +1,7 @@
 import groq from 'groq';
 
 export const ERROR_404_QUERY = groq`{
-  "page": *[_type == "Error404" && !(_id in path("drafts.**"))][0]{
+  "page": *[_type == "Error404" ][0]{
     _type,
     logo,
     heading,
