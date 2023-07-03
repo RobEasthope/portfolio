@@ -24,6 +24,8 @@ type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
 };
 
+export const config = { runtime: 'edge' };
+
 export async function loader() {
   const appSettings: AppSettingsProps = await sanityAPI.fetch(
     APP_SETTINGS_QUERY,
