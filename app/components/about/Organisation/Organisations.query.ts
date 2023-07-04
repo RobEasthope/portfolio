@@ -9,7 +9,7 @@ export const ORGANISATIONS_QUERY = groq`{
   description[]{
     ${BASIC_TEXT_QUERY}
   },
-  "organisations": *[_type == "organisation" && !(_id in path("drafts.**")) && hiddenOrg == false]{
+  "organisations": *[_type == "organisation"  && hiddenOrg == false]{
     _id,
     name,
     url
