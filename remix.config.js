@@ -6,8 +6,8 @@ module.exports = {
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
   serverModuleFormat: "esm",
+  tailwind: true,
   future: {
-    tailwind: true,
     v2_errorBoundary: true,
     v2_headers: true,
     v2_meta: true,
