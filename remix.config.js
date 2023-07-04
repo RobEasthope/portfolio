@@ -7,6 +7,7 @@ module.exports = {
   // publicPath: "/build/",
   future: {
     tailwind: true,
+    serverModuleFormat: 'esm',
     v2_errorBoundary: true,
     v2_meta: true,
     v2_normalizeFormMethod: true,
