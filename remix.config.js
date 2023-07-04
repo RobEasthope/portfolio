@@ -2,7 +2,7 @@
 module.exports = {
   ignoredRouteFiles: ["**/.*"],
   serverDependenciesToBundle: ["classname-variants"],
-  serverModuleFormat: "esm",
+  serverModuleFormat: "cjs",
   tailwind: true,
   future: {
     v2_errorBoundary: true,
