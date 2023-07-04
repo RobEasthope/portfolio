@@ -1,8 +1,8 @@
 import type { ProjectProps } from '~/components/work/Project/Project';
 
 import { Box } from '~/components/base/Box/Box';
+import { Image } from '~/components/base/Image/Image';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 
 export type ProjectIndexCardProps = {
   project: ProjectProps['page'];
@@ -19,7 +19,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
         href={project?.slug?.current}
         className="flex h-full flex-row sm:flex-col items-center gap-0.5 sm:gap-0.25 text-left sm:text-center"
       >
-        <SanityImage
+        <Image
           asset={project?.thumbnailImage}
           alt={project?.title || ''}
           mode={project?.containLogo ? 'contain' : 'responsive'}

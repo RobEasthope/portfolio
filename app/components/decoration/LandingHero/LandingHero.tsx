@@ -7,7 +7,7 @@ import type {
 } from 'sanity-codegen';
 
 import { Box } from '~/components/base/Box/Box';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Image } from '~/components/base/Image/Image';
 
 // TYPES
 export type LandingHeroProps = {
@@ -46,7 +46,7 @@ export const LandingHero = ({
     >
       {bkgMode === 'image' && (
         <Box as="div" className="w-screen">
-          <SanityImage
+          <Image
             asset={bkgImage}
             alt={caption || ''}
             mode="cover"

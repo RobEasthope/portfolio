@@ -6,7 +6,7 @@ import type {
 } from 'sanity-codegen';
 
 import { Box } from '~/components/base/Box/Box';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Image } from '~/components/base/Image/Image';
 import { Type } from '~/components/base/Type/Type';
 
 // TYPES
@@ -37,7 +37,7 @@ export const Image = ({
   return (
     <Box as="section" breakout blockSpacing>
       <Box as="figure" className="mx-auto" maxWidth={maxWidth}>
-        <SanityImage
+        <Image
           asset={image}
           alt={caption}
           aspectRatio={aspectRatio}

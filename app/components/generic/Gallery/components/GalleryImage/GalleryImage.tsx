@@ -7,7 +7,7 @@ import type {
 } from 'sanity-codegen';
 
 import { Box } from '~/components/base/Box/Box';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Image } from '~/components/base/Image/Image';
 import { Type } from '~/components/base/Type/Type';
 
 // TYPES
@@ -42,7 +42,7 @@ export const GalleryImage = ({
     <Dialog.Root>
       <Dialog.Trigger>
         <Box as="figure">
-          <SanityImage
+          <Image
             asset={image}
             alt=""
             aspectRatio={galleryAspectRatio}
@@ -68,7 +68,7 @@ export const GalleryImage = ({
           </Box>
           <Box as="figure">
             <Box as="div" className="mx-auto">
-              <SanityImage
+              <Image
                 asset={image}
                 alt={caption || ''}
                 mode="contain"

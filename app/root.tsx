@@ -22,9 +22,9 @@ import { Favicons } from '~/components/settings/Favicons/Favicons';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
+import ImageCSS from '~/components/base/Image/Image.css';
+import { urlFor } from '~/components/base/Image/urlFor';
 import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
-import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
-import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 
@@ -38,7 +38,7 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: appCSS },
 
   // UI styles
-  { rel: 'stylesheet', href: SanityImageCSS },
+  { rel: 'stylesheet', href: ImageCSS },
   { rel: 'stylesheet', href: ProseOverridesCSS },
   { rel: 'stylesheet', href: HeadroomCSS },
   { rel: 'stylesheet', href: LandingHeroCSS },
