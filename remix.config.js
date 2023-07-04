@@ -5,6 +5,7 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
+  serverDependenciesToBundle: ["classname-variants"],
   serverModuleFormat: "esm",
   tailwind: true,
   future: {
@@ -14,5 +15,4 @@ module.exports = {
     v2_normalizeFormMethod: true,
     v2_routeConvention: true,
   },
-  serverDependenciesToBundle: ["classname-variants"],
 };
