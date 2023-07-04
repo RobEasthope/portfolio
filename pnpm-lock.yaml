@@ -101,6 +101,9 @@ dependencies:
   sanity-codegen:
     specifier: ^0.9.8
     version: 0.9.8(@babel/core@7.22.5)(@babel/preset-env@7.22.5)(@babel/preset-react@7.22.5)(@babel/preset-typescript@7.22.5)(jsdom@22.1.0)(prettier@2.8.8)
+  sanity-image:
+    specifier: ^0.1.6
+    version: 0.1.6(react@18.2.0)
   sanity-pills:
     specifier: ^1.13.0
     version: 1.13.0
@@ -10726,6 +10729,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       diff-match-patch: 1.0.5
+    dev: false
+
+  /sanity-image@0.1.6(react@18.2.0):
+    resolution: {integrity: sha512-y7zLjYBSvXq7PGKIS3waycJg+Z5lQ5hfQm4X4aKW8c0m56Q8c+mSPdfwdsSj0gCUY5PQ+v6YKlPSKMZzuXTk8g==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /sanity-pills@1.13.0:
