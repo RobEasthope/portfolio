@@ -27,6 +27,7 @@ export type SanityImageProps = {
   assetClassName?: string;
   containAspectRatio?: number;
   aspectRatio?: number;
+  cover?: boolean;
 };
 
 // MARKUP
@@ -41,6 +42,7 @@ export const SanityImage = ({
   className = '',
   wrapperClassName = '',
   assetClassName = '',
+  cover = false,
 }: SanityImageProps) => {
   if (!asset) {
     return null;
@@ -101,6 +103,7 @@ export const SanityImage = ({
           /> */}
           <RawSanityImage
             id={src?.id}
+            mode={cover && 'cover'}
             width={src?.dimensions?.width}
             height={src?.dimensions?.height}
             preview={src?.preview}
