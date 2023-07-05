@@ -32,6 +32,7 @@ export type SanityImageProps = {
 // MARKUP
 export const SanityImage = ({
   asset,
+  src = asset,
   maxWidth,
   alt,
   mode = 'responsive',
@@ -66,8 +67,8 @@ export const SanityImage = ({
             /> */}
             <RawSanityImage
               // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
-              id={asset?.id}
-              preview={asset?.preview}
+              id={src?.id}
+              preview={src?.preview}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
@@ -98,8 +99,8 @@ export const SanityImage = ({
           /> */}
           <RawSanityImage
             // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
-            id={asset?.id}
-            preview={asset?.preview}
+            id={src?.id}
+            preview={src?.preview}
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
           />
@@ -130,8 +131,8 @@ export const SanityImage = ({
             /> */}
             <RawSanityImage
               // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
-              id={asset?.id}
-              preview={asset?.preview}
+              id={src?.id}
+              preview={src?.preview}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
