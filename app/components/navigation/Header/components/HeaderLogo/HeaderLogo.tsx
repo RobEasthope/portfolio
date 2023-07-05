@@ -9,8 +9,8 @@ import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_F
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 
 import { Box } from '~/components/base/Box/Box';
-import { Image } from '~/components/base/Image/Image';
 import { InternalLink } from '~/components/base/InternalLink/InternalLink';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
 export type HeaderLogoProps = {
@@ -35,7 +35,7 @@ export const HeaderLogo = ({ logo, homePageSlug }: HeaderLogoProps) => (
       <Type as="span" className="sr-only">
         {METADATA_HARD_CODED_FALLBACKS.TITLE}
       </Type>
-      <Image
+      <SanityImage
         asset={logo}
         alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
         mode="contain"

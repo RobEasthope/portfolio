@@ -5,7 +5,7 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { urlFor } from '~/components/base/Image/urlFor';
+import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 type CheckMetadataProps = {
   title?: string;

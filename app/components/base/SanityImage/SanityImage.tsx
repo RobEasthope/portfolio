@@ -5,7 +5,6 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import { SanityImage as SanityImageCW } from 'sanity-image';
 
 import { SanitySrcSetImage } from './components/SanitySrcSetImage/SanitySrcSetImage';
 
@@ -17,7 +16,7 @@ export type ImageAssetProp = {
   hotspot?: SanityImageHotspot;
 };
 
-export type ImageProps = {
+export type SanityImageProps = {
   asset: ImageAssetProp | undefined;
   maxWidth: number;
   alt: string | undefined;
@@ -30,7 +29,7 @@ export type ImageProps = {
 };
 
 // MARKUP
-export const Image = ({
+export const SanityImage = ({
   asset,
   maxWidth,
   alt,
@@ -40,7 +39,7 @@ export const Image = ({
   className = '',
   wrapperClassName = '',
   assetClassName = '',
-}: ImageProps) => {
+}: SanityImageProps) => {
   if (!asset) {
     return null;
   }

@@ -3,7 +3,7 @@ import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_F
 import { Box } from '~/components/base/Box/Box';
 import { EmailLink } from '~/components/base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
-import { Image } from '~/components/base/Image/Image';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
 import type { HeaderProps } from '~/components/navigation/Header/Header';
@@ -34,7 +34,7 @@ export const ContactDetails = ({
       className="max-w-prose mx-auto flex flex-col items-center gap-0.5"
     >
       {displayLogo && (
-        <Image
+        <SanityImage
           asset={logo}
           alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
           mode="contain"

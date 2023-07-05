@@ -11,7 +11,7 @@ import { Box } from '~/components/base/Box/Box';
 import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/base/Prose/Prose';
 import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
-import { Image } from '~/components/base/Image/Image';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 import { Type } from '~/components/base/Type/Type';
 
 import { Dot } from '~/components/decoration/Dot/Dot';
@@ -60,7 +60,7 @@ export const Project = ({ page }: ProjectProps) => {
         as="div"
         className="flex flex-col gap-1 justify-center text-center mb-1"
       >
-        <Image
+        <SanityImage
           asset={page?.thumbnailImage}
           alt={page?.title || ''}
           mode={page?.containLogo ? 'contain' : 'responsive'}
