@@ -49,7 +49,6 @@ export const LandingHero = ({
           <SanityImage
             src={bkgImage}
             alt={caption || ''}
-            maxWidth={2560}
             className="w-screen"
             cover
           />

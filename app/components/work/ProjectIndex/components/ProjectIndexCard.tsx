@@ -23,7 +23,6 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
           src={project?.thumbnailImage}
           alt={project?.title || ''}
           // mode={project?.containLogo ? 'contain' : 'responsive'}
-          maxWidth={100}
           aspectRatio={project?.containLogo ? 0 : 1}
           className="rounded-full w-2 h-2 flex-shrink-0"
         />
