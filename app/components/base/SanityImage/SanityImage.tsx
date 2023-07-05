@@ -5,6 +5,7 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
+import { SanityImage as RawSanityImage } from 'sanity-image';
 
 import { SanitySrcSetImage } from './components/SanitySrcSetImage/SanitySrcSetImage';
 
@@ -52,7 +53,7 @@ export const SanityImage = ({
             style={{ maxWidth: `${maxWidth}px` }}
             className={`responsive-image-wrapper ${wrapperClassName}`}
           >
-            <SanitySrcSetImage
+            {/* <SanitySrcSetImage
               className={classNames(
                 `responsive-image-element`,
                 className,
@@ -61,6 +62,12 @@ export const SanityImage = ({
               asset={asset}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
+              alt={alt || ''}
+            /> */}
+            <RawSanityImage
+              // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
+              id={asset?.id}
+              baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
           </div>
@@ -77,7 +84,7 @@ export const SanityImage = ({
             wrapperClassName,
           )}
         >
-          <SanitySrcSetImage
+          {/* <SanitySrcSetImage
             className={classNames(
               `cover-image-element`,
               className,
@@ -86,6 +93,12 @@ export const SanityImage = ({
             asset={asset}
             maxWidth={maxWidth}
             aspectRatio={aspectRatio}
+            alt={alt || ''}
+          /> */}
+          <RawSanityImage
+            // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
+            id={asset?.id}
+            baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
           />
         </div>
@@ -102,7 +115,7 @@ export const SanityImage = ({
           )}
         >
           <div className="contain-image-wrapper">
-            <SanitySrcSetImage
+            {/* <SanitySrcSetImage
               className={classNames(
                 `contain-image-element`,
                 className,
@@ -111,6 +124,12 @@ export const SanityImage = ({
               asset={asset}
               maxWidth={maxWidth}
               aspectRatio={aspectRatio}
+              alt={alt || ''}
+            /> */}
+            <RawSanityImage
+              // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
+              id={asset?.id}
+              baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
           </div>
