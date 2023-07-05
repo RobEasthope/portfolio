@@ -21,7 +21,7 @@ export type SanityImageProps = {
   asset: ImageAssetProp | undefined;
   maxWidth: number;
   alt: string | undefined;
-  mode: 'responsive' | 'cover' | 'contain' | 'next';
+  mode: 'standard' | 'cover' | 'contain' | 'next';
   className?: string;
   wrapperClassName?: string;
   assetClassName?: string;
@@ -49,7 +49,7 @@ export const SanityImage = ({
   }
 
   switch (mode) {
-    case 'responsive':
+    case 'standard':
       return (
         <div className={className}>
           <div
