@@ -3,7 +3,6 @@ import type {
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
-import { SanityImage as RawSanityImage } from 'sanity-image';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -36,18 +35,12 @@ export const HeaderLogo = ({ logo, homePageSlug }: HeaderLogoProps) => (
       <Type as="span" className="sr-only">
         {METADATA_HARD_CODED_FALLBACKS.TITLE}
       </Type>
-      {/* <SanityImage
+      <SanityImage
         asset={logo}
         alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
         mode="contain"
         maxWidth={200}
         className="h-1.25 w-1.25"
-      /> */}
-      <RawSanityImage
-        // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
-        id={logo?.id}
-        baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
-        alt="Demo image"
       />
     </InternalLink>
   </Box>
