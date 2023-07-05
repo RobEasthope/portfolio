@@ -21,7 +21,6 @@ export type SanityImageProps = {
   asset: ImageAssetProp | undefined;
   maxWidth: number;
   alt: string | undefined;
-  mode: 'standard' | 'cover' | 'contain' | 'next';
   className?: string;
   wrapperClassName?: string;
   assetClassName?: string;
@@ -36,7 +35,6 @@ export const SanityImage = ({
   src = asset,
   maxWidth,
   alt,
-  mode = 'responsive',
   aspectRatio = 0,
   containAspectRatio = 1,
   className = '',
@@ -48,8 +46,8 @@ export const SanityImage = ({
     return null;
   }
 
-  switch (mode) {
-    case 'standard':
+  switch (cover) {
+    case false:
       return (
         <div className={className}>
           <div
@@ -71,7 +69,7 @@ export const SanityImage = ({
         </div>
       );
 
-    case 'cover':
+    case true:
       return (
         <div
           style={{ maxWidth: `${maxWidth}px` }}
@@ -92,32 +90,6 @@ export const SanityImage = ({
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
           />
-        </div>
-      );
-
-    case 'contain':
-      return (
-        <div
-          style={{ maxWidth: `${maxWidth}px`, position: 'relative' }}
-          className={classNames(
-            `contain-image-wrapper`,
-            className,
-            wrapperClassName,
-          )}
-        >
-          <div className="contain-image-wrapper">
-            <RawSanityImage
-              id={src?.id}
-              mode="cover"
-              width={src?.dimensions?.width}
-              height={src?.dimensions?.height / aspectRatio}
-              preview={src?.preview}
-              hotspot={src?.hotspot}
-              crop={src?.crop}
-              baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
-              alt={alt || ''}
-            />
-          </div>
         </div>
       );
 

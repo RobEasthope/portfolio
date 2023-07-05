@@ -46,7 +46,6 @@ export const GalleryImage = ({
             asset={image}
             alt=""
             aspectRatio={galleryAspectRatio}
-            mode="responsive"
             maxWidth={4000}
           />
         </Box>

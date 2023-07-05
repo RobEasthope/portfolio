@@ -41,7 +41,6 @@ export const Image = ({
           asset={image}
           alt={caption}
           aspectRatio={aspectRatio}
-          mode="responsive"
           maxWidth={4000}
         />
         <Box as="div" className="mx-auto sm:max-w-lg lg:max-w-5xl">
