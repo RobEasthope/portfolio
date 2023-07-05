@@ -1,4 +1,5 @@
 import groq from 'groq';
+import { GALLERY_IMAGE_QUERY } from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.query';
 
 import { INTERNAL_LINK_QUERY } from '~/components/base/InternalLink/InternalLink.query';
 import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.query';
@@ -11,5 +12,5 @@ export const PROJECT_TEXT_QUERY = groq`
   },
   "muxVideo": rawMuxVideo.asset->,
   "image": image{${SANITY_IMAGE_QUERY}},
-  "images": images[]{"image": image{${SANITY_IMAGE_QUERY}}},
+  "images": images[]{${GALLERY_IMAGE_QUERY}},
 `;
