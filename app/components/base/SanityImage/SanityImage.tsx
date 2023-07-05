@@ -69,10 +69,13 @@ export const SanityImage = ({
             /> */}
             <RawSanityImage
               id={src?.id}
+              mode="cover"
               width={src?.dimensions?.width}
-              height={src?.dimensions?.height}
+              height={src?.dimensions?.height / 2}
+              queryParams={{ height: src?.dimensions?.height / 2, fit: 'crop' }}
               preview={src?.preview}
-              hotspot={src?.hotspot?.hotspot}
+              hotspot={src?.hotspot}
+              crop={src?.crop}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
@@ -103,11 +106,13 @@ export const SanityImage = ({
           /> */}
           <RawSanityImage
             id={src?.id}
-            mode={cover && 'cover'}
+            mode="cover"
             width={src?.dimensions?.width}
-            height={src?.dimensions?.height}
+            height={src?.dimensions?.height / 2}
+            queryParams={{ height: src?.dimensions?.height / 2, fit: 'crop' }}
             preview={src?.preview}
-            hotspot={src?.hotspot?.hotspot}
+            hotspot={src?.hotspot}
+            crop={src?.crop}
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
           />
