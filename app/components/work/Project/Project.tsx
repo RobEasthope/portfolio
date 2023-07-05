@@ -4,15 +4,14 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import type { TechProps } from '~/components/work/Project/components/TechList/TechList';
-import { TechList } from '~/components/work/Project/components/TechList/TechList';
-
 import { Box } from '~/components/_base/Box/Box';
 import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
 import { Prose } from '~/components/_base/Prose/Prose';
 import { ProjectTextComponents } from '~/components/_base/Prose/components/ProjectText/ProjectText';
 import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
 import { Type } from '~/components/_base/Type/Type';
+import type { TechProps } from '~/components/work/Project/components/TechList/TechList';
+import { TechList } from '~/components/work/Project/components/TechList/TechList';
 
 import { Dot } from '~/components/decoration/Dot/Dot';
 
@@ -26,6 +25,12 @@ export type ProjectProps = {
       current?: string;
     };
     thumbnailImage?: {
+      _type: 'image';
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+    thumbnailImageForMetadata?: {
       _type: 'image';
       asset: SanityReference<SanityImageAsset>;
       crop?: SanityImageCrop;
