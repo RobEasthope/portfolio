@@ -60,7 +60,7 @@ export const SanityImage = ({
               preview={src?.preview}
               hotspot={src?.hotspot}
               crop={src?.crop}
-              baseUrl={`https://cdn.sanity.io/images/${SANITY_PROJECT.PUBLIC_ID}/${SANITY_PROJECT.PUBLIC_DATASET}/`}
+              baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
               alt={alt || ''}
               className={classNames(className, imgClassName)}
             />
@@ -86,7 +86,7 @@ export const SanityImage = ({
             preview={src?.preview}
             hotspot={src?.hotspot}
             crop={src?.crop}
-            baseUrl={`https://cdn.sanity.io/images/${SANITY_PROJECT.PUBLIC_ID}/${SANITY_PROJECT.PUBLIC_DATASET}/`}
+            baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
             alt={alt || ''}
             className={classNames(className, imgClassName)}
           />
