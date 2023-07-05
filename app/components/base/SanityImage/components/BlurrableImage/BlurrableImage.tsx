@@ -62,7 +62,7 @@ export function BlurrableImage({
             className,
             hiResImageLoaded ? 'blurred-image--hide' : 'high-res-image--show',
           )}
-          alt={alt || ''}
+          alt={alt}
         />
       )}
       {hiResImage}

@@ -11,7 +11,5 @@ export type VectorImageProps = {
 export const VectorImage = ({ asset, alt, className }: VectorImageProps) => {
   const vectorImageUrl: string | null = urlFor(asset).url();
 
-  return (
-    <img src={vectorImageUrl || ''} alt={alt || ''} className={className} />
-  );
+  return <img src={vectorImageUrl || ''} alt={alt} className={className} />;
 };

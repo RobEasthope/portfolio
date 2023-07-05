@@ -1,42 +1,27 @@
 @import "./components/BlurrableImage/BlurrableImage.css";
 @import "./components/SanitySrcSetImage/SanitySrcSetImage.css";
 
-/* Responsive images */
-.responsive-image-wrapper,
-.responsive-image-wrapper img {
+.sanity-image--standard-image-element {
+  display: block;
+  max-width: 100%;
   width: 100%;
-}
-
-.responsive-image-element,
-.responsive-image-element img {
-  width: 100%;
+  height: auto;
 }
 
 /* Cover images */
-.cover-image-wrapper {
+.sanity-image--cover-image-wrapper {
   position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-}
-
-.cover-image-wrapper img,
-.cover-image-element img {
   object-fit: cover;
+}
+
+.sanity-image--cover-image-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-}
-
-/* Contain images */
-.contain-image-wrapper {
-  position: relative;
-}
-
-.cover-image-element {
-  object-fit: contain;
-}
-
-.contain-image-wrapper img,
-.contain-image-element img {
-  object-fit: contain;
-  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  z-index: 1;
 }

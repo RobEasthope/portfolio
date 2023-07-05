@@ -42,13 +42,7 @@ export const GalleryImage = ({
     <Dialog.Root>
       <Dialog.Trigger>
         <Box as="figure">
-          <SanityImage
-            asset={image}
-            alt=""
-            aspectRatio={galleryAspectRatio}
-            mode="responsive"
-            maxWidth={4000}
-          />
+          <SanityImage src={image} alt="" aspectRatio={galleryAspectRatio} />
         </Box>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -69,11 +63,9 @@ export const GalleryImage = ({
           <Box as="figure">
             <Box as="div" className="mx-auto">
               <SanityImage
-                asset={image}
-                alt={caption || ''}
-                mode="contain"
+                src={image}
+                alt={caption}
                 aspectRatio={aspectRatio}
-                maxWidth={4000}
               />
               <Type
                 as="figcaption"

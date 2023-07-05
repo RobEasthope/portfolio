@@ -3,6 +3,7 @@ import groq from 'groq';
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { SANITY_BLOCK_QUERIES } from '~/components/base/SanityBlocks/SANITY_BLOCK_QUERIES';
+import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.query';
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`

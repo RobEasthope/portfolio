@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import type { ProjectProps } from '~/components/work/Project/Project';
 
 import { Box } from '~/components/base/Box/Box';
@@ -20,12 +21,15 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
         className="flex h-full flex-row sm:flex-col items-center gap-0.5 sm:gap-0.25 text-left sm:text-center"
       >
         <SanityImage
-          asset={project?.thumbnailImage}
-          alt={project?.title || ''}
-          mode={project?.containLogo ? 'contain' : 'responsive'}
-          maxWidth={100}
+          src={project?.thumbnailImage}
+          alt={project?.title}
           aspectRatio={project?.containLogo ? 0 : 1}
-          className="rounded-full w-2 h-2 flex-shrink-0"
+          className={classNames(
+            'rounded-full w-2 h-2 flex-shrink-0',
+            !project?.containLogo && '!object-contain',
+          )}
+          wrapperClassName="flex items-center"
+          cover={!project?.containLogo}
         />
 
         {project?.title}

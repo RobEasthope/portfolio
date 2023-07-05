@@ -47,11 +47,10 @@ export const LandingHero = ({
       {bkgMode === 'image' && (
         <Box as="div" className="w-screen">
           <SanityImage
-            asset={bkgImage}
-            alt={caption || ''}
-            mode="cover"
-            maxWidth={2560}
+            src={bkgImage}
+            alt={caption}
             className="w-screen"
+            cover
           />
         </Box>
       )}

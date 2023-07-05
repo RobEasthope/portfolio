@@ -1,3 +1,4 @@
+import type { SanityImageDimensions } from '@sanity/image-url/lib/types/types';
 import classNames from 'classnames';
 import type {
   SanityImageAsset,
@@ -5,8 +6,9 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
+import { SanityImage as RawSanityImage } from 'sanity-image';
 
-import { SanitySrcSetImage } from './components/SanitySrcSetImage/SanitySrcSetImage';
+import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 
 // TYPES
 export type ImageAssetProp = {
@@ -17,107 +19,96 @@ export type ImageAssetProp = {
 };
 
 export type SanityImageProps = {
-  asset: ImageAssetProp | undefined;
-  maxWidth: number;
+  src:
+    | {
+        id: string;
+        dimensions: SanityImageDimensions;
+        preview?: string;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      }
+    | undefined;
   alt: string | undefined;
-  mode: 'responsive' | 'cover' | 'contain' | 'next';
   className?: string;
   wrapperClassName?: string;
-  assetClassName?: string;
-  containAspectRatio?: number;
+  imgClassName?: string;
   aspectRatio?: number;
+  cover?: boolean;
 };
 
 // MARKUP
 export const SanityImage = ({
-  asset,
-  maxWidth,
-  alt,
-  mode = 'responsive',
+  src,
+  alt = '',
   aspectRatio = 0,
-  containAspectRatio = 1,
   className = '',
   wrapperClassName = '',
-  assetClassName = '',
+  imgClassName = '',
+  cover = false,
 }: SanityImageProps) => {
-  if (!asset) {
+  if (!src) {
     return null;
   }
 
-  switch (mode) {
-    case 'responsive':
-      return (
-        <div className={className}>
-          <div
-            style={{ maxWidth: `${maxWidth}px` }}
-            className={`responsive-image-wrapper ${wrapperClassName}`}
-          >
-            <SanitySrcSetImage
-              className={classNames(
-                `responsive-image-element`,
-                className,
-                assetClassName,
-              )}
-              asset={asset}
-              maxWidth={maxWidth}
-              aspectRatio={aspectRatio}
-              alt={alt || ''}
-            />
-          </div>
-        </div>
-      );
+  const calculatedImageHeight = aspectRatio
+    ? src.dimensions.width / aspectRatio
+    : src.dimensions.height;
 
-    case 'cover':
-      return (
-        <div
-          style={{ maxWidth: `${maxWidth}px` }}
+  // Cover mode
+  if (cover) {
+    return (
+      <div
+        className={classNames(
+          `sanity-image--cover-image-wrapper`,
+          className,
+          wrapperClassName,
+        )}
+      >
+        <RawSanityImage
+          id={src?.id}
+          mode="cover"
+          width={src?.dimensions?.width}
+          height={calculatedImageHeight}
+          preview={src?.preview}
+          hotspot={src?.hotspot}
+          crop={src?.crop}
+          baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
+          alt={alt}
           className={classNames(
-            `cover-image-wrapper`,
+            'sanity-image--cover-image-element',
             className,
-            wrapperClassName,
+            imgClassName,
           )}
-        >
-          <SanitySrcSetImage
-            className={classNames(
-              `cover-image-element`,
-              className,
-              wrapperClassName,
-            )}
-            asset={asset}
-            maxWidth={maxWidth}
-            aspectRatio={aspectRatio}
-            alt={alt || ''}
-          />
-        </div>
-      );
-
-    case 'contain':
-      return (
-        <div
-          style={{ maxWidth: `${maxWidth}px`, position: 'relative' }}
-          className={classNames(
-            `contain-image-wrapper`,
-            className,
-            wrapperClassName,
-          )}
-        >
-          <div className="contain-image-wrapper">
-            <SanitySrcSetImage
-              className={classNames(
-                `contain-image-element`,
-                className,
-                wrapperClassName,
-              )}
-              asset={asset}
-              maxWidth={maxWidth}
-              aspectRatio={aspectRatio}
-              alt={alt || ''}
-            />
-          </div>
-        </div>
-      );
-
-    default:
-      return null;
+        />
+      </div>
+    );
   }
+
+  // Standard mode
+  return (
+    <div
+      className={classNames(
+        `sanity-image--standard-image-wrapper`,
+        className,
+        wrapperClassName,
+      )}
+    >
+      <RawSanityImage
+        id={src?.id}
+        mode={aspectRatio ? 'cover' : 'contain'}
+        width={src?.dimensions?.width}
+        height={calculatedImageHeight}
+        preview={src?.preview}
+        hotspot={src?.hotspot}
+        crop={src?.crop}
+        baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
+        alt={alt}
+        className={classNames(
+          'sanity-image--standard-image-element ',
+          className,
+          imgClassName,
+        )}
+      />
+    </div>
+  );
 };
