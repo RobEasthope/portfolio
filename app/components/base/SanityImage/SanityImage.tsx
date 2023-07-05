@@ -50,6 +50,10 @@ export const SanityImage = ({
     return null;
   }
 
+  const calculatedImageHeight = aspectRatio
+    ? src.dimensions.width / aspectRatio
+    : src.dimensions.height;
+
   // Cover mode
   if (cover) {
     return (
@@ -64,11 +68,7 @@ export const SanityImage = ({
           id={src?.id}
           mode="cover"
           width={src?.dimensions?.width}
-          height={
-            aspectRatio
-              ? src.dimensions.width / aspectRatio
-              : src.dimensions.height
-          }
+          height={calculatedImageHeight}
           preview={src?.preview}
           hotspot={src?.hotspot}
           crop={src?.crop}
@@ -97,11 +97,7 @@ export const SanityImage = ({
         id={src?.id}
         mode={aspectRatio ? 'cover' : 'contain'}
         width={src?.dimensions?.width}
-        height={
-          aspectRatio
-            ? src.dimensions.width / aspectRatio
-            : src.dimensions.height
-        }
+        height={calculatedImageHeight}
         preview={src?.preview}
         hotspot={src?.hotspot}
         crop={src?.crop}
