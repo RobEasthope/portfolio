@@ -9,8 +9,6 @@ import { SanityImage as RawSanityImage } from 'sanity-image';
 
 import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 
-import { SanitySrcSetImage } from './components/SanitySrcSetImage/SanitySrcSetImage';
-
 // TYPES
 export type ImageAssetProp = {
   _type: 'image';
