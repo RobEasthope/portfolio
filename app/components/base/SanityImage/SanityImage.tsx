@@ -7,6 +7,8 @@ import type {
 } from 'sanity-codegen';
 import { SanityImage as RawSanityImage } from 'sanity-image';
 
+import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
+
 import { SanitySrcSetImage } from './components/SanitySrcSetImage/SanitySrcSetImage';
 
 // TYPES
@@ -60,7 +62,7 @@ export const SanityImage = ({
               preview={src?.preview}
               hotspot={src?.hotspot}
               crop={src?.crop}
-              baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
+              baseUrl={`https://cdn.sanity.io/images/${SANITY_PROJECT.PUBLIC_ID}/${SANITY_PROJECT.PUBLIC_DATASET}/`}
               alt={alt || ''}
               className={classNames(className, imgClassName)}
             />
@@ -86,7 +88,7 @@ export const SanityImage = ({
             preview={src?.preview}
             hotspot={src?.hotspot}
             crop={src?.crop}
-            baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
+            baseUrl={`https://cdn.sanity.io/images/${SANITY_PROJECT.PUBLIC_ID}/${SANITY_PROJECT.PUBLIC_DATASET}/`}
             alt={alt || ''}
             className={classNames(className, imgClassName)}
           />
