@@ -44,58 +44,55 @@ export const SanityImage = ({
     return null;
   }
 
-  switch (cover) {
-    case false:
-      return (
-        <div
-          style={{ maxWidth: `${maxWidth}px` }}
-          className={classNames(
-            `responsive-image-wrapper`,
-            className,
-            wrapperClassName,
-          )}
-        >
-          <RawSanityImage
-            id={src?.id}
-            mode={aspectRatio ? 'cover' : 'contain'}
-            width={src?.dimensions?.width}
-            height={src?.dimensions?.height / aspectRatio}
-            preview={src?.preview}
-            hotspot={src?.hotspot}
-            crop={src?.crop}
-            baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
-            alt={alt || ''}
-            className={classNames(className, imgClassName)}
-          />
-        </div>
-      );
-
-    case true:
-      return (
-        <div
-          style={{ maxWidth: `${maxWidth}px` }}
-          className={classNames(
-            `cover-image-wrapper`,
-            className,
-            wrapperClassName,
-          )}
-        >
-          <RawSanityImage
-            id={src?.id}
-            mode="cover"
-            width={src?.dimensions?.width}
-            height={src?.dimensions?.height / aspectRatio}
-            preview={src?.preview}
-            hotspot={src?.hotspot}
-            crop={src?.crop}
-            baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
-            alt={alt || ''}
-            className={classNames(className, imgClassName)}
-          />
-        </div>
-      );
-
-    default:
-      return null;
+  // Cover mode
+  if (cover) {
+    return (
+      <div
+        style={{ maxWidth: `${maxWidth}px` }}
+        className={classNames(
+          `cover-image-wrapper`,
+          className,
+          wrapperClassName,
+        )}
+      >
+        <RawSanityImage
+          id={src?.id}
+          mode="cover"
+          width={src?.dimensions?.width}
+          height={src?.dimensions?.height / aspectRatio}
+          preview={src?.preview}
+          hotspot={src?.hotspot}
+          crop={src?.crop}
+          baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
+          alt={alt || ''}
+          className={classNames(className, imgClassName)}
+        />
+      </div>
+    );
   }
+
+  // Standard mode
+  return (
+    <div
+      style={{ maxWidth: `${maxWidth}px` }}
+      className={classNames(
+        `responsive-image-wrapper`,
+        className,
+        wrapperClassName,
+      )}
+    >
+      <RawSanityImage
+        id={src?.id}
+        mode={aspectRatio ? 'cover' : 'contain'}
+        width={src?.dimensions?.width}
+        height={src?.dimensions?.height / aspectRatio}
+        preview={src?.preview}
+        hotspot={src?.hotspot}
+        crop={src?.crop}
+        baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
+        alt={alt || ''}
+        className={classNames(className, imgClassName)}
+      />
+    </div>
+  );
 };
