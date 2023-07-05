@@ -56,17 +56,6 @@ export const SanityImage = ({
             style={{ maxWidth: `${maxWidth}px` }}
             className={`responsive-image-wrapper ${wrapperClassName}`}
           >
-            {/* <SanitySrcSetImage
-              className={classNames(
-                `responsive-image-element`,
-                className,
-                assetClassName,
-              )}
-              asset={asset}
-              maxWidth={maxWidth}
-              aspectRatio={aspectRatio}
-              alt={alt || ''}
-            /> */}
             <RawSanityImage
               id={src?.id}
               mode="cover"
@@ -93,17 +82,6 @@ export const SanityImage = ({
             wrapperClassName,
           )}
         >
-          {/* <SanitySrcSetImage
-            className={classNames(
-              `cover-image-element`,
-              className,
-              wrapperClassName,
-            )}
-            asset={asset}
-            maxWidth={maxWidth}
-            aspectRatio={aspectRatio}
-            alt={alt || ''}
-          /> */}
           <RawSanityImage
             id={src?.id}
             mode="cover"
@@ -130,17 +108,6 @@ export const SanityImage = ({
           )}
         >
           <div className="contain-image-wrapper">
-            {/* <SanitySrcSetImage
-              className={classNames(
-                `contain-image-element`,
-                className,
-                wrapperClassName,
-              )}
-              asset={asset}
-              maxWidth={maxWidth}
-              aspectRatio={aspectRatio}
-              alt={alt || ''}
-            /> */}
             <RawSanityImage
               id={src?.id}
               mode="cover"
