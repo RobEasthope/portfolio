@@ -1,5 +1,7 @@
 import groq from 'groq';
 
+import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.query';
+
 export const EDUCATION_QUERY = groq`{
   _key,
   _type,
@@ -10,8 +12,7 @@ export const EDUCATION_QUERY = groq`{
     qualification,
     startDate,
     endDate,
-    logo,
+    "logo": logo{${SANITY_IMAGE_QUERY}},
   } | order(startDate desc),
   
 }`;
-3;
