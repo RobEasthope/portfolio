@@ -50,7 +50,11 @@ export const SanityImage = ({
         <div className={className}>
           <div
             style={{ maxWidth: `${maxWidth}px` }}
-            className={`responsive-image-wrapper ${wrapperClassName}`}
+            className={classNames(
+              `responsive-image-wrapper`,
+              className,
+              wrapperClassName,
+            )}
           >
             <RawSanityImage
               id={src?.id}
