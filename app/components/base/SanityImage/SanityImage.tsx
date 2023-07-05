@@ -18,13 +18,12 @@ export type ImageAssetProp = {
 };
 
 export type SanityImageProps = {
-  asset: ImageAssetProp | undefined;
+  src: ImageAssetProp | undefined;
   maxWidth: number;
   alt: string | undefined;
   className?: string;
   wrapperClassName?: string;
   imgClassName?: string;
-  containAspectRatio?: number;
   aspectRatio?: number;
   cover?: boolean;
 };
