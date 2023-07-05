@@ -61,7 +61,7 @@ export const Project = ({ page }: ProjectProps) => {
         className="flex flex-col gap-1 justify-center text-center mb-1"
       >
         <SanityImage
-          asset={page?.thumbnailImage}
+          src={page?.thumbnailImage}
           alt={page?.title || ''}
           // mode={page?.containLogo ? 'contain' : 'responsive'}
           maxWidth={200}

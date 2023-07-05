@@ -38,7 +38,7 @@ export const Image = ({
     <Box as="section" breakout blockSpacing>
       <Box as="figure" className="mx-auto" maxWidth={maxWidth}>
         <SanityImage
-          asset={image}
+          src={image}
           alt={caption}
           aspectRatio={aspectRatio}
           maxWidth={4000}

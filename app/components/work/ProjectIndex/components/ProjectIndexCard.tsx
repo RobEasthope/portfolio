@@ -20,7 +20,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
         className="flex h-full flex-row sm:flex-col items-center gap-0.5 sm:gap-0.25 text-left sm:text-center"
       >
         <SanityImage
-          asset={project?.thumbnailImage}
+          src={project?.thumbnailImage}
           alt={project?.title || ''}
           // mode={project?.containLogo ? 'contain' : 'responsive'}
           maxWidth={100}

@@ -46,7 +46,7 @@ export const SanitySrcSetImage = ({
 
   if (assetRef?.slice(-4) === '.svg') {
     return (
-      <VectorImage asset={asset || ''} alt={alt || ''} className={className} />
+      <VectorImage src={asset || ''} alt={alt || ''} className={className} />
     );
   }
 
