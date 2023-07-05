@@ -1,11 +1,10 @@
 import groq from 'groq';
-
-import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.query';
+import { GALLERY_IMAGE_QUERY } from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.query';
 
 export const GALLERY_QUERY = groq`{
   _type,
   _key,
-  "images": images[]{"image": image{${SANITY_IMAGE_QUERY}}},
+  "images": images[]{${GALLERY_IMAGE_QUERY}},
   galleryCaption,
   columns,
   aspectRatio,
