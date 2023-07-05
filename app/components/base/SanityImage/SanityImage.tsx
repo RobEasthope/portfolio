@@ -67,10 +67,10 @@ export const SanityImage = ({
             /> */}
             <RawSanityImage
               id={src?.id}
-              width={dimensions?.width}
-              height={dimensions?.height}
+              width={src?.dimensions?.width}
+              height={src?.dimensions?.height}
               preview={src?.preview}
-              hotspot={hotspot?.hotspot}
+              hotspot={src?.hotspot?.hotspot}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
@@ -101,10 +101,10 @@ export const SanityImage = ({
           /> */}
           <RawSanityImage
             id={src?.id}
-            width={dimensions?.width}
-            height={dimensions?.height}
+            width={src?.dimensions?.width}
+            height={src?.dimensions?.height}
             preview={src?.preview}
-            hotspot={hotspot?.hotspot}
+            hotspot={src?.hotspot?.hotspot}
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
           />
@@ -135,10 +135,10 @@ export const SanityImage = ({
             /> */}
             <RawSanityImage
               id={src?.id}
-              width={dimensions?.width}
-              height={dimensions?.height}
+              width={src?.dimensions?.width}
+              height={src?.dimensions?.height}
               preview={src?.preview}
-              hotspot={hotspot?.hotspot}
+              hotspot={src?.hotspot?.hotspot}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
