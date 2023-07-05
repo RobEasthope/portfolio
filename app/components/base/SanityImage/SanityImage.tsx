@@ -58,7 +58,7 @@ export const SanityImage = ({
           >
             <RawSanityImage
               id={src?.id}
-              mode="cover"
+              mode={aspectRatio ? 'cover' : 'contain'}
               width={src?.dimensions?.width}
               height={src?.dimensions?.height / 2}
               queryParams={{ height: src?.dimensions?.height / 2, fit: 'crop' }}
