@@ -1,6 +1,6 @@
 import groq from 'groq';
 
-import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.query';
+import { SANITY_IMAGE_QUERY } from '~/components/_base/SanityImage/SanityImage.query';
 
 export const ERROR_404_QUERY = groq`{
   "page": *[_type == "Error404" ][0]{

@@ -1,10 +1,10 @@
 import groq from 'groq';
 import { GALLERY_IMAGE_QUERY } from '~/components/generic/Gallery/components/GalleryImage/GalleryImage.query';
 
-import { INTERNAL_LINK_QUERY } from '~/components/base/InternalLink/InternalLink.query';
-import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.query';
+import { INTERNAL_LINK_QUERY } from '~/components/_base/InternalLink/InternalLink.query';
+import { SANITY_IMAGE_QUERY } from '~/components/_base/SanityImage/SanityImage.query';
 
-export const FULL_TEXT_QUERY = groq`
+export const PROJECT_TEXT_QUERY = groq`
   ...,
   markDefs[]{
     ...,

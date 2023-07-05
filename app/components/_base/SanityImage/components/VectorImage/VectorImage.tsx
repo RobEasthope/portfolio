@@ -1,6 +1,6 @@
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-import { urlFor } from '~/components/base/SanityImage/urlFor';
+import { urlFor } from '~/components/_base/SanityImage/urlFor';
 
 export type VectorImageProps = {
   asset: SanityImageSource;

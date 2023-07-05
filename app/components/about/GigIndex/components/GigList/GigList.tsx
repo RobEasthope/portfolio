@@ -1,4 +1,4 @@
-import { Box } from '~/components/base/Box/Box';
+import { Box } from '~/components/_base/Box/Box';
 
 import type { GigProps } from '~/components/about/GigIndex/components/Gig/Gig';
 import { Gig } from '~/components/about/GigIndex/components/Gig/Gig';

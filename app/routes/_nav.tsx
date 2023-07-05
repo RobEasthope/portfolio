@@ -4,7 +4,7 @@ import groq from 'groq';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
-import { Box } from '~/components/base/Box/Box';
+import { Box } from '~/components/_base/Box/Box';
 
 import type { FooterProps } from '~/components/navigation/Footer/Footer';
 import { Footer } from '~/components/navigation/Footer/Footer';

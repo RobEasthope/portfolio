@@ -6,8 +6,8 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { Box } from '~/components/base/Box/Box';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
+import { Box } from '~/components/_base/Box/Box';
+import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
 
 // TYPES
 export type LandingHeroProps = {

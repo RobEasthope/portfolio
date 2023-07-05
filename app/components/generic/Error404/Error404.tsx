@@ -8,9 +8,9 @@ import type {
 import type { Error404NavCardProps } from '~/components/generic/Error404/components/Error404NavCard/Error404NavCard';
 import { Error404NavCard } from '~/components/generic/Error404/components/Error404NavCard/Error404NavCard';
 
-import { Box } from '~/components/base/Box/Box';
-import { Button } from '~/components/base/Button/Button';
-import { Type } from '~/components/base/Type/Type';
+import { Box } from '~/components/_base/Box/Box';
+import { Button } from '~/components/_base/Button/Button';
+import { Type } from '~/components/_base/Type/Type';
 
 export type Error404Props = {
   page: {

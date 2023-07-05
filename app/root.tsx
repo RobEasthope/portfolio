@@ -12,6 +12,9 @@ import { Analytics } from '@vercel/analytics/react';
 import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
+import ProseOverridesCSS from '~/components/_base/Prose/prose-overrides.css';
+import SanityImageCSS from '~/components/_base/SanityImage/SanityImage.css';
+import { urlFor } from '~/components/_base/SanityImage/urlFor';
 import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
@@ -21,10 +24,6 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 import { Favicons } from '~/components/settings/Favicons/Favicons';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
-
-import ProseOverridesCSS from '~/components/base/Prose/prose-overrides.css';
-import SanityImageCSS from '~/components/base/SanityImage/SanityImage.css';
-import { urlFor } from '~/components/base/SanityImage/urlFor';
 
 import HeadroomCSS from '~/components/navigation/Header/headroom.css';
 

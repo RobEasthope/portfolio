@@ -1,7 +1,7 @@
-import { Box } from '~/components/base/Box/Box';
-import { Prose } from '~/components/base/Prose/Prose';
-import type { FullTextProps } from '~/components/base/Prose/components/FullText/FullText';
-import { FullTextComponents } from '~/components/base/Prose/components/FullText/FullText';
+import { Box } from '~/components/_base/Box/Box';
+import { Prose } from '~/components/_base/Prose/Prose';
+import type { FullTextProps } from '~/components/_base/Prose/components/FullText/FullText';
+import { FullTextComponents } from '~/components/_base/Prose/components/FullText/FullText';
 
 // TYPES
 export type TextProps = {

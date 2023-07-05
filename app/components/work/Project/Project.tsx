@@ -7,12 +7,12 @@ import type {
 import type { TechProps } from '~/components/work/Project/components/TechList/TechList';
 import { TechList } from '~/components/work/Project/components/TechList/TechList';
 
-import { Box } from '~/components/base/Box/Box';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
-import { Prose } from '~/components/base/Prose/Prose';
-import { ProjectTextComponents } from '~/components/base/Prose/components/ProjectText/ProjectText';
-import { SanityImage } from '~/components/base/SanityImage/SanityImage';
-import { Type } from '~/components/base/Type/Type';
+import { Box } from '~/components/_base/Box/Box';
+import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
+import { Prose } from '~/components/_base/Prose/Prose';
+import { ProjectTextComponents } from '~/components/_base/Prose/components/ProjectText/ProjectText';
+import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
+import { Type } from '~/components/_base/Type/Type';
 
 import { Dot } from '~/components/decoration/Dot/Dot';
 

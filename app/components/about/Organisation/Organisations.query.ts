@@ -1,6 +1,6 @@
 import groq from 'groq';
 
-import { BASIC_TEXT_QUERY } from '~/components/base/Prose/components/BasicText/BasicText.query';
+import { BASIC_TEXT_QUERY } from '~/components/_base/Prose/components/BasicText/BasicText.query';
 
 export const ORGANISATIONS_QUERY = groq`{
   _key,

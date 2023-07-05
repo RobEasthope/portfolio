@@ -13,15 +13,15 @@ import ProjectIndex from '~/components/work/ProjectIndex/ProjectIndex.schema';
 import AppSettings from '~/components/settings/AppSettings/AppSettings.schema';
 import MetadataFallbacks from '~/components/settings/MetadataFallbacks/MetadataFallbacks.schema';
 
-import EmailLink from '~/components/base/EmailLink/EmailLink.schema';
-import EmailLinkWithTitle from '~/components/base/EmailLink/EmailLinkWithTitle.schema';
-import ExternalLink from '~/components/base/ExternalLink/ExternalLink.schema';
-import ExternalLinkWithTitle from '~/components/base/ExternalLink/ExternalLinkWithTitle.schema';
-import InternalLink from '~/components/base/InternalLink/InternalLink.schema';
-import InternalLinkWithTitle from '~/components/base/InternalLink/InternalLinkWithTitle.schema';
-import BasicText from '~/components/base/Prose/components/BasicText/BasicText.schema';
-import FullText from '~/components/base/Prose/components/FullText/FullText.schema';
-import ProjectText from '~/components/base/Prose/components/ProjectText/ProjectText.schema';
+import EmailLink from '~/components/_base/EmailLink/EmailLink.schema';
+import EmailLinkWithTitle from '~/components/_base/EmailLink/EmailLinkWithTitle.schema';
+import ExternalLink from '~/components/_base/ExternalLink/ExternalLink.schema';
+import ExternalLinkWithTitle from '~/components/_base/ExternalLink/ExternalLinkWithTitle.schema';
+import InternalLink from '~/components/_base/InternalLink/InternalLink.schema';
+import InternalLinkWithTitle from '~/components/_base/InternalLink/InternalLinkWithTitle.schema';
+import BasicText from '~/components/_base/Prose/components/BasicText/BasicText.schema';
+import FullText from '~/components/_base/Prose/components/FullText/FullText.schema';
+import ProjectText from '~/components/_base/Prose/components/ProjectText/ProjectText.schema';
 
 import Footer from '~/components/navigation/Footer/Footer.schema';
 import Header from '~/components/navigation/Header/Header.schema';
