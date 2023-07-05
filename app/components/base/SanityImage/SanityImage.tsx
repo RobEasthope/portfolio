@@ -138,8 +138,10 @@ export const SanityImage = ({
             /> */}
             <RawSanityImage
               id={src?.id}
+              mode="cover"
               width={src?.dimensions?.width}
-              height={src?.dimensions?.height}
+              height={src?.dimensions?.height / 2}
+              queryParams={{ height: src?.dimensions?.height / 2, fit: 'crop' }}
               preview={src?.preview}
               hotspot={src?.hotspot}
               crop={src?.crop}
