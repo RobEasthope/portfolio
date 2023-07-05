@@ -1,3 +1,4 @@
+import type { SanityImageDimensions } from '@sanity/image-url/lib/types/types';
 import classNames from 'classnames';
 import type {
   SanityImageAsset,
@@ -18,7 +19,15 @@ export type ImageAssetProp = {
 };
 
 export type SanityImageProps = {
-  src: ImageAssetProp | undefined;
+  src:
+    | {
+        id: string;
+        dimensions: SanityImageDimensions;
+        preview?: string;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      }
+    | undefined;
   alt: string | undefined;
   className?: string;
   wrapperClassName?: string;
