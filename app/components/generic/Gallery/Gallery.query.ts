@@ -5,7 +5,7 @@ import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.qu
 export const GALLERY_QUERY = groq`{
   _type,
   _key,
-  "images": images[]{${SANITY_IMAGE_QUERY}},
+  "images": images[]{"image": image{${SANITY_IMAGE_QUERY}}},
   galleryCaption,
   columns,
   aspectRatio,

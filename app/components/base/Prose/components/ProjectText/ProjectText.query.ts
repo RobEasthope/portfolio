@@ -11,4 +11,5 @@ export const PROJECT_TEXT_QUERY = groq`
   },
   "muxVideo": rawMuxVideo.asset->,
   "image": image{${SANITY_IMAGE_QUERY}},
+  "images": images[]{"image": image{${SANITY_IMAGE_QUERY}}},
 `;
