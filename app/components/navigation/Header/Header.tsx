@@ -7,10 +7,10 @@ import type {
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 
-import { Box } from '~/components/base/Box/Box';
-import type { EmailLinkWithTitleSchemaProps } from '~/components/base/EmailLink/EmailLink';
-import type { ExternalLinkWithTitleSchemaProps } from '~/components/base/ExternalLink/ExternalLink';
-import type { InternalLinkWithTitleSchemaProps } from '~/components/base/InternalLink/InternalLink';
+import { Box } from '~/components/_base/Box/Box';
+import type { EmailLinkWithTitleSchemaProps } from '~/components/_base/EmailLink/EmailLink';
+import type { ExternalLinkWithTitleSchemaProps } from '~/components/_base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from '~/components/_base/InternalLink/InternalLink';
 
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
 import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';

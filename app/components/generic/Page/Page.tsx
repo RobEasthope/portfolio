@@ -5,7 +5,7 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
+import { SanityBlocks } from '~/components/_base/SanityBlocks/SanityBlocks';
 
 // TYPES
 export type PageProps = {

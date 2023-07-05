@@ -2,7 +2,7 @@ import type { PortableTextComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
 import classNames from 'classnames';
 
-import { Box } from '~/components/base/Box/Box';
+import { Box } from '~/components/_base/Box/Box';
 
 export type ProseProps = {
   as: string;

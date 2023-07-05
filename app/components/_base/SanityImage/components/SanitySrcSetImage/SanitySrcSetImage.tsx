@@ -7,9 +7,9 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { BlurrableImage } from '~/components/base/SanityImage/components/BlurrableImage/BlurrableImage';
-import { VectorImage } from '~/components/base/SanityImage/components/VectorImage/VectorImage';
-import { urlFor } from '~/components/base/SanityImage/urlFor';
+import { BlurrableImage } from '~/components/_base/SanityImage/components/BlurrableImage/BlurrableImage';
+import { VectorImage } from '~/components/_base/SanityImage/components/VectorImage/VectorImage';
+import { urlFor } from '~/components/_base/SanityImage/urlFor';
 
 // TYPES
 export type ImageAssetProp = {

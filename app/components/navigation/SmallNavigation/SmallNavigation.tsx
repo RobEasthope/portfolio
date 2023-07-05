@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 
-import { Box } from '~/components/base/Box/Box';
-import { SuperLink } from '~/components/base/SuperLink/SuperLink';
-import { Type } from '~/components/base/Type/Type';
+import { Box } from '~/components/_base/Box/Box';
+import { SuperLink } from '~/components/_base/SuperLink/SuperLink';
+import { Type } from '~/components/_base/Type/Type';
 
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';

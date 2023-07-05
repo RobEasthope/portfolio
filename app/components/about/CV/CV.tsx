@@ -1,5 +1,5 @@
-import { Box } from '~/components/base/Box/Box';
-import { SanityBlocks } from '~/components/base/SanityBlocks/SanityBlocks';
+import { Box } from '~/components/_base/Box/Box';
+import { SanityBlocks } from '~/components/_base/SanityBlocks/SanityBlocks';
 
 // TYPES
 export type CVProps = {

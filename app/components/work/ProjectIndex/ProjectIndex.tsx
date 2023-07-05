@@ -1,7 +1,7 @@
 import type { ProjectProps } from '~/components/work/Project/Project';
 import { ProjectIndexCard } from '~/components/work/ProjectIndex/components/ProjectIndexCard';
 
-import { Box } from '~/components/base/Box/Box';
+import { Box } from '~/components/_base/Box/Box';
 
 // TYPES
 export type ProjectIndexProps = {

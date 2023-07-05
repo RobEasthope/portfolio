@@ -18,12 +18,12 @@ import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
 import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 
-import { Box } from '~/components/base/Box/Box';
-import { EmailLink } from '~/components/base/EmailLink/EmailLink';
-import { ExternalLink } from '~/components/base/ExternalLink/ExternalLink';
-import { InternalLink } from '~/components/base/InternalLink/InternalLink';
-import { twLinkStyles } from '~/components/base/Prose/twLinkStyles';
-import { Type } from '~/components/base/Type/Type';
+import { Box } from '~/components/_base/Box/Box';
+import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
+import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
+import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
+import { twLinkStyles } from '~/components/_base/Prose/twLinkStyles';
+import { Type } from '~/components/_base/Type/Type';
 
 export type ProjectTextProps = Array<
   | SanityKeyed<SanityBlock>

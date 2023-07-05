@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { BsDot } from 'react-icons/bs';
 
-import { Box } from '~/components/base/Box/Box';
+import { Box } from '~/components/_base/Box/Box';
 
 import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
 
