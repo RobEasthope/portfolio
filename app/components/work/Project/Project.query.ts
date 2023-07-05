@@ -24,7 +24,6 @@ const PROJECT_QUERY_BODY = groq`
   projectUrlTitle,
   projectUrl,
   repoUrl,
-  "thumbnailImage": thumbnailImage{${SANITY_IMAGE_QUERY}},
   containLogo,
   displayProject,
 `;
