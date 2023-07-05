@@ -19,7 +19,6 @@ export type ImageAssetProp = {
 
 export type SanityImageProps = {
   src: ImageAssetProp | undefined;
-  maxWidth: number;
   alt: string | undefined;
   className?: string;
   wrapperClassName?: string;
@@ -31,7 +30,6 @@ export type SanityImageProps = {
 // MARKUP
 export const SanityImage = ({
   src,
-  maxWidth,
   alt,
   aspectRatio = 0,
   className = '',
@@ -47,7 +45,6 @@ export const SanityImage = ({
   if (cover) {
     return (
       <div
-        style={{ maxWidth: `${maxWidth}px` }}
         className={classNames(
           `sanity-image`,
           `sanity-image--cover-image-wrapper`,
@@ -74,7 +71,6 @@ export const SanityImage = ({
   // Standard mode
   return (
     <div
-      style={{ maxWidth: `${maxWidth}px` }}
       className={classNames(
         `sanity-image`,
         `sanity-image--standard-image-wrapper`,
