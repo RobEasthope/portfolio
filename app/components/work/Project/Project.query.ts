@@ -1,5 +1,4 @@
 import groq from 'groq';
-
 import { PROJECT_TEXT_QUERY } from '~/components/_base/Prose/components/ProjectText/ProjectText.query';
 import { SANITY_IMAGE_QUERY } from '~/components/_base/SanityImage/SanityImage.query';
 
@@ -24,6 +23,8 @@ const PROJECT_QUERY_BODY = groq`
   projectUrlTitle,
   projectUrl,
   repoUrl,
+  "thumbnailImage": thumbnailImage{${SANITY_IMAGE_QUERY}},
+  "thumbnailImageForMetadata": thumbnailImage,
   containLogo,
   displayProject,
 `;
