@@ -33,14 +33,14 @@ export const PROJECT_SLUGS_QUERY = groq`
 `;
 
 export const PROJECT_BY_ID_QUERY = groq`
-    "page": *[_type== 'project'  && _id == $id][0]{
+    "page": *[_type== 'project' && _id == $id][0]{
       ${PROJECT_QUERY_BODY}
     },
   }
 `;
 
 export const PROJECT_BY_SLUG_QUERY = groq`{
-    "page": *[_type== 'project'  && slug.current == $slug][0]{
+    "page": *[_type== 'project' && slug.current == $slug][0]{
       ${PROJECT_QUERY_BODY}
     },
   }
