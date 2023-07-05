@@ -1,7 +1,7 @@
 @import "./components/BlurrableImage/BlurrableImage.css";
 @import "./components/SanitySrcSetImage/SanitySrcSetImage.css";
 
-.sanity-image img {
+.sanity-image--standard-image-element {
   display: block;
   max-width: 100%;
   width: 100%;
@@ -11,28 +11,17 @@
 /* Cover images */
 .sanity-image--cover-image-wrapper {
   position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-}
-
-.sanity-image--cover-image-wrapper img,
-.sanity-image--cover-image-element img {
   object-fit: cover;
-  width: 100%;
-}
-
-/* Contain images */
-.sanity-image--contain-image-wrapper {
-  position: relative;
 }
 
 .sanity-image--cover-image-element {
-  object-fit: contain;
-}
-
-.sanity-image--contain-image-wrapper img,
-.sanity-image--contain-image-element img {
-  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  z-index: 1;
 }

@@ -46,7 +46,6 @@ export const SanityImage = ({
     return (
       <div
         className={classNames(
-          `sanity-image`,
           `sanity-image--cover-image-wrapper`,
           className,
           wrapperClassName,
@@ -62,7 +61,11 @@ export const SanityImage = ({
           crop={src?.crop}
           baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
           alt={alt}
-          className={classNames(className, imgClassName)}
+          className={classNames(
+            'sanity-image--cover-image-element',
+            className,
+            imgClassName,
+          )}
         />
       </div>
     );
@@ -72,7 +75,6 @@ export const SanityImage = ({
   return (
     <div
       className={classNames(
-        `sanity-image`,
         `sanity-image--standard-image-wrapper`,
         className,
         wrapperClassName,
@@ -88,7 +90,11 @@ export const SanityImage = ({
         crop={src?.crop}
         baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
         alt={alt}
-        className={classNames(className, imgClassName)}
+        className={classNames(
+          'sanity-image--standard-image-element ',
+          className,
+          imgClassName,
+        )}
       />
     </div>
   );
