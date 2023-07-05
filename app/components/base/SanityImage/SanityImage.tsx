@@ -141,7 +141,8 @@ export const SanityImage = ({
               width={src?.dimensions?.width}
               height={src?.dimensions?.height}
               preview={src?.preview}
-              hotspot={src?.hotspot?.hotspot}
+              hotspot={src?.hotspot}
+              crop={src?.crop}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
