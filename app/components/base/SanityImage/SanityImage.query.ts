@@ -1,6 +1,6 @@
 import groq from 'groq';
 
-export const IMAGE_QUERY = groq`
+export const SANITY_IMAGE_QUERY = groq`
   {
     "id": asset._ref,
     "preview": asset->metadata.lqip,
