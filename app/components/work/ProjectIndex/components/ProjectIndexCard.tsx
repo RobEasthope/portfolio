@@ -23,8 +23,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
         <SanityImage
           src={project?.thumbnailImage}
           alt={project?.title}
-          // mode={project?.containLogo ? 'contain' : 'responsive'}
-          aspectRatio={1}
+          aspectRatio={project?.containLogo ? 0 : 1}
           className={classNames(
             'rounded-full w-2 h-2 flex-shrink-0',
             !project?.containLogo && '!object-contain',
