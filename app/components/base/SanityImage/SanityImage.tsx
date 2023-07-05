@@ -71,6 +71,7 @@ export const SanityImage = ({
               width={dimensions?.width}
               height={dimensions?.height}
               preview={src?.preview}
+              hotspot={hotspot?.hotspot}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
