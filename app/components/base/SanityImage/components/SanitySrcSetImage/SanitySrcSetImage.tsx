@@ -45,9 +45,7 @@ export const SanitySrcSetImage = ({
   const assetRef = asset?.asset?._ref;
 
   if (assetRef?.slice(-4) === '.svg') {
-    return (
-      <VectorImage src={asset || ''} alt={alt || ''} className={className} />
-    );
+    return <VectorImage src={asset || ''} alt={alt} className={className} />;
   }
 
   // BITMAPS
@@ -132,7 +130,7 @@ export const SanitySrcSetImage = ({
             srcSet={srcSetAssets()}
             className={className}
             loading="lazy"
-            alt={alt || ''}
+            alt={alt}
           />
         }
         blurredAssetUrl={blurredImageAsset()}

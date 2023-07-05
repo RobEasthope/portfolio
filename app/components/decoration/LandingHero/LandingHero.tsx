@@ -48,7 +48,7 @@ export const LandingHero = ({
         <Box as="div" className="w-screen">
           <SanityImage
             src={bkgImage}
-            alt={caption || ''}
+            alt={caption}
             className="w-screen"
             cover
           />

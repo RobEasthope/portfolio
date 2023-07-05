@@ -30,7 +30,7 @@ export type SanityImageProps = {
 // MARKUP
 export const SanityImage = ({
   src,
-  alt,
+  alt = '',
   aspectRatio = 0,
   className = '',
   wrapperClassName = '',
@@ -61,7 +61,7 @@ export const SanityImage = ({
           hotspot={src?.hotspot}
           crop={src?.crop}
           baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
-          alt={alt || ''}
+          alt={alt}
           className={classNames(className, imgClassName)}
         />
       </div>
@@ -87,7 +87,7 @@ export const SanityImage = ({
         hotspot={src?.hotspot}
         crop={src?.crop}
         baseUrl={SANITY_PROJECT?.BASE_IMAGE_URL}
-        alt={alt || ''}
+        alt={alt}
         className={classNames(className, imgClassName)}
       />
     </div>

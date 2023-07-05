@@ -21,7 +21,7 @@ export const ProjectIndexCard = ({ project }: ProjectIndexCardProps) => {
       >
         <SanityImage
           src={project?.thumbnailImage}
-          alt={project?.title || ''}
+          alt={project?.title}
           // mode={project?.containLogo ? 'contain' : 'responsive'}
           aspectRatio={project?.containLogo ? 0 : 1}
           className="rounded-full w-2 h-2 flex-shrink-0"

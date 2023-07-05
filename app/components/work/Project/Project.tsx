@@ -62,7 +62,7 @@ export const Project = ({ page }: ProjectProps) => {
       >
         <SanityImage
           src={page?.thumbnailImage}
-          alt={page?.title || ''}
+          alt={page?.title}
           // mode={page?.containLogo ? 'contain' : 'responsive'}
           aspectRatio={page?.containLogo ? 0 : 1}
           className="mx-auto rounded-full w-4 h-4"

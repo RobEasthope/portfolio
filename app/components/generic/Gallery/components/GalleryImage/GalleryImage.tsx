@@ -64,7 +64,7 @@ export const GalleryImage = ({
             <Box as="div" className="mx-auto">
               <SanityImage
                 src={image}
-                alt={caption || ''}
+                alt={caption}
                 aspectRatio={aspectRatio}
               />
               <Type
