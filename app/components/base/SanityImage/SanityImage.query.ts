@@ -6,10 +6,10 @@ export const SANITY_IMAGE_QUERY = groq`
     "preview": asset->metadata.lqip,
     hotspot { x, y },
     crop {
+      top,
+      right,
       bottom,
       left,
-      right,
-      top,
     }
   }
 `;
