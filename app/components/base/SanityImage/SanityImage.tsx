@@ -50,7 +50,8 @@ export const SanityImage = ({
       <div
         style={{ maxWidth: `${maxWidth}px` }}
         className={classNames(
-          `cover-image-wrapper`,
+          `sanity-image`,
+          `sanity-image--cover-image-wrapper`,
           className,
           wrapperClassName,
         )}
@@ -76,7 +77,8 @@ export const SanityImage = ({
     <div
       style={{ maxWidth: `${maxWidth}px` }}
       className={classNames(
-        `responsive-image-wrapper`,
+        `sanity-image`,
+        `sanity-image--standard-image-wrapper`,
         className,
         wrapperClassName,
       )}
