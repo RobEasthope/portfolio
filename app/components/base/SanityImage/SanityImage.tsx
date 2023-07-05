@@ -66,7 +66,6 @@ export const SanityImage = ({
               alt={alt || ''}
             /> */}
             <RawSanityImage
-              // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
               id={src?.id}
               width={dimensions?.width}
               height={dimensions?.height}
@@ -101,9 +100,11 @@ export const SanityImage = ({
             alt={alt || ''}
           /> */}
           <RawSanityImage
-            // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
             id={src?.id}
+            width={dimensions?.width}
+            height={dimensions?.height}
             preview={src?.preview}
+            hotspot={hotspot?.hotspot}
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
           />
@@ -133,9 +134,11 @@ export const SanityImage = ({
               alt={alt || ''}
             /> */}
             <RawSanityImage
-              // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
               id={src?.id}
+              width={dimensions?.width}
+              height={dimensions?.height}
               preview={src?.preview}
+              hotspot={hotspot?.hotspot}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
             />
