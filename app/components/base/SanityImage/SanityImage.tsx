@@ -23,7 +23,7 @@ export type SanityImageProps = {
   alt: string | undefined;
   className?: string;
   wrapperClassName?: string;
-  assetClassName?: string;
+  imgClassName?: string;
   containAspectRatio?: number;
   aspectRatio?: number;
   cover?: boolean;
@@ -38,7 +38,7 @@ export const SanityImage = ({
   containAspectRatio = 1,
   className = '',
   wrapperClassName = '',
-  assetClassName = '',
+  imgClassName = '',
   cover = false,
 }: SanityImageProps) => {
   if (!src) {
@@ -63,7 +63,7 @@ export const SanityImage = ({
               crop={src?.crop}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
-              className={className}
+              className={classNames(className, imgClassName)}
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ export const SanityImage = ({
             crop={src?.crop}
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
-            className={className}
+            className={classNames(className, imgClassName)}
           />
         </div>
       );
