@@ -41,7 +41,7 @@ export const SanityImage = ({
   assetClassName = '',
   cover = false,
 }: SanityImageProps) => {
-  if (!asset) {
+  if (!src) {
     return null;
   }
 
