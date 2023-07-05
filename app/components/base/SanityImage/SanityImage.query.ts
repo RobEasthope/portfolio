@@ -8,7 +8,6 @@ export const SANITY_IMAGE_QUERY = groq`
       "width": asset->metadata.dimensions.width,
       "height": asset->metadata.dimensions.height,
       "originalAspectRatio": asset->metadata.dimensions.aspectRatio,
-
     },
     hotspot { x, y },
     crop {
