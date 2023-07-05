@@ -64,7 +64,11 @@ export const SanityImage = ({
           id={src?.id}
           mode="cover"
           width={src?.dimensions?.width}
-          height={src?.dimensions?.height / aspectRatio}
+          height={
+            aspectRatio
+              ? src.dimensions.width / aspectRatio
+              : src.dimensions.height
+          }
           preview={src?.preview}
           hotspot={src?.hotspot}
           crop={src?.crop}
@@ -93,7 +97,11 @@ export const SanityImage = ({
         id={src?.id}
         mode={aspectRatio ? 'cover' : 'contain'}
         width={src?.dimensions?.width}
-        height={src?.dimensions?.height / aspectRatio}
+        height={
+          aspectRatio
+            ? src.dimensions.width / aspectRatio
+            : src.dimensions.height
+        }
         preview={src?.preview}
         hotspot={src?.hotspot}
         crop={src?.crop}
