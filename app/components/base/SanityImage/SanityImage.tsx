@@ -31,8 +31,7 @@ export type SanityImageProps = {
 
 // MARKUP
 export const SanityImage = ({
-  asset,
-  src = asset,
+  src,
   maxWidth,
   alt,
   aspectRatio = 0,
