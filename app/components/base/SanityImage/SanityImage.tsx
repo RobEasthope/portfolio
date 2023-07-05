@@ -68,6 +68,8 @@ export const SanityImage = ({
             <RawSanityImage
               // Pass the Sanity Image ID (`_id`) (e.g., `image-abcde12345-1200x800-jpg`)
               id={src?.id}
+              width={dimensions?.width}
+              height={dimensions?.height}
               preview={src?.preview}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
