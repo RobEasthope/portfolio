@@ -7,7 +7,6 @@ import { SANITY_IMAGE_QUERY } from '~/components/base/SanityImage/SanityImage.qu
 export const HEADER_QUERY = groq`
   *[_type== 'Header' ][0]{
     "logo": logo${SANITY_IMAGE_QUERY},
-    "rawLogo": logo,
     "primaryNavigation": rawPrimaryNavigation[]{
       _type,
       _key,
