@@ -63,6 +63,7 @@ export const SanityImage = ({
               crop={src?.crop}
               baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
               alt={alt || ''}
+              className={className}
             />
           </div>
         </div>
@@ -88,6 +89,7 @@ export const SanityImage = ({
             crop={src?.crop}
             baseUrl="https://cdn.sanity.io/images/117tt97y/production/"
             alt={alt || ''}
+            className={className}
           />
         </div>
       );
