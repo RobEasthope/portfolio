@@ -71,7 +71,6 @@ export const GalleryImage = ({
               <SanityImage
                 asset={image}
                 alt={caption || ''}
-                mode="contain"
                 aspectRatio={aspectRatio}
                 maxWidth={4000}
               />
