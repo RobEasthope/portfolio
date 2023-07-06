@@ -1,6 +1,3 @@
-@import "./components/BlurrableImage/BlurrableImage.css";
-@import "./components/SanitySrcSetImage/SanitySrcSetImage.css";
-
 .sanity-image--standard-image-element {
   display: block;
   max-width: 100%;
