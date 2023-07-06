@@ -1,13 +1,15 @@
 import MuxPlayer from '@mux/mux-player-react';
+import type { LinksFunction } from '@vercel/remix';
 import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-
 import { Box } from '~/components/_base/Box/Box';
 import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
+
+import styles from './LandingHero.css';
 
 // TYPES
 export type LandingHeroProps = {
@@ -27,6 +29,8 @@ export type LandingHeroProps = {
     title: string;
   };
 };
+
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 // MARKUP
 export const LandingHero = ({

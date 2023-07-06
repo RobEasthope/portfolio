@@ -1,20 +1,22 @@
+import type { LinksFunction } from '@vercel/remix';
 import Headroom from 'react-headroom';
 import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
-
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
-
 import { Box } from '~/components/_base/Box/Box';
 import type { EmailLinkWithTitleSchemaProps } from '~/components/_base/EmailLink/EmailLink';
 import type { ExternalLinkWithTitleSchemaProps } from '~/components/_base/ExternalLink/ExternalLink';
 import type { InternalLinkWithTitleSchemaProps } from '~/components/_base/InternalLink/InternalLink';
 
+import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+
 import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
 import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
 import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
+
+import styles from './Header.css';
 
 // TYPES
 export type HeaderProps = {
@@ -36,6 +38,8 @@ export type HeaderProps = {
   ];
   appSettings: AppSettingsProps;
 };
+
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 // MARKUP
 export const Header = ({

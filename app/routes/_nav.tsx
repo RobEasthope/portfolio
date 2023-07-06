@@ -1,10 +1,9 @@
 import { Outlet, useLoaderData } from '@remix-run/react';
 import { json } from '@vercel/remix';
 import groq from 'groq';
+import { Box } from '~/components/_base/Box/Box';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
-
-import { Box } from '~/components/_base/Box/Box';
 
 import type { FooterProps } from '~/components/navigation/Footer/Footer';
 import { Footer } from '~/components/navigation/Footer/Footer';
