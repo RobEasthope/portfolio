@@ -12,10 +12,10 @@ import { Analytics } from '@vercel/analytics/react';
 import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import appCSS from '~/app.css';
-import ProseOverridesCSS from '~/components/_base/Prose/prose-overrides.css';
-import SanityImageCSS from '~/components/_base/SanityImage/SanityImage.css';
+import { links as proseLinks } from '~/components/_base/Prose/Prose';
+import { links as sanityImageLinks } from '~/components/_base/SanityImage/SanityImage';
 import { urlFor } from '~/components/_base/SanityImage/urlFor';
-import YoutubeVideoCSS from '~/components/generic/YoutubeVideo/YoutubeVideo.css';
+import { links as youtubeVideoLinks } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -25,9 +25,9 @@ import { Favicons } from '~/components/settings/Favicons/Favicons';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
 import { METADATA_FALLBACKS_QUERY } from '~/components/settings/MetadataFallbacks/MetadataFallbacks.query';
 
-import HeadroomCSS from '~/components/navigation/Header/headroom.css';
+import { links as headerLinks } from '~/components/navigation/Header/Header';
 
-import LandingHeroCSS from '~/components/decoration/LandingHero/LandingHero.css';
+import { links as landingHeroLinks } from '~/components/decoration/LandingHero/LandingHero';
 
 export const links: LinksFunction = () => [
   // Adobe Typekit
@@ -36,11 +36,12 @@ export const links: LinksFunction = () => [
   // Tailwind and app styles
   { rel: 'stylesheet', href: appCSS },
 
-  // UI styles
-  { rel: 'stylesheet', href: ProseOverridesCSS },
-  { rel: 'stylesheet', href: HeadroomCSS },
-  { rel: 'stylesheet', href: LandingHeroCSS },
-  { rel: 'stylesheet', href: YoutubeVideoCSS },
+  // UI
+  ...proseLinks(),
+  ...sanityImageLinks(),
+  ...headerLinks(),
+  ...landingHeroLinks(),
+  ...youtubeVideoLinks(),
 ];
 
 export async function loader() {
