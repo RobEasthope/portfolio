@@ -37,7 +37,6 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: appCSS },
 
   // UI styles
-  { rel: 'stylesheet', href: SanityImageCSS },
   { rel: 'stylesheet', href: ProseOverridesCSS },
   { rel: 'stylesheet', href: HeadroomCSS },
   { rel: 'stylesheet', href: LandingHeroCSS },
