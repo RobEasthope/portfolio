@@ -31,16 +31,18 @@ export async function loader() {
     process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
   const client = sanityAPI({ preview });
 
-  const appSettings: AppSettingsProps = await client.fetch(APP_SETTINGS_QUERY);
+  const appSettings: AppSettingsProps = await sanityAPI({ preview }).fetch(
+    APP_SETTINGS_QUERY,
+  );
 
-  const primer: SanityPageByIdQueryProps = await client.fetch(
+  const primer: SanityPageByIdQueryProps = await sanityAPI({ preview }).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: appSettings?.homePageSlug,
     },
   );
 
-  const payload: PageBySlugProps = await client.fetch(
+  const payload: PageBySlugProps = await sanityAPI({ preview }).fetch(
     PAGE_BY_ID_QUERY({
       id: primer?.id,
       componentTypes: primer?.componentTypes,
