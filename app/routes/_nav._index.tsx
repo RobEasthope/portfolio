@@ -11,6 +11,7 @@ import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
+import { PagePreview } from '~/components/generic/Page/PagePreview';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
@@ -91,4 +92,5 @@ export function headers() {
 export default function Index() {
   const { page, preview } = useLoaderData<typeof loader>();
 
+  return preview?.token ? <PagePreview page={page} /> : <Page page={page} />;
 }
