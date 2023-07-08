@@ -29,7 +29,6 @@ export async function loader() {
   const token = process.env.SANITY_API_TOKEN;
   const preview =
     process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
-  const client = sanityAPI({ preview });
 
   const appSettings: AppSettingsProps = await sanityAPI({ preview }).fetch(
     APP_SETTINGS_QUERY,
@@ -92,13 +91,4 @@ export function headers() {
 export default function Index() {
   const { page, preview } = useLoaderData<typeof loader>();
 
-  const children = <Page page={page} />;
-
-  return preview ? (
-    <Suspense fallback="Loading">
-      <PreviewProvider token={preview.token}>{children}</PreviewProvider>
-    </Suspense>
-  ) : (
-    { children }
-  );
 }
