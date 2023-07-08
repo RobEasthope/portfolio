@@ -25,14 +25,19 @@ import {
 type CVBySlugProps = CVProps;
 
 export async function loader({ params }: LoaderArgs) {
-  const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
+  const token = process.env.SANITY_API_TOKEN;
+  const preview =
+    process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
+  const client = sanityAPI({ preview });
+
+  const primer: SanityPageByIdQueryProps = await sanityAPI({ preview }).fetch(
     CV_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: params?.cv,
     },
   );
 
-  const payload: CVBySlugProps = await sanityAPI.fetch(
+  const payload: CVBySlugProps = await sanityAPI({ preview }).fetch(
     CV_BY_ID_QUERY({
       id: primer?.id,
       componentTypes: primer?.componentTypes,
