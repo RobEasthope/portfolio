@@ -13,8 +13,13 @@ import { Header } from '~/components/navigation/Header/Header';
 import { HEADER_QUERY } from '~/components/navigation/Header/Header.query';
 
 export async function loader() {
-  const payload: { header: HeaderProps; footer: FooterProps } =
-    await sanityAPI.fetch(groq`{
+  const token = process.env.SANITY_API_TOKEN;
+  const preview =
+    process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
+
+  const payload: { header: HeaderProps; footer: FooterProps } = await sanityAPI(
+    { preview },
+  ).fetch(groq`{
     "header": ${HEADER_QUERY},
     "footer": ${FOOTER_QUERY},
   }`);

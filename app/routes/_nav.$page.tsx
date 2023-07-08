@@ -31,7 +31,7 @@ type PageBySlugProps = PageProps & {
 };
 
 export async function loader({ params }: LoaderArgs) {
-  const appSettings: AppSettingsProps = await sanityAPI.fetch(
+  const appSettings: AppSettingsProps = await sanityAPI({}).fetch(
     APP_SETTINGS_QUERY,
   );
 
@@ -42,14 +42,14 @@ export async function loader({ params }: LoaderArgs) {
     });
   }
 
-  const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
+  const primer: SanityPageByIdQueryProps = await sanityAPI({}).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: params?.page,
     },
   );
 
-  const payload: PageBySlugProps = await sanityAPI.fetch(
+  const payload: PageBySlugProps = await sanityAPI({}).fetch(
     PAGE_BY_ID_QUERY({
       id: primer?.id,
       componentTypes: primer?.componentTypes,

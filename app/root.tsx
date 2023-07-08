@@ -45,7 +45,11 @@ export const links: LinksFunction = () => [
 ];
 
 export async function loader() {
-  const fallbacks: MetadataFallbacksProps = await sanityAPI.fetch(
+  const token = process.env.SANITY_API_TOKEN;
+  const preview =
+    process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
+
+  const fallbacks: MetadataFallbacksProps = await sanityAPI({ preview }).fetch(
     METADATA_FALLBACKS_QUERY,
   );
 

@@ -3,6 +3,7 @@ import { useLoaderData } from '@remix-run/react';
 import type { V2_HtmlMetaDescriptor, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
+import { Suspense, lazy } from 'react';
 import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { PageProps } from '~/components/generic/Page/Page';
 import { Page } from '~/components/generic/Page/Page';
@@ -24,19 +25,26 @@ type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
 };
 
-export async function loader() {
-  const appSettings: AppSettingsProps = await sanityAPI({}).fetch(
-    APP_SETTINGS_QUERY,
-  );
+const PreviewProvider = lazy(
+  () => import('~/utils/sanity-js-api/PreviewProvider'),
+);
 
-  const primer: SanityPageByIdQueryProps = await sanityAPI({}).fetch(
+export async function loader() {
+  const token = process.env.SANITY_API_TOKEN;
+  const preview =
+    process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
+  const client = sanityAPI({ preview });
+
+  const appSettings: AppSettingsProps = await client.fetch(APP_SETTINGS_QUERY);
+
+  const primer: SanityPageByIdQueryProps = await client.fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: appSettings?.homePageSlug,
     },
   );
 
-  const payload: PageBySlugProps = await sanityAPI({}).fetch(
+  const payload: PageBySlugProps = await client.fetch(
     PAGE_BY_ID_QUERY({
       id: primer?.id,
       componentTypes: primer?.componentTypes,
@@ -53,6 +61,7 @@ export async function loader() {
   return json({
     page: payload?.page || null,
     error404: payload?.error404 || null,
+    preview: preview || null,
   });
 }
 
@@ -83,7 +92,15 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page } = useLoaderData<typeof loader>();
+  const { page, preview } = useLoaderData<typeof loader>();
 
-  return <Page page={page} />;
+  const children = <Page page={page} />;
+
+  return preview ? (
+    <Suspense fallback="Loading">
+      <PreviewProvider token={preview.token}>{children}</PreviewProvider>
+    </Suspense>
+  ) : (
+    { children }
+  );
 }
