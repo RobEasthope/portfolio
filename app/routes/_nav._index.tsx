@@ -25,10 +25,6 @@ type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
 };
 
-const PreviewProvider = lazy(
-  () => import('~/utils/sanity-js-api/PreviewProvider'),
-);
-
 export async function loader() {
   const token = process.env.SANITY_API_TOKEN;
   const preview =
