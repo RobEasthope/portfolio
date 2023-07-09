@@ -69,6 +69,7 @@ export async function loader({ params }: LoaderArgs) {
 
   return json({
     page: payload || null,
+    slug: params?.page || null,
     error404: payload?.error404 || null,
   });
 }
