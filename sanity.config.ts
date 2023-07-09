@@ -37,12 +37,15 @@ const sanityConfig = defineConfig({
           .id('__root__')
           .title('Portfolio')
           .items([
+            // Pages
             S.listItem()
               .title('Pages')
               .icon(RiQuillPenLine)
               .schemaType('Page')
               .child(S.documentTypeList('Page').title('Pages')),
             S.divider(),
+
+            // Projects & technologies
             S.listItem()
               .title('Projects')
               .schemaType('project')
@@ -57,6 +60,8 @@ const sanityConfig = defineConfig({
                   .defaultOrdering([{ field: 'name', direction: 'desc' }]),
               ),
             S.divider(),
+
+            // CV & gigs
             S.listItem()
               .title('CVs')
               .icon(HiOutlineBriefcase)
@@ -99,6 +104,8 @@ const sanityConfig = defineConfig({
                   .documentId('Details'),
               ),
             S.divider(),
+
+            // Navigation
             S.listItem()
               .title('Navigation')
               .icon(RiCompasses2Line)
@@ -120,6 +127,8 @@ const sanityConfig = defineConfig({
                   ]),
               ),
             S.divider(),
+
+            // Settings
             S.listItem()
               .title('Settings')
               .icon(RiListSettingsLine)
