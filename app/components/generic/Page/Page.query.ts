@@ -19,6 +19,10 @@ export const PAGE_BY_SLUG_QUERY = ({
   slug,
   componentTypes = [],
 }: PageBySlugQueryProps) => {
+  if (!slug) {
+    throw new Error('You must provide a slug');
+  }
+
   const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
   return groq`{
