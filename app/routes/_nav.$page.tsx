@@ -71,6 +71,7 @@ export async function loader({ params }: LoaderArgs) {
     page: payload || null,
     slug: params?.page || null,
     error404: payload?.error404 || null,
+    preview: preview || null,
   });
 }
 
