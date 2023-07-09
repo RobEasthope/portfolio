@@ -36,10 +36,5 @@ export function PagePreview({
     params,
   );
 
-  return (
-    <div>
-      Preview
-      <Page page={data} />
-    </div>
-  );
+  return <Page page={data} />;
 }
