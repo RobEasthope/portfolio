@@ -3,11 +3,6 @@ import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLO
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
-// Fetch all page slugs
-export const PAGE_SLUGS_QUERY = groq`
-  *[_type == "Page"  && defined(slug.current)].slug.current
-`;
-
 // Fetch page id and components types by slug
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
   *[_type in ["Page"]  && slug.current == $slug][0]{
