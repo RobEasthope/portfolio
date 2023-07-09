@@ -170,3 +170,5 @@ const sanityConfig = defineConfig({
 export type SanitySchemaProps = InferSchemaValues<typeof sanityConfig>;
 
 export default sanityConfig;
+
+export type PageProps = Extract<SanitySchemaProps, { _type: 'Page' }>;
