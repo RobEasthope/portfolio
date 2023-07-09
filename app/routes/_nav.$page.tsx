@@ -13,6 +13,7 @@ import { Page } from '~/components/generic/Page/Page';
 import type { PageBySlugQueryProps } from '~/components/generic/Page/Page.query';
 import {
   PAGE_BY_ID_QUERY,
+  PAGE_BY_SLUG_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
 
@@ -53,7 +54,7 @@ export async function loader({ params }: LoaderArgs) {
   );
 
   const payload: PageBySlugProps = await sanityAPI({ preview }).fetch(
-    PAGE_BY_ID_QUERY({
+    PAGE_BY_SLUG_QUERY({
       slug: params?.page,
       componentTypes: primer?.componentTypes,
     }),
