@@ -4,7 +4,6 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-
 import { SanityBlocks } from '~/components/_base/SanityBlocks/SanityBlocks';
 
 // TYPES

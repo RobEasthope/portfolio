@@ -9,8 +9,9 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 import { Analytics } from '@vercel/analytics/react';
-import type { LinksFunction, V2_MetaFunction } from '@vercel/remix';
+import type { LinksFunction, LoaderArgs, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
+import { Suspense, lazy } from 'react';
 import appCSS from '~/app.css';
 import { links as proseLinks } from '~/components/_base/Prose/Prose';
 import { links as sanityImageLinks } from '~/components/_base/SanityImage/SanityImage';
@@ -20,6 +21,7 @@ import { links as youtubeVideoLinks } from '~/components/generic/YoutubeVideo/Yo
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+import { getSession } from '~/utils/sessions';
 
 import { Favicons } from '~/components/settings/Favicons/Favicons';
 import type { MetadataFallbacksProps } from '~/components/settings/MetadataFallbacks/MetadataFallbacks';
@@ -44,12 +46,20 @@ export const links: LinksFunction = () => [
   ...youtubeVideoLinks(),
 ];
 
-export async function loader() {
-  const fallbacks: MetadataFallbacksProps = await sanityAPI.fetch(
+const PreviewProvider = lazy(
+  () => import('~/utils/sanity-js-api/PreviewProvider'),
+);
+
+export async function loader({ request }: LoaderArgs) {
+  const session = await getSession(request.headers.get('Cookie'));
+  const preview = session.get('preview');
+
+  const fallbacks: MetadataFallbacksProps = await sanityAPI({ preview }).fetch(
     METADATA_FALLBACKS_QUERY,
   );
 
   return json({
+    preview,
     fallbacks: fallbacks || null,
   });
 }
@@ -75,6 +85,9 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
 ];
 
 export default function App() {
+  const { preview } = useLoaderData<typeof loader>();
+  const children = <Outlet />;
+
   return (
     <html lang="en">
       <head>
@@ -86,7 +99,13 @@ export default function App() {
       </head>
       <body className="font-plantin text-ink">
         <Analytics />
-        <Outlet />
+        {preview?.token ? (
+          <PreviewProvider token={preview.token}>
+            <Suspense fallback={children}>{children}</Suspense>
+          </PreviewProvider>
+        ) : (
+          children
+        )}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

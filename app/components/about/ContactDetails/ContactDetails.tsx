@@ -1,10 +1,10 @@
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
-
 import { Box } from '~/components/_base/Box/Box';
 import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
 import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
 import { Type } from '~/components/_base/Type/Type';
+
+import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
 import type { HeaderProps } from '~/components/navigation/Header/Header';
 
@@ -35,7 +35,7 @@ export const ContactDetails = ({
     >
       {displayLogo && (
         <SanityImage
-          src={logo}
+          src={logo?.asset}
           alt={METADATA_HARD_CODED_FALLBACKS.TITLE}
           className="h-1.25 w-1.25 hidden print:block"
         />

@@ -6,12 +6,12 @@ import { cacheHeader } from 'pretty-cache-header';
 import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { PageProps } from '~/components/generic/Page/Page';
 import { Page } from '~/components/generic/Page/Page';
+import type { PageBySlugQueryProps } from '~/components/generic/Page/Page.query';
 import {
-  PAGE_BY_ID_QUERY,
+  PAGE_BY_SLUG_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
-
-import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
+import { PagePreview } from '~/components/generic/Page/PagePreview';
 
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
@@ -25,25 +25,26 @@ type PageBySlugProps = PageProps & {
 };
 
 export async function loader() {
-  const appSettings: AppSettingsProps = await sanityAPI.fetch(
+  const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
+
+  const appSettings: AppSettingsProps = await sanityAPI({ preview }).fetch(
     APP_SETTINGS_QUERY,
   );
 
-  const primer: SanityPageByIdQueryProps = await sanityAPI.fetch(
-    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-    {
+  const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
+    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY({
       slug: appSettings?.homePageSlug,
-    },
+    }),
   );
 
-  const payload: PageBySlugProps = await sanityAPI.fetch(
-    PAGE_BY_ID_QUERY({
-      id: primer?.id,
+  const payload: PageBySlugProps = await sanityAPI({ preview }).fetch(
+    PAGE_BY_SLUG_QUERY({
+      slug: appSettings?.homePageSlug,
       componentTypes: primer?.componentTypes,
     }),
   );
 
-  if (!payload?.page) {
+  if (!payload) {
     // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
@@ -51,8 +52,9 @@ export async function loader() {
   }
 
   return json({
-    page: payload?.page || null,
-    error404: payload?.error404 || null,
+    page: payload || null,
+    homePageSlug: appSettings?.homePageSlug || null,
+    preview: preview || null,
   });
 }
 
@@ -83,7 +85,13 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page } = useLoaderData<typeof loader>();
+  const { page, homePageSlug, preview } = useLoaderData<typeof loader>();
 
-  return <Page page={page} />;
+  if (!homePageSlug) return null;
+
+  return preview ? (
+    <PagePreview page={page} homePageSlug={homePageSlug} preview={preview} />
+  ) : (
+    <Page page={page} />
+  );
 }
