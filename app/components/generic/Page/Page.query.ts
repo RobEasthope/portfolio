@@ -22,7 +22,7 @@ export const PAGE_BY_SLUG_QUERY = ({
   const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
   return groq`{
-    "page": *[_type in ["Page"] && slug.current == ${slug}][0]{
+    "page": *[_type in ["Page"] && slug.current == '${slug}'][0]{
       _id,
       title,
       slug,
