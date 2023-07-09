@@ -13,9 +13,10 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 export function PagePreview({
   page,
   slug,
+  preview,
 }: {
   page: PageProps['page'];
-  slug: string;
+  slug: string | null;
 }) {
   const params = useParams();
 
