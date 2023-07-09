@@ -57,6 +57,7 @@ export async function loader() {
 
   return json({
     page: payload?.page || null,
+    appSettings: appSettings || null,
     error404: payload?.error404 || null,
     preview: preview || null,
   });
@@ -89,7 +90,11 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page, preview } = useLoaderData<typeof loader>();
+  const { page, appSettings, preview } = useLoaderData<typeof loader>();
 
-  return preview?.token ? <PagePreview page={page} /> : <Page page={page} />;
+  return preview?.token ? (
+    <PagePreview page={page} slug={appSettings?.homePageSlug} />
+  ) : (
+    <Page page={page} />
+  );
 }
