@@ -18,13 +18,6 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
   }
 `;
 
-// Fetch components types by id
-export const PAGE_COMPONENT_TYPES_BY_ID_QUERY = groq`
-  *[_type in ["Page"] && _id == $id][0]{
-    "componentTypes": array::unique(rawSections[]._type),
-  }
-`;
-
 // Fetch page data by id
 export const PAGE_BY_ID_QUERY = ({
   id,
