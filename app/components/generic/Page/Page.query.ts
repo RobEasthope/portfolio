@@ -1,8 +1,6 @@
 import groq from 'groq';
 import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
 
-import type { SanityPageBySlugQueryProps } from '~/types/SanityPageBySlugQueryProps';
-
 // Fetch page id and components types by slug
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
   *[_type in ["Page"]  && slug.current == $slug][0]{
@@ -10,6 +8,11 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
     "componentTypes": array::unique(rawSections[]._type),
   }
 `;
+
+export type SanityPageBySlugQueryProps = {
+  slug: string;
+  componentTypes: string[];
+};
 
 // Fetch page data by id
 export const PAGE_BY_SLUG_QUERY = ({
