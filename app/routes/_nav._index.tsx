@@ -47,7 +47,7 @@ export async function loader() {
     }),
   );
 
-  if (!payload?.page) {
+  if (!payload) {
     // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
