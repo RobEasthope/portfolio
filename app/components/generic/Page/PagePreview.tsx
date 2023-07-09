@@ -16,7 +16,7 @@ export function PagePreview({
   preview,
 }: {
   page: PageProps['page'];
-  slug: string | null;
+  slug: string;
 }) {
   const params = useParams();
 
