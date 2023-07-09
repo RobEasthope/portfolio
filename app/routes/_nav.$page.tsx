@@ -32,9 +32,7 @@ type PageBySlugProps = PageProps & {
 };
 
 export async function loader({ params }: LoaderArgs) {
-  const token = process.env.SANITY_API_TOKEN;
-  const preview =
-    process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
+  const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
 
   const appSettings: AppSettingsProps = await sanityAPI({ preview }).fetch(
     APP_SETTINGS_QUERY,
