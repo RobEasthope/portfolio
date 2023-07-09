@@ -7,13 +7,21 @@ export const CV_SLUGS_QUERY = groq`
   *[_type == "CV"  && defined(slug.current)].slug.current
 `;
 
-// Fetch page id and components types by slug
-export const CV_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
-  *[_type in ["CV"]  && slug.current == $slug][0]{
-    "id": _id,
-    "componentTypes": array::unique(rawSections[]._type),
+export const CV_COMPONENT_TYPES_BY_SLUG_QUERY = ({
+  slug,
+}: {
+  slug: string;
+}) => {
+  if (!slug) {
+    throw new Error('You must provide a slug');
   }
-`;
+
+  return groq`
+    *[_type in ["Page"] && slug.current == '${slug}'][0]{
+      "componentTypes": array::unique(rawSections[]._type),
+    }
+  `;
+};
 
 // Fetch components types by id
 export const CV_COMPONENT_TYPES_BY_ID_QUERY = groq`
@@ -23,14 +31,14 @@ export const CV_COMPONENT_TYPES_BY_ID_QUERY = groq`
 `;
 
 // Fetch page data by id
-export const CV_BY_ID_QUERY = ({
-  id,
+export const CV_BY_SLUG_QUERY = ({
+  slug,
   componentTypes = [],
 }: PageBySlugQueryProps) => {
   const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
-  return groq`{
-    "page": *[_id == "${id}"][0]{
+  return groq`
+    *[_type in ["CV"] && slug.current == '${slug}'][0]{
       _id,
       title,
       slug,
@@ -46,6 +54,6 @@ export const CV_BY_ID_QUERY = ({
           )
           .join(',')}
       }
-    },
-  }`;
+    }
+  `;
 };
