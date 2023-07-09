@@ -3,7 +3,6 @@ import { useLoaderData } from '@remix-run/react';
 import type { V2_HtmlMetaDescriptor, V2_MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { cacheHeader } from 'pretty-cache-header';
-import { Suspense, lazy } from 'react';
 import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { PageProps } from '~/components/generic/Page/Page';
 import { Page } from '~/components/generic/Page/Page';
