@@ -16,6 +16,7 @@ import {
   PAGE_BY_SLUG_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
+import { PagePreview } from '~/components/generic/Page/PagePreview';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -102,7 +103,11 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page } = useLoaderData<typeof loader>();
+  const { page, slug, preview } = useLoaderData<typeof loader>();
 
-  return <Page page={page} />;
+  return preview?.token ? (
+    <PagePreview page={page} slug={slug} preview={preview} />
+  ) : (
+    <Page page={page} />
+  );
 }
