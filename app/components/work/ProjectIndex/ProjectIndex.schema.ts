@@ -1,4 +1,8 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import {
+  defineArrayMember,
+  defineField,
+  defineType,
+} from '@sanity-typed/types';
 import { BsBrush } from 'react-icons/bs';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -13,7 +17,7 @@ export default defineType({
       name: 'index',
       title: 'Index',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'project' } }],
+      of: [defineArrayMember({ type: 'reference', to: { type: 'project' } })],
     }),
   ],
   preview: {

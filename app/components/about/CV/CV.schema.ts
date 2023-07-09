@@ -1,4 +1,8 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import {
+  defineArrayMember,
+  defineField,
+  defineType,
+} from '@sanity-typed/types';
 import { HiOutlineBriefcase } from 'react-icons/hi';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -31,13 +35,13 @@ export default defineType({
       title: 'Page blocks',
       type: 'array',
       of: [
-        { type: 'Dot' },
-        { type: 'ContactDetails' },
-        { type: 'Education' },
-        { type: 'GigIndex' },
-        { type: 'Organisations' },
-        { type: 'Spacer' },
-        { type: 'Text' },
+        defineArrayMember({ type: 'Dot' }),
+        defineArrayMember({ type: 'ContactDetails' }),
+        defineArrayMember({ type: 'Education' }),
+        defineArrayMember({ type: 'GigIndex' }),
+        defineArrayMember({ type: 'Organisations' }),
+        defineArrayMember({ type: 'Spacer' }),
+        defineArrayMember({ type: 'Text' }),
       ],
       validation: (Rule) => Rule.required(),
     }),

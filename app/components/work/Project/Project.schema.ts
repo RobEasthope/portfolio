@@ -1,4 +1,8 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import {
+  defineArrayMember,
+  defineField,
+  defineType,
+} from '@sanity-typed/types';
 import { BsBrush } from 'react-icons/bs';
 import { PROJECT_SLUG } from '~/components/work/Project/PROJECT_SLUG';
 
@@ -65,7 +69,7 @@ export default defineType({
       name: 'techUsed',
       title: 'Technologies used',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'tech' } }],
+      of: [defineArrayMember({ type: 'reference', to: { type: 'tech' } })],
       validation: (Rule) => Rule.required(),
     }),
     defineField({

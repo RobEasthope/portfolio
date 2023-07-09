@@ -1,4 +1,8 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import {
+  defineArrayMember,
+  defineField,
+  defineType,
+} from '@sanity-typed/types';
 import { BsFillCircleFill } from 'react-icons/bs';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -34,7 +38,7 @@ export default defineType({
       name: 'selectedGigs',
       title: 'Selected gigs',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'project' } }],
+      of: [defineArrayMember({ type: 'reference', to: { type: 'project' } })],
     }),
   ],
   preview: {

@@ -1,4 +1,8 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import {
+  defineArrayMember,
+  defineField,
+  defineType,
+} from '@sanity-typed/types';
 import { RiQuillPenLine } from 'react-icons/ri';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
@@ -31,17 +35,17 @@ export default defineType({
       title: 'Page blocks',
       type: 'array',
       of: [
-        { type: 'Dot' },
-        { type: 'Gallery' },
-        { type: 'Image' },
-        { type: 'LandingHero' },
-        { type: 'Organisations' },
-        { type: 'PageTitle' },
-        { type: 'ProjectIndex' },
-        { type: 'Spacer' },
-        { type: 'Text' },
-        { type: 'VimeoVideo' },
-        { type: 'YoutubeVideo' },
+        defineArrayMember({ type: 'Dot' }),
+        defineArrayMember({ type: 'Gallery' }),
+        defineArrayMember({ type: 'Image' }),
+        defineArrayMember({ type: 'LandingHero' }),
+        defineArrayMember({ type: 'Organisations' }),
+        defineArrayMember({ type: 'PageTitle' }),
+        defineArrayMember({ type: 'ProjectIndex' }),
+        defineArrayMember({ type: 'Spacer' }),
+        defineArrayMember({ type: 'Text' }),
+        defineArrayMember({ type: 'VimeoVideo' }),
+        defineArrayMember({ type: 'YoutubeVideo' }),
       ],
       validation: (Rule) => Rule.required(),
     }),
