@@ -1,3 +1,4 @@
+import { defineConfig } from '@sanity-typed/types';
 import { visionTool } from '@sanity/vision';
 import { BsBrush, BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
@@ -11,7 +12,6 @@ import {
   RiSettings2Line,
   RiShieldLine,
 } from 'react-icons/ri';
-import { defineConfig } from 'sanity';
 import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { muxInput } from 'sanity-plugin-mux-input';
 import { deskTool } from 'sanity/desk';
