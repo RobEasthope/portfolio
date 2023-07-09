@@ -60,7 +60,7 @@ export async function loader({ params }: LoaderArgs) {
     }),
   );
 
-  if (!payload?.page) {
+  if (!payload) {
     // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
@@ -68,7 +68,7 @@ export async function loader({ params }: LoaderArgs) {
   }
 
   return json({
-    page: payload?.page || null,
+    page: payload || null,
     error404: payload?.error404 || null,
   });
 }
