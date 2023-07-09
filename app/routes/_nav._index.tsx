@@ -55,7 +55,7 @@ export async function loader() {
   }
 
   return json({
-    page: payload?.page || null,
+    page: payload || null,
     slug: appSettings?.homePageSlug,
     preview: preview || null,
   });
