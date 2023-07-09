@@ -12,7 +12,6 @@ export function sanityAPI({
     apiVersion: process.env.SANITY_PUBLIC_API_VERSION || '',
     useCdn: true,
     perspective: 'published',
-    token: process.env.SANITY_API_TOKEN || '',
   });
   if (preview) {
     if (!preview.token) {
