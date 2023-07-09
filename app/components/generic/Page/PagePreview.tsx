@@ -4,12 +4,18 @@ import type { PageProps } from '~/components/generic/Page/Page';
 import { Page } from '~/components/generic/Page/Page';
 import { PAGE_BY_SLUG_QUERY } from '~/components/generic/Page/Page.query';
 
-export function PagePreview({ page }: { page: PageProps['page'] }) {
+export function PagePreview({
+  page,
+  slug,
+}: {
+  page: PageProps['page'];
+  slug: string;
+}) {
   const params = useParams();
   const [data] = useLiveQuery(
     page,
     PAGE_BY_SLUG_QUERY({
-      id: primer?.id,
+      slug,
       componentTypes: primer?.componentTypes,
     }),
     params,
