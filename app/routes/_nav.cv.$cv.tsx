@@ -17,32 +17,34 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 import type { CVProps } from '~/components/about/CV/CV';
 import { CV } from '~/components/about/CV/CV';
 import {
-  CV_BY_ID_QUERY,
+  CV_BY_SLUG_QUERY,
   CV_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/about/CV/CV.query';
+import { CVPreview } from '~/components/about/CV/CVPreview';
 
 type CVBySlugProps = CVProps;
 
 export async function loader({ params }: LoaderArgs) {
-  const token = process.env.SANITY_API_TOKEN;
-  const preview =
-    process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
+  const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
+
+  if (!params?.cv) {
+    throw new Error('I guess all of the routing has collapsed? 🤷‍♂️');
+  }
 
   const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
-    CV_COMPONENT_TYPES_BY_SLUG_QUERY,
-    {
+    CV_COMPONENT_TYPES_BY_SLUG_QUERY({
       slug: params?.cv,
-    },
+    }),
   );
 
   const payload: CVBySlugProps = await sanityAPI({ preview }).fetch(
-    CV_BY_ID_QUERY({
-      id: primer?.id,
+    CV_BY_SLUG_QUERY({
+      slug: params?.cv,
       componentTypes: primer?.componentTypes,
     }),
   );
 
-  if (!payload?.page) {
+  if (!payload) {
     // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
@@ -50,7 +52,8 @@ export async function loader({ params }: LoaderArgs) {
   }
 
   return json({
-    page: payload?.page || null,
+    page: payload || null,
+    preview,
   });
 }
 
@@ -81,7 +84,11 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page } = useLoaderData<typeof loader>();
+  const { page, preview } = useLoaderData<typeof loader>();
 
-  return <CV page={page} />;
+  return preview ? (
+    <CVPreview page={page} preview={preview} />
+  ) : (
+    <CV page={page} />
+  );
 }
