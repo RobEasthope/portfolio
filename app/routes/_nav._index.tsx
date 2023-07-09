@@ -91,7 +91,7 @@ export default function Index() {
   const { page, slug, preview } = useLoaderData<typeof loader>();
 
   return preview?.token ? (
-    <PagePreview page={page} slug={slug} />
+    <PagePreview page={page} slug={slug} preview={preview} />
   ) : (
     <Page page={page} />
   );
