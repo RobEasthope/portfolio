@@ -15,7 +15,6 @@ import {
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
 
-import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -25,6 +24,7 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
+import type { SanityPageBySlugQueryProps } from '~/types/SanityPageBySlugQueryProps';
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
@@ -46,7 +46,7 @@ export async function loader({ params }: LoaderArgs) {
     });
   }
 
-  const primer: SanityPageByIdQueryProps = await sanityAPI({ preview }).fetch(
+  const primer: SanityPageBySlugQueryProps = await sanityAPI({ preview }).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: params?.page,

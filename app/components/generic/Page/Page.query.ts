@@ -1,7 +1,7 @@
 import groq from 'groq';
 import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
 
-import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
+import type { SanityPageBySlugQueryProps } from '~/types/SanityPageBySlugQueryProps';
 
 // Fetch page id and components types by slug
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
@@ -15,7 +15,7 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
 export const PAGE_BY_SLUG_QUERY = ({
   slug,
   componentTypes = [],
-}: SanityPageByIdQueryProps) => {
+}: SanityPageBySlugQueryProps) => {
   const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
   return groq`{

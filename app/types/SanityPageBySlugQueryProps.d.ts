@@ -1,4 +1,4 @@
-export type SanityPageByIdQueryProps = {
+export type SanityPageBySlugQueryProps = {
   slug: string;
   componentTypes: string[];
 };

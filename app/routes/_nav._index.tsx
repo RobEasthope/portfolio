@@ -13,7 +13,6 @@ import {
 } from '~/components/generic/Page/Page.query';
 import { PagePreview } from '~/components/generic/Page/PagePreview';
 
-import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
@@ -21,6 +20,7 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
+import type { SanityPageBySlugQueryProps } from '~/types/SanityPageBySlugQueryProps';
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
@@ -35,7 +35,7 @@ export async function loader() {
     APP_SETTINGS_QUERY,
   );
 
-  const primer: SanityPageByIdQueryProps = await sanityAPI({ preview }).fetch(
+  const primer: SanityPageBySlugQueryProps = await sanityAPI({ preview }).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: appSettings?.homePageSlug,

@@ -9,7 +9,6 @@ import type {
 import { cacheHeader } from 'pretty-cache-header';
 import type { PageProps } from '~/components/generic/Page/Page';
 
-import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
 
 import { checkMetadata } from '~/utils/checkMetadata';
 import { mergeMeta } from '~/utils/mergeMeta';
@@ -21,6 +20,7 @@ import {
   CV_BY_ID_QUERY,
   CV_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/about/CV/CV.query';
+import type { SanityPageBySlugQueryProps } from '~/types/SanityPageBySlugQueryProps';
 
 type CVBySlugProps = CVProps;
 
@@ -30,7 +30,7 @@ export async function loader({ params }: LoaderArgs) {
     process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
   const client = sanityAPI({ preview });
 
-  const primer: SanityPageByIdQueryProps = await sanityAPI({ preview }).fetch(
+  const primer: SanityPageBySlugQueryProps = await sanityAPI({ preview }).fetch(
     CV_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: params?.cv,
