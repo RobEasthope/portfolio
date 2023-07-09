@@ -5,7 +5,7 @@ import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLO
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = ({
   slug,
 }: {
-  slug: string;
+  slug: string | undefined;
 }) => {
   if (!slug) {
     throw new Error('You must provide a slug');
