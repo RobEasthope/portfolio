@@ -10,11 +10,11 @@ import { cacheHeader } from 'pretty-cache-header';
 import type { Error404Props } from '~/components/generic/Error404/Error404';
 import type { PageProps } from '~/components/generic/Page/Page';
 import { Page } from '~/components/generic/Page/Page';
+import type { PageBySlugQueryProps } from '~/components/generic/Page/Page.query';
 import {
   PAGE_BY_ID_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
 } from '~/components/generic/Page/Page.query';
-
 
 import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
 
@@ -24,7 +24,6 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '~/components/settings/AppSettings/AppSettings.query';
-import type { SanityPageBySlugQueryProps } from '~/types/SanityPageBySlugQueryProps';
 
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
@@ -46,7 +45,7 @@ export async function loader({ params }: LoaderArgs) {
     });
   }
 
-  const primer: SanityPageBySlugQueryProps = await sanityAPI({ preview }).fetch(
+  const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
     {
       slug: params?.page,

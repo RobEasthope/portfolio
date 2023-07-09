@@ -9,7 +9,7 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
   }
 `;
 
-export type SanityPageBySlugQueryProps = {
+export type PageBySlugQueryProps = {
   slug: string;
   componentTypes: string[];
 };
@@ -18,7 +18,7 @@ export type SanityPageBySlugQueryProps = {
 export const PAGE_BY_SLUG_QUERY = ({
   slug,
   componentTypes = [],
-}: SanityPageBySlugQueryProps) => {
+}: PageBySlugQueryProps) => {
   const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
   return groq`{
