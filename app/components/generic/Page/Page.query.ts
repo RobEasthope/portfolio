@@ -10,7 +10,7 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
 `;
 
 export type PageBySlugQueryProps = {
-  slug: string;
+  slug: string | undefined;
   componentTypes: string[];
 };
 
