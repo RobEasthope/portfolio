@@ -1,5 +1,5 @@
+import { defineField, defineType } from '@sanity-typed/types';
 import { AiOutlineColumnHeight } from 'react-icons/ai';
-import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 

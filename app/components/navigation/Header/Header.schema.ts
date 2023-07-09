@@ -1,4 +1,8 @@
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import {
+  defineArrayMember,
+  defineField,
+  defineType,
+} from '@sanity-typed/types';
 
 export default defineType({
   name: 'Header',

@@ -1,5 +1,5 @@
 import { MdOutlineEmail } from 'react-icons/md';
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from '@sanity-typed/types';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 

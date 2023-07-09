@@ -23,6 +23,9 @@ dependencies:
   '@remix-run/react':
     specifier: ^1.18.1
     version: 1.18.1(react-dom@18.2.0)(react@18.2.0)
+  '@sanity-typed/types':
+    specifier: ^2.0.1
+    version: 2.0.1(@portabletext/types@2.0.5)(sanity@3.14.1)(typescript@5.1.6)
   '@sanity/client':
     specifier: ^6.1.5
     version: 6.1.5
@@ -3317,6 +3320,19 @@ packages:
 
   /@rushstack/eslint-patch@1.3.2:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
+
+  /@sanity-typed/types@2.0.1(@portabletext/types@2.0.5)(sanity@3.14.1)(typescript@5.1.6):
+    resolution: {integrity: sha512-KTMlDFc88Wm4wj2JpSMymy0GtW9RjVT7Ov9xdYCfqZ+1dMfREIJiyuekEPnZMrer6PHoYh6VcnczlaEduJcU+g==}
+    peerDependencies:
+      '@portabletext/types': ^2.0.2
+      sanity: ^3.12.0
+      typescript: ^5.0.4
+    dependencies:
+      '@portabletext/types': 2.0.5
+      sanity: 3.14.1(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+      type-fest: 2.19.0
+      typescript: 5.1.6
+    dev: false
 
   /@sanity/asset-utils@1.3.0:
     resolution: {integrity: sha512-uyIOtGA4Duf+68I3BSbYHY5P+WGftn3QtNJD2Pn7h9WPGYsSrWViIPebE9yRN8N0NHhYj+hDQXaMpVdjG7r+zA==}

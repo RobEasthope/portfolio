@@ -1,3 +1,5 @@
+import type { InferSchemaValues } from '@sanity-typed/types';
+import { defineConfig } from '@sanity-typed/types';
 import { visionTool } from '@sanity/vision';
 import { BsBrush, BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
@@ -11,7 +13,6 @@ import {
   RiSettings2Line,
   RiShieldLine,
 } from 'react-icons/ri';
-import { defineConfig } from 'sanity';
 import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { muxInput } from 'sanity-plugin-mux-input';
 import { deskTool } from 'sanity/desk';
@@ -20,7 +21,7 @@ import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 
 import { schemaTypes } from './sanity.schema';
 
-export default defineConfig({
+const sanityConfig = defineConfig({
   name: 'default',
   title: 'Portfolio',
 
@@ -165,3 +166,7 @@ export default defineConfig({
     types: schemaTypes,
   },
 });
+
+export type SanitySchemaProps = InferSchemaValues<typeof sanityConfig>;
+
+export default sanityConfig;

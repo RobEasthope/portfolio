@@ -21,6 +21,7 @@
     "@radix-ui/react-dialog": "^1.0.4",
     "@remix-run/node": "^1.18.1",
     "@remix-run/react": "^1.18.1",
+    "@sanity-typed/types": "^2.0.1",
     "@sanity/client": "^6.1.5",
     "@sanity/image-url": "^1.0.2",
     "@sanity/preview-kit": "^2.3.1",

@@ -1,5 +1,5 @@
+import { defineField, defineType } from '@sanity-typed/types';
 import { RiLinksLine } from 'react-icons/ri';
-import { defineField, defineType } from 'sanity';
 
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 

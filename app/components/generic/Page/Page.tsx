@@ -1,26 +1,10 @@
-import type {
-  SanityImageAsset,
-  SanityImageCrop,
-  SanityImageHotspot,
-  SanityReference,
-} from 'sanity-codegen';
+import type { SanitySchemaProps } from 'sanity.config';
 import { SanityBlocks } from '~/components/_base/SanityBlocks/SanityBlocks';
 
 // TYPES
 export type PageProps = {
-  page: {
-    _id: string;
-    _type: 'Page';
-    title: string;
-    slug: { _type: 'slug'; current: string };
+  page: Extract<SanitySchemaProps, { _type: 'Page' }> & {
     sections: any[];
-    metadataDescription: string;
-    metadataImage: {
-      _type: 'image';
-      asset: SanityReference<SanityImageAsset>;
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-    };
   };
 };
 
