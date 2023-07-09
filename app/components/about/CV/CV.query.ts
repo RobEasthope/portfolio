@@ -17,7 +17,7 @@ export const CV_COMPONENT_TYPES_BY_SLUG_QUERY = ({
   }
 
   return groq`
-    *[_type in ["Page"] && slug.current == '${slug}'][0]{
+    *[_type in ["CV"] && slug.current == '${slug}'][0]{
       "componentTypes": array::unique(rawSections[]._type),
     }
   `;
