@@ -20,7 +20,7 @@ import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
 
 import { schemaTypes } from './sanity.schema';
 
-export default defineConfig({
+const sanityConfig = defineConfig({
   name: 'default',
   title: 'Portfolio',
 
@@ -165,3 +165,4 @@ export default defineConfig({
     types: schemaTypes,
   },
 });
+export default sanityConfig;
