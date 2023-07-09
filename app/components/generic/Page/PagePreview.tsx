@@ -10,7 +10,7 @@ import {
 
 import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
-export async function PagePreview({
+export function PagePreview({
   page,
   slug,
 }: {
@@ -19,18 +19,18 @@ export async function PagePreview({
 }) {
   const params = useParams();
 
-  const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
-    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-    {
-      slug,
-    },
-  );
+  // const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
+  //   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
+  //   {
+  //     slug,
+  //   },
+  // );
 
   const [data] = useLiveQuery(
     page,
     PAGE_BY_SLUG_QUERY({
       slug,
-      componentTypes: primer?.componentTypes,
+      componentTypes: ['Text'],
     }),
     params,
   );
