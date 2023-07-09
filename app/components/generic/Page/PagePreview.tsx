@@ -31,7 +31,7 @@ export function PagePreview({
     page,
     PAGE_BY_SLUG_QUERY({
       slug,
-      componentTypes: ['Text'],
+      componentTypes: [],
     }),
     params,
   );
