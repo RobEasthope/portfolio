@@ -1,4 +1,4 @@
 export type SanityPageByIdQueryProps = {
-  id: string;
+  slug: string;
   componentTypes: string[];
 };

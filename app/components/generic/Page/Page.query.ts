@@ -1,9 +1,7 @@
 import groq from 'groq';
+import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
 
 import type { SanityPageByIdQueryProps } from '~/types/SanityPageByIdQueryProps';
-
-import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
-import { SANITY_IMAGE_QUERY } from '~/components/_base/SanityImage/SanityImage.query';
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`
@@ -19,14 +17,14 @@ export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = groq`
 `;
 
 // Fetch page data by id
-export const PAGE_BY_ID_QUERY = ({
-  id,
+export const PAGE_BY_SLUG_QUERY = ({
+  slug,
   componentTypes = [],
 }: SanityPageByIdQueryProps) => {
   const hydratedSanityBlockQueries: any = SANITY_BLOCK_QUERIES();
 
   return groq`{
-    "page": *[_id == "${id}"][0]{
+    "page": *[_type in ["Page"] && slug.current == ${slug}][0]{
       _id,
       title,
       slug,
