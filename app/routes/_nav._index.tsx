@@ -56,7 +56,7 @@ export async function loader() {
 
   return json({
     page: payload?.page || null,
-    slug: appSettings?.homePageSlug || null,
+    slug: appSettings?.homePageSlug,
     preview: preview || null,
   });
 }
