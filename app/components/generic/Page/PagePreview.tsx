@@ -6,17 +6,17 @@ import { PAGE_BY_SLUG_QUERY } from '~/components/generic/Page/Page.query';
 
 export function PagePreview({
   page,
-  slug,
+  homePageSlug,
 }: {
   page: PageProps['page'];
-  slug: string;
+  homePageSlug?: string;
 }) {
   const params = useParams();
 
   const [data] = useLiveQuery(
     page,
     PAGE_BY_SLUG_QUERY({
-      slug,
+      slug: homePageSlug || params?.page || '',
       componentTypes: [],
     }),
     params,

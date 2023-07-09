@@ -53,7 +53,7 @@ export async function loader() {
 
   return json({
     page: payload || null,
-    slug: appSettings?.homePageSlug || null,
+    homePageSlug: appSettings?.homePageSlug || null,
     preview: preview || null,
   });
 }
@@ -85,10 +85,12 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page, slug, preview } = useLoaderData<typeof loader>();
+  const { page, homePageSlug, preview } = useLoaderData<typeof loader>();
 
-  return preview?.token ? (
-    <PagePreview page={page} slug={slug} preview={preview} />
+  if (!homePageSlug) return null;
+
+  return preview ? (
+    <PagePreview page={page} homePageSlug={homePageSlug} preview={preview} />
   ) : (
     <Page page={page} />
   );

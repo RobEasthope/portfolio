@@ -33,6 +33,9 @@ type PageBySlugProps = PageProps & {
 
 export async function loader({ params }: LoaderArgs) {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
+  if (!params?.page) {
+    throw new Error('I guess all of the routing has collapsed? 🤷‍♂️');
+  }
 
   const appSettings: AppSettingsProps = await sanityAPI({ preview }).fetch(
     APP_SETTINGS_QUERY,
@@ -67,7 +70,6 @@ export async function loader({ params }: LoaderArgs) {
 
   return json({
     page: payload || null,
-    slug: params?.page || null,
     error404: payload?.error404 || null,
     preview: preview || null,
   });
@@ -100,10 +102,10 @@ export function headers() {
 }
 
 export default function Index() {
-  const { page, slug, preview } = useLoaderData<typeof loader>();
+  const { page, preview } = useLoaderData<typeof loader>();
 
-  return preview?.token ? (
-    <PagePreview page={page} slug={slug} preview={preview} />
+  return preview ? (
+    <PagePreview page={page} preview={preview} />
   ) : (
     <Page page={page} />
   );
