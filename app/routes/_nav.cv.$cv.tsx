@@ -28,7 +28,6 @@ export async function loader({ params }: LoaderArgs) {
   const token = process.env.SANITY_API_TOKEN;
   const preview =
     process.env.SANITY_API_PREVIEW_DRAFTS === 'true' ? { token } : undefined;
-  const client = sanityAPI({ preview });
 
   const primer: SanityPageBySlugQueryProps = await sanityAPI({ preview }).fetch(
     CV_COMPONENT_TYPES_BY_SLUG_QUERY,
