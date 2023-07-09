@@ -1,5 +1,5 @@
+import { defineField, defineType } from '@sanity-typed/types';
 import { IoMdSchool } from 'react-icons/io';
-import { defineField, defineType } from 'sanity';
 
 export default defineType({
   type: 'object',

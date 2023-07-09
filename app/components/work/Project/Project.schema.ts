@@ -1,5 +1,5 @@
+import { defineField, defineType } from '@sanity-typed/types';
 import { BsBrush } from 'react-icons/bs';
-import { defineField, defineType } from 'sanity';
 import { PROJECT_SLUG } from '~/components/work/Project/PROJECT_SLUG';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';

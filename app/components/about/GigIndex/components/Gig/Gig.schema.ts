@@ -1,7 +1,7 @@
+import { defineField, defineType } from '@sanity-typed/types';
 import * as dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { BsFillCircleFill } from 'react-icons/bs';
-import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'gig',
