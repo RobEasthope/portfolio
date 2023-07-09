@@ -1,3 +1,4 @@
+import type { InferSchemaValues } from '@sanity-typed/types';
 import { defineConfig } from '@sanity-typed/types';
 import { visionTool } from '@sanity/vision';
 import { BsBrush, BsFillCircleFill } from 'react-icons/bs';
@@ -165,4 +166,7 @@ const sanityConfig = defineConfig({
     types: schemaTypes,
   },
 });
+
+export type SanitySchemaProps = InferSchemaValues<typeof sanityConfig>;
+
 export default sanityConfig;
