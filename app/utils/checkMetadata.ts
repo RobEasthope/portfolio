@@ -4,7 +4,6 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-
 import { urlFor } from '~/components/_base/SanityImage/urlFor';
 
 type CheckMetadataProps = {
@@ -16,12 +15,14 @@ type CheckMetadataProps = {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+  url: string;
 };
 
 export function checkMetadata({
   title,
   description,
   image,
+  url,
 }: CheckMetadataProps) {
   const data = [];
 
@@ -46,6 +47,10 @@ export function checkMetadata({
         content: description,
       },
       {
+        name: 'og:description',
+        content: description,
+      },
+      {
         name: 'twitter:description',
         content: description,
       },
@@ -63,6 +68,13 @@ export function checkMetadata({
         content: urlFor(image).width(1200).height(630).url(),
       },
     );
+  }
+
+  if (url) {
+    data.push({
+      property: 'og:url',
+      content: url,
+    });
   }
 
   return data;

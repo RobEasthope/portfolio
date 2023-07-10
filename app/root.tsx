@@ -53,6 +53,7 @@ const PreviewProvider = lazy(
 export async function loader({ request }: LoaderArgs) {
   const session = await getSession(request.headers.get('Cookie'));
   const preview = session.get('preview');
+  const url = `${process.env.VERCEL_URL || ''}`;
 
   const fallbacks: MetadataFallbacksProps = await sanityAPI({ preview }).fetch(
     METADATA_FALLBACKS_QUERY,
@@ -61,6 +62,7 @@ export async function loader({ request }: LoaderArgs) {
   return json({
     preview,
     fallbacks: fallbacks || null,
+    url,
   });
 }
 
@@ -77,10 +79,32 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
     content: data?.fallbacks?.description,
   },
   {
+    name: 'og:description',
+    content: data?.fallbacks?.description,
+  },
+  {
+    name: 'twitter:description',
+    content: data?.fallbacks?.description,
+  },
+  {
     property: 'og:image',
     content:
       data?.fallbacks?.thumbnail &&
       urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
+  },
+  {
+    property: 'twitter:image',
+    content:
+      data?.fallbacks?.thumbnail &&
+      urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
+  },
+  {
+    property: 'twitter:card',
+    content: 'summary_large_image',
+  },
+  {
+    property: 'og:url',
+    content: data?.url,
   },
 ];
 

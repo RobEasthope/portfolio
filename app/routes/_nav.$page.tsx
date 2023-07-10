@@ -34,6 +34,8 @@ type PageBySlugProps = PageProps & {
 export async function loader({ params }: LoaderArgs) {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
 
+  const url = `${process.env.VERCEL_URL || ''}/${params?.page || ''}`;
+
   if (!params?.page) {
     throw new Error('I guess all of the routing has collapsed? 🤷‍♂️');
   }
@@ -73,6 +75,7 @@ export async function loader({ params }: LoaderArgs) {
     page: payload || null,
     error404: payload?.error404 || null,
     preview: preview || null,
+    url: url || null,
   });
 }
 
@@ -82,6 +85,7 @@ export const meta: V2_MetaFunction = ({
 }: {
   matches: string[];
   data: PageProps;
+  url: string;
 }): V2_HtmlMetaDescriptor[] =>
   mergeMeta(
     matches,
@@ -89,6 +93,7 @@ export const meta: V2_MetaFunction = ({
       title: `${data?.page?.title}${METADATA_HARD_CODED_FALLBACKS?.SITE_TITLE}`,
       description: data?.page?.metadataDescription,
       image: data?.page?.metadataImage,
+      url: data?.url,
     }),
   );
 

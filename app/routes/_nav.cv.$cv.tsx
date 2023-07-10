@@ -26,6 +26,7 @@ type CVBySlugProps = CVProps;
 
 export async function loader({ params }: LoaderArgs) {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
+  const url = `${process.env.VERCEL_URL || ''}/${params?.cv || ''}`;
 
   if (!params?.cv) {
     throw new Error('I guess all of the routing has collapsed? 🤷‍♂️');
@@ -54,6 +55,7 @@ export async function loader({ params }: LoaderArgs) {
   return json({
     page: payload || null,
     preview,
+    url: url || null,
   });
 }
 
@@ -70,6 +72,7 @@ export const meta: V2_MetaFunction = ({
       title: 'Rob Easthope',
       description: data?.page?.metadataDescription,
       image: data?.page?.metadataImage,
+      url: data?.url,
     }),
   );
 
