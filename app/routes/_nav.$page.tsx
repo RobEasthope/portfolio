@@ -35,7 +35,6 @@ export async function loader({ params }: LoaderArgs) {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
 
   const url = `${process.env.VERCEL_URL || ''}/${params?.page || ''}`;
-  console.log('url', url);
 
   if (!params?.page) {
     throw new Error('I guess all of the routing has collapsed? 🤷‍♂️');
