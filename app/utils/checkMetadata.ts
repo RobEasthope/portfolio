@@ -4,7 +4,6 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-
 import { urlFor } from '~/components/_base/SanityImage/urlFor';
 
 type CheckMetadataProps = {
@@ -43,6 +42,10 @@ export function checkMetadata({
     data.push(
       {
         property: 'description',
+        content: description,
+      },
+      {
+        name: 'og:description',
         content: description,
       },
       {
