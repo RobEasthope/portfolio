@@ -44,6 +44,7 @@ export async function loader({ params }: LoaderArgs) {
   return json({
     page: payload?.page || null,
     error404: payload?.error404 || null,
+    preview: preview || null,
     url: url || null,
   });
 }
