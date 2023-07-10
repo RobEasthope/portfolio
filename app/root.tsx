@@ -77,10 +77,28 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
     content: data?.fallbacks?.description,
   },
   {
+    name: 'og:description',
+    content: data?.fallbacks?.description,
+  },
+  {
+    name: 'twitter:description',
+    content: data?.fallbacks?.description,
+  },
+  {
     property: 'og:image',
     content:
       data?.fallbacks?.thumbnail &&
       urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
+  },
+  {
+    property: 'twitter:image',
+    content:
+      data?.fallbacks?.thumbnail &&
+      urlFor(data?.fallbacks?.thumbnail).width(1200).height(630).url(),
+  },
+  {
+    property: 'twitter:card',
+    content: 'summary_large_image',
   },
 ];
 
