@@ -24,6 +24,7 @@ type ProjectBySlugProps = ProjectProps & {
 };
 
 export async function loader({ params }: LoaderArgs) {
+  const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
   const url = `${process.env.VERCEL_URL || ''}/${params?.project || ''}`;
 
   const payload: ProjectBySlugProps = await sanityAPI({ preview }).fetch(
@@ -43,6 +44,7 @@ export async function loader({ params }: LoaderArgs) {
   return json({
     page: payload?.page || null,
     error404: payload?.error404 || null,
+    preview: preview || null,
     url: url || null,
   });
 }
