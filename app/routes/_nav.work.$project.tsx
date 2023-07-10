@@ -20,9 +20,12 @@ import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
+  url: string;
 };
 
 export async function loader({ params }: LoaderArgs) {
+  const url = `${process.env.VERCEL_URL || ''}/${params?.project || ''}`;
+
   const payload: ProjectBySlugProps = await sanityAPI({ preview }).fetch(
     PROJECT_BY_SLUG_QUERY,
     {
@@ -40,6 +43,7 @@ export async function loader({ params }: LoaderArgs) {
   return json({
     page: payload?.page || null,
     error404: payload?.error404 || null,
+    url: url || null,
   });
 }
 
@@ -60,6 +64,7 @@ export const meta: V2_MetaFunction = ({
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       description: blockPreview(data?.page?.projectText),
       image: data?.page?.thumbnailImageForMetadata,
+      url: data?.url,
     }),
   );
 
