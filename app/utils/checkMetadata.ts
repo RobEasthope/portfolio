@@ -67,10 +67,6 @@ export function checkMetadata({
         property: 'twitter:image',
         content: urlFor(image).width(1200).height(630).url(),
       },
-      {
-        property: 'twitter:card',
-        content: 'summary_large_image',
-      },
     );
   }
 
