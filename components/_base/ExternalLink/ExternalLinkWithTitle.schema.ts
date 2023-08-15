@@ -1,7 +1,7 @@
 import { defineField, defineType } from '@sanity-typed/types';
 import { RiExternalLinkLine } from 'react-icons/ri';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 // const ExternalLinkRender = ({ children }) => (
 //   <span>

@@ -1,8 +1,8 @@
-import type { GalleryImageProps } from '~/components/generic/Gallery/components/GalleryImage/GalleryImage';
-import { GalleryImage } from '~/components/generic/Gallery/components/GalleryImage/GalleryImage';
+import type { GalleryImageProps } from 'components/generic/Gallery/components/GalleryImage/GalleryImage';
+import { GalleryImage } from 'components/generic/Gallery/components/GalleryImage/GalleryImage';
 
-import { Box } from '~/components/_base/Box/Box';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { Type } from 'components/_base/Type/Type';
 
 // TYPES
 export type GalleryProps = {

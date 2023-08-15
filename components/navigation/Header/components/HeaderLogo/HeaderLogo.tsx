@@ -4,14 +4,14 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+import { METADATA_HARD_CODED_FALLBACKS } from 'constants/METADATA_HARD_CODED_FALLBACKS';
 
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+import type { AppSettingsProps } from 'components/settings/AppSettings/AppSettings';
 
-import { Box } from '~/components/_base/Box/Box';
-import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { InternalLink } from 'components/_base/InternalLink/InternalLink';
+import { SanityImage } from 'components/_base/SanityImage/SanityImage';
+import { Type } from 'components/_base/Type/Type';
 
 export type HeaderLogoProps = {
   logo?: {

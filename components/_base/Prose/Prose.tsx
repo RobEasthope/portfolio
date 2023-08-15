@@ -2,7 +2,7 @@ import type { PortableTextComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
 import type { LinksFunction } from '@vercel/remix';
 import classNames from 'classnames';
-import { Box } from '~/components/_base/Box/Box';
+import { Box } from 'components/_base/Box/Box';
 
 import styles from './prose-overrides.css';
 

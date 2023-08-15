@@ -1,5 +1,5 @@
 import groq from 'groq';
-import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
+import { SANITY_BLOCK_QUERIES } from 'components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
 
 // Fetch components types by slug
 export const PAGE_COMPONENT_TYPES_BY_SLUG_QUERY = ({

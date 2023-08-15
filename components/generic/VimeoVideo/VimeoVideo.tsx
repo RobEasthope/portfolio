@@ -1,7 +1,7 @@
 import Vimeo from '@u-wave/react-vimeo';
 
-import { Box } from '~/components/_base/Box/Box';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { Type } from 'components/_base/Type/Type';
 
 // TYPES
 export type VimeoVideoProps = {

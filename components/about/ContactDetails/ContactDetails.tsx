@@ -1,12 +1,12 @@
-import { Box } from '~/components/_base/Box/Box';
-import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
-import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
-import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { EmailLink } from 'components/_base/EmailLink/EmailLink';
+import { ExternalLink } from 'components/_base/ExternalLink/ExternalLink';
+import { SanityImage } from 'components/_base/SanityImage/SanityImage';
+import { Type } from 'components/_base/Type/Type';
 
-import { METADATA_HARD_CODED_FALLBACKS } from '~/constants/METADATA_HARD_CODED_FALLBACKS';
+import { METADATA_HARD_CODED_FALLBACKS } from 'constants/METADATA_HARD_CODED_FALLBACKS';
 
-import type { HeaderProps } from '~/components/navigation/Header/Header';
+import type { HeaderProps } from 'components/navigation/Header/Header';
 
 export type ContactDetailsProps = {
   _id: 'ContactDetails';

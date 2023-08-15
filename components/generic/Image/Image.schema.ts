@@ -1,10 +1,10 @@
 import { defineField, defineType } from '@sanity-typed/types';
 import { RiImage2Line } from 'react-icons/ri';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
-import { ASPECT_RATIOS } from '~/constants/ASPECT_RATIOS';
-import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
+import { ASPECT_RATIOS } from 'constants/ASPECT_RATIOS';
+import { MAX_CONTENT_OPTIONS } from 'constants/MAX_CONTENT_OPTIONS';
 
 export default defineType({
   type: 'object',

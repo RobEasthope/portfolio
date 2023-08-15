@@ -5,12 +5,12 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import type { Error404NavCardProps } from '~/components/generic/Error404/components/Error404NavCard/Error404NavCard';
-import { Error404NavCard } from '~/components/generic/Error404/components/Error404NavCard/Error404NavCard';
+import type { Error404NavCardProps } from 'components/generic/Error404/components/Error404NavCard/Error404NavCard';
+import { Error404NavCard } from 'components/generic/Error404/components/Error404NavCard/Error404NavCard';
 
-import { Box } from '~/components/_base/Box/Box';
-import { Button } from '~/components/_base/Button/Button';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { Button } from 'components/_base/Button/Button';
+import { Type } from 'components/_base/Type/Type';
 
 export type Error404Props = {
   page: {

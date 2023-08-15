@@ -5,7 +5,7 @@ import {
 } from '@sanity-typed/types';
 import { HiOutlineBriefcase } from 'react-icons/hi';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   name: 'CV',

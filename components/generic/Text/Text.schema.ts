@@ -2,7 +2,7 @@ import { defineField, defineType } from '@sanity-typed/types';
 import { BiText } from 'react-icons/bi';
 import { blockPreview } from 'sanity-pills';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   type: 'object',

@@ -1,5 +1,5 @@
 import type { SanitySchemaProps } from 'sanity.config';
-import { SanityBlocks } from '~/components/_base/SanityBlocks/SanityBlocks';
+import { SanityBlocks } from 'components/_base/SanityBlocks/SanityBlocks';
 
 // TYPES
 export type PageProps = {

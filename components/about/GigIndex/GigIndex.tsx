@@ -1,9 +1,9 @@
-import { Box } from '~/components/_base/Box/Box';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { Type } from 'components/_base/Type/Type';
 
-import type { GigProps } from '~/components/about/GigIndex/components/Gig/Gig';
-import { Gig } from '~/components/about/GigIndex/components/Gig/Gig';
-import { GigList } from '~/components/about/GigIndex/components/GigList/GigList';
+import type { GigProps } from 'components/about/GigIndex/components/Gig/Gig';
+import { Gig } from 'components/about/GigIndex/components/Gig/Gig';
+import { GigList } from 'components/about/GigIndex/components/GigList/GigList';
 
 // TYPES
 export type GigIndexProps = {

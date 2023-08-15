@@ -1,5 +1,5 @@
 import groq from 'groq';
-import { SANITY_IMAGE_QUERY } from '~/components/_base/SanityImage/SanityImage.query';
+import { SANITY_IMAGE_QUERY } from 'components/_base/SanityImage/SanityImage.query';
 
 export const CONTACT_DETAILS_QUERY = groq`{
   _type,

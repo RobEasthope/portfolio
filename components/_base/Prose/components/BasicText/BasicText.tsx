@@ -7,11 +7,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
-import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
-import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
-import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
-import { twLinkStyles } from '~/components/_base/Prose/twLinkStyles';
-import { Type } from '~/components/_base/Type/Type';
+import { EmailLink } from 'components/_base/EmailLink/EmailLink';
+import { ExternalLink } from 'components/_base/ExternalLink/ExternalLink';
+import { InternalLink } from 'components/_base/InternalLink/InternalLink';
+import { twLinkStyles } from 'components/_base/Prose/twLinkStyles';
+import { Type } from 'components/_base/Type/Type';
 
 export type BasicTextProps = Array<SanityKeyed<SanityBlock>>;
 

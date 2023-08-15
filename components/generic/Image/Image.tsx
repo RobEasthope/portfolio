@@ -5,9 +5,9 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { Box } from '~/components/_base/Box/Box';
-import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { SanityImage } from 'components/_base/SanityImage/SanityImage';
+import { Type } from 'components/_base/Type/Type';
 
 // TYPES
 export type ImageProps = {

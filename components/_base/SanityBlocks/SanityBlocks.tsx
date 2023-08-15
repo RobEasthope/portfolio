@@ -1,35 +1,35 @@
-import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
-import { Gallery } from '~/components/generic/Gallery/Gallery';
-import type { ImageProps } from '~/components/generic/Image/Image';
-import { Image } from '~/components/generic/Image/Image';
-import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
-import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
-import type { TextProps } from '~/components/generic/Text/Text';
-import { Text } from '~/components/generic/Text/Text';
-import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
-import type { ProjectIndexProps } from '~/components/work/ProjectIndex/ProjectIndex';
-import { ProjectIndex } from '~/components/work/ProjectIndex/ProjectIndex';
+import type { GalleryProps } from 'components/generic/Gallery/Gallery';
+import { Gallery } from 'components/generic/Gallery/Gallery';
+import type { ImageProps } from 'components/generic/Image/Image';
+import { Image } from 'components/generic/Image/Image';
+import type { MuxVideoProps } from 'components/generic/MuxVideo/MuxVideo';
+import { MuxVideo } from 'components/generic/MuxVideo/MuxVideo';
+import type { TextProps } from 'components/generic/Text/Text';
+import { Text } from 'components/generic/Text/Text';
+import type { VimeoVideoProps } from 'components/generic/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from 'components/generic/VimeoVideo/VimeoVideo';
+import type { YoutubeVideoProps } from 'components/generic/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from 'components/generic/YoutubeVideo/YoutubeVideo';
+import type { ProjectIndexProps } from 'components/work/ProjectIndex/ProjectIndex';
+import { ProjectIndex } from 'components/work/ProjectIndex/ProjectIndex';
 
-import type { DotProps } from '~/components/decoration/Dot/Dot';
-import { Dot } from '~/components/decoration/Dot/Dot';
-import type { LandingHeroProps } from '~/components/decoration/LandingHero/LandingHero';
-import { LandingHero } from '~/components/decoration/LandingHero/LandingHero';
-import type { PageTitleProps } from '~/components/decoration/PageTitle/PageTitle';
-import { PageTitle } from '~/components/decoration/PageTitle/PageTitle';
-import type { SpacerProps } from '~/components/decoration/Spacer/Spacer';
-import { Spacer } from '~/components/decoration/Spacer/Spacer';
+import type { DotProps } from 'components/decoration/Dot/Dot';
+import { Dot } from 'components/decoration/Dot/Dot';
+import type { LandingHeroProps } from 'components/decoration/LandingHero/LandingHero';
+import { LandingHero } from 'components/decoration/LandingHero/LandingHero';
+import type { PageTitleProps } from 'components/decoration/PageTitle/PageTitle';
+import { PageTitle } from 'components/decoration/PageTitle/PageTitle';
+import type { SpacerProps } from 'components/decoration/Spacer/Spacer';
+import { Spacer } from 'components/decoration/Spacer/Spacer';
 
-import type { ContactDetailsProps } from '~/components/about/ContactDetails/ContactDetails';
-import { ContactDetails } from '~/components/about/ContactDetails/ContactDetails';
-import type { EducationProps } from '~/components/about/Education/Education';
-import { Education } from '~/components/about/Education/Education';
-import type { GigIndexProps } from '~/components/about/GigIndex/GigIndex';
-import { GigIndex } from '~/components/about/GigIndex/GigIndex';
-import type { OrganisationsProps } from '~/components/about/Organisation/Organisations';
-import { Organisations } from '~/components/about/Organisation/Organisations';
+import type { ContactDetailsProps } from 'components/about/ContactDetails/ContactDetails';
+import { ContactDetails } from 'components/about/ContactDetails/ContactDetails';
+import type { EducationProps } from 'components/about/Education/Education';
+import { Education } from 'components/about/Education/Education';
+import type { GigIndexProps } from 'components/about/GigIndex/GigIndex';
+import { GigIndex } from 'components/about/GigIndex/GigIndex';
+import type { OrganisationsProps } from 'components/about/Organisation/Organisations';
+import { Organisations } from 'components/about/Organisation/Organisations';
 
 // TYPES
 export type SanityBlocksProps = {

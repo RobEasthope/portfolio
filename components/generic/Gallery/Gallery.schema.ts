@@ -5,11 +5,11 @@ import {
 } from '@sanity-typed/types';
 import { RiGalleryLine } from 'react-icons/ri';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
-import { ASPECT_RATIOS } from '~/constants/ASPECT_RATIOS';
-import { COLUMN_OPTIONS } from '~/constants/COLUMN_OPTIONS';
-import { MAX_CONTENT_OPTIONS } from '~/constants/MAX_CONTENT_OPTIONS';
+import { ASPECT_RATIOS } from 'constants/ASPECT_RATIOS';
+import { COLUMN_OPTIONS } from 'constants/COLUMN_OPTIONS';
+import { MAX_CONTENT_OPTIONS } from 'constants/MAX_CONTENT_OPTIONS';
 
 export default defineType({
   type: 'object',

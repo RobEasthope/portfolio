@@ -8,23 +8,23 @@
 import type { PortableTextComponents } from '@portabletext/react';
 import classNames from 'classnames';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
-import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
-import { Gallery } from '~/components/generic/Gallery/Gallery';
-import type { ImageProps } from '~/components/generic/Image/Image';
-import { Image } from '~/components/generic/Image/Image';
-import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
-import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
-import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
+import type { GalleryProps } from 'components/generic/Gallery/Gallery';
+import { Gallery } from 'components/generic/Gallery/Gallery';
+import type { ImageProps } from 'components/generic/Image/Image';
+import { Image } from 'components/generic/Image/Image';
+import type { MuxVideoProps } from 'components/generic/MuxVideo/MuxVideo';
+import { MuxVideo } from 'components/generic/MuxVideo/MuxVideo';
+import type { VimeoVideoProps } from 'components/generic/VimeoVideo/VimeoVideo';
+import { VimeoVideo } from 'components/generic/VimeoVideo/VimeoVideo';
+import type { YoutubeVideoProps } from 'components/generic/YoutubeVideo/YoutubeVideo';
+import { YoutubeVideo } from 'components/generic/YoutubeVideo/YoutubeVideo';
 
-import { Box } from '~/components/_base/Box/Box';
-import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
-import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
-import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
-import { twLinkStyles } from '~/components/_base/Prose/twLinkStyles';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { EmailLink } from 'components/_base/EmailLink/EmailLink';
+import { ExternalLink } from 'components/_base/ExternalLink/ExternalLink';
+import { InternalLink } from 'components/_base/InternalLink/InternalLink';
+import { twLinkStyles } from 'components/_base/Prose/twLinkStyles';
+import { Type } from 'components/_base/Type/Type';
 
 export type FullTextProps = Array<
   | SanityKeyed<SanityBlock>

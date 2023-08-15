@@ -1,6 +1,6 @@
 import groq from 'groq';
-import { SANITY_BLOCK_QUERIES } from '~/components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
-import type { PageBySlugQueryProps } from '~/components/generic/Page/Page.query';
+import { SANITY_BLOCK_QUERIES } from 'components/_base/SanityBlocks/SANITY_BLOCK_QUERIES';
+import type { PageBySlugQueryProps } from 'components/generic/Page/Page.query';
 
 // Fetch all page slugs
 export const CV_SLUGS_QUERY = groq`

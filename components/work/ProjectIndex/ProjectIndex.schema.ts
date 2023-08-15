@@ -5,7 +5,7 @@ import {
 } from '@sanity-typed/types';
 import { BsBrush } from 'react-icons/bs';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   name: 'ProjectIndex',

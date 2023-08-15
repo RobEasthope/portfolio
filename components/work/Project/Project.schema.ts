@@ -4,11 +4,11 @@ import {
   defineType,
 } from '@sanity-typed/types';
 import { BsBrush } from 'react-icons/bs';
-import { PROJECT_SLUG } from '~/components/work/Project/PROJECT_SLUG';
+import { PROJECT_SLUG } from 'components/work/Project/PROJECT_SLUG';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
-import { formatSlug } from '~/utils/formatSlug';
+import { formatSlug } from 'utils/formatSlug';
 
 export default defineType({
   name: 'project',

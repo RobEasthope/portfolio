@@ -5,7 +5,7 @@ import {
 } from '@sanity-typed/types';
 import { BsFillCircleFill } from 'react-icons/bs';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   name: 'GigIndex',

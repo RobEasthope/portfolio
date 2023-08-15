@@ -1,7 +1,7 @@
 import { defineField, defineType } from '@sanity-typed/types';
 import { IoMdSchool } from 'react-icons/io';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   name: 'EduInstitution',

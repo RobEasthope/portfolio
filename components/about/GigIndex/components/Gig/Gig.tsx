@@ -1,11 +1,11 @@
-import { Box } from '~/components/_base/Box/Box';
-import { Prose } from '~/components/_base/Prose/Prose';
-import type { BasicTextProps } from '~/components/_base/Prose/components/BasicText/BasicText';
-import { BasicTextComponents } from '~/components/_base/Prose/components/BasicText/BasicText';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { Prose } from 'components/_base/Prose/Prose';
+import type { BasicTextProps } from 'components/_base/Prose/components/BasicText/BasicText';
+import { BasicTextComponents } from 'components/_base/Prose/components/BasicText/BasicText';
+import { Type } from 'components/_base/Type/Type';
 
-import { GigDate } from '~/components/about/GigIndex/components/Gig/GigDate';
-import type { OrganisationProps } from '~/components/about/Organisation/Organisations';
+import { GigDate } from 'components/about/GigIndex/components/Gig/GigDate';
+import type { OrganisationProps } from 'components/about/Organisation/Organisations';
 
 export type GigProps = {
   _id?: string;

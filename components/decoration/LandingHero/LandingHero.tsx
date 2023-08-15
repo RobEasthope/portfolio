@@ -6,8 +6,8 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import { Box } from '~/components/_base/Box/Box';
-import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
+import { Box } from 'components/_base/Box/Box';
+import { SanityImage } from 'components/_base/SanityImage/SanityImage';
 
 import styles from './LandingHero.css';
 

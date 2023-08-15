@@ -1,7 +1,7 @@
 import { defineField, defineType } from '@sanity-typed/types';
-import { ALL_PAGE_TYPES } from '~/components/_base/InternalLink/ALL_PAGE_TYPES';
+import { ALL_PAGE_TYPES } from 'components/_base/InternalLink/ALL_PAGE_TYPES';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   name: 'Error404NavCard',

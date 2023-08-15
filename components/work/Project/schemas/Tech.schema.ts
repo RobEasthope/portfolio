@@ -1,7 +1,7 @@
 import { defineField, defineType } from '@sanity-typed/types';
 import { HiOutlineCode } from 'react-icons/hi';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { BasicSanityListingProps } from 'types/BasicSanityListing';
 
 export default defineType({
   name: 'tech',

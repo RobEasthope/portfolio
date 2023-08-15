@@ -5,16 +5,16 @@ import type {
   SanityImageCrop,
   SanityReference,
 } from 'sanity-codegen';
-import { Box } from '~/components/_base/Box/Box';
-import type { EmailLinkWithTitleSchemaProps } from '~/components/_base/EmailLink/EmailLink';
-import type { ExternalLinkWithTitleSchemaProps } from '~/components/_base/ExternalLink/ExternalLink';
-import type { InternalLinkWithTitleSchemaProps } from '~/components/_base/InternalLink/InternalLink';
+import { Box } from 'components/_base/Box/Box';
+import type { EmailLinkWithTitleSchemaProps } from 'components/_base/EmailLink/EmailLink';
+import type { ExternalLinkWithTitleSchemaProps } from 'components/_base/ExternalLink/ExternalLink';
+import type { InternalLinkWithTitleSchemaProps } from 'components/_base/InternalLink/InternalLink';
 
-import type { AppSettingsProps } from '~/components/settings/AppSettings/AppSettings';
+import type { AppSettingsProps } from 'components/settings/AppSettings/AppSettings';
 
-import { HeaderLogo } from '~/components/navigation/Header/components/HeaderLogo/HeaderLogo';
-import { NavListing } from '~/components/navigation/Header/components/NavListing/NavListing';
-import { SmallNavigation } from '~/components/navigation/SmallNavigation/SmallNavigation';
+import { HeaderLogo } from 'components/navigation/Header/components/HeaderLogo/HeaderLogo';
+import { NavListing } from 'components/navigation/Header/components/NavListing/NavListing';
+import { SmallNavigation } from 'components/navigation/SmallNavigation/SmallNavigation';
 
 import styles from './Header.css';
 

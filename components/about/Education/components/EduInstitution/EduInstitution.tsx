@@ -5,13 +5,13 @@ import type {
   SanityReference,
 } from 'sanity-codegen';
 
-import { Box } from '~/components/_base/Box/Box';
-import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
-import { Prose } from '~/components/_base/Prose/Prose';
-import { BasicTextComponents } from '~/components/_base/Prose/components/BasicText/BasicText';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { ExternalLink } from 'components/_base/ExternalLink/ExternalLink';
+import { Prose } from 'components/_base/Prose/Prose';
+import { BasicTextComponents } from 'components/_base/Prose/components/BasicText/BasicText';
+import { Type } from 'components/_base/Type/Type';
 
-import { GigDate } from '~/components/about/GigIndex/components/Gig/GigDate';
+import { GigDate } from 'components/about/GigIndex/components/Gig/GigDate';
 
 export type EduInstitutionProps = {
   _type?: 'EduInstitution';

@@ -1,6 +1,6 @@
-import { Box } from '~/components/_base/Box/Box';
-import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
-import { Type } from '~/components/_base/Type/Type';
+import { Box } from 'components/_base/Box/Box';
+import { ExternalLink } from 'components/_base/ExternalLink/ExternalLink';
+import { Type } from 'components/_base/Type/Type';
 
 export type TechProps = {
   _type: 'tech';

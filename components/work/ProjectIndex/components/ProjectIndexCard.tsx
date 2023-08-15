@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import type { ProjectProps } from '~/components/work/Project/Project';
+import type { ProjectProps } from 'components/work/Project/Project';
 
-import { Box } from '~/components/_base/Box/Box';
-import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
-import { SanityImage } from '~/components/_base/SanityImage/SanityImage';
+import { Box } from 'components/_base/Box/Box';
+import { InternalLink } from 'components/_base/InternalLink/InternalLink';
+import { SanityImage } from 'components/_base/SanityImage/SanityImage';
 
 export type ProjectIndexCardProps = {
   project: ProjectProps['page'];
