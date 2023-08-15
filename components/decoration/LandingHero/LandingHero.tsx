@@ -1,3 +1,5 @@
+'use client';
+
 import MuxPlayer from '@mux/mux-player-react';
 import type {
   SanityImageAsset,

@@ -1,3 +1,4 @@
+'use client';
 import MuxPlayer from '@mux/mux-player-react';
 
 import { Box } from 'components/_base/Box/Box';
