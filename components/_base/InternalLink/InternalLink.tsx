@@ -1,4 +1,4 @@
-import { Link } from '@remix-run/react';
+import Link from 'next/link';
 import classNames from 'classnames';
 import type { SanityReference } from 'sanity-codegen';
 import type { PageProps } from '~/components/generic/Page/Page';
@@ -44,7 +44,7 @@ export const InternalLink = ({
 
   return (
     <Link
-      to={href === homePageSlug ? '/' : `/${href}`}
+      href={href === homePageSlug ? '/' : `/${href}`}
       role="link"
       tabIndex={0}
       className={classNames(className, 'hover:text-saffron duration-300')}
