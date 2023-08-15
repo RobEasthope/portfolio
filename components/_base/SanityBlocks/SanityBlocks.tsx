@@ -153,21 +153,21 @@ export const SanityBlocks = ({ blocks, pageID }: SanityBlocksProps) => {
             />
           );
 
-        case 'VimeoVideo':
-          return (
-            <VimeoVideo
-              {...(block as VimeoVideoProps)}
-              key={`${pageID}-${block._key as string}`}
-            />
-          );
+        // case 'VimeoVideo':
+        //   return (
+        //     <VimeoVideo
+        //       {...(block as VimeoVideoProps)}
+        //       key={`${pageID}-${block._key as string}`}
+        //     />
+        //   );
 
-        case 'YoutubeVideo':
-          return (
-            <YoutubeVideo
-              {...(block as YoutubeVideoProps)}
-              key={`${pageID}-${block._key as string}`}
-            />
-          );
+        // case 'YoutubeVideo':
+        //   return (
+        //     <YoutubeVideo
+        //       {...(block as YoutubeVideoProps)}
+        //       key={`${pageID}-${block._key as string}`}
+        //     />
+        //   );
 
         default:
           return (

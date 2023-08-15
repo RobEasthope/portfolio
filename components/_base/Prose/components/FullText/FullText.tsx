@@ -131,33 +131,33 @@ export const FullTextComponents: PortableTextComponents = {
         </Box>
       );
     },
-    VimeoVideo: ({ value }: { value: VimeoVideoProps }) => {
-      const { url, caption, maxWidth, _type } = value;
+    // VimeoVideo: ({ value }: { value: VimeoVideoProps }) => {
+    //   const { url, caption, maxWidth, _type } = value;
 
-      return (
-        <Box as="section" className="py-1">
-          <VimeoVideo
-            url={url}
-            caption={caption}
-            maxWidth={maxWidth}
-            _type={_type}
-          />
-        </Box>
-      );
-    },
-    YoutubeVideo: ({ value }: { value: YoutubeVideoProps }) => {
-      const { url, caption, maxWidth, _type } = value;
+    //   return (
+    //     <Box as="section" className="py-1">
+    //       <VimeoVideo
+    //         url={url}
+    //         caption={caption}
+    //         maxWidth={maxWidth}
+    //         _type={_type}
+    //       />
+    //     </Box>
+    //   );
+    // },
+    // YoutubeVideo: ({ value }: { value: YoutubeVideoProps }) => {
+    //   const { url, caption, maxWidth, _type } = value;
 
-      return (
-        <Box as="section" className="py-1">
-          <YoutubeVideo
-            url={url}
-            caption={caption}
-            maxWidth={maxWidth}
-            _type={_type}
-          />
-        </Box>
-      );
-    },
+    //   return (
+    //     <Box as="section" className="py-1">
+    //       <YoutubeVideo
+    //         url={url}
+    //         caption={caption}
+    //         maxWidth={maxWidth}
+    //         _type={_type}
+    //       />
+    //     </Box>
+    //   );
+    // },
   },
 };
