@@ -1,7 +1,7 @@
 import { LiveQueryProvider } from '@sanity/preview-kit';
 import { useMemo } from 'react';
 
-import { sanityAPI } from '~/utils/sanity-js-api/sanityAPI';
+import { sanityAPI } from 'utils/sanity-js-api/sanityAPI';
 
 export default function PreviewProvider({
   children,

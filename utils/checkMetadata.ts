@@ -4,7 +4,7 @@ import type {
   SanityImageHotspot,
   SanityReference,
 } from 'sanity-codegen';
-import { urlFor } from '~/components/_base/SanityImage/urlFor';
+import { urlFor } from 'components/_base/SanityImage/urlFor';
 
 type CheckMetadataProps = {
   title?: string;
