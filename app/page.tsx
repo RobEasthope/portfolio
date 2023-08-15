@@ -1,10 +1,11 @@
 import { Error404Props } from '@/components/generic/Error404/Error404';
-import { PageProps } from '@/components/generic/Page/Page';
+import { Page, PageProps } from '@/components/generic/Page/Page';
 import {
   PAGE_BY_SLUG_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
   PageBySlugQueryProps,
 } from '@/components/generic/Page/Page.query';
+import { PagePreview } from '@/components/generic/Page/PagePreview';
 import { AppSettingsProps } from '@/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '@/components/settings/AppSettings/AppSettings.query';
 import { sanityAPI } from '@/utils/sanity-js-api/sanityAPI';
@@ -41,19 +42,19 @@ export async function getData() {
   }
 
   return {
-    appSettings: appSettings,
+    homePageSlug: appSettings?.homePageSlug,
+    preview: preview,
     primer: primer,
-    payload: payload,
+    page: payload,
   };
 }
 
 export default async function Home() {
-  const data = await getData();
+  const { page, preview, homePageSlug } = await getData();
 
-  return (
-    <main>
-      <h1>./root</h1>
-      <h2>Home page slug: {data?.appSettings?.homePageSlug}</h2>
-    </main>
+  return preview ? (
+    <PagePreview page={page} homePageSlug={homePageSlug} preview={preview} />
+  ) : (
+    <Page page={page} />
   );
 }
