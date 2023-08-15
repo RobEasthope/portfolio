@@ -14,19 +14,21 @@ type PageBySlugProps = PageProps & {
 };
 
 export async function getData() {
+  const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
+
   const appSettings: AppSettingsProps = await sanityAPI({
-    preview: false,
+    preview,
   }).fetch(APP_SETTINGS_QUERY);
 
   const primer: PageBySlugQueryProps = await sanityAPI({
-    preview: false,
+    preview,
   }).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY({
       slug: appSettings?.homePageSlug,
     }),
   );
 
-  const payload: PageBySlugProps = await sanityAPI({ preview: false }).fetch(
+  const payload: PageBySlugProps = await sanityAPI({ preview }).fetch(
     PAGE_BY_SLUG_QUERY({
       slug: appSettings?.homePageSlug,
       componentTypes: primer?.componentTypes,
