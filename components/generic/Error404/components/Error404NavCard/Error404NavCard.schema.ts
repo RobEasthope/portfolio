@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { ALL_PAGE_TYPES } from 'components/_base/InternalLink/ALL_PAGE_TYPES';
 
 import type { BasicSanityListingProps } from 'types/BasicSanityListing';

@@ -1,8 +1,4 @@
-import {
-  defineArrayMember,
-  defineField,
-  defineType,
-} from '@sanity-typed/types';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { RiGalleryLine } from 'react-icons/ri';
 
 import type { BasicSanityListingProps } from 'types/BasicSanityListing';

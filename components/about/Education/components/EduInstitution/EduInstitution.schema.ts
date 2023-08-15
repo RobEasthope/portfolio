@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { IoMdSchool } from 'react-icons/io';
 
 import type { BasicSanityListingProps } from 'types/BasicSanityListing';

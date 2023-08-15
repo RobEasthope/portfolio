@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { RiVimeoFill } from 'react-icons/ri';
 
 import type { BasicSanityListingProps } from 'types/BasicSanityListing';

@@ -1,8 +1,4 @@
-import {
-  defineArrayMember,
-  defineField,
-  defineType,
-} from '@sanity-typed/types';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { BsBrush } from 'react-icons/bs';
 import { PROJECT_SLUG } from 'components/work/Project/PROJECT_SLUG';
 

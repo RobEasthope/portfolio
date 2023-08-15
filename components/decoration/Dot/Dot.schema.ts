@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { RxDotFilled } from 'react-icons/rx';
 
 import { SPACER_OPTIONS } from 'components/decoration/Spacer/SPACER_OPTIONS';

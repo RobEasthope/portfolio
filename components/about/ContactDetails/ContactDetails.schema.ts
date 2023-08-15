@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { RiPhoneLine } from 'react-icons/ri';
 
 export default defineType({

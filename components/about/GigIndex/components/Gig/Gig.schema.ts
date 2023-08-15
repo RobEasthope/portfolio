@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import * as dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { BsFillCircleFill } from 'react-icons/bs';

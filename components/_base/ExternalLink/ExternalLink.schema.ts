@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { RiExternalLinkLine } from 'react-icons/ri';
 
 // const ExternalLinkRender = ({ children }) => (

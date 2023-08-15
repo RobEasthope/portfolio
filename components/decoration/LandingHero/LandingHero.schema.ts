@@ -1,4 +1,4 @@
-import { defineField, defineType } from '@sanity-typed/types';
+import { defineField, defineType } from 'sanity';
 import { BiHeading } from 'react-icons/bi';
 
 import type { BasicSanityListingProps } from 'types/BasicSanityListing';

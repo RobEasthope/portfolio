@@ -1,5 +1,5 @@
-import type { InferSchemaValues } from '@sanity-typed/types';
-import { defineConfig } from '@sanity-typed/types';
+import type { InferSchemaValues } from 'sanity';
+import { defineConfig } from 'sanity';
 import { visionTool } from '@sanity/vision';
 import { BsBrush, BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
