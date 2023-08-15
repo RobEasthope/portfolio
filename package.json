@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mux/mux-player-react": "^1.12.0",
+    "@portabletext/react": "^3.0.4",
     "@radix-ui/react-dialog": "^1.0.4",
     "@sanity-typed/types": "^4.0.4",
     "@sanity/client": "^6.4.6",
