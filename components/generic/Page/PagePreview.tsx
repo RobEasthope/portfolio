@@ -1,4 +1,6 @@
-import { useParams } from '@remix-run/react';
+'use client';
+import { useParams } from 'next/navigation';
+
 import { useLiveQuery } from '@sanity/preview-kit';
 import type { PageProps } from 'components/generic/Page/Page';
 import { Page } from 'components/generic/Page/Page';
@@ -12,11 +14,10 @@ export function PagePreview({
   homePageSlug?: string;
 }) {
   const params = useParams();
-
   const [data] = useLiveQuery(
     page,
     PAGE_BY_SLUG_QUERY({
-      slug: homePageSlug || params?.page || '',
+      slug: homePageSlug || params?.slug || '',
       componentTypes: [],
     }),
     params,
