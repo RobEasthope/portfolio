@@ -1,4 +1,3 @@
-import type { LinksFunction } from '@vercel/remix';
 import YouTube from 'react-youtube';
 import { Box } from 'components/_base/Box/Box';
 import { Type } from 'components/_base/Type/Type';
@@ -13,8 +12,6 @@ export type YoutubeVideoProps = {
   caption?: string;
   maxWidth: 'small' | 'text' | 'medium' | 'large' | 'full';
 };
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 // MARKUP
 export const YoutubeVideo = ({

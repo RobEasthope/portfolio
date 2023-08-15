@@ -1,4 +1,3 @@
-import type { LinksFunction } from '@vercel/remix';
 import Headroom from 'react-headroom';
 import type {
   SanityImageAsset,
@@ -38,8 +37,6 @@ export type HeaderProps = {
   ];
   appSettings: AppSettingsProps;
 };
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 // MARKUP
 export const Header = ({

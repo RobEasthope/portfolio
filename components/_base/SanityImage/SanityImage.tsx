@@ -1,5 +1,4 @@
 import type { SanityImageDimensions } from '@sanity/image-url/lib/types/types';
-import type { LinksFunction } from '@vercel/remix';
 import classNames from 'classnames';
 import type {
   SanityImageAsset,
@@ -38,8 +37,6 @@ export type SanityImageProps = {
   aspectRatio?: number;
   cover?: boolean;
 };
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 // MARKUP
 export const SanityImage = ({

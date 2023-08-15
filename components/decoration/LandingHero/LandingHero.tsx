@@ -1,5 +1,4 @@
 import MuxPlayer from '@mux/mux-player-react';
-import type { LinksFunction } from '@vercel/remix';
 import type {
   SanityImageAsset,
   SanityImageCrop,
@@ -29,8 +28,6 @@ export type LandingHeroProps = {
     title: string;
   };
 };
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 // MARKUP
 export const LandingHero = ({
