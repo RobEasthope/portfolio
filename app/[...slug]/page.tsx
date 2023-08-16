@@ -64,7 +64,6 @@ export default async function PageBySlug({
   const { page, preview, homePageSlug } = await getData(params);
 
   console.log(page);
-  console.log(params);
 
   return <div>Slug: {params.slug}</div>;
 }
