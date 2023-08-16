@@ -10,7 +10,7 @@ import type {
 import { Box } from 'components/_base/Box/Box';
 import { SanityImage } from 'components/_base/SanityImage/SanityImage';
 
-import styles from './LandingHero.css';
+import './LandingHero.css';
 
 // TYPES
 export type LandingHeroProps = {

@@ -2,7 +2,7 @@ import YouTube from 'react-youtube';
 import { Box } from 'components/_base/Box/Box';
 import { Type } from 'components/_base/Type/Type';
 
-import styles from './YoutubeVideo.css';
+import './YoutubeVideo.css';
 import { getYoutubeIdfromUrl } from './getYoutubeIdfromUrl';
 
 // TYPES

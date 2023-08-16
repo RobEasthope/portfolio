@@ -12,7 +12,7 @@ import { SanityImage as RawSanityImage } from 'sanity-image';
 
 import { SANITY_PROJECT } from 'constants/SANITY_PROJECT';
 
-import styles from './SanityImage.css';
+import './SanityImage.css';
 
 // TYPES
 export type ImageAssetProp = {

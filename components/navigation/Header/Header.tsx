@@ -15,7 +15,7 @@ import { HeaderLogo } from 'components/navigation/Header/components/HeaderLogo/H
 import { NavListing } from 'components/navigation/Header/components/NavListing/NavListing';
 import { SmallNavigation } from 'components/navigation/SmallNavigation/SmallNavigation';
 
-import styles from './Header.css';
+import './Header.css';
 
 // TYPES
 export type HeaderProps = {
