@@ -1,21 +1,10 @@
 import { Error404Props } from '@/components/generic/Error404/Error404';
-import { Page, PageProps } from '@/components/generic/Page/Page';
-import {
-  PAGE_BY_SLUG_QUERY,
-  PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
-  PAGE_SLUGS_QUERY,
-  PageBySlugQueryProps,
-} from '@/components/generic/Page/Page.query';
-import { PagePreview } from '@/components/generic/Page/PagePreview';
-import { AppSettingsProps } from '@/components/settings/AppSettings/AppSettings';
-import { APP_SETTINGS_QUERY } from '@/components/settings/AppSettings/AppSettings.query';
 import { Project, ProjectProps } from '@/components/work/Project/Project';
 import {
   PROJECT_BY_SLUG_QUERY,
   PROJECT_SLUGS_QUERY,
 } from '@/components/work/Project/Project.query';
 import { sanityAPI } from '@/utils/sanity-js-api/sanityAPI';
-import { log } from 'console';
 
 type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
@@ -62,8 +51,6 @@ export async function getData(params) {
 
 export default async function PageBySlug({ params }) {
   const { page, preview } = await getData(params);
-
-  console.log(page);
 
   return <Project page={page} />;
 }
