@@ -3,7 +3,7 @@ import { SANITY_BLOCK_QUERIES } from 'components/_base/SanityBlocks/SANITY_BLOCK
 
 // Fetch all page slugs
 export const PAGE_SLUGS_QUERY = groq`
-  *[_type == "Page" && !(_id in path("drafts.**")) && defined(slug.current)].slug.current
+  *[_type == "Page" && defined(slug.current)].slug.current
 `;
 
 // Fetch components types by slug
