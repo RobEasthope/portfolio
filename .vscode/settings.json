@@ -7,5 +7,9 @@
     "activityBarBadge.background": "#df9f9f",
     "activityBarBadge.foreground": "#15202b"
   },
-  "peacock.color": "#FFFFFF"
+  "peacock.color": "#FFFFFF",
+  "files.exclude": {
+    ".next": true,
+    "**/node_modules": true
+  }
 }
