@@ -34,8 +34,6 @@ export async function getData(params) {
     },
   );
 
-  console.log(payload);
-
   if (!payload?.page || !payload.page?.displayProject) {
     // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
