@@ -3,6 +3,7 @@ import { Page, PageProps } from '@/components/generic/Page/Page';
 import {
   PAGE_BY_SLUG_QUERY,
   PAGE_COMPONENT_TYPES_BY_SLUG_QUERY,
+  PAGE_SLUGS_QUERY,
   PageBySlugQueryProps,
 } from '@/components/generic/Page/Page.query';
 import { PagePreview } from '@/components/generic/Page/PagePreview';
@@ -13,6 +14,15 @@ import { sanityAPI } from '@/utils/sanity-js-api/sanityAPI';
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
 };
+
+export async function generateStaticParams() {
+  const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
+  const slugs: string[] = await sanityAPI({ preview }).fetch(PAGE_SLUGS_QUERY);
+
+  return slugs.map((slug) => ({
+    paths: slug,
+  }));
+}
 
 export async function getData(params) {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
@@ -56,14 +66,10 @@ export async function getData(params) {
   };
 }
 
-export default async function PageBySlug({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function PageBySlug({ params }) {
   const { page, preview, homePageSlug } = await getData(params);
 
   console.log(page);
 
-  return <div>Slug: {params.slug}</div>;
+  return <div>Slug: {page?.title}</div>;
 }
