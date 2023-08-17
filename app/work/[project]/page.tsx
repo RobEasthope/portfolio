@@ -45,7 +45,7 @@ export async function getData(params) {
 
   return {
     preview: preview,
-    page: payload,
+    page: payload?.page,
   };
 }
 
