@@ -9,17 +9,26 @@ import {
 import { PagePreview } from '@/components/generic/Page/PagePreview';
 import { AppSettingsProps } from '@/components/settings/AppSettings/AppSettings';
 import { APP_SETTINGS_QUERY } from '@/components/settings/AppSettings/AppSettings.query';
+import { Project, ProjectProps } from '@/components/work/Project/Project';
+import {
+  PROJECT_BY_SLUG_QUERY,
+  PROJECT_SLUGS_QUERY,
+} from '@/components/work/Project/Project.query';
 import { sanityAPI } from '@/utils/sanity-js-api/sanityAPI';
+import { log } from 'console';
 
-type PageBySlugProps = PageProps & {
+type ProjectBySlugProps = ProjectProps & {
   error404: Error404Props['page'];
+  url: string;
 };
 
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
-  const slugs: string[] = await sanityAPI({ preview }).fetch(PAGE_SLUGS_QUERY);
+  const slugs: string[] = await sanityAPI({ preview }).fetch(
+    PROJECT_SLUGS_QUERY,
+  );
 
   return slugs.map((slug) => ({
     paths: slug,
@@ -29,31 +38,16 @@ export async function generateStaticParams() {
 export async function getData(params) {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
 
-  const appSettings: AppSettingsProps = await sanityAPI({ preview }).fetch(
-    APP_SETTINGS_QUERY,
+  const payload: ProjectBySlugProps = await sanityAPI({ preview }).fetch(
+    PROJECT_BY_SLUG_QUERY,
+    {
+      slug: `work/${params?.slug as string}`,
+    },
   );
 
-  if (params?.slug === appSettings?.homePageSlug) {
-    // eslint-disable-next-line @typescript-eslint/no-throw-literal
-    throw new Response('Not Found', {
-      status: 404,
-    });
-  }
+  console.log(payload);
 
-  const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
-    PAGE_COMPONENT_TYPES_BY_SLUG_QUERY({
-      slug: params?.slug,
-    }),
-  );
-
-  const payload: PageBySlugProps = await sanityAPI({ preview }).fetch(
-    PAGE_BY_SLUG_QUERY({
-      slug: params?.slug,
-      componentTypes: primer?.componentTypes,
-    }),
-  );
-
-  if (!payload) {
+  if (!payload?.page || !payload.page?.displayProject) {
     // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Response('Not Found', {
       status: 404,
@@ -61,21 +55,15 @@ export async function getData(params) {
   }
 
   return {
-    homePageSlug: appSettings?.homePageSlug,
     preview: preview,
-    primer: primer,
     page: payload,
   };
 }
 
 export default async function PageBySlug({ params }) {
-  const { page, preview, homePageSlug } = await getData(params);
+  const { page, preview } = await getData(params);
 
   console.log(page);
 
-  return preview ? (
-    <PagePreview page={page} homePageSlug={homePageSlug} preview={preview} />
-  ) : (
-    <Page page={page} />
-  );
+  return <Project page={page} />;
 }
