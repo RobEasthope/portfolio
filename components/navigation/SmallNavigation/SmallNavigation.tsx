@@ -1,3 +1,5 @@
+'use client';
+
 import * as Dialog from '@radix-ui/react-dialog';
 import { useLocation } from '@remix-run/react';
 import { useEffect, useState } from 'react';
