@@ -15,6 +15,8 @@ type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
 };
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const preview = process.env.SANITY_API_PREVIEW_DRAFTS === 'true';
   const slugs: string[] = await sanityAPI({ preview }).fetch(PAGE_SLUGS_QUERY);
@@ -71,5 +73,9 @@ export default async function PageBySlug({ params }) {
 
   console.log(page);
 
-  return <div>Slug: {page?.title}</div>;
+  return preview ? (
+    <PagePreview page={page} homePageSlug={homePageSlug} preview={preview} />
+  ) : (
+    <Page page={page} />
+  );
 }
