@@ -71,8 +71,6 @@ export async function getData(params) {
 export default async function PageBySlug({ params }) {
   const { page, preview, homePageSlug } = await getData(params);
 
-  console.log(page);
-
   return preview ? (
     <PagePreview page={page} homePageSlug={homePageSlug} preview={preview} />
   ) : (
