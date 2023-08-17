@@ -30,7 +30,7 @@ export async function getData(params) {
   const payload: ProjectBySlugProps = await sanityAPI({ preview }).fetch(
     PROJECT_BY_SLUG_QUERY,
     {
-      slug: `work/${params?.slug as string}`,
+      slug: `work/${params?.project as string}`,
     },
   );
 

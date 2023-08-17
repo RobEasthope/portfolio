@@ -42,13 +42,13 @@ export async function getData(params) {
 
   const primer: PageBySlugQueryProps = await sanityAPI({ preview }).fetch(
     PAGE_COMPONENT_TYPES_BY_SLUG_QUERY({
-      slug: params?.slug,
+      slug: params?.page,
     }),
   );
 
   const payload: PageBySlugProps = await sanityAPI({ preview }).fetch(
     PAGE_BY_SLUG_QUERY({
-      slug: params?.slug,
+      slug: params?.page,
       componentTypes: primer?.componentTypes,
     }),
   );
