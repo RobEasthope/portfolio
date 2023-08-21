@@ -10,6 +10,8 @@ import { AppSettingsProps } from '@/components/settings/AppSettings/AppSettings'
 import { APP_SETTINGS_QUERY } from '@/components/settings/AppSettings/AppSettings.query';
 import { sanityAPI } from '@/utils/sanity-js-api/sanityAPI';
 
+import { Metadata } from 'next';
+
 type PageBySlugProps = PageProps & {
   error404: Error404Props['page'];
 };
@@ -48,6 +50,11 @@ export async function getData() {
     page: payload,
   };
 }
+
+export const metadata: Metadata = {
+  title: 'My Page Title',
+  description: 'Lorem ipsum dolor sit amet',
+};
 
 export default async function Home() {
   const { page, preview, homePageSlug } = await getData();
