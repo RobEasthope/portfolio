@@ -52,7 +52,7 @@ export async function getData() {
 }
 
 export const metadata: Metadata = {
-  title: 'My Page Title',
+  title: { absolute: 'Rob Easthope' },
   description: 'Lorem ipsum dolor sit amet',
 };
 
