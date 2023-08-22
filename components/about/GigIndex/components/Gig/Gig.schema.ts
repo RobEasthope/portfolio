@@ -43,6 +43,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'notes',
+      title: 'Notes',
+      type: 'BasicText',
+    }),
+    defineField({
       name: 'startDate',
       title: 'Start date',
       type: 'date',
