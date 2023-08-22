@@ -1,7 +1,21 @@
-export default function SanityStudio() {
+import { Suspense, lazy } from 'react';
+
+const Fallback = (
+  <div className="flex h-screen w-screen items-center justify-center">
+    Loading...
+  </div>
+);
+
+const SanityStudio = lazy(
+  () => import('@/components/sanity/SanityStudio/SanityStudio'),
+);
+
+export default function SanityStudioPage() {
   return (
     <main>
-      <h1>Sanity studio</h1>
+      <Suspense fallback={Fallback}>
+        <SanityStudio />
+      </Suspense>
     </main>
   );
 }
