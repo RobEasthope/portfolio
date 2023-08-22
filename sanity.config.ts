@@ -1,5 +1,5 @@
-import type { InferSchemaValues } from '@sanity-typed/types';
-import { defineConfig } from '@sanity-typed/types';
+import type { InferSchemaValues } from 'sanity';
+import { defineConfig } from 'sanity';
 import { visionTool } from '@sanity/vision';
 import { BsBrush, BsFillCircleFill } from 'react-icons/bs';
 import { FaGlobeEurope } from 'react-icons/fa';
@@ -17,7 +17,7 @@ import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { muxInput } from 'sanity-plugin-mux-input';
 import { deskTool } from 'sanity/desk';
 
-import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
+import { SANITY_PROJECT } from '@/constants/SANITY_PROJECT';
 
 import { schemaTypes } from './sanity.schema';
 

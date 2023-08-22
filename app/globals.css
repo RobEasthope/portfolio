@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Responsive REM units */
+html {
+  font-size: clamp(
+    16px,
+    calc(16px + (18 - 16) * ((100vw - 320px) / (1400 - 320))),
+    18px
+  );
+}
+
+/* Switch off responsive sizing for print */
+@media print {
+  html {
+    font-size: 11pt;
+  }
+}
