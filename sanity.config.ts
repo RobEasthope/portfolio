@@ -17,7 +17,7 @@ import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { muxInput } from 'sanity-plugin-mux-input';
 import { deskTool } from 'sanity/desk';
 
-import { SANITY_PROJECT } from '~/constants/SANITY_PROJECT';
+import { SANITY_PROJECT } from '@/constants/SANITY_PROJECT';
 
 import { schemaTypes } from './sanity.schema';
 
