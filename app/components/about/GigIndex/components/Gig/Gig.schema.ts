@@ -43,6 +43,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'notes',
+      title: 'Notes',
+      description:
+        'I keep six honest serving-men; (They taught me all I knew); Their names are What and Why and When; And How and Where and Who. - Rudyard Kipling',
+      type: 'BasicText',
+    }),
+    defineField({
       name: 'startDate',
       title: 'Start date',
       type: 'date',
