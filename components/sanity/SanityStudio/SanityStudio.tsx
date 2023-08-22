@@ -1,9 +1,10 @@
-import { ClientOnly } from 'remix-utils';
-import { Studio } from 'sanity';
+'use client';
+
+import Studio from './SanityStudioPkg';
 import config from 'sanity.config';
 
 export function SanityStudio() {
-  return <ClientOnly>{() => <Studio config={config} />}</ClientOnly>;
+  return <Studio config={config} />;
 }
 
 export default SanityStudio;
