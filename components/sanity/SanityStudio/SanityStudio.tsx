@@ -1,10 +1,10 @@
 'use client';
 
-import Studio from './SanityStudioPkg';
+import StudioClientPkg from './StudioClientPkg';
 import config from 'sanity.config';
 
 export function SanityStudio() {
-  return <Studio config={config} />;
+  return <StudioClientPkg config={config} />;
 }
 
 export default SanityStudio;
